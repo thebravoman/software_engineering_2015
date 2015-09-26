@@ -11,7 +11,7 @@ Solve as many tasks from VhodnoNivo as you can.
 Implement a Ruby program for solving Quadratic equation - https://en.wikipedia.org/wiki/Quadratic_equation
   The program solves an equation from the kind ax^2+bx+c=0 and is run on the command line by passign three arguments:
   
-    `ruby my_program a b c`
+'ruby my_program a b c'
   
   As a result the program returns the solutions x1,x2 on the standard output separated by a ","
   If there is only one solution, then only one solution is returned.
