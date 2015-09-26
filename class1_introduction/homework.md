@@ -1,9 +1,13 @@
-1. Solve as many tasks from VhodnoNivo as you can.
+
+
+# Entry Level
+ Solve as many tasks from VhodnoNivo as you can.
    - create a folder named FirstName_LastName in software_engineering_2015/VhodnoNivo
    - create a separate file for every tasks you have solved.
    - name the files FirstName_LastName_{tasknumber} where tasknumber is the number of the task
    - commit all the files
 
+# Quadratic equation
 2. Implement a Ruby program for solving Quadratic equation - https://en.wikipedia.org/wiki/Quadratic_equation
   The program solves an equation from the kind ax^2+bx+c=0 and is run on the command line by passign three arguments:
   
