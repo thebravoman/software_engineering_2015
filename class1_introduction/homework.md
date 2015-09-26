@@ -2,7 +2,7 @@
 
 ## Entry Level
 Solve as many tasks from VhodnoNivo as you can.
-   - tasks are located at https://github.com/thebravoman/software_engineering_2014/blob/master/vhodno_nivo/VhodnoNivo.pfd
+   - tasks are located at https://github.com/thebravoman/software_engineering_2014/blob/master/vhodno_nivo/VhodnoNivo.pdf
    - create a folder named FirstName_LastName in software_engineering_2015/VhodnoNivo
    - create a separate file for every tasks you have solved.
    - name the files FirstName_LastName_{tasknumber} where tasknumber is the number of the task
