@@ -8,6 +8,11 @@ Solve as many tasks from VhodnoNivo as you can.
    - commit all the files
 
 ## Quadratic equation
+### Why
+
+To learn simple Ruby programs, how to process command line arguments and how to work with numbers in Ruby.
+
+### What
 Implement a Ruby program for solving Quadratic equation - https://en.wikipedia.org/wiki/Quadratic_equation
   The program solves an equation from the kind ax^2+bx+c=0 and is run on the command line by passign three arguments:
   
