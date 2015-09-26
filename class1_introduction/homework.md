@@ -24,4 +24,7 @@ Implement a Ruby program for solving Quadratic equation - https://en.wikipedia.o
   The program is named Class_Number_FirstName_LastName.rb where "Class" is only one capital letter - "A" or "B" and number is from 1 to 30
   Commit this solution in software_engineering_2015/class1_hm_quadratic_equation
   
+### Deadline
+2015-09-28 20:00
+  
   
