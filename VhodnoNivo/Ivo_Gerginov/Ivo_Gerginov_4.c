@@ -3,6 +3,7 @@
 int main()
 {
 	int x, y, ctr;
+	int f1 = 1, f2 = 1, fib = 0;
 
 	printf("Enter X:\n");
 	scanf("%d", &x);
@@ -15,11 +16,15 @@ int main()
 			printf("Y must be greater than X!!!");
 		}
 	}
+
 	for (ctr = x; ctr <= y; ctr++)
 	{
-		if ( ctr % 10 == 3)
+		fib = f1 + f2;
+		f2 = f1;
+		f1 = fib;
+		if (fib >= x && fib <= y)
 		{
-			printf("%d ", ctr);
+			printf("%d\n", fib);
 		}
 	}
 	printf("\n");

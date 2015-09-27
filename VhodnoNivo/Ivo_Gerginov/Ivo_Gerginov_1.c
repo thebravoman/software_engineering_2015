@@ -2,10 +2,8 @@
 
 int main()
 {
-	int x = 0;
-	int y = 0;
+	int x, y, ctr;
 	int sum = 0;
-	int ctr;
 
 	printf("Enter X:\n");
 	scanf("%d", &x);
