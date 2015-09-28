@@ -1,0 +1,12 @@
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\bin\Debug\Problem_3.exe.config
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\bin\Debug\Problem_3.exe
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\bin\Debug\Problem_3.pdb
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\obj\Debug\Problem_3.csprojResolveAssemblyReference.cache
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\obj\Debug\Problem_3.exe
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_3\obj\Debug\Problem_3.pdb
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\bin\Debug\Problem_3.exe.config
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\obj\Debug\Problem_3.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\obj\Debug\Problem_3.pdb
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\bin\Debug\Problem_3.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\bin\Debug\Problem_3.pdb
+C:\Users\lubo\Desktop\EntryLevel\Problem_3\obj\Debug\Problem_3.csprojResolveAssemblyReference.cache
