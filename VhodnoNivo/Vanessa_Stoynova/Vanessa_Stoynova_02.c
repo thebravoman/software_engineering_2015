@@ -3,20 +3,20 @@
 int main () {
 	int x, y, counter = 1;
 	while(counter) {	
-		scanf("%d 	%d", &x, &y);
+		scanf("%d %d", &x, &y);
 		if(x < y) {
 			counter = 0;
 			break;
 		}else{
-			printf("Not valid x and y,\n Please enter again\n");
+			printf("Not valid x and y,\nPlease enter again\n");
 		}
 	}
-	int sum= 0;
+	int sum = 0;
 	for(counter = x ; counter <= y ; counter ++) {
-		 if(counter % 2 != 0 ) {
+		 if(counter % 17 == 0 ) {
 		 	sum += counter;
 		 }
 	}
-	printf("%d\n", sum);	
+	printf("%d\n", sum);
 	return 0;
 }	

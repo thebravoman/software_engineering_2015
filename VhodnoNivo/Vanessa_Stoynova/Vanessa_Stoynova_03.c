@@ -11,12 +11,19 @@ int main () {
 			printf("Not valid x and y,\nPlease enter again\n");
 		}
 	}
-	int sum = 0;
+	int count ;
 	for(counter = x ; counter <= y ; counter ++) {
-		 if(counter % 2 != 0 ) {
-		 	sum += counter;
+		 if(counter % 10  == 3 ) {
+		 	for(count = 2 ; count <= counter ; count ++) {
+		 		if(counter % count == 0) {
+		 			break ;
+		 		}
+		 	}			
 		 }
-	}
-	printf("%d\n", sum);	
+		 if(count == counter) {
+		 	printf("%d ", counter);
+		 }
+	}	
+	printf("\n");
 	return 0;
-}	
+}
