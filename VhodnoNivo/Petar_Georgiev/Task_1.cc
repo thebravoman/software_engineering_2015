@@ -12,3 +12,5 @@ int main(){
 		}
 	cout << "amount = " << count << endl;
 	}
+return 0;
+}
