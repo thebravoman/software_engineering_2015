@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 a = ARGV[0].to_i
 b = ARGV[1].to_i
 c = ARGV[2].to_i
@@ -12,7 +11,7 @@ if d == 0
 
 elsif d > 0
   
-    x1 = ((-b) + Math.sqrt(d)) / (2*a)
+   	x1 = ((-b) + Math.sqrt(d)) / (2*a)
 	x2 = ((-b) - Math.sqrt(d)) / (2*a)
 	
 	 puts x1
