@@ -1,0 +1,6 @@
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\bin\Debug\Problem_10.exe.config
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\bin\Debug\Problem_10.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\bin\Debug\Problem_10.pdb
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\obj\Debug\Problem_10.csprojResolveAssemblyReference.cache
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\obj\Debug\Problem_10.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_10\obj\Debug\Problem_10.pdb
