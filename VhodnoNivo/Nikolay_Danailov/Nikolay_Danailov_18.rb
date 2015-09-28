@@ -12,7 +12,7 @@ end
 dividers = []
 
 curr_num = 1
-while dividers.size < 10 and curr_num < x
+while dividers.size < 10 and curr_num <= x
 	if x % curr_num == 0
 		if curr_num % 2 != 0
 			dividers[dividers.size] = curr_num
