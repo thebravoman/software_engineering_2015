@@ -1,3 +1,0 @@
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Vanessa_Stoinova\Vanessa_Stoinova_{1}\bin\Debug\01.OddBetweenXAndY.exe.config
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Vanessa_Stoinova\Vanessa_Stoinova_{1}\obj\Debug\01.OddBetweenXAndY.exe
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Vanessa_Stoinova\Vanessa_Stoinova_{1}\obj\Debug\01.OddBetweenXAndY.pdb
