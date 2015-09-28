@@ -28,7 +28,7 @@ int main()
 	int count=0;
 	scanf("%d", &x);
 
-	for (i = 1; i < x; i+=2)
+	for (i = 1; i < x && count < 10; i+=2)
 	{
 		if(x % i == 0)
 		{
@@ -40,7 +40,7 @@ int main()
 
 	for (i = 0; i < count; ++i)
 	{
-		printf("1. %d", divisors[i].numb);
+		printf("%d. %d", i, divisors[i].numb);
 
 		if(divisors[i].isPrime)
 		{
