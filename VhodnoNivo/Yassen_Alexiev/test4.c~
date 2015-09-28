@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+	int x, y, i;
+	do {	
+		printf ("Enter 2 integer numbers x and y, when x<y:\n");
+		scanf ("%d", &x);
+		scanf ("%d", &y);
+	} while (x>y);
+	
+	int num_1 = 1;
+	int num_2 = 1;
+	int num_3 = 0;
+	int arr[y];
+	for (i=2; i<=arr[y]; i++){
+		arr[i-2] = num_1;
+		arr[i-1] = num_2;
+		num_3 = arr[i - 1] + arr[i - 2];
+		num_1 = num_2;
+		num_2 = num_3;	
+	}
+	
+	for (i=x; i<=arr[y]; i++) {
+		printf ("%d", arr[i]);
+	}
+return 0;
+}
