@@ -1,18 +1,33 @@
 #include <stdio.h>
 
-int fibbonaci(int numb)
+long long int fibbonaci()
 {
-	if(numb <= 2)
+	// if(numb <= 2)
+	// {
+	// 	return 1;
+	// }
+	// else
+	// {
+	// 	return fibbonaci(numb - 1) + fibbonaci(numb - 2);
+	// }
+
+	static long long int last1 = 0, last2 = 0;
+
+	long long int temp = last1 + last2;
+
+	if(temp == 0)
 	{
-		return 1;
+		temp = 1;
 	}
-	else
-	{
-		return fibbonaci(numb - 1) + fibbonaci(numb - 2);
-	}
+
+	last1 = last2;
+	last2 = temp;
+
+	return temp;
+
 }
 
-int endWithX(int numb, int x)
+int endWithX(long long int numb, int x)
 {
 	return numb % 10 == x;
 }
@@ -23,8 +38,8 @@ int main()
 	int x;
 	int i = 0;
 	int count = 0;
-	int arr[arraySize];
-	int curr;
+	long long int arr[arraySize];
+	long long int curr;
 
 	do
 	{
@@ -33,11 +48,11 @@ int main()
 
 	while(count < 10)
 	{
-		curr = fibbonaci(i);
+		curr = fibbonaci();		
 		
 		if(endWithX(curr, x))
 		{
-			arr[count++] = i;
+			arr[count++] = curr;
 		}
 
 		i++;
@@ -45,7 +60,7 @@ int main()
 
 	for (i = 0; i < count; ++i)
 	{
-		printf("%d. %d\n", i+1, arr[i]);
+		printf("%d. %lld\n", i+1, arr[i]);
 	}
 
 	return 0;
