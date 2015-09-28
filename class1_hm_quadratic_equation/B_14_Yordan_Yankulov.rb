@@ -1,9 +1,6 @@
-	puts "Insert a = "
-	a = gets.chomp.to_f
-	puts "Insert b = "
-	b = gets.chomp.to_f
-	puts "Insert c = "
-	c = gets.chomp.to_f
+	a = ARGV[0].to_i
+	b = ARGV[1].to_i
+	c = ARGV[2].to_i
 
 	if a == 0
 		if b == 0
@@ -30,8 +27,7 @@
 		else D > 0
 			x1 = (-b + Math.sqrt(D))/2*a
 			x2 = (-b - Math.sqrt(D))/2*a
-			puts "X1 = #{x1}"
-			puts "X2 = #{x2}"
+			puts "#{x1} , #{x2}"
 		end
 	end					
 		
