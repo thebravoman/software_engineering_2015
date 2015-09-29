@@ -14,7 +14,8 @@ else
 		else 
 			if ( discriminant == 0 )
 				x1 = -b/ 2 * a
-				puts "#{x1}"
+				print "x1 = x2 = ",x1
+				print "\n"
 			else 
 				x1 = (-b - Math.sqrt(discriminant)) / 2 * a
 				x2 = (-b + Math.sqrt(discriminant)) / 2 * a
