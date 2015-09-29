@@ -64,6 +64,7 @@ first_word,7
 second_word,3
 n_work,1
 
+
 Output should be sorted by the number of word occasions DESCENDING.
 If there are two words with the same number of occasions they should be sorted ASCENDING.
 
