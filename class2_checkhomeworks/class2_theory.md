@@ -38,14 +38,13 @@ end
 ## Task 1
 1. Improve the class1_hm programs to output in the correct format. 
 
-*Solutions to the quadratic equation should be in the format:
+* Solutions to the quadratic equation should be on the same line separated with comma, ordered in ASCENDING order:
 > x1,x2
-On the same line separated with comma. The solutions are ordered in ASCENDING order
 
-* If there is only one solution the output should be
+* If there is only one solution the output should be:
 > x1
 
-* If there are not solutions then no value should be printed at the standard output
+* If there are not solutions then no value should be printed at the standard output:
 
 ### Submit 
 Commit a new version to the old program.
