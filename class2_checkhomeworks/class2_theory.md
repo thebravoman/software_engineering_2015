@@ -61,9 +61,7 @@ The program is run as:
 At the standard output the output should be:
 
 > first_word
-
 > second_word
-
 > n_work
 
 
