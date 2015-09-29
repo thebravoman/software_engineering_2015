@@ -8,8 +8,8 @@ if discriminant < 0 || a == 0
 elsif discriminant > 0
     x1 = (-b + Math.sqrt(discriminant)) / (2 * a)
     x2 = (-b - Math.sqrt(discriminant)) / (2 * a)
-    puts "x1 = #{x1}, x2 = #{x2}"
+    puts "#{x1},#{x2}"
 else
     x1 = -b/(2 * a)
-    puts "x1 = #{x1}"
+    puts "#{x1}"
 end
