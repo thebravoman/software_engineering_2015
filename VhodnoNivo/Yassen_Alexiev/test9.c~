@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int x,i,thrid_num;
+
+	double arr[x];
+	int arr2[x];
+	printf ("Enter integer\n");
+	scanf ("%d", &x);
+
+	for (i=0; i<=arr[x]; i++) {
+		arr[i] = cos(i);
+		thrid_num = (arr[i]*1000) % 10;
+		arr2[i] = thrid_num;	
+		printf ("%d", arr2[i]);
+	}
+	
+	
+return 0;	
+}

@@ -1,0 +1,5 @@
+C:\Users\lubo\Desktop\EntryLevel\Problem_11\bin\Debug\Problem_11.exe.config
+C:\Users\lubo\Desktop\EntryLevel\Problem_11\bin\Debug\Problem_11.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_11\bin\Debug\Problem_11.pdb
+C:\Users\lubo\Desktop\EntryLevel\Problem_11\obj\Debug\Problem_11.exe
+C:\Users\lubo\Desktop\EntryLevel\Problem_11\obj\Debug\Problem_11.pdb

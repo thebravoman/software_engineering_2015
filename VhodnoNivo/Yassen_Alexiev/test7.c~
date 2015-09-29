@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main () {
+	int arr[10];
+	int arr2[5];
+	int x, i;	
+	time_t t;
+
+	scanf ("%d", &x);
+
+	srand((unsigned) time(&t));
+
+	for (i=0; i<=arr[10]; i++) {
+		arr[i] = rand() % 100 + x;	
+	}
+	
+	for (i=0; i<=arr2[5]; i++) {
+		arr2[i] = arr[i+2];
+		printf ("%d", arr2[i]);
+	}
+return 0;
+}

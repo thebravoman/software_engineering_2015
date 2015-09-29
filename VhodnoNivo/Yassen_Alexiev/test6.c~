@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main () {
+	int x, i, arr[100];
+	int count = 0;
+	time_t t;
+
+	scanf ("%d", &x);
+
+	srand((unsigned) time(&t));
+
+	for (i=0; i<=arr[100]; i++) {
+		arr[i] = rand() % 100;	
+	}
+	
+	for (i=0; i<=arr[100]; i++) {
+		if (arr[i]%10 == x) {
+			arr[i] = arr[count];
+			arr[count] = arr[i];
+			count++;
+		}
+	}
+	
+	for (i=0; i<=arr[100]; i++) {
+		printf ("%d\n", arr[i]);	
+	}
+	
+return 0;
+}
