@@ -69,7 +69,7 @@ Output should be sorted by the number of word occasions DESCENDING.
 If there are two words with the same number of occasions they should be sorted ASCENDING.
 
 ### Submit
-A file called Class_Number_FirstName_LastName in folder quadratic_equations_check
+A file called Class_Number_FirstName_LastName in folder count_words
 
 ### Deadline
 2015-10-05 20:00
