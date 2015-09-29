@@ -59,16 +59,17 @@ The program is run as:
 > ruby my_program file.txt
 
 At the standard output the output should be:
-first_word,7
-second_word,3
-...
-n_work,1
+
+> first_word,7
+> second_word,3
+> ...
+> n_work,1
 
 Output should be sorted by the number of word occasions DESCENDING.
 If there are two words with the same number of occasions they should be sorted ASCENDING.
 
 ### Submit
-A file called Class_Number_FirstName_LastName in folder c2_hw_counting_words
+A file called Class_Number_FirstName_LastName in folder quadratic_equations_check
 
 ### Deadline
 2015-10-05 20:00
