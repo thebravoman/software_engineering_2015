@@ -58,7 +58,7 @@ Commit a new version to the old program.
 The program is run as:
 > ruby my_program file.txt
 
-At the standard output the output should be:
+At the standard output the output should be the word followed by comma followed by the number of occurences. On the next line is the next word and so on for all the words in the file:
 
 > first_word,7
 
@@ -67,8 +67,8 @@ At the standard output the output should be:
 > n_work,1
 
 
-Output should be sorted by the number of word occasions DESCENDING.
-If there are two words with the same number of occasions they should be sorted ASCENDING.
+Output should be sorted by the number of word occurences DESCENDING.
+If there are two words with the same number of occurences they should be sorted ASCENDING.
 
 ### Submit
 A file called Class_Number_FirstName_LastName in folder count_words
