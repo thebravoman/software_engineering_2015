@@ -9,7 +9,7 @@ if d<0
 
 elsif d==0;
     x= -b/(2*a);
-    puts "x=#{x}";
+    puts "x1=#{x}";
 else
     x1= -b+Math.sqrt(d)/(2*a)
     x2= -b-Math.sqrt(d)/(2*a)
