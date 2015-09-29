@@ -38,14 +38,13 @@ end
 ## Task 1
 1. Improve the class1_hm programs to output in the correct format. 
 
-*Solutions to the quadratic equation should be in the format:
+* Solutions to the quadratic equation should be on the same line separated with comma, ordered in ASCENDING order:
 > x1,x2
-On the same line separated with comma. The solutions are ordered in ASCENDING order
 
-* If there is only one solution the output should be
+* If there is only one solution the output should be:
 > x1
 
-* If there are not solutions then no value should be printed at the standard output
+* If there are not solutions then no value should be printed at the standard output:
 
 ### Submit 
 Commit a new version to the old program.
@@ -60,16 +59,19 @@ The program is run as:
 > ruby my_program file.txt
 
 At the standard output the output should be:
-first_word,7
-second_word,3
-...
-n_work,1
+
+> first_word,7
+
+> second_word,3
+
+> n_work,1
+
 
 Output should be sorted by the number of word occasions DESCENDING.
 If there are two words with the same number of occasions they should be sorted ASCENDING.
 
 ### Submit
-A file called Class_Number_FirstName_LastName in folder c2_hw_counting_words
+A file called Class_Number_FirstName_LastName in folder count_words
 
 ### Deadline
 2015-10-05 20:00
