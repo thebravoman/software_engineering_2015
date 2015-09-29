@@ -13,7 +13,7 @@ if a != 0
 	if temp==0
 		def zero(a,b,x_1)
 		x_1=-b/2*a
-		p x_1
+		print x_1
 		end
 	end
 	if temp>0
@@ -27,7 +27,7 @@ if a != 0
 		end
 		x_1 = first(temp,a,b)
 		x_2 = second(temp,a,b)
-		p "#{x_1},#{x_2}"
+		print "#{x_1},#{x_2}"
 	end
 end
 
