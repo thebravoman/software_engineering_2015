@@ -1,0 +1,6 @@
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\bin\Debug\Problem_2.exe.config
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\bin\Debug\Problem_2.exe
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\bin\Debug\Problem_2.pdb
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\obj\Debug\Problem_2.csprojResolveAssemblyReference.cache
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\obj\Debug\Problem_2.exe
+C:\Users\lubo\Documents\Visual Studio 2013\Projects\EntryLevel\Problem_2\obj\Debug\Problem_2.pdb
