@@ -9,9 +9,10 @@ if d<0
 
 elsif d==0;
     x= -b/(2*a);
-    puts x;
+    puts "x=#{x}";
 else
     x1= -b+Math.sqrt(d)/(2*a)
-    x2= -b+Math.sqrt(d)/(2*a)
-    puts x1,x2;
+    x2= -b-Math.sqrt(d)/(2*a)
+    puts "x1=#{x1},x2=#{x2}"
 end;
+
