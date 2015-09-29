@@ -14,8 +14,8 @@ elsif d > 0
   	x1 = ((-b) + Math.sqrt(d)) / (2*a)
 	x2 = ((-b) - Math.sqrt(d)) / (2*a)
 	
-	print x1 "," x2
-	
+	print x1,",",x2
+
 else
   
   	puts "Imposibru" 
