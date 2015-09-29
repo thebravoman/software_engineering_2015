@@ -14,8 +14,7 @@ elsif d > 0
   	x1 = ((-b) + Math.sqrt(d)) / (2*a)
 	x2 = ((-b) - Math.sqrt(d)) / (2*a)
 	
-	puts x1
-	puts x2
+	p x1,x2
 	
 else
   
