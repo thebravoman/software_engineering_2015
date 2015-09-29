@@ -15,9 +15,9 @@ int main() {
 				sum += x;
 			} 
 		}
-		printf("Sum of odd numbers between x&y: %d\n",sum);
+		printf("Sum = %d\n",sum);
 	}else {
-		printf("X must be < than Y\n");
+		printf("Y must be greater than X !\n");
 	}
 
 	return 0;
