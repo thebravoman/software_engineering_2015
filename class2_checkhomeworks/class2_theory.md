@@ -60,9 +60,11 @@ The program is run as:
 
 At the standard output the output should be:
 
-> first_word
-> second_word
-> n_work
+> first_word,7
+
+> second_word,3
+
+> n_work,1
 
 
 Output should be sorted by the number of word occasions DESCENDING.
