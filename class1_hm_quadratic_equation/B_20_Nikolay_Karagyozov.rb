@@ -4,7 +4,7 @@ c = ARGV[2].to_f
 discriminant = b**2 - 4 * a * c
 
 if a == 0
-  x = b/c
+  x = -c/b
   puts "#{x}"
 end
 
