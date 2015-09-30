@@ -12,12 +12,9 @@ if a == 0
 else
 	d = b**2 - 4*a*c
 
-	if d < 0
-		puts "No real solutions"
-	elsif d == 0
-		puts "The solution is #{-b / (2*a)}"
-	else
-		puts "The first solution is #{(-b + Math.sqrt(d)) / 2*a}"
-		puts "The second solution is #{(-b - Math.sqrt(d)) / 2*a}"
+	if d == 0
+		puts "#{-b / (2*a)}"
+	elsif d > 0
+		puts "#{(-b + Math.sqrt(d)) / 2*a},#{(-b - Math.sqrt(d)) / 2*a}"
 	end
 end
