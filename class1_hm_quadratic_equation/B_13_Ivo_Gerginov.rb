@@ -8,7 +8,7 @@ x2 = (-b + Math.sqrt(D))/2*a
 	if D > 0 then
 		if x1 > x2 then
 		puts "#{x1},#{x2}"
-		else puts "#{x1},#{x2}"
+		else puts "#{x2},#{x1}"
 	elsif D == 0 then
 	puts "#{-b/2*a}"
 	else
