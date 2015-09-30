@@ -3,7 +3,7 @@ b = ARGV[1].to_f
 c = ARGV[2].to_f
 discriminant = b**2 - 4 * a * c
 
-if a == 0puts
+if a == 0
   x = b/c
   puts "#{x}"
 end
