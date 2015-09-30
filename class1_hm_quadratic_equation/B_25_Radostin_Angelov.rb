@@ -17,17 +17,18 @@ if a == 0
 else
 	d = b**2 - 4 * a * c
 
-	if d < 0
-		puts "No answers exist"
-	elsif d == 0
+	if d == 0
 		answer = -b / 2 * a
-		puts "X1 = %f, X2 = %f" % [answer, answer]
-		puts "d = 0"
-	else
+		puts answer
+	elsif d > 0
 		d_sqrt = Math.sqrt(d)
-		first_answer = (-b + d_sqrt) / 2 * a
-		second_answer = (-b - d_sqrt) / 2 * a
+		first_answer = (-b + d_sqrt) / (2 * a)
+		second_answer = (-b - d_sqrt) / (2 * a)
 	
-		puts "X1 = %f, X2 = %f" % [first_answer, second_answer]
+		if first_answer < second_answer
+			puts "#{first_answer},#{second_answer}"
+		else
+			puts "#{second_answer},#{first_answer}"
+		end
 	end
 end
