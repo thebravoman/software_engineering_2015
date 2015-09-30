@@ -19,8 +19,8 @@ else
 		x1 = (-b) / (2*a)
 		puts "#{x1}"
 	else
-		x1 = ((-b) + Math.sqrt(d)) / (2*a)
-		x2 = ((-b) - Math.sqrt(d)) / (2*a)
+		x1 = ((-b) - Math.sqrt(d)) / (2*a)
+		x2 = ((-b) + Math.sqrt(d)) / (2*a)
 		puts "#{x1},#{x2}"
 	end
 end
