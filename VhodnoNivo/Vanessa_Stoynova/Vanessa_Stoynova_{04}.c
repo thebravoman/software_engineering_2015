@@ -11,12 +11,17 @@ int main () {
 			printf("Not valid x and y,\nPlease enter again\n");
 		}
 	}
-	int sum = 0;
-	for(counter = x ; counter <= y ; counter ++) {
-		 if(counter % 17 == 0 ) {
-		 	sum += counter;
-		 }
+	int a = 0 ;
+	int b = 0 ; 
+	int c = 1 ;
+	for(counter = 0 ; counter <= y ; counter ++) {
+		if(c >= x && c <= y) {
+			printf("%d ", c);
+		}
+		a = b ;
+		b = c ; 
+		c = a + b ;
 	}
-	printf("%d\n", sum);
-	return 0;
-}	
+	printf("\n");
+	return 0 ;
+}		
