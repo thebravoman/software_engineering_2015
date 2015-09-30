@@ -6,13 +6,10 @@ d = (b*b) - (4*a*c)
 if d > 0
 	x1 = (-b + Math.sqrt(d)) / (2 * a)	
 	x2 = (-b - Math.sqrt(d)) / (2 * a)
-
-	puts 'roots:', x1, x2
+	puts "#{x1},#{x2}"
 elsif d == 0
 	x = (-b) / (2 * a)
 
-	puts 'roots:', x
-else
-	puts 'roots are not real numbers'
+	puts x
 
 end
