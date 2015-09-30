@@ -16,9 +16,9 @@ elsif  (D == 0)
    	x1 = (-B)/2*a
    	puts x1
 else
-      x1 = ( (-B) + (Math.sqrt(D) ) )/(2 * A)
-      x2 = ( (-B) - (Math.sqrt(D) ) )/(2 * A)
-      puts "#{x1}, #{x2}";
+      x1 = ( (-B) - (Math.sqrt(D) ) )/(2 * A)
+      x2 = ( (-B) + (Math.sqrt(D) ) )/(2 * A)
+      puts "#{x1},#{x2}";
       
 end
 
