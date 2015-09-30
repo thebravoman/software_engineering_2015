@@ -22,13 +22,13 @@ else
 		puts answer
 	elsif d > 0
 		d_sqrt = Math.sqrt(d)
-		first_answer = (-b + d_sqrt) / 2 * a
-		second_answer = (-b - d_sqrt) / 2 * a
+		first_answer = (-b + d_sqrt) / (2 * a)
+		second_answer = (-b - d_sqrt) / (2 * a)
 	
 		if first_answer < second_answer
-			puts "%f,%f" % [first_answer, second_answer]
+			puts "#{first_answer},#{second_answer}"
 		else
-			puts "%f,%f" % [second_answer, first_answer]
+			puts "#{second_answer},#{first_answer}"
 		end
 	end
 end
