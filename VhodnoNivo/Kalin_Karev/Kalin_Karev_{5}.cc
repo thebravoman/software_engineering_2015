@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -14,24 +14,19 @@ int main()
     }
     int arr[10];
     int i = 0;
-    for (i=0; i<10; i++){
-        cout << cos(i) << endl;
+    for (i=0; i<x; i++){
+        arr[i] = cos(i);
     }
-
-    /*for (i = 0; i < 10; i++){
-        for (int j=0; j<10; j++){
-            if (arr[j] > arr[j+1]){
-                arr[j] = arr[j] + arr[j+1];
-                arr[j+1] = arr[j] - arr[j+1];
-                arr[j] = arr[j] - arr[j+1];
-            }
-        }
-    }
+    cout << "Enter array: " << endl;
+    for (i=0; i<10; i++)
+        cout << arr[i] << endl;
     cout << endl;
 
-    for (i=0; i<10; i++){
-        cout << arr[i] << ' ' << endl;
-    }*/
+    sort(arr, arr+10);
+    reverse(arr, arr+10);
 
+    cout << "Sorted array: " << endl;
+    for (i=0; i<10; ++i)
+        cout << arr[i] << endl;
     return 0;
 }

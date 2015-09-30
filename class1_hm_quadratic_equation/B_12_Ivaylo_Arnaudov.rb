@@ -7,15 +7,17 @@ if a == 0
   raise "Not a quadratic equation."
 end
 
-d = b ** 2 - 4 * a * c
+d = b**2 - 4 * a * c
 
-if d < 0
-  puts "Roots are complex numbers."
-elsif d == 0
+if d == 0
   root = -b / (2 * a)
-  puts "x1 = x2 = #{root}"
-else
+  puts "#{root}"
+elsif d > 0
   first_root = (-b + Math::sqrt(d)) / (2 * a)
   second_root = (-b - Math::sqrt(d)) / (2 * a)
-  puts "x1 = #{first_root}; x2 = #{second_root}"
+  if first_root > second_root
+    puts "#{second_root},#{first_root}"
+  else
+    puts "#{first_root},#{second_root}"
+  end
 end

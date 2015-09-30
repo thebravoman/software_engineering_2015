@@ -1,23 +1,29 @@
-a, b, c = ARGV;
+a = ARGV[0].to_i
+b = ARGV[1].to_i
+c = ARGV[2].to_i
 
-a = a.to_f;
-b = b.to_f;
-c = c.to_f;
+d = b*b - 4*a*c
 
-if a==0
-	result = -c/b;
-	puts "#{result}";
+=begin
+puts a.to_s
+puts b.to_s
+puts c.to_s
+puts d.to_s
+=end
+if a== 0
+	puts -c/b
 else
-	d = ((b**2) - (4*a*c))
-	#puts d;
-	if d==0
-		xDouble = -b/(2*a);
-		puts "#{xDouble}";
-	elsif d>0.0
-		x1 = (-b+Math.sqrt(d))/2*a;
-		x2 = (-b-Math.sqrt(d))/2*a;
-		puts "#{x1},#{x2}";
-	elsif d<0.0
-		puts "There are no roots";
-	end	
+	
+	if d>0
+		x1 = (-b + Math.sqrt(d))/2*a
+		x2 = (-b - Math.sqrt(d))/2*a
+		puts x1.to_s+", "+x2.to_s
+	elsif d == 0
+		x1 = -b/2*a
+		puts x1.to_s
+	else
+		puts "There are no real roots"
+	end
+
 end
+	

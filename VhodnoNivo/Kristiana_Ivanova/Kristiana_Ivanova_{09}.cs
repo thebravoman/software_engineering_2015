@@ -8,18 +8,19 @@ class Problem9
         string line = Console.ReadLine();
         int x = int.Parse(line);
 
-        int inputCos = 1;
+        int input = 1;
         double[] numbers = new double[10];
-        bool ok = false;
-        for (int i = 0; i < 10; i++)
-        {
-            while (!ok)
-            {
-                double number = Math.Cos(inputCos);
-                inputCos++;
-                int thirdDigit = (int)((number * 1000) % 10);
+	bool ok = false;
 
-                if ((number > 0.0f) && (thirdDigit == x))
+        for (int i = 0; i < 10; i++) {
+
+            while (!ok) {
+
+                double number = Math.Cos(input);
+                input ++;
+                int Digit_third = (int) ( (number * 1000) % 10);
+
+                if ((number > 0.0f) && (Digit_third == x))
                 {
                     numbers[i] = number;
                     ok = true;
@@ -27,7 +28,6 @@ class Problem9
             }
             ok = false;
         }
-
         foreach (double element in numbers)
         {
             Console.WriteLine(element);

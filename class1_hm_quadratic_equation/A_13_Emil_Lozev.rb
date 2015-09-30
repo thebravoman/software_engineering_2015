@@ -6,17 +6,15 @@ d = b**2 - 4 * a * c
 
 if d < 0
 
-	puts "The Quadratic Equation Has Unreal Roots"
-
 elsif d == 0
 	
 	x = (-b) / (2 * a)
-	puts x
+	print x
 
 else
 
 	x1 = (-b + Math.sqrt(d)) / (2 * a)	
 	x2 = (-b - Math.sqrt(d)) / (2 * a)
 	
-	puts "#{x1},#{x2}"
+	print "#{x1},#{x2}"
 end
