@@ -15,6 +15,6 @@ else
 	if d == 0
 		puts "#{-b / (2*a)}"
 	elsif d > 0
-		puts "#{(-b + Math.sqrt(d)) / 2*a},#{(-b - Math.sqrt(d)) / 2*a}"
+		puts "#{(-b-Math.sqrt(d)) / 2*a},#{(-b+Math.sqrt(d)) / 2*a}"
 	end
 end
