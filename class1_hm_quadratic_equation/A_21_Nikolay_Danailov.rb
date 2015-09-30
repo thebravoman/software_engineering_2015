@@ -1,8 +1,3 @@
-if ARGV.size < 3
-	puts "Not enough command line arguments!"
-	exit
-end
-
 a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
@@ -13,8 +8,10 @@ else
 	d = b**2 - 4*a*c
 
 	if d == 0
-		puts "#{-b / (2*a)}"
+		puts "#{-b/(2*a)}"
 	elsif d > 0
-		puts "#{(-b-Math.sqrt(d)) / 2*a},#{(-b+Math.sqrt(d)) / 2*a}"
+		x1 = (-b+Math.sqrt(d) / 2*a)
+		x2 = (-b-Math.sqrt(d) / 2*a)
+		puts "#{[x1, x2].min},#{[x1, x2].max}"
 	end
 end
