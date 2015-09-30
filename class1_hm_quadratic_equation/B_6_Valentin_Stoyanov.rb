@@ -9,14 +9,14 @@ if(a == 0)
 elsif (d > 0)
 		x1 = ((-b) + Math.sqrt(d)) / (2*a)
 		x2 = ((-b) - Math.sqrt(d)) / (2*a)
-		print "x1 = "
-		puts x1
-		print "x2 = " 
-		puts x2
+		if (x1 < x2)
+			puts "#{x1},#{x2}"
+		else 
+			puts "#{x2},#{x1}"
+		end
 	elsif (d == 0)
 			x1 = (-b) / (2*a)
 			x2 = x1 	
-			print "x1 = x2 = "
 			puts x1
 		else
 			puts "The equation has no real roots"

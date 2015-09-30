@@ -27,7 +27,11 @@
 		else D > 0
 			x1 = (-b + Math.sqrt(D))/2*a
 			x2 = (-b - Math.sqrt(D))/2*a
-			puts "#{x1} , #{x2}"
+			if x1 > x2
+			puts "#{x2},#{x1}"
+			else 
+			puts "#{x1},#{x2}"
+			end
 		end
 	end					
 		

@@ -9,16 +9,16 @@ class Problem8
         int x = int.Parse(line);
 
         int[] numbers = new int[10];
-        int elementsNumber = 0;
+        int elements_Number = 0;
         bool ok = false;
         Random random = new Random();
         for (int i = 0; i < numbers.Length; i++)
-        {
-            while (!ok)
-            {
+ {
+            while (!ok) {
+
                 int number = random.Next(0, 101);
-                if (number > x)
-                {
+                if (number > x) {
+
                     numbers[i] = number;
                     ok = true;
                 }
@@ -26,34 +26,34 @@ class Problem8
             ok = false;
         }
 
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            if (numbers[i] % 2 == 0)
-            {
-                elementsNumber++;
+        for (int i = 0; i < numbers.Length; i++) {
+
+            if (numbers[i] % 2 == 0) {
+
+                elements_Number++;
             }
         }
 
-        int[] result = new int[elementsNumber];
-        int j = 0;
+        int[] result = new int[elements_Number];
+        int i_new = 0;
 
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            if (numbers[i] % 2 == 0)
-            {
-                result[j] = numbers[i];
-                j++;
+        for (int i = 0; i < numbers.Length; i++) {
+
+            if (numbers[i] % 2 == 0) {
+
+                result[i_new] = numbers[i];
+                i_new++;
             }
         }
 
         Console.WriteLine();
-        foreach (int element in numbers)
-        {
+        foreach (int element in numbers) {
+
             Console.WriteLine(element);
         }
         Console.WriteLine();
-        foreach (int element in result)
-        {
+        foreach (int element in result) {
+
             Console.WriteLine(element);
         }
     }

@@ -1,9 +1,0 @@
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\bin\Debug\01.OddBetweenXAndY.exe.config
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\obj\Debug\01.OddBetweenXAndY.csprojResolveAssemblyReference.cache
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\bin\Debug\01.OddBetweenXAndY.exe
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\bin\Debug\01.OddBetweenXAndY.pdb
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\obj\Debug\01.OddBetweenXAndY.exe
-c:\users\martin\documents\visual studio 2015\Projects\Homework_Entry_Level\01.OddBetweenXAndY\obj\Debug\01.OddBetweenXAndY.pdb
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Homework_Entry_Level\Martin_Dimitrov_{1}\bin\Debug\01.OddBetweenXAndY.exe.config
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Homework_Entry_Level\Martin_Dimitrov_{1}\obj\Debug\01.OddBetweenXAndY.exe
-C:\Users\Martin\Documents\Visual Studio 2015\Projects\Homework_Entry_Level\Martin_Dimitrov_{1}\obj\Debug\01.OddBetweenXAndY.pdb
