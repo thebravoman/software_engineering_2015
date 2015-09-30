@@ -8,10 +8,14 @@ if d < 0
           puts "No real roots"
 elsif d == 0
           x = -b / 2 * a
-          puts "X = #{x}"
+          puts "#{x}"
     else
               x1 = (-b + Math.sqrt(d))/(2*a)
               x2 = (b + Math.sqrt(d))/(2*a)
-            puts "X1 = #{x1}"
-            puts "X2 = #{x2}"
+     
+            if x1 < x2 
+            	puts "#{x1},#{x2}"
+            else
+            		puts "#{x2},#{x1}"
+ 						end 
   end
