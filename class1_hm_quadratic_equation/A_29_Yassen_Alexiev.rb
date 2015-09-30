@@ -2,15 +2,13 @@ a = ARGV[0].to_i
 b = ARGV[1].to_i 
 c = ARGV[2].to_i 
 
-if a < 0
+if a == 0
 	puts -c/b 
 
 else
 	d = b**2 - 4 * a * c
 	
-	if d < 0
-	
-	elsif d == 0
+	if d == 0
 		puts (-b)/2*a
 
 	elsif d > 0
