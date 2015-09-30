@@ -8,8 +8,8 @@ if a == 0
 else 
 	d = ((b ** 2) - (4 * a * c))
 	if d == 0
-		x1 = - b / (2 * a)
-		puts "#{x1}"
+		x = - b / (2 * a)
+		puts "#{x}"
 	elsif d > 0.0
 		x1 = (-b + Math.sqrt(d)) / (2 * a)
 		x2 = (-b - Math.sqrt(d)) / (2 * a)
