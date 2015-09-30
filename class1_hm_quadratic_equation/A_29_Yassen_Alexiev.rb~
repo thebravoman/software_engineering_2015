@@ -9,7 +9,7 @@ else
 	d = b**2 - 4 * a * c
 	
 	if d < 0
-	
+		puts "No solution"
 	elsif d == 0
 		puts (-b)/2*a
 
