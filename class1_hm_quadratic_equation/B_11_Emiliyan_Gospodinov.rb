@@ -1,19 +1,18 @@
-A = gets.chomp.to_f
-if (A == 0)
-	puts 'Not a quadratic equation.'
-	return
-end
-B = gets.chomp.to_f
-C = gets.chomp.to_f
+A=ARGV[0].to_f;
+B=ARGV[1].to_f;
+C=ARGV[2].to_f;
 
- 	D = B*B - 4*A*C
-if (D == 0)
-	puts 'x = '+(-B/2/A).to_s
-else if (D > 0)
-	puts 'x1 = '+((-B-Math.sqrt(D))/2/A).to_s
-	puts 'x2 = '+((-B+Math.sqrt(D))/2/A).to_s
-	else
-	puts 'x1 = ('+(-B/2/A).to_s+','+(Math.sqrt(-D)/2/A).to_s+')'
-	puts 'x2 = ('+(-B/2/A).to_s+','+(-Math.sqrt(-D)/2/A).to_s+')'
-	end
+D=B*B - 4*A*C;
+
+if(D<0)
+	puts "This quadratic equation don't have real roots"
+
+else if (D==0)
+	x1=x2=-B/(2*A)
+	puts "#{x1}"
+else
+	x1=(-B+Math.sqrt(D))/(2*A)
+	x2=(-B-Math.sqrt(D))/(2*A)
+	puts "#{x1},#{x2}"
+end
 end
