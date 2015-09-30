@@ -7,7 +7,7 @@ d =(b*b) - (4*a*c)
 if d == 0
   
   	x = (-b) / (2*a)
-  	puts x
+  	print x
 
 elsif d > 0
   
