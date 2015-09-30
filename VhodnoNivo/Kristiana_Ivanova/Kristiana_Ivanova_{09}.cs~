@@ -9,8 +9,8 @@ class Problem9
         int x = int.Parse(line);
 
         int input = 1;
-        double[] numbers = new double[10];
 	bool ok = false;
+        double[] numbers = new double[10];
 
         for (int i = 0; i < 10; i++) {
 
@@ -28,6 +28,7 @@ class Problem9
             }
             ok = false;
         }
+
         foreach (double element in numbers)
         {
             Console.WriteLine(element);

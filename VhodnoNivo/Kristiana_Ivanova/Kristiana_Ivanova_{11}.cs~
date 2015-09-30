@@ -20,7 +20,7 @@ using System;
 
 				result = result - (4.0d / n);
 			}
-			if (4.0d / n < x) {
+			if(4.0d / n < x) {
 
 			break;
 			}
