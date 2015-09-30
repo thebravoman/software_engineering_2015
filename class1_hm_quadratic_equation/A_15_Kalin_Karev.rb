@@ -6,15 +6,18 @@ if a == 0
 	answer = -c / b;
 	puts "#{answer}";	
 else 
-	d = ((b ** 2) - (4 * a * c));
+	d = ((b ** 2) - (4 * a * c))
 	if d == 0
-		x = - b / (2 * a);
-		puts "#{x}";
+		x1 = - b / (2 * a)
+		puts "#{x1}"
 	elsif d > 0.0
-		x1 = (-b + Math.sqrt(d)) / (2 * a);
-		x2 = (-b - Math.sqrt(d)) / (2 * a);
-		puts "#{x1},#{x2}";
-	elsif d < 0.0
-		puts "No real roots!";
-	end 
+		x1 = (-b + Math.sqrt(d)) / (2 * a)
+		x2 = (-b - Math.sqrt(d)) / (2 * a)
+		
+		if x1 < x2			
+			puts "#{x1},#{x2}"
+		else 
+			puts "#{x2},#{x1}"
+		end
+	end
 end

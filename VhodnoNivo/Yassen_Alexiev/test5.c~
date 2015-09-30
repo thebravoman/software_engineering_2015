@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+	int x, i;
+	double arr[10];
+	printf ("Enter integer\n");
+	scanf ("%d", &x);
+
+	for (i=0; i<=arr[10]; i++) {
+		arr[i] = cos(i);
+		printf ("%f", arr[i]);
+	}
+
+	for (i=0; i<=arr[i]; i++) {
+		if (arr[i]<arr[i+1]) {
+			arr[i] = arr[i+1];
+			arr[i+i] = arr[i];
+		}
+	}
+	for (i=0; i<=arr[10]; i++) {
+		printf ("%f", arr[i]);
+	}
+return 0;	
+}
