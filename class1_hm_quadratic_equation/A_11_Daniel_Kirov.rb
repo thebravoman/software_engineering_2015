@@ -15,9 +15,5 @@ elsif d > 0
 	x2 = ((-b) - Math.sqrt(d)) / (2*a)
 	
 	print x1,",",x2
-
-else
-  
-  	puts "Imposibru" 
     
 end
