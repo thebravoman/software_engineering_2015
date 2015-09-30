@@ -4,9 +4,6 @@ C=ARGV[2].to_f;
 
 D=B*B - 4*A*C;
 
-if(D<0)
-	puts "This quadratic equation don't have real roots"
-
 else if (D==0)
 	x1=x2=-B/(2*A)
 	puts "#{x1}"
