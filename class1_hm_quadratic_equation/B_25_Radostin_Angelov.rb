@@ -1,6 +1,6 @@
-a = ARGV[0].to_i
-b = ARGV[1].to_i
-c = ARGV[2].to_i
+a = ARGV[0].to_f
+b = ARGV[1].to_f
+c = ARGV[2].to_f
 
 if a == 0
 	if b == 0
@@ -18,8 +18,8 @@ else
 	d = b**2 - 4 * a * c
 
 	if d == 0
-		answer = -b / 2 * a
-		puts answer
+		answer = -b / (2 * a)
+		puts "#{answer}"
 	elsif d > 0
 		d_sqrt = Math.sqrt(d)
 		first_answer = (-b + d_sqrt) / (2 * a)
