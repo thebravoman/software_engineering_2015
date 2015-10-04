@@ -5,7 +5,7 @@ File.open(ARGV[0]) do |file|
 		text += line
 	end
 
-	words = text.downcase.gsub(/[^a-z \n-]/, '').split(" ")
+	words = text.downcase.gsub(/[^a-z\n- ]/, '').split(" ")
 	word_counts = Hash.new(0)
 
 	words.each do |word|
