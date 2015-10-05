@@ -1,4 +1,4 @@
-text = IO.read(ARGV[0]).split(" ")
+text = IO.read(ARGV[0]).gsub(/[^\w\s]/, '').split(" ")
 unique_text = text.uniq.sort { |a,b|
   if text.count(a) == text.count(b)
     a <=> b
