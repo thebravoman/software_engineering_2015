@@ -19,10 +19,3 @@ new_hash = hash.sort_by {|key, value| [-value, key]}
 new_hash.each do |key, value|
 	puts "#{key},#{value}"
 end
-
-=begin
-new_hash = hash.sort
-new_hash.sort{|a,b| b[1]<=>a[1]}.each {|elem|
-	puts "#{elem[0]},#{elem[1]}"
-}
-=end
