@@ -7,7 +7,7 @@ content=content.split(" ")#spliting the string into words
 content.each do |word|#counting the words 
 	count[word] += 1
 end
-count = count.sort_by{|word,num| word.downcase}#sorting alphabeticly
+count = count.sort_by{|word,num| word.downcase}#sorting alphabetically
 count = count.sort_by {|word,num| [-num,word]}#sorting by the counter
 count.each do|word, num|
 	
