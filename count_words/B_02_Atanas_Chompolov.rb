@@ -8,7 +8,7 @@ file.each_line do |line|
     word = word.gsub(/[,()'"„“.?:]/,'') 
     
     if(new_Hash[word]) 
-      new_Hash[word] += 1 
+    	new_Hash[word] += 1 
     else 
       new_Hash[word] = 1 
     end 
