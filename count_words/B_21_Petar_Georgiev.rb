@@ -1,5 +1,5 @@
 file = File.open(ARGV[0] , "r")
-text = {}
+text = Hash.new
 file.each_line do |line|
   words = line.split 
   words.each do |word|
