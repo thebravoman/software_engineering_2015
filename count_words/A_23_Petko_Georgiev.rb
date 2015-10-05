@@ -16,4 +16,4 @@ while !words.empty?
 end
 
 sorted = result.sort_by { |name,times| [-times,name] }
-sorted.each { |name,times| puts "#{name} #{times}" } # Print the result
+sorted.each { |name,times| puts "#{name},#{times}" } # Print the result
