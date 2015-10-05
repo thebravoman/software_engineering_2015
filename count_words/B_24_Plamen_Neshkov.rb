@@ -1,4 +1,4 @@
-pattern = /\b[^\s]+\b/i
+pattern = /\b[\w-]+\b/i
 
 words = {}
 
