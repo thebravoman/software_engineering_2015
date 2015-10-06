@@ -13,9 +13,8 @@ res.each do |word|
 	histogram[word] += 1
 end
 
-histogram.each do |word, i|
-	histogram = histogram.sort_by{|word, i| [-i, word.length]}
-end
+histogram = histogram.sort_by{|word, i| [-i, word]}
+
 histogram.each do |word, i|
 	puts "#{word},#{i}"
 end
