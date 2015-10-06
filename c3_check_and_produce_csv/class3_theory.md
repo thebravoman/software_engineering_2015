@@ -60,6 +60,9 @@ end
 
 # Homework
 
+## Read the FMI lectures on Ruby.
+http://2014.fmi.ruby.bg/lectures
+
 ## Fix quadratic equations
 Fix all the quadratic equations so they return a correct result
 
@@ -69,7 +72,7 @@ How to checkout to a specific date in github
 ## Write a script for checking homeworks for counting words.
 
 1. Using the script for checking the quadratic equations implement a similar script for checking the homeworks for quadratic equations
-2. Submit the script in folder c3_check_and_produce_csv/check_counting_words
+2. Submit the script in folder ** hm_counting_words_check_script **
 3. The file must be named Class_Number_FirstName_LastName.rb
 4. The program should be run as 
 
@@ -88,6 +91,7 @@ solved = 0
 if result=="THIS SHOULD BE YOUR NEW EXPECTED RESULT"
 	solved = 1
 end
-
-###Deadline 2015-10-07 22:00
 ```
+
+### Deadline 
+2015-10-07 22:00
