@@ -11,7 +11,7 @@ CSV.open("result.csv","w") do |csv|
 		result = `ruby #{filename} text.txt`
 		solved = 0
 		
-		if result.gsub("\n", "") == "my,3,you,2,are,2,friend,2,brother,1,not,1"
+		if result.gsub("\n", "") == "my,3\n,you,2\n,are,2\n,friend,2\n,brother,1\n,not,1\n"
 			solved = 1
 		end
 
