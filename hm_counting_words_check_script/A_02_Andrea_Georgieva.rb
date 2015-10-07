@@ -1,7 +1,7 @@
 require 'csv'
 
 open('Sentence.txt', 'w') { |f|
-	f.puts"something meaningful."
+	f.puts"Something meaningful."
 }
 CSV.open("result.csv", "w") do |csv_array|
 	Dir.glob(ARGV[0]+"*").each do |filename|
@@ -9,7 +9,7 @@ CSV.open("result.csv", "w") do |csv_array|
 		result = `ruby #{filename} Sentence.txt`
 		solved = 0
 
-		if result.strip == "meaningful,1\nSomething,1"
+		if result.strip == "meaningful,1\nsomething,1"
 			solved = 1
 		end
 
