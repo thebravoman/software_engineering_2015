@@ -6,6 +6,7 @@ puts 'c = '
 c = gets.chomp.to_f
  
 D = b*b - 4*a*c
+
  
 if (D == 0)
    puts (-b/2/a).to_s
