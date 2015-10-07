@@ -1,23 +1,18 @@
-A = gets.chomp.to_f
-if (A == 0)
-   puts 'Oooops, not a quadratic equation.'
-   return
-end
-B = gets.chomp.to_f
+a = ARGV[0].to_i()
+b = ARGV[1].to_i()
+c = ARGV[2].to_i()
 
-C = gets.chomp.to_f
+d = b*b - 4*a*c
  
-D = B*B - 4*A*C
- 
-if (D < 0)
-puts #No real roots 
+if (d < 0)
+	puts #No real roots 
 
-elsif  (D == 0)
-   	x1 = (-B)/2*a
+elsif  (d == 0)
+   	x1 = (-b)/2*a
    	puts x1
 else
-      x1 = ( (-B) - (Math.sqrt(D) ) )/(2 * A)
-      x2 = ( (-B) + (Math.sqrt(D) ) )/(2 * A)
+      x1 = ( (-b) - (Math.sqrt(d) ) )/(2 * a)
+      x2 = ( (-b) + (Math.sqrt(d) ) )/(2 * a)
       puts "#{x1},#{x2}";
       
 end
