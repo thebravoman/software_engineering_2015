@@ -1,6 +1,5 @@
 require 'csv'
 
-
 CSV.open("result.csv","w") do |csv|
 	Dir.glob(ARGV[0]+"*").each do |filename|
     		name = filename.split("/").last.split("_")
@@ -15,7 +14,6 @@ CSV.open("result.csv","w") do |csv|
     		csv << [name[0],name[1],name[2],name[3].split(".").first,solved]
   	end
 end
-
 
 my_csv = CSV.read 'result.csv'
 my_csv.sort! { |a,b| (a[0] == b[0]) ? (a[1] <=> b[1]) : (a[0] <=> b[0]) }
