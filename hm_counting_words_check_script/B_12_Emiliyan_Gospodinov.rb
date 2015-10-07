@@ -1,5 +1,6 @@
 require 'csv'
 
+
 open('file.txt', 'w') { |f|
   f.puts"Three three three two two one"
 }
