@@ -1,17 +1,13 @@
 require 'csv'
 
-open('text.txt', 'w') { |f|
-  f.puts"You are not my friend you are my brother my friend"
-}
-
 CSV.open("result.csv","w") do |csv|
 	Dir.glob(ARGV[0]+"*").each do |filename|
 		name = filename.split("/").last.split("_")
 		p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
-		result = `ruby #{filename} text.txt`
+		result = `ruby #{filename} "You are not my friend you are my brother my friend"
 		solved = 0
 		
-		if result.gsub("\n", "") == "my,3,you,2,are,2,friend,2,brother,1,not,1"
+		if result.gsub("\n", "") == "my,3\n,you,2\n,are,2\n,friend,2\n,brother,1\n,not,1\n"
 			solved = 1
 		end
 
