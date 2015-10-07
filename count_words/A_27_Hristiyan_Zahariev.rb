@@ -17,7 +17,7 @@ wordsnum = wordsnum.sort_by{|word, number| word.downcase}
 wordsnum = wordsnum.sort_by{|word, number| [-number,word]}
 
 wordsnum.each do |word, number|
-  p #{word} + #{number}
+ puts word + ',' + number.to_s
 end
 
 
