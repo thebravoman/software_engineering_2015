@@ -8,7 +8,6 @@ CSV.open("result.csv","a") do |csv|
   Dir.glob(ARGV[0]+"*").each do |filename|
 	name = filename.split("/").last.split("_")
 	if name[0] != "sample.txt" 
-	  p name[0]
       p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
 	  result= `ruby #{filename} sample_text.txt`
 	  solved = 0
@@ -18,7 +17,6 @@ CSV.open("result.csv","a") do |csv|
 	  if result.gsub("\n","")== "as,2Doing,1easy,1homework,1is,1my,1this,1"
 		solved = 1
 	  end
-		puts result
 		csv << [name[0],name[1],name[2],name[3].split(".").first,solved]
     end
   end
