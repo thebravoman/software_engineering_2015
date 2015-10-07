@@ -1,7 +1,7 @@
 require 'csv'
 
 open('Sentence.txt', 'w') { |f|
-	f.puts"Something meaningful."
+	f.puts"something meaningful."
 }
 CSV.open("result.csv", "w") do |csv_array|
 	Dir.glob(ARGV[0]+"*").each do |filename|
