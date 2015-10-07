@@ -7,6 +7,7 @@ text.each_line { |line|
   words = line.downcase.split
 
   words.each { |word|
+    word = word.gsub(/[ ,.;:!?(){}]/, '')
     if count.has_key?(word)
       count[word] += 1
     else

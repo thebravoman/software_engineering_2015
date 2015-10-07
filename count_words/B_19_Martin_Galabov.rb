@@ -1,21 +1,21 @@
 
-WORDS_COUNT = {} 
+word_counter = {} 
 file = File.open(ARGV[0], "r")  
  
 file.each_line do |line| 
-  words = line.split  
+  words = line.downcase.split  
   words.each do |word| 
     word = word.gsub(/[,()'"]/,'') 
-    if WORDS_COUNT[word] 
-      WORDS_COUNT[word] += 1 
+    if word_counter.key?(word) 
+      word_counter[word] += 1 
     else 
-      WORDS_COUNT[word] = 1 
+      word_counter[word] = 1 
     end 
   end 
 end 
- 
-  
-WORDS_COUNT.sort {|a,b| a[1] <=> b[1]}.each do |key,value| 
+   
+word_counter = word_counter.sort_by{|key, value|[-value, key]} 
+word_counter.each do |key,value|
   puts "#{key},#{value}" 
  end 
 

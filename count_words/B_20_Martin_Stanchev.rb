@@ -14,6 +14,9 @@ file.each_line do |line|
   end
 end
 
-str.sort {|a,b| b[1] <=> a[1]}.each do |key, value|
-  puts "#{key},#{value}"
+str = str.sort_by{|index,key| index}
+str = str.sort_by {|index,key| [-key,index]}
+
+str.each do|index, key|	
+  puts "#{index},#{key.to_s}"
 end

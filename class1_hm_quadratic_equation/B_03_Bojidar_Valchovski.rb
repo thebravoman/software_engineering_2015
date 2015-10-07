@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
-a = ARGV[0].to_i;
-b = ARGV[1].to_i;
-c = ARGV[2].to_i;
+a = ARGV[0].to_f;
+b = ARGV[1].to_f;
+c = ARGV[2].to_f;
 	
 
 if b == 0
@@ -22,9 +22,9 @@ if b == 0
 			x1 = (-b + disc)/2*a
 			x2 = (-b - disc)/2*a
 			if x2 > x1
-				puts "#{x2},#{x1}"
-			else
 				puts "#{x1},#{x2}"
+			else
+				puts "#{x2},#{x1}"
 			end 
 		else
 
