@@ -15,7 +15,7 @@ CSV.open("result.csv", "w") do |csv_array|
 end
 
 my_csv = CSV.read 'result.csv'
-	my_csv.sort! od |a, b|
+	my_csv.sort! do |a, b|
 			(a[0] == b[0]) ? (a[1].to_i <=> b[1].to_i) : (a[0] <=> b[0])
 	end
 
