@@ -1,16 +1,26 @@
-а = ARGV[0].to_i
+require 'cmath'
+
+a = ARGV[0].to_i
 b = ARGV[1].to_i
 c = ARGV[2].to_i
 
-fRoot1 = (-b + Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
-fRoot2 = (-b - Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
+d = (b ** 2) - (4*a*c)
 
-if(fRoot1 == fRoot2)
-puts fRoot1
+if ( d >= 0 )
+
+	Root1 = (-b + Math.sqrt(d) ) / (2 * a)
+	Root2 = (-b - Math.sqrt(d) ) / (2 * a)
+
+	if (Root1 == Root2)
+	puts Root1
+	end
+	if (Root1 > Root2)
+	puts ("#{Root2},#{Root1}")
+	end
+	if (Root1 < Root2)
+	puts ("#{Root1},#{Root2}")
+	end
+
 else
-if(fRoot1 < fRoot2)
-puts("#{fRoot1},#{fRoot2}")
-else
-puts("#{fRoot2},#{fRoot1}")
-end
+puts "No real roots."
 end
