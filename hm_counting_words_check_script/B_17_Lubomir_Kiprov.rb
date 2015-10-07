@@ -1,5 +1,4 @@
 require 'csv'
-File.new("file.txt")
 File.open("file.txt", 'r+') {|f| f.write("How to checkout to a specific date in github") }
 CSV.open("result.csv", "w") do |csv|
 	Dir.glob(ARGV[0] + "*").each do |file|
