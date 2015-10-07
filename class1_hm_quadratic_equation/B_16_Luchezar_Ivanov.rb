@@ -6,7 +6,12 @@ d = (b*b) - (4*a*c)
 if d > 0
 	x1 = (-b + Math.sqrt(d)) / (2 * a)	
 	x2 = (-b - Math.sqrt(d)) / (2 * a)
-	puts "#{x1},#{x2}"
+	if x1 < x2
+    	puts "#{x1},#{x2}"
+  	else
+    	puts "#{x2},#{x1}"
+	end
+
 elsif d == 0
 	x = (-b) / (2 * a)
 
