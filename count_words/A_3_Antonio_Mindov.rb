@@ -3,7 +3,7 @@ file = File.open(ARGV.first, "r")
 contents = ""
 contents = file.read.downcase
 
-words = contents.gsub!(/[^\w\s]/, "").split
+words = contents.gsub(/[^a-z\s]/, "").split
 
 hash = Hash.new(0)
 
