@@ -17,6 +17,7 @@ end
 
 my_csv = CSV.read 'result.csv'
 my_csv.sort! {|a, b|[a[0], a[1].to_i] <=> [b[0], b[1].to_i]}
+
 CSV.open("result.csv", "w") do |csv|
-	my_csv.each {|element| csv << element}
+  my_csv.each {|element| csv << element}
 end
