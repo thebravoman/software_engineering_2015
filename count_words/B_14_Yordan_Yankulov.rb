@@ -1,7 +1,7 @@
-txt_file = File.open(ARGV[0])
-	help = Hash.new
+txt_file = File.open(ARGV[0],"r")
+help = Hash.new
 txt_file.each_line{ |line|
-the_words = line.split
+	the_words = line.split
 	the_words.each { |words|
 	if help.has_key?(words)
 		help[words] = help[words] + 1

@@ -5,11 +5,13 @@ f = File.open(filepath, "r")
 f.each_line do |line|
 	words = line.downcase.split
 	words.each do |w|
-		w = w.gsub(/[,()'"„“.?:]/,'')
+		w = w.gsub(/[ ,()'"„“.?!:; ]/,'')
+		if(w!='')
 		if(h[w])
 			h[w] += 1
 		else
 			h[w] = 1
+		end
 		end
 	end	
 end
