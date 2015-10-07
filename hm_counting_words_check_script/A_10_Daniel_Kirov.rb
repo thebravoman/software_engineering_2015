@@ -7,7 +7,7 @@ CSV.open("result.csv","w") do |csv|
 		result = `ruby #{filename} "You are not my friend you are my brother my friend"
 		solved = 0
 		
-		if result.gsub("\n", "") == "my,3\n,you,2\n,are,2\n,friend,2\n,brother,1\n,not,1\n"
+		if result == "my,3\nare,2\nfriend,2\nyou,2\nbrother,1\nnot,1\n"
 			solved = 1
 		end
 
