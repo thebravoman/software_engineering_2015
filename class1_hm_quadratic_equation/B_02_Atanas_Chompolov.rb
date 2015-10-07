@@ -5,7 +5,7 @@ def quadraticFormula(a, b, c)
   fRoot1 = (-b + Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
   fRoot2 = (-b - Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
 
-  printf("x1=%.2f, x2=%.2f\n", fRoot1, fRoot2)
+  printf("%.2f,%.2f\n", fRoot1, fRoot2)
 
 end
 

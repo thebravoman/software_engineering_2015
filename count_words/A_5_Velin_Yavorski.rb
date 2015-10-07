@@ -14,7 +14,10 @@ f.each_line do |line|
 	end	
 end
 
-h.sort{|a, b| a <=> b}.sort{|a, b| b[1] <=> a[1]}.each do |key, value|	
-	puts "#{key},#{value}"
-end
+sorted_hash = h.sort_by { |key, value| [ -value, key ] } 
+
+sorted_hash.each {|key, value| puts "#{key},#{value}"}
+
+  
+
 

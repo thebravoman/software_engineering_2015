@@ -11,7 +11,7 @@ elsif d == 0
           puts "#{x}"
     else
               x1 = (-b + Math.sqrt(d))/(2*a)
-              x2 = (b + Math.sqrt(d))/(2*a)
+              x2 = (-b - Math.sqrt(d))/(2*a)
      
             if x1 < x2 
             	puts "#{x1},#{x2}"

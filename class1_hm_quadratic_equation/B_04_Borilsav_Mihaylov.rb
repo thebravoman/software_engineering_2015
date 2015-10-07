@@ -14,7 +14,8 @@ elsif d < 0
 
 else d > 0
 
-	puts x1 = -b + Math.sqrt(d) / (2 * a)
-	puts x2 = -b - Math.sqrt(d) / (2 * a)	
+	x1 = (-b + Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
+	x2 = (-b - Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
+end 	
 
-end 	 
+printf("%.2f,%.2f\n", x1, x2)

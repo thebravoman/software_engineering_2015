@@ -11,8 +11,8 @@ elsif d==0;
     x= -b/(2*a);
     puts "#{x}";
 else
-    x1= -b+Math.sqrt(d)/(2*a)
-    x2= -b-Math.sqrt(d)/(2*a)
+    x1= (-b+Math.sqrt(d))/(2*a)
+    x2= (-b-Math.sqrt(d))/(2*a)
         if (x1 < x2)
     puts "#{x1},#{x2}"
         elsif
