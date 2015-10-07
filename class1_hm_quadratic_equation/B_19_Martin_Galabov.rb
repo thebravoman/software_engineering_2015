@@ -9,7 +9,7 @@
 	elsif discr > 0
 	x1 = (-b + Math.sqrt(discr))/2 * a
 	x2 = (-b - Math.sqrt(discr))/2 * a
-	puts x1,",",x2 
+	puts "#{x1},#{x2}"
 	end
 
 	

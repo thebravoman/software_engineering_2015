@@ -80,7 +80,7 @@ How to checkout to a specific date in github
 
 and should produce a result.csv file in the folder
 
-This are the things that should be changed in the already existing program
+These are the things that should be changed in the already existing program
 
 ```ruby
 result= `ruby #{filename} YOU SHOULD CHANGE HOW THE PROGRAM FOR COUNTING WORDS IS EXECUTED`
