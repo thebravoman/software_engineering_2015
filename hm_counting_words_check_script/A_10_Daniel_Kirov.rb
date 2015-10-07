@@ -10,7 +10,7 @@ CSV.open("result.csv","w") do |csv|
 		p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
 		result = `ruby #{filename} text.txt`
 		solved = 0
-		if result.gsub("\n", "") == "you,3,are,3,not,1,my,3,friend,2,brother,1"
+		if result.gsub("\n", "") == "my,3,you,2,are,2,friend,2,brother,1,not,1"
 			solved = 1
 		end
 
