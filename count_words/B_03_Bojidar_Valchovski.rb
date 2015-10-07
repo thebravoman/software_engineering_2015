@@ -7,7 +7,7 @@ file = File.open(path, "r")	# Access the specified file in read-only mode
 wordslist = file.read.downcase	# Saves the content in the file in our wordslist
 wordslist = wordslist.split(" ")	# Removes spaces between the words
 wordslist.each do |word|	# Iterates through our wordslist array, removing any useless characters and counting our words
-  word = word.gsub(/[,()'"]/,'')
+  word = word.gsub(/[,()'".]/,'')
   if words[word]
     words[word] += 1
   else
