@@ -13,8 +13,13 @@ if D < 0
 elsif D > 0
   x1 = ((-b) + Math.sqrt(D)) / (2*a)
   x2 = ((-b) - Math.sqrt(D)) / (2*a)
-  puts "#{x1},#{x2}"
-elsif D == 0
+  
+  if x2 > x1
+    puts "#{x1},#{x2}"
+  else puts "#{x2},#{x1}"
+  end
+  
+  elsif D == 0
   x = (-b) / (2*a)
   puts x
 end
