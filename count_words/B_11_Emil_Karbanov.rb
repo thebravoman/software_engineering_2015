@@ -12,7 +12,7 @@ f.each_line do |line|
   end
 end
 
-h.sort{|a,b| a[1]<=>b[1]}.each { |elem|
+h.sort{|a,b| b[1]<=>a[1]}.each { |elem|
   puts "#{elem[0]},#{elem[1]}"
 }
 
