@@ -1,21 +1,20 @@
 require 'csv'
 
-open('Readme.txt', 'w') { |f|
-	f.puts"Ada Lovelace created the first algorithm. first algorithm. created"
+open('the_Example.txt', 'w+') { |f|
+	f.puts"have a a very very nice day"
 }
 
 CSV.open("result.csv", "w") do |csv_array|
 	Dir.glob(ARGV[0]+"*").each do |filename|
 		name = filename.split("/").last.split("_")
-		result= `ruby #{filename} Readme.txt`
+		p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
+		result= `ruby #{filename} the_Example.txt`
 		
 		solved = 0
-
-		if result.strip.downcase=="algorithm,2\ncreated,2\nfirst,2\nada,1\nlovelace,1\nthe,1"
+		if result.gsub("\n","")=="a,2very,2day,1have,1nice,1"
 			solved = 1
-		else
-			p result.strip
 		end
+		p "#{solved}"
 		csv_array << [name[0],name[1],name[2],name[3].split(".").first,solved]
 	end
 end
@@ -31,3 +30,12 @@ CSV.open("result.csv","w") do |csv_array|
 		csv_array << row
 	end
 end
+
+
+
+
+
+
+
+
+
