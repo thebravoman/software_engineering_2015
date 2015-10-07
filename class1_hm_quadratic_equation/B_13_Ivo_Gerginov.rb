@@ -5,13 +5,15 @@ D =  (b*b) - (4*a*c)
 x1 = (-b - Math.sqrt(D))/2*a 
 x2 = (-b + Math.sqrt(D))/2*a
 
-	if D > 0 then
-		if x1 > x2 then
+	if D > 0
+	
+		if x1 > x2 
 		puts "#{x1},#{x2}"
 		else puts "#{x2},#{x1}"
-	elsif D == 0 then
+		end
+	
+	elsif D == 0 
 	puts "#{-b/2*a}"
 	else
 		puts "equation has no roots"
 end
-puts " "
