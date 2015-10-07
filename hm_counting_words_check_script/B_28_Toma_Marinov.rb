@@ -1,6 +1,6 @@
 require 'csv'
 
-File.new("words.txt")
+File.new("words.txt", "w")
 File.open("words.txt", "w") { |file|
 	file.puts "and now we all...and then we all"
 }
