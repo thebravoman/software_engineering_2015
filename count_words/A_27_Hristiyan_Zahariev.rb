@@ -8,7 +8,7 @@ wordsnum = Hash.new(0)
 filename.each_line do |line|
   w = line.downcase.split(" ") 
   w.each do |word|
-	word = word.gsub(/[,()'",,",.*!\^^?:]/,'')
+	word = word.gsub(/[,()'".]/,'')
 	wordsnum[word] = wordsnum[word] + 1
   end
 end
