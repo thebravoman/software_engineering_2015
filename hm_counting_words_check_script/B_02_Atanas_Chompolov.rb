@@ -18,6 +18,7 @@ end
 my_csv = CSV.read 'result.csv'
 my_csv.sort! { |a,b| (a[0] == b[0]) ? (a[1] <=> b[1]) : (a[0] <=> b[0]) }
 
+
 CSV.open("result.csv", "w") do |csv|
         my_csv.each {|element| csv << element}
 end
