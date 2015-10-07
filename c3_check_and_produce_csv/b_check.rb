@@ -2,7 +2,7 @@ require 'csv'
 
 CSV.open("result.csv","w") do |csv|
 	Dir.glob(ARGV[0]+"*").each do |filename|
-		name = filename.split("/").last.split("_")
+		name = filename.split("\\").last.split("_")
 		p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
 		result= `ruby #{filename} 1 3 2`
 		solved = 0
