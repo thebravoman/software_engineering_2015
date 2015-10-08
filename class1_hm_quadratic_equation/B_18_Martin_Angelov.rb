@@ -3,8 +3,8 @@ b = ARGV[1].to_i
 c = ARGV[2].to_i
 	d=(b*b)-(4*a*c)
 if 	d>0
-	  x1=(-b+Math.sqrt(d))/2*a
-	  x2=(-b-Math.sqrt(d))/2*a
+	  x1= (-b - Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
+	  x2= (-b + Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
 	 
 	  puts "#{x1},#{x2}"
 
