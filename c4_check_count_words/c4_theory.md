@@ -15,11 +15,14 @@ git log -p a2_check.rb
 # Improve of the script from class 3 so that it could work for all cases. The new version is commited in c3
 
 ## Stack trace for a mistake
+
+```ruby
 a2_check.rb:6:in `block (2 levels) in <main>`: undefined method `split` for nil:NilClass (NoMethodError)
 	from a2_check.rb:4:in `each`
 	from a2_check.rb:4:in `block in <main>`
 	from /home/kireto/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/csv.rb:1268:in `open`
 	from a2_check.rb:3:in `<main>`
+```
 
 ## Check for the file format
 ```ruby
