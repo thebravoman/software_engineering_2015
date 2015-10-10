@@ -25,6 +25,7 @@ a2_check.rb:6:in `block (2 levels) in <main>`: undefined method `split` for nil:
 ```
 
 ## Check for the file format
+The files in the folder could be named in different ways. We should process only the files that are in the required name format
 ```ruby
 	name = filename.split("/").last.split("_")
 	if name.size == 4
@@ -33,6 +34,7 @@ a2_check.rb:6:in `block (2 levels) in <main>`: undefined method `split` for nil:
 ```
 
 ## Remove duplicates from the result.csv
+There are files with extension .rb~ in the folder. Remove duplicates so that only one person appears in the csv.
 
 ```ruby
 checked_files = []
