@@ -52,7 +52,7 @@ Commit a new version to the old program.
 ### Deadline
 2015-30-09 22:00
 
-## Task 2
+## Verion 1 of Counting Words
 2. Create a program for counting words in a text file. Use method split. The name of the file is passed as first command line argument.
 
 The program is run as:
