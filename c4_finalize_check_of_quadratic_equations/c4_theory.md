@@ -84,7 +84,6 @@ As a result the script should produce the following output:
 
 The last line of the output must contain the word "marks", followed by a number. The number is the sum of all the occurences of the puctuation marks. If there are no puctuation marks this line should be skipped.
 
-
 ### Submit
 As a new version of the previous program for counting words.
 
