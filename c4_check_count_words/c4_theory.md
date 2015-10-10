@@ -1,11 +1,15 @@
+# Check the quadratic equations with a script and continue to checking the scripts for counting words
 
-## Check before a certain date
+## Git usage commands
+Here are some of the new and usefull commands for using git
+
+### Check before a certain date
 git log --before="2015-10-07 22:00"
 
-## Check log on specific file
+### Check log on specific file
 git log a2_check.rb
 
-## Check change on specific file
+### Check change on specific file
 git log -p a2_check.rb
 
 # Improve of the script from class 3 so that it could work for all cases. The new version is commited in c3
