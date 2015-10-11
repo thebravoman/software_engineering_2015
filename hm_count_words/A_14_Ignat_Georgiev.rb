@@ -6,7 +6,7 @@ content = file.read#reading the file into the string
 content=content.downcase#downcasing all the words
 content=content.split(" ")#spliting the string into words
 content.each do |word|#counting the words 
-	marks += word.count(". , ! ? : ; -  , , , [ ] „ “ * / \ ")#counting the marks in every word
+	marks += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")#counting the marks in every word
 	word =word.gsub(/[,()'"„“.*?:;]/, '')
 	count[word] += 1
 end
