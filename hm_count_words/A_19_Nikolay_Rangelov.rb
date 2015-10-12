@@ -33,4 +33,6 @@ h_words.each do |word, freq|
 	puts word+','+freq.to_s
 end
 
-puts "marks,#{counter}"
+if not counter==0
+	puts "\"marks\",#{counter}"
+end
