@@ -28,4 +28,6 @@ str.each do|index, key|
 
 end
 
-puts "marks,"+"#{marks}"
+if marks != 0
+  puts "marks,"+"#{marks}"
+end
