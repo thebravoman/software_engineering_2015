@@ -1,8 +1,10 @@
-#the_file='/home/bobi/Desktop/file.txt'
+file = "Of friendship on inhabiting, diminution discovered as."
 h = Hash.new
-f = File.open(ARGV[0], 'r')
-f.each_line { |line| #read each line in the file
-  
+
+marks = file.gsub(/\w/,"").split
+
+file.each_line { |line|
+	
 	words = line.split
 	words.each { |w|
 	
@@ -16,5 +18,10 @@ f.each_line { |line| #read each line in the file
 }
 
 h.sort{|a,b| a[1]<=>b[1]}.each { |elem|
-  puts "'#{elem[0]}' : #{elem[1]}"
+  	puts "#{elem[0]},#{elem[1]}"
 }
+
+marks_str=marks.join('').length
+if (marks!=0)
+	puts "marks,#{marks_str}"
+end
