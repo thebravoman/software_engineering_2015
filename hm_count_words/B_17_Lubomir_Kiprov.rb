@@ -38,7 +38,7 @@ wordhash.each_with_index do |(k, v)|
   puts "#{k},#{v}"
 end
 
-print '"marks",sum(',countmarks,')'
+print "marks",countmarks
 puts
 
 
