@@ -25,4 +25,4 @@ end
 w_count.sort{|a,b| b[1]<=>a[1]}.each { |e|
   puts "#{e[0]},#{e[1]}"
 }
-puts "marks,#{marks}"
+puts "\"marks\",#{marks}"
