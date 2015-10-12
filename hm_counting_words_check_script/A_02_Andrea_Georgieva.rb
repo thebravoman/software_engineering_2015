@@ -1,16 +1,15 @@
 require 'csv'
 
-File.open("file.txt", "w") do |file|
-	file.write "Am I trully what I think I am?"
-end
-
+open('Sentence.txt', 'w') { |f|
+	f.puts"Something meaningful."
+}
 CSV.open("result.csv", "w") do |csv_array|
 	Dir.glob(ARGV[0]+"*").each do |filename|
 		name = filename.split("/").last.split("_")
-		result = `ruby #{filename} file.txt`
+		result = `ruby #{filename} Sentence.txt`
 		solved = 0
 
-		if result.strip.downcase == "i,3\nam,2\nthink,1\ntrully,1\nwhat,1"
+		if result.strip == "meaningful,1\nsomething,1"
 			solved = 1
 		end
 
