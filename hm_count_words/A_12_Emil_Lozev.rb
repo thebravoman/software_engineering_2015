@@ -5,7 +5,7 @@ res = open(filename).read.split(' ')
 marks_sum = 0
 
 res.each do |word|
-	marks_sum += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")
+	marks_sum += word.count(". , ! ? :  ; = + -  _ ' \"[ ] ( ) { } „ “ * / \ ")
 end
 
 res.map!{|item| item.gsub(/\p{^Alnum}/, '') }
