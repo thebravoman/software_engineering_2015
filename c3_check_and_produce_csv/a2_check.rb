@@ -1,5 +1,6 @@
 require 'csv'
 
+<<<<<<< HEAD
 namelist = Array.new
 
 CSV.open("result.csv", "w") do |csv_array|
@@ -22,6 +23,30 @@ CSV.open("result.csv", "w") do |csv_array|
 	  			else namelist = (f_name + l_name)
 	  		end
 	  	end
+=======
+checked_files = []
+
+CSV.open("result.csv", "w") do |csv_array|
+	Dir.glob(ARGV[0]+"*").each do |filename|
+			name = filename.split("/").last.split("_")
+			if name.size == 4
+				last_name = name[3].split(".").first
+				first_name = name[2]
+				number = name[1]
+				clazz = name[0]
+				if !checked_files.include? [first_name,last_name]
+					p "#{clazz},#{number},#{first_name},#{last_name}"
+					result= `ruby #{filename} 1 4 2`
+					p result
+					solved = 0
+					if result.gsub(/\s+/, "")=="-3.414213562373095,-0.5857864376269049"
+						solved = 1
+					end
+					csv_array << [clazz,number,first_name,last_name,solved]
+					checked_files << [first_name, last_name]
+				end
+		end
+>>>>>>> 5aa1a64bab514539149adaed80cd0027f62b95ac
 	end
 end
 
