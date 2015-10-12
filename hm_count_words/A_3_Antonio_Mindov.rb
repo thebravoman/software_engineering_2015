@@ -17,4 +17,5 @@ hash.each do |word, count|
 	puts word + "," + count.to_s
 end
 
-puts '"marks",' + marks.length.to_s
+if marks.length > 0
+	puts '"marks",' + marks.length.to_s
