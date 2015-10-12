@@ -1,21 +1,28 @@
-file_path = ARGV[0]
-new_Hash = Hash.new
-file = File.open(file_path, "r")
+file = File.open(ARGV[0])
+content = String.new 
+count = Hash.new(0)
+content = file.read.downcase.split(" ")
+marks = 0
 
 
-
-file.each_line do |line|
-  line.downcase.split.each do |word|
-    word = word.gsub(/[,()'"„“.?:]/,'')
-    
-    if(new_Hash[word])
-      new_Hash[word] += 1
-    else
-      new_Hash[word] = 1
-    end
-  end
+content.each do |word|
+	marks += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")
+	word = word.gsub(/[,()'"„“.*?:;]/, '')
+	count[word] += 1
 end
 
-new_Hash.sort{|k, c| k <=> c}.sort{|k, c| c[1] <=> k[1]}.each do |key, occurrences|
-  puts "#{key},#{occurrences}"
+
+count = count.sort_by {|word,num| word.downcase}
+count = count.sort_by {|word,num| [-num,word]}
+
+
+count.each do|word, num|
+	
+	puts "#{word},#{num.to_s}"
 end
+
+
+if marks != 0
+	puts "marks,#{marks.to_s}"
+end
+
