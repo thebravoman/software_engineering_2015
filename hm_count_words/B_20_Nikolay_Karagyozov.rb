@@ -4,7 +4,7 @@ marks = []
 file = File.new(ARGV[0], "r")
 while line = file.gets
   words = line.downcase.scan(/\w+/)
-  marks.push(line.scan(/[^\w\s]/).size)
+  marks.push(line.scan(/[[:punct:]]/).size)
 
   words.each { |word| word_list[word] += 1 }
 end
