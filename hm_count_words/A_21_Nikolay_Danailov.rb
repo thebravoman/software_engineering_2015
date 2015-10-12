@@ -5,7 +5,8 @@ File.open(ARGV[0]) do |file|
 		text += line
 	end
 
-	words = text.downcase.gsub(/[^a-z'\n- ]/, '').split(" ")
+	marks = text.scan(/[,.!?:;"()\[\]]/).count
+	words = text.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
 	word_counts = Hash.new(0)
 
 	words.each do |word|
@@ -16,5 +17,9 @@ File.open(ARGV[0]) do |file|
 	
 	word_counts.each do |word, count|
 		puts "#{word},#{count}"
+	end
+
+	if marks > 0
+		puts "marks,#{marks}"
 	end
 end
