@@ -1,4 +1,5 @@
 words = Hash.new(0)
+total_marks_count = 0
 
 File.open(ARGV[0], "r") do |f|
   f.each_line do |line|
@@ -6,6 +7,7 @@ File.open(ARGV[0], "r") do |f|
     current_line_words.each do |word|
       words[word] += 1
     end
+    total_marks_count += line.scan(/[[:punct:]]/).count
   end
 end
 
@@ -14,4 +16,8 @@ sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
 
 sorted_words.each do |word, occurences|
   puts "#{word},#{occurences}"
+end
+
+if total_marks_count > 0
+  puts "\"marks\",#{total_marks_count}"
 end
