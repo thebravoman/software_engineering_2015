@@ -22,5 +22,5 @@ end
 marks_str=marks.join('').length
 
 if (marks!=0)
-     print "\"marks\",(#{marks_str})\n"
+     print "\"marks\",#{marks_str}\n"
 end
