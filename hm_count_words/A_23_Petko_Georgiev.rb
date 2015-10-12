@@ -2,11 +2,11 @@ file = File.open(ARGV[0],"r") # Open the file
 text = ""
 result = Hash.new ( "words" )
 while ( line = file.gets ) # Read the text
-	text += line
+	text += line.downcase
 end
 file.close # Close the file
 
-words = text.split(" ")
+words = text.split(/\W+/)
 
 while !words.empty?
 	word = words.first
