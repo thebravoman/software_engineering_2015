@@ -1,7 +1,7 @@
 require 'csv'
 
 File.open("file.txt", "w") do |file|
-	file.write "Am I trully what I think I am?"
+	file.write "I am idiot and i know it."
 end
 
 CSV.open("result.csv", "w") do |csv_array|
@@ -10,7 +10,7 @@ CSV.open("result.csv", "w") do |csv_array|
 		result = `ruby #{filename} file.txt`
 		solved = 0
 
-		if result.strip.downcase == "i,3\nam,2\nthink,1\ntrully,1\nwhat,1"
+		if result.strip.downcase == "i,2am,2and,2idiot,1it,1know,1"
 			solved = 1
 		end
 

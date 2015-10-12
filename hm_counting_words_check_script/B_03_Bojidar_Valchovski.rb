@@ -6,20 +6,18 @@ open('sample_text.txt', 'w') { |f|
 
 CSV.open("result.csv","a") do |csv|
   Dir.glob(ARGV[0]+"*").each do |filename|
-	name = filename.split("/").last.split("_")
-	if name[0] != "sample.txt" 
-	  p name[0]
+    name = filename.split("/").last.split("_")
+    if name[0] != "sample.txt" 
       p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
-	  result= `ruby #{filename} sample_text.txt`
-	  solved = 0
-	  if result.gsub("\n","")=="as,2doing,1easy,1homework,1is,1my,1this,1"
-	    solved = 1
-	  end
-	  if result.gsub("\n","")== "as,2Doing,1easy,1homework,1is,1my,1this,1"
-		solved = 1
-	  end
-		puts result
-		csv << [name[0],name[1],name[2],name[3].split(".").first,solved]
+      result= `ruby #{filename} sample_text.txt`
+      solved = 0
+      if result.gsub("\n","")=="as,2doing,1easy,1homework,1is,1my,1this,1"
+        solved = 1
+      end
+      if result.gsub("\n","")== "as,2Doing,1easy,1homework,1is,1my,1this,1"
+        solved = 1
+      end
+    csv << [name[0],name[1],name[2],name[3].split(".").first,solved]
     end
   end
 end
