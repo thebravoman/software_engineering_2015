@@ -24,5 +24,5 @@ word.sort{|b,a| a[1]<=>b[1]}.each {
     puts "#{elements[0]},#{elements[1]}"
 }
 if punctuation_marks > 0
-puts "marks,#{punctuation_marks}"
+puts '"marks"'",#{punctuation_marks}"
 end
