@@ -1,12 +1,17 @@
-text = IO.read(ARGV[0]).downsize.gsub(/[^\w\s]/, '').split(" ")
-unique_text = text.uniq.sort { |a,b|
-  if text.count(a) == text.count(b)
+text = IO.read(ARGV[0]).downcase
+marks = text.count("^a-z0-9\s\n")
+words = text.gsub(/[^a-z\s]/,"").split(" ")
+unique_text = words.uniq.sort { |a,b|
+  if words.count(a) == words.count(b)
     a <=> b
   else
-    text.count(b) <=> text.count(a)
+    words.count(b) <=> words.count(a)
   end
 }
 unique_text.each do |word|
-  word_count = text.count(word)
+  word_count = words.count(word)
   puts word + ",#{word_count}"
+end
+if marks > 0
+  puts "marks,#{marks}"
 end
