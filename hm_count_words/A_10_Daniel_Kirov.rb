@@ -25,4 +25,3 @@ end
   if symb_count != 0
 	puts "\"marks\",#{symb_count}" 
   end
-  
