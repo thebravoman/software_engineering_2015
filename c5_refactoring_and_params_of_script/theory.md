@@ -14,6 +14,15 @@ Extract behaviours into methods from a2_check.
  - valid_names?
  - remove_file_ext
 
+## Make the program work for both homeworks - quadratic and count words
+
+This is how it should be executed for quadratic
+
+> ruby a2_check.rb ../hm_quadratic_equation/ 1 4 2 -3.414213562373095,-0.5857864376269049
+
+This is how it should be executed for count_words
+
+> ruby a2_check.rb ../hm_count_words/ file.txt a,1dd,2
 
  
  
