@@ -30,7 +30,8 @@ if a != 0
 		if (x_1>x_2)
 		print "#{x_1},#{x_2}"
 		elsif (x_2>x_1)
-		print "{x_2},#{x_1}"
+			print "{x_2},#{x_1}"
+		end
 	end
 end
 
