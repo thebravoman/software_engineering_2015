@@ -11,7 +11,7 @@ CSV.open("result.csv","a") do |csv|
  Dir.glob(ARGV[0]+"*").each do |filename| 
     name = filename.split("/").last.split("_") 
     p "#{name[0]},#{name[1]},#{name[2]},#{name[3].split(".").first}"
-    result=`ruby #{filename} MAIKATI.txt`
+    result=`ruby #{filename} FILE.txt`
         solved = 0 
         if result == "do,34\nmahna,6\nde,5\ndoo,3\nbe,1\ndoodle,1\n" 
             solved = 1 
