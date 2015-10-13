@@ -8,7 +8,7 @@ symb_count = 0
 f.each do |word|
   symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"*-+/")
   
-  word = word.gsub(/[^a-z'\n- ]/, ' ').split(" ")
+  word = word.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
 	
   word.each do |count|
     h[count] = h[count] + 1
