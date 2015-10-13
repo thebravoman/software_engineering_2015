@@ -6,7 +6,7 @@ h = Hash.new(0)
 symb_count = 0
 
 f.each do |word|
-  symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
+  symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"*-+/")
   
   word = word.gsub(/[^a-z'\n- ]/, ' ').split(" ")
 	
