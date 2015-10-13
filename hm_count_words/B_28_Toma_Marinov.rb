@@ -22,4 +22,6 @@ new_hash.each do |key, value|
 	puts "#{key},#{value}"
 end
 
-puts "\"marks\",#{count}"
+if count != 0
+	puts "\"marks\",#{count}"
+end
