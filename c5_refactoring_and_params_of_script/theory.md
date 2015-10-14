@@ -63,6 +63,9 @@ The result file is sorted by cost ASC.
 ## Deadline 
 Submit the program in folder hm_csv_process no later than 2015-10-19 22:00
 
+## Exam
+This or veryyyyy similar task will be on the EXAM..
+
 
 
 
