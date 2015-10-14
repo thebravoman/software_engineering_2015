@@ -93,9 +93,9 @@ User the ARGV array as
 https://github.com/thebravoman/software_engineering_2015/blob/master/c3_check_and_produce_csv/a2_check.rb
 
 ```ruby
- CSV.open("result.csv", "w") do |csv|
-	  my_csv.each {|element| csv << element}
-	end
+CSV.open("result.csv", "w") do |csv|
+  my_csv.each {|element| csv << element}
+end
 ```
 
 
