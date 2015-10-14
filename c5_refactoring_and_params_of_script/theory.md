@@ -60,6 +60,10 @@ min_value <= cost <= max_value
 
 The result file is sorted by cost ASC.
 
+> ruby my_program.rb filter_costs 10 100
+
+This would produce a CSV file only with the lines from the original that have a cost between 10 and 100
+
 ## Deadline 
 Submit the program in folder hm_csv_process no later than 2015-10-19 22:00
 
