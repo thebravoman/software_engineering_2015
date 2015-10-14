@@ -66,6 +66,38 @@ Submit the program in folder hm_csv_process no later than 2015-10-19 22:00
 ## Exam
 This or veryyyyy similar task will be on the EXAM..
 
+## Where to start
+
+### Reading CSV and sorting it
+Start from how do you read CSV. Check out https://github.com/thebravoman/software_engineering_2015/blob/master/c3_check_and_produce_csv/a2_check.rb
+and specifically this code:
+
+```ruby
+def sort_result
+	my_csv = CSV.read 'result.csv'
+	my_csv.sort! { |a,b| [a[0],a[1].to_i] <=> [b[0],b[1].to_i] }
+	CSV.open("result.csv", "w") do |csv|
+	  my_csv.each {|element| csv << element}
+	end
+end
+```
+### Processing command line arguments
+https://github.com/thebravoman/software_engineering_2015/blob/master/c3_check_and_produce_csv/a2_check.rb
+User the ARGV array as
+
+```ruby
+ ARGV[0]
+```
+
+### Writing CSV files
+https://github.com/thebravoman/software_engineering_2015/blob/master/c3_check_and_produce_csv/a2_check.rb
+
+```ruby
+ CSV.open("result.csv", "w") do |csv|
+	  my_csv.each {|element| csv << element}
+	end
+```
+
 
 
 
