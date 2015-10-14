@@ -29,8 +29,9 @@ This is how it should be executed for count_words
 # CSV files
 You are given a CSV file with information about different purchases on different dates for different sums. The format is the following:
 
-|Item1|Date1| Cost1 |
+|Item |Date | Cost |
 |-----|-----|-------|
+|Item1|Date1| Cost1 |
 |Item2|Date2| Cost2 |
 
 Items, Dates and costs are not sorted in any particular order
