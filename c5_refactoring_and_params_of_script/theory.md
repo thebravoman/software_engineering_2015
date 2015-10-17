@@ -27,9 +27,9 @@ This is how it should be executed for count_words
 # Homeworks
 
 # CSV files
-You are given a CSV file with information about different purchases on different dates for different sums. The format is the following:
+You are given a CSV file as a command line argument with information about different purchases on different dates for different sums. The format is the following:
 
-|Item |Date | Cost |
+|Item |Date | Cost  |
 |-----|-----|-------|
 |Item1|Date1| Cost1 |
 |Item2|Date2| Cost2 |
@@ -40,7 +40,7 @@ Date is in the format YYYY-MM-DD (2015-10-14)
 Implement a program that processes the file and produces a file called result.csv.
 The program has the following usage:
 
-> ruby my_program [COMMAND] [OPTIONS]
+> ruby my_program INPUT_FILE [COMMAND] [OPTIONS]
 
 The different COMMANDS and OPTIONS are
 
@@ -50,7 +50,7 @@ Sorts the file by the given colum in the given order.
  - column_number is zero based
  - order is ASC or DESC
 
-> ruby my_program.rb sort 0 ASC
+> ruby my_program.rb file.csv sort 0 ASC
 
 should sort the file by first column in ascending order
 
@@ -60,7 +60,7 @@ min_value <= cost <= max_value
 
 The result file is sorted by cost ASC.
 
-> ruby my_program.rb filter_costs 10 100
+> ruby my_program.rb file.csv filter_costs 10 100
 
 This would produce a CSV file only with the lines from the original that have a cost between 10 and 100
 
@@ -68,7 +68,7 @@ This would produce a CSV file only with the lines from the original that have a 
 Submit the program in folder hm_csv_process no later than 2015-10-19 22:00
 
 ## Exam
-This or veryyyyy similar task will be on the EXAM..
+This or veryyyyy similar tasks that will be on the EXAM..
 
 ## Where to start
 
