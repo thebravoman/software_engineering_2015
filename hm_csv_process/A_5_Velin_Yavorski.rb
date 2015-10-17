@@ -4,23 +4,7 @@ input_file = ARGV[0]
 command = ARGV[1].to_s
 option1 = ARGV[2]
 option2 = ARGV[3]
-=begin
-items = ["Item","Coca-Cola","Fanta","Sprite","Nestea"]
-dates = ["Date","2015-10-15","2015-10-17","2015-11-01","2015-10-27"]
-costs = ["Cost",1, 7, 2, 4]
 
-data_out = []
-len = items.length-1
-
-CSV.open('purchases.csv', 'w') {|csv|}
-
-0.upto(len).each do |n|
-  CSV.open('purchases.csv','a+') do |csv|
-    data_out = [items[n], dates[n], costs[n]]
-    csv << data_out
-  end
-end
-=end
 my_csv = CSV.read input_file
 
 if(command.eql? "sort")
