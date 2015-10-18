@@ -8,7 +8,13 @@ if command == "sort"
 	sort_column = ARGV[2].to_i
 	sort_order = ARGV[3]
 
-	csv = csv.sort_by { |item| item[sort_column] }
+	csv = csv.sort_by do |item|
+		if sort_column == 2 #because the costs should be treated as numbers
+			item[sort_column].to_i
+		else
+			item[sort_column].downcase
+		end
+	end
 
 	if sort_order == "DESC"
 		csv = csv.reverse
