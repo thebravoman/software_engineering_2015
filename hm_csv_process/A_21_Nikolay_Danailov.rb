@@ -23,7 +23,7 @@ command = ARGV[1]
 csv = CSV.read input_file
 
 if command == SORT_COMMAND
-	sort_column = ARGV[2].to_i
+  sort_column = ARGV[2].to_i
 	sort_order = ARGV[3]
 	csv = sort_by_column csv, sort_column
 
