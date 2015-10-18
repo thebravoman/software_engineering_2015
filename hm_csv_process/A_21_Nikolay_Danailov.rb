@@ -10,9 +10,14 @@ if command == "sort"
 
 	csv = csv.sort_by { |item| item[sort_column] }
 
-	if sort_order === "DESC"
+	if sort_order == "DESC"
 		csv = csv.reverse
 	end
+elsif command == "filter_costs"
+	min_cost = ARGV[2].to_i
+	max_cost = ARGV[3].to_i
+
+	csv = csv.select { |item| item[2].to_i >= min_cost and item[2].to_i <= max_cost }
 end
 
 p csv
