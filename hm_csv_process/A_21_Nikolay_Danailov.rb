@@ -34,7 +34,7 @@ elsif command == FILTER_COMMAND
   min_cost = ARGV[2].to_i
   max_cost = ARGV[3].to_i
   csv = filter_file csv, min_cost, max_cost
-  csv = csv.sort_by {|line| line[0].downcase}
+  csv = csv.sort_by {|line| line[2].to_i}
 end
 
 CSV.open(RESULT_FILE, "w") do |line|
