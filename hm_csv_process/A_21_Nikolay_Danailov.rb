@@ -24,6 +24,11 @@ elsif command == "filter_costs"
 	max_cost = ARGV[3].to_i
 
 	csv = csv.select { |item| item[2].to_i >= min_cost and item[2].to_i <= max_cost }
+	csv = csv.sort_by {|line| line[0].downcase}
+end
+
+CSV.open("result.csv", "w") do |line|
+	csv.each {|csv_item| line << csv_item}
 end
 
 p csv
