@@ -31,10 +31,17 @@ if command == SORT_COMMAND
 		csv = csv.reverse
 	end
 elsif command == FILTER_COMMAND
+<<<<<<< HEAD
 	min_cost = ARGV[2].to_i
 	max_cost = ARGV[3].to_i
 	csv = filter_file csv, min_cost, max_cost
 	csv = csv.sort_by {|line| line[0].downcase}
+=======
+  min_cost = ARGV[2].to_i
+  max_cost = ARGV[3].to_i
+  csv = filter_file csv, min_cost, max_cost
+  csv = csv.sort_by {|line| line[2].to_i}
+>>>>>>> 69c950565b36a0973b07b1eedc3e08815fb5cd7f
 end
 
 CSV.open(RESULT_FILE, "w") do |line|
