@@ -23,7 +23,7 @@ elsif command == "filter_costs"
 	min_cost = ARGV[2].to_i
 	max_cost = ARGV[3].to_i
 
-	csv = csv.select { |item| item[2].to_i >= min_cost and item[2].to_i <= max_cost }
+	csv = csv.select {|item| item[2].to_i >= min_cost and item[2].to_i <= max_cost}
 	csv = csv.sort_by {|line| line[0].downcase}
 end
 
