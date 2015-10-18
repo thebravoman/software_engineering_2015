@@ -30,5 +30,3 @@ end
 CSV.open("result.csv", "w") do |line|
 	csv.each {|csv_item| line << csv_item}
 end
-
-p csv
