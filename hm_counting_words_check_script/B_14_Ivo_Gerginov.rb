@@ -12,8 +12,3 @@ CSV.open("result.csv", "w") do |csv|
 	end
 end
 
-my_csv = CSV.read 'result.csv'
-my_csv.sort! { |a,b| [a[0],a[1]] <=> [b[0],b[1]] }
-CSV.open("result.csv", "w") do |csv|
-  my_csv.each {|element| csv << element}
-end

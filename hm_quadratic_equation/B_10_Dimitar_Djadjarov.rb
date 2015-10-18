@@ -11,8 +11,8 @@ d = (b*b) - (4*a*c)
     x1= -b + Math . sqrt(d)/( 2*a)
     x2= -b - Math . sqrt(d)/(2*a)
   if x1<x2
-    puts "#{x1} #{x2}"
+    puts "#{x1},#{x2}"
   else
-    puts "#{x2} #{x1}"       
+    puts "#{x2},#{x1}"       
 end
 end

@@ -2,12 +2,14 @@
 
 path = ARGV[0]	# Get the file path from the command line parameter
 words = {} # Store the words in this array 
+marks = {} # Store the amount of marks in this array
 file = File.open(path, "r")	# Access the specified file in read-only mode
 
 wordslist = file.read.downcase	# Saves the content in the file in our wordslist
+marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")	# Saves the amount of occurences of the aforementioned symbols in our marks array
 wordslist = wordslist.split(" ")	# Removes spaces between the words
 wordslist.each do |word|	# Iterates through our wordslist array, removing any useless characters and counting our words
-  word = word.gsub(/[,()'".]/,'')
+  word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
   if words[word]
     words[word] += 1
   else
@@ -21,3 +23,5 @@ words = words.sort_by{|word,occ| [-occ,word]}	# Sort our array in a numerical or
 words.each do |word,occ|	# Iterates through our array and prints the words and number of occurences for each one of them
   puts word + ',' + occ.to_s
 end
+
+puts "marks,#{marks+1}"

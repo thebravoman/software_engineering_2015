@@ -6,9 +6,9 @@ h = Hash.new(0)
 symb_count = 0
 
 f.each do |word|
-  symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
+  symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"*-+/")
   
-  word = word.gsub(/[^a-z'\n- ]/, ' ').split(" ")
+  word = word.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
 	
   word.each do |count|
     h[count] = h[count] + 1
@@ -23,6 +23,5 @@ h.each do |words, number|
 end
 
   if symb_count != 0
-	puts "\"marks\",#{symb_count}" 
+	puts "marks,#{symb_count}" 
   end
-  

@@ -23,5 +23,3 @@ puts "Words count: "
 WORDS_COUNT.sort {|a,b| a[1] <=> b[1]}.each do |key,value|
   puts "#{key} => #{value}"
 end
-
-puts "The end. "
