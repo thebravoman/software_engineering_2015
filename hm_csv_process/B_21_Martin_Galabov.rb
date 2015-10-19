@@ -22,7 +22,9 @@ my_csv = CSV.read file
 	maximum = ARGV[3].to_i
 	CSV.open('result.csv', 'w') do |csv|
     my_csv.each do |line|
-      csv << line if line[2] >= min_value && line[2] <= max_value
+    if line[2].to_i >= minimum && line[2].to_i <= maximum
+      csv << line 
+    end
     end
     end
     end
