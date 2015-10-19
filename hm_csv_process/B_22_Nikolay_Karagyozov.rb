@@ -7,7 +7,7 @@ def sort!(input, column, order)
 end
 
 def filter_cost!(input, min_value, max_value)
-  input.select! { |row| row[2].to_f >= min_value && row[2].to_f <= max_value }
+  input.select! { |row| row[2].to_f.between?(min_value, max_value) }
 end
 
 input_csv = ARGV[0]
