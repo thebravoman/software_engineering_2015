@@ -34,7 +34,6 @@ elsif ARGV[1] == "filter_costs" || ARGV[1] == "filter_cost"
     
   CSV.open("result.csv", "w") do |csv|
     my_csv.each do |row|
-      puts row[0]
       if row[2].to_i >= min && row[2].to_i <= max
         csv << row
       end
