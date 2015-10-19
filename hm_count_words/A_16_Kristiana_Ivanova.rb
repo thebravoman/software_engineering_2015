@@ -9,8 +9,11 @@ end
 #text = gets.chomp
 #text.downcase!
 #words = file.split
+
 marks = text.scan(/[,.!?:;"()\[\]]/).count 
 words = text.downcase.gsub(/[^a-z\n ]/, '').split(" ") 
+
+frequencies = Hash.new(0)
 
 words.each {|item| frequencies[item] += 1}
 

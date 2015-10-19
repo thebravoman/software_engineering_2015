@@ -1,5 +1,5 @@
 text = IO.read(ARGV[0]).downcase
-marks = text.count(",.?!():;-\"\'/")
+marks = text.count(",.?!():;\"\'/-")
 words = text.gsub(/[^a-z\s]/,"").split(" ")
 unique_text = words.uniq.sort { |a,b|
   if words.count(a) == words.count(b)

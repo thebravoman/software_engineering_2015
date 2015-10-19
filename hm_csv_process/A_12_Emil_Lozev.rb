@@ -44,6 +44,6 @@ table = CSV.open input0
 
 if input1 == 'sort'
 	sort_column input2,input3,table
-elsif input1 == 'filter_cost'
+elsif input1 == 'filter_cost' || input1 == 'filter_costs'
 	filter_cost input2,input3,table
 end

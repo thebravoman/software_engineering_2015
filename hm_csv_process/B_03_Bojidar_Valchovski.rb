@@ -16,13 +16,13 @@ end
 
 def sort_asc_order my_csv,column_min
 
-  if column_min == "1"
+  if column_min == "0"
 	my_csv.sort! { |a,b| [a[0].to_s] <=> [b[0].to_s] }
 
-  elsif column_min == "2"
+  elsif column_min == "1"
     my_csv.sort! { |a,b| a[1] <=> b[1] }
 
-  elsif column_min == "3"
+  elsif column_min == "2"
 	my_csv.sort! { |a,b| [a[2].to_i] <=> [b[2].to_i] }
 
   end  
