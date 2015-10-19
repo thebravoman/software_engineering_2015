@@ -7,7 +7,7 @@ command = ARGV[1]
 		col = ARGV[2].to_i
 		option = ARGV[3]
 		if option == "ASC"
-			file.sort! { |c,n| c[col] 				<=> n[col]}
+			file.sort! { |c,n| c[col] <=> n[col]}
 		elsif option == "DESC"
 			file.sort! {|c,n| n[col] <=> c[col]}
 		end
