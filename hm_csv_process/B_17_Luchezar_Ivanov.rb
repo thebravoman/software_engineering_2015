@@ -24,7 +24,7 @@ def filter_table csv_table, min_cost, max_cost
 	col = 2 
 	opt = "ASC"
 	csv_table.each do |row|
-		if row[col].to_i >= min and row[col].to_i <= max
+		if row[col].to_i >= min_cost and row[col].to_i <= max_cost
 			table << row
 		end	
 	end
