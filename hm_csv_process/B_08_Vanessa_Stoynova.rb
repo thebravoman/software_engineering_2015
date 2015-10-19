@@ -1,4 +1,4 @@
-equire 'csv'
+require 'csv'
 
 file = CSV.read(ARGV[0])
 command = ARGV[1]
