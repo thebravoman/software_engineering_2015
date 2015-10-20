@@ -5,6 +5,10 @@ my_csv = CSV.read input, converters: :numeric
 
 command = ARGV[1]
 
+def filter_file csv_file, min_cost,  max_cost
+  csv_file.select {|item| item[2].to_i >= min_cost and item[2].to_i <= max_cost}
+end
+
 if command == 'sort'
   column_number = ARGV[2].to_i
   order = ARGV[3]
@@ -23,8 +27,8 @@ if command == 'sort'
 elsif command == 'filter_cost'
   min_cost = ARGV[2].to_i
   max_cost = ARGV[3].to_i
-  csv = filter_file csv, min_cost, max_cost
-  csv = csv.sort_by {|line| line[0].downcase}
+  my_csv = filter_file my_csv, min_cost, max_cost
+  csv = my_csv.sort_by {|line| line[0].downcase}
   min_cost = ARGV[2].to_i
   max_cost = ARGV[3].to_i
   csv = filter_file csv, min_cost, max_cost
