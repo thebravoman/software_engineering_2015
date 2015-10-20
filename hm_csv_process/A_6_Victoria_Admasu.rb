@@ -20,16 +20,6 @@ def sort_f csv, column_number, order
 	end
 end
 
-def filter_f csv, min_value, max_value
-	CSV.open("result.csv", "w") { |csv|  
-		csv.each { |x|
-			if x[2].to_i >= min_value && x[2].to_i <= max_value
-				csv << x
-			end
-		}
-	}
-end
-
 if command == 'sort'
 	column_number = ARGV[2].to_i
 	order = ARGV[3]
@@ -45,5 +35,11 @@ elsif command == 'filter_cost'
 	min_value = ARGV[2].to_i
 	max_value = ARGV[3].to_i
 
-	csv_f = filter_f csv_f, min_value, max_value
+	CSV.open("result.csv", "w") { |csv|  
+		csv_f.each { |x| 
+			if x[2].to_i >= min_value && x[2].to_i <= max_value
+				csv << x
+			end
+		}
+	}
 end
