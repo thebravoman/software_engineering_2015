@@ -22,7 +22,7 @@ end
 
 def filter_f csv, min_value, max_value
 	CSV.open("result.csv", "w") { |csv|  
-		csv_f.each { |x|
+		csv.each { |x|
 			if x[2].to_i >= min_value && x[2].to_i <= max_value
 				csv << x
 			end
