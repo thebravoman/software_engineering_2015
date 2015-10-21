@@ -28,7 +28,7 @@ if command == "sort" && ordMax == "ASC"
   sortResultAsc my_csv , columnMin
 elsif command == "sort" && ordMax == "DESC"
   sortResultAsc my_csv , columnMin
-  my_csv.reverse
+  my_csv.reverse!
   write_result my_csv
 elsif if command == "filter_cost" || command == "filter_costs"
   my_csv = my_csv.sort_by {|item| item[2].to_i}
