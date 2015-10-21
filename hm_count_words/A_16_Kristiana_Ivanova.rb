@@ -25,6 +25,6 @@ frequencies.each do |item, amount|
 end
 
 if marks > 0
-	puts "marks,#{marks}"
+	puts "\"marks\",#{marks}"
 end
 
