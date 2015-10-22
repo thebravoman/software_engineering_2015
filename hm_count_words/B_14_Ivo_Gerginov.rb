@@ -13,9 +13,8 @@ while (line = f.gets)
       end
     end
   end
-  newline = line.gsub!(/[!.?,;*<>=@~+-]/, "")
-  newline = newline.downcase
-  p newline
+  line = line.gsub!(/[!.?,;*<>=@~+-]/, "")
+  line = newline.downcase
   words = newline.split(/\W+/)
   
   words.each{ |x|	
