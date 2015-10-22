@@ -37,9 +37,10 @@ wordhash = wordhash.sort_by{|k, v| [-v, k]}
 wordhash.each_with_index do |(k, v)|
   puts "#{k},#{v}"
 end
-
-print '"marks",',countmarks
-puts
+if coutmarks > 0	
+	print '"marks",',countmarks
+	puts
+end
 
 
 

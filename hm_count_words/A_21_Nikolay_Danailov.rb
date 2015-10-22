@@ -20,6 +20,6 @@ File.open(ARGV[0]) do |file|
 	end
 
 	if marks > 0
-		puts "marks,#{marks}"
+		puts "\"marks\",#{marks}"
 	end
 end
