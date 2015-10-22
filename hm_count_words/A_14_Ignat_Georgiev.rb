@@ -7,7 +7,7 @@ content=content.downcase#downcasing all the words
 content=content.split(" ")#spliting the string into words
 content.each do |word|#counting the words 
 	marks += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")#counting the marks in every word
-	word =word.gsub(/[,()'"„“.*?:;]/, '')
+	word =word.gsub(/[,()'"„“.*!?:;]/, '')
 	count[word] += 1
 end
 count = count.sort_by{|word,num| word.downcase}#sorting alphabetically

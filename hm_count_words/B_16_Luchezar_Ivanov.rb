@@ -7,7 +7,7 @@ text = text.downcase.split
 
 text.each do |word| 
 marks += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")
-word = word.tr('^A-Za-z0-9', ' ')
+word = word.tr('^A-Za-z0-9', '')
 words[word] += 1
 end
 
@@ -18,6 +18,6 @@ puts word+','+val.to_s
 end
 
 if marks != 0
-   puts 'marks'+','+marks.to_s
+   puts '"marks"'+','+marks.to_s
 end
 

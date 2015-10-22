@@ -8,8 +8,8 @@ text.each_line { |line|
   words = line.downcase.split
 
   words.each { |word|
-    marks += word.scan(",.;:!?(){}").count
-    word = word.gsub(/[ ,.;:!?(){}]/, '')
+    marks += word.count("-_,.;:!?(){}")
+    word = word.gsub(/[-_,.;:!?(){}]/, '')
     if count.has_key?(word)
       count[word] += 1
     else

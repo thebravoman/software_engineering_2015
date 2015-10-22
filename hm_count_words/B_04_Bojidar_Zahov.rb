@@ -1,5 +1,5 @@
-#file=File.open(ARGV[0], 'r')
-file = "I have a computer and i use it, for programing with Ruby language vv^^!<>!<>!<>!<>!<>!^^vv Result 21"
+file=File.open(ARGV[0])
+file = file.read
 list = Hash.new
 
 marks = file.gsub(/\w/,"").split
@@ -19,6 +19,11 @@ list.sort{ |a,b| a[1] <=> b[1] }.each do |element|
 	puts "#{element[0]},#{element[1]}"
 end
 
+marks_str=marks.join('').length
+
+if (marks!=0)
+     print "\"marks\",#{marks_str}\n"
+end
 marks_str=marks.join('').length
 
 if (marks!=0)

@@ -1,14 +1,14 @@
 #!/usr/bin/ruby
 
-path = ARGV[0]	# Get the file path from the command line parameter
-words = {} # Store the words in this array 
-marks = {} # Store the amount of marks in this array
-file = File.open(path, "r")	# Access the specified file in read-only mode
+path = ARGV[0]
+words = {} 
+marks = {}
+file = File.open(path, "r")
 
-wordslist = file.read.downcase	# Saves the content in the file in our wordslist
-marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")	# Saves the amount of occurences of the aforementioned symbols in our marks array
-wordslist = wordslist.split(" ")	# Removes spaces between the words
-wordslist.each do |word|	# Iterates through our wordslist array, removing any useless characters and counting our words
+wordslist = file.read.downcase
+marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")
+wordslist = wordslist.split(" ")	
+wordslist.each do |word|
   word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
   if words[word]
     words[word] += 1
@@ -17,11 +17,11 @@ wordslist.each do |word|	# Iterates through our wordslist array, removing any us
   end
 end
 
-words = words.sort_by{|word,occ| word.downcase}	# Sort our array in alphabetical order
-words = words.sort_by{|word,occ| [-occ,word]}	# Sort our array in a numerical order 
+words = words.sort_by{|word,occ| word.downcase}	
+words = words.sort_by{|word,occ| [-occ,word]}	 
 
-words.each do |word,occ|	# Iterates through our array and prints the words and number of occurences for each one of them
+words.each do |word,occ|	
   puts word + ',' + occ.to_s
 end
 
-puts "marks,#{marks+1}"
+puts "\"marks\",#{marks}" 	
