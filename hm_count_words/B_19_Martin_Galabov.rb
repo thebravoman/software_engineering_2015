@@ -19,6 +19,6 @@ word_counter = word_counter.sort_by{|key, value|[-value, key]}
 word_counter.each do |key,value|
   puts "#{key},#{value}" 
  end 
-	if marks > 0 do
-	puts "marks,#{marks}"
+	if marks > 0 then
+	puts "\"marks\",#{marks}"
 	end

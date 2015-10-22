@@ -29,5 +29,5 @@ str.each do|index, key|
 end
 
 if marks != 0
-  puts "marks,"+"#{marks}"
+  puts "\"marks\","+"#{marks}"
 end

@@ -1,11 +1,12 @@
 file = File.open(ARGV[0], "r")
 
-hash = Hash.new
+hash = Hash.new()
 count = 0.to_i
 
 file.each_line {|line|
-	count += line.downcase.scan(/[.!?,:';"%()]/).size
-	words = line.downcase.split(/\W+/)
+	#count += line.downcase.scan(/[.!?,:';"%()]/).size
+	count += line.scan(/[[:punct:]]/).count
+	words = line.downcase.scan(/\w+/)
 	words.each {|word|
 		if hash.has_key?(word)
 			hash[word] += 1

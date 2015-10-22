@@ -13,5 +13,5 @@ unique_text.each do |word|
   puts word + ",#{word_count}"
 end
 if marks > 0
-  puts "marks,#{marks}"
+  puts "\"marks\",#{marks}"
 end

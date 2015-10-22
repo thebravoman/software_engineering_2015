@@ -6,6 +6,8 @@ while ( line = file.gets ) # Read the text
 end
 file.close # Close the file
 
+marks = text.scan(/[[:punct:]]/).size
+
 words = text.split(/\W+/)
 
 while !words.empty?
@@ -17,3 +19,4 @@ end
 
 sorted = result.sort_by { |name,times| [-times,name] }
 sorted.each { |name,times| puts "#{name},#{times}" } # Print the result
+puts "\"marks\",#{marks}"

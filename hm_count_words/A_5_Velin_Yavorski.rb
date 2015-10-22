@@ -21,7 +21,7 @@ end
 sorted_hash = h.sort_by { |key, value| [ -value, key ] } 
 sorted_hash.each {|key, value| puts "#{key},#{value}"}
 if(punct != 0)
-  puts "marks,#{punct}"
+  puts "\"marks\",#{punct}"
 end
   
 

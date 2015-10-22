@@ -1,0 +1,296 @@
+Name,Result,Program error,Task,Expected,Output csv
+../2015-10-20/a/results/Aleksandar_Velinov_1_85f8d2.rb,0,"../2015-10-20/a/results/Aleksandar_Velinov_1_85f8d2.rb:11: syntax error, unexpected ']', expecting '}'
+    my_csv.sort! { |a,b| a[1]] <=> b[1]] }
+                              ^
+../2015-10-20/a/results/Aleksandar_Velinov_1_85f8d2.rb:11: syntax error, unexpected ']', expecting '}'
+    my_csv.sort! { |a,b| a[1]] <=> b[1]] }
+                                        ^
+../2015-10-20/a/results/Aleksandar_Velinov_1_85f8d2.rb:15: syntax error, unexpected keyword_end, expecting '}'
+../2015-10-20/a/results/Aleksandar_Velinov_1_85f8d2.rb:35: syntax error, unexpected end-of-input, expecting '}'
+","Develop a program named FirstName_LastName_ClassNumber_85f8d2.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students with 5 letters in the first name that are in both folders. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by Last name ASC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le1,F5le8
+L5le2,F5le2
+",No such file or directory @ rb_sysopen - result.csv. No result.csv file was found.
+../2015-10-20/a/results/Ignat_Georgiev_14_5502b3.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_5502b3.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 10 symbols in their first name;
+4. Sort the result by Last Name DESC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","FirstName2,LastName2
+FirstName1,LastName1
+F10letters,L10letters
+F10letter3,L10letter4
+F10letter2,L10letter2
+F10letter0,L10letter1
+",""
+../2015-10-20/a/results/Antonio_Mindov_3_b4d8d0.rb,1,,"Develop a program named FirstName_LastName_ClassNumber_b4d8d0.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 5 symbols in their second name;
+4. Sort the result by First name DESC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","F5le8,L5le1
+F5le3,L5le3
+F5le2,L5le2
+","F5le8,L5le1
+F5le3,L5le3
+F5le2,L5le2
+"
+../2015-10-20/a/results/Velin_Yavorski_5_47f097.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_47f097.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students that are only in the first folder and not in the second. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by Last name DESC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le3,F5le3
+",""
+../2015-10-20/a/results/Daniel_Kirov_10_586d9c.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_586d9c.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 5 symbols in their second name;
+4. Sort the result by Last Name ASC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","F5le8,L5le1
+F5le2,L5le2
+F5le3,L5le3
+",""
+../2015-10-20/a/results/Martin_Dimitrov_17_08010e.rb,0,"../2015-10-20/a/results/Martin_Dimitrov_17_08010e.rb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+  Dir.glob(ARGV[0] + ARGV[1] ""*"").each do |filename|
+                              ^
+../2015-10-20/a/results/Martin_Dimitrov_17_08010e.rb:4: syntax error, unexpected ')', expecting keyword_end
+  Dir.glob(ARGV[0] + ARGV[1] ""*"").each do |filename|
+                                 ^
+../2015-10-20/a/results/Martin_Dimitrov_17_08010e.rb:14: syntax error, unexpected ','
+my_csv.sort! { |a,b| ,a[1].to_i <=> b[1].to_i }
+                      ^
+","Develop a program named FirstName_LastName_ClassNumber_08010e.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. Find all the files from both folders that have only letters from a-z or A-Z in their names excluding extension. If there are duplicates the file must be written only once.;
+3. Calculate the length of their names (including extensions) divided by 2.;
+4. Sort the result by length DESC;
+5. Produce a result in CSV format named result.csv:
+
+			File1.extension,3
+			File2.extension,4
+			...
+			FileN.extension,3
+","invalid.rb,5
+",No such file or directory @ rb_sysopen - result.csv. No result.csv file was found.
+../2015-10-20/a/results/Victoria_Admasu_6_0269ad.rb,0,"../2015-10-20/a/results/Victoria_Admasu_6_0269ad.rb:9:in `block (2 levels) in <main>': undefined local variable or method `first_name' for main:Object (NameError)
+	from ../2015-10-20/a/results/Victoria_Admasu_6_0269ad.rb:7:in `each'
+	from ../2015-10-20/a/results/Victoria_Admasu_6_0269ad.rb:7:in `block in <main>'
+	from /home/kireto/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/csv.rb:1268:in `open'
+	from ../2015-10-20/a/results/Victoria_Admasu_6_0269ad.rb:6:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_0269ad.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students that are only in the second folder and not in the first. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by First name ASC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le4,F5le4
+LastName3,FirstName3
+",No such file or directory @ rb_sysopen - result.csv. No result.csv file was found.
+../2015-10-20/a/results/Georgi_Danchev_9_b5c371.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_b5c371.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students that are only in the second folder and not in the first. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by First name ASC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le4,F5le4
+LastName3,FirstName3
+","FirstName2_LastName2_8888,rb
+FirstName1_LastName1_8888,rb
+F10letter0_L10letter1_7,rb
+F10letter2_L10letter2,rb
+F5le8_L5le1_1,rb
+F10letter2_L10letter2_6,rb
+F10letter3_L10letter4,rb
+F10letter1_L10letter1,rb
+F10letters_L10letters,rb
+FirstName3Invalid_LastName3Invalid,rb
+F5le3_L5le3_3,rb
+F10letters_L10letters_8,rb
+invalid,rb
+FirstName3_LastName3Invalid,rb
+F5le2_L5le2_1,rb
+F10letter3_L10letter4_3,rb
+F5le4_L5le4_3,rb
+FirstName2_LastName2_8888,rb
+FirstName1_LastName1_8888,rb
+F10letter0_L10letter1_7,rb
+F10letter2_L10letter2,rb
+F5le8_L5le1_1,rb
+F10letter2_L10letter2_6,rb
+F10letter3_L10letter4,rb
+FirstName3_LastName3_8888,rb
+F10letter1_L10letter1,rb
+F10letters_L10letters,rb
+FirstName3Invalid_LastName3Invalid,rb
+F10letters_L10letters_8,rb
+invalid,rb
+FirstName3_LastName3Invalid,rb
+F5le2_L5le2_1,rb
+F10letter3_L10letter4_3,rb
+"
+../2015-10-20/a/results/Nikolay_Danailov_21_62fdc1.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_62fdc1.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students that are only in the second folder and not in the first. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by First name ASC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le4,F5le4
+LastName3,FirstName3
+","LastName3,FirstName3
+L5le4,F5le4
+"
+../2015-10-20/a/results/Pavel_Kostadinov_22_3e54f7.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_3e54f7.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 5 symbols in their second name;
+4. Sort the result by Last Name ASC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","F5le8,L5le1
+F5le2,L5le2
+F5le3,L5le3
+",""
+../2015-10-20/a/results/Petko_Georgiev_23_79c787.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_79c787.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 5 symbols in their second name;
+4. Sort the result by Last Name ASC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","F5le8,L5le1
+F5le2,L5le2
+F5le3,L5le3
+",""
+../2015-10-20/a/results/Hristiyan_Zahariev_27_df0df0.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_df0df0.rb
+
+1. you are given an argument for a folder with files;
+1.1 if there are other arguments they should be discarded
+2. some file names in this folder are in the form First_Last_digits.rb. But there are also other files; 
+3. find all the students that have 5 symbols in their second name;
+4. Sort the result by Last Name ASC.
+5. Produce a result in CSV format named result.csv:
+
+		FirstName1,LastName1
+		FirstName2,LastName2
+		...
+		FirstNameN,LastNameN
+
+
+","F5le8,L5le1
+F5le2,L5le2
+F5le3,L5le3
+",""
+../2015-10-20/a/results/Emil_Lozev_12_057b97.rb,0,"../2015-10-20/a/results/Emil_Lozev_12_057b97.rb:32:in `block in <main>': undefined method `split' for nil:NilClass (NoMethodError)
+	from ../2015-10-20/a/results/Emil_Lozev_12_057b97.rb:30:in `each'
+	from ../2015-10-20/a/results/Emil_Lozev_12_057b97.rb:30:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_057b97.rb
+
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb; 
+3. find  the students that are only in the first folder and not in the second. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by Last name DESC;
+5. Produce a result in CSV format named result.csv:
+
+	LastName1,FirstName1
+	LastName2,FirstName2
+	...
+	LastNameN,FirstNameN
+
+","L5le3,F5le3
+",No such file or directory @ rb_sysopen - result.csv. No result.csv file was found.

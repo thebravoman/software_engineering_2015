@@ -7,8 +7,8 @@ marks = 0
 text = file.read
 text = text.downcase.split
 
-text.each do |word| 
-	marks += word.count("? . , [ ]  ; : ' ( ) { } * ^ !")
+text.each do |word|
+	marks = word.count("? . , [ ]  ; : ' ( ) { } * ^ !") 
 	word = word.gsub(/[[:punct:]]/, "")
 	number[word] += 1 
 end
@@ -19,5 +19,5 @@ number.each do|word, num|
 	puts word+','+num.to_s
 end
 if not marks == 0
-  puts "marks,"+"#{marks}"
+  puts "\"marks\","+"#{marks}"
 end
