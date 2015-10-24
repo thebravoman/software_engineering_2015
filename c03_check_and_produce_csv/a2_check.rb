@@ -38,9 +38,6 @@ CSV.open("result.csv", "w") do |csv_array|
 					p "#{clazz},#{number},#{first_name},#{last_name}"
 					result= `ruby #{filename} #{script_input}`
 					solved = solved? script_output, result
-					if number.to_i != previous_number+1
-						csv_array << [clazz,number,1,"","",0]
-					end
 					csv_array << [clazz,number,first_name,last_name,solved]
 					checked_files << [first_name, last_name]
 				end
