@@ -3,7 +3,7 @@ count = Hash.new(0)
 marks = 0
 
 file.each_line do |line|
-	marks += line.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
+	marks += line.scan(/[,.!?:;"()\[\]]/).count
 	w = line.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
     
 	w.each do |word|
