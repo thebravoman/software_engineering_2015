@@ -14,8 +14,13 @@ while (line = f.gets)
     end
   end
   line = line.gsub!(/[!.?,;*<>=@~+-]/, "")
+<<<<<<< HEAD
   line = line.downcase
   words = line.split(/\W+/)
+=======
+  line = newline.downcase
+  words = newline.split(/\W+/)
+>>>>>>> 94223fe34e11c06c5dce481d21cebf7b7d3c0746
   
   words.each{ |x|	
     if w_count.has_key?("#{x}")

@@ -1,16 +1,19 @@
+text = String.new
+
 file = File.open(ARGV[0] , "r")
-text = Hash.new
-file.each_line do |line|
-  words = line.split 
-  words.each do |word|
-    if text[word]
-      text[word] += 1
-    else
-      text[word] = 1
-    end
-  end
+text = file.read
+marks = text.scan(/[/[,'".=-_*&^%$#@!`~+;:<>]/,'').count
+text = text.split.downcase
+
+text.each do |word_count|
+	word_count = word_count.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
+	number[word_count] += 1 
 end
-sorting = text.sort_by{ |word,count| [-count,word] }
-sorting.each do |word,count| 
-	puts "#{word},#{count}"
+
+word_count = word_count.sort_by {|a, b| [-b, a]}
+word_count.each do |a, b|
+ 	puts "#{word},#{count}"
 end
+if marks != 0
+	puts "\"marks\",#{marks}"
+end 
