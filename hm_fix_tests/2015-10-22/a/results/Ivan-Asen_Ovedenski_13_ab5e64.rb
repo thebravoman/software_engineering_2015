@@ -14,10 +14,10 @@ Dir.glob(folder+"*").each do |filename|
 	end
 end
 
-files.sort! {|a,b| a[1].to_i <=> b[1].to_i }
+files.sort! {|a,b| a[1].downcase <=> b[1].downcase }
 CSV.open("result.csv","w") do |csv|
 	files.each do |line|
-		csv << line 
+		csv << [line[0] , line[1]]
 	end
 end
 
