@@ -1,38 +1,37 @@
 require 'csv'
 
+v1 = ARGV[0]
+v2 = ARGV[1]
 
-path1 = ARGV[0]
-path2 = ARGV[1]
+a1 = []
+a2 = []
 
-
-CSV.open("result.csv", "w") do |csv|
-  Dir.glob(path + "*") do |filename|
-    splited = filename.split("/").last.split("_")
-    if splited.size == 3
-      if splited.last.split(".").last == "rb"
-        first_name1 = splited[0];
-        last_name1 = splited[1];
-      end
-    end 
-  end
-
-  Dir.glob(path + "*") do |filename|
-    splited = filename.split("/").last.split("_")
-    if splited.size == 3
-      if splited.last.split(".").last == "rb"
-        first_name2 = splited[0];
-        last_name2 = splited[1];
-      end
-    end 
-  end
-  
-  if first_name1 <> first_name2 && last_name1 <> last_name2
-     csv << [splited[0], splited[1]]
-  end
+Dir.glob(ARGV[0] + "*").each do |fil1|
+  name1 = fil1.split("/").last.split("_")
+  a1 << [name1[1],name1[0]]
 end
-
-my_csv = CSV.read 'result.csv'
-my_csv.sort! { |a,b| a[1].downcase <=> b[1].downcase }
-CSV.open("result.csv", "w") do |csv|
-  my_csv.each {|element| csv << element}
+Dir.glob(ARGV[1] + "*").each do |fil2|
+  name2 = fil2.split("/").last.split("_")
+  a2 << [name2[1],name2[0]]
 end
+ ima = false
+  array = []
+  puts a1
+  puts a2
+  a1.each do |file1|
+    ima = false
+    a2.each do |file2|
+      if (file1[0] == file2[0]) && (file1[1] == file2[1])
+        ima = true
+      end
+    end
+    if (ima == false)
+      array << file2
+      end
+  end
+  array.sort!{|a,b| a[0] <=> b[0]}
+  CSV.open("result.csv","w") do |csv_array|
+    array.each do |line|
+      csv_array << line
+    end
+  end
