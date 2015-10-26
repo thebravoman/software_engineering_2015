@@ -31,7 +31,7 @@ end
 
 csv_array.uniq!
 
-csv_array.sort!{|a,b| a[1] <=> b[1]}
+csv_array.sort{|a,b| a[1] <=> b[1]}
 CSV.open('result.csv', 'wb') do |csv|
 	csv_array.each { |line| csv << line }
 end
