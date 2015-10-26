@@ -32,7 +32,7 @@ CSV.open("result.csv", "w") do |csv_array|
 end
 
 csvfile = CSV.read "result.csv"
-	csvfile.sort! do |a,b|
+	csvfile.sort do |a,b|
 		a[1] <=> b[1]
 	end
 CSV.open('result.csv', 'w') do |csv|
