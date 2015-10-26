@@ -15,7 +15,7 @@ Dir.glob(ARGV[0]+"*").each do |filename|
 end
 Dir.glob(ARGV[1]+"*").each do |filename|
 	names filename
-	if filename[0].match(/^[[a-zA-Z]+?/) and my_csv.!include? [filename]
+	if filename[0].match(/^[a-zA-Z]+?/) and my_csv.!include? [filename]
 		fsize = (filename.length) / 2
 		csv_array << [filename,fsize]	
 	end
