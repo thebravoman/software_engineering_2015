@@ -24,3 +24,5 @@ def sort_result
 	    	 end
 	end
 end
+
+sort_result
