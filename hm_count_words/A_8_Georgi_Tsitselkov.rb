@@ -4,7 +4,7 @@ file=File.read(ARGV[0]).downcase.split(" ") #File.read() samo mu podavash koi fa
 #chete, a ti mu podavashe i "r", koeto poprincip kazva, che kato otvorish faila, shte
 #go chetesh, ama to tuka veche e qsno... podava se samo faila
 file.each do |word|
-	sum_m += word.count(", . ! ? : _ ] [ ) (  + - * @ #  ' $ % ^ & / \ < > ~  " )
+	sum_m += word.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/" )
   
   	word = word.gsub(/[^a-z\n ]/, '')
 	
