@@ -7,7 +7,9 @@ students = []
 Dir.glob(folder + '*.rb').each do |filename|
     firstname = filename.split('/').last.split('_')[0]
     lastname = filename.split('/').last.split('_')[1]
-    students.push([firstname, lastname])
+    if firstname != nil && lastname != nil
+      students.push([firstname, lastname])
+    end
 end
 
 five_letter_students = students.select { |x| x[1].length == 5 }
