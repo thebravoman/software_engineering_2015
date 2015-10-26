@@ -7,6 +7,7 @@ second = ARGV[3]
 
 csv_file = CSV.read file_name
 
+
 if operation == "sort"
 	if first.to_i == 0
 		csv_file.sort! { |a,b| [a[first.to_i].to_s.downcase] <=> [b[first.to_i].to_s.downcase] }
