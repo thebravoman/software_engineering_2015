@@ -3,15 +3,15 @@ require 'csv'
 arr1 = []
 
 CSV.open("result.csv", "w")  do |csv|
-  Dir.glob(ARGV[0] + "*").each do |filename|
+  Dir.glob(ARGV[1] + "*").each do |filename|
     name = filename.split("/").last.split("_") 
       arr1 << [name[1],name[0]]
    end
   
 
-  Dir.glob(ARGV[1] + "*").each do |filename|
+  Dir.glob(ARGV[0] + "*").each do |filename|
     name = filename.split("/").last.split("_") 
-        if  !arr1.include?([[name[1],name[0]])
+        if  arr1.include?([name[1],name[0]])
             csv << [name[1],name[0]]
         end
     
