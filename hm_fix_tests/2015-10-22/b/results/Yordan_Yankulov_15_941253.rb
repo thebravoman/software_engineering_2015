@@ -3,7 +3,7 @@ require 'csv'
 input_folder_1 = ARGV[0]
 input_folder_2 = ARGV[1]
 def is_digit? (digit)
-  digit =~ /[[:digit:]]/
+  digit =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/
 end
 help = []
 CSV.open("result.csv", "w") do |csv_array|
