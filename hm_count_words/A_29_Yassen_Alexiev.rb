@@ -10,7 +10,7 @@ f.each_line do |line|
 
 	alignment = line.downcase.split
 	alignment.each do |word|
-		word = word.gsub(/[,()'".*?:]/, ' ')
+		word = word.gsub(/[^a-z'\s-]/, '')
 			hash[word] += 1
 	end	
 end
