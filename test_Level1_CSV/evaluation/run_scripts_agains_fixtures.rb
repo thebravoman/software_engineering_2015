@@ -58,8 +58,11 @@ Dir.glob(results_path).each do |script_file|
 			fixture_to_result[:result] = 0
 		end
 		p "---------------------------------------------------"
-	end 
+	end
 end
+
+
+results = results.sort_by {|k, v| k.split('/').last.split('_')[2].to_i}.to_h
 
 CSV.open("official_results.csv", "w") do |csv|
 	csv << ["Name","Result","Program error","Task","Expected","Output csv"]
