@@ -19,6 +19,6 @@ hash.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}.each do |word, count|
 	puts "#{word},#{count}"
 end
 
-if marks_count != 0; 
-	puts "marks,#{marks_count}" 
+if marks_count > 0 
+	puts "\"marks\",#{marks_count}"
 end
