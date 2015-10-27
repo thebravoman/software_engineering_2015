@@ -15,11 +15,11 @@ CSV.open("result.csv", "w") do |csv_array|
       digit = names[2].split(".").first
       ext = names[2].split(".").last
       if (ext != "rb") or (is_digit?(digit) != 0) or (name1 == nil) or (name2 == nil)
-				len = files.length
+				len = files.split("/").last.size
         csv_array << [files.split("/").last,len]
       end
 		elsif
-			len = files.length
+			len = files.split("/").last.size
 			csv_array << [files.split("/").last,len]
 		end
 end
@@ -31,11 +31,11 @@ end
 			digit = names[2].split(".").first
 			ext = names[2].split(".").last
 			if (ext != "rb") or (is_digit?(digit) != 0) or (name1 == nil) or (name2 == nil)
-				len = files.length
+				len = files.split("/").last.size
 				csv_array << [files.split("/").last,len]
 			end
 		elsif
-			len = files.length
+			len = files.split("/").last.size
 			csv_array << [files.split("/").last,len]
 		end
 
