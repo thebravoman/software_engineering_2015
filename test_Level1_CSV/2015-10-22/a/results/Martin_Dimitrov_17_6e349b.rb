@@ -4,15 +4,15 @@ folder2 = ARGV[1]
 checked_files = []
 my_csv = []
 Dir.glob(folder1 + "*").each do |filename|
-	name = filename.split("/").last.split(".")
+	name = filename.split("/").last.split("_")
     if (name.size == 3) && (name[0].size == 5)
 		checked_files << name[0] + name[1]
 		end
     end
    Dir.glob(folder2 + "*").each do |filename|
-	name = filename.split("/").last.split(".")
+	name = filename.split("/").last.split("_")
     if (name.size == 3) && (name[0].size == 5) && checked_files.include?(name[0] + name[1])
-		my_csv << [name[1],name[0]]
+		my_csv << [name[1], name[0]]
 		end
     end
 
