@@ -16,5 +16,5 @@ words_list = words_list.sort_by {|word, count| [-count, word]}
 words_list.each do |word, count|
   puts "#{word},#{count}"
 end
-puts "marks,#{marks}"
+puts "\"marks\",#{marks}" unless marks == 0
 
