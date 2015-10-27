@@ -5,11 +5,11 @@ number = Hash.new(0)
 marks = 0
 
 text = file.read
+marks = text.scan(/[,.!?()":\[\];]/).count
 text = text.downcase.split
 
 text.each do |word|
-	marks = word.count("? . , [ ]  ; : ' ( ) { } * ^ !") 
-	word = word.gsub(/[[:punct:]]/, "")
+	word = word.gsub(/[,.!?()":\[\];]/,'')
 	number[word] += 1 
 end
 

@@ -1,19 +1,7 @@
 require 'csv'
-
-def sort column, order
-
-	
-end
-
-
-
-	
- 
-
 file = ARGV[0]
 my_csv = CSV.read file
 task = ARGV[1]
-
 if task == 'sort'
 	colnum = ARGV[2].to_i
 	ord = ARGV[3].to_s
