@@ -7,14 +7,14 @@ my_csv2 = []
 
 Dir.glob(folder1 + '*').each do |file|
   filename = file.split("/").last.split("_")
-  my_csv1 << [filename[0], filename[1]]#, filename[2].split(".").first]
+  my_csv1 << [filename[1], filename[0]]#, filename[2].split(".").first]
 
 end
 
 Dir.glob(folder2 + '*').each do |file|
   filename = file.split("/").last.split("_")
 
-  my_csv2 << [filename[0], filename[1]] #, filename[2].split(".").first]
+  my_csv2 << [filename[1], filename[0]] #, filename[2].split(".").first]
 
 end
 
