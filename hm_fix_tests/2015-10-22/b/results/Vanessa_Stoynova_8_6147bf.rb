@@ -29,8 +29,7 @@ CSV.open("result.csv", "w") do |csv_array|
 end
 
 my_csv = CSV.read 'result.csv'
-my_csv = my_csv.sort_by {|a, b| [a, b]}
-
+my_csv = my_csv.sort_by {|a, b| [b.to_i, a]}
 CSV.open("result.csv", "w") do |csv_arr|
-	my_csv.each {|element| csv_arr << element}
+        my_csv.each {|element| csv_arr << element}
 end
