@@ -10,15 +10,15 @@ c = ARGV[2].to_f
    
 	if (d == 0) && (a != 0) 
     		x= ((-b) / (2 * a))
-	   		puts x
+		   	puts x
    	end
 
    	if d > 0 && (a != 0)
-   		x1 = ((-b) + Math.sqrt(d)) / (2 * a)
-   		x2 = ((-b) - Math.sqrt(d)) / (2 * a)	
+   			x1 = ((-b) + Math.sqrt(d)) / (2 * a)
+   			x2 = ((-b) - Math.sqrt(d)) / (2 * a)	
    
-        if (x2 > x1)
-        	x1,x2 = x2,x1
-        end
-        puts "#{x1},#{x2}"
+        	if (x2 > x1)
+        		x1,x2 = x2,x1
+        	end
+        	puts "#{x1},#{x2}"
 	end
