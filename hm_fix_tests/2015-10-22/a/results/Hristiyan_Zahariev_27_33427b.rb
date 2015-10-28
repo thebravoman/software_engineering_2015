@@ -14,12 +14,14 @@ Develop a program named FirstName_LastName_ClassNumber_33427b.rb
 		FirstNameN,LastNameN
 
 =end
+#Veche moje da sortira, placha 
 
 require 'csv'
 
 CSV.open("result.csv","w") do |csv|
   Dir.glob(ARGV[0]+"*").each do |filename|
   name = filename.split("/").last.split("_")
+  p "#{filename}"
     if name.length==3
 	if name[1].length==5
 	  csv << [name[0],name[1].split(".").first]
@@ -30,9 +32,7 @@ end
 
 my_csv = CSV.read 'result.csv'
 
-my_csv.sort! do |a, b|
-  (a[1] == b[1]) ? (a[1].to_i <=> b[1].to_i): (a[0] <=> b[0])
-end
+my_csv.sort!{|a,b| a[1] <=> b[1]} #ASC a <=> b
 
 CSV.open("result.csv","w") do |csv_array|
   my_csv.each do |row|

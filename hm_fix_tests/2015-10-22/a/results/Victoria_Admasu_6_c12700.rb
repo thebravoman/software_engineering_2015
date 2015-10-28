@@ -2,47 +2,35 @@ require 'csv'
 
 folder1 = ARGV[0]
 folder2 = ARGV[1]
+array1 = []
+array2 = []
 
-num = [/"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"/]
+num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
-CSV.open("result.csv", "w") { |csv_array|
-	Dir.glob(folder1 + "*").each { |filename|
-		name = filename.split("/").last.split(".")
-		file = name[0]
-		ext = name[1]
-		
-		numc = file.count num
-		
-		flen = name.length() / 2
-		
-		if numc == 7
-			csv_array << [name[0],name[1],flen]
-		end
-	}
+Dir.glob(folder1 + "*").each { |filename|
+	file = filename.split('/').last
+	name = file.split('.').first
+	#flen = file.length() / 2
+	
+	if name.scan(num).size == 7
+		array1 << [file]
+	end
 }
 
-CSV.open("result.csv", "w") { |csv_array|
-	Dir.glob(folder2 + "*").each { |filename|
-		name = filename.split("/").last.split(".")
-		file = name[0]
-		ext = name[1]
-		
-		numc = file.count num
-		
-		flen = name.length() / 2
-		
-		if numc == 7 
-			csv_array << [name[0],name[1],flen]
-		end
-	}
+Dir.glob(folder1 + "*").each { |filename|
+	file = filename.split('/').last
+	name = file.split('.').first
+	flen = file.length() / 2
+	
+	if name.scan(num).size == 7 && array1.include?(file)
+		array2 << [file,flen]
+	end
 }
 
-csv_f = CSV.read 'result.csv'
-
-csv_f.sort! { |x, y| y[1] <=> x[1]}
+array2.sort! { |x, y| y[0] <=> x[0]}
 
 CSV.open("result.csv","w") { |csv_array|
-	csv_f.each { |row|
+	array2.each { |row|
 		csv_array << row
 	}
 }

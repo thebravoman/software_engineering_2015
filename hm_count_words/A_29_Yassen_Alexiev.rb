@@ -10,7 +10,7 @@ f.each_line do |line|
 
 	alignment = line.downcase.split
 	alignment.each do |word|
-		word = word.gsub(/[,()'".*?:]/, ' ')
+		word = word.gsub(/[^a-z'\s-]/, '')
 			hash[word] += 1
 	end	
 end
@@ -19,6 +19,6 @@ hash.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}.each do |word, count|
 	puts "#{word},#{count}"
 end
 
-if marks_count != 0; 
-	puts "marks,#{marks_count}" 
+if marks_count > 0 
+	puts "\"marks\",#{marks_count}"
 end

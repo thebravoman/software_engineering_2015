@@ -19,8 +19,10 @@ CSV.open("result.csv", "w") do |csv|
 		student_first_name = file_name.split("_").first
 		student_last_name = file_name.split("_")[1]
 
-		if !checked_students.include? [student_first_name, student_last_name]
-      		csv << [student_last_name, student_first_name]
+		if checked_students.include? [student_last_name, student_first_name]
+			if student_first_name.size == 5
+      				csv << [student_last_name, student_first_name]
+      			end
 		end
 	end
 end

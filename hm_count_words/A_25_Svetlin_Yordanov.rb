@@ -1,21 +1,22 @@
-file = File.open(ARGV.first, "r")
+file = File.open(ARGV[0],"r")
+text = ""
+result = Hash.new ( "words" )
+while ( line = file.gets )
+	text += line.downcase
+end
+file.close
 
-contents = ""
-contents = file.read.downcase
-marks = contents.gsub(/[a-z\s]/, "");
-words = contents.gsub(/[^a-z\s]/, "").split
+marks = text.scan(/[[:punct:]]/).size
 
-hash = Hash.new(0)
+words = text.split(/\W+/)
 
-
-words.each do |word|
-	hash[word] += 1
+while !words.empty?
+	word = words.first
+	word_count = words.count(word)
+	result[word] = word_count
+	words.delete(word)
 end
 
-hash = hash.sort_by{|word, count| [-count, word]}
-
-hash.each do |word, count|
-	puts word + "," + count.to_s
-end
-
-puts '"marks",' + marks.length.to_s
+sorted = result.sort_by { |name,times| [-times,name] }
+sorted.each { |name,times| puts "#{name},#{times}" } # Print the result
+puts "\"marks\",#{marks}"
