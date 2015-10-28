@@ -1,27 +1,27 @@
 #!/usr/bin/env ruby
-file = ARGV.first
-f = File.open(file, "r")
+file_path = ARGV[0]
+f = File.open(file_path, "r")
 h = Hash.new(0)
 
-symb_count = 0
+marks_sum = 0
 
-f.each do |word|
-  symb_count = symb_count + word.count("-].\)([,!?:;%@#$^&<_>`~'\"*-+/")
-  
-  word = word.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
+f.each_line do |line|
+	marks_sum += line.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
+	w = line.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
 	
-  word.each do |count|
-    h[count] = h[count] + 1
-  end
-  
+	w.each do |words|
+		
+		h[words] += 1
+	end	
 end
 
-h = h.sort_by {|word, count| [-count, word]}
+
+h = h.sort_by{|words,number| words.downcase}
+h = h.sort_by{|words,number| [-number,words]}
 
 h.each do |words, number|
 	puts "#{words},#{number}"
 end
-
-  if symb_count != 0
-	puts "marks,#{symb_count}" 
-  end
+if marks_sum!=0
+	puts "\"marks\",#{marks_sum}"
+end

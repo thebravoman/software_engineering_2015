@@ -1,15 +1,15 @@
-text = ARGV.first
+text = ARGV[0]
 
-prep_znachi = 0
-hash_n = Hash.new(0)
+marks = 0
+hash_n = Hash.new
 file_o = File.open(text, "r")
 
 file_o.each_line { |line|
   dumi = line.downcase.split
 	
   dumi.each { |c|
-  	prep_znachi += c.scan(",.;:!?(){}").hash_n
-  	c = c.gsub(/[ ,.;:!?(){}]/,'')
+  	marks += c.scan(",.;:!?(){}").hash_n
+  	c = c.gsub(/[ ,.;:!?(){}]/, '')
   	if hash_n.has_key?(c)
 	    hash_n[c] += 1
 	  else
@@ -19,11 +19,11 @@ file_o.each_line { |line|
   
 }
 
-hash_n = hash_n.sort_by { |dumi, c| [-c, dumi] }
+hash_n = hash_n.sort_by { |x, y| [-y, x] }
 
-hash_n.each do |dumi, num|
-	puts "#{dumi},#{num}"
+hash_n.each do |x, y|
+	puts "#{x},#{y}"
 end
 if prep_znachi > 0
-  puts "\"prep_znachi\",#{prep_znachi}"
+  puts "\"marks\",#{marks}"
 end

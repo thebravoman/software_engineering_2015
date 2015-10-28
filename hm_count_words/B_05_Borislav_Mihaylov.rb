@@ -1,27 +1,14 @@
-file = "Of friendship on inhabiting, diminution discovered as."
+file = File.open(ARGV[0], "r")
 h = Hash.new
-
-marks = file.gsub(/\w/,"").split
-
-file.each_line { |line|
 	
-	words = line.split
-	words.each { |w|
-	
-	if h.has_key?(w)
-     		
-		h[w] = h[w] + 1
-    	else
-		h[w] = 1
-	end
-	}
+	marks = IO.read(file).scan(/[[:punct:]]/).length
+
+	text = IO.read(file).downcase.tr('^A-Z ^0-9 ^a-z', '').split(' ')
+
+h.sort{|a,b| a[1]<=>b[1]}.each { |elem|  
+	puts "#{elem[0]},#{elem[1]}"
 }
 
-h.sort{|a,b| a[1]<=>b[1]}.each { |elem|
-  	puts "#{elem[0]},#{elem[1]}"
-}
-
-marks_str=marks.join('').length
 if (marks!=0)
-	puts "marks,#{marks_str}"
+	puts "\"marks\",#{marks}"
 end

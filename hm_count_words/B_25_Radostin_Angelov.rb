@@ -4,10 +4,18 @@ word_count = Hash.new
 
 file = File.new(filepath, "r")
 
+marksCount = 0
+
 while (line = file.gets)
+  line.each_char { |chr|
+    if chr.match(/[[:punct:]]/)
+      marksCount = marksCount + 1
+    end
+  }
   words = line.split(/\W+/)
   words.each {
     |x|
+    x = x.downcase
     if word_count.has_key?("#{x}")
       word_count["#{x}"] += 1
     else
@@ -17,7 +25,9 @@ while (line = file.gets)
 end
 file.close
 
-word_count.sort_by {|word, count| [-count, word]}.to_h
+word_count["\"marks\""] = marksCount
+
+word_count = word_count.sort_by {|word, count| [-count, word]}.to_h
 
 
 word_count.each { |word, count| puts "#{word},#{count}" }

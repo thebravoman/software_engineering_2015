@@ -1,22 +1,22 @@
+file_p = ARGV[0]
+hash = Hash.new(0) 
+file = FILE.open(file_p, "r")
 sum_m = 0
-hash = Hash.new (0)
-file=File.read(ARGV[0], "r").downcase.split(" ")
-file.each do |word|
+
+file.each do |line|
+	sum_m += line.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
+        word = line.downcase.gsub(/[^a-z\n ]/, ' ').split(" ")
 	
-  	sum_m += word.count(", . ! ? : _ ] [ ) (  + - * @ #  ' $ % ^ & / \ < > ~  " )
-  
-  	word = word.gsub(/[^a-z\n ]/, '')
-	
-	word.each do |count|
-	hash[count] = hash[count] + 1 
+	word.each do |words|
+	hash[words] = hash[words] + 1 
   	end
  end
-
-hash = hash.sort_by{|word, number| [-number, word]}
-hash.each do |word, number|
-	puts "#{word}, #{number}"
- end
+hash = hash.sort_by{|words,number| words.downcase}
+hash = hash.sort_by{|words,number| [-number,words]}
+hash.each do |words,number|
+	puts "#{words}, #{number}"
+end
  
- 	if sum_m != 0
-           puts "marks, #{sum_m}"
-           end
+if sum_m!= 0
+	puts "\"marks\", #{sum_m}"
+end
