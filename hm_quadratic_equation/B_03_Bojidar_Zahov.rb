@@ -8,9 +8,9 @@ c = ARGV[2].to_f
    		puts
    	end
    
-    if (d == 0) && (a != 0) 
-    	x= ((-b) / (2 * a))
-	   	puts x
+	if (d == 0) && (a != 0) 
+    		x= ((-b) / (2 * a))
+	   		puts x
    	end
 
    	if d > 0 && (a != 0)
@@ -18,7 +18,7 @@ c = ARGV[2].to_f
    		x2 = ((-b) - Math.sqrt(d)) / (2 * a)	
    
         if (x2 > x1)
-            x1,x2 = x2,x1
+        	x1,x2 = x2,x1
         end
         puts "#{x1},#{x2}"
 	end
