@@ -1,25 +1,25 @@
-File.open(ARGV[0]) do |file|
-	text = ""
+input_file = ARGV[0]
 
-	file.each_line do |line|
-		text += line
-	end
+File.open(input_file) do |file|
+  text = ''
 
-	marks = text.scan(/[,.!?:;"()\[\]]/).count
-	words = text.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
-	word_counts = Hash.new(0)
+  file.each_line do |line|
+    text += line
+  end
 
-	words.each do |word|
-		word_counts[word] += 1
-	end
+  marks = text.scan(/[,.!?:;"()\[\]]/).count
+  words = text.downcase.gsub(/[^a-z'\s-]/, '').split(' ')
+  word_counts = Hash.new(0)
 
-	word_counts = word_counts.sort_by {|word, count| [-count, word]}
-	
-	word_counts.each do |word, count|
-		puts "#{word},#{count}"
-	end
+  words.each do |word|
+    word_counts[word] += 1
+  end
 
-	if marks > 0
-		puts "\"marks\",#{marks}"
-	end
+  word_counts = word_counts.sort_by { |word, count| [-count, word] }
+
+  word_counts.each do |word, count|
+    puts "#{word},#{count}"
+  end
+
+  puts "\"marks\",#{marks}" if marks > 0
 end
