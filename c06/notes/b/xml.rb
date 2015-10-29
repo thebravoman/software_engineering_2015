@@ -30,21 +30,13 @@ document.elements.each('//weather[@number=500]') do |element|
   puts element.attributes['value']
 end
 
+#
 #  <wind>
 #    <speed value="6.26" name="Moderate breeze"/>
 #    <gusts/>
 #    <direction value="168.5" code="SSE" name="South-southeast"/>
 #    <weather number="324" value="light rain 234" icon="10d"/>
 #  </wind>
-#
-# <counter>
-#   <file name="foo.asd">
-#     <words>123</words>
-#     <words>123</words>
-#     <words>123</words>
-#   </file>
-# </counter>
-#
 #
 
 my_xml = REXML::Document.new('')
