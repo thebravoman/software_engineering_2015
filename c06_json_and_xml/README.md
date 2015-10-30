@@ -50,9 +50,9 @@ You will have to output a well formed `xml` like the following:
 <word-counts>
     <marks>1</marks>
     <words>
-        <word value="3">la</word>
-        <word value="1">hello</word>
-        <word value="1">world</word>
+        <word count="3">la</word>
+        <word count="1">hello</word>
+        <word count="1">world</word>
     </words>
 </word-counts>
 ```
