@@ -25,7 +25,7 @@ if operation == "sort"
 end
 
 if operation == "filter_cost"
-	CSV.open("result.csv", "wb") do |csv|
+	CSV.open("result.csv", "w") do |csv|
 		csv_file.each do |line|
 			if line[2].to_i >= first.to_i and line[2].to_i <= second.to_i
 				csv << line
