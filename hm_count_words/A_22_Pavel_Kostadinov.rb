@@ -34,7 +34,7 @@ if xml_json == 'json'
 elsif xml_json == 'xml'
   xml_ = REXML::Document.new('') 
   word_c_t = xml_.add_element('word-counts')
-  word_c_t.add_element('marks').add_text marks_sum
+  word_c_t.add_element('marks').add_text marks_sum.to_s
   words_t = word_c_t.add_element('words')
 
       h.each do |word, count|
