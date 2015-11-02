@@ -46,7 +46,7 @@ elsif format == "json"
   b = Hash[words.map {|key,value| [key,value]}]
   puts JSON.pretty_generate({marks: marks, words: [b]})
 
-else format == "xml"
+else
   words.each do |word,occ|	
     puts word + ',' + occ.to_s
   end

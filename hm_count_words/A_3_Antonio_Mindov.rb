@@ -1,4 +1,7 @@
-file = File.open(ARGV.first, "r")
+require 'json'
+require 'builder'
+
+file = File.open(ARGV[0], "r")
 
 contents = ""
 contents = file.read.downcase
@@ -13,10 +16,29 @@ end
 
 hash = hash.sort_by{|word, count| [-count, word]}
 
-hash.each do |word, count|
-	puts word + "," + count.to_s
-end
+if ARGV[1] == 'json'
+	jsonHash = {
+		"marks" => marks.length,
+		"words" => hash
+	}
+	p JSON.pretty_generate(jsonHash)
 
-if marks.length > 0
-	puts '"marks",' + marks.length.to_s
+elsif ARGV[1] == 'xml'
+	xml = Builder::XmlMarkup.new(:indent => 4)
+	puts xml.word-counts {
+	  xml.makrs marks.length
+	  xml.words{
+	  	hash.each do |word, count|
+			xml.word(count: count)
+		end
+	  }
+	}
+else
+	hash.each do |word, count|
+		puts word + "," + count.to_s
+	end
+
+	if marks.length > 0
+		puts '"marks",' + marks.length.to_s
+	end
 end
