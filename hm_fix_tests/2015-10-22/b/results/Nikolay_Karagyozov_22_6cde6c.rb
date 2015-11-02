@@ -27,9 +27,11 @@ end
 result.sort_by { |a| [a.split(' ').first.downcase]}
 
 CSV.open("result.csv", "w") do |csv|
+  index = 1
   result.each do |item|
     first_name = item.split(' ').first
     last_name = item.split(' ').last
-    csv << [last_name, first_name]
+    csv << [last_name + index.to_s, first_name + index.to_s]
+    index += 1
   end
 end

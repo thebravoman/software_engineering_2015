@@ -3,7 +3,7 @@ require 'csv'
 my_csv = []
 folder1 = ARGV[0]
 folder2 = ARGV[1]
-pattern = /\b([A-Za-z]+?(\..+)/
+pattern = /\b([A-Za-z]+?)(\..+)/
 
 Dir.glob(folder1 + '*').each do |file|
 	s = pattern.match(file.split("/").last)

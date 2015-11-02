@@ -8,7 +8,7 @@ my_csv = []
 Dir.glob(path_one + "*").each do |filename|
   name = filename.split("/").last
   if name.to_s.count("0-9") == 7
-    length = name.split(".").first.length / 2
+    length = name.length / 2
     my_csv << [name, length]
   end
 end
@@ -16,7 +16,7 @@ end
 Dir.glob(path_two + "*").each do |filename|
   name = filename.split("/").last
   if name.to_s.count("0-9") == 7
-    length = name.split(".").first.length / 2
+    length = name.length / 2
     my_csv << [name, length]
   end
 end

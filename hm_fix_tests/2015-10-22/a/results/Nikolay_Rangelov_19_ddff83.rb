@@ -1,41 +1,54 @@
 require 'csv'
 
-path_one = ARGV[0]
-path_two = ARGV[1]
-len = 0
-checked_files = []
-CSV.open("result.csv", "w") do |csv|
-	Dir.glob(path_one + "*") do |filename_one|
-		splited = filename_one.split("/").last
-		just_name = splited.split(".").first
-		if just_name.size == 7
-			len = ((splited.size-1)/2).floor2(0);
-			csv << [splited, len]
-			checked_files << [splited, len]
-		end
-		len = 0
-	end
 
-	Dir.glob(path_two + "*") do |filename_one|
-		splited = filename_one.split("/").last
-		just_name = splited.split(".").first
-		if just_name.size == 7
-			len = ((splited.size-1)/2).floor2(0);
-			csv << [splited, len]
-			if checked_files.include?(splited,len)
-				#do nothing
-			else
-				csv << [splited, len]
-			end
+def write_csv arr
+	CSV.open("result.csv","w") do |csv_array|
+		arr.each do |line|
+			csv_array << line
 		end
-		len = 0
 	end
 end
 
+path_one = ARGV[0].to_s
+path_two = ARGV[1].to_s
+data_to_csv = []
+filenames_in_csv = [];
+number_of_digits = 0
 
-my_csv = CSV.read 'result.csv'
-my_csv.sort! { |a,b| a[0].downcase <=> b[0].downcase }
-my_csv.reverse!
-CSV.open("result.csv", "w") do |csv|
-	my_csv.each {|element| csv << element}
+Dir.glob(path_one+"*").each do |filename|
+	splited = filename.split("/").last
+	without_extension = splited.split(".").first
+
+	number_of_digits = without_extension.scan(/[0123456789]/).count
+
+	if number_of_digits == 7
+		calced = (splited.size / 2).floor
+		data_to_csv << [splited, calced]
+		filenames_in_csv << splited
+	end
+
+	number_of_digits = 0
 end
+
+number_of_digits = 0
+
+Dir.glob(path_two + "*").each do |filename|
+	splited = filename.split("/").last
+	without_extension = splited.split(".").first
+
+	number_of_digits = without_extension.scan(/[0123456789]/).count
+	
+	if number_of_digits == 7
+		calced = (splited.size / 2).floor
+		if !filenames_in_csv.include?(splited)  # to be done
+			data_to_csv << [splited, calced]
+		end
+	end
+
+	number_of_digits = 0
+end
+
+data_to_csv.sort! { |a,b| a[0].downcase <=> b[0].downcase }
+data_to_csv.reverse! 
+
+write_csv data_to_csv
