@@ -23,22 +23,14 @@ end
 wordsnum = wordsnum.sort_by{|word, number| word.downcase}
 wordsnum = wordsnum.sort_by{|word, number| [-number,word]}
 
-wordsnum.each do |word, number|
-   puts word + ',' + number.to_s
-end
-if markz_count != 0
-   puts '"marks"'+','+markz_count.to_s
-end
-
 if json_xml == "json"
   tempHash = {
     "marks" => markz_count,
     "words" => wordsnum
   }
   puts JSON.pretty_generate(tempHash)
-end
 
-if json_xml == "xml"
+elsif json_xml == "xml"
   xml_counts = REXML::Document.new("")
   xml_word_counts = xml_counts.add_element("word-counts")
   xml_marks = xml_word_counts.add_element("marks")
@@ -52,4 +44,12 @@ if json_xml == "xml"
   xmlprint = ""
   xml_counts.write(xmlprint, 4)
   puts xmlprint
+
+else
+  wordsnum.each do |word, number|
+    puts word + ',' + number.to_s
+  end
+  if markz_count != 0
+    puts '"marks"'+','+markz_count.to_s
+  end
 end
