@@ -1,5 +1,8 @@
-
+require 'rexml/document'
+require 'rubygems'
+require 'json'
 word_counter = {} 
+command = ARGV[1] 
 marks = 0
 file = File.open(ARGV[0], "r")  
 file.each_line do |line| 
@@ -16,9 +19,35 @@ file.each_line do |line|
 end 
    
 word_counter = word_counter.sort_by{|key, value|[-value, key]} 
+if command == 'json'
+if marks > 0
+puts JSON.pretty_generate("marks" => marks,"words" => word_counter)
+end
+if marks == 0
+puts JSON.pretty_generate("words" => word_counter)
+end
+end
+if command == 'xml'
+my_xml = REXML::Document.new('')
+root = my_xml.add_element('word-counts')
+root.add_element('marks').add_text"#{marks}"
+words = root.add_element('words')
 word_counter.each do |key,value|
-  puts "#{key},#{value}" 
- end 
-	if marks > 0 then
-	puts "\"marks\",#{marks}"
-	end
+word = words.add_element('word',{'count'=> "#{value}"})
+word.add_text("#{key}")
+end
+formatter = REXML::Formatters::Pretty.new
+formatter.compact = true
+formatter.write(my_xml, $stdout)
+else
+word_counter.each do |key,value| 
+   puts "#{key},#{value}"  
+  end  
+ 	if marks > 0 then 
+ 	puts "\"marks\",#{marks}" 
+ 	end 
+end
+
+
+
+
