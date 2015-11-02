@@ -46,7 +46,7 @@ if json_xml == "xml"
   xml_words = xml_word_counts.add_element("words")
   wordsnum.each do |index, key|
     word = xml_words.add_element('word')
-    word.add_attribute("count", 'key.to_s')
+    word.add_attribute("count", key.to_s)
     word.add_text "#{index}"
   end
   xmlprint = ""
