@@ -1,0 +1,32 @@
+require 'csv'
+
+def contains_letters? str
+    str[/[a-zA-Z]+/]  == str
+end
+
+def sort_result 
+my_csv = CSV.read 'result.csv' 
+	my_csv.sort! {|a,b| a[1] <=> b[1]}
+	my_csv.reverse!
+	CSV.open("result.csv", "w") do |csv| 
+		my_csv.each {|element| csv << element} 
+	end 
+end 
+
+
+CSV.open("result.csv","w") do |result|
+	Dir.glob(ARGV[0]+"*").each do |filename|
+		name = filename.split("/").last
+		name_wo_ext = name.split(".").first
+		if contains_letters? name_wo_ext
+			Dir.glob(ARGV[1]+"*").each do |filename2|
+				name2 = filename2.split("/").last
+				if name2 == name
+					result << [name2, name2.length/2]
+				end
+			end
+		end
+	end
+end
+
+sort_result

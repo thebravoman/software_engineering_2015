@@ -1,24 +1,26 @@
 file = ARGV[0]
 
-finalNames = Hash.new
+finalNames = []
 
 Dir.glob(file + '*').each do |file|
-  names = file.split('_')
-  if names.length == 3
+  names = file.split('/').last.split('_')
+  if names.length == 3 and !names.include? "~"
     lastname = names[1]
-
-    if lastname.to_s.length == 5
-      finalNames["#{names[0]}".gsub("./", "")] = "#{names[1]}"
+    if lastname.length == 5
+      finalNames << [names[0],names[1]]
     end
   end
 end
 
-#finalNames.each do |name|
-
-#finalNames.sort! {|a, b| a <=> b}
-
 require 'csv'
 
+finalNames.sort! {|a, b| -(a <=> b)}
+
+count = 1
+
 CSV.open("result.csv", "w") do |csv|
-  Hash[finalNames.sort].each {|element| csv << element}
+  finalNames.each do |name|
+    csv << [name[0], name[1]]
+    count = count + 1
+  end
 end

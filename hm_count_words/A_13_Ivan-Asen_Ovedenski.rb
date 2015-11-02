@@ -5,6 +5,7 @@ file.each_line { |line|
   marks += line.scan(/[,.!?:;"()\[\]]/).count 	
   words = line.gsub(/[^a-z'^A-Z'\s-]/, '').split
   words.each { |w|
+  	w.downcase!
   	if h.has_key?(w) 
   		h[w] = h[w] + 1 
 	else
@@ -12,7 +13,7 @@ file.each_line { |line|
   	end	
    	}
   } 
-  h.sort{|a,b| a[1] <=> b[1]}.each { |word|
+  h.sort{|a,b| a <=> b}.each { |word|
   
   puts "#{word[0]},#{word[1]}" 
         }

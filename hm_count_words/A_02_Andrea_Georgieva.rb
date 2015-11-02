@@ -5,15 +5,15 @@ hash_n = Hash.new
 file_o = File.open(text, "r")
 
 file_o.each_line { |line|
-  dumi = line.downcase.split
+  dumy = line.downcase.split
 	
-  dumi.each { |c|
-  	marks += c.scan(",.;:!?(){}").hash_n
-  	c = c.gsub(/[ ,.;:!?(){}]/, '')
-  	if hash_n.has_key?(c)
-	    hash_n[c] += 1
+  dumy.each { |duma|
+  	marks += duma.hash_n("-_,.;:!?(){}")
+	 duma = duma.gsub(/[-_,.;:!?(){}]/, '')
+  	if hash_n.has_key?(duma)
+	    hash_n[duma] += 1
 	  else
-	  	hash_n[c] = 1
+	  	hash_n[duma] = 1
 	  end
   }
   
@@ -24,6 +24,6 @@ hash_n = hash_n.sort_by { |x, y| [-y, x] }
 hash_n.each do |x, y|
 	puts "#{x},#{y}"
 end
-if prep_znachi > 0
+if marks > 0
   puts "\"marks\",#{marks}"
 end
