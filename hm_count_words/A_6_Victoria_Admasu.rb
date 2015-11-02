@@ -1,5 +1,7 @@
-file = ARGV[0]
+require 'json'
 
+file = ARGV[0]
+type = ARGV[1]
 marks = 0
 count = Hash.new
 text = File.open(file, "r")
@@ -20,10 +22,19 @@ text.each_line { |line|
 
 count = count.sort_by {|x, y| [-y, x]}
 
-count.each { |x, y|
-  puts "#{x},#{y}"
-}
+if type == 'json'
+  j_count = {
+    "marks" => marks,
+    "words" => count 
+  }
+  
+  puts JSON.pretty_generate(j_count)
+elsif type == 'csv' or type == nil
+  count.each { |x, y|
+    puts "#{x},#{y}"
+  }
 
-if marks > 0
-  puts "\"marks\",#{marks}"
+  if marks > 0
+    puts "\"marks\",#{marks}"
+  end
 end
