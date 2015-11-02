@@ -17,14 +17,7 @@ content.each do |word|#counting the words
 end
 count = count.sort_by{|word,num| word.downcase}#sorting alphabetically
 count = count.sort_by {|word,num| [-num,word]}#sorting by the counter
-count.each do|word, num|
-	
-	puts word+','+num.to_s
-end
-if marks!=0
-	puts '"marks"'+','+marks.to_s
-	end
-	
+
 if command == "json"
 
 json_hash = {
@@ -37,6 +30,8 @@ File.open('result.json', 'w') do |f|
 		f << json_hash2
 		end
 		
+puts json_hash2
+	
 elsif command == "xml"
   xml_new = REXML::Document.new('')
   
@@ -54,7 +49,15 @@ elsif command == "xml"
 	File.open('result.xml', 'w') do |f|
 		f << xml_new
 	end
+	puts xml_new
 else
+count.each do|word, num|
+	
+	puts word+','+num.to_s
+end
+if marks!=0
+	puts '"marks"'+','+marks.to_s
+	end
 	CSV.open('result.csv', 'w') do |csv|
 		count.each do |elem|
 			csv << elem
@@ -63,5 +66,6 @@ else
 			csv <<  '"marks"'+','+marks.to_s
 		end
 	end
+	puts csv
 end
 
