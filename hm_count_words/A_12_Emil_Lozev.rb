@@ -35,7 +35,7 @@ if option == 'csv'
 	puts "\"marks\",#{marks_sum}"
 	#CSV END
 
-elsif option == 'csv'
+elsif option == 'json'
 	#JSON 
 	hash = {
 		"marks" => marks_sum.to_s,
