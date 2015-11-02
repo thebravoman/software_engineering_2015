@@ -7,7 +7,7 @@ option = ARGV[1]
 
 File.open(f_name) do |file|
   text = ''
-
+  
   file.each_line do |line|
     text += line
   end
@@ -42,4 +42,5 @@ File.open(f_name) do |file|
     c_words.each { |word, count| puts word + ',' + count.to_s }
 	puts "\"marks\"," + marks_c.to_s
   end
+  
 end
