@@ -32,9 +32,9 @@ def output_xml(counted_words, marks_count)
   word_counts.add_element 'words'
   add_words_to_xml document, counted_words
 
-  output = ''
-  document.write(output, 1)
-  puts output
+  formatter = REXML::Formatters::Pretty.new(2)
+  formatter.compact = true # makes words show up on one line
+  formatter.write(document, $stdout)
 end
 
 File.open(@input_file) do |file|

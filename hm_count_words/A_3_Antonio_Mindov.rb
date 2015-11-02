@@ -1,5 +1,5 @@
 require 'json'
-require 'builder'
+require 'rexml/document'
 
 file = File.open(ARGV[0], "r")
 
@@ -21,18 +21,21 @@ if ARGV[1] == 'json'
 		"marks" => marks.length,
 		"words" => hash
 	}
-	p JSON.pretty_generate(jsonHash)
+	puts jsonHash.to_json
 
 elsif ARGV[1] == 'xml'
-	xml = Builder::XmlMarkup.new(:indent => 4)
-	puts xml.word-counts {
-	  xml.makrs marks.length
-	  xml.words{
-	  	hash.each do |word, count|
-			xml.word(count: count)
-		end
-	  }
-	}
+	xml = REXML::Document.new('')	
+	mainTag = xml.add_element('word-counts')
+	mainTag.add_element('marks').add_text marks.length.to_s
+	wordsTag = mainTag.add_element('words')
+
+	hash.each do |word, count|
+		wordsTag.add_element('word', {'count' => count}).add_text word
+	end
+
+	formatter = REXML::Formatters::Pretty.new(4)
+    formatter.compact = true
+    formatter.write(xml, $stdout)
 else
 	hash.each do |word, count|
 		puts word + "," + count.to_s

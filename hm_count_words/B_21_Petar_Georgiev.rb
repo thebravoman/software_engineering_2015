@@ -35,11 +35,11 @@ if option_type == "xml"
   end
   formatter = REXML::Formatters::Pretty.new
   formatter.compact = true
-  formatter.write(doc, $stdout)
+  formatter.write(file, $stdout)
   puts
 elsif option_type == "json"
-  b = Hash[count_words.map {|key,value| [key,value]}]
-  puts JSON.pretty_generate({marks: marks, words: [b]})
+  json = { :marks => "#{marks}".to_i, :words => count_words, }
+  puts JSON.pretty_generate(json)
 else
   count_words.each do |word,count|	
     puts word + ',' + count.to_s
