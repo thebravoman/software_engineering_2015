@@ -2,12 +2,12 @@ require 'json'
 require 'rexml/document'
 
 
-fail = ARGV[0]
+file = ARGV[0]
 tip = ARGV[1]
-marks = 0
 hash_n = Hash.new
-text = text.open(text, "r")
 
+text = text.open(text, "r")
+marks = 0
 text.each_line do |line|
   dumi = line.downcase.split
   dumi.each do |duma|
