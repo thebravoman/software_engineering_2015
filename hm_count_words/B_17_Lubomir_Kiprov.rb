@@ -1,4 +1,9 @@
+require 'json'
+require 'csv'
+require 'rexml/document'
+
 filename = ARGV[0].to_s
+format = ARGV[1].to_s
 countwords = 0
 countmarks = 0
 index = 0
@@ -20,27 +25,54 @@ searchword.each do |item|
 end
 searchword =  searchword.sort
 j = searchword.first
-wordhash = {}
+wordhash = Hash.new()
 searchword.each do |i|
 	
 	if i == j
 		countwords = countwords + 1
 		wordhash[j] = countwords
 	else
-		wordhash[j] = countwords
 		j = i
 		countwords = 1
+		wordhash[j] = countwords
 	end
 	
 end
 wordhash = wordhash.sort_by{|k, v| [-v, k]}
-wordhash.each_with_index do |(k, v)|
-  puts "#{k},#{v}"
+if format == "json" 
+	jsonhash = Hash.new()
+	jsonhash = {
+			"marks" => countmarks,
+			"words" => wordhash
+			}
+	puts JSON.pretty_generate(jsonhash)
+
+elsif format == "xml"
+
+	xml= REXML::Document.new()
+	xmlwcount = xml.add_element('word-counts')
+	xmlmarks = xmlwcount.add_element('marks')
+	xmlmarks.add_text "#{countmarks}"
+	xmlwords = xmlwcount.add_element('words')
+	
+	wordhash.each do |k, v|
+		word = xmlwords.add_element('word')
+		word.add_attribute('count', v)
+		word.add_text "#{k}"
+	end
+	
+	output = REXML::Formatters::Pretty.new
+	output.compact = true
+  	output.write(xml, $stdout)
+  	puts
+
+else 
+
+	wordhash.each_with_index do |(k, v)|
+ 		 puts "#{k},#{v}"
+	end
+	if countmarks > 0	
+		print '"marks",',countmarks
+		puts
+	end
 end
-if coutmarks > 0	
-	print '"marks",',countmarks
-	puts
-end
-
-
-

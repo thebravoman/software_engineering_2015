@@ -1,28 +1,40 @@
+=begin
+Develop a program named FirstName_LastName_ClassNumber_642bd5.rb
+1. you are given two arguments for a folders with files;
+1.1 if there are other arguments they should be discarded;
+2. file names in this folders are in the form First_Last_digits.rb;
+3. find the students with 5 letters in the first name that are in both folders. A student is in both folders if it there is a file with the same First and Last Name. Digits might be different;
+4. Sort the result by Last name ASC;
+5. Produce a result in CSV format named result.csv: 
+	LastName1,FirstName1
+	LastName2,FirstName2 ... 
+	LastNameN,FirstNameN 
+=end
+
 require 'csv'
 
-folder1 = ARGV[0]
-folder2 = ARGV[1]
-
 names = []
-names2 = []
-namesboth = []
 
-i=0
-k=0
-
-Dir.glob("folder1" + "*").each do |filename|
-	file = filename.split('/').last.split('.').first;
-		if filename.split('_')[0].length == 5
-			names[i] = file.split('_')[0]
-			i++
-		end
+CSV.open("result.csv", "w") do |csv|
+	Dir.glob(ARGV[0] + "*").each do |file|
+		filename = file.split('/').last.split('_')
+			if filename[0].size == 5
+				names << filename
+			end
+	end
+	
+	Dir.glob(ARGV[1] + "*").each do |file|
+		filename = file.split('/').last.split('_')
+			if filename[0].size == 5
+				if names.include?(filename)
+					csv << [filename[1], filename[0]]
+				end
+			end
+	end
 end
 
-Dir.glob("folder2" + "*").each do |files|
-	filez = files.split('/').last.split('.').first;
-		if files.split('_')[0].length == 5
-			names[k] = filez.split('_')[0]
-			k++
-		end
+my_csv = CSV.read 'result.csv'
+my_csv.sort! { |a,b| a[0] <=> b[0] }
+CSV.open("result.csv", "w") do |csv|
+  my_csv.each {|element| csv << element}
 end
-
