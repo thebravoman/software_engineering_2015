@@ -25,20 +25,7 @@ end
 words = words.sort_by{|word,occ| word.downcase}	
 words = words.sort_by{|word,occ| [-occ,word]}	 
 
-if format == "csv"
-  words.each do |word,occ|	
-    puts word + ',' + occ.to_s
-  end
-  
-  if marks != 0
-    puts "\"marks\",#{marks}"
-  end
-
-elsif format == "json"
-  b = Hash[words.map {|key,value| [key,value]}]
-  puts JSON.pretty_generate({marks: marks, words: [b]})
-
-elsif format == "xml"
+if format == "xml"
   doc = REXML::Document.new('')
   
   word_counts = doc.add_element('word-counts')
@@ -54,4 +41,17 @@ elsif format == "xml"
   formatter.write(doc, $stdout)
   
   puts
+
+elsif format == "json"
+  b = Hash[words.map {|key,value| [key,value]}]
+  puts JSON.pretty_generate({marks: marks, words: [b]})
+
+else format == "xml"
+  words.each do |word,occ|	
+    puts word + ',' + occ.to_s
+  end
+  
+  if marks != 0
+    puts "\"marks\",#{marks}"
+  end
 end
