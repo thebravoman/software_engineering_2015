@@ -19,7 +19,7 @@ file.each_line { |line|
 if format == 'json'
 	json = {
 		"marks" => marks,
-		"words" => h 
+		"words" => h.to_a
 	}
 	puts JSON.pretty_generate(json) 
 	#puts json.to_json
