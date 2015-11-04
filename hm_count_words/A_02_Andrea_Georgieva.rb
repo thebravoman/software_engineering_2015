@@ -11,43 +11,43 @@ marks = 0
 text.each_line do |line|
   dumi = line.downcase.split
   dumi.each do |duma|
-    marks += duma.count("-_,.;:!?(){}")
+    marks += duma.hash_n("-_,.;:!?(){}")
     duma = duma.gsub(/[-_,.;:!?(){}]/, '')
-    if count.has_key?(duma)
-      count[duma] += 1
+    if hash_n.has_key?(duma)
+      hash_n[duma] += 1
     else
-      count[duma] = 1
+      hash_n[duma] = 1
     end
   end
 end
-  count = count.sort_by {|x, y| [-y, x]}
+  hash_n = hash_n.sort_by {|x, y| [-y, x]}
 if type == 'json'
-  j_count = {
+  hash_j = {
     "marks" => marks
-    "words" => count 
+    "words" => hash_n
   }  
-  puts JSON.pretty_generate(j_count)
+  puts JSON.pretty_generate(hash_j)
 elsif type == 'csv' || type == nil
-  count.each do |x, y|
+  hash_n.each do |x, y|
     puts "#{x},#{y}"
    end
   if marks > 0
     puts "\"marks\",#{marks}"
   end
 elsif type == 'xml'
-  count_x = REXML::Document.new
-  n = count_x.add('counts')
+  hash_x = REXML::Document.new
+  n = hash_x.add('counts')
   znak = n.add('marks')
   znak.text_add "#{marks}"
   dumi_x = n.add('words')
-  count.each do |x, y|
+  hash_n.each do |x, y|
     d = dumi_x.add('word')
     d.attribute('count', y)
     d.text_add "#{x}"
    end
 
   izved = ''
-  count_x.write(izved, 1)
+  hash_x.write(izved, 1)
 
   puts izved
 end
