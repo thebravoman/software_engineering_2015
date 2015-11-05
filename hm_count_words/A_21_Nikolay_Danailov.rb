@@ -15,19 +15,26 @@ def output_json(counted_words, marks_count)
   puts JSON.pretty_generate(json_output)
 end
 
+def add_words_to_xml(xml_doc, counted_words)
+  words = xml_doc.elements['word-counts/words']
+
+  counted_words.each do |word, count|
+    word_element = words.add_element 'word'
+    word_element.add_attribute 'count', count
+    word_element.add_text "#{word}"
+  end
+end
+
 def output_xml(counted_words, marks_count)
   document = REXML::Document.new
   word_counts = document.add_element 'word-counts'
-  word_counts.add_element('marks').add_text("#{marks_count}")
-  words = word_counts.add_element 'words'
+  word_counts.add_element('marks').add_text "#{marks_count}"
+  word_counts.add_element 'words'
+  add_words_to_xml document, counted_words
 
-  counted_words.each do |word, count|
-    words.add_element('word').add_attribute('count', count).add_text(word)
-  end
-
-  output = ''
-  document.write(out, 1)
-  puts output
+  formatter = REXML::Formatters::Pretty.new(2)
+  formatter.compact = true # makes words show up on one line
+  formatter.write(document, $stdout)
 end
 
 File.open(@input_file) do |file|
