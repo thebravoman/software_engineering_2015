@@ -1,4 +1,4 @@
-# 2015-10-05
+# 2015-11-05
 
 - https://help.github.com/articles/generating-ssh-keys/
 - използвайте password manager
