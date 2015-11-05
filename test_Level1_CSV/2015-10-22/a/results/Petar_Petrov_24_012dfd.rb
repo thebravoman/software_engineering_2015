@@ -38,7 +38,7 @@ my_csv.sort! { |a,b|
 	if a[1].to_i == b[1].to_i
 		a[0] <=> b[0]
 	else
-		a[1] <=> b[1]
+		a[1].to_i <=> b[1].to_i
 	end
 }
 

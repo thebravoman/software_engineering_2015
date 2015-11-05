@@ -28,9 +28,9 @@ if a != 0
 		x_1 = first(temp,a,b)
 		x_2 = second(temp,a,b)
 		if (x_1>x_2)
-		print "#{x_1},#{x_2}"
+		print "#{x_2},#{x_1}"
 		elsif (x_2>x_1)
-			print "{x_2},#{x_1}"
+			print "{x_1},#{x_2}"
 		end
 	end
 end
