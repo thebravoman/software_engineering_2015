@@ -17,12 +17,12 @@ class Result
 
   def to_csv
     counted_words.each { |word, count| puts word + ',' + count.to_s }
-    puts "\"marks\"," + marks.to_s
+    "\"marks\"," + marks.to_s
   end
 
   def to_json
     json_output = { marks: marks, words: counted_words }
-    puts JSON.neat_generate(json_output, wrap: 40)
+    JSON.neat_generate(json_output, wrap: 40)
   end
 
   def add_words_to_xml xml_doc
@@ -41,10 +41,7 @@ class Result
     word_counts.add_element('marks').add_text "#{marks}"
     word_counts.add_element 'words'
     add_words_to_xml document
-
-    formatter = REXML::Formatters::Pretty.new(2)
-    formatter.compact = true # makes words show up on one line
-    formatter.write(document, $stdout)
+    document
   end
 end
 
@@ -68,10 +65,13 @@ File.open(@input_file) do |file|
   result.counted_words = result.counted_words.sort_by { |word, count| [-count, word] }
 
   if @output_format == 'json'
-    result.to_json
+    puts result.to_json
   elsif @output_format == 'xml'
-    result.to_xml
+    xml_res = result.to_xml
+    formatter = REXML::Formatters::Pretty.new(2)
+    formatter.compact = true # makes words show up on one line
+    formatter.write(xml_res, $stdout)
   else
-    result.to_csv
+    puts result.to_csv
   end
 end
