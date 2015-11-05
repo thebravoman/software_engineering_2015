@@ -1,6 +1,7 @@
 require 'csv'
 require 'json'
 require 'builder'
+require 'rexml/document'
 
 filename = ARGV[0]
 option = ARGV[1]
@@ -51,7 +52,8 @@ elsif option == 'xml'
 	  xml.marks marks_sum.to_s
 	    xml.words {
 	     	histogram.each do |word,i|
-	     		xml.tag!("word count = #{i}") {xml.print word}
+	     		#xml.tag!("word count = #{i}") {xml.print(word)}
+	     		xml.tag!('word', {'count' => i}) {xml.("#{word}")}
 	     	end 
 		}
 	}	#END of XML

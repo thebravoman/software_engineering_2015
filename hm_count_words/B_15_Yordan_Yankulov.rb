@@ -22,7 +22,7 @@ if command == 'json'
 	if punctuation != 0
 		puts JSON.pretty_generate("marks" => punctuation,"words" => help)
 	else
-		puts JSON.generate("words" => help)
+		puts JSON.pretty_generate("words" => help)
 	end
 
 elsif command == 'xml'
