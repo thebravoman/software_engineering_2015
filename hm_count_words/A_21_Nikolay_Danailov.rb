@@ -1,11 +1,10 @@
-require 'csv'
 require 'json'
 require 'rexml/document'
-require 'neatjson'
 
 @input_file = ARGV[0]
 @output_format = ARGV[1]
 
+# represents the result of counting words
 class Result
   attr_accessor :marks
   attr_accessor :counted_words
@@ -22,10 +21,10 @@ class Result
 
   def to_json
     json_output = { marks: marks, words: counted_words }
-    JSON.neat_generate(json_output, wrap: 40)
+    JSON.pretty_generate(json_output)
   end
 
-  def add_words_to_xml xml_doc
+  def add_words_to_xml(xml_doc)
     words = xml_doc.elements['word-counts/words']
 
     counted_words.each do |word, count|
@@ -44,7 +43,6 @@ class Result
     document
   end
 end
-
 
 File.open(@input_file) do |file|
   text = ''
