@@ -6,6 +6,8 @@ require 'rexml/document'
 
 # Processes and extracts words from text
 class WordCounter
+  private
+
   def parse(string)
     result = Result.new
     result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
@@ -18,6 +20,8 @@ class WordCounter
     result.word_counts = result.word_counts.sort_by { |word, _count| word }
     result
   end
+
+  public
 
   def parse_file(filename)
     text = ''
@@ -34,6 +38,20 @@ end
 
 # Represents the result of counting words
 class Result
+  private
+
+  def add_words_to_xml(xml_doc)
+    words = xml_doc.elements['word-counts/words']
+
+    word_counts.each do |word, count|
+      word_element = words.add_element 'word'
+      word_element.add_attribute 'count', count
+      word_element.add_text "#{word}"
+    end
+  end
+
+  public
+
   attr_accessor :marks_count
   attr_accessor :word_counts
 
@@ -50,16 +68,6 @@ class Result
   def to_json
     json_output = { marks: marks_count, words: word_counts }
     JSON.pretty_generate(json_output)
-  end
-
-  def add_words_to_xml(xml_doc)
-    words = xml_doc.elements['word-counts/words']
-
-    word_counts.each do |word, count|
-      word_element = words.add_element 'word'
-      word_element.add_attribute 'count', count
-      word_element.add_text "#{word}"
-    end
   end
 
   def to_xml
