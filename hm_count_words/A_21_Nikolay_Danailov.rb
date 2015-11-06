@@ -4,6 +4,7 @@ require 'rexml/document'
 @input_file = ARGV[0]
 @output_format = ARGV[1]
 
+# Processes and extracts words from text
 class WordCounter
   def parse(string)
     result = Result.new
@@ -14,7 +15,7 @@ class WordCounter
       result.word_counts[word] += 1
     end
 
-    result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }
+    result.word_counts = result.word_counts.sort_by { |word, _count| word }
     result
   end
 
@@ -31,7 +32,7 @@ class WordCounter
   end
 end
 
-# represents the result of counting words
+# Represents the result of counting words
 class Result
   attr_accessor :marks_count
   attr_accessor :word_counts
