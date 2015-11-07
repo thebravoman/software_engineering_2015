@@ -87,5 +87,5 @@ elsif option == "json"
 elsif option == "xml"
 	puts result.to_xml
 else
-	puts result.to_csv
+ 	result.to_csv
 end
