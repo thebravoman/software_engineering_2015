@@ -61,8 +61,13 @@ class Result
   end
 
   def to_csv
-    word_counts.each { |word, count| puts word + ',' + count.to_s }
-    "\"marks\"," + marks_count.to_s
+  	csv = []
+
+    word_counts.each do |word, count| 
+    	csv << word + ',' + count.to_s
+    end
+
+    csv << "\"marks\"," + marks_count.to_s if marks_count > 0
   end
 
   def to_json
