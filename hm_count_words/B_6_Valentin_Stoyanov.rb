@@ -2,8 +2,8 @@ require 'json'
 require 'rexml/document'
 require 'csv'
 
-@file = File.open(ARGV[0], "r")
 @format = ARGV[1]
+@file = File.open(ARGV[0], "r")
 
 class WordCounter
 	def parse(string)
