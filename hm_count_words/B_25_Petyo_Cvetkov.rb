@@ -4,13 +4,13 @@ class WordCounter
   def parse(string)
     result = Result.new
     result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
-    words = string.downcase.gsub(/[^a-z'\s-]/, '').split(' ')
+    words = string.downcase.gsub(/[^a-z'\s-]/, ' ').split(' ')
 
     words.each do |word|
       result.word_counts[word] += 1
     end
 
-    result.word_counts = result.word_counts.sort_by { |word, _count| word }
+    result.word_counts = result.word_counts.sort_by { |word, occur| [-occur, word] }
     result
   end
 
