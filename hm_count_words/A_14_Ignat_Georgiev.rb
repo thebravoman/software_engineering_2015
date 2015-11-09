@@ -31,10 +31,10 @@ class Result
 
   def to_xml
   xml_new = REXML::Document.new('')
-  word_counts = xml_new.add_element('word-counts')
-  xml_mrks =word_counts.add_element('marks')
+  xml_word_counts=xml_new.add_element('word-counts')
+  xml_mrks =xml_word_counts.add_element('marks')
   xml_mrks.add_text "#{marks_count}"
-  xml_words = word_counts.add_element('words')
+  xml_words = xml_word_counts.add_element('words')
   word_counts.each do |word, count|
     word = xml_words.add_element('word', 'count' => count).text = "#{word}"
   end
