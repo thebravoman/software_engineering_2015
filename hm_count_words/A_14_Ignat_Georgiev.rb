@@ -76,5 +76,5 @@ elsif command == "xml"
  puts result.word_counts
  puts result.to_xml
 else
- puts result.to_csv
+ result.to_csv
 end
