@@ -25,6 +25,8 @@ class WordCounter
 
 		new_hash = Hash.new()
 		new_hash = result.hash.sort_by { |key, value| [-value, key] }
+
+		return result
 	end
 end
 
