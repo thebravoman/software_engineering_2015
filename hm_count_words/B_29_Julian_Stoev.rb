@@ -35,7 +35,7 @@ class Result
 
 	def marks_count
 		if sumofmarks != 0 
-			puts "\"marks\",#{sumofmarks}"
+			puts "marks,#{sumofmarks}"
 		end
 	end
 
@@ -76,7 +76,30 @@ class Result
 	end
 end
 
+word_counter = WordCounter.new
+result = word_counter.parse_file(ARGV[0])  ## .to_s ???
 
+if (ARGV[1]=='json')
+
+	result.to_json
+
+elsif (ARGV[1]=='xml')
+
+	result.to_xml
+
+elsif (ARGV[1]=='marks')
+
+	result.marks_count
+
+elsif (ARGV[1]=='words')
+
+	result.word_count
+
+elsif (ARGV[1]=='csv' || ARGV[1].nil?) 
+	
+	result.to_csv
+
+end
 =begin ##Old Program
 
 
