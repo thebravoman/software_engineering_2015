@@ -40,7 +40,6 @@ class Result
   end
   formatter = REXML::Formatters::Pretty.new(2)
   formatter.compact = true
-   xml_new
   end
 
 end
