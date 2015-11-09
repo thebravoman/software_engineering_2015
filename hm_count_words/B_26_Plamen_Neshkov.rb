@@ -29,15 +29,13 @@ class WordCounter
   end
 
   def parse_file(filepath)
-    text = File.read(filepath);
-    parse(text);
+    text = File.read(filepath)
+    parse(text)
   end
 end
 
 class Result
   attr_reader :marks_count, :word_counts
-  @marks_count
-  @word_counts
 
   def initialize(word_counts, marks_count)
     @marks_count = marks_count
@@ -45,7 +43,7 @@ class Result
   end
 
   def to_csv
-    csv_string = CSV.generate do |csv|
+    CSV.generate do |csv|
       @word_counts.each do |word, occur|
         csv << [word, occur]
       end
