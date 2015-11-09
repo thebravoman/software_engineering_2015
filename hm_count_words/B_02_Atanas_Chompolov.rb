@@ -1,65 +1,76 @@
-
-require 'csv'
 require 'json'
 require 'rexml/document'
 
-@input_file = ARGV[0]
-@output_format = ARGV[1]
+class Result
+	def initialize markCount, wordCount
+		@mark_count = markCount
+		@word_counts = wordCount
+	end
 
-def output_csv(counted_words, marks_count)
-  counted_words.each { |word, count| puts word + ',' + count.to_s }
-  puts "\"marks\"," + marks_count.to_s
+	def to_csv
+		@word_counts.each do |word, count|
+			puts word + "," + count.to_s
+		end
+
+		if @mark_count > 0
+			puts '"marks",' + @mark_count.to_s
+		end
+	end
+
+	def to_json
+		jsonHash = {
+			"marks" => @mark_count,
+			"words" => @word_count
+		}
+		puts jsonHash.to_json
+	end
+
+	def to_xml
+		xml = REXML::Document.new('')	
+		mainTag = xml.add_element('word-counts')
+		mainTag.add_element('marks').add_text @mark_count.to_s
+		wordsTag = mainTag.add_element('words')
+
+		@word_count.each do |word, count|
+			wordsTag.add_element('word', {'count' => count}).add_text word
+		end
+
+		formatter = REXML::Formatters::Pretty.new(4)
+		formatter.compact = true
+		formatter.write(xml, $stdout)
+	end
 end
 
-def output_json(counted_words, marks_count)
-  json_output = { marks: marks_count, words: counted_words }
-  puts JSON.pretty_generate(json_output)
+class WordCounter
+	def parse(contents)
+		marks = contents.gsub(/[a-z\s]/, "");
+		words = contents.gsub(/[^a-z'\s-]/, "").split
+
+		hash = Hash.new(0)
+
+		words.each do |word|
+			hash[word] += 1
+		end
+
+		hash = hash.sort_by{|word, count| [-count, word]}
+
+		return Result.new(marks.length, hash)
+	end
+
+	def parse_file(filename)
+		contents = ""
+		contents = File.open(filename, "r").read.downcase
+		return parse contents    	
+	end
 end
 
-def add_words_to_xml(xml_doc, counted_words)
-  words = xml_doc.elements['word-counts/words']
 
-  counted_words.each do |word, count|
-    word_element = words.add_element 'word'
-    word_element.add_attribute 'count', count
-    word_element.add_text "#{word}"
-  end
-end
+result = (WordCounter.new).parse_file(ARGV[0])
 
-def output_xml(counted_words, marks_count)
-  document = REXML::Document.new
-  word_counts = document.add_element 'word-counts'
-  word_counts.add_element('marks').add_text "#{marks_count}"
-  word_counts.add_element 'words'
-  add_words_to_xml document, counted_words
-
-  formatter = REXML::Formatters::Pretty.new(2)
-  formatter.compact = true # makes words show up on one line
-  formatter.write(document, $stdout)
-end
-
-File.open(@input_file) do |file|
-  text = ''
-
-  file.each_line do |line|
-    text += line
-  end
-
-  marks_count = text.scan(/[,.!?:;"()\[\]]/).count
-  words = text.downcase.gsub(/[^a-z'\s-]/, '').split(' ')
-  counted_words = Hash.new(0)
-
-  words.each do |word|
-    counted_words[word] += 1
-  end
-
-  counted_words = counted_words.sort_by { |word, count| [-count, word] }
-
-  if @output_format == 'json'
-    output_json counted_words, marks_count
-  elsif @output_format == 'xml'
-    output_xml counted_words, marks_count
-  else
-    output_csv counted_words, marks_count
-  end
+if ARGV[1] == 'json'
+	result.to_json
+elsif ARGV[1] == 'xml'
+	result.to_xml
+else
+	result.to_csv
 end
