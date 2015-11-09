@@ -1,5 +1,6 @@
 require 'json'
 require 'rexml/document'
+<<<<<<< HEAD
 
 class Result
 	def initialize(marksCount,wordCount)
@@ -21,6 +22,34 @@ class Result
 		json = {
 			"marks" => @marks_count,
 			"words" => @word_count.to_a
+=======
+format = ARGV[1]
+h = Hash.new 
+marks = 0
+file = File.open(ARGV[0], "r")
+file.each_line { |line|
+  marks += line.scan(/[,.!?:;"()\[\]]/).count 	
+  words = line.gsub(/[^a-z'^A-Z'\s-]/, '').split
+  words.each { |w|
+  	w.downcase!
+  	if h.has_key?(w) 
+  		h[w] = h[w] + 1 
+	else
+   		h[w] = 1 
+  	end	
+   	}
+  }
+if format == 'json'
+	json = {
+		"marks" => marks,
+		"words" => h.to_a
+	}
+	puts JSON.pretty_generate(json) 
+	#puts json.to_json
+elsif format == 'csv'
+	h.sort{|a,b| a <=> b}.each { |word|  
+	puts "#{word[0]},#{word[1]}" 
+>>>>>>> c2bc8aa9394f76bd637f19591222a1bbacaf62c6
 		}
 		puts JSON.pretty_generate(json) 
 	end

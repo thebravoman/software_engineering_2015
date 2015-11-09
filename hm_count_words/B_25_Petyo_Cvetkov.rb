@@ -1,61 +1,80 @@
-def inputInCsv words_list, marks
-  words_list.each do |word,i|
-		puts "#{word},#{i}"
-	end
-	puts "\"marks\",#{marks}"
-end
+class WordCounter
+  private
 
+  def parse(string)
+    result = Result.new
+    result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
+    words = string.downcase.gsub(/[^a-z'\s-]/, ' ').split(' ')
 
+    words.each do |word|
+      result.word_counts[word] += 1
+    end
 
-def likeJson words_list, marks
-  require 'json'
-  my_json = { :marks => "#{marks}".to_i, :words => words_list, }
-  puts JSON.pretty_generate(my_json)
+    result.word_counts = result.word_counts.sort_by { |word, occur| [-occur, word] }
+    result
+  end
 
-end
+  public
 
+  def parse_file(filename)
+    text = ''
 
-def likeXml word_counter, marks
-require 'rexml/document'
-xml_counts = REXML::Document.new("")
-xml_word_counts = xml_counts.add_element('word-counts')
+    File.open(filename) do |file|
+      file.each_line do |line|
+        text += line
+      end
+    end
 
-xml_marks = xml_word_counts.add_element('marks')
-xml_marks.add_text "#{marks}"
-
-xml_words = xml_word_counts.add_element('words')
-
-word_counter.each do |index, key|
-word = xml_words.add_element('word')
-word.add_attribute( 'count', key)
-
-word.add_text "#{index}"
-end
-out = ""
-xml_counts.write(out, 1)
-puts out
-end
-
-
-
-words_list = Hash.new
-FileName = File.open(ARGV[0] , "r")
-
-text = FileName.read.downcase
-marks = text.scan(/[,.!?:;"()\[\]]/).count
-
-text = text.gsub(/[^a-z'\s-]/, '').split(" ")
-text.each do |word|
-  if words_list.has_key?(word)
-  	  words_list[word]+=1
-  else
-    words_list[word] = 1
+    parse text
   end
 end
-words_list = words_list.sort_by {|word, count| [-count, word]}
-case ARGV[1]
-when "csv" then inputInCsv words_list, marks
-when "json" then likeJson words_list, marks
-when "xml" then likeXml words_list, marks
-else inputInCsv words_list, marks
+
+
+class Result
+
+  attr_accessor :marks_count
+  attr_accessor :word_counts
+  def initialize
+    @marks_count = 0
+    @word_counts = Hash.new 0
+  end
+  def to_csv
+    word_counts.each do |word,i|
+      puts "#{word},#{i}"
+    end
+    puts  "\"marks\",#{marks_count}" if marks_count != 0
+  end
+  def to_json
+    require 'json'
+    json_output = { marks: marks_count, words: word_counts }
+    JSON.pretty_generate(json_output)
+  end
+  def to_xml
+    require 'rexml/document'
+    xml_counts = REXML::Document.new("")
+    xml_word_counts = xml_counts.add_element('word-counts')
+    xml_marks = xml_word_counts.add_element('marks')
+    xml_marks.add_text "#{marks_count}"
+    xml_words = xml_word_counts.add_element('words')
+    word_counts.each do |index, key|
+      word = xml_words.add_element('word')
+      word.add_attribute( 'count', key)
+      word.add_text "#{index}"
+    end
+    out = ""
+    xml_counts.write(out, 1)
+    return out
+  end
+end
+file_name = ARGV[0]
+format = ARGV[1]
+word_counter = WordCounter.new
+word_counter = word_counter.parse_file file_name
+
+if format == "json"
+  puts word_counter.to_json
+elsif format == "xml"
+  puts word_counter.to_xml
+else
+  puts word_counter.to_csv
 end
