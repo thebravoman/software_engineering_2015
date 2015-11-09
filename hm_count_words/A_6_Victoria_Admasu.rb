@@ -1,4 +1,5 @@
 require 'json'
+require 'rexml/document'
 
 file = ARGV[0]
 type = ARGV[1]
@@ -37,4 +38,22 @@ elsif type == 'csv' or type == nil
   if marks > 0
     puts "\"marks\",#{marks}"
   end
+elsif type == 'xml'
+  x_count = REXML::Document.new
+
+  num = x_count.add_element('counts')
+  mark = num.add_element('marks')
+  mark.add_text "#{marks}"
+  x_words = num.add_element('words')
+
+  count.each { |x, y|
+    w = x_words.add_element('word')
+    w.add_attribute('count', y)
+    w.add_text "#{x}"
+  }
+
+  output = ''
+  x_count.write(output, 1)
+
+  puts output
 end
