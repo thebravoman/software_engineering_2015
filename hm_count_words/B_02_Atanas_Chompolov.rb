@@ -1,14 +1,15 @@
+
 require 'json'
 require 'rexml/document'
 
 class Result
 	def initialize markCount, wordCount
 		@mark_count = markCount
-		@word_counts = wordCount
+		@word_count = wordCount
 	end
 
 	def to_csv
-		@word_counts.each do |word, count|
+		@word_count.each do |word, count|
 			puts word + "," + count.to_s
 		end
 
