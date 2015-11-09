@@ -56,7 +56,7 @@ class WordCounter
         	word = line.gsub(/[^a-z\n ]/, ' ').split(" ")
 	
 		word.each do |words|
-		result.hash[words] = hash[words] + 1 
+		result.word_count[words] = word_count[words] + 1 
 	  	end
 		end
  		result.word_count = result.word_count.sort_by{|words,number| words.downcase}
