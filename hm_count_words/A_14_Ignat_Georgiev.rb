@@ -40,6 +40,8 @@ class Result
   end
   formatter = REXML::Formatters::Pretty.new(2)
   formatter.compact = true
+  formatter.write(xml_new, $stdout)
+  puts
   end
 
 end
@@ -73,8 +75,7 @@ result = word_counter.parse_file ARGV[0]
 if command == "json"
  puts result.to_json
 elsif command == "xml"
- puts result.word_counts
  puts result.to_xml
 else
- result.to_csv
+ puts result.to_csv
 end
