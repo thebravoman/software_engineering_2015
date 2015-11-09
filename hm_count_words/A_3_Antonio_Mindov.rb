@@ -36,14 +36,14 @@ class Result
 		end
 
 		formatter = REXML::Formatters::Pretty.new(4)
-	    formatter.compact = true
-	    formatter.write(xml, $stdout)
+		formatter.compact = true
+		formatter.write(xml, $stdout)
 	end
 end
 
 class WordCounter
-    def parse(contents)
-    	marks = contents.gsub(/[a-z\s]/, "");
+	def parse(contents)
+		marks = contents.gsub(/[a-z\s]/, "");
 		words = contents.gsub(/[^a-z'\s-]/, "").split
 
 		hash = Hash.new(0)
@@ -55,13 +55,13 @@ class WordCounter
 		hash = hash.sort_by{|word, count| [-count, word]}
 
 		return Result.new(marks.length, hash)
-    end
+	end
 
-    def parse_file(filename)
-    	contents = ""
-    	contents = File.open(filename, "r").read.downcase
-    	return parse contents    	
-    end
+	def parse_file(filename)
+		contents = ""
+		contents = File.open(filename, "r").read.downcase
+		return parse contents    	
+	end
 end
 
 

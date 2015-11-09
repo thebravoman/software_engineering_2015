@@ -61,10 +61,10 @@ class Result
   end
 
   def to_csv
-  	csv = []
+    csv = []
 
-    word_counts.each do |word, count| 
-    	csv << word + ',' + count.to_s
+    word_counts.each do |word, count|
+      csv << word + ',' + count.to_s
     end
 
     csv << "\"marks\"," + marks_count.to_s if marks_count > 0
