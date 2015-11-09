@@ -68,3 +68,14 @@ class WordCounter
     parse_file text
   end
 end
+
+command = ARGV[1]
+frequencies = WordCounter.new
+result = frequencies.parse_file ARGV[0]
+if command == "json"
+ puts result.to_json
+elsif command == "xml"
+ puts result.to_xml
+else
+ puts result.to_csv
+end
