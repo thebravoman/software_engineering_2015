@@ -11,16 +11,17 @@ class Word_counter
 		file.each_line do |line|
 			words = line.downcase.gsub(/\W/,' ').split.each do |word|
 				if list.has_key?(word)
-     				list[word] = list[word] + 1
-    			else
+     					list[word] = list[word] + 1
+    				else
 					list[word] = 1
 				end
 			end
 		end
 	
-	list = list.sort{ |a,b| b[1] <=> a[1] }
-	return parse_result = Result.new(list,marks)
+		list = list.sort{ |a,b| b[1] <=> a[1] }
+		return parse_result = Result.new(list,marks)
 	end
+	
 	def parse(str)
 		
 		list = Hash.new
@@ -28,8 +29,8 @@ class Word_counter
 		str.each_line do |line|
 			words = line.downcase.gsub(/\W/,' ').split.each do |word|
 				if words.match(word)
-     				words[word]+= 1
-    			else
+     					words[word]+= 1
+    				else
 					words[word]+= 1
 				end
 			end
@@ -69,7 +70,7 @@ class Result
   	
 	def to_csv 
 			
-			@words.reverse.each do |element| 
+		@words.reverse.each do |element| 
 			puts "#{element[0]},#{element[1]}"
 		end
 
@@ -79,7 +80,7 @@ class Result
 	end
 end
 
-result = Word_counter.new.parse_file( ARGV[0])
+result = Word_counter.new.parse_file(ARGV[0])
 output = ARGV[1]
 case output
      when "json" 
@@ -88,7 +89,7 @@ case output
      	puts result.to_xml
      #when "all"
      	#puts result.to_json
-     #	puts result.to_xml
+     	#puts result.to_xml
      	#puts result.to_csv
      else 
      	puts result.to_csv
