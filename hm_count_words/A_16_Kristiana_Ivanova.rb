@@ -1,46 +1,45 @@
 require 'rexml/document'
 require 'json'
 
-class Output
-    attr_accessor :marks_count
-    attr_accessor :frequencies
+class Result
+  attr_accessor :marks_count
+  attr_accessor :word_counts
 
-    def initialize
-      @marks_count = 0
-      @frequencies = Hash.new(0)
-    end
+  def initialize
+    @marks_count = 0
+    @word_counts = Hash.new(0)
+  end
 
-  def to_csv 
-    frequencies.each do |item, amount|
+  def to_csv
+    word_counts.each do |item, amount|
       puts item + "," + amount.to_s
     end
 
     if marks_count != 0
-     puts "\"marks\"," + marks_count.to_s
+      puts "\"marks\"," + marks_count.to_s
     end
   end
 
   # -----------------------------------------------------
   def to_xml
     xml_document = REXML::Document.new
-    xml_item_counts = xml_document.add_element 'item-counts'
-    xml_marks = item_counts.add_element 'marks'
+    xml_item_counts = xml_document.add_element 'word-counts'
+    xml_marks = xml_item_counts.add_element 'marks'
     xml_marks.add_text "#{marks_count}"
-    xmls_items = xml_item_counts.add_element 'items' # xml words
+    xmls_items = xml_item_counts.add_element 'words' # xml words
 
-    frequencies.each do |item, amount|
-      item = xml_items.add_element('item', 'amount' => amount).text = "#{item}" #item = word
+    word_counts.each do |item, amount|
+      item = xmls_items.add_element('word', 'count' => amount).text = "#{item}" #item = word
     end
 
     formatter = REXML::Formatters::Pretty.new(2)
     formatter.compact = true
-    formatter.write(xml_dosument, $stdout)
-    puts
+    formatter.write(xml_document, $stdout)
   end
 
   # ----------------------------------------------------
   def to_json
-    json_output = { "marks" => marks_count, "items" => frequencies}
+    json_output = { "marks" => marks_count, "items" => word_counts}
     puts JSON.pretty_generate(json_output)
   end
 end
@@ -50,8 +49,8 @@ class WordCounter
     result = Result.new
     result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
     items = string.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
-    items.each {|item| frequencies[item] += 1} 
-    result.frequencies = result.frequencies.sort_by { |item, amount| [-amount, item]}
+    items.each {|item| result.word_counts[item] += 1} 
+    result.word_counts = result.word_counts.sort_by { |item, amount| [-amount, item]}
     result
   end
 
@@ -64,17 +63,17 @@ class WordCounter
       end
     end
 
-    parse_file text
+    parse text
   end
 end
 
-command = ARGV[1]
-frequencies = WordCounter.new
-result = frequencies.parse_file ARGV[0]
-if command == "json"
- puts result.to_json
-elsif command == "xml"
- puts result.to_xml
+
+word_counter = WordCounter.new
+result = word_counter.parse_file ARGV[0]
+if ARGV[1] == "json"
+ result.to_json
+elsif ARGV[1] == "xml"
+ result.to_xml
 else
- puts result.to_csv
+ result.to_csv
 end
