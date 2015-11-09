@@ -6,11 +6,13 @@ d = (b*b) - (4*a*c)
     puts "Nqma takova"
   elsif d==0;
     x= -b / (2 * a);
-    puts "x = #{x}";
+    puts "#{x}";
   else d!=0
     x1= -b + Math . sqrt(d)/( 2*a)
     x2= -b - Math . sqrt(d)/(2*a)
-  puts "koren x1 = #{x1}","koren x2 = #{x2}";
-  puts "Po-malak koren = #{[x1,x2].min}"
-  puts "Po-golqm koren = #{[x1,x2].max}"        
+  if x1<x2
+    puts "#{x1},#{x2}"
+  else
+    puts "#{x2},#{x1}"       
+end
 end
