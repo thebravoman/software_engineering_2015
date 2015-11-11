@@ -1,53 +1,110 @@
-require 'json'
 require 'rexml/document'
-
+require 'json'
 
 file = ARGV[0]
 tip = ARGV[1]
-hash_n = Hash.new
+$hash_n = Hash.new
+$marks = 0
+class CountingWords
+def parse_s(str)
+res = Result.new
+str = str.downcase.split
 
-text = text.open(text, "r")
-marks = 0
-text.each_line do |line|
+str.each_line do |line|
   dumi = line.downcase.split
   dumi.each do |duma|
-    marks += duma.count("-_,.;:!?(){}")
+    $marks += duma.$hash_n("-_,.;:!?(){}")
     duma = duma.gsub(/[-_,.;:!?(){}]/, '')
-    if count.has_key?(duma)
-      count[duma] += 1
+    if $hash_n.has_key?(duma)
+      $hash_n[duma] += 1
     else
-      count[duma] = 1
+      $hash_n[duma] = 1
     end
   end
 end
-  count = count.sort_by {|x, y| [-y, x]}
-if type == 'json'
-  j_count = {
-    "marks" => marks
-    "words" => count 
-  }  
-  puts JSON.pretty_generate(j_count)
-elsif type == 'csv' || type == nil
-  count.each do |x, y|
-    puts "#{x},#{y}"
-   end
-  if marks > 0
-    puts "\"marks\",#{marks}"
+  $hash_n = $hash_n.sort_by {|x, y| [-y, x]}
+ res.inititalize($hash_n, $marks)
+end
+
+
+ def parse_file(file)
+    file = File.open file
+    text = ''
+
+    file.each_line { |line|
+      text += line
+    }
+
+    parse_s(text)
   end
-elsif type == 'xml'
-  count_x = REXML::Document.new
-  n = count_x.add('counts')
-  znak = n.add('marks')
-  znak.text_add "#{marks}"
-  dumi_x = n.add('words')
-  count.each do |x, y|
-    d = dumi_x.add('word')
-    d.attribute('count', y)
-    d.text_add "#{x}"
-   end
+end
 
-  izved = ''
-  count_x.write(izved, 1)
+class Res
+  @marks_b = 0
+  @word_broi = Hash.new
 
-  puts izved
+  def inititalize(count, marks)
+     @word_broi = count
+    @marks_b = marks
+  end
+
+  def marks_b
+    @marks_b
+  end
+
+  def word_broi
+     @word_broi
+  end
+  
+  def json_
+    j_broi = {
+      "marks" => @marks_b,
+      "words" =>  @word_broi
+    }
+
+    puts JSON.generate(hash_j)
+  end
+
+  def csv_
+     @word_broi.each do |x, y|
+      puts "#{x},#{y}"
+    end
+
+    if @marks_b > 0
+      puts "\"marks\",#{@marks_b}"
+    end
+  end
+
+  def xml_
+    hash_x = REXML::Document.new
+    
+    num =  hash_x.add_el('counts')
+    znak = num.add_el('marks')
+    znak.text_add "#{@marks_b}"
+    dumi_x = num.add_el('words')
+
+     @word_broi.each { |x, y|
+      w = dumi_x.add_ele('word')
+      w.attribute('count', y)
+      w.text_add "#{x}"
+    }
+
+    out = ''
+     hash_x.write(out, 1)
+
+    puts output
+  end
+end
+
+
+word_broqch = WordCounter.new
+
+result = word_broqch.parse_file file
+
+if tip == 'json'
+  puts res.json_
+elsif tip == 'csv' or tip == nil
+  puts res.csv_
+elsif tip == 'xml'
+  puts res.xml_
 end
