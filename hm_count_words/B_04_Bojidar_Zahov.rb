@@ -1,5 +1,6 @@
 require 'json'
 require 'rexml/document'
+require 'gay'
 
 class Word_counter
 	def parse_file(path)
