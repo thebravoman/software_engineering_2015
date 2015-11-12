@@ -1,82 +1,79 @@
-#text = "" 
-require 'csv'
 require 'rexml/document'
 require 'json'
 
+class Result
+  attr_accessor :marks_count
+  attr_accessor :word_counts
 
-@input_file = ARGV[0]
-@output_format = ARGV[1]
-
-def output_csv frequencies, marks_count
-	frequencies.each {item, amount| puts item + "," + amount.to_s}
-	puts "\"marks\"," + marks_count.to_s
-end
-
-def output_xml frequencies, marks_count
-  document = REXML::Document.new
-  item_counts = document.add_element 'item-counts'
-  marks = item_counts.add_element 'marks'
-  marks.add_text "#{marks_count}"
-  items = item_counts.add_element 'items'
-
-  frequencies.each do |item, amount|
-    item_element = items.add_element 'item'
-    item_element.add_attribute 'amount', amount
-    item_element.add_text item
+  def initialize
+    @marks_count = 0
+    @word_counts = Hash.new(0)
   end
 
-def output_json frequencies, marks_count
-  json_output = { :marks => marks_count, :words => frequencies
-   }
-  puts JSON.pretty_generate(json_output)
-end
+  def to_csv
+    word_counts.each do |item, amount|
+      puts item + "," + amount.to_s
+    end
 
- out = ""
-  document.write(out, 1)
-  puts out
-end
-
-File.open(@input_file) do |file|
-  text = " "
-
-  file.each_line do |line|
-    text += line
+    if marks_count != 0
+      puts "\"marks\"," + marks_count.to_s
+    end
   end
 
-  marks_count = text.scan(/[,.!?:;"()\[\]]/).count
-  items = text.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
+  # -----------------------------------------------------
+  def to_xml
+    xml_document = REXML::Document.new
+    xml_item_counts = xml_document.add_element 'word-counts'
+    xml_marks = xml_item_counts.add_element 'marks'
+    xml_marks.add_text "#{marks_count}"
+    xmls_items = xml_item_counts.add_element 'words' # xml words
 
-  frequencies = Hash.new(0)
+    word_counts.each do |item, amount|
+      item = xmls_items.add_element('word', 'count' => amount).text = "#{item}" #item = word
+    end
 
-  items.each do |item|
-    frequencies[item] += 1
+    formatter = REXML::Formatters::Pretty.new(2)
+    formatter.compact = true
+    formatter.write(xml_document, $stdout)
   end
 
-  frequencies = frequencies.sort_by { |item, amount| [-amount, item] }
-
-  if @output_format == "xml"
-    output_xml frequencies, marks_coun
-  elsif @output_format == "json"
-    output_json frequencies, marks_count
-  else
-    output_csv frequencies, marks_count
+  # ----------------------------------------------------
+  def to_json
+    json_output = { "marks" => marks_count, "items" => word_counts}
+    puts JSON.pretty_generate(json_output)
   end
 end
-=begin
-marks = text.scan(/[,.!?:;"()\[\]]/).count 
-words = text.downcase.gsub(/[^a-z\n ]/, '').split(" ") 
 
-frequencies = Hash.new(0)
+class WordCounter
+  def parse(string)
+    result = Result.new
+    result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
+    items = string.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
+    items.each {|item| result.word_counts[item] += 1} 
+    result.word_counts = result.word_counts.sort_by { |item, amount| [-amount, item]}
+    result
+  end
 
-words.each {|item| frequencies[item] += 1}
+  def parse_file(filename)
+    text = ''
 
-frequencies = frequencies.sort_by {|item, amount| [-amount, item]} #item.length
-#frequencies.reverse!
-frequencies.each do |item, amount|
-	puts item + "," + amount.to_s
+    File.open(filename) do |file|
+      file.each_line do |line|
+        text += line
+      end
+    end
+
+    parse text
+  end
 end
 
-if marks > 0
-	puts "\"marks\",#{marks}"
+
+word_counter = WordCounter.new
+result = word_counter.parse_file ARGV[0]
+if ARGV[1] == "json"
+ result.to_json
+elsif ARGV[1] == "xml"
+ result.to_xml
+else
+ result.to_csv
 end
-=end
