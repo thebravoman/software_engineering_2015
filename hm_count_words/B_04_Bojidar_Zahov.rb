@@ -1,7 +1,7 @@
 require 'json'
 require 'rexml/document'
 
-class Word_counter
+class WordCounter
 	def parse_file(path)
 		list = Hash.new
 		pathern = path
@@ -80,7 +80,7 @@ class Result
 	end
 end
 
-result = Word_counter.new.parse_file(ARGV[0])
+result = WordCounter.new.parse_file(ARGV[0])
 output = ARGV[1]
 case output
      when "json" 
