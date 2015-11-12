@@ -1,11 +1,10 @@
 require 'json'
 require 'rexml/document'
+require './A_21_Nikolay_Danailov/result'
+require './A_21_Nikolay_Danailov/word_counter'
 
 @input_file = ARGV[0]
 @output_format = ARGV[1]
-
-require_relative 'word_counter'
-require_relative 'result'
 
 word_counter = WordCounter.new
 result = word_counter.parse_file @input_file
