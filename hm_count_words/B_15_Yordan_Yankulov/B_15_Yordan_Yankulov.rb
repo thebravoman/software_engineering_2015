@@ -1,5 +1,5 @@
-require './B_15_Yordan_Yankulov/result.rb'
-require './B_15_Yordan_Yankulov/word_counter.rb'
+require './result.rb'
+require './word_counter.rb'
 require 'json'
 require 'rexml/document'
 
