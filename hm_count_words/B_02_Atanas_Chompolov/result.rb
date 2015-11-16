@@ -17,10 +17,9 @@ class Result
 
 	def to_json
 		jsonHash = {
-			"marks" => @mark_count,
-			"words" => @word_count
+			"marks" => @mark_count, "words" => @word_count
 		}
-		puts jsonHash.to_json
+		puts JSON.pretty_generate(jsonHash)
 	end
 
 	def to_xml
