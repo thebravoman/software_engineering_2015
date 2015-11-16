@@ -1,88 +1,100 @@
 output_format = ARGV[1]
 
-  str = {}
-  marks = 0
   
-file = File.open(ARGV[0], "r")
-file.each_line do |line|
-  contents = line.downcase.split(/\s([^\,\.\'\"\?\!\-\_\;\:\/\s]*)/)
-  contents.each do |index|
-    marks += index.count(". ? ! : ; - _ ( ) [ ] ' , \" * ^ \ / " ,)
-    index = index.gsub(/[,.()"?!';:-_^]/, "")
-  
-    if str[index] 
-      str[index] += 1
-    else
-      str[index] = 1
-    end
+class WordCounter
+  def parse (file_path)
+    str_res = Result.new 
+    marks = 0
+
+    file = File.open(ARGV[0], "r")
+
+      contents = file.read.downcase.split(" ")
       
+      contents.each do |index|
+        str_res.marks += index.count(". ? ! : ; - _ ( ) [ ] ' , \" * ^ \ / " ,) 
+        index = index.gsub(/[,.()"?!';:-_^]/, '')
+        if str_res.str[index] 
+          str_res.str[index] += 1
+        else
+          str_res.str[index] = 1
+        end
+      end
+
+        str_res.str = str_res.str.sort_by{|index,key| index}
+        str_res.str = str_res.str.sort_by {|index,key| [-key,index]}
+        
+        str_res
   end
 end
 
-  str = str.sort_by{|index,key| index}
-  str = str.sort_by {|index,key| [-key,index]}
 
-  str.shift
+class Result
   
-def csv_format word_counter, marks
+  attr_accessor :str
+  attr_accessor :marks
+  
+  def initialize
+    @str = Hash.new
+    @marks = 0
+  end
+  
+  
+  def csv_format
+    str.each do|index, key|
+      puts index + ',' + key.to_s 
+    end
 
-  word_counter.each do|index, key|	
-    puts "#{index},#{key.to_s}"
+    if marks != 0
+      puts "\"marks\"," + marks.to_s
+    end
+  end
+
+  
+  def json_format
+    require 'json'
+
+    my_json = { :marks => "#{marks}".to_i, :words => str, }
+    puts JSON.pretty_generate(my_json)
 
   end
 
-  if marks != 0
-    puts "\"marks\","+"#{marks}"
-  end
-end
-
-
-
-def json_format word_counter, marks
-  require 'json'
-
-  my_json = { :marks => "#{marks}".to_i, :words => word_counter, }
-  puts JSON.pretty_generate(my_json)
-
-end
-
-
-
-def xml_format word_counter, marks
-  require 'rexml/document'
   
-  xml_counts = REXML::Document.new("")
-  
-  xml_word_counts = xml_counts.add_element('word-counts')
-  
-  xml_marks = xml_word_counts.add_element('marks')
-  xml_marks.add_text "#{marks}"
-  
-  xml_words = xml_word_counts.add_element('words')
-  
-  word_counter.each do |index, key|
-    word = xml_words.add_element('word')
-    word.add_attribute( 'count', key)
+  def xml_format
+    require 'rexml/document'
     
-    word.add_text "#{index}"
+    xml_counts = REXML::Document.new("")
+    
+    xml_word_counts = xml_counts.add_element('word-counts')
+    
+    xml_marks = xml_word_counts.add_element('marks')
+    xml_marks.add_text "#{marks}"
+    
+    xml_words = xml_word_counts.add_element('words')
+    
+    str.each do |index, key|
+      word = xml_words.add_element('word')
+      word.add_attribute( 'count', key)
+      
+      word.add_text "#{index}"
+    end
+    
+    out = ""
+    xml_counts.write(out, 1)
+    puts out
+    
   end
-  
-  out = ""
-  xml_counts.write(out, 1)
-  puts out
-  
 end
 
 
+my_file = WordCounter.new
+out = my_file.parse(ARGV[0])
 
-if output_format == 'csv' || output_format == nil
-  csv_format(str, marks)
-
-elsif output_format == 'json'
-  json_format(str, marks)
+if output_format == 'json'
+  out.json_format
   
 elsif output_format == 'xml'
-  xml_format(str, marks)
+  out.xml_format
 
-else csv_format(str, marks)
+else out.csv_format
 end
+
