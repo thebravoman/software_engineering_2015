@@ -1,7 +1,4 @@
-require './B_15_Yordan_Yankulov/result.rb'
 require './B_15_Yordan_Yankulov/word_counter.rb'
-require 'json'
-require 'rexml/document'
 
 file_name = ARGV[0]
 format_of_output = ARGV[1]

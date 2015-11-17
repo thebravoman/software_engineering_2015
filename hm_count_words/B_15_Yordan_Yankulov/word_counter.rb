@@ -1,10 +1,11 @@
+require './result.rb'
 class WordCounter
 
 	def parse(string)
       help = Hash.new
       punctuation = 0
       string.each_line{ |line|
-      the_words = line.downcase.split	
+      the_words = line.downcase.split
       the_words.each { |words|
         punctuation += words.count(".,!?:@;-_'\"[]()„“*/\{}#")
         words = words.gsub(/[,<>()@!.?_"]{}#/,'')

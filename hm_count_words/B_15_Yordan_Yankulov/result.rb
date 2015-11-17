@@ -1,3 +1,6 @@
+require 'json'
+require 'rexml/document'
+require 'csv'
 class Result
 
   def initialize punct, helpe
