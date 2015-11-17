@@ -1,4 +1,4 @@
-require './result.rb'
+require './B_15_Yordan_Yankulov/result.rb'
 class WordCounter
 
 	def parse(string)
