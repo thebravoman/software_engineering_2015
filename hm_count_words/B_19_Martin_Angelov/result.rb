@@ -1,6 +1,3 @@
-require 'json'
-require 'rexml/document'
-
 class Result
 	def initialize markCount, wordCount
 		@mark_count = markCount
@@ -39,38 +36,4 @@ class Result
 		formatter.compact = true
 		formatter.write(xml, $stdout)
 	end
-end
-
-class WordCounter
-	def parse(contents)
-		marks = contents.gsub(/[a-z\s]/, "");
-		words = contents.gsub(/[^a-z'\s-]/, "").split
-
-		hash = Hash.new(0)
-
-		words.each do |word|
-			hash[word] += 1
-		end
-
-		hash = hash.sort_by{|word, count| [-count, word]}
-
-		return Result.new(marks.length, hash)
-	end
-
-	def parse_file(filename)
-		contents = ""
-		contents = File.open(filename, "r").read.downcase
-		return parse contents    	
-	end
-end
-
-
-result = (WordCounter.new).parse_file(ARGV[0])
-
-if ARGV[1] == 'json'
-	result.to_json
-elsif ARGV[1] == 'xml'
-	result.to_xml
-else
-	result.to_csv
 end

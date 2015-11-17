@@ -5,7 +5,7 @@ class WordCounter
   def parse(string)
     result = Result.new
     result.marks_count = string.scan(/[[,.!?:;"()\[\]]]/).count
-    words = string.downcase.gsub(/[^\w]/, ' ').split(' ').reject(&:empty?)
+    words = string.downcase.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').split(' ').reject(&:empty?)
 
     words.each do |word|
       result.word_counts[word] += 1
