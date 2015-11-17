@@ -10,7 +10,7 @@ class WordCounter
 		result.h[words] += 1
 	end
     result.h = result.h.sort_by{|words,number| words.downcase}
-    result.h = result.hh.sort_by{|words,number| [-number,words]}
+    result.h = result.h.sort_by{|words,number| [-number,words]}
     result
  
   end
