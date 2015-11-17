@@ -1,7 +1,7 @@
 class WordCounter
   def parse(text)
     result = Result.new
-    result.markz_count = text.count(".,!?:;-_")
+    result.markz_count = text.count(".,!?:;_")
     text = text.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').downcase
     text = text.downcase.split(" ")
     text.each do |word|
