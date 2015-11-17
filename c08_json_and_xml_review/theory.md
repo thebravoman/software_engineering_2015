@@ -10,6 +10,9 @@ The goal is for the students to understand why do they exist and what is their p
 
 #Homework
 
+##Quadratic Equation V2
+Make the program work for the quadratic equations
+
 ##Counting words V2
 Fix the counting words for V2 where it counts the symbols. 
 
