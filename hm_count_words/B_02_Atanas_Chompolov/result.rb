@@ -11,7 +11,7 @@ class Result
 		end
 
 		if @mark_count > 0
-			puts '"marks",' + @mark_count.to_s
+			puts "\"marks\","+ @mark_count.to_s
 		end
 	end
 
