@@ -1,11 +1,10 @@
 class WordCounter
   def parse(string)
     result = Result.new
-    result.marks_count = string.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * /  ")
+    result.marks_count = string.count(".,!?:;")
     string = string.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').downcase
     word_list = string.split(' ')
     word_list.each do |word|
-      result.marks_count += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * /  ")
       result.word_counts[word]+=1
     end
     result.word_counts = result.word_counts.sort_by{|word,num| word.downcase}
