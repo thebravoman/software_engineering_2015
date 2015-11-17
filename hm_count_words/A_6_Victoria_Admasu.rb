@@ -24,6 +24,7 @@ class WordCounter
     $count = $count.sort_by {|x, y| [-y, x]}
 
     result.inititalize($count, $marks)
+    result
   end
 
   def parse_file(filename)
@@ -101,9 +102,9 @@ word_counter = WordCounter.new
 result = word_counter.parse_file filename
 
 if type == 'json'
-  puts result.to_json
+  result.to_json
 elsif type == 'csv' or type == nil
-  puts result.to_csv
+  result.to_csv
 elsif type == 'xml'
-  puts result.to_xml
+  result.to_xml
 end
