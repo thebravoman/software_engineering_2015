@@ -25,7 +25,7 @@ my_csv = CSV.read 'result.csv'
 
 my_csv.uniq
 my_csv.sort! { |a, b| b[1] <=> a[1] }
-my_csv.reverse
+my_csv.reverse!
 my_csv.sort_by{|name,length| name.downcase}
 CSV.open("result.csv","w") do |csv_array|
 	my_csv.each do |row|

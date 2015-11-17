@@ -1,22 +1,19 @@
-word_counter = {}
-marks = 0
-file = File.open(ARGV[0], "r")
-file.each_line do |line|
-  marks = line.scan(/[,.!?()":\[\];]/).count
-  word = line.downcase.split()
-  word.each do |word|
-    word = word.gsub(/[,.!?()":\[\];]/,'') 
-    if word_counter.key?(word)
-      word_counter[word] += 1
+require './B_09_Georgi_Stoilov/word_counter'
+
+file = ARGV[0]
+format = ARGV[1]
+
+counter = WordCounter.new
+result = counter.parse_file file
+
+if format == 'csv' || format == nil
+  result.to_csv
+  else
+  if format == 'json'
+    result.to_json
     else
-      word_counter[word] = 1
+    if format == 'xml'
+      result.to_xml
     end
   end
-end
-sorted_array = word_counter.sort_by {|key, value|[-value, key]}
-sorted_array.each do |key,value|
-  puts "#{key},#{value}"
-end
-if marks != 0
-  puts "\"marks\",#{marks}"
 end

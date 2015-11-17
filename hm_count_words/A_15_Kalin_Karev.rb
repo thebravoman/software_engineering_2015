@@ -1,34 +1,24 @@
-filename = ARGV[0].to_s
-script = String.new
-f = File.open(filename, "r") 
-freqs = Hash.new(0)
-i = 0
-looking_for = [',', '.', '!', '?']
+require './A_15_Kalin_Karev/word_counter.rb'
+require './A_15_Kalin_Karev/result.rb'
 
-f.each_line do |text|
-	looking_for.each do |symbol|
-		i = i + text.count(symbol).to_i
-	end
-	
-	words = text.split
+require 'json'
+require 'csv'
+require 'rexml/document'
 
-	words.each do |val|
-		if not(val.gsub!(/\W+/, '') == nil)
-			val.gsub!(/\W+/, '')
-		end
-	
-		val = val.downcase
-		if not val == ""
-			freqs[val]+=1
-		end
-	end
+file_name = ARGV[0].to_s
+format = ARGV[1].to_s
+words_hasedword_counter = WordCounter.new
+
+answer = words_hasedword_counter.parse_file(file_name)
+
+if format == "csv" || format == ""
+	puts answer.to_csv
 end
 
-freqs = freqs.sort_by{|word,num| word}
-freqs = freqs.sort_by {|word,num| [-num,word]}
+if format == "json"
+	puts answer.to_json
+end
 
-freqs.each {|word, freq| puts word+','+freq.to_s}
-
-if not i == 0
-	puts "\"marks\",#{i}"
+if format == "xml"
+	puts answer.to_xml
 end

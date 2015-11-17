@@ -1,24 +1,19 @@
-file = ARGV.first
-f = File.open(file, "r")
-hash = Hash.new(0)
+require 'csv'
+require 'json'
+require 'rexml/document'
+require './А_29_Yassen_Alexiev/result'
+require './А_29_Yassen_Alexiev/word_counter'
 
-marks_count = 0
-
-f.each_line do |line|
-	marks_count = marks_count + line.scan(/[-\].)(\[,!?:;%@#$^&<_>`~'"*-+\/]/).count
-  
-
-	alignment = line.downcase.split
-	alignment.each do |word|
-		word = word.gsub(/[,()'".*?:]/, ' ')
-			hash[word] += 1
-	end	
+input_file = ARGV[0].to_s
+format = ARGV[1].to_s
+word_counter = WordCounter.new
+result = word_counter.parse_file(input_file)
+if format=="csv" or format == ""
+	puts result.to_csv
 end
-
-hash.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}.each do |word, count|	
-	puts "#{word},#{count}"
+if format=="json"
+	puts result.to_json
 end
-
-if marks_count != 0; 
-	puts "marks,#{marks_count}" 
+if format=="xml" 
+	puts result.to_xml
 end

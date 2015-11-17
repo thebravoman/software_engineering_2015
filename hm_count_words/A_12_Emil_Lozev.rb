@@ -1,28 +1,24 @@
-filename = ARGV.first
+require 'csv'
+require 'json'
+require 'builder'
+require 'rexml/document'
+require './A_12_Emil_Lozev/result'
+require './A_12_Emil_Lozev/word_counter'
 
-res = open(filename).read.split(' ')
+filename = ARGV[0]
+option = ARGV[1]
 
-marks_sum = 0
+word_counter = WordCounter.new
 
-res.each do |word|
-	marks_sum += word.count(". , ! ? :  ; = + -  _ ' \"[ ] ( ) { } „ “ * / \ ")
+result = word_counter.parse_file ARGV[0]
+
+
+if option == "csv"
+	result.to_csv
+elsif option == "json"
+	puts result.to_json
+elsif option == "xml"
+	puts result.to_xml
+else
+ 	result.to_csv
 end
-
-res.map!{|item| item.gsub(/\p{^Alnum}/, '') }
-res.map!(&:downcase)
-
-res.delete("")
-
-histogram = Hash.new(0)
-
-res.each do |word|
-	histogram[word] += 1
-end
-
-histogram = histogram.sort_by{|word, i| [-i, word]}
-
-histogram.each do |word, i|
-	puts "#{word},#{i}"
-end
-
-puts "\"marks\",#{marks_sum}" if marks_sum != 0

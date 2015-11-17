@@ -1,23 +1,16 @@
-file = File.open(ARGV[0], "r")
+require './B_6_Valentin_Stoyanov/word_counter'
 
-text = String.new
-number = Hash.new(0)
-marks = 0
+@format = ARGV[1]
+@file = File.open(ARGV[0], "r")
 
-text = file.read
-marks = text.scan(/[,.!?()":\[\];]/).count
-text = text.downcase.split
+word_counter = WordCounter.new
+result = word_counter.parse_file @file
 
-text.each do |word|
-	word = word.gsub(/[,.!?()":\[\];]/,'')
-	number[word] += 1 
-end
-
-number = number.sort_by {|word,num| [-num,word] }
-
-number.each do|word, num| 
-	puts word+','+num.to_s
-end
-if not marks == 0
-  puts "\"marks\","+"#{marks}"
+case @format
+when "json"
+	puts result.to_json
+when "xml"
+	result.to_xml
+else 
+	puts result.to_csv
 end

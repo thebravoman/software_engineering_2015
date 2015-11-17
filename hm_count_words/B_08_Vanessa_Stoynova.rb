@@ -1,27 +1,16 @@
-file_name = File.open(ARGV[0], "r")
+require './B_08_Vanessa_Stoynova/word_counter.rb'
 
-counter = Hash.new
+file = ARGV[0]
+format = ARGV[1]
 
-marks = 0
+counter = WordCounter.new
+result = counter.parse_file(file)
 
-file_name.each_line{ |line|
-	words = line.downcase.split
-	words.each { |words|
-	marks += words.count(".,!?:;-_'\"[]()„“*/\ ")
-	words = words.gsub(/[,()!.?_"]/,'')
-	
-	if counter.has_key?(words)
-		counter[words] += 1
-	else
-		counter[words] = 1
-	end
-	}
-}
-
-counter.sort { |first,second| (second[1] == first[1]) ? (first[0] <=> second[0]) : (second[1]<=>first[1]) }.each { |element|
-	puts "#{element[0]},#{element[1]}"
-}
- 
-if marks != 0
-	puts "\"marks\", #{marks}"
+if format == 'csv' || format == nil
+	result.to_csv
+elsif format == 'json'
+	result.to_json
+elsif format == 'xml'
+	result.to_xml
 end
+

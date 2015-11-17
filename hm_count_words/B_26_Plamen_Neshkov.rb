@@ -1,26 +1,14 @@
-word_pattern = /\b[\w-]+\b/i
-punctuation_pattern = /\p{P}/
+require './B_26_Plamen_Neshkov/word_counter.rb'
 
-words = {}
-punctuation_marks = 0
+filepath = ARGV[0]
+format = ARGV[1]
 
-File.open(ARGV[0], "r") do |text|
-  text.each_line do |line|
-    line.downcase.scan(word_pattern).each do |word|
-      if words.key?(word)
-        words[word] += 1
-      else
-        words[word] = 1
-      end
-    end
-
-    line.downcase.scan(punctuation_pattern).each { |word| punctuation_marks += 1 } 
-  end
+word_counter = WordCounter.new
+result = word_counter.parse_file(filepath)
+if format == 'csv'
+  File.open('result.csv', 'w') { |file| file << result.to_csv }
+elsif format == 'json'
+  File.open('result.json', 'w') { |file| file << result.to_json }
+elsif format == 'xml'
+  File.open('result.xml', 'w') { |file| file << result.to_xml }
 end
-
-sorted_words = words.sort_by { |word, occur| [-occur, word] }
-sorted_words.each do |word, occur|
-  puts "#{word},#{occur}"
-end
-
-puts "\"marks\",#{punctuation_marks}" unless punctuation_marks == 0

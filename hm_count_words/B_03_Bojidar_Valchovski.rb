@@ -1,27 +1,16 @@
 #!/usr/bin/ruby
+require './B_03_Bojidar_Valchovski/word_counter.rb'
 
 path = ARGV[0]
-words = {} 
-marks = {}
-file = File.open(path, "r")
+format = ARGV[1]
 
-wordslist = file.read.downcase
-marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")
-wordslist = wordslist.split(" ")	
-wordslist.each do |word|
-  word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
-  if words[word]
-    words[word] += 1
-  else
-	words[word] = 1
-  end
+wc = WordCounter.new
+#result = wc.parse_file(path)
+result = wc.parse("This is an a a a, example sentence!")
+if format == "xml"
+  puts result.to_xml
+elsif format == "json"
+  puts result.to_json
+else
+  puts result.to_csv
 end
-
-words = words.sort_by{|word,occ| word.downcase}	
-words = words.sort_by{|word,occ| [-occ,word]}	 
-
-words.each do |word,occ|	
-  puts word + ',' + occ.to_s
-end
-
-puts "\"marks\",#{marks}" 	

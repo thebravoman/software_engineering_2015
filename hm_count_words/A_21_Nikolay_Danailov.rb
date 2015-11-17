@@ -1,25 +1,20 @@
-File.open(ARGV[0]) do |file|
-	text = ""
+require 'json'
+require 'rexml/document'
+require './A_21_Nikolay_Danailov/result'
+require './A_21_Nikolay_Danailov/word_counter'
 
-	file.each_line do |line|
-		text += line
-	end
+@input_file = ARGV[0]
+@output_format = ARGV[1]
 
-	marks = text.scan(/[,.!?:;"()\[\]]/).count
-	words = text.downcase.gsub(/[^a-z'\s-]/, '').split(" ")
-	word_counts = Hash.new(0)
+word_counter = WordCounter.new
+result = word_counter.parse_file @input_file
 
-	words.each do |word|
-		word_counts[word] += 1
-	end
-
-	word_counts = word_counts.sort_by {|word, count| [-count, word]}
-	
-	word_counts.each do |word, count|
-		puts "#{word},#{count}"
-	end
-
-	if marks > 0
-		puts "\"marks\",#{marks}"
-	end
+if @output_format == 'json'
+  puts result.to_json
+elsif @output_format == 'xml'
+  formatter = REXML::Formatters::Pretty.new(2)
+  formatter.compact = true # makes words show up on one line
+  formatter.write(result.to_xml, $stdout)
+else
+  puts result.to_csv
 end

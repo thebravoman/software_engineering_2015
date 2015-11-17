@@ -1,30 +1,15 @@
-text = "" 
-File.open(ARGV[0]) do |file|
-	file.each_line do |line|
-		text += line
-	end
+require 'rexml/document'
+require 'json'
+require './A_16_Kristiana_Ivanova/result'
+require './A_16_Kristiana_Ivanova/word_counter'
+
+word_counter = WordCounter.new
+result = word_counter.parse_file ARGV[0]
+
+if ARGV[1] == "json"
+ result.to_json
+elsif ARGV[1] == "xml"
+ result.to_xml
+else
+ result.to_csv
 end
-#words = text.split
-
-#text = gets.chomp
-#text.downcase!
-#words = file.split
-
-marks = text.scan(/[,.!?:;"()\[\]]/).count 
-words = text.downcase.gsub(/[^a-z\n ]/, '').split(" ") 
-
-frequencies = Hash.new(0)
-
-words.each {|item| frequencies[item] += 1}
-
-frequencies = frequencies.sort_by {|item, amount| [-amount, item]} #item.length
-#frequencies.reverse!
-
-frequencies.each do |item, amount|
-	puts item + "," + amount.to_s
-end
-
-if marks > 0
-	puts "\"marks\",#{marks}"
-end
-
