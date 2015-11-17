@@ -1,8 +1,8 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
-require './А_29_Yassen_Alexiev/result'
-require './А_29_Yassen_Alexiev/word_counter'
+require './A_29_Yassen_Alexiev/result.rb'
+require './A_29_Yassen_Alexiev/word_counter'
 
 input_file = ARGV[0].to_s
 format = ARGV[1].to_s
