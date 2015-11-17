@@ -1,5 +1,4 @@
 class WordCounter
-  private
 
   def parse(string)
     result = Result.new
