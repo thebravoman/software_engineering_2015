@@ -77,9 +77,3 @@ class WordCounter
     end
   end
 end
-
-word_counter = WordCounter.new
-result = word_counter.parse_file('text.txt')
-
-puts result.marks_count # принтира броя пунктуационни знаци
-puts result.to_xml      # принтира резултата като xml
