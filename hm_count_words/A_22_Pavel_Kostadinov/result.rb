@@ -8,7 +8,7 @@ class Result
   
   def to_json
      hash_json = {
-		"marks" => marks_sum.length,
+		"marks" => marks_sum.length
 		"words" => h
 	}
   end
