@@ -15,7 +15,7 @@ class Result
 	def to_csv
 		res = ""
 		@answer.each do |word, i|
-			res = res + "#{word}, #{i.to_s}\n"		
+			res = res + "#{word},#{i.to_s}\n"		
 		end
 		res
 	end
