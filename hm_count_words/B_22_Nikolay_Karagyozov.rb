@@ -5,12 +5,15 @@ format = ARGV[1]
 
 word_counter = WordCounter.new
 result = word_counter.parse_file(path)
-
+output = ''
 case format
 when 'json'
-  File.open('result.json', 'w') { |file| file << result.to_json }
+  output = result.to_json
 when 'xml'
-  File.open('result.xml', 'w') { |file| file << result.to_xml }
+  output = result.to_xml
 else
-  File.open('result.csv', 'w') { |file| file << result.to_csv }
+  output = result.to_csv
 end
+
+puts output
+File.open('result.csv', 'w') { |file| file << result.to_csv }
