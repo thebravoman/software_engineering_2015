@@ -1,7 +1,7 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
-class symbolCounter
+class SymbolCounter
 	def parse_file(name)
 		@name = name
 		result = [];
@@ -82,7 +82,7 @@ class Result
 end 
 filename = ARGV[0].to_s
 format = ARGV[1].to_s
-symbol_counter = symbolCounter.new
+symbol_counter = SymbolCounter.new
 result = symbol_counter.parse_file(filename)
 if format=="csv" or format == ""
 	puts result.to_csv
