@@ -17,6 +17,7 @@ if option == "csv"
 elsif option == "json"
 	puts result.to_json
 elsif option == "xml"
+#require 'builder'
 	puts result.to_xml
 else
  	result.to_csv

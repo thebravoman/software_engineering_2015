@@ -1,19 +1,17 @@
 class WordCounter
 	
 	def parse_file(filename)
-		res = open(filename).read.split(' ')
+		res = ""
+		res = open(filename).read
 		parse res
 	end
 	
 	def parse(string)
 		result = Result.new
-		string.each do |word|
-			result.marks_count += word.count(". , ! ? :  ; = + -  _ ' \"[ ] ( ) { } „ “ * / \ ")
-		end
+		result.marks_count = string.scan(/[^A-Za-z_0-9 ]/).count
 		
-		string.map!{|item| item.gsub(/\p{^Alnum}/, '') }
-		string.map!(&:downcase)
-		string.delete("")
+		string.gsub!(/[^0-9A-Za-z]/, ' ').downcase!
+		string = string.split(" ")
 
 		hash = Hash.new(0)
 		string.each do |word|
