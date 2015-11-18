@@ -9,11 +9,10 @@ output = ''
 case format
 when 'json'
   output = result.to_json
+  puts output
 when 'xml'
   output = result.to_xml
+  puts output
 else
   output = result.to_csv
 end
-
-puts output
-File.open('result.csv', 'w') { |file| file << result.to_csv }
