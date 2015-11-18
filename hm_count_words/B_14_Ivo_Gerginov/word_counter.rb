@@ -4,9 +4,8 @@ class WordCounter
   
   def parse f_str
   	w_count = Hash.new(0)
-	  marks = 0
+    marks = f_str.scan(/[\p{P}\p{S}]/u).count
 	  f_str.each_line do |line|
-	    marks = line.scan(/[\p{P}\p{S}]/u).count
       line = line.gsub!(/[\W+_\d+]/, " ")
       line = line.downcase
       words = line.split(/\W+/)

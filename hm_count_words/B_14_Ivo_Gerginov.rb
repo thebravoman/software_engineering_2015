@@ -9,12 +9,12 @@ res = w_counter.parse_file(f_path)
 
 if op == 'json'
   res.to_json
-  File.open('result.json', 'rb').each_line do |line|
+  File.open('result.json', 'r').each_line do |line|
   	puts line
   end
 elsif op == 'xml'
   res.to_xml
-  File.open('result.xml', 'rb').each_line do |line|
+  File.open('result.xml', 'r').each_line do |line|
   	puts line
   end
 else res.to_csv
