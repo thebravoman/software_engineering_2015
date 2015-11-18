@@ -4,8 +4,8 @@ class WordCounter
     string = string.downcase.split
 
     string.each { |word|
-      $marks += word.count("-_,.;:!?(){}")
-      word = word.gsub(/[-_,.;:!?(){}]/, '')
+      $marks += word.count("-_,.;:!?='""|(){}[]")
+      word = word.gsub(/[^A-Za-z]/, '')
       if $count.has_key?(word)
         $count[word] += 1
       else
@@ -16,6 +16,7 @@ class WordCounter
     $count = $count.sort_by {|x, y| [-y, x]}
 
     result.inititalize($count, $marks)
+    result
   end
 
   def parse_file(filename)

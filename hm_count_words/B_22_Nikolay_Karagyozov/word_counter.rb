@@ -7,17 +7,15 @@ class WordCounter
     word_list = Hash.new(0)
     marks = []
 
-    words = string.downcase.scan(/\w+/)
-    marks.push(string.scan(/[[:punct:]]/).size)
+    words = string.downcase.scan(/[a-zA-Z0-9]+/)
+    marks.push(string.scan(/[[:punct:]|+-=\/\\]/).size)
 
     words.each { |word| word_list[word] += 1 }
     sorted_list = word_list.sort_by {|key, val| [-val, key] }.to_h
-    sorted_list.each { |key, val| puts "#{key},#{val}" }
 
     marks_count = marks.inject(:+)
-    puts "\"marks\",#{marks_count}" if marks_count > 0
 
-    Result.new(word_list, marks_count)
+    Result.new(sorted_list, marks_count)
   end
 
   def parse_file(filename)
@@ -35,10 +33,12 @@ class WordCounter
 
     def to_csv
       CSV.open("result.csv","w") do |csv|
-        @word_counts.each { |key, val| csv << [key, val] }
+        @word_counts.each do |key, val|
+          csv << [key, val]
+          puts "#{key},#{val}"
+        end
         csv << ["marks", @marks_count] if @marks_count > 0
-
-        csv
+        puts "\"marks\",#{@marks_count}" if @marks_count > 0
       end
     end
 
