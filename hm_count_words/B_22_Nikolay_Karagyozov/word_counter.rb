@@ -8,7 +8,7 @@ class WordCounter
     marks = []
 
     words = string.downcase.scan(/\w+/)
-    marks.push(string.scan(/[[:punct:]]/).size)
+    marks.push(string.scan(/[[:punct:]|+-=\/\\]/).size)
 
     words.each { |word| word_list[word] += 1 }
     sorted_list = word_list.sort_by {|key, val| [-val, key] }.to_h
