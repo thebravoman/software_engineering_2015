@@ -1,57 +1,16 @@
 #!/usr/bin/ruby
-
-require 'json'
-require 'rexml/document'
-require 'csv'
+require './B_03_Bojidar_Valchovski/word_counter.rb'
 
 path = ARGV[0]
 format = ARGV[1]
-words = Hash.new
-marks = Hash.new
-file = File.open(path, "r")
 
-wordslist = file.read.downcase
-marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")
-wordslist = wordslist.split(" ")	
-wordslist.each do |word|
-  word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
-  if words[word]
-    words[word] += 1
-  else
-	words[word] = 1
-  end
-end
-
-words = words.sort_by{|word,occ| word.downcase}	
-words = words.sort_by{|word,occ| [-occ,word]}	 
-
+wc = WordCounter.new
+result = wc.parse_file(path)
+#result = wc.parse("This is an a a a, example sentence!") #Gotta fix later
 if format == "xml"
-  doc = REXML::Document.new('')
-  
-  word_counts = doc.add_element('word-counts')
-  marks = word_counts.add_element('marks').text = "#{marks}"
-  wordz = word_counts.add_element('words')
-
-  words.each do |index, key|
-    word = wordz.add_element('word', 'count' => key).text = "#{index}"
-  end
-
-  formatter = REXML::Formatters::Pretty.new
-  formatter.compact = true
-  formatter.write(doc, $stdout)
-  
-  puts
-
+  puts result.to_xml
 elsif format == "json"
-  b = Hash[words.map {|key,value| [key,value]}]
-  puts JSON.pretty_generate({marks: marks, words: [b]})
-
+  puts result.to_json
 else
-  words.each do |word,occ|	
-    puts word + ',' + occ.to_s
-  end
-  
-  if marks != 0
-    puts "\"marks\",#{marks}"
-  end
+  puts result.to_csv
 end

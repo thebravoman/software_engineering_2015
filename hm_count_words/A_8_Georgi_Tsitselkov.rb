@@ -56,13 +56,18 @@ class WordCounter
         	word = line.gsub(/[^a-z\n ]/, ' ').split(" ")
 	
 		word.each do |words|
+<<<<<<< HEAD
 		result.hash[words] = hash[words] + 1 
+=======
+		result.word_count[words] = word_count[words] + 1 
+>>>>>>> 3339bce01242e2e21482a785b3fdf37e0ac6abed
 	  	end
 		end
  		result.word_count = result.word_count.sort_by{|words,number| words.downcase}
  		result.word_count = result.word_count.sort_by{|words,number| [-number,words]} 
  		result
  	end
+<<<<<<< HEAD
  
  	def parse_file(filename)
   		filename = FILE.open(filename, "r").split(' ')
@@ -80,3 +85,23 @@ elsif output == 'xml'
 else
   puts result.to_csv
 end
+=======
+ 
+ 	def parse_file(filename)
+  		filename = FILE.open(filename, "r").split(' ')
+  		parse filename  
+ 	end
+end
+
+word_counter = WordCounter.new
+result = word_counter.parse_file filename
+
+if output == 'json'
+  puts result.to_json
+elsif output == 'xml'
+  puts result.to_xml
+else
+  puts result.to_csv
+end
+ 
+>>>>>>> 3339bce01242e2e21482a785b3fdf37e0ac6abed
