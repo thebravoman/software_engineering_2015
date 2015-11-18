@@ -1,4 +1,4 @@
-require "/home/lubo/Desktop/ruby/result.rb"
+require "'./B_18_Lubomir_Kiprov/result.rb'"
 class WordCounter 
 	private
 	def parse(string)
