@@ -5,7 +5,7 @@ class WordCounter
   def parse(string)
     result = Result.new
     # the regex on the next line select all marks
-    result.marks_count = string.scan(/[^A-Za-z_0-9 ]/).count
+    result.marks_count = string.downcase.scan(/[^a-z_0-9 ]/).count
     # the regex on the next line removes commented text, strings, regex and any other symbol that isn't a word
     removal_regex = %r{[^a-z_ ]}
     words = string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
