@@ -1,5 +1,5 @@
-require 'json'
 require 'csv'
+require 'json'
 require 'rexml/document'
 
 class Result

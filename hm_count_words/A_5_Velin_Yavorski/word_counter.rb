@@ -6,7 +6,7 @@ class WordCounter
     str = string.downcase.split(" ")
     str.each do |w|
       punct = punct + w.scan(/[^a-z_]/).count
-      words = w.split(/[.,(]/)
+      words = w.split(/[.,(+-]/)
       words.each do |word|
         word = word.gsub(/[^a-z_]/,'')
 		if(word == '_')	

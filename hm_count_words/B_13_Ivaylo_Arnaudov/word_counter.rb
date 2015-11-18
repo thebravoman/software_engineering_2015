@@ -1,4 +1,4 @@
-require './result'
+require_relative 'result'
 
 # TODO: Extract the repeating code into a method
 class WordCounter

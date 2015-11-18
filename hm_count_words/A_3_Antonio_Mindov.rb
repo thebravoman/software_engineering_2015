@@ -43,8 +43,8 @@ end
 
 class WordCounter
 	def parse(contents)
-		marks = contents.gsub(/[a-z\s]/, "");
-		words = contents.gsub(/[^a-z'\s-]/, "").split
+		marks = contents.gsub(/[a-z_0-9\s]/, "");
+		words = contents.gsub(/[^a-z_0-9\s-]/, " ").split
 
 		hash = Hash.new(0)
 
