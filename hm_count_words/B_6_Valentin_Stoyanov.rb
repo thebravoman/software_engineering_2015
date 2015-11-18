@@ -8,9 +8,11 @@ result = word_counter.parse_file @file
 
 case @format
 when "json"
+	File.open('result.json', 'w') {|json| json << result.to_json}
 	puts result.to_json
 when "xml"
 	result.to_xml
 else 
+	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 	puts result.to_csv
 end
