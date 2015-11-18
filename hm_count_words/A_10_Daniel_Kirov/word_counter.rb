@@ -2,7 +2,7 @@ class WordCounter
   def parse file
     h = Hash.new(0)
     marks_sum = file.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
-    w = file.downcase.gsub(/[^a-z\n- ]/, ' ').split(" ") 
+    w = file.downcase.gsub(/[^a-z\n_ ]/, ' ').split(" ") 
     w.each do |words|
       h[words] += 1
     end
