@@ -12,6 +12,7 @@ class WordCounter
 
 		#string.each_line do |line|
 		count += string.scan(/[[:punct:]]/).count
+		#string = string.tr('[0-9]_', '')
 		words = string.downcase.scan(/\w+/)
 
 		words.each do |word|
