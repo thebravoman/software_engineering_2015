@@ -67,7 +67,8 @@ class WordCounter
 	file = File.open(_path, "r")
 	wordslist = file.read.downcase
 	wordslist.scan(/[\p{P}\p{S}]/).each { marks += 1 }
-	wordslist = wordslist.gsub(/[^A-Za-z0-9-]/, ' ')
+	wordslist = wordslist.gsub(/[^A-Za-z0-9]/, ' ')
+	wordslist = wordslist.gsub("-", ' ')
 	wordslist = wordslist.split(" ")
 
 	wordslist.each do |word|
