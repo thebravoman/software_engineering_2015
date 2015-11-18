@@ -62,8 +62,9 @@ class WordCounter
 					h[w] = 1 
 				end	
 			}
-			h.sort{|a,b| a <=> b}
-		}
+			}
+			h = h.sort_by{|word, count| [-count, word]}
+		
 		Result.new(marks,h)
 	end
 end
