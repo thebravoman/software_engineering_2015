@@ -4,7 +4,7 @@ require 'json'
 @file_name = ARGV[0]
 @option_type = ARGV[1]
 
-Class WordCounter
+class WordCounter
     private
     
     def parse(string)
@@ -35,7 +35,7 @@ Class WordCounter
         parse text
     end
 end
-Class Result
+class Result
     private
     
     def xml_add(file)

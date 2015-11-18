@@ -1,61 +1,93 @@
-require 'csv'
+
 require 'json'
 require 'rexml/document'
+require 'csv'
 
-def output_json words, marks
-	json_output = { marks: marks, words: words }
-	puts JSON.pretty_generate(json_output)
+class Result
+
+  attr_accessor :marks_count, :words_count
+  
+  def initialize
+    @marks_count = 0
+    @words_count = {}
+  end
+
+  def to_json
+    @words_count['words'] = @words_count['words'].to_a
+    puts JSON.pretty_generate(@words_count)
+  end
+  
+  def to_xml
+    xml_doc = REXML::Document.new
+    tag = REXML::Element.new('word-counts')
+    tag.add_element('marks').add_text("#{@marks_count}")
+    tag.add_element('words')
+    @words_count['words'].each do |word, count|
+      tag.elements['words'].add_element('word', {'count' => count}).add_text(word)
+    end
+    xml_doc << tag
+    output = ''
+    printer = REXML::Formatters::Pretty.new(4)
+    printer.compact = true
+    printer.write(tag, output)
+    puts output
+  end
+  
+  def to_csv
+    words_count['words'].to_a.each do |word, count|
+      puts word + ",#{count}"
+    end
+    puts "\"marks\",#{@marks_count}" if @marks_count > 0
+  end
 end
 
-def output_xml wordhash, markz
-	document = REXML::Document.new
-	word_counts = document.add_element 'word-counts'
-	word_counts.add_element('marks').add_text "#{markz}"
-	word_counts.add_element 'words'
-
-	words = document.elements['word-counts/words']
-	wordhash.each do |word, count|
-		word_element = words.add_element 'word'
-		word_element.add_attribute 'count', count
-		word_element.add_text "#{word}"
-	end
-
-	output = String.new
-	document.write(output, 1)
-	puts output
+class WordCounter
+  public
+    def parse_file(filename)
+      parse(IO.read(filename).downcase)
+    end
+  
+  private
+    def mark_count(text)
+      text.count(",.?!():;\"\'/-")
+    end
+  
+    def split(text)
+      text.gsub(/[^a-z\s]/, '').split(' ')
+    end
+  
+    def sort(words)
+      unique_text = words.uniq.sort do |a, b|
+        if words.count(a) == words.count(b)
+          a <=> b
+        else
+          words.count(b) <=> words.count(a)
+        end
+      end
+      unique_text
+    end
+  
+    def parse(string)
+      res = Result.new
+      res.marks_count = mark_count(string)
+      string_split = split(string)
+      sorted = sort(string_split)
+      res.words_count['marks'] = res.marks_count
+      res.words_count['words'] = {}
+      sorted.each do |word|
+        res.words_count['words'][word] = string_split.count(word)
+      end
+      res
+    end  
 end
 
-def output_csv words, marks
-	words.each { |word, count| puts word + ',' + count.to_s }
-	puts "\"marks\"," + marks.to_s
-end
+result = WordCounter.new.parse_file(ARGV[0])
 
-unless ARGV[1] == nil
-	format = ARGV[1].downcase
-end
 
-File.open(ARGV[0]) do |file|
-
-	text = String.new
-	file.each_line do |line|
-		text += line
-	end
-
-	markz = text.scan(/[,.!?:;"()\[\]]/).count
-	words = text.downcase.gsub(/[^a-z'\s-]/, '').split(' ')
-
-	wordhash = Hash.new(0)
-	words.each do |word|
-		wordhash[word] += 1
-	end
-
-	wordhash = wordhash.sort_by { |word, count| [-count, word] }
-
-	if format == 'json'
-		output_json wordhash, markz
-	elsif format == 'xml'
-		output_xml wordhash, markz
-	elsif format == 'csv'
-		output_csv wordhash, markz
-	end
+if ARGV[1] == 'json'
+  result.to_json
+elsif ARGV[1] == 'xml'
+  result.to_xml
+else
+  result.to_csv
 end
