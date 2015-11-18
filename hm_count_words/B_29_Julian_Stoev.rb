@@ -1,3 +1,9 @@
+
+=begin
+
+## Version.3
+
+
 require 'json'
 require 'rexml/document'
 
@@ -76,6 +82,11 @@ class Result
 	end
 end
 
+=end
+
+require './B_29_Julian_Stoev/word_counter.rb'
+require './B_29_Julian_Stoev/result.rb'
+
 word_counter = WordCounter.new
 result = word_counter.parse_file(ARGV[0])  ## .to_s ???
 
@@ -100,8 +111,11 @@ elsif (ARGV[1]=='csv' || ARGV[1].nil?)
 	result.to_csv
 
 end
+
+
 =begin ##Old Program
 
+## Version.2
 
 content_hash = Hash.new(0)
 words_hash = Hash.new(0)
