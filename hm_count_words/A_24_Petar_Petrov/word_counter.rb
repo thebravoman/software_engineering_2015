@@ -8,7 +8,7 @@ class WordCounter
     end
   
     def split_string(text)
-      text.gsub(/(\/\\.+\/)|(["'].+["'])|[^a-z\s_]/, ' ').split(' ')
+      text.gsub(/(\/\\.+\/)|[^a-z\s_]/, ' ').split(' ')
     end
   
     def sort(words)
