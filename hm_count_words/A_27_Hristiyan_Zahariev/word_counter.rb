@@ -1,14 +1,14 @@
 class WordCounter
   def parse(text)
     result = Result.new
-    result.markz_count = text.count(".,!?:;_")
+    result.markz_count = text.scan(/[^A-Za-z_0-9 ]/).count
     text = text.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').downcase
     text = text.downcase.split(" ")
     text.each do |word|
-	result.markz_count = result.markz_count + word.count(":[]_'( ).,!?")
-	word = word.gsub(/[, . ( ) " * ' ; : - _ ^ ! ? ]/, " ")
-	result.wordsnum[word] = result.wordsnum[word] + 1
+    	word = word.gsub(/[,.()"*';:-^!?]/, " ")
+    	result.wordsnum[word] = result.wordsnum[word] + 1
     end
+
     result.wordsnum = result.wordsnum.sort_by{|word, number| word.downcase}
     result.wordsnum = result.wordsnum.sort_by{|word, number| [-number,word]}
     result

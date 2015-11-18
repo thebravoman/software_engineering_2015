@@ -7,7 +7,7 @@ class WordCounter
     word_list = Hash.new(0)
     marks = []
 
-    words = string.downcase.scan(/\w+/)
+    words = string.downcase.scan(/[a-zA-Z0-9]+/)
     marks.push(string.scan(/[[:punct:]|+-=\/\\]/).size)
 
     words.each { |word| word_list[word] += 1 }

@@ -14,7 +14,7 @@ class Result
   	  @words.sort{|a,b| a[0]<=>b[0]}.each{ |e|
   		  csv << [e[0],e[1]]
   	  }
-  	  csv << ["marks", @marks]
+  	  csv << ["\"marks\"", @marks]
     end  
   end
 
@@ -32,6 +32,7 @@ class Result
   	xhash = Hash.new()
     xhash = Hash[@words.sort{|a,b| a[0]<=>b[0]}]
     xfile = REXML::Document.new()
+    format = REXML::Formatters::Pretty.new()
     xword_counts = xfile.add_element('word-counts')
     xmarks = xword_counts.add_element('marks')
     xwords = xword_counts.add_element('words')
@@ -42,13 +43,12 @@ class Result
 	  x.add_attribute('count', value)
 	  x.add_text "#{key}"
 	end
-
+    format.compact = true
+    f = File.open('result.xml', 'w')
     xtabs = ''
     xfile.write(xtabs, 2)
-
-    File.open('result.xml', 'w') do |f|
-	  f << xfile
-    end
+    format.write(xfile, f)
+    f.close
   end
 
 end
