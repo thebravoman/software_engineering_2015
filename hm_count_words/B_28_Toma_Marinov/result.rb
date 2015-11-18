@@ -11,13 +11,21 @@ class Result
 	end
 
 	def to_csv
+		unless @count == 0
+			puts "\"marks\",#{@count}"
+		end
+		
+		@hash.each do |key, value|
+			puts "#{key},#{value}"
+		end
+	
     	CSV.open('result.csv', 'w') do |file|
     		@hash.to_a.each do |elem|
     			file << elem
     		end
 
     		unless @count == 0
-    			file << ['"marks"', @count]
+    			file << ["\"marks\"", @count]
     		end
     	end
   	end
@@ -32,6 +40,8 @@ class Result
 
 		json_hash = JSON.pretty_generate(tempHash)
 
+		p json_hash
+		
 		File.open('result.json', 'w') do |file|
 			file << json_hash
 		end
@@ -53,6 +63,8 @@ class Result
 		xml_with_tabs = ''
 		xml_file.write(xml_with_tabs, 2)
 
+		p xml_with_tabs
+		
 		File.open('result.xml', 'w') do |file|
 			file << xml_with_tabs
 		end

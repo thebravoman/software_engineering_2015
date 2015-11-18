@@ -1,4 +1,4 @@
-require './result'
+require './B_28_Toma_Marinov/result'
 
 file_name = ARGV[0]
 format = ARGV[1]
