@@ -1,4 +1,4 @@
-require './word_count.rb'
+require './B_23_Petar_Georgiev/word_counter.rb'
 
 file_path = ARGV[0]
 
