@@ -1,6 +1,5 @@
 require 'csv'
 require 'json'
-
 require 'rexml/document'
 require './A_12_Emil_Lozev/result'
 require './A_12_Emil_Lozev/word_counter'
