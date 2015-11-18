@@ -4,8 +4,8 @@ require 'rexml/document'
 
 class WordCounter
   def parse(text)
-    word_pattern = /\b[A-Za-z0-9-]+\b/i
-    punctuation_pattern = /[\p{P}_]/
+    word_pattern = /\b[A-Za-z0-9]+\b/i
+    punctuation_pattern = /[\p{P}\p{S}]/
 
     words = {}
     punctuation_marks = 0

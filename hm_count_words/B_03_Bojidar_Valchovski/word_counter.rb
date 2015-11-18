@@ -8,16 +8,20 @@ class WordCounter
   def parse_file(path)
 
 	_path = path
-  result = []
-	words = Hash.new
-	file = File.open(_path, "r")
 
-	wordslist = file.read.downcase
-	marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")
-	wordslist = wordslist.split(" ")
-	
-	wordslist.each do |word|
-	  word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
+  	result = ''
+	file = File.open(_path)
+	file.each_line do |line|
+		result += line
+	end
+
+	words = Hash.new
+
+	marks = result.count("[]!@#$%^&*()_+-=':\"|,.<>/?")
+	result = result.gsub(/[^A-Za-z]/, ' ').downcase
+	result = result.split(" ")
+
+	result.each do |word|
 	  if words[word]
 		words[word] += 1
 	  else
@@ -39,7 +43,7 @@ class WordCounter
     string = string.downcase.split(" ")
     
     string.each do |word|
-      word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
+      word = word.gsub(/[\p{P}_]/,'')
 	    if words[word]
 		    words[word] += 1
 	    else
@@ -48,10 +52,38 @@ class WordCounter
     end
 
     words = words.sort_by{|word,occ| word.downcase}	
-	  words = words.sort_by{|word,occ| [-occ,word]}	 
+	words = words.sort_by{|word,occ| [-occ,word]}	 
 
     parsed_result = Result.new(words,marks)
     return parsed_result
+  end
+
+  def parse_script(path)
+	_path = path
+
+	words = Hash.new
+	marks = 0
+	
+	file = File.open(_path, "r")
+	wordslist = file.read.downcase
+	wordslist.scan(/[\p{P}\p{S}]/).each { marks += 1 }
+	wordslist = wordslist.gsub(/[^A-Za-z0-9]/, ' ')
+	wordslist = wordslist.gsub("-", ' ')
+	wordslist = wordslist.split(" ")
+
+	wordslist.each do |word|
+      if words[word]
+		words[word] += 1
+	  else
+		words[word] = 1
+	  end
+	end
+
+	words = words.sort_by{|word,occ| word.downcase}	
+	words = words.sort_by{|word,occ| [-occ,word]}
+	
+	parsed_result = Result.new(words,marks)
+	return parsed_result
   end
 
 end

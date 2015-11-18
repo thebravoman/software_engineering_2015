@@ -8,9 +8,9 @@ class WordCounter
 	
 	def parse(string)
 		result = Result.new
-		result.marks_count = string.scan(/[^A-Za-z_0-9 ]/).count
+		result.marks_count = string.scan(/[^A-Za-z_ ]/).count
 		
-		string.gsub!(/[^0-9A-Za-z]/, ' ').downcase!
+		string.gsub!(/[^A-Za-z]/, ' ').downcase!
 		string = string.split(" ")
 
 		hash = Hash.new(0)
