@@ -17,6 +17,3 @@ elsif output_option == "xml"
 else
   result.to_csv
 end
-
-
-

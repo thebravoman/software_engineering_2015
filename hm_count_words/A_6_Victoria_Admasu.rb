@@ -1,11 +1,14 @@
 require 'json'
 require 'rexml/document'
+require './A_6_Victoria_Admasu/result'
+require './A_6_Victoria_Admasu/word_counter'
 
 filename = ARGV[0]
 type = ARGV[1]
 $marks = 0
 $count = Hash.new
 
+=begin
 class WordCounter
   def parse(string)
     result = Result.new
@@ -95,6 +98,7 @@ class Result
     puts output
   end
 end
+=end
 
 #main
 word_counter = WordCounter.new
