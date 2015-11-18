@@ -7,7 +7,7 @@ class WordCounter
     # the regex on the next line select all marks
     result.marks_count = string.scan(/[^A-Za-z_0-9 ]/).count
     # the regex on the next line removes commented text, strings, regex and any other symbol that isn't a word
-    removal_regex = %r{(/.+/)|(['"].+['"])|[^A-Za-z_ ]}
+    removal_regex = %r{[^a-z_ ]}
     words = string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
 
     words.each do |word|

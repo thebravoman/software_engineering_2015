@@ -16,6 +16,7 @@ class WordCounter
     $count = $count.sort_by {|x, y| [-y, x]}
 
     result.inititalize($count, $marks)
+    result
   end
 
   def parse_file(filename)
