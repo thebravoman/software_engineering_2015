@@ -13,14 +13,14 @@ The goal is for the students to understand why do they exist and what is their p
 ##Quadratic Equation V2
 Make the program work for the quadratic equations
 
-##Counting words V2
+##Counting words V2 and V3
 Fix the counting words for V2 where it counts the symbols. 
 
 Deadline
 16 November 2015 22:00
 
-##Counting words V3
-Count the words and symbols in a ruby file taking into account all the special things about the ruby syntax
+##Counting words V4
+Count the words and symbols andin a ruby file taking into account all the special things about the ruby syntax
 
 16 November 2015 22:00
 

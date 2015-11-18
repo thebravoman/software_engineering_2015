@@ -6,6 +6,9 @@ But there are still error!
 
 1.Bojidar Valchoski
 The value for parsing is hardcoded and is not read from the file
+
+2. Emil Lozev
+Remove 'require builder' because builder was not on the system
  
 ## Homework
 ### Count workds Fix V3 to work with csv,xml,json as V2
