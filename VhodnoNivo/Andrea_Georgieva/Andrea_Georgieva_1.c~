@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+	
+int SumOfNum(int x, int y)
+ {
+	int x_y;
+	int div = 2;
+	int sum = 0;
+	for(x_y = x; x_y <= y; x_y++)
+	 {
+	 if(x_y > 1)
+		{
+		while(x_y % div != 0)
+		 {
+		  div++;
+		 }
+		}
+	 if(x_y == div)
+	     {
+	 sum += x_y;
+	     }
+  	 div = 2;
+  	     }
+	return sum;
+  }
+
+
+int main()
+ {
+	int x,y;
+ 	do{
+	  printf("Input two numbers (x<y):");
+	  scanf("%d %d",&x,&y);
+	          }while(x>y);
+	printf(" The sum is: %d\n",SumOfNum(x,y));
+	return 0;
+ }
+
