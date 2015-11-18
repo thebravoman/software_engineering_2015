@@ -1,8 +1,8 @@
 require './B_09_Georgi_Stoilov/result'
 
-#punct = /\p{P}\p{S}/
 
 class WordCounter
+
   def parse_string(string)
     result = Result.new
     result.marks = string.scan(/[\p{P}\p{S}]/u).count
@@ -18,12 +18,11 @@ class WordCounter
           result.word_counter[word] += 1
         end
       end
-      
     end
-   # puts string
     result.word_counter = result.word_counter.sort_by { |key, value| [-value, key] }
     result
   end
+  
   def parse_file (file)
     files = File.open(file, 'r')
     what_is_in_the_file = files.read
