@@ -20,7 +20,7 @@ class WordCounter
 		#end
 
 		new_hash = Hash.new(0)
-		new_hash = hash.sort_by.to_h { |key, value| [-value, key] }
+		new_hash = hash.sort_by { |key, value| [-value, key] }
 
 		return Result.new(count, new_hash)
 	end

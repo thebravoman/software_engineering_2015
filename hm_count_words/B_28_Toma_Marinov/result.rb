@@ -1,7 +1,7 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
-require './word-counter'
+require './B_28_Toma_Marinov/word-counter'
 
 class Result
 
@@ -11,12 +11,11 @@ class Result
 	end
 
 	def to_csv
-		unless @count == 0
-			puts "\"marks\",#{@count}"
-		end
-		
 		@hash.each do |key, value|
 			puts "#{key},#{value}"
+		end
+		unless @count == 0
+			puts "\"marks\",#{@count}"
 		end
 	
     	CSV.open('result.csv', 'w') do |file|
@@ -40,7 +39,7 @@ class Result
 
 		json_hash = JSON.pretty_generate(tempHash)
 
-		p json_hash
+		puts json_hash
 		
 		File.open('result.json', 'w') do |file|
 			file << json_hash
@@ -63,7 +62,7 @@ class Result
 		xml_with_tabs = ''
 		xml_file.write(xml_with_tabs, 2)
 
-		p xml_with_tabs
+		puts xml_with_tabs
 		
 		File.open('result.xml', 'w') do |file|
 			file << xml_with_tabs
