@@ -139,7 +139,7 @@ ruby -I <your-dir> <program> <url>
 ruby -I <your-dir> <program> <url> <format>
 ```
 
-**To determine if you have a filename or url, check if the string starts with 'http://' or 'https://' → url.**
+**To determine if you have a filename or url, check if the string starts with 'http://' or 'https://'.**
 
 ### Deadline
 
