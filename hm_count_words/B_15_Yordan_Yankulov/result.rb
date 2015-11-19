@@ -1,3 +1,6 @@
+require 'json'
+require 'rexml/document'
+require 'csv'
 class Result
 
   def initialize punct, helpe
@@ -34,5 +37,6 @@ class Result
 	formatter = REXML::Formatters::Pretty.new
 	formatter.compact = true
 	formatter.write(my_xml, $stdout)
+  puts
 	end
 end

@@ -4,17 +4,9 @@ class WordCounter
   
   def parse f_str
   	w_count = Hash.new(0)
-	marks = 0
-	f_str.each_line do |line|
-	  line.split(""). each do |l|
-      	"!\"\#$%&'()*+,-./:;<=>?@[\\]^_`{|}~#".split("").each do |c|
-          if (c == l)
-    	  	marks += 1
-          end
-      	end
-      end
-  	  
-      line = line.gsub!(/[!.?,;*<>=@~+-]/, "")
+    marks = f_str.scan(/[\p{P}\p{S}]/u).count
+	  f_str.each_line do |line|
+      line = line.gsub!(/[\W+_\d+]/, " ")
       line = line.downcase
       words = line.split(/\W+/)
 

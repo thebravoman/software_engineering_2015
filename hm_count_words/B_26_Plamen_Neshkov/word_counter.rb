@@ -4,8 +4,8 @@ require 'rexml/document'
 
 class WordCounter
   def parse(text)
-    word_pattern = /\b[\w-]+\b/i
-    punctuation_pattern = /\p{P}/
+    word_pattern = /\b[A-Za-z0-9]+\b/i
+    punctuation_pattern = /[\p{P}\p{S}]/
 
     words = {}
     punctuation_marks = 0
@@ -43,11 +43,11 @@ class Result
   end
 
   def to_csv
-    CSV.generate do |csv|
+    CSV.generate(quote_char: "'") do |csv|
       @word_counts.each do |word, occur|
         csv << [word, occur]
       end
-      csv << ["'marks'", @marks_count] unless @marks_count == 0
+      csv << ['"marks"', @marks_count] unless @marks_count == 0
     end
   end
 
@@ -70,4 +70,3 @@ class Result
     document.to_s
   end
 end
-

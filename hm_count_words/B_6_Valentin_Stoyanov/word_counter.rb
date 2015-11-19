@@ -6,11 +6,11 @@ require './B_6_Valentin_Stoyanov/result'
 class WordCounter
 	def parse(string)
 		result = Result.new
-		result.marks_count = string.scan(/[,.!?()":\[\];]/).count
-		string = string.downcase.split
-
+		result.marks_count = string.scan(/[[:punct:]+_=#><@'$%"&*]/).count
+	 	result.marks_count += string.scan("[/\]").count
+		string = string.gsub!("_", ' ')
+		string = string.downcase.scan(/[\w]+/)
 		string.each do |word|
-			word = word.gsub(/[,.!?()":\[\];]/,'')
 			result.word_counts[word] += 1 
 		end
 

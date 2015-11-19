@@ -1,11 +1,14 @@
 require 'json'
 require 'rexml/document'
+require './A_6_Victoria_Admasu/result'
+require './A_6_Victoria_Admasu/word_counter'
 
 filename = ARGV[0]
 type = ARGV[1]
 $marks = 0
 $count = Hash.new
 
+=begin
 class WordCounter
   def parse(string)
     result = Result.new
@@ -24,6 +27,7 @@ class WordCounter
     $count = $count.sort_by {|x, y| [-y, x]}
 
     result.inititalize($count, $marks)
+    result
   end
 
   def parse_file(filename)
@@ -94,6 +98,7 @@ class Result
     puts output
   end
 end
+=end
 
 #main
 word_counter = WordCounter.new
@@ -101,9 +106,9 @@ word_counter = WordCounter.new
 result = word_counter.parse_file filename
 
 if type == 'json'
-  puts result.to_json
+  result.to_json
 elsif type == 'csv' or type == nil
-  puts result.to_csv
+  result.to_csv
 elsif type == 'xml'
-  puts result.to_xml
+  result.to_xml
 end

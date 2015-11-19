@@ -25,7 +25,7 @@ class WordCounter
 		dumi.each do |counter, fr|
 			result << [counter,fr.to_s]
 		end
-		result << ["\"marks\"",symbols]
+		
 
 		newResult = Result.new(result, symbols)
 		return newResult

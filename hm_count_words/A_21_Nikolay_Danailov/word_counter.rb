@@ -4,8 +4,11 @@ class WordCounter
 
   def parse(string)
     result = Result.new
-    result.marks_count = string.scan(/[[,.!?:;"()\[\]]]/).count
-    words = string.downcase.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').split(' ').reject(&:empty?)
+    # the regex on the next line select all marks
+    result.marks_count = string.downcase.scan(/[^a-z0-9_ \n]/).count
+    # the regex on the next line removes commented text, strings, regex and any other symbol that isn't a word
+    removal_regex = %r{[^a-z0-9_ ]}
+    words = string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
 
     words.each do |word|
       result.word_counts[word] += 1
@@ -18,14 +21,6 @@ class WordCounter
   public
 
   def parse_file(filename)
-    text = ''
-
-    File.open(filename) do |file|
-      file.each_line do |line|
-        text += line
-      end
-    end
-
-    parse text
+    parse File.read(filename).encode('UTF-8', 'UTF-8', invalid: :replace)
   end
 end

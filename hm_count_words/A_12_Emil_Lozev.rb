@@ -1,6 +1,5 @@
 require 'csv'
 require 'json'
-
 require 'rexml/document'
 require './A_12_Emil_Lozev/result'
 require './A_12_Emil_Lozev/word_counter'
@@ -18,6 +17,7 @@ if option == "csv"
 elsif option == "json"
 	puts result.to_json
 elsif option == "xml"
+#require 'builder'
 	puts result.to_xml
 else
  	result.to_csv
