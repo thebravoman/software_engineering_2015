@@ -38,7 +38,8 @@ Play a bit with the `sanitize` gem and find a way to remove the content of `<scr
 
 Write some tests for the `hm_count_words`.
 Put them, for example, in `hm_count_words/test/word_counter_test.rb` or `hm_count_words/test/word_counter/parser_test.rb`.
-*Don't forget to give instructions on how to run the tests.*
+
+**Don't forget to give instructions on how to run the tests.**
 (most probably it will run the tests for a single class/module like this `ruby -I hm_count_words/B_52_Ivan_Ivanov/ hm_count_words/test/word_counter_test.rb`)
 
 p.s. If you want to use `rspec` gem instead of `minitest` use `spec` instead of `test` in the filenames: `hm_count_words/spec/word_counter_spec.rb` or `hm_count_words/spec/word_counter/parser_spec.rb`.
@@ -138,7 +139,7 @@ ruby -I <your-dir> <program> <url>
 ruby -I <your-dir> <program> <url> <format>
 ```
 
-*To determine if you have a filename or url, check if the string starts with 'http://' or 'https://' → url.*
+**To determine if you have a filename or url, check if the string starts with 'http://' or 'https://' → url.**
 
 ### Deadline
 
