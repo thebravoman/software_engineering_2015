@@ -2,6 +2,7 @@
 
 - parse websites
 - sanitize html
+    If you have a problem with the sanitize gem, the problem is probably from the nokogiri gem. Here you can see how to install the nokogiri gem: http://www.nokogiri.org/tutorials/installing_nokogiri.html When you are done installing nokogiri gem, you should install "sanitize" gem 
 
 ## Overview
 

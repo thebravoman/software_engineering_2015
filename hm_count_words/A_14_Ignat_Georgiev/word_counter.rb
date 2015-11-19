@@ -31,7 +31,7 @@ class WordCounter
     file.each_line do |line|
       string += line
     end
-   if file_test = "rb"
+   if file_test == "rb"
    	parse_ruby string
    else
    parse string
