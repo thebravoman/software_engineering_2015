@@ -1,4 +1,3 @@
 require 'net/http'
-
-url = URI.parse(ARGV.first)
+url=URI.parse(argv.first)
 puts Net::HTTP.get(url)
