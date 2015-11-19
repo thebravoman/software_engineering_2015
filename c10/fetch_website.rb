@@ -3,7 +3,7 @@ require 'sanitize'
 
 url  = URI.parse(ARGV.first)
 
-html = Net::HTTP.get(url, use_ssl: true)
+html = Net::HTTP.get(url)
 
 text = Sanitize.fragment(html)
 
