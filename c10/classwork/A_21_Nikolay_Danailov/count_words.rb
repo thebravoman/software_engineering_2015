@@ -1,9 +1,9 @@
-require_relative 'word_counter/file_parser.rb'
+require_relative 'word_counter/word_counter.rb'
 
 @input_file = ARGV[0]
 @output_format = ARGV[1]
 
-result = WordCounter::FileParser.new.parse @input_file
+result = WordCounter.parse_website @input_file
 
 if @output_format == 'json'
   puts result.to_json
