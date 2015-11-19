@@ -1,19 +1,32 @@
-file_path = ARGV[0] || "hi.txt"
+require 'csv'
+require 'json'
+require 'rexml/document'
+
+file_path = ARGV[0] || "text.txt"
 WORDS_COUNT = {}
-file = File.open(file_path, "r") 
+file = File.open(file_path, "r")
+
+marks = 0
 
 file.each_line do |line|
-  words = line.split 
+  words = line.downcase.split(" ")
   words.each do |word|
-    word = word.gsub(/[,()'"]/,'')
-    if WORDS_COUNT[word]
-      WORDS_COUNT[word] += 1
-    else
-      WORDS_COUNT[word] = 1
-    end
+	marks = marks + word.scan(/[  (){}.,|\1234567890="'*&^%$#@!?;:  ]/).count
+    word = word.gsub(/[  (){}.,|\1234567890="'+-_*&^%$#@!?;:  ]/,'')
+    if (word != "")
+		if WORDS_COUNT[word]
+		  WORDS_COUNT[word] += 1
+		else
+		  WORDS_COUNT[word] = 1
+		end
+	end
   end
 end
 
-WORDS_COUNT.sort {|a,b| a[1] <=> b[1]}.each do |key,value|
-  puts "#{key},#{value}"
+WORDS_COUNT = WORDS_COUNT.sort_by {|key, value| [-value, key]}
+
+WORDS_COUNT.each do |key,value|
+  puts "#{key} => #{value}"
 end
+
+puts "\"marks\",#{marks}" if (marks != 0)

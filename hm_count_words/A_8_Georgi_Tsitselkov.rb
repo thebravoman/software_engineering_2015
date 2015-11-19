@@ -7,36 +7,36 @@ output = ARGV[1]
 
 class Result
 	def intialize
-		@sum_m = 0
-		@word_count = Hash.new(0)
+		@mark_counts = 0
+		@word_counts = Hash.new(0)
 	end
  	
-	attr_accessor :sum_m, :word_count
+	attr_accessor :mark_count, :word_count
 
  	def to_csv
-	 	word_count.each do |words,number|
+	 	@word_counts.each do |words,number|
 		puts "#{words}, #{number}"
  		end
  
-		if sum_m!= 0
-			puts "\"marks\", #{sum_m}"
+		if @mark_counts!=0
+			puts "\"marks\", #{@mark_counts}"
   		end
  	end
 
  	def to_json
   		json_hash = Hash.new(0)
-  		json_hash["marks"] = sum_m
-  		json_hash["words"] = word_count
- 		puts JSON.pretty_generate(json_hash)
+  		json_hash["marks"] = @mark_counts
+  		json_hash["words"] = @word_counts
+ 		puts json_h.to_json
  	end
 
 	def to_xml
     		xml_ = REXML::Document.new('') 
-    		word_count = xml_.add_element('word-counts')
-    		word_count.add_element('marks').add_text sum_m.to_s
+    		word_c_t = xml_.add_element('word-counts')
+    		word_c_t.add_element('marks').add_text @mark_counts.to_s
     		words_t = word_count.add_element('words')
 
-    		word_count.each do |word, count|
+    		@word_counts.each do |word, count|
     		words_t.add_element('word', {'count' => count}).add_text word
     		end
     		formatter = REXML::Formatters::Pretty.new(4)
@@ -46,32 +46,32 @@ class Result
 
 end
 
+
 class WordCounter
  	def parse(string)
- 		 result = Result.new
- 
- 
- 		string.each do |line|
-	       	result.sum_m += line.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
-        	word = line.gsub(/[^a-z\n ]/, ' ').split(" ")
-	
-		word.each do |words|
-		result.hash[words] = hash[words] + 1 
-	  	end
+ 		
+		marks = string.gsub(/[a-z\s]/, "");
+		words = string.gsub(/[^a-z'\s-]/, "").split
+
+		hash = Hash.new(0)
+
+		words.each do |word|
+			hash[word] += 1
 		end
- 		result.word_count = result.word_count.sort_by{|words,number| words.downcase}
- 		result.word_count = result.word_count.sort_by{|words,number| [-number,words]} 
- 		result
- 	end
- 
- 	def parse_file(filename)
-  		filename = FILE.open(filename, "r").split(' ')
-  		parse filename  
- 	end
+		
+		hash = hash.sort_by{|word, count| [-count, word]}
+
+		return Result.new(marks.length, hash)
+	end
+
+	def parse_file(filename)
+		string = ""
+		string = File.open(filename, "r").read.downcase
+		return parse string    	
+	end
 end
 
-word_counter = WordCounter.new
-result = word_counter.parse_file filename
+result = (WordCounter.new).parse_file(ARGV[0])
 
 if output == 'json'
   puts result.to_json
@@ -80,4 +80,3 @@ elsif output == 'xml'
 else
   puts result.to_csv
 end
- 
