@@ -1,0 +1,1 @@
+puts ((int)ARGV[0].to_i*10)

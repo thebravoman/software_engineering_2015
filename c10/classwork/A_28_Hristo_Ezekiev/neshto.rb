@@ -1,11 +1,10 @@
-
-
-
 require 'net/http'
+require 'sanitise'
 
 url = URI.parse(ARGV[0])
+
 html = Net::HTTP.get(url)
 
-text = Sanitize.fragment(html)
+text = Sanitise.fragment(html)
 
 puts text
