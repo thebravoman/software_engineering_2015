@@ -1,3 +1,7 @@
+require 'csv'
+require 'json'
+require 'rexml/document'
+
 class Result
 	attr_accessor :marks_count, :word_counts
 	

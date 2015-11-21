@@ -1,0 +1,9 @@
+require 'word_counter/result'
+
+module WordCounter
+	class Parser
+		def self.parse(text)
+		
+		end
+	end
+end
