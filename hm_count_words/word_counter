@@ -20,7 +20,7 @@ class Result
 
   def to_json
   	hash = {
-	  "marks" => @marks.to_s,
+	    "marks" => @marks.to_s,
   	  "words" => Hash[@words.sort{|a,b| a[0]<=>b[0]}],
     }
     File.open('result.json', 'w') do |f|
@@ -47,7 +47,7 @@ class Result
     f = File.open('result.xml', 'w')
     xtabs = ''
     xfile.write(xtabs, 2)
-    format.write(xfile, f)
+    format.write(xfile, $stdout)
     f.close
   end
 
