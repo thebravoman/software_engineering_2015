@@ -2,7 +2,7 @@ require_relative './A_12_Emil_Lozev/word_counter'
 
 def fileOrSite(filename)
 	first = filename.split('/').first
-	return first = 'http:' || first = 'https:'
+	return first == 'http:' || first == 'https:'
 end
 
 def printRes(filename,option)
