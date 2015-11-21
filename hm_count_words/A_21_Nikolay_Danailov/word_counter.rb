@@ -1,26 +1,19 @@
-# Processes and extracts words from text
-class WordCounter
-  private
+require 'word_counter/file_parser'
+require 'word_counter/web_parser'
 
-  def parse(string)
-    result = Result.new
-    # the regex on the next line select all marks
-    result.marks_count = string.downcase.scan(/[^a-z0-9_ \n]/).count
-    # the regex on the next line removes commented text, strings, regex and any other symbol that isn't a word
-    removal_regex = %r{[^a-z0-9_ ]}
-    words = string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
-
-    words.each do |word|
-      result.word_counts[word] += 1
-    end
-
-    result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }
-    result
+module WordCounter
+  def self.is_uri str
+    start = str.split('//').first
+    start == 'http:' || start == 'https:'
   end
 
-  public
-
-  def parse_file(filename)
-    parse File.read(filename).encode('UTF-8', 'UTF-8', invalid: :replace)
+  def self.parse(info)
+    if File.file? info
+      FileParser.parse info
+    elsif is_uri info
+      WebParser.parse info
+    else
+      Parser.parse info
+    end
   end
 end

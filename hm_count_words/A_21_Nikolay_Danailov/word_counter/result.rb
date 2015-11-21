@@ -1,3 +1,6 @@
+require 'json'
+require 'rexml/document'
+
 # Represents the result of counting words
 class Result
   private
@@ -30,6 +33,7 @@ class Result
     end
 
     csv << "\"marks\"," + marks_count.to_s if marks_count > 0
+    csv
   end
 
   def to_json
