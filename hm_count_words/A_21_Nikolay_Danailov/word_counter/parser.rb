@@ -1,20 +1,40 @@
 require 'word_counter/result'
 
 module WordCounter
+  # counts words in text
   class Parser
-    def self.parse(text)
-      result = Result.new
-      # the regex on the next line select all marks
-      result.marks_count = text.downcase.scan(/[^a-z0-9_ \n]/).count
-      # the regex on the next line removes commented text, strings, regex and any other symbol that isn't a word
-      removal_regex = %r{[^a-z0-9_ ]}
-      words = text.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
+    def self.count_marks(string)
+      string.downcase.scan(/[^a-z0-9_ \n]/).count
+    end
+
+    def self.count_words(words)
+      res = Hash.new 0
 
       words.each do |word|
-        result.word_counts[word] += 1
+        res[word] += 1
       end
 
-      result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }
+      res
+    end
+
+    def self.sort_counted_words(result_hash)
+      result_hash.sort_by { |word, count| [-count, word] }
+    end
+
+    def self.split_words(string)
+      # the regex on the next line removes commented text, strings, regex
+      # and any other symbol that isn't a word
+      removal_regex = /[^a-z0-9_ ]/
+      string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
+    end
+
+    def self.parse(string)
+      result = Result.new
+      # the regex on the next line select all marks
+      result.marks_count = count_marks string
+      words = split_words string
+      result.word_counts = count_words words
+      result.word_counts = sort_counted_words result.word_counts
       result
     end
   end

@@ -4,18 +4,19 @@ require 'sanitize'
 require 'openssl'
 
 module WordCounter
+  # Counts words from a web site's url
   class WebParser < Parser
-    def self.parse(uri)
-      uri = URI.parse(uri)
-      http = Net::HTTP.new(uri.host, uri.port)
-      
-      if uri.scheme == 'https'
+    def self.parse(url)
+      url = URI.parse(url)
+      http = Net::HTTP.new(url.host, url.port)
+
+      if url.scheme == 'https'
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
-      contents = http.get(uri.request_uri)
-      text = Sanitize.clean(contents.body, remove_contents: ['script', 'style'])
+      contents = http.get(url.request_uri)
+      text = Sanitize.clean(contents.body, remove_contents: %w(script, style))
       super text
     end
   end

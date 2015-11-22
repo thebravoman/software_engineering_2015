@@ -1,21 +1,21 @@
 require 'word_counter'
 
-def is_uri string
+def uri?(string)
   start = string.split('/').first
   start == 'http:' || start == 'https:'
 end
 
-def get_result input
+def get_result(input)
   if File.file? input
-    result = WordCounter.parse_file input
-  elsif is_uri input
-    result = WordCounter.parse_webpage input
+    WordCounter.parse_file input
+  elsif uri? input
+    WordCounter.parse_webpage input
   else
-    result = Parser.parse input
+    WordCounter.parse input
   end
 end
 
-def print_result result, format
+def print_result(result, format)
   if format == 'json'
     puts result.to_json
   elsif format == 'xml'

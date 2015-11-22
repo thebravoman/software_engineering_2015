@@ -1,9 +1,10 @@
 require 'word_counter/file_parser'
 require 'word_counter/web_parser'
 
+# Handles word counting
 module WordCounter
-  def self.parse(info)
-    Parser.parse info
+  def self.parse(string)
+    Parser.parse string
   end
 
   def self.parse_file(filename)
