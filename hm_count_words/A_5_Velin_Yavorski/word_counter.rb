@@ -1,37 +1,41 @@
-class WordCounter
-  def parse(string)
-    res = Result.new
-    punct = 0
-    h = Hash.new()
-    str = string.downcase.split(" ")
-    str.each do |w|
-      punct = punct + w.scan(/[^a-z_]/).count
-      words = w.split(/[.,(+-]/)
-      words.each do |word|
-        word = word.gsub(/[^a-z_]/,'')
-		if(word == '_')	
-			punct = punct + 1
-			word = word.gsub("_",'')
+require 'word_counter/parser'
+require 'word_counter/file_parser'
+require 'word_counter/website_parser'
+
+module WordCounter
+    def self.parse(string)   
+			Parser.parse(string)
+		end     
+
+    def self.parse_file(filename)
+			FileParser.parse(filename)
 		end
-        if(word!='')
-          if(h[word])
-            h[word] += 1
-          else
-            h[word] = 1
-          end
-        end
-     end
-   end
-   h = h.sort_by { |key, value| [ -value, key ] }
-   res.setWordsMarks h, punct
-   res
-  end
-  def parse_file(filename)
-    f = File.open(filename, "r")
-    string = " "
-    f.each_line do |line|
-      string+=line
-    end
-   parse string
-  end
+
+    def self.parse_webpage(url)   
+			WebsiteParser.parse(url)
+		end
 end
+=begin
+    class Result
+			def marks_count
+      	@marks_count
+			end
+			
+			def word_counts 
+        @word_counts
+			end    
+
+      def to_csv   
+     		to_csv
+			end
+
+			def to_json    
+				to_json
+			end      
+ 
+    	def to_xml 
+				to_xml
+			end
+		end
+end    
+=end      
