@@ -2,7 +2,6 @@ require 'csv'
 require 'json'
 require 'rexml/document'
 
-
 class WordCounter
 	def parse_file(filename)
 		@filename = filename
