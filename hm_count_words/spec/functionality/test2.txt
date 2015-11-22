@@ -1,0 +1,5 @@
+Hello,
+My name is 'Bob'.
+What is your name?
+Oh, you are called 'Nikolay'?
+Nice to meet you!
