@@ -9,5 +9,9 @@ describe 'FileParser' do
     it 'has parameter \'filename\'' do
       expect(WordCounter::FileParser.method(:parse).parameters).to eql [[:req, :filename]]
     end
+
+    it 'inherits \'Parser\'' do
+      expect(WordCounter::FileParser.superclass).to eql WordCounter::Parser
+    end
   end
 end
