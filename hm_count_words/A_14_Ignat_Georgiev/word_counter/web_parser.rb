@@ -1,11 +1,10 @@
-
 require_relative 'parser.rb'
 require 'net/http'
 require 'sanitize'
 require 'openssl'
 
 module WordCounter
-  class WebpageParser < Parser
+  class WebParser < Parser
     def parse(uri)
       uri = URI.parse(uri)
       http = Net::HTTP.new(uri.host, uri.port)
@@ -14,8 +13,8 @@ module WordCounter
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
       result = http.get(uri.request_uri)
-      text = Sanitize.fragment(result.body)
-      super (text)
+      string = Sanitize.fragment(result.body)
+      super (string)
     end
   end
 end
