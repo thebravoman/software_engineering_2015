@@ -33,17 +33,3 @@ def result(input_filename,output_option)
 end 
 
 result(input_filename,output_option)
-
-=begin
-result = WordCounter.parse_website ARGV[0]
-## result = WordCounter.parse_file ARGV[0]
-
-if @output_option == "json"
-  result.to_json
-elsif @output_option == "xml"
-  result.to_xml
-else
-  result.to_csv
-end
-=end
-
