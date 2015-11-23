@@ -6,16 +6,16 @@ module WordCounter
 		
 		def parse_string (string)
 			result = Result.new
-			resul.marks = string.scan(/[\p{P}\p{S}]/u).count
+			result.marks = string.scan(/[\p{P}\p{S}]/u).count
 			string = string.downcase.split
-			string.each do|word|
+			string.each do |word|
 				if(word.include?(" "))
 					word = word.split(" ")
 					word.each do |b|
 						result.word_counter[b] = 1
 					end
 				elsif !word.empty?
-					result.word_counter[b] +=  1
+					result.word_counter[word] +=  1
 				end
 			end
 			
