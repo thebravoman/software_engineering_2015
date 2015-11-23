@@ -1,5 +1,5 @@
-require '/home/decisioner/Desktop/software_engineering_2015/hm_count_words/B_12_Emiliqn_Gospodinov/Result.rb' #Here must be the whole path
-require '/home/decisioner/Desktop/software_engineering_2015/hm_count_words/B_12_Emiliqn_Gospodinov/WordCounter.rb'
+require './B_12_Emiliqn_Gospodinov/Result'
+require './B_12_Emiliqn_Gospodinov/WordCounter'
 format = ARGV[1]
 
 word_counter = WordCounter.new
