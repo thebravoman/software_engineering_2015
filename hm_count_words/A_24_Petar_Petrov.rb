@@ -1,9 +1,13 @@
 require 'json'
 require 'rexml/document'
-require './A_24_Petar_Petrov/result.rb'
-require './A_24_Petar_Petrov/word_counter.rb'
+require 'word_counter'
 
-result = WordCounter.new.parse_file(ARGV[0])
+start = ARGV[0].split('/').first
+if start == 'http:' || start == 'https:'
+  result = WordCounter.parse_website(ARGV[0])
+else
+  result = WordCounter.parse_file(ARGV[0])
+end
 
 if ARGV[1] == 'json'
   result.to_json
