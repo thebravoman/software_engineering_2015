@@ -1,10 +1,10 @@
-require './B_28_Toma_Marinov/result'
+require './B_28_Toma_Marinov/word_counter/result'
 
 file_name = ARGV[0]
 format = ARGV[1]
 
-word_counter = WordCounter.new()
-result = word_counter.parse_file file_name
+result = WordCounter::parse_file(file_name)
+#result = word_counter.parse_file file_name
 
 case format
 when 'json'
