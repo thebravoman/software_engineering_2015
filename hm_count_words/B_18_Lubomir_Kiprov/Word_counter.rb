@@ -1,6 +1,7 @@
 require_relative 'Word_counter/Parser'
 require_relative 'Word_counter/FileParser'
 require_relative 'Word_counter/result'
+require_relative 'Word_counter/WebParer'
 
 module Word_counter
   def self.parse(string)
