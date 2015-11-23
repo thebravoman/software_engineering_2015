@@ -1,40 +1,16 @@
-class WordCounter
-  def parse(string)
-    result = Result.new
-    result.marks_count = string.count(".,=[]()'!{}?:_;\"")
-    string = string.gsub(/[^A-Za-z]/, ' ').downcase
-    word_list = string.split(' ')
-    word_list.each do |word|
-      result.word_counts[word]+=1
-    end
-    result.word_counts = result.word_counts.sort_by{|word,num| word.downcase}
-    result.word_counts = result.word_counts.sort_by {|word,num| [-num,word]}
-    result
-    end
-   def parse_ruby(string)
-   	result = Result.new
-    result.marks_count = string.count(".,=[]()'!{}?:;\"")
-    string = string.gsub(/[^A-Za-z_]/, ' ').downcase
-    word_list = string.split(' ')
-    word_list.each do |word|
-      result.word_counts[word]+=1
-    end
-    result.word_counts = result.word_counts.sort_by{|word,num| word.downcase}
-    result.word_counts = result.word_counts.sort_by {|word,num| [-num,word]}
-    result
-    end
+require_relative './word_counter/file_parser.rb'
+require_relative './word_counter/web_parser.rb'
 
-  def parse_file(filename)
-  	file_test  = filename.split(".").last
-    file = File.open(filename)
-    string = ''
-    file.each_line do |line|
-      string += line
-    end
-   if file_test == "rb"
-   	parse_ruby string
-   else
-   parse string
-end
+module WordCounter
+  def self.parse_file(filename)
+    FileParser.new.parse filename
+  end
+
+  def self.parse(text)
+    Parser.new.parse text
+  end
+
+  def self.parse_webpage(uri)
+    WebpageParser.new.parse uri
   end
 end
