@@ -10,11 +10,11 @@ class Result
   end
 
   def to_csv
-    CSV.open('result.csv', 'w') do |csv|
+    CSV.open('result.csv', 'w', {quote_char: " "}) do |csv|
   	  @words.sort{|a,b| a[0]<=>b[0]}.each{ |e|
   		  csv << [e[0],e[1]]
   	  }
-  	  csv << ["\"marks\"", @marks]
+  	  csv << ['"marks"', @marks]
     end  
   end
 
