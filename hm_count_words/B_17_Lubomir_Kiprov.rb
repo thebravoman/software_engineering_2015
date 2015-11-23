@@ -1,19 +1,19 @@
-require 'json'
-require 'csv'
-require 'rexml/document'
-require '/home/lubo/Desktop/ruby/result.rb'
-require '/home/lubo/Desktop/ruby/Word_counter.rb'
+require_relative 'Word_counter.rb'
 
 
 filename = ARGV[0]
 format = ARGV[1]
 
-result = WordCounter.new
-word_counter = result.parse_file filename
+if( filename.start_with?('http://') || filename.start_with?('https://'))
+	result = Word_counter.parse(filename)
+else
+	result = Word_counter.parse_file(filename)
+end
+
 if format == "json" 
-	puts word_counter.to_json
+	puts result.to_json
 elsif format == "xml"
-	word_counter.to_xml
+	result.to_xml
 else 
-	word_counter.to_csv	
+	result.to_csv	
 end
