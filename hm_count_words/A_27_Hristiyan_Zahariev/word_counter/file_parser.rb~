@@ -1,0 +1,10 @@
+require_relative 'parser.rb'
+
+module WordCounter
+  class FileParser < Parser
+    def parse(file)
+      resultz = File.read file
+      super resultz
+    end
+  end
+end
