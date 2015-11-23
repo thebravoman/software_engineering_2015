@@ -1,10 +1,12 @@
 require './B_14_Ivo_Gerginov/word_counter'
 
-
 f_path = ARGV[0]
 op = ARGV[1]
 
-res = WordCounter::parseFile f_path 
+if f_path.start_with?("http://", "https://") == true
+  res = WordCounter::parseURL f_path
+else res = WordCounter::parseFile f_path 
+end
 
 if op == 'json'
   res.to_json

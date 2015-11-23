@@ -1,76 +1,29 @@
-require 'json'
-require 'rexml/document'
+require 'word_counter'
 
-class Result
-	def initialize markCount, wordCounts
-		@mark_count = markCount
-		@word_counts = wordCounts
-	end
+def site? str
+	str.start_with?("http://") || str.start_with?("https://")
+end
 
-	def to_csv
-		@word_counts.each do |word, count|
-			puts word + "," + count.to_s
-		end
-
-		if @mark_count > 0
-			puts '"marks",' + @mark_count.to_s
-		end
-	end
-
-	def to_json
-		jsonHash = {
-			"marks" => @mark_count,
-			"words" => @word_counts
-		}
-		puts jsonHash.to_json
-	end
-
-	def to_xml
-		xml = REXML::Document.new('')	
-		mainTag = xml.add_element('word-counts')
-		mainTag.add_element('marks').add_text @mark_count.to_s
-		wordsTag = mainTag.add_element('words')
-
-		@word_counts.each do |word, count|
-			wordsTag.add_element('word', {'count' => count}).add_text word
-		end
-
-		formatter = REXML::Formatters::Pretty.new(4)
-		formatter.compact = true
-		formatter.write(xml, $stdout)
+def get_result input
+	if site? input
+		WordCounter.parse_webpage input
+	else
+		WordCounter.parse_file input
 	end
 end
 
-class WordCounter
-	def parse(contents)
-		marks = contents.gsub(/[a-z_0-9\s]/, "");
-		words = contents.gsub(/[^a-z_0-9\s-]/, " ").split
-
-		hash = Hash.new(0)
-
-		words.each do |word|
-			hash[word] += 1
-		end
-
-		hash = hash.sort_by{|word, count| [-count, word]}
-
-		return Result.new(marks.length, hash)
-	end
-
-	def parse_file(filename)
-		contents = ""
-		contents = File.open(filename, "r").read.downcase
-		return parse contents    	
+def print_result result, format
+	if format == 'json'
+		puts result.to_json
+	elsif format == 'xml'
+		puts result.to_xml
+	else
+		puts result.to_csv
 	end
 end
 
+parseInput = ARGV[0]
+format = ARGV[1]
+result = get_result parseInput
 
-result = (WordCounter.new).parse_file(ARGV[0])
-
-if ARGV[1] == 'json'
-	result.to_json
-elsif ARGV[1] == 'xml'
-	result.to_xml
-else
-	result.to_csv
-end
+print_result result, format
