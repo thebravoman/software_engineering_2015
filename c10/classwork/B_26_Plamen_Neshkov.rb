@@ -1,4 +1,8 @@
 require 'net/http'
+require 'sanitize'
 
 url = URI.parse(ARGV.first)
-puts Net::HTTP.get(url)
+html = Net::HTTP.get(url)
+
+text = Sanitize.fragment(html)
+puts text

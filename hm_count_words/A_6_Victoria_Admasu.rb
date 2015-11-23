@@ -1,12 +1,19 @@
 require 'json'
 require 'rexml/document'
-require './A_6_Victoria_Admasu/result'
 require './A_6_Victoria_Admasu/word_counter'
 
-filename = ARGV[0]
+name = ARGV[0]
 type = ARGV[1]
 $marks = 0
 $count = Hash.new
+
+p1 = name.split('/').first
+
+if p1 == 'http:' || p1 == 'https:'
+  result = WordCounter.parse_web(name)
+else 
+  result = WordCounter.parse_file(name)
+end
 
 =begin
 class WordCounter
@@ -98,12 +105,12 @@ class Result
     puts output
   end
 end
-=end
 
 #main
 word_counter = WordCounter.new
 
 result = word_counter.parse_file filename
+=end
 
 if type == 'json'
   result.to_json

@@ -1,10 +1,16 @@
 require './B_6_Valentin_Stoyanov/word_counter'
+require 'uri'
 
+@input = ARGV[0]
 @format = ARGV[1]
-@file = File.open(ARGV[0], "r")
 
-word_counter = WordCounter.new
-result = word_counter.parse_file @file
+if File.file? @input
+	result = WordCounter::file_parse(@input)
+elsif @input =~ /\A#{URI::regexp}\z/
+	result = WordCounter::web_parse(@input)
+end
+
+
 
 case @format
 when "json"

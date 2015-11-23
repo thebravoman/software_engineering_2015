@@ -1,10 +1,13 @@
-require './B_26_Plamen_Neshkov/word_counter.rb'
+require 'word_counter'
 
-filepath = ARGV[0]
+path = ARGV[0]
 format = ARGV[1]
 
-word_counter = WordCounter.new
-result = word_counter.parse_file(filepath)
+if (path.match('^https?:\/\/.+'))
+  result = WordCounter::parse_webpage(path)
+else
+  result = WordCounter::parse_file(path)
+end
 
 if format == 'json'
   File.open('result.json', 'w') { |file| file << result.to_json }
