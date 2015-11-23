@@ -12,7 +12,7 @@ module WordCounter
     FileParser.new.parse(filepath)
   end
 
-  def self.parse_website(url)
-    WebParser.new.parse(url)
+  def self.parse_webpage(url)
+    WebpageParser.new.parse(url)
   end
 end
