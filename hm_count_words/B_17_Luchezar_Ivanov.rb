@@ -1,4 +1,4 @@
-require './B_6_Valentin_Stoyanov/word_counter'
+require './B_17_Luchezar_Ivanov/word_counter'
 require 'uri'
 
 @input = ARGV[0]

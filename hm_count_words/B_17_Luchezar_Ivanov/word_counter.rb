@@ -1,7 +1,7 @@
-require './B_6_Valentin_Stoyanov/word_counter/parser'
-require './B_6_Valentin_Stoyanov/word_counter/file_parser'
-require './B_6_Valentin_Stoyanov/word_counter/web_parser'
-require './B_6_Valentin_Stoyanov/word_counter/result'
+require './B_17_Luchezar_Ivanov/word_counter/parser'
+require './B_17_Luchezar_Ivanov/word_counter/file_parser'
+require './B_17_Luchezar_Ivanov/word_counter/web_parser'
+require './B_17_Luchezar_Ivanov/word_counter/result'
 
 module WordCounter
   def self.parse(string)

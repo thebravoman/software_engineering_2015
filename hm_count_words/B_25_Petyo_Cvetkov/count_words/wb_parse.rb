@@ -1,11 +1,12 @@
 require 'net/http'
 require 'sanitize'
 require 'openssl'
+require './B_25_Petyo_Cvetkov/count_words/Count_words'
 
 module WordCounter
-  class WebParser < Parser
+  class WebpageParser < Parser
     def parse(url)
-      uri  = URI.parse(url)
+      uri = URI.parse(url)
       http = Net::HTTP.new(uri.host, uri.port)
 
       if uri.scheme == 'https'
@@ -14,8 +15,8 @@ module WordCounter
       end
 
       result = http.get(uri.request_uri)
-
       text = Sanitize.fragment(result.body)
+
       super(text)
     end
   end
