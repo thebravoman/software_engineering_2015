@@ -1,6 +1,6 @@
 require_relative 'word_counter/parser'
 require_relative 'word_counter/file_parser'
-require_relative 'word_counter/webpage_parser'
+require_relative 'word_counter/web_parser'
 require_relative 'word_counter/result'
 
 module WordCounter

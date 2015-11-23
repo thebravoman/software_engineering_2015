@@ -1,9 +1,9 @@
-require_relative 'B_26_Plamen_Neshkov/word_counter'
+require 'word_counter'
 
 path = ARGV[0]
 format = ARGV[1]
 
-if (path.match('^http:\/\/.+'))
+if (path.match('^https?:\/\/.+'))
   result = WordCounter::parse_webpage(path)
 else
   result = WordCounter::parse_file(path)
