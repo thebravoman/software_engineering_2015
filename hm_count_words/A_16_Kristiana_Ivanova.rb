@@ -1,7 +1,3 @@
-#require 'rexml/document'
-#require 'json'
-#require './A_16_Kristiana_Ivanova/result'
-#require './A_16_Kristiana_Ivanova/word_counter'
 require_relative './A_16_Kristiana_Ivanova/word_counter'
 require 'builder'
 
