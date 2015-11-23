@@ -2,6 +2,8 @@ require 'csv'
 require 'json'
 require 'rexml/document'
 
+module Word_counter
+
 class Result
 
   attr_accessor :countmarks
@@ -39,5 +41,6 @@ class Result
   	output.write(xml, $stdout)
   	puts
   end
+end
 end
 

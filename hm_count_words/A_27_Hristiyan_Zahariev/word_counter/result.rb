@@ -1,7 +1,7 @@
 class Result
   attr_accessor :markz_count
   attr_accessor :wordsnum
-  def initialize 
+  def initialize
     @markz_count = 0
     @wordsnum = Hash.new(0)
   end
@@ -20,7 +20,7 @@ class Result
 	"marks" => markz_count,
     	"words" => wordsnum
     }
-  puts JSON.pretty_generate(tempHash)
+    puts JSON.pretty_generate(tempHash)
   end
 
   def to_xml
@@ -39,4 +39,3 @@ class Result
     puts xmlprint
   end
 end
-

@@ -1,7 +1,7 @@
 require_relative './parser'
 
 require 'net/http'
-require 'sanitize'
+#require 'sanitize'    -cannot load such file --sanitize
 require 'openssl'
 
 module WordCounter

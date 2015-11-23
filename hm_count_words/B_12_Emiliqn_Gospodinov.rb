@@ -1,9 +1,13 @@
-require './B_12_Emiliqn_Gospodinov/Result'
-require './B_12_Emiliqn_Gospodinov/WordCounter'
+require './B_12_Emiliqn_Gospodinov/word_counter.rb'
 format = ARGV[1]
 
-word_counter = WordCounter.new
-result = word_counter.parse_file ARGV[0]
+is_url = ARGV[0].split("_").last.split("/").first
+
+if (is_url == "https:") || (is_url == "http:") 
+  result = WordCounter::parse_web(ARGV[0])
+else
+  result = WordCounter::parse_file(ARGV[0])
+end
 
 if format == "json"
   puts result.to_json
