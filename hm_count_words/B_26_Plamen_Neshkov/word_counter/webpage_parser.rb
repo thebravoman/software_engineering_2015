@@ -2,7 +2,7 @@ require 'net/http'
 require 'sanitize'
 
 module WordCounter
-  class WebParser < Parser
+  class WebpageParser < Parser
     def parse(url)
       html = Net::HTTP.get(URI.parse(url))
       sanitized = Sanitize.fragment(html)
