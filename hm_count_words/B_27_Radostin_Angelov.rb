@@ -1,21 +1,29 @@
-require './B_27_Radostin_Angelov/word_counter.rb'
+module WordCounter
+  require './B_27_Radostin_Angelov/word_counter.rb'
+  require './B_27_Radostin_Angelov/result.rb'
 
-filepath = ARGV[0]
-file_format = ARGV[1]
+  input_to_parse = ARGV[0]
+  file_format = ARGV[1]
 
-text = WordCounter.parse_file(filepath)
-word_counter = WordCounter.new
-words = word_counter.count_words(text)
-marks_count = word_counter.count_marks(text)
+  result = Result.new
 
-case file_format
-  when "json"
-    result_builder = Result.new(JsonResultStrategy.new, words, marks_count)
-    result_builder.build_result
-  when "xml"
-    result_builder = Result.new(XmlResultStrategy.new, words, marks_count)
-    result_builder.build_result
-  else
-    result_builder = Result.new(CsvResultStrategy.new, words, marks_count)
-    result_builder.build_result
+  text = ""
+
+  if input_to_parse.start_with? "http://" or input_to_parse.start_with? "https://"
+     text = WordCounter.parse_webpage(input_to_parse)
+  elsif
+    text = WordCounter.parse_file(input_to_parse)
+  end
+
+  result.word_counts(text)
+  result.marks_count(text)
+
+  case file_format
+    when "json"
+      result.to_json
+    when "xml"
+      result.to_xml
+    else
+      result.to_csv
+  end
 end
