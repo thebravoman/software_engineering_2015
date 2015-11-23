@@ -50,5 +50,4 @@ class Result
     format.write(xfile, f)
     f.close
   end
-
 end

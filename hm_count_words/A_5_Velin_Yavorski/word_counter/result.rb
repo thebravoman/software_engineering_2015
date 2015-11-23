@@ -1,3 +1,7 @@
+require 'csv'
+require 'json'
+require 'rexml/document'
+
 class Result
   def initialize
     @marks_count = 0
