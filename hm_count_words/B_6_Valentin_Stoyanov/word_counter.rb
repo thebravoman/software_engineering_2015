@@ -1,26 +1,18 @@
-require 'json'
-require 'rexml/document'
-require 'csv'
-require './B_6_Valentin_Stoyanov/result'
+require './B_6_Valentin_Stoyanov/word_counter/parser'
+require './B_6_Valentin_Stoyanov/word_counter/file_parser'
+require './B_6_Valentin_Stoyanov/word_counter/web_parser'
+require './B_6_Valentin_Stoyanov/word_counter/result'
 
-class WordCounter
-	def parse(string)
-		result = Result.new
-		result.marks_count = string.scan(/[[:punct:]+_=#><@'$%"&*]/).count
-	 	result.marks_count += string.scan("[/\]").count
-		string = string.gsub!("_", ' ')
-		string = string.downcase.scan(/[\w]+/)
-		string.each do |word|
-			result.word_counts[word] += 1 
-		end
+module WordCounter
+  def self.parse(string)
+    Parser.new.parse(string)
+  end
 
-		result.word_counts = result.word_counts.sort_by {|word,num| [-num,word] }
-		
-		result
-	end
+  def self.file_parse(filename)
+    FileParser.new.file_parse(filename)
+  end
 
-	def parse_file(filename)
-		file_content = filename.read
-		parse file_content
-	end
+  def self.web_parse(url)
+    WebParser.new.web_parse(url)
+  end
 end

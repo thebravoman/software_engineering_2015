@@ -1,25 +1,16 @@
-class WordCounter
-  def parse(text)
-    result = Result.new
-    result.markz_count = text.scan(/[^A-Za-z0-9_ \n]/).count
-    text = text.gsub(/['"].+['"]|[^A-Za-z_]/, ' ').downcase
-    text = text.downcase.split(" ")
-    text.each do |word|
-    	word = word.gsub(/[,.()"*';:-^!?]/, " ")
-    	result.wordsnum[word] = result.wordsnum[word] + 1
-    end
+require_relative './word_counter/file_parser.rb'
+require_relative './word_counter/web_parser.rb'
 
-    result.wordsnum = result.wordsnum.sort_by{|word, number| word.downcase}
-    result.wordsnum = result.wordsnum.sort_by{|word, number| [-number,word]}
-    result
+module WordCounter
+  def self.parse_file(filename)
+    FileParser.new.parse filename
   end
 
-  def parse_file(filename)
-    fileName = File.open(filename)
-    text = ''
-    fileName.each_line do |line|
-	text = text + line
-    end
-    parse text
+  def self.parse(text)
+    Parser.new.parse text
+  end
+
+  def self.parse_webpage(uri)
+    WebpageParser.new.parse uri
   end
 end
