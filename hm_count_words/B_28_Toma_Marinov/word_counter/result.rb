@@ -1,7 +1,7 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
-require './B_28_Toma_Marinov/word-counter'
+require './B_28_Toma_Marinov/word_counter'
 
 class Result
 
