@@ -1,9 +1,9 @@
 require './B_20_Martin_Stanchev/word_counter.rb'
 
+input_format = ARGV[0]
 output_format = ARGV[1]
 
-my_file = WordCounter.new
-out = my_file.parse(ARGV[0])
+out = WordCounter::parse(input_format)
 
 if output_format == 'json'
   out.json_format

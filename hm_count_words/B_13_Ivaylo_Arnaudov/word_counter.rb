@@ -1,34 +1,17 @@
-require_relative 'result'
+require_relative './word_counter/file_parser'
+require_relative './word_counter/parser'
+require_relative './word_counter/web_parser'
 
-# TODO: Extract the repeating code into a method
-class WordCounter
-  def parse(string)
-    words = Hash.new(0)
-    total_marks_count = 0
-    current_string_words = string.downcase.scan(/\w+/)
-    current_string_words.each do |word|
-      words[word] += 1
-    end
-
-    total_marks_count += string.scan(/[[:punct:]]/).count
-    sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
-    Result.new(sorted_words, total_marks_count)
+module WordCounter
+  def self.parse(string)
+    Parser.new.parse(string)
   end
 
-  def parse_file(file_path)
-    words = Hash.new(0)
-    total_marks_count = 0
-    File.open(file_path, "r") do |f|
-      f.each_line do |line|
-        current_line_words = line.downcase.scan(/\w+/)
-        current_line_words.each do |word|
-          words[word] += 1
-        end
-        total_marks_count += line.scan(/[[:punct:]]/).count
-      end
-    end
+  def self.parse_file(filename)
+    FileParser.new.parse(filename)
+  end
 
-    sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
-    Result.new(sorted_words, total_marks_count)
+  def self.parse_webpage(url)
+    WebpageParser.new.parse(url)
   end
 end
