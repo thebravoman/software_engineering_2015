@@ -1,10 +1,16 @@
-require './B_09_Georgi_Stoilov/word_counter'
+require_relative 'B_09_Georgi_Stoilov/word_counter.rb'
 
 file = ARGV[0]
 format = ARGV[1]
 
-counter = WordCounter.new
-result = counter.parse_file file
+if(file.include?("http://") || file.include?("https://"))
+  result = WordCounter.parsing_web_source file
+  else if(file.include?(" "))
+    result = WordCounter.parse file
+  else
+    result = WordCounter.parsing_the_file file
+  end
+end
 
 if format == 'csv' || format == nil
   result.to_csv
