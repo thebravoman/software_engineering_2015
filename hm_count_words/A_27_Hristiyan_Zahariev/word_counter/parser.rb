@@ -4,7 +4,7 @@ module WordCounter
   class Parser
     def parse(string)
       result = Result.new
-      result.markz_count = string.scan(/[^A-Za-z0-9_ \s]/).count
+      result.markz_count = string.scan(/[^A-Za-z0-9_\s]/).count
       string = string.gsub(/[^A-Za-z0-9_]/, ' ').downcase
       string = string.split(" ")
       string.each do |word|
