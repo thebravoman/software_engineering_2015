@@ -19,7 +19,6 @@ end
 
 
 File.open("result.svg","w") do |f|
-	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 	f.write(rectange 00,00,100,250)
 	f.write(gime_a_circle1 50,40,40)
 	f.write(gime_a_circle2 50,120,40)
