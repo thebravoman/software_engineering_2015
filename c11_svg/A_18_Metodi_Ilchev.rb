@@ -1,7 +1,7 @@
 
 
 def ellipse(x,y,w,h)
-	cols=["purple","yellow","red","blue","green","cyan","lime"]
+	cols=["purple","yellow","red","blue","green","cyan","lime","white"]
 	cols.shuffle!
 	return '<ellipse cx="'+x.to_s+'" cy="'+y.to_s+'" rx="'+w.to_s+'" ry="'+h.to_s+'" style="fill:'+cols.first+';stroke:purple;stroke-width:2"></ellipse>'
 end
