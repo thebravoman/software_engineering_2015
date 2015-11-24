@@ -6,11 +6,16 @@ def rectangle(x, y, h, w)
 	 '<rect width="'+w.to_s+'" height="'+h.to_s+'" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)"/>'
 end 
 
+def text x,y,contents
+  '<text x="'+x.to_s+'" y="'+y.to_s+'">'+contents+'</text>'
+end
+
 File.open("result.svg","w") do |f|
 f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 f.write(rectangle 0,0,200,80)
 f.write(circle 40,40,'red',25)
 f.write(circle 40,100,'yellow',25)
 f.write(circle 40,160,'green',25)
+f.write(text 10, 230, 'Luchezar Ivanov')
 f.write('</svg>')
 end
