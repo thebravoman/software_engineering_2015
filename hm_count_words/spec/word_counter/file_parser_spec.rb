@@ -1,7 +1,7 @@
 require 'word_counter'
 
 module WordCounter
-  describe 'FileParser' do
+  describe FileParser do
     describe '#parse' do
       it 'exists' do
         expect(WordCounter::FileParser.new).to respond_to(:parse)

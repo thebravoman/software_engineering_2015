@@ -1,6 +1,6 @@
 require 'word_counter'
 
-describe 'Result' do
+describe WordCounter::Result do
   res = WordCounter::Result.new
   it { expect(res).to respond_to(:marks_count) }
   it { expect(res).to respond_to(:word_counts) }
