@@ -4,7 +4,7 @@ module WordCounter
   # counts words in text
   class Parser
     def count_marks(string)
-      string.downcase.scan(/[^a-z0-9_ \n]/).count
+      string.downcase.scan(/[^a-z0-9_ \n\t]/).count
     end
 
     def count_words(words)
