@@ -18,7 +18,7 @@ File.open("result.svg", "w") do |f|
   	f.write(circle 35, 35, 30, 'red')
   	f.write(circle 35, 100, 30, 'yellow')
   	f.write(circle 35, 165, 30, 'green')
-  	f.write(text 10, 200, 'Vanessa Stoynova')
+  	f.write(text 10, 230, 'Vanessa Stoynova')
 	f.write('</svg>')
 end
  
