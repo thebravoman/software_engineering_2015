@@ -1,7 +1,7 @@
 require 'json'
 require 'rexml/document'
 require 'csv'
-require './B_04_Bojidar_Zahov/result'
+require './B_04_Bojidar_Zahov/V4/result'
 class WordCounter
 	def parse(string)
 		result = Result.new
