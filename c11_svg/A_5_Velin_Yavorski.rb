@@ -20,5 +20,6 @@ File.open("result.svg", "w") do |f|
 	f.write(circle 110,180,30)
 	f.write(circle 180, 180, 30)
 	f.write(circle 180, 110, 30)
+	f.write('<text x="500" y="300" fill="black">Velin Yavorski</text>')
 	f.write('</svg>')
 end
