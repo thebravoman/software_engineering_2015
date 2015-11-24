@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+
 require 'csv'
 
 file_name = ARGV[0]

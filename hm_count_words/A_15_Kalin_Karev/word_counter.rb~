@@ -1,0 +1,15 @@
+#require 'word_counter/parser'
+require 'word_counter/file_parser'
+require 'word_counter/web_parser'
+
+module WordCounter
+	def self.parse(string)
+		Parser.parse string
+	end
+	def self.file_parse(filename)
+		FileParser.parse filename
+	end
+	def self.parse_web(url)
+		WebsiteParser.parse url
+	end
+end

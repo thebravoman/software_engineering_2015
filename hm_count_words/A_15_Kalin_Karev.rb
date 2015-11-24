@@ -1,15 +1,17 @@
-require './A_15_Kalin_Karev/word_counter.rb'
-require './A_15_Kalin_Karev/result.rb'
+require_relative './A_15_Kalin_Karev/word_counter'
 
-require 'json'
-require 'csv'
-require 'rexml/document'
+filename = ARGV[0]
+format = ARGV[1]
+#words_hasedword_counter = WordCounter.new
 
-file_name = ARGV[0].to_s
-format = ARGV[1].to_s
-words_hasedword_counter = WordCounter.new
+if (filename.start_with?('http://') || filename.start_with?('https://'))
+	answer = WordCounter.parse_webpage(filename)
+else
+	answer = WordCounter.parse_file(filename)
 
-answer = words_hasedword_counter.parse_file(file_name)
+end
+
+#answer = words_hasedword_counter.parse_file(file_name)
 
 if format == "csv" || format == ""
 	puts answer.to_csv
