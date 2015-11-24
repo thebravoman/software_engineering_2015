@@ -17,7 +17,7 @@ File.open("result.svg","w") do |f|
 	#rightdown
 	f.write(circle(167,160,30))
 	#downcenter
-	f.write(circle(125,175,30))
+	f.write(circle(125,173,30))
 	#downleft
 	f.write(circle(78,165,30))
 	f.write('</svg>')
