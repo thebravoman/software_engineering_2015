@@ -24,6 +24,6 @@ File.open("result.svg", "w") do |f|
 	f.write(gime_a_circle 50,30,30)
 	f.write(gime_b_circle 50,100,30)
 	f.write(gime_c_circle 50,170,30)
-
+	f.write('<text x="0" y="300" font-family="sans-serif" font-size="20px" fill="black"> Emil Karbanov</text>')
 	f.write('</svg>')
 end
