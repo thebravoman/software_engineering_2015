@@ -1,30 +1,16 @@
-require './B_14_Ivo_Gerginov/result'
+require './B_14_Ivo_Gerginov/word_counter/parser'
+require './B_14_Ivo_Gerginov/word_counter/fileParser'
+require './B_14_Ivo_Gerginov/word_counter/webParser'
 
-class WordCounter
-  
-  def parse f_str
-  	w_count = Hash.new(0)
-    marks = f_str.scan(/[\p{P}\p{S}]/u).count
-	  f_str.each_line do |line|
-      line = line.gsub!(/[\W+_\d+]/, " ")
-      line = line.downcase
-      words = line.split(/\W+/)
-
-      words.each{ |x|	
-      	if w_count.has_key?("#{x}")
-    	  w_count["#{x}"] += 1
-      	else
-          w_count["#{x}"] = 1
-      	end
-      }
+module WordCounter
+    def self.parseStr f_str 
+      Parser.new.parseStr(f_str)
     end
-    return Result.new(marks, w_count)
-  end
 
-  def parse_file(f_path)
-  	f = File.open(f_path, 'r')
-	f = f.read
-	parse f
-  end
-
+    def self.parseFile f_path
+      FileParser.new.parseFile(f_path)
+    end
+    def self.parseURL url
+      WebParser.new.parseURL(url)
+    end
 end

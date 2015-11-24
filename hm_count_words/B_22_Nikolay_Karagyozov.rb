@@ -1,10 +1,15 @@
-require './B_22_Nikolay_Karagyozov/word_counter.rb'
+require 'word_counter'
 
-path = ARGV[0]
+uri = ARGV[0]
 format = ARGV[1]
 
-word_counter = WordCounter.new
-result = word_counter.parse_file(path)
+result = ''
+if uri.start_with?("http://") || uri.start_with?("https://")
+  result = WordCounter.parse_webpage(uri)
+else
+  result = WordCounter.parse_file(uri)
+end
+
 output = ''
 case format
 when 'json'
