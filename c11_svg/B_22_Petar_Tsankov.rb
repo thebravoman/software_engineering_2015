@@ -12,9 +12,9 @@ end
 File.open("result.svg","w") do |f|
 	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 	f.write(rectangle 50,150)
-	f.write(circle 25,125,20,255,0,0)
+	f.write(circle 25,25,20,255,0,0)
 	f.write(circle 25,75,20,150,150,100)
-	f.write(circle 25,25,20,100,150,100)
+	f.write(circle 25,125,20,100,150,100)
 	f.write(text "Petar Tsankov Tsankov Xb N22",10,175)
 	f.write('</svg>')
 end
