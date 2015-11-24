@@ -8,6 +8,6 @@ def traffic_light
     </svg>
     '
 end
-File.open("asd.html", "w") do |f|
+File.open("result.svg", "w") do |f|
     f << traffic_light
 end
