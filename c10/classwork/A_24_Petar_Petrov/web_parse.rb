@@ -1,5 +1,5 @@
 require 'net/http'
 
 url = URI.parse(ARGV[0])
-site = NET::HTTP.get(url)
-puts site
+html = Net::HTTP.get(url)
+puts html
