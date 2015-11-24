@@ -10,6 +10,12 @@ def rectangle x, y, w, h
 	</svg>'
 end
 
+def text
+	#'<svg width="400" height="300">
+		'<text x="40" y="340" fill="blue">Toma Marinov, 11b</text>'
+	#</svg>'
+end
+
 File.open('result.svg', 'w') do |f|
 	#f.write('<!DOCTYPE html><html><body>')
 	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
@@ -17,6 +23,7 @@ File.open('result.svg', 'w') do |f|
 	f.write(gime_a_circle 40, 40, 40, 'red')
 	f.write(gime_a_circle 40, 140, 40, 'yellow')
 	f.write(gime_a_circle 40, 240, 40, 'green')
+	f.write(text)
 	f.write('</svg>')
 	#f.write('</body></html>')
 end
