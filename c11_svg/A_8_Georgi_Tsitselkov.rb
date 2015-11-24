@@ -1,6 +1,4 @@
-def circle x,y,r
-'<circle cx="'+x.to_s+'" cy="'+y.to_s+'" r="'+r.to_s+'" stroke="white" stroke-width="2" fill="red" />'
-end
+
 
 File.open("result.svg", "w") do |f|
 	f.write('<svg xmlns="http://www.w3.org/2000/svg" height="500" width="500">
