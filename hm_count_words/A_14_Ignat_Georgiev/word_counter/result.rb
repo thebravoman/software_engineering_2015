@@ -24,7 +24,7 @@ class Result
     json_hash2= JSON.pretty_generate(json_hash)		
   end
 def rect x,y,width,height
-'<rect width="'+width.to_s+'" y ="'+y.to_s+'" x ="'+x.to_s+'" height="'+height.to_s+'" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)"/>'
+'<rect width="'+width.to_s+'" y ="'+y.to_s+'" x ="'+x.to_s+'" height="'+height.to_s+'" style="fill:rgb(250,250,250);stroke-width:3;stroke:rgb(0,0,0)"/>'
 end
   def to_svg
     File.open("result.svg","w") do |f|
@@ -36,11 +36,10 @@ end
         word_counts.each do |word, num|
 	   temp_y = (300- y)-y
 	   f.write(rect(x,temp_y,30,temp*num*10))
-	    f.write('<text x="'+x.to_s+'" y="'+temp_y.to_s+'" textLength = "33" fill="black">'+word+'</text>')
+	    f.write('<text x="'+(x+2).to_s+'" y="'+(temp_y-7).to_s+'" textLength = "'+(temp*num*10-2).to_s+'" transform="rotate(90 '+x.to_s+','+temp_y.to_s+')" fill="black">'+word+'</text>')
 	   x+=40
           
 	end
-       puts temp
       f.write('</svg>')
     end
   end
