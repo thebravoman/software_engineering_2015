@@ -13,8 +13,8 @@ module WordCounter
 
         word_counts.each do |word, occur|
           occur *= ratio
-          f.write(rectangle(offset, bar_height-occur, bar_width, occur))
-          f.write(text(offset + 3, 215, word))
+          f.write(rectangle(offset, bar_height - occur, bar_width, occur))
+          f.write(text(offset + 3, bar_height + bar_width/2, word))
           offset += bar_width
         end
 
