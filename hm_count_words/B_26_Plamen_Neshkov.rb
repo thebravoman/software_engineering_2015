@@ -9,6 +9,9 @@ else
   result = WordCounter::parse_file(path)
 end
 
+WordCounter::GraphGenerator::bar_graph(result.word_counts,
+                                       result.marks_count)
+
 if format == 'json'
   File.open('result.json', 'w') { |file| file << result.to_json }
   puts result.to_json
