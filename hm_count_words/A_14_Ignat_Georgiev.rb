@@ -23,7 +23,7 @@ if command == "json"
 elsif command == "xml"
  puts result(filename,command).to_xml
 elsif command =="svg"
- puts result(filename,command).to_svg
+ result(filename,command).to_svg
 else
   result(filename,command).to_csv
 end
