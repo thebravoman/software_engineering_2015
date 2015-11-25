@@ -4,6 +4,9 @@ module WordCounter
   require 'stringio'
 
   class Result
+    MAX_BAR_HEIGHT = 200
+    MAX_BAR_WIDTH = 40
+
     attr_reader :word_counts, :marks_count
 
     def initialize(word_counts, marks_count)
@@ -45,7 +48,7 @@ module WordCounter
 
       word_counts.each do |word, count|
         word_element = words_element.add_element('word')
-        word_element.add_attributes({"count" => count.to_s })
+        word_element.add_attributes({'count' => count.to_s })
         word_element.add_text(word)
       end
 
@@ -54,6 +57,40 @@ module WordCounter
       res = ''
       formatter.write(doc, res)
       res
+    end
+
+    def to_svg
+      max_occur = word_counts[0][1]
+      ratio = MAX_BAR_HEIGHT / max_occur
+      x = 0
+      y = 0
+      h = MAX_BAR_HEIGHT
+
+      # TODO: refactor this to use interpolation instead of lame concatenation
+      File.open("result.svg", "w") do |file|
+        file.puts "<?xml version='1.0'?>"
+        file.puts "<svg width='" + (word_counts.length * MAX_BAR_WIDTH).to_s +
+          "' height='" + (MAX_BAR_HEIGHT + 50).to_s +
+          "' xmlns='http://www.w3.org/2000/svg'>"
+
+        word_counts.each do |word, count|
+          bar_color = "%06x" % (rand * 0xffffff)
+          file.puts "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}' " +
+          "x='#{x.to_s}' y='#{y.to_s}' stroke-width='0' fill='##{bar_color}'/>"
+
+          x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
+        end
+
+        file.puts "</svg>"
+      end
+    end
+
+    private
+    def get_next_word_rectangle(current_x, ratio, max_occur, curr_occur)
+      x = current_x + MAX_BAR_WIDTH
+      y = (max_occur - curr_occur) * ratio
+      height = MAX_BAR_HEIGHT - y
+      return x, y, height
     end
   end
 end
