@@ -18,6 +18,8 @@ when 'json'
 when 'xml'
   output = result.to_xml
   puts output
+when 'svg'
+  output = result.to_svg
 else
   output = result.to_csv
 end
