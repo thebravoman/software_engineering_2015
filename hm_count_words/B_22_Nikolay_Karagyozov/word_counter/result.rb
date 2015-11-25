@@ -63,7 +63,8 @@ module WordCounter
         f.write('<svg xmlns="http://www.w3.org/2000/svg">')
         f.write('<g transform="translate(0,450) scale(1,-1)">')
         @word_counts.each_with_index do |(key, val), index|
-          f.write(get_rekt(5, val * height_ratio, 5 * index,))
+          f.write(get_rekt(15, val * height_ratio, 15 * index,))
+          f.write(get_text(15 * index, 200, key))
         end
         f.write('</g>')
         f.write("</svg>")
@@ -73,6 +74,11 @@ module WordCounter
     private
     def get_rekt(width, height, x_pos) #lol
       '<rect x="' + x_pos.to_s + '" y="200" width="' + width.to_s + '" height="' + height.to_s + '" stroke="red" fill="black" />' + "\n"
+    end
+    def get_text(x, y, text)
+      x += 3
+      '<text fill="green" x="' + x.to_s + '" y="' + y.to_s + '" font-family="Verdana" font-size="10"
+      transform="rotate(90, ' + x.to_s + ', ' + y.to_s + ')">' + text + '</text>' + "\n"
     end
   end
 end
