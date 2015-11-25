@@ -15,7 +15,7 @@ def printRes(filename,option)
   end
 
   if option == 'csv'
-	puts result.to_csv
+	result.to_csv
   elsif option == 'json'
     puts result.to_json
   elsif option == 'xml'

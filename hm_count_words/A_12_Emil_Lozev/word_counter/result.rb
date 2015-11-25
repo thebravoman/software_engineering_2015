@@ -14,7 +14,10 @@ class Result
 		@word_counts.each do |word,i|
 			puts "#{word},#{i}"
 		end
-	puts "\"marks\",#{@marks_count}" if marks_count != 0		
+	
+		if marks_count != 0	
+			puts "\"marks\",#{@marks_count}"
+		end	
 	end
 	
 	def to_json
