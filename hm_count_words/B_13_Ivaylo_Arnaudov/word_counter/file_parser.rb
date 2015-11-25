@@ -8,7 +8,7 @@ module WordCounter
       File.open(file_path, "r") do |f|
         f.each_line do |line|
           res = super(line)
-          words = words.merge(res.word_counts.to_h)
+          words = words.merge(res.word_counts.to_h) { |k, ov, nv| ov + nv }
           total_marks_count += res.marks_count
         end
       end
