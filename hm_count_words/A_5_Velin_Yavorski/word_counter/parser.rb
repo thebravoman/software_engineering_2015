@@ -9,7 +9,7 @@ module WordCounter
     str = string.downcase.split(" ")
     str.each do |w|
       punct = punct + w.scan(/[^a-z_0123456789]/).count
-      words = w.split(/[.,(+-]/)
+      words = w.split(/[^a-z_0123456789]/)
       words.each do |word|
         word = word.gsub(/[^a-z_]/,'')
 		if(word == '_')	
@@ -31,3 +31,4 @@ module WordCounter
   end
   end
 end
+#.,(+-
