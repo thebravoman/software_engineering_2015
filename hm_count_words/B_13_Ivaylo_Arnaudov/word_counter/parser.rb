@@ -10,7 +10,7 @@ module WordCounter
         words[word] += 1
       end
 
-      total_marks_count += string.scan(/[[:punct:]]/).count
+      total_marks_count += string.scan(/[[:punct:]=`~$^+|<>]/).count
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
       Result.new(sorted_words, total_marks_count)
     end

@@ -11,6 +11,38 @@ module WordCounter
 			@marks_count = 0
 			@word_counts = Hash.new(0)
 		end
+		
+		def text(x,y,contents)
+			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="green" font-size="9" transform="rotate(90 '+x.to_s+','+y.to_s+')">'+contents+'
+       </text>'
+		end
+			
+		def rect(x, y, w, h)
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'"
+			width="'+w.to_s+'" height="'+h.to_s+'
+			style="fill:blue;opacity:0.6;stroke:black;
+      stroke-width:1;" />'
+		end
+		
+		def svg
+			File.open('B_6_Valentin_Stoyanov_result.svg', 'w') do |f|
+				ratio = 200.0 / @word_counts.first[1]
+        f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+				h = 200
+				w = 10
+				holder = w 
+				h = h + w
+				
+        @word_counts.each do |element|
+          value = element[1] * ratio
+          f.write(rect(holder, h - value, w, value))
+          f.write(text(holder + 3, h + w/2, element[0]))
+         	holder = holder + w
+        end
+
+        f.write('</svg>')
+      end
+		end
 	
 		def to_json
 			hash = Hash.new(Hash.new(0))
