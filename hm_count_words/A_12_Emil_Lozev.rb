@@ -21,6 +21,8 @@ def printRes(filename,option)
   elsif option == 'xml'
   require 'builder'
     puts result.to_xml
+  elsif option == 'svg'
+  	result.to_svg
   else
     puts result.to_csv
   end

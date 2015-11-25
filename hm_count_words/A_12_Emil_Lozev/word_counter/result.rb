@@ -41,5 +41,25 @@ class Result
 		}
 		
 	end
+	
+	def to_svg
+	
+		def graph(size)
+		x = 10
+		y = 800
+			 '<rect width="50" height="' + (size * 2).to_s + '" x=' + x.to_s + ' y=' + y.to_s+ ' style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)">'
+		x+= 60
+		end
+	
+	
+		File.open("A_12_Emil_Lozev_result.svg","w") do |f|
+			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+			@words_count.each do |word,i|
+				f.write(graph(i))
+			end
+			f.write('</svg>')
+		end
+	
+	end
 end
 
