@@ -1,4 +1,4 @@
-require_relative 'parser.rb'
+require 'word_counter/parser'
 require 'net/http'
 require 'sanitize'
 require 'openssl'
