@@ -11,17 +11,17 @@ class SVGWriter
   @count_text_y_above_bar = 20
   @text_color = 'black'
 
-  def self.get_word_rect(single_count_height, word_count, word, word_index)
-    rect_height = single_count_height * word_count
-    rect_x = (@bars_starting_x + (@bar_width + @distance_between_bars) * word_index)
+  def self.get_word_rect(single_count_height, word, count, index)
+    rect_height = single_count_height * count
+    rect_x = @bars_starting_x + (@bar_width + @distance_between_bars) * index
     rect_y = @bars_bottom_y - rect_height
     rectangle = rect(rect_x, \
-         rect_y, \
-         @bar_width, \
-         rect_height)
+                     rect_y, \
+                     @bar_width, \
+                     rect_height)
 
     word_text = text(rect_x, @bars_bottom_y + @word_text_y_bellow_bar, word)
-    count_text = text(rect_x, rect_y - @count_text_y_above_bar, word_count)
+    count_text = text(rect_x, rect_y - @count_text_y_above_bar, count)
     rectangle + word_text + count_text
   end
 
@@ -37,8 +37,8 @@ class SVGWriter
   def self.text(x, y, str)
     '<text x="' + x.to_s + \
       '" y="' + y.to_s + \
-      '" fill="' + @text_color.to_s + '">' \
-      + str.to_s + \
+      '" fill="' + @text_color.to_s + \
+      '">' + str.to_s + \
       '</text>'
   end
 
