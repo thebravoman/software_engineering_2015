@@ -5,7 +5,7 @@ module WordCounter
         punctuation = string.scan(/[[:punct:]]/).count
         the_words = string.downcase.split
         the_words.each { |words|
-          words = words.gsub(/[\W+_\d+]/, ' ')
+          words = words.gsub(/[\W+_]/, ' ')
           if (words.include?(" "))
             words = words.split(" ")
             words.each do |smth|
