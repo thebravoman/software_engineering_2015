@@ -48,7 +48,7 @@ class SVGWriter
     res = '<svg xmlns="http://www.w3.org/2000/svg">'
 
     hash.each_with_index do |(word, count), index|
-      res += get_word_rect single_count_height, count, word, index
+      res += get_word_rect single_count_height, word, count, index
     end
 
     res += '</svg>'
