@@ -17,7 +17,6 @@ module WordCounter
     result.marks = string.scan(/[\p{P}\p{S}]/u).count
     counter = string.scan(/\w+/).count
     counter = counter*55
-    aaa = 0
     string = string.downcase.split
     string.each do |word|
       word = word.gsub(/[\W+_\d+]/, ' ')
@@ -25,7 +24,6 @@ module WordCounter
         word = word.split(" ")
         word.each do |b|
           result.word_counter[b]= 1
-          aaa = aaa + 1
         end
         else if !word.empty?
           result.word_counter[word] += 1
