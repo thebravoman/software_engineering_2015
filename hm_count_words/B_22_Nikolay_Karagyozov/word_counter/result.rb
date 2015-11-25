@@ -55,5 +55,24 @@ module WordCounter
       File.open("result.xml", "w") { |file| file << output }
       output
     end
+
+    def to_svg
+      best_key, best_value = @word_counts.first
+      height_ratio = 200.0 / best_value
+      File.open("result.svg", "w") do |f|
+        f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+        f.write('<g transform="translate(0,450) scale(1,-1)">')
+        @word_counts.each_with_index do |(key, val), index|
+          f.write(get_rekt(5, val * height_ratio, 5 * index,))
+        end
+        f.write('</g>')
+        f.write("</svg>")
+      end
+    end
+
+    private
+    def get_rekt(width, height, x_pos) #lol
+      '<rect x="' + x_pos.to_s + '" y="200" width="' + width.to_s + '" height="' + height.to_s + '" stroke="red" fill="black" />' + "\n"
+    end
   end
 end

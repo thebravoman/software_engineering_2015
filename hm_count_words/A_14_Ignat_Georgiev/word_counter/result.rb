@@ -23,8 +23,27 @@ class Result
 }
     json_hash2= JSON.pretty_generate(json_hash)		
   end
-
-
+def rect x,y,width,height
+'<rect width="'+width.to_s+'" y ="'+y.to_s+'" x ="'+x.to_s+'" height="'+height.to_s+'" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)"/>'
+end
+  def to_svg
+    File.open("result.svg","w") do |f|
+      f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+	temp = word_counts.first.last
+	y = temp
+	temp = temp/200 +1 
+	x = 20
+        word_counts.each do |word, num|
+	   temp_y = (300- y)-y
+	   f.write(rect(x,temp_y,30,temp*num*10))
+	    f.write('<text x="'+x.to_s+'" y="'+temp_y.to_s+'" textLength = "33" fill="black">'+word+'</text>')
+	   x+=40
+          
+	end
+       puts temp
+      f.write('</svg>')
+    end
+  end
   def to_xml
   xml_new = REXML::Document.new('')
   xml_word_counts=xml_new.add_element('word-counts')

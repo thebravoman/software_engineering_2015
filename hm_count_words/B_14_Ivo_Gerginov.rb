@@ -9,18 +9,24 @@ else res = WordCounter::parseFile f_path
 end
 
 if op == 'json'
-  res.to_json
+  res.toJSON
   File.open('result.json', 'r').each_line do |line|
   	puts line
   end
 
 elsif op == 'xml'
-  res.to_xml
+  res.toXML
   File.open('result.xml', 'r').each_line do |line|
   	puts line
   end
 
-else res.to_csv
+elsif op == 'svg'
+  res.toSVG
+  File.open('result.svg', 'r').each_line do |line|
+    puts line
+  end
+
+else res.toCSV
   File.open('result.csv', 'r').each_line do |line|
   	puts line
   end
