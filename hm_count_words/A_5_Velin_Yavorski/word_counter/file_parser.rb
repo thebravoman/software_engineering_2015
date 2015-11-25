@@ -1,4 +1,4 @@
-require_relative 'parser.rb'
+require 'word_counter/parser'
 
 module WordCounter
   class FileParser < Parser

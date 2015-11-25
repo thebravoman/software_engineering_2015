@@ -1,4 +1,4 @@
-require_relative 'result.rb'
+require 'word_counter/result'
 
 module WordCounter
   class Parser
@@ -8,7 +8,7 @@ module WordCounter
     h = Hash.new()
     str = string.downcase.split(" ")
     str.each do |w|
-      punct = punct + w.scan(/[^a-z_]/).count
+      punct = punct + w.scan(/[^a-z_0123456789]/).count
       words = w.split(/[.,(+-]/)
       words.each do |word|
         word = word.gsub(/[^a-z_]/,'')

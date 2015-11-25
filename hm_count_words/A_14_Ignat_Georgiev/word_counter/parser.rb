@@ -4,7 +4,7 @@
 		 def parse(string)
 		    result = Result.new
 		    result.marks_count = string.count(".,=[]()'!{}?:_;\"")
-		    string = string.gsub(/[^A-Za-z]/, ' ').downcase
+		    string = string.gsub(/[^A-Za-z_0-9\s]/, ' ').downcase
 		    word_list = string.split(' ')
 		    word_list.each do |word|
 		      result.word_counts[word]+=1

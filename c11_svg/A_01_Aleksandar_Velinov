@@ -1,0 +1,18 @@
+def circle x,y,r
+'<circle cx="'+x.to_s+'" cy="'+y.to_s+'" r="'+r.to_s+'" stroke="black" stroke-width="3" fill="red" />'
+end
+
+def rect x,y,w,h
+	'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />'
+end
+
+File.open("result.svg", "w") do |f|
+	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+	f.write(rect 80,45,35,35)
+	f.write(circle 60,40,20)
+	f.write(circle 140,60,20)
+	f.write(circle 60,90,20)
+	f.write(circle 110,100,20)
+	f.write(circle 100,20,20)
+	f.write('</svg>')
+end
