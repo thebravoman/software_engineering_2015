@@ -22,6 +22,8 @@ if command == "json"
  puts result(filename,command).to_json
 elsif command == "xml"
  puts result(filename,command).to_xml
+elsif command =="svg"
+ result(filename,command).to_svg
 else
   result(filename,command).to_csv
 end

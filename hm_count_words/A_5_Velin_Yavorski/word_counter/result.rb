@@ -46,4 +46,25 @@ class Result
    formatter.write(xml, $stdout)
    ""
   end
+
+	def rect x, y, w, h
+	'<rect x="' + x.to_s + '" y = "' + y.to_s + '" width="' + w.to_s + '" height="' + h.to_s + '" style="fill:rgb(0,190,190)" />'
+	end
+
+	def make_svg 
+		File.open("result.svg", "w") do |f|
+			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+			distance = 20
+			size = 15
+			@word_counts.each do |key, value|
+				f.write(rect distance, 600 - (value*10), 50, value*10)
+				size = 10 if(key.to_s.length > 7)
+				f.write('<text x="'+distance.to_s+'" y="'+((600 - (value*11)).to_s)+'" fill="red" font-size="'+size.to_s+'">'+key.to_s+' </text>')
+				f.write('<text x="'+((distance + 20).to_s)+'" y="620" fill="black" font-size="15">'+value.to_s+' </text>')
+				distance+=70
+				size = 15
+			end
+			f.write('</svg>')
+		end
+	end
 end
