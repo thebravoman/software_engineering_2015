@@ -115,7 +115,7 @@ B_52_Ivan_Ivanov
 │   ├── file_parser.rb
 │   ├── parser.rb
 │   ├── result.rb
-│   └── web_parser.rb
+│   └── webpage_parser.rb
 └── word_counter.rb
 ```
 
