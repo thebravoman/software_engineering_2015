@@ -68,5 +68,42 @@ module WordCounter
         file << result_json
       end
     end
+  
+	def to_svg
+		rect_x = 20
+		File.open("result.svg", "w") do
+			|file|
+				file << '<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="300">'
+				
+				max_count = @words_count[0][1]
+				
+				percentage = @marks_count / max_count.to_f
+				height = percentage * 200	
+							
+				@words_count.each do
+				|pair|
+					count = pair[1]				
+					percentage = count / max_count.to_f
+					height = percentage * 200
+					
+					file << print_rect(rect_x, 205, height, 10)
+					file << print_text(rect_x - 7, 208, pair[0])
+					
+					rect_x += 10
+				end
+				
+				file << '</svg>'
+		end
+	end
+	
+	def print_rect x,y,h,w
+		return '<rect x="' + x.to_s + '" y="' + y.to_s + '" height="' + h.to_s + '" width="' + w.to_s + '" stroke="blue" fill="red" 
+		transform="rotate(180, ' + x.to_s + ', ' + y.to_s + ')"/>' + "\n"
+	end
+	
+	def print_text x, y, word
+		return '<text x="' + x.to_s + '" y="' + y.to_s + '" font-family="Verdana" font-size="10"
+				transform="rotate(90, ' + x.to_s + ', ' + y.to_s + ')">' + word + '</text>' + "\n"
+	end
   end
 end

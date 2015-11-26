@@ -30,6 +30,8 @@ module WordCounter
         result.to_json
       when "xml"
         result.to_xml
+      when "svg"
+      	result.to_svg
       else
         result.to_csv
     end

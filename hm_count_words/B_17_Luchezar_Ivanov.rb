@@ -18,6 +18,8 @@ when "json"
 	puts result.to_json
 when "xml"
 	result.to_xml
+when "svg"
+	result.to_svg
 else 
 	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 	puts result.to_csv

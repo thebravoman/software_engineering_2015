@@ -4,7 +4,7 @@ module WordCounter
   # counts words in text
   class Parser
     def count_marks(string)
-      string.downcase.scan(/[^a-z0-9_ \n]/).count
+      string.downcase.scan(/[^a-z0-9_\s]/).count
     end
 
     def count_words(words)
@@ -18,7 +18,7 @@ module WordCounter
     end
 
     def sort_counted_words(result_hash)
-      result_hash.sort_by { |word, count| [-count, word] }
+      result_hash.sort_by { |word, count| [-count, word] }.to_h
     end
 
     def split_words(string)

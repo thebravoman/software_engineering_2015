@@ -4,7 +4,7 @@ module WordCounter
 			result = Result.new
 			result.marks_count = string.scan(/[[:punct:]+_=#><@'$%"&*]/).count
 		 	result.marks_count += string.scan("[/\]").count
-			string = string.gsub!("_", ' ')
+			string = string.gsub("_", ' ')
 			string = string.downcase.scan(/[\w]+/)
 			
 			string.each do |word|
