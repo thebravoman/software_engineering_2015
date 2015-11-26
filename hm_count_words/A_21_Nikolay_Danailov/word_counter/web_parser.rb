@@ -6,7 +6,7 @@ require 'openssl'
 module WordCounter
   # Counts words from a web site's url
   class WebpageParser < Parser
-    def self.parse(url)
+    def parse(url)
       url = URI.parse(url)
       http = Net::HTTP.new(url.host, url.port)
 
@@ -16,7 +16,7 @@ module WordCounter
       end
 
       contents = http.get(url.request_uri)
-      text = Sanitize.clean(contents.body, remove_contents: %w(script, style))
+      text = Sanitize.clean(contents.body, remove_contents: ['script', 'style'])
       super text
     end
   end

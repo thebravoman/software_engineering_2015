@@ -22,3 +22,5 @@ else
 	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 	puts result.to_csv
 end
+
+result.svg

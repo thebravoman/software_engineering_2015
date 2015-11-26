@@ -7,7 +7,7 @@ def parse(string)
 		index = 0
 		wordhash = Hash.new 0
 		
-		countmarks = string.scan(/[[:punct:]]/).count
+		countmarks = string.scan(/[[:punct:]=`~$^+|<>]/u).count
 		searchword  =  string.tr("\n","")
 		searchword = searchword .split(' ')
 		searchword =  searchword.sort
@@ -15,9 +15,9 @@ def parse(string)
 		
 		searchword.each do |i|
 			newstr = ""
-			if i.match(/[[:punct:]]/)
+			if i.match(/[[:punct:]=`~$^+|<>]/u)
 				i.each_char{ |c|
-				if !c.match(/[[:punct:]]/)
+				if !c.match(/[[:punct:]=`~$^+|<>]/u)
 				newstr = newstr + c
 				end}
 				
