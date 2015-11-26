@@ -34,11 +34,11 @@ describe WordCounter do
         Nice to meet you!
       TEXT
 
-      expect(WordCounter.parse_file(file.path).to_csv.strip).to
-        eq(["is,2", "name,2", "you,2", "are,1", "bob,1",
-            "called,1", "hello,1", "meet,1", "my,1",
-            "nice,1", "nikolay,1", "oh,1", "to,1",
-            "what,1", "your,1", "\"marks\",10"].join("\n"))
+      expect(WordCounter.parse_file(file.path).to_csv.strip).to eq(
+        ["is,2", "name,2", "you,2", "are,1", "bob,1",
+        "called,1", "hello,1", "meet,1", "my,1",
+        "nice,1", "nikolay,1", "oh,1", "to,1",
+        "what,1", "your,1", "\"marks\",10"].join("\n"))
     end
 
     it 'parses files correctly(3)' do

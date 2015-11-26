@@ -1,8 +1,3 @@
-
-
-
-
-
 require 'word_counter'
 
 describe WordCounter::Parser do
