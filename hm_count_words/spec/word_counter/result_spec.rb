@@ -1,10 +1,9 @@
 require 'word_counter'
 
-describe WordCounter::Result do
-  res = WordCounter::Result.new
-  it { expect(res).to respond_to(:marks_count) }
-  it { expect(res).to respond_to(:word_counts) }
-  it { expect(res).to respond_to(:to_csv) }
-  it { expect(res).to respond_to(:to_json) }
-  it { expect(res).to respond_to(:to_xml) }    
+describe WordCounter::Result.new do
+  it { is_expected.to respond_to(:marks_count) }
+  it { is_expected.to respond_to(:word_counts) }
+  it { is_expected.to respond_to(:to_csv) }
+  it { is_expected.to respond_to(:to_json) }
+  it { is_expected.to respond_to(:to_xml) }    
 end
