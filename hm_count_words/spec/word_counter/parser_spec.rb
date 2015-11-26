@@ -1,15 +1,13 @@
 require 'word_counter'
 
-module WordCounter
-  describe Parser do
-    describe '#parse' do
-      it 'exists' do
-        expect(WordCounter::Parser.new).to respond_to(:parse)
-      end
+describe WordCounter::Parser do
+  describe '#parse' do
+    it 'counts marks correctly' do
+      parser = WordCounter::Parser.new
 
-      it 'has parameter \'string\'' do
-        expect(WordCounter::Parser.new.method(:parse).parameters).to eql [[:req, :string]]
-      end
+      result = parser.parse('Hello!!')
+
+      expect(result.marks_count).to eq(2)
     end
   end
 end
