@@ -13,8 +13,8 @@ module WordCounter
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
       result = http.get(uri.request_uri)
-      text = Sanitize.fragment(result.body)
-      super (text)
+      string = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])     
+      super (string)
     end
   end
 end
