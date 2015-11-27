@@ -1,7 +1,3 @@
-require 'json'
-require 'csv'
-require 'rexml/document'
-
 class Result
 	
 	def initialize
