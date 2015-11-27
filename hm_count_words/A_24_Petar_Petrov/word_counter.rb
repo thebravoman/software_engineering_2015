@@ -11,7 +11,7 @@ module WordCounter
     Parser.new.parse(string)
   end
   
-  def self.parse_website(uri)
-    WebParser.new.parse(uri)
+  def self.parse_webpage(uri)
+    WebpageParser.new.parse(uri)
   end
 end
