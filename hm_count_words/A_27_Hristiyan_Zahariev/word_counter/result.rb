@@ -1,24 +1,24 @@
 class Result
-  attr_accessor :markz_count
-  attr_accessor :wordsnum
+  attr_accessor :marks_count
+  attr_accessor :word_counts
   def initialize
-    @markz_count = 0
-    @wordsnum = Hash.new(0)
+    @marks_count = 0
+    @word_counts = Hash.new(0)
   end
   
   def to_csv
-    wordsnum.each do |word, number|
+    word_counts.each do |word, number|
 	puts word + ',' + number.to_s
     end
-    if markz_count != 0
-    	puts '"marks"'+','+markz_count.to_s
+    if marks_count != 0
+    	puts '"marks"'+','+marks_count.to_s
     end
   end
 
   def to_json
     tempHash = {
-	"marks" => markz_count,
-    	"words" => wordsnum
+	"marks" => marks_count,
+    	"words" => word_counts
     }
     puts JSON.pretty_generate(tempHash)
   end
