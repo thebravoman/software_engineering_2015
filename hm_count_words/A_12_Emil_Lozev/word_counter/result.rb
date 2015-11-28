@@ -45,13 +45,10 @@ class Result
 		
 		y = 100
 			string=  '<rect width="50" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + y.to_s+ '" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>'
-		
 			return string
 		end
-	def to_svg
-	
 		
-	
+	def to_svg	
 	
 		File.open("A_12_Emil_Lozev_result.svg","w") do |f|
 			f.write('<svg xmlns="http://www.w3.org/2000/svg">')

@@ -4,9 +4,9 @@ module WordCounter
 	class Parser
 		def self.parse(string)
 		result = Result.new
-		result.marks_count = string.scan(/[^A-Za-z0-9\s]/).count
+		result.marks_count = string.scan(/[^A-Za-z0-9_ \s]/).count
 		
-		string.gsub!(/[^A-Za-z0-9]/, ' ').downcase!
+		string.gsub!(/[^A-Za-z0-9_\s]/, ' ').downcase!
 		string = string.split(" ")
 
 		hash = Hash.new(0)
