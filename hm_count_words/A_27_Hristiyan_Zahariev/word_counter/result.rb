@@ -40,9 +40,9 @@ class Result
     puts xmlprint
   end
 
-def rect x,y,w,h
-'<rect x="'+x.to_s+'" y ="'+y.to_s+'" width ="'+w.to_s+'" height="'+h.to_s+'" style="fill:rgb(211,211,211)"/>'
-end
+  def rect x,y,w,h
+    '<rect x="'+x.to_s+'" y ="'+y.to_s+'" width ="'+w.to_s+'" height="'+h.to_s+'" style="fill:rgb(211,211,211)"/>'
+  end
 
   def to_svg
     File.open("result.svg","w") do |f|
