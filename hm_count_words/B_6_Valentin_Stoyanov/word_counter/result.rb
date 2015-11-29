@@ -42,8 +42,7 @@ module WordCounter
          	holder = holder + w
 					i += 1
         end
-
-        f.write('</svg>')
+				f.write('</svg>')
       end
 		end
 	
