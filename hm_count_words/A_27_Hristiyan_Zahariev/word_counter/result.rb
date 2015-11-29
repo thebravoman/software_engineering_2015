@@ -58,7 +58,7 @@ class Result
         font_size = 14 if (word.to_s.length > 5)
         f.write('<text x="'+((x+5).to_s)+'" y="'+height.to_s+'" fill="black" font-size = "'+font_size.to_s+'">'+word.to_s+'</text>')
         f.write('<text x="'+((x+25).to_s)+'" y="'+((height+25).to_s)+'" fill = "black" font-size="20">'+times.to_s+'</text>')
-          x+=70
+        x+=70
       end
       f.write('</svg>')
     end
