@@ -22,7 +22,7 @@ module WordCounter
         expect(result).to eql expected
       end
 
-      it 'parses webpages correctly(2)' do
+      it 'parses webpages correctly(3)' do
         url = "https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/spec/web_tests/test3.txt"
         result = webpage_parser.parse(url).to_csv
         expected = ["ll,2","awepm,1","er,1","gjtptacwume,1","\"marks\",9"].join("\n")
