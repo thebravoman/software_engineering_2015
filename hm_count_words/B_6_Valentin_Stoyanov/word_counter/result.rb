@@ -24,26 +24,26 @@ module WordCounter
 		def svg
 			File.open('B_6_Valentin_Stoyanov_result.svg', 'w') do |f|
 				ratio = 200.0 / @word_counts.first[1]
-        f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+        			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 				h = 200
 				w = 55
 				holder = w 
 				h = h + w
 				i = 1
-        @word_counts.each do |element|
-        	if i % 2 == 0
-        		col = 'black'
-        	else
-        		col = 'crimson'
-        	end
-          value = element[1] * ratio
-          f.write(rect(holder, h - value, w, value))
-          f.write(text(holder, h + w/2, element[0], col))
-         	holder = holder + w
+				@word_counts.each do |element|
+	        			if i % 2 == 0
+	        				col = 'black'
+	        			else
+	        				col = 'crimson'
+	        			end
+	          			value = element[1] * ratio
+	          			f.write(rect(holder, h - value, w, value))
+	          			f.write(text(holder, h + w/2, element[0], col))
+	         			holder = holder + w
 					i += 1
-        end
+	        		end
 				f.write('</svg>')
-      end
+      			end
 		end
 	
 		def to_json
