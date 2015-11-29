@@ -1,3 +1,4 @@
+#naprqko
 class Result
   attr_accessor :marks_count
   attr_accessor :word_counts
@@ -37,5 +38,29 @@ class Result
     xmlprint = ""
     xml_counts.write(xmlprint, 1)
     puts xmlprint
+  end
+
+def rect x,y,w,h
+'<rect x="'+x.to_s+'" y ="'+y.to_s+'" width ="'+w.to_s+'" height="'+h.to_s+'" style="fill:rgb(211,211,211)"/>'
+end
+
+  def to_svg
+    File.open("result.svg","w") do |f|
+      f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+      x = 20
+      font_size = 17
+      y = word_counts.first.last
+      y = y/200 + 1
+      word_counts.each do |word, times|
+        height = y*times*25
+        width = 65
+        f.write(rect(x, y, width, height))
+        font_size = 14 if (word.to_s.length > 5)
+        f.write('<text x="'+((x+5).to_s)+'" y="'+height.to_s+'" fill="black" font-size = "'+font_size.to_s+'">'+word.to_s+'</text>')
+        f.write('<text x="'+((x+25).to_s)+'" y="'+((height+25).to_s)+'" fill = "black" font-size="20">'+times.to_s+'</text>')
+          x+=70
+      end
+      f.write('</svg>')
+    end
   end
 end
