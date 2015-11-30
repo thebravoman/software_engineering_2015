@@ -1,23 +1,23 @@
-require 'word_counter/parser'
+require_relative 'parser.rb'
 require 'net/http'
-require 'sanitize'
 require 'openssl'
+require 'sanitize'
+
 
 module WordCounter
-  # Counts words from a web site's url
   class WebParser < Parser
-    def self.parse(url)
-      url = URI.parse(url)
-      http = Net::HTTP.new(url.host, url.port)
+    def parse(uri)
+      uri = URI.parse(uri)
+      http = Net::HTTP.new(uri.host, uri.port)
 
-      if url.scheme == 'https'
+      if uri.scheme == 'https'
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
-      contents = http.get(url.request_uri)
+      contents = http.get(uri.request_uri)
       text = Sanitize.clean(contents.body, remove_contents: %w(script, style))
-      super text
+      super (string)
     end
   end
 end
