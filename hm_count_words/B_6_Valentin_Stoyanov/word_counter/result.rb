@@ -22,7 +22,7 @@ module WordCounter
 		end
 
 		def svg
-			File.open('B_6_Valentin_Stoyanov_result.svg', 'w') do |f|
+			File.open('B_6_Valentin_Stoyanov.svg', 'w') do |f|
 				ratio = 200.0 / @word_counts.first[1]
         			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 				h = 200

@@ -43,7 +43,7 @@ module WordCounter
     width_counter = 600 + 70*asd
     i = 5
     j = 0
-    File.open("result.svg", "w") do |f|
+    File.open("B_09_Georgi_Stoilov.svg", "w") do |f|
       f.write('<svg xmlns="http://www.w3.org/2000/svg" width="'+width_counter.to_s+'" height="'+height_counter.to_s+'">')
       f.write(add_text(5, 35, "\"Marks\":"))
       f.write(add_text(75,35, result.marks))   
