@@ -1,4 +1,3 @@
-require 'word_counter/parser'
 require 'net/http'
 require 'sanitize'
 require 'openssl'
@@ -20,7 +19,5 @@ module WordCounter
 		end
 	end
 end
-		end
-	end
-end
+
 

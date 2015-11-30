@@ -12,6 +12,35 @@ class Result
     @countmarks = countmarks
     @wordhash = wordhash
   end
+
+
+  def make_svg
+	w = 15
+	h = 100
+	x = 0
+	y = 0
+	xtext = 20
+	ytext = 10
+	File.open("B_18_Lubomir_Kiprov.svg", 'w') do |f|
+	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+	wrd_count = 0
+	@wordhash.each do |word|
+	if wrd_count != word[1].to_i
+	h = h - (h/10)
+	end
+	f.write('<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" style="fill:blue;stroke:blue;stroke-width:2;fill-opacity:0.1;stroke-opacity:0.9"/>' )
+	f.write('<text x="'+xtext.to_s+'" y="'+ytext.to_s+'" font-family="sans-serif" font-size="10px" fill="black" transform="rotate(-90,90,90)" >'+word[0].to_s+'</text>')
+	
+	x = x + w;
+	ytext = ytext + 15
+	wrd_count = word[1].to_i
+	end
+	f.write('</svg>')
+	end
+  end
+
+
+
   def to_csv
     wordhash.each do |word, i|
       puts "#{word},#{i}"
@@ -43,4 +72,5 @@ class Result
   end
 end
 end
+
 
