@@ -6,8 +6,8 @@ module WordCounter
     FileParser.new.parse filename
   end
 
-  def self.parse(text)
-    Parser.new.parse text
+  def self.parse(string)
+    Parser.new.parse string
   end
 
   def self.parse_webpage(uri)

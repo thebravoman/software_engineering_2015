@@ -1,5 +1,6 @@
 require 'json'
 require 'rexml/document'
+require_relative '../svg_writer.rb'
 
 module WordCounter
   # Represents the result of counting words
@@ -34,7 +35,7 @@ module WordCounter
       end
 
       csv << "\"marks\"," + marks_count.to_s if marks_count > 0
-      csv
+      csv.join "\n"
     end
 
     def to_json
@@ -49,6 +50,10 @@ module WordCounter
       word_counts_element.add_element 'words'
       add_words_to_xml document
       document
+    end
+
+    def to_svg
+      SVGWriter.bar_chart word_counts
     end
   end
 end

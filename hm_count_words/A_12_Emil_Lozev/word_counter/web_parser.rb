@@ -15,7 +15,7 @@ module WordCounter
 			end
 
 			result = http.get(uri.request_uri)
-			text = Sanitize.fragment(result.body).gsub!(/(<[^>]*>)|\n|\t/," ")
+			text = Sanitize.clean(result.body, :remove_contents => ['script', 'style']) 
 			super text
 		end
 	end

@@ -10,10 +10,10 @@ module WordCounter
 	end
 
 	def self.parse_file(file)
-		FileParser.new.parse(file)
+		FileParser.new.parse_file(file)
 	end
 
 	def self.parse_webpage(address)
-		WebpageParser.new.parse(adress)
+		WebpageParser.new.parse_url(address)
 	end
 end

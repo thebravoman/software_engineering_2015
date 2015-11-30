@@ -9,7 +9,7 @@ if( filename.start_with?('http://') || filename.start_with?('https://'))
 else
 	result = Word_counter.parse_file(filename)
 end
-
+result.make_svg
 if format == "json" 
 	puts result.to_json
 elsif format == "xml"

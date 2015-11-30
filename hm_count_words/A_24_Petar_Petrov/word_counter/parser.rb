@@ -7,7 +7,7 @@ module WordCounter
       end
     
       def split_string(text)
-        text.gsub(/(\/\\.+\/)|[^a-z\s_]/, ' ').split(' ')
+        text.gsub(/(\/\\.+\/)|[^a-z\s_0-9]/, ' ').split(' ')
       end
     
       def sort(words)
@@ -26,10 +26,10 @@ module WordCounter
         res.marks_count = mark_count(string)
         string_split = split_string(string)
         sorted = sort(string_split)
-        res.words_count['marks'] = res.marks_count
-        res.words_count['words'] = {}
+        res.word_counts['marks'] = res.marks_count
+        res.word_counts['words'] = {}
         sorted.each do |word|
-          res.words_count['words'][word] = string_split.count(word)
+          res.word_counts['words'][word] = string_split.count(word)
         end
         res
       end  

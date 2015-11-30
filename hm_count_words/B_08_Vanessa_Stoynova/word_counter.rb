@@ -1,4 +1,7 @@
-require './B_08_Vanessa_Stoynova/result.rb'
+require 'word_counter/parser.rb'
+require 'word_counter/file_parser.rb'
+require 'word_counter/web_parser.rb'
+require 'word_counter/result.rb'
 
 class WordCounter
 

@@ -8,6 +8,8 @@ if (path.match('^https?:\/\/.+'))
 else
   result = WordCounter::parse_file(path)
 end
+  WordCounter::Draw_graph::draw_graph(result.word_counts,result.marks_count)
+
 
 if format == 'json'
   File.open('result.json', 'w') { |file| file << result.to_json }

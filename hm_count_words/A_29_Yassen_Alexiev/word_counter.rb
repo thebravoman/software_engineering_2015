@@ -3,14 +3,14 @@ require 'word_counter/web_parser'
 
 module WordCounter
   def parse(string)
-    Parser.parse string
+    Parser.new.parse string
   end
 
   def parse_file(filename)
-    FileParser.parse filename
+    FileParser.new.parse filename
   end
 
   def parse_webpage(url)
-    WebpageParser.parse url
+    WebpageParser.new.parse url
   end
 end

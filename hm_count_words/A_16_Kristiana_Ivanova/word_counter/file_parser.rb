@@ -1,10 +1,9 @@
-require 'word_counter/parser'
+require'parser.rb'
 
 module WordCounter
   class FileParser < Parser
-    def self.parse(filename)
-      res = File.read(filename)
-      res = res.encode('UTF-8', 'UTF-8', invalid: :replace)
+    def parse(filename)
+      res = File.read filename
       super res
     end
   end
