@@ -8,7 +8,7 @@ end
 
 file_name = ARGV[0].to_s
 out_format = ARGV[1].to_s
-format = " "
+format = "string"
 
 if File.file? file_name
     format = "file"
@@ -16,9 +16,7 @@ end
 
 if ifSite file_name
 	format= "url"
-else
-    	format = "string"
-end
+end 
 
 
 if format == "file"
@@ -43,4 +41,8 @@ end
 
 if out_format=="xml" 
 	puts result.to_xml
+end
+
+if out_format=="svg" 
+	puts result.to_svg
 end
