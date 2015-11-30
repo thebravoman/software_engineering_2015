@@ -20,12 +20,6 @@ elsif op == 'xml'
   	puts line
   end
 
-elsif op == 'svg'
-  res.toSVG
-  File.open('result.svg', 'r').each_line do |line|
-    puts line
-  end
-
 else res.toCSV
   File.open('result.csv', 'r').each_line do |line|
   	puts line
@@ -33,3 +27,4 @@ else res.toCSV
 
 end
 
+res.toSVG
