@@ -53,7 +53,7 @@ class Result
 	end
 
 	def make_svg 
-		File.open("result.svg", "w") do |f|
+		File.open("A_5_Velin_Yavorski.svg", "w") do |f|
 			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 			distance = 20
 			size = 15
