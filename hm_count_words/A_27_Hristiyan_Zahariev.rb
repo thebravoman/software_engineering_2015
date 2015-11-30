@@ -29,6 +29,8 @@ def result(input_filename,output_option)
   elsif output_option == 'xml'
     result.to_xml
     result.to_svg
+  elsif output_option == "svg"
+    result.to_svg
   else
     result.to_csv
     result.to_svg
