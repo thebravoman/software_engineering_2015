@@ -1,38 +1,22 @@
 module WordCounter
-  require 'net/http'
-  require 'sanitize'
-  require 'openssl'
-
   class Parser
-    def parse(string)
-      return string
-    end
-  end
+    def parse(text)
+	words_count = Hash.new(0)
+	    words = text.downcase.scan(/[a-zA-Z0-9]+/)
 
-  class FileParser < Parser
-    def parse(filename)
-      file = File.open(filename, 'r')
-      content = file.read.downcase
-      file.close
-
-      return content
-    end
-  end
-
-  class WebpageParser < Parser
-    def parse(url)
-      uri  = URI.parse(url)
-      http = Net::HTTP.new(uri.host, uri.port)
-
-      if uri.scheme == 'https'
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      end
-
-      result = http.get(uri.request_uri)
-      text = Sanitize.fragment(result.body)
-
-      return text
+	    words.each {
+		|x|
+		if words_count.has_key?("#{x}")
+		    words_count["#{x}"] += 1
+		else
+		    words_count["#{x}"] = 1
+		end
+	    }
+	words_count = words_count.sort_by {|word, count| [-count, word]}
+	
+	marks_count = text.scan(/[[:punct:]|+-=\/\\p{S}]/).size
+	
+	Result.new(words_count, marks_count)      
     end
   end
 end

@@ -26,10 +26,12 @@ def result(input_filename,output_option)
     result.to_json
   elsif output_option == 'xml'
     result.to_xml
+  elsif output_option == 'svg'
+    result.to_svg
   else
     result.to_csv
   end
-  
+
 end 
 
 result(input_filename,output_option)

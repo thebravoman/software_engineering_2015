@@ -2,6 +2,7 @@ require 'csv'
 require 'json'
 require 'rexml/document'
 
+module WordCounter
 class Result
   def initialize
     @marks_count = 0
@@ -71,4 +72,5 @@ class Result
 			f.write('</svg>')
 		end
 	end
+end
 end

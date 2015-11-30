@@ -5,7 +5,7 @@ require 'openssl'
 
 module WordCounter
   class WebsiteParser < Parser
-    def self.parse(uri)
+    def parse(uri)
       uri = URI.parse(ARGV.first)
       http = Net::HTTP.new(uri.host, uri.port)
 
