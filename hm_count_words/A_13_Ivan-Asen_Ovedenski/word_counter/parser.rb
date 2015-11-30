@@ -1,18 +1,15 @@
-require './A_13_Ivan-Asen_Ovedenski/results.rb'
+require 'word_counter/results.rb'
 
-class WordCounter 
+module WordCounter
+	
+class Parser
 
-	def parse_file(file)
-		text = File.open(file, "r")
-		parse(text)
-	end
-
-	def parse(text)
+	def self.parse(text)
 		marks = 0
 		h = Hash.new(0)
 		text.each_line { |line|
-  			marks += line.scan(/[^A-Za-z_0-9]/).count 
-			words = line.gsub!(/[^0-9A-Za-z]/, '').split
+  			marks += line.scan(/[^A-Za-z_0-9\s]/).count 
+			words = line.gsub(/[^A-Za-z_0-9]/, ' ').split
 			words.each { |w|
 				w.downcase!
 				if h.has_key?(w) 
@@ -26,4 +23,5 @@ class WordCounter
 		
 		Result.new(marks,h)
 	end
+end	
 end
