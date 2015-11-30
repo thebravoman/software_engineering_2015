@@ -1,14 +1,14 @@
 class Result
-	
-	def initialize
-		@marks_count = 0
-		@word_counts = {}
-	end
 
-	def setWordsMarks words, marks
-		@word_counts = words
-		@marks_count = marks
-	end
+def initialize
+    @marks_count = 0
+    @word_counts = {}
+    end
+    
+  def setWordsMarks words, marks
+  	@word_counts = words
+  	@marks_count = marks
+  end
 
 	def to_csv
 		@word_counts.each do |elements|
@@ -33,6 +33,5 @@ class Result
 		end
 		word.add_element(words_element)
 		puts my_xml
-	end
-
-end
+  	end 
+  end

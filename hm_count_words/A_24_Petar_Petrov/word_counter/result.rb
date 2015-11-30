@@ -1,3 +1,4 @@
+require_relative 'svg_parser'
 module WordCounter  
   class Result
 
@@ -27,6 +28,10 @@ module WordCounter
       printer.compact = true
       printer.write(tag, output)
       puts output
+    end
+    
+    def to_svg
+    	SVGParser.create_graph(@word_counts)
     end
     
     def to_csv
