@@ -1,41 +1,17 @@
-class WordCounter
-  private
+require_relative 'word_counter/file_parser'
+require_relative 'word_counter/parser'
+require_relative 'word_counter/web_parser'
 
-  def parse(string)
-		result = Result.new
-		marks_counter = 0
-		words = File.read(ARGV[0])
-		h = Hash.new
-    words.each_line do |line|
-			wordz = line.downcase.split
-			wordz.each do |word|
-				marks_counter += word.scan(/[ ,().?!:; ]/).count
-				word = word.gsub(/[ ,()'.?!:; ]/,'')
-				if word!=''
-					if h[word]
-						h[word] += 1
-		  		else
-						h[word] = 1
-		 			end
-				end
-			end
-		end
-		h = h.sort_by { |key, value| [ -value, key ] }
-		result.setWordsMarks h, marks_counter
-    result
+module WordCounter
+  def self.parse_file(filename)
+    FileParser.new.parse(filename)
   end
-
-  public
-
-  def parse_file(filename)
-    text = ''
-
-    File.open(filename) do |file|
-      file.each_line do |line|
-        text += line
-      end
-    end
-
-    parse text
+  
+  def self.parse(string)
+    Parser.new.parse(string)
+  end
+  
+  def self.parse_webpage(uri)
+    WebpageParser.new.parse(uri)
   end
 end
