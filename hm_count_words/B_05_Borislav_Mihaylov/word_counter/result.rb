@@ -34,4 +34,19 @@ def initialize
 		word.add_element(words_element)
 		puts my_xml
   	end 
+  	
+  	def to_svg	
+	
+		File.open("result.svg","w") do |f|
+			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+			x = 10
+			@word_counts.each do |word,i|
+				f.write(graph(i,x))
+				f.write('<text x="'+(x+2).to_s+'" y="200" fill="black">'+word+'</text>')
+				x+= 60
+			end
+			f.write('</svg>')
+		end
+	
+	end
   end
