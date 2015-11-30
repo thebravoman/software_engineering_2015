@@ -45,7 +45,7 @@ class Result
   end
 
   def to_svg
-    File.open("result.svg","w") do |f|
+    File.open("A_27_Hristiyan_Zahariev.svg","w") do |f|
       f.write('<svg xmlns="http://www.w3.org/2000/svg">')
       x = 20
       font_size = 17
