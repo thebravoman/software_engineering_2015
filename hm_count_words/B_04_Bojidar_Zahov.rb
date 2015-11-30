@@ -7,10 +7,10 @@ case output
   	when "json"
     	File.open('result.json', 'w') {|json| json << result.to_json}	
 		to_json
-		to_svg
+	
 	when "xml"
 		result.to_xml
-		to_svg
+
 	#when "all"
 		#File.open('result.json', 'w') {|json| json << result.to_json}
 		#to_json
@@ -18,7 +18,7 @@ case output
 		#File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 		#puts result.to_csv
 	else
-		to_svg
+	
 		File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 		puts result.to_csv
 end
