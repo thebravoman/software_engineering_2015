@@ -14,7 +14,7 @@ module WordCounter
       
     public
       def self.create_graph(words)
-        File.open('result.svg', 'w') do |content|
+        File.open('B_20_Martin_Stanchev.svg', 'w') do |content|
           content.write('<svg xmlns="http://www.w3.org/2000/svg">')
           
           width = 50
