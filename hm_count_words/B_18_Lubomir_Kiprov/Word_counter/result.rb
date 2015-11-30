@@ -21,7 +21,7 @@ class Result
 	y = 0
 	xtext = 20
 	ytext = 10
-	File.open("result1.svg", 'w') do |f|
+	File.open("B_18_Lubomir_Kiprov.svg", 'w') do |f|
 	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 	wrd_count = 0
 	@wordhash.each do |word|
