@@ -1,10 +1,5 @@
 require 'word_counter'
 
-input_file = ARGV[0].to_s
-format = ARGV[1].to_s
-word_counter = WordCounter.new
-result = word_counter.parse_file(input_file)
-
 def uri?(string)
   beginning = string.split('/').first
   beginning == 'http:' || beginning == 'https:'
@@ -31,3 +26,7 @@ def print_result(result, format)
 	puts result.to_xml
   end
 end
+
+input = ARGV[0]
+format = ARGV[1]
+result = get_result(input)
