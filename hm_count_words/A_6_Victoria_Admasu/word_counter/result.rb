@@ -64,7 +64,7 @@ class Result
   end
     
   def to_svg
-    File.open('result.svg', "w") { |f|
+    File.open('A_6_Victoria_Admasu.svg', "w") { |f|
       f.write('<svg xmlns="http://www.w3.org/2000/svg">')
     
       count.each { |x, y|
