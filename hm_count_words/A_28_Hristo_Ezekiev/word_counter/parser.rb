@@ -13,7 +13,7 @@ module WordCounter
 				hash[word] += 1
 			end
 
-			hash = hash.sort_by{|word, count| [-count, word]}
+			hash = hash.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}
 
 			Result.new(marks.length, hash)
 		end
