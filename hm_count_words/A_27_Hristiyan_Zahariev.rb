@@ -22,14 +22,20 @@ def result(input_filename,output_option)
 
   if output_option == 'csv'
     result.to_csv
+    result.to_svg
   elsif output_option == 'json'
     result.to_json
+    result.to_svg
   elsif output_option == 'xml'
     result.to_xml
+    result.to_svg
+  elsif output_option == "svg"
+    result.to_svg
   else
     result.to_csv
+    result.to_svg
   end
-  
+
 end 
 
 result(input_filename,output_option)

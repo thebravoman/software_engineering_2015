@@ -1,16 +1,16 @@
-require './word_counter/file_parser'
-require './word_counter/web_parser'
+require_relative './word_counter/file_parser.rb'
+require_relative './word_counter/web_parser.rb'
 
 module WordCounter
   def self.parser(string)
-    Parser.parse string
+    Parser.new.parse string
   end
 
   def self.parse_file(filename)
-    FileParser.parse filename
+    FileParser.new.parse filename
   end
 
-  def self.parse_webpage(web_address)
-    WebParser.parse web_address
+  def self.parse_webpage(uri)
+    WebParser.new.parse uri
   end
 end

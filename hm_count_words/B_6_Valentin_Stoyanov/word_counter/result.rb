@@ -12,36 +12,38 @@ module WordCounter
 			@word_counts = Hash.new(0)
 		end
 		
-		def text(x,y,contents)
-			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="green" font-size="9" transform="rotate(90 '+x.to_s+','+y.to_s+')">'+contents+'
+		def text(x,y,contents,color)
+			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="'+color.to_s+'" font-size="17" transform="rotate('+x.to_s+','+y.to_s+')">'+contents+'
        </text>'
 		end
 			
 		def rect(x, y, w, h)
-			'<rect x="'+x.to_s+'" y="'+y.to_s+'"
-			width="'+w.to_s+'" height="'+h.to_s+'
-			style="fill:blue;opacity:0.6;stroke:black;
-      stroke-width:1;" />'
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" style="fill:blue;stroke:black;opacity:0.6;strokewidth:1;"/>'
 		end
-		
+
 		def svg
-			File.open('B_6_Valentin_Stoyanov_result.svg', 'w') do |f|
+			File.open('B_6_Valentin_Stoyanov.svg', 'w') do |f|
 				ratio = 200.0 / @word_counts.first[1]
-        f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+        			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 				h = 200
-				w = 10
+				w = 55
 				holder = w 
 				h = h + w
-				
-        @word_counts.each do |element|
-          value = element[1] * ratio
-          f.write(rect(holder, h - value, w, value))
-          f.write(text(holder + 3, h + w/2, element[0]))
-         	holder = holder + w
-        end
-
-        f.write('</svg>')
-      end
+				i = 1
+				@word_counts.each do |element|
+	        			if i % 2 == 0
+	        				col = 'black'
+	        			else
+	        				col = 'crimson'
+	        			end
+	          			value = element[1] * ratio
+	          			f.write(rect(holder, h - value, w, value))
+	          			f.write(text(holder, h + w/2, element[0], col))
+	         			holder = holder + w
+					i += 1
+	        		end
+				f.write('</svg>')
+      			end
 		end
 	
 		def to_json
