@@ -14,8 +14,6 @@ if p1 == 'http:' || p1 == 'https:'
   result = WordCounter.parse_web(name)
 else 
   result = WordCounter.parse_file(name)
-elsif 
-  result = Parser.parse(name)
 end
 
 if type == 'json'
