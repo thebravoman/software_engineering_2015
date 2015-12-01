@@ -1,0 +1,23 @@
+{
+	"School" : 
+	{
+		"name" : "ELSYS",
+		
+		"Classes" : [
+			{
+				"name" : "11B",
+				"Students" : [
+					{
+						"name" : "SomeRandomGuy",
+						"number" : "128"
+					},
+					{
+						"name" : "Toma Marinov",
+						"number" : "28"
+					}
+				]
+			}
+		]
+	}
+
+}
