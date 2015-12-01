@@ -1,31 +1,18 @@
 {
-	{
-		"School": "TUES" [{
-			"Classes": "11A" [{
-				"Students": [{
-					"firstName": Georgi;
-					"lastName": "Stoilov"
-				} {
-					"firstName": Tuma;
-					"lastName": "Marinov"
-				} {
-					"firstName": Bore4;
-					"lastName": "Cankovic"
-				}]
-			}]
-		} {
-			"Classes": "11B" [{
-				"Students": [{
-					"firstName": Rado;
-					"lastName": "rado"
-				} {
-					"firstName": Mart;
-					"lastName": "Gulub"
-				} {
-					"firstName": ZDR;
-					"lastName": "Mili4uk"
-				}]
-			}]
-		}]
-	}
+	"TUES": [
+		{
+			"11A": [
+			{"Student": ["Georgi", "Stoilov"]},
+			{"Student": ["Tuma", "Marinov"]},
+			{"Student": ["Bore4", "Cankovic"]}
+			]
+		}
+		{
+			"11B": [
+			{"Student": ["Georgi", "Stoilov"]},
+			{"Student": ["Tuma", "Marinov"]},
+			{"Student": ["Bore4", "Cankovic"]}
+			]
+		}
+	]
 }
