@@ -1,12 +1,14 @@
 {
-    "tues": {
-		"class": {
-			"11a": {
-				"students": ["Bobi", "Marto", "Nasko"]
-			},
-			"11b": {
-				"students": ["Bobi", "Marto", "Nasko"]
-			}
-  		}
+    "School": {
+		"ELSYS": {
+			"Classes": {
+				"11 A": {
+					"Students": ["Cica", "Nedkov", "Pavlinarii"]
+				},
+				"11 B": {
+					"Students": ["Bobi", "Marto", "Lucho"]
+				}
+	  		}
+		}
 	}
 }
