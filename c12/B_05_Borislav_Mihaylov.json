@@ -1,9 +1,17 @@
 {
-	"ELSYS": {
-		"classes:": {
+	"school": {
+		"ELSYS" : {
+			"classes:": {
 			
-			"11a" : ["Pencho","Galin", "Preslava"],
-			"11b" : ["Mihaylov","Martin", "Nasko"]
+				"11a" : {
+					"students": ["Pencho","Galin", "Preslava"]
+				},
 
+				"11b" : {
+					"students": ["Mihaylov","Martin", "Nasko"]
+				}
+			}
 		}
+	}
+
 }

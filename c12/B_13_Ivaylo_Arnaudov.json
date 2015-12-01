@@ -1,15 +1,12 @@
 {
     "school": {
         "name": "TUES",
-        "11A": {
-            "students": [
-                {"name": "Pesho"}
-            ]
-        },
-        "11B": {
-            "students": [
-                {"name": "Niki"}
-            ]
-        }
+        "classes": [{
+            "name": "11A",
+            "students": ["Pesho", "Gosho"]
+        }, {
+            "name": "11B",
+            "students": ["Ivo"]
+        }]
     }
 }
