@@ -1,20 +1,4 @@
-{
-<<<<<<< HEAD
   "TUES": {
     "11A": ["Pesho", "Gosho", "Ivancho"],
     "11B": ["Ginka", "Penka", "Mariika"]
   }
-=======
-	"name" : "TUES"
-	"classes" : [
-		"A" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		],
-		"B" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		]	
-	]
->>>>>>> 0530bf4e1220cec1bca4b1e49d5ce3f2366c610f
-}
