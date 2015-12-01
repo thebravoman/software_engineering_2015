@@ -1,5 +1,3 @@
-require 'word_counter/parser'
-
 module WordCounter 
 
 	class FileParser

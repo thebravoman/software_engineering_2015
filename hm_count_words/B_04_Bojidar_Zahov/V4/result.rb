@@ -31,6 +31,24 @@ class Result
 		File.open('result.xml', 'w') {|i| xml_print.write(xml_counts, i)}
 		
 	end
+	def to_svg
+		x=12
+		y=16
+		File.open("result.svg","w") do |f|
+			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+		     f.write(text 0,5,"")
+			@words.each do |element|
+				f.write(text x,y,element.to_s.gsub(/[^a-z]/,''))
+				
+				(0..element.to_s.gsub(/[\W\D,]/,'').to_i - 1).each do |i|
+					f.write(rect x+5+(i*10),y+5,6,6)
+				end
+				x,y = x+0,y+20
+			end
+			f.write(text 0,y,"by Bojidar Zahov")
+			f.write('</svg>')
+		end  
+	end
 	
 	def to_csv
 		my_csv = CSV.generate(quote_char: "'") do |csv|
@@ -43,5 +61,12 @@ class Result
 			end
 			print my_csv
 		end
+	end
+private
+	def rect x, y, width, height
+		'<rect width="'+width.to_s+'" height="'+height.to_s+'" x="'+x.to_s+'" y="'+y.to_s+'" style="fill:green;stroke-width:1;stroke:rgb(0,0,0)"/>'
+	end
+	def text x, y, text
+		"<text x=\"#{x}\" y=\"#{y}\" fill=\"black\">#{text +":"}</text>"
 	end
 end

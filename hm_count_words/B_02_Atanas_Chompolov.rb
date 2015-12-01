@@ -1,77 +1,36 @@
-require 'csv'
-require 'json'
-require 'rexml/document'
+require_relative './B_02_Atanas_Chompolov/word_counter'
 
-class WordCounter
 
-	def parse(contents)
-		marks = contents.gsub(/[a-z\s]/, "");
-		words = contents.gsub(/[^a-z'\s-]/, "").split
-
-		hash = Hash.new(0)
-
-		words.each do |word|
-			hash[word] += 1
-		end
-
-		hash = hash.sort_by{|word, count| [-count, word]}
-
-		return Result.new(marks.length, hash)
-	end
-
-	def parse_file(filename)
-		contents = ""
-		contents = File.open(filename, "r").read.downcase
-		return parse contents    	
-	end
+def ifLink(filename)
+	first = filename.split('/').first
+	return first == 'http:' || first == 'https:'
 end
 
-class Result
-	def initialize markCount, wordCount
-		@mark_count = markCount
-		@word_count = wordCount
-	end
+file_name = ARGV[0].to_s
+output_format = ARGV[1].to_s
+format = "string"
 
-	def to_csv
-		@word_count.each do |word, count|
-			puts word + "," + count.to_s
-		end
+if File.file? file_name
+	format = "file"
+elsif ifLink file_name
+ 	format= "url"
+end 
 
-		if @mark_count > 0
-			puts "\"marks\","+ @mark_count.to_s
-		end
-	end
 
-	def to_json
-		jsonHash = {
-			"marks" => @mark_count, "words" => @word_count
-		}
-		puts JSON.pretty_generate(jsonHash)
-	end
-
-	def to_xml
-		xml = REXML::Document.new('')	
-		mainTag = xml.add_element('word-counts')
-		mainTag.add_element('marks').add_text @mark_count.to_s
-		wordsTag = mainTag.add_element('words')
-
-		@word_count.each do |word, count|
-			wordsTag.add_element('word', {'count' => count}).add_text word
-		end
-
-		formatter = REXML::Formatters::Pretty.new(4)
-		formatter.compact = true
-		formatter.write(xml, $stdout)
-	end
+if format == "file"
+	result = WordCounter.parse_file file_name
+elsif format == "url"
+	result = WordCounter.parse_webpage file_name
+elsif format == "string"
+	result = WordCounter.parse file_name
 end
 
-
-result = (WordCounter.new).parse_file(ARGV[0])
-
-if ARGV[1] == 'json'
-	result.to_json
-elsif ARGV[1] == 'xml'
-	result.to_xml
-else
-	result.to_csv
+if output_format=="csv" or output_format == ""
+	puts result.to_csv
+elsif output_format=="json"
+	puts result.to_json
+elsif output_format=="xml" 
+	puts result.to_xml
+elsif output_format=="svg" 
+	puts result.to_svg
 end

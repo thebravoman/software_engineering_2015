@@ -17,6 +17,8 @@ def print_result result, format
 		puts result.to_json
 	elsif format == 'xml'
 		puts result.to_xml
+	elsif format == 'svg'
+		result.to_svg
 	else
 		puts result.to_csv
 	end

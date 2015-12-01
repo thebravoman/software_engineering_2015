@@ -1,0 +1,15 @@
+{
+  "school": "Tues"{
+      "classes": {
+          "11A": {
+            "student1":"Asen1",
+            "student2":"Asen2"
+          },
+          "11B":{
+            "student1":"Boriana1",
+            "student2":"Boriana2"
+          }
+      }
+  
+  }
+}

@@ -1,4 +1,4 @@
-require './B_12_Emiliqn_Gospodinov/word_counter.rb'
+require_relative 'B_12_Emiliqn_Gospodinov/word_counter'
 format = ARGV[1]
 
 is_url = ARGV[0].split("_").last.split("/").first

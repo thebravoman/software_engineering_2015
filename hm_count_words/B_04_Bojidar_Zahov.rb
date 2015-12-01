@@ -7,8 +7,10 @@ case output
   	when "json"
     	File.open('result.json', 'w') {|json| json << result.to_json}	
 		to_json
+	
 	when "xml"
 		result.to_xml
+
 	#when "all"
 		#File.open('result.json', 'w') {|json| json << result.to_json}
 		#to_json
@@ -16,6 +18,7 @@ case output
 		#File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 		#puts result.to_csv
 	else
+	
 		File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 		puts result.to_csv
 end

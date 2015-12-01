@@ -1,5 +1,6 @@
 require 'json'
 require 'rexml/document'
+require_relative '../svg_parser.rb'
 
 module WordCounter
 	class Result
