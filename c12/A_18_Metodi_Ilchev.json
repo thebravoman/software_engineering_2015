@@ -1,8 +1,8 @@
 {
 	"school": {
-		"name": "ELSYS"
+		"name": "ELSYS",
 		"classes": {
-			"11A":{		
+			"11A":{
 				"students":{
 					"student1": "Svetlin Yordanov",
 					"student2": "Kalin Karev",
