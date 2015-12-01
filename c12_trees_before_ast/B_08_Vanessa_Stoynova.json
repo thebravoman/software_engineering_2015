@@ -1,0 +1,39 @@
+{
+  "school" : {
+      "name" : "Elsys",
+      "class" : [
+        {
+          "id_1" : "11b",
+          "students" : [
+            {
+              "number" : "9" ,
+              "name" : "Random.org"
+            },
+            {
+              "number" : "12" ,
+              "name" : "Ivo"
+            },
+            {
+              "number" : "26" ,
+              "name" : "Plamen"
+            }
+          ],
+          "id_2" : "11a",
+          "students" : [
+            {
+              "number" : "17" ,
+              "name" : "Martin"
+            },
+            {
+              "number" : "6" ,
+              "name" : "Valio"
+            },
+            {
+              "number" : "19" ,
+              "name" : "Hello. It's me"
+            }
+          ]
+        }
+      ]
+    }
+}

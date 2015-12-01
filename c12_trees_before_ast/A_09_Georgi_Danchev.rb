@@ -1,20 +1,20 @@
 require 'json'
 
-class JSONTreeMaker
-  def self.parse_json(element, depth = 0)
-    spaces = ' ' * depth
+class TreeMap
+  def self.parse_json(element, offset = 0)
+    spaces = ' ' * offset
 
     if(element.class == Hash)
       element.each do |key, value|
         if(value.class == Hash || value.class == Array)
-          parse_json value, depth + 1
+          parse_json value, offset + 1
         else
           puts "#{spaces}#{value}"
         end
       end
     elsif(element.class == Array)
       element.each do |e|
-        parse_json e, depth + 1
+        parse_json e, offset + 1
       end
     else
       puts "#{spaces}#{element}"
@@ -22,6 +22,6 @@ class JSONTreeMaker
   end
 end
 
-file = File.read "A_21_Nikolay_Danailov.json"
+file = File.read "A_09_Georgi_Danchev.json"
 json = JSON.parse file
-JSONTreeMaker.parse_json json
+TreeMap.parse_json json
