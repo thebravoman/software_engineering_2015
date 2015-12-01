@@ -4,11 +4,11 @@
 			"classes:": {
 			
 				"11a" : {
-					"students": ["Pencho","Galin", "Preslava"]
+					"students :": ["Pencho","Galin", "Preslava"]
 				},
 
 				"11b" : {
-					"students": ["Mihaylov","Martin", "Nasko"]
+					"students :": ["Mihaylov","Martin", "Nasko"]
 				}
 			}
 		}
