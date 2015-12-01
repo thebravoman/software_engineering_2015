@@ -1,0 +1,11 @@
+{
+	"class": "11A",
+	"school": "ELSYS"
+	"firstName": "Metodi"
+	"lastName": "Ilchev"
+	"neighbours":{
+		1: "Svetlin Yordanov"
+		2: "Kalin Karev"
+		3: "Velin Yavorski"
+	}
+}
