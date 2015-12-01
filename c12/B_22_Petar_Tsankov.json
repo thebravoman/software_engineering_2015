@@ -1,8 +1,6 @@
-{"TUES":[
-  {"11A":[
-    {"Name": ""}
-  ]}
-  {"11B":[
-    {"Name":"Emilian Gospodinov"}
-  ]}
-]}
+{
+  "TUES": {
+    "11A": ["Petko", "Gosho", "Ivancho"],
+    "11B": ["Petar", "Emo", "Emilian"]
+  }
+}
