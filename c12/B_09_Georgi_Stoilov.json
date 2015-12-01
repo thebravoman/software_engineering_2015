@@ -1,0 +1,12 @@
+{"School":{
+    "Name": "TUES",
+    "Classes":
+    [{
+        "Name" : "TUES !!!!!!",
+        "Students":
+        [{ "Name": "Ivo Gerginov"},
+         { "Name": "Toma Marinov"},
+         { "Name": "Georgi Stoilov"}
+        ]}
+    ]}
+}
