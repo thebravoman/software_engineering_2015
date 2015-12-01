@@ -1,0 +1,17 @@
+{
+	"school":
+	{
+		"name":"TUES",
+		"class":
+		[{
+			"name":"11A",
+			"students":
+			[
+				{"name":"Valentin", "lname":"Ionev"}
+				{"name":"Petko", "lname":"Georgiev"}
+				{"name":"Sahso", "lname":"Velinov"}
+			]
+			
+		}]
+	}
+}
