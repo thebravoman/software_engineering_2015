@@ -1,0 +1,15 @@
+{
+	"school": "TUES",
+	"classes": {
+		"11A": [
+			"Nikolay Danailov",
+			"Yasen Alexiev",
+			"Petar Petrov"
+		],
+		"11B": [
+			"Neville Longbottom",
+			"Randall Flag",
+			"John Kennedy"
+		]
+	}
+}

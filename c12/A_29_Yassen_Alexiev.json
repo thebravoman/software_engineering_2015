@@ -1,0 +1,16 @@
+{
+	"school": "tues", 
+		"class" : { 
+			"11A" : [
+			 "name_1"  
+			 "name_2"
+			 "name_3"
+			],
+
+			"11B": [
+			 "name_4"  
+			 "name_5"
+			 "name_6"
+			 ]
+		}
+}
