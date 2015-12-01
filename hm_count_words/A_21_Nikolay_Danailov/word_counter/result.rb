@@ -35,7 +35,7 @@ module WordCounter
       end
 
       csv << "\"marks\"," + marks_count.to_s if marks_count > 0
-      csv
+      csv.join "\n"
     end
 
     def to_json

@@ -4,26 +4,9 @@ module WordCounter
   require 'rexml/document'
 
   class Result
-    def initialize
-    end
-
-    def word_counts(text)
-      @words_count = Hash.new(0)
-      words = text.downcase.scan(/[a-zA-Z0-9]+/)
-
-      words.each {
-        |x|
-        if @words_count.has_key?("#{x}")
-          @words_count["#{x}"] += 1
-        else
-          @words_count["#{x}"] = 1
-        end
-      }
-      @words_count = @words_count.sort_by {|word, count| [-count, word]}
-    end
-
-    def marks_count (text)
-      @marks_count = text.scan(/[[:punct:]|+-=\/\\]/).size
+    def initialize(words, marks)
+	@words_count = words
+	@marks_count = marks
     end
 
     def to_csv
@@ -61,7 +44,7 @@ module WordCounter
     end
 
     def to_json
-      result_json = { :words => @words_count, :marks => "#{@marks_count}".to_i}
+      result_json = {:marks => "#{@marks_count}".to_i, :words => @words_count}
       result_json = JSON.pretty_generate(result_json)
       puts result_json
       File.open("result.json", "w") do |file|

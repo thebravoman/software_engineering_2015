@@ -1,24 +1,16 @@
-class WordCounter
+require_relative './word_counter/file_parser'
+require_relative './word_counter/web_parser'
 
-	def parse(contents)
-		marks = contents.gsub(/[a-z\s]/, "");
-		words = contents.gsub(/[^a-z'\s-]/, "").split
-
-		hash = Hash.new(0)
-
-		words.each do |word|
-			hash[word] += 1
-		end
-
-		hash = hash.sort_by{|word, count| [-count, word]}
-
-		return Result.new(marks.length, hash)
+module WordCounter
+	def self.parse(text)
+		Parser.parse text
 	end
-
-	def parse_file(filename)
-		contents = ""
-		contents = File.open(filename, "r").read.downcase
-		return parse contents    	
+	
+	def self.parse_file(filename)
+		FileParser.parse filename
+	end
+	
+	def self.parse_webpage(web_address)
+		WebpageParser.parse web_address
 	end
 end
-

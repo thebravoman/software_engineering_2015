@@ -1,4 +1,4 @@
-require'./result'
+require_relative 'result.rb'
 
 module WordCounter
   class Parser
@@ -22,19 +22,9 @@ module WordCounter
           end
         end
       end
-      h = h.sort_by { |key, value| [ -value, key ] }
+      h = h.sort_by { |k,v| (v[1] == k[1]) ? (k[0] <=> v[0]) : (v[1]<=>k[1]) }
       result.setWordsMarks h, marks_counter
       result
-    end
-
-    def parse_file(filename)
-      text = ''
-      File.open(filename) do |file|
-        file.each_line do |line|
-          text += line
-        end
-      end
-      parse text
     end
   end
 end

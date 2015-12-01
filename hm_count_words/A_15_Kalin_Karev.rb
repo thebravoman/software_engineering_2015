@@ -1,26 +1,46 @@
 require_relative './A_15_Kalin_Karev/word_counter'
 
-filename = ARGV[0]
-format = ARGV[1]
-#words_hasedword_counter = WordCounter.new
+file_name = ARGV[0].to_s
+format_print = ARGV[1].to_s
+format = "string"
 
-if (filename.start_with?('http://') || filename.start_with?('https://'))
-	answer = WordCounter.parse_webpage(filename)
-else
-	answer = WordCounter.parse_file(filename)
-
+def ifSite(filename)
+	f = filename.split('/').first
+	return f == 'http:' || f == 'https:'
 end
 
-#answer = words_hasedword_counter.parse_file(file_name)
+if File.file? file_name
+	format = "file"
+end
 
-if format == "csv" || format == ""
+if ifSite file_name 
+	format = "url"
+end
+
+if format == "file" 
+	answer = WordCounter.parse_file file_name
+end
+
+if format == "url"
+	answer = WordCounter.parse_webpage file_name 
+end
+
+if format == "string"
+	answer = WordCounter.parse file_name
+end
+
+if format_print == "csv" || format == ""
 	puts answer.to_csv
 end
 
-if format == "json"
+if format_print == "json"
 	puts answer.to_json
 end
 
-if format == "xml"
+if format_print == "xml"
 	puts answer.to_xml
+end
+
+if format_print == "svg"
+	puts anwer.to_svg
 end

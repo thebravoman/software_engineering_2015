@@ -7,8 +7,19 @@ module WordCounter
   text = ""
 
   if input_to_parse.start_with? "http://" or input_to_parse.start_with? "https://"
-    WordCounter.parse_webpage(input_to_parse, file_format)
+    result = WordCounter.parse_webpage(input_to_parse)
   elsif
-    WordCounter.parse_file(input_to_parse, file_format)
+    result = WordCounter.parse_file(input_to_parse)
+  end
+  
+  case file_format
+    when "json"
+      result.to_json
+    when "xml"
+      result.to_xml
+    when "svg"
+      result.to_svg
+    else
+      result.to_csv
   end
 end

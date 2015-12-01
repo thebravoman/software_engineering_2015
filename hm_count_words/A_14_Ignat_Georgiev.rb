@@ -20,11 +20,14 @@ def result(filename,command)
 end
 if command == "json"
  puts result(filename,command).to_json
+ result(filename,command).to_svg
 elsif command == "xml"
  puts result(filename,command).to_xml
+ result(filename,command).to_svg
 elsif command =="svg"
  result(filename,command).to_svg
 else
   result(filename,command).to_csv
+ result(filename,command).to_svg
 end
 

@@ -1,12 +1,8 @@
 module WordCounter
-  def parse_file(filename)
-    text = ''
-    File.open(filename) do |file|
-      file.each_line do |line|
-        text += line
-      end
+  class FileParser < Parser
+    def parse(filename)
+      text = File.read(filename)
+      super(text)
     end
-
-    parse text
   end
 end

@@ -1,0 +1,15 @@
+{
+	"School": {
+		"Classes": {
+			"11A": [{
+				"Student1": "Bojidar",
+				"Student2": "Gosho"
+			}],
+			"11B": [{
+				"Student1": "Valio",
+				"Student2": "Ivan"
+			}]
+
+		}
+	}
+}

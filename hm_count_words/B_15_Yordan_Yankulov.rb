@@ -13,6 +13,8 @@ if format_of_output == 'json'
   result.to_json
 elsif format_of_output == 'xml'
   result.to_xml
+elsif format_of_output == 'svg'
+  result.to_svg
 else
   result.to_csv
 end

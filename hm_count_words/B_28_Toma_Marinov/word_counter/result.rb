@@ -18,7 +18,7 @@ class Result
 			puts "\"marks\",#{@count}"
 		end
 	
-    	CSV.open('result.csv', 'w') do |file|
+    	CSV.open('result.csv', 'w', {quote_char: " "}) do |file|
     		@hash.to_a.each do |elem|
     			file << elem
     		end
@@ -67,5 +67,61 @@ class Result
 		File.open('result.xml', 'w') do |file|
 			file << xml_with_tabs
 		end
+	end
+
+	MAX_HEIGHT = 500
+	MAX_WIDTH = 100
+	DEFAULT = 0
+
+	def to_svg
+		word_occurrence = @hash[0][1]
+		ratio = MAX_HEIGHT / word_occurrence
+		x_axis = DEFAULT
+		y_axis = DEFAULT
+		height = MAX_HEIGHT
+
+		File.open('B_28_Toma_Marinov.svg', 'w') do |file|
+			file << '<svg width = "'+(@hash.length * MAX_WIDTH).to_s+'" height = "'+(MAX_HEIGHT + 50).to_s+'" xmlns = "http://www.w3.org/2000/svg">'
+
+			@hash.each do |word, count|
+				file << make_rectangle(height, x_axis, y_axis)
+				
+				#not sure if I should print the words?
+				#file << print_words(x_axis, (MAX_HEIGHT + 15), word)
+
+				x_axis = x_increment x_axis
+				y_axis = y_increment word_occurrence, count, ratio
+				height = height_increment y_axis
+			end
+
+			file << '</svg>'
+		end
+	end
+
+	private
+
+	def make_rectangle height, x_axis, y_axis
+		'<rect height = "'+height.to_s+'" width = "'+MAX_WIDTH.to_s+'" x = "'+x_axis.to_s+'" y = "'+y_axis.to_s+'" stroke-width = "'+DEFAULT.to_s+'" fill = "blue" />'
+	end
+
+	#not sure if I should print the words?
+	#def print_words x, y, string
+	#	'<text x = "'+x.to_s+'" y = "'+y.to_s+'" fill = "black">'+string.to_s+'</text>'
+	#end
+
+	def x_increment value
+		value += MAX_WIDTH
+
+		return value		
+	end
+	def y_increment number, count, ratio
+		value = (number - count) * ratio
+
+		return value
+	end
+	def height_increment y
+		value = MAX_HEIGHT - y
+
+		return value
 	end
 end
