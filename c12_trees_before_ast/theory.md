@@ -30,7 +30,7 @@ This is a chance to fix the old programs.
 ### Deadline 
 07 Dec 2015 22:00
 
-## Draw a JSON tree in SVG
+## Draw a JSON tree in SVG - V1 of the homework
 Implement a program that parse a tree structure persisted in a JSON format
 
 Example is
