@@ -1,13 +1,4 @@
-{
-	"name" : "TUES"
-	"classes" : [
-		"A" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		],
-		"B" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		]	
-	]
-}
+  "TUES": {
+    "11A": ["Pesho", "Gosho", "Ivancho"],
+    "11B": ["Ginka", "Penka", "Mariika"]
+  }
