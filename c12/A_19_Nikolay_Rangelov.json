@@ -1,0 +1,16 @@
+"school" : "TUES"
+{
+	"class" : "A"
+	{
+		"student":"Valentin"
+		"student":"Sasho"
+		"student":"Petko"
+	}
+	
+	"class" : "A"
+	{
+		"student":"Ivo"
+		"student":"Aleksander"
+		"student":"Petar"
+	}
+}
