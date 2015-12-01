@@ -1,15 +1,15 @@
-{
-	"School": { 
-		"ELSYS": {
-			"Classes": {
-				"11A": {
-				
-				}
-				"11B": {
-					"Students": "Bojidar Valchovski",
-					"Students": "Martin Stanchev"
-				}
-			}
-    	}
-	}
-}	
+{ 
+	"ELSYS": {
+		"Classes": {
+			"11A": [
+				"Random Randomov",
+				"vomodnaR modnaR"
+			],
+			"11B": [
+				"Bojidar Valchovski",
+				"Martin Stanchev"
+			]
+		}
+   	}
+}
+	
