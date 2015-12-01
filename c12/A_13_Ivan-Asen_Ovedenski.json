@@ -1,0 +1,18 @@
+{
+	"TUES":{
+		"11A":{
+			"student": {
+			"name":"Petar Petrov",
+         	"name":"Hristo Ezekiev",
+         	"name":"Ivan-Asen Ovedenski"
+		}
+      },
+		"11B":{
+			"student":{
+				 "name":"Radoslav Gerogiev",
+				 "name":"Simeon Petrov",
+				 "name":"Valeri Karagiozov"
+     	 }
+		}
+   }
+}
