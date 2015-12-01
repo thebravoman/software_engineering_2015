@@ -1,11 +1,15 @@
 {
-	"class": "11A",
-	"school": "ELSYS"
-	"firstName": "Metodi"
-	"lastName": "Ilchev"
-	"neighbours":{
-		1: "Svetlin Yordanov"
-		2: "Kalin Karev"
-		3: "Velin Yavorski"
+	"school": {
+		"name": "ELSYS"
+		"classes": {
+			"11A":{		
+				"students":{
+					"student1": "Svetlin Yordanov",
+					"student2": "Kalin Karev",
+					"student3": "Velin Yavorski",
+					"student4": "Metodi Ilchev"
+				}
+			}
+		}
 	}
 }
