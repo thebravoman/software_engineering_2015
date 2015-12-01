@@ -3,7 +3,7 @@
       "name" : "Elsys",
       "class" : [
         {
-          "id" : "11a",
+          "id_1" : "11a",
           "students" : [
             {
               "number" : "10" ,
@@ -18,7 +18,7 @@
               "name" : "Some1"
             }
           ],
-          "id" : "11b",
+          "id_2" : "11b",
           "students" : [
             {
               "number" : "9" ,
@@ -37,4 +37,3 @@
       ]
     }
   }
-}
