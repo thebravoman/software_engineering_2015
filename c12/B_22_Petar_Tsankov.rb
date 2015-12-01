@@ -18,7 +18,9 @@ def print_hashmap(json_object,y,f)
       print_hashmap(value, y +20,f)
     when Array
       value.each do |v|
-        ##puts ' '*(offset + 20) + v
+        a=0
+        value.each{a=a+1}
+        f.write(circle 50-a*5+b*10,y+20,5,y,y/2,y*2)
       end
     end
   end
