@@ -6,15 +6,11 @@ class JSONTreeMaker
 
     if(element.class == Hash)
       element.each do |key, value|
-        if(value.class == Hash || value.class == Array)
-          parse_json value, depth + 1
-        else
-          puts "#{spaces}#{value}"
-        end
+        parse_json value, depth
       end
     elsif(element.class == Array)
       element.each do |e|
-        parse_json e, depth + 1
+        parse_json e, depth + 2
       end
     else
       puts "#{spaces}#{element}"
