@@ -1,31 +1,8 @@
-{
-	{
-		"School": "TUES" [{
-			"Classes": "11A" [{
-				"Students": [{
-					"firstName": Georgi;
-					"lastName": "Stoilov"
-				} {
-					"firstName": Tuma;
-					"lastName": "Marinov"
-				} {
-					"firstName": Bore4;
-					"lastName": "Cankovic"
-				}]
-			}]
-		} {
-			"Classes": "11B" [{
-				"Students": [{
-					"firstName": Rado;
-					"lastName": "rado"
-				} {
-					"firstName": Mart;
-					"lastName": "Gulub"
-				} {
-					"firstName": ZDR;
-					"lastName": "Mili4uk"
-				}]
-			}]
-		}]
-	}
-}
+require 'json'
+
+file = File.read('B_14_Ivo_Gerginov.json')
+data = JSON.parse(file)
+
+data.keys.each do |x|
+	puts << "Hello"
+end
