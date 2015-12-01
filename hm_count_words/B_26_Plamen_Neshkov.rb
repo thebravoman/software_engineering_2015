@@ -1,26 +1,24 @@
-word_pattern = /\b[\w-]+\b/i
-punctuation_pattern = /\p{P}/
+require 'word_counter'
 
-words = {}
-punctuation_marks = 0
+path = ARGV[0]
+format = ARGV[1]
 
-File.open(ARGV[0], "r") do |text|
-  text.each_line do |line|
-    line.downcase.scan(word_pattern).each do |word|
-      if words.key?(word)
-        words[word] += 1
-      else
-        words[word] = 1
-      end
-    end
-
-    line.downcase.scan(punctuation_pattern).each { |word| punctuation_marks += 1 } 
-  end
+if (path.match('^https?:\/\/.+'))
+  result = WordCounter::parse_webpage(path)
+else
+  result = WordCounter::parse_file(path)
 end
 
-sorted_words = words.sort_by { |word, occur| [-occur, word] }
-sorted_words.each do |word, occur|
-  puts "#{word},#{occur}"
-end
+WordCounter::GraphGenerator::bar_graph(result.word_counts,
+                                       result.marks_count)
 
-puts "\"marks\",#{punctuation_marks}" unless punctuation_marks == 0
+if format == 'json'
+  File.open('result.json', 'w') { |file| file << result.to_json }
+  puts result.to_json
+elsif format == 'xml'
+  File.open('result.xml', 'w') { |file| file << result.to_xml }
+  puts result.to_xml
+else
+  File.open('result.csv', 'w') { |file| file << result.to_csv }
+  puts result.to_csv
+end

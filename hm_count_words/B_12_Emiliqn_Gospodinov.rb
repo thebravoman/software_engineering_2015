@@ -1,21 +1,18 @@
-result = Hash.new
-words = File.read(ARGV[0])
-marks_counter = 0
-words.each_line do |line|
-  wordz = line.downcase.split
-  wordz.each do |word|
-    marks_counter += word.count(".,!?()[]\"")
-    word = word.gsub(/[,()!.?_"]/,'')
-    if result.has_key?(word)
-      result[word]+=1
-    else
-      result[word] = 1
-    end
-  end
+require_relative 'B_12_Emiliqn_Gospodinov/word_counter'
+format = ARGV[1]
+
+is_url = ARGV[0].split("_").last.split("/").first
+
+if (is_url == "https:") || (is_url == "http:") 
+  result = WordCounter::parse_web(ARGV[0])
+else
+  result = WordCounter::parse_file(ARGV[0])
 end
-result.sort{|k,v| v[1]<=>k[1]}.each do |elements|
-  puts "#{elements[0]},#{elements[1]}"
-end
-if marks_counter!=0
-  puts '"marks",'+"#{marks_counter}"
+
+if format == "json"
+  puts result.to_json
+elsif format == "xml"
+  puts result.to_xml
+elsif format == "csv" or format == nil
+  puts result.to_csv
 end

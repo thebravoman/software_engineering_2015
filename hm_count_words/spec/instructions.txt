@@ -1,0 +1,7 @@
+To run the specs, you need the 'rspec' gem
+
+Each spec is executed as:
+rspec -I <dir with WordCounter module> <spec>
+
+Example:
+rspec -I ../A_21_Nikolay_Danailov word_counter/web_parser_spec.rb

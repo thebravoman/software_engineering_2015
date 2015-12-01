@@ -1,20 +1,23 @@
-words_list = Hash.new
-FileName = File.open(ARGV[0] , "r")
+require './B_25_Petyo_Cvetkov/CountWords.rb'
 
-text = FileName.read.downcase
-marks = text.scan(/[,.!?:;"()\[\]]/).count
+path = ARGV[0]
+format = ARGV[1]
 
-text = text.gsub(/[^a-z'\s-]/, '').split(" ")
-text.each do |word|
-  if words_list.has_key?(word)
-  	  words_list[word]+=1
-  else
-    words_list[word] = 1
-  end
+if (path.match('^https?:\/\/.+'))
+  result = WordCounter::parse_webpage(path)
+else
+  result = WordCounter::parse_file(path)
 end
-words_list = words_list.sort_by {|word, count| [-count, word]}
-words_list.each do |word, count|
-  puts "#{word},#{count}"
-end
-puts "\"marks\",#{marks}" unless marks == 0
+  WordCounter::Draw_graph::draw_graph(result.word_counts,result.marks_count)
 
+
+if format == 'json'
+  File.open('result.json', 'w') { |file| file << result.to_json }
+  puts result.to_json
+elsif format == 'xml'
+  File.open('result.xml', 'w') { |file| file << result.to_xml }
+  puts result.to_xml
+else
+  File.open('result.csv', 'w') { |file| file << result.to_csv }
+  #puts result.to_csv
+end

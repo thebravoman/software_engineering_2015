@@ -1,25 +1,36 @@
-file = File.open(ARGV[0], "r")
-count = Hash.new(0)
-marks = 0
+require_relative './B_02_Atanas_Chompolov/word_counter'
 
-file.each_line do |line|
-	marks += line.scan(/[,.!?:;"()\[\]]/).count
-	w = line.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
-    
-	w.each do |word|
-		count[word] += 1
-	end	
+
+def ifLink(filename)
+	first = filename.split('/').first
+	return first == 'http:' || first == 'https:'
 end
 
+file_name = ARGV[0].to_s
+output_format = ARGV[1].to_s
+format = "string"
 
-count = count.sort_by{|word,num| word.downcase}
-count = count.sort_by{|word,num| [-num,word]}
+if File.file? file_name
+	format = "file"
+elsif ifLink file_name
+ 	format= "url"
+end 
 
-count.each do |word, num|
-	puts word + ',' + num.to_s
+
+if format == "file"
+	result = WordCounter.parse_file file_name
+elsif format == "url"
+	result = WordCounter.parse_webpage file_name
+elsif format == "string"
+	result = WordCounter.parse file_name
 end
 
-if marks != 0
-	puts '"marks",' + marks.to_s
+if output_format=="csv" or output_format == ""
+	puts result.to_csv
+elsif output_format=="json"
+	puts result.to_json
+elsif output_format=="xml" 
+	puts result.to_xml
+elsif output_format=="svg" 
+	puts result.to_svg
 end
-

@@ -1,21 +1,22 @@
-path = ARGV.first
-dumi = Hash.new(0)
-file = File.open(path, "r")
-symbols = 0
+require 'word_counter'
+filepath = ARGV[0]
+def webb
+	if( filepath.start_with?('http://') || filepath.start_with?('https://'))
+		result = WordCounter.parse_webpage(filepath)
+	else
+		result = WordCounter.parse_file(filepath)
+	end
+end
+webb
+if ARGV[1] == 'json'
+    puts result.to_json
 
-file.each_line do |line|
-
-  symbols = symbols + line.count("./'!@#$^&,%*\\(){}[?]\":;+=`~><_-")
-  word = line.downcase.gsub(/[^\w'\s-]/, '').split(" ")
-	
-  word.each do |counter|
-    dumi[counter] = dumi[counter] + 1
-  end
-  
+elsif ARGV[1] == 'xml'
+    puts result.to_xml
+elsif ARGV[1] == "svg"
+	puts coming soon...
+else
+    puts result.to_csv
 end
 
-dumi.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}.each do |word, counter|	
-	puts "#{word},#{counter}"
-end
 
-puts "\"marks\",#{symbols}" if symbols != 0

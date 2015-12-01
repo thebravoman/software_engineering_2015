@@ -1,24 +1,32 @@
-file = ARGV.first
-f = File.open(file, "r")
-hash = Hash.new(0)
+require 'word_counter'
 
-marks_count = 0
-
-f.each_line do |line|
-	marks_count = marks_count + line.scan(/[-\].)(\[,!?:;%@#$^&<_>`~'"*-+\/]/).count
-  
-
-	alignment = line.downcase.split
-	alignment.each do |word|
-		word = word.gsub(/[,()'".*?:]/, ' ')
-			hash[word] += 1
-	end	
+def uri?(string)
+  beginning = string.split('/').first
+  beginning == 'http:' || beginning == 'https:'
 end
 
-hash.sort{|x, y| x <=> y}.sort{|x, y| y[1] <=> x[1]}.each do |word, count|	
-	puts "#{word},#{count}"
+def get_result(input)
+  if File.file? input
+    WordCounter.parse_file input
+  elsif uri? input
+    WordCounter.parse_webpage input
+  else
+    WordCounter.parse input
+  end
 end
 
-if marks_count != 0; 
-	puts "marks,#{marks_count}" 
+def print_result(result, format)
+  if format=="csv" or format == ""
+	puts result.to_csv
+  end
+  if format=="json"
+	puts result.to_json
+  end
+  if format=="xml" 
+	puts result.to_xml
+  end
 end
+
+input = ARGV[0]
+format = ARGV[1]
+result = get_result(input)

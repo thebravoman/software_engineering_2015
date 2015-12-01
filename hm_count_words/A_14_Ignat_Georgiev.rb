@@ -1,21 +1,33 @@
-file = File.open(ARGV[0])#opens the file
-content = String.new #declaring "content"- string
-marks=0#declaring the counter for the marks in the text
-count = Hash.new(0)#creates new Hash for counting words
-content = file.read#reading the file into the string
-content=content.downcase#downcasing all the words
-content=content.split(" ")#spliting the string into words
-content.each do |word|#counting the words 
-	marks += word.count(". , ! ? : ; -  _ ' \"[ ] ( ) „ “ * / \ ")#counting the marks in every word
-	word =word.gsub(/[,()'"„“.*!?:;]/, '')
-	count[word] += 1
+require 'csv'
+require 'json'
+require 'rexml/document'
+require './A_14_Ignat_Georgiev/word_counter.rb'
+require_relative './A_14_Ignat_Georgiev/word_counter/result'
+command = ARGV[1]
+filename = ARGV[0]
+def file_site(filename)
+  protocol = filename.split('/').first
+  return protocol == 'http:' || protocol == "https:"
 end
-count = count.sort_by{|word,num| word.downcase}#sorting alphabetically
-count = count.sort_by {|word,num| [-num,word]}#sorting by the counter
-count.each do|word, num|
-	
-	puts word+','+num.to_s
+def result(filename,command)
+  if File.file? filename
+    result = WordCounter.parse_file filename
+  elsif file_site filename
+    result = WordCounter.parse_webpage filename
+  else
+    result = Parser.parse filename
+  end
 end
-if marks!=0
-	puts '"marks"'+','+marks.to_s
-	end
+if command == "json"
+ puts result(filename,command).to_json
+ result(filename,command).to_svg
+elsif command == "xml"
+ puts result(filename,command).to_xml
+ result(filename,command).to_svg
+elsif command =="svg"
+ result(filename,command).to_svg
+else
+  result(filename,command).to_csv
+ result(filename,command).to_svg
+end
+

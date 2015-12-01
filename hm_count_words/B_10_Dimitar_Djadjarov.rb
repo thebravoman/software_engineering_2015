@@ -1,21 +1,11 @@
-fail = ARGV.first
-h = Hash.new
-f = File.open(file, "r")
-zapetaq = 0
-f.each_line do |line|
-  marks_sum += line.count("!?:;#@%$^&<>_„“*-+/-].\)([,`~'\"")
-  duma = line.split
-  duma.each do |w|
-    if h.has_key?(w)
-      h[w] = h[w] + 1
-    else
-      h[w] = 1
-    end
-  end
-end
-h.sort{|a,b| b[1]<=>a[1]}.each { |element|
-  puts "#{element[0]},#{element[1]}"
-}
-if zapetaq!=0
-	puts "\"marks\",#{zapetaq}"
+require './B_10_Dimitar_Djadjarov/word_counter.rb'
+file_path = ARGV[0]
+word_Count = Word_Count.new
+result = word_Count.parse_file(file_path)
+if ARGV[1] == 'xml'
+  puts result.to_xml
+elsif ARGV[1] == 'json'
+  puts result.to_json
+else
+  puts result.to_csv
 end

@@ -1,26 +1,23 @@
-file_path = ARGV[0]
-f = File.open(file_path, "r")
-h = Hash.new(0)
+require 'json'
+require 'rexml/document'
+require './A_22_Pavel_Kostadinov/result'
+require './A_22_Pavel_Kostadinov/words_count'
 
-marks_sum = 0
+xml_json = ARGV[1]
 
-f.each_line do |line|
-	marks_sum += line.count("-].\)([,!?:;%@#$^&<_>`~'\"„“*-+/")
-	w = line.downcase.gsub(/[^a-z'\n- ]/, ' ').split(" ")
+
+
+word_counter = WordCounter.new
+result = word_counter.parse_file ARGV[0]
+ 
+if xml_json == 'json'
+  puts result.to_json
+
+
+elsif xml_json == 'xml'
+  puts result.to_xml
+
+else
+  puts result.to_csv
+end
 	
-	w.each do |words|
-		
-		h[words] += 1
-	end	
-end
-
-
-h = h.sort_by{|words,number| words.downcase}
-h = h.sort_by{|words,number| [-number,words]}
-
-h.each do |words, number|
-	puts "#{words},#{number}"
-end
-if marks_sum!=0
-	puts "\"marks\",#{marks_sum}"
-end

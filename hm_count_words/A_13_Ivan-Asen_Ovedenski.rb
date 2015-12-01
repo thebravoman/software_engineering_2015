@@ -1,21 +1,28 @@
-h = Hash.new 
-marks = 0
-file = File.open(ARGV[0], "r")
-file.each_line { |line|
-  marks += line.scan(/[,.!?:;"()\[\]]/).count 	
-  words = line.gsub(/[^a-z'^A-Z'\s-]/, '').split
-  words.each { |w|
-  	if h.has_key?(w) 
-  		h[w] = h[w] + 1 
-	else
-   		h[w] = 1 
-  	end	
-   	}
-  } 
-  h.sort{|a,b| a[1] <=> b[1]}.each { |word|
-  
-  puts "#{word[0]},#{word[1]}" 
-        }
-        if marks > 0 
-  			puts "\"marks\", #{marks}"
-  		end
+require 'word_counter' 
+def site? url
+	url.start_with?("http://") || url.start_with?("https://") 
+end 
+
+def get_result input 
+	if site? input 
+		WordCounter.parse_webpage input 
+	else 
+		WordCounter.parse_file input 
+	end 
+end 
+
+def print_result result, format 
+	if format == 'json'
+		result.to_json 
+	elsif format == 'xml' 
+		result.to_xml 
+	elsif format == 'svg'
+		result.to_svg
+	else 
+		result.to_csv 
+	end 
+end 
+parsed_input = ARGV[0]
+format = ARGV[1] 
+result = get_result parsed_input 
+print_result result, format

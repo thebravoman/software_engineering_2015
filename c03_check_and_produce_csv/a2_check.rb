@@ -27,20 +27,21 @@ script_output = ARGV[2]
 
 CSV.open("result.csv", "w") do |csv_array|
 	previous_number = 0
-	Dir.glob(ARGV[0]+"*").each do |filename|
-			name = get_names filename
-			if valid_names? name 
-				last_name = remove_file_ext name[3]
-				first_name = name[2]
-				number = name[1]
-				clazz = name[0]
-				if !student_checked? checked_files,first_name,last_name
-					p "#{clazz},#{number},#{first_name},#{last_name}"
-					result= `ruby #{filename} #{script_input}`
-					solved = solved? script_output, result
-					csv_array << [clazz,number,first_name,last_name,solved]
-					checked_files << [first_name, last_name]
-				end
+	files = Dir.glob(ARGV[0] + '*').select { |f| File.file? f }
+	files.each do |filename|
+		name = get_names filename
+		if valid_names? name 
+			last_name = remove_file_ext name[3]
+			first_name = name[2]
+			number = name[1]
+			clazz = name[0]
+			if !student_checked? checked_files,first_name,last_name
+				p "#{clazz},#{number},#{first_name},#{last_name}"
+				result= `ruby #{filename} #{script_input}`
+				solved = solved? script_output, result
+				csv_array << [clazz,number,first_name,last_name,solved]
+				checked_files << [first_name, last_name]
+			end
 		end
 	end
 end

@@ -1,28 +1,25 @@
-file = File.open(ARGV[0], "r")
+require './B_28_Toma_Marinov/word_counter/result'
 
-hash = Hash.new()
-count = 0.to_i
+file_name = ARGV[0]
+format = ARGV[1]
 
-file.each_line {|line|
-	#count += line.downcase.scan(/[.!?,:';"%()]/).size
-	count += line.scan(/[[:punct:]]/).count
-	words = line.downcase.scan(/\w+/)
-	words.each {|word|
-		if hash.has_key?(word)
-			hash[word] += 1
-		else
-			hash[word] = 1
-		end
-	}
-}
-new_hash = Hash.new
-
-new_hash = hash.sort_by {|key, value| [-value, key]}
-
-new_hash.each do |key, value|
-	puts "#{key},#{value}"
+if file_name.match(%r{\Ahttps?://.+})
+	result = WordCounter::parse_web(file_name)
+else
+	result = WordCounter::parse_file(file_name)
+	#result = word_counter.parse_file file_name
 end
 
-if count != 0
-	puts "\"marks\",#{count}"
+case format
+when 'json'
+	result.to_json
+	#result.to_svg ???
+when 'xml'
+	result.to_xml
+	#result.to_svg ???
+when 'svg'
+	result.to_svg
+else
+	result.to_csv
+	#result.to_svg ???
 end

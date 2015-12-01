@@ -1,29 +1,15 @@
-text = ARGV[0]
+require 'json'
+require 'rexml/document'
+require './A_02_Andrea_Georgieva/word_counter'
+require './A_02_Andrea_Georgieva/result'
 
-marks = 0
-hash_n = Hash.new
-file_o = File.open(text, "r")
+word_counter = WordCounter.new
+res = word_counter.parse_file ARGV[0]
 
-file_o.each_line { |line|
-  dumi = line.downcase.split
-	
-  dumi.each { |c|
-  	marks += c.scan(",.;:!?(){}").hash_n
-  	c = c.gsub(/[ ,.;:!?(){}]/, '')
-  	if hash_n.has_key?(c)
-	    hash_n[c] += 1
-	  else
-	  	hash_n[c] = 1
-	  end
-  }
-  
-}
-
-hash_n = hash_n.sort_by { |x, y| [-y, x] }
-
-hash_n.each do |x, y|
-	puts "#{x},#{y}"
-end
-if prep_znachi > 0
-  puts "\"marks\",#{marks}"
+if ARGV[1] == "csv"
+ result.to_csv
+elsif ARGV[1] == "json"
+ result.to_json
+elsif ARGV[1] == "xml"
+ result.to_xml
 end

@@ -1,22 +1,31 @@
-file = File.open(ARGV.first, "r")
+require 'word_counter'
 
-contents = ""
-contents = file.read.downcase
-marks = contents.gsub(/[a-z\s]/, "");
-words = contents.gsub(/[^a-z'\s-]/, "").split
-
-hash = Hash.new(0)
-
-words.each do |word|
-	hash[word] += 1
+def site? str
+	str.start_with?("http://") || str.start_with?("https://")
 end
 
-hash = hash.sort_by{|word, count| [-count, word]}
-
-hash.each do |word, count|
-	puts word + "," + count.to_s
+def get_result input
+	if site? input
+		WordCounter.parse_webpage input
+	else
+		WordCounter.parse_file input
+	end
 end
 
-if marks.length > 0
-	puts '"marks",' + marks.length.to_s
+def print_result result, format
+	if format == 'json'
+		puts result.to_json
+	elsif format == 'xml'
+		puts result.to_xml
+	elsif format == 'svg'
+		result.to_svg
+	else
+		puts result.to_csv
+	end
 end
+
+parseInput = ARGV[0]
+format = ARGV[1]
+result = get_result parseInput
+
+print_result result, format

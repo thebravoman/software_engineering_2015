@@ -1,33 +1,24 @@
-str = {}
-marks = 0
+require_relative 'B_20_Martin_Stanchev/word_counter.rb'
 
-file = File.open(ARGV[0], "r")
+input = ARGV[0]
+output_format = ARGV[1]
 
-file.each_line do |line|
-  contents = line.downcase.split(/\s([^\,\.\'\"\?\!\-\_\;\:\/\s]*)/)
-  contents.each do |index|
-    marks += index.count(". ? ! : ; - _ ( ) [ ] ' , \" * ^ \ / " ,)
-    index = index.gsub(/[,.()"?!';:-_^]/, "")
- 
-    if str[index] 
-      str[index] += 1
-    else
-      str[index] = 1
-    end
-    
-  end
+input_format = input.split('/').first 
+
+if input_format == 'http:' || input_format == 'https:'
+  out = WordCounter.parse_webpage(input)
+else
+  out = WordCounter.parse_file(input)
 end
 
-str = str.sort_by{|index,key| index}
-str = str.sort_by {|index,key| [-key,index]}
+if output_format == 'json'
+  out.json_format
+  
+elsif output_format == 'xml'
+  out.xml_format
 
-str.each do|index, key|	
-  if(index != "")
-    puts "#{index},#{key.to_s}"
-  end
-
+else out.csv_format
+  
+WordCounter::SVGGenerator::create_graph(out.str)
 end
 
-if marks != 0
-  puts "\"marks\","+"#{marks}"
-end

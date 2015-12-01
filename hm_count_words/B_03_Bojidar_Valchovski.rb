@@ -1,27 +1,26 @@
 #!/usr/bin/ruby
+require './B_03_Bojidar_Valchovski/word_counter'
 
 path = ARGV[0]
-words = {} 
-marks = {}
-file = File.open(path, "r")
+format = ARGV[1]
 
-wordslist = file.read.downcase
-marks = wordslist.count("()-=_+*.,?!/|:;><&%$#@!`~")
-wordslist = wordslist.split(" ")	
-wordslist.each do |word|
-  word = word.gsub(/[,()'".=-_*&^%$#@!`~+;:<>]/,'')
-  if words[word]
-    words[word] += 1
-  else
-	words[word] = 1
-  end
+is_url = path.start_with?("http://") || path.start_with?("https://")
+
+if is_url
+  result = WordCounter::parse_web path
+else
+  result = WordCounter::parse_file path
 end
 
-words = words.sort_by{|word,occ| word.downcase}	
-words = words.sort_by{|word,occ| [-occ,word]}	 
-
-words.each do |word,occ|	
-  puts word + ',' + occ.to_s
+if format == "xml" 
+  puts result.to_xml
+  result.to_svg
+elsif format == "json"
+  puts result.to_json
+  result.to_svg
+elsif format == "svg"
+  result.to_svg
+else
+  puts result.to_csv
+  result.to_svg 
 end
-
-puts "\"marks\",#{marks}" 	

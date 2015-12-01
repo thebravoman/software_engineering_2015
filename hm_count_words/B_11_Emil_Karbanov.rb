@@ -1,23 +1,18 @@
-the_file = ARGV.first
-h = Hash.new
-f = File.open(the_file, "r")
-comma = 0
-
-f.each_line do |line|
-  marks_sum += line.count("-].\)([,!?:;#@%$^&<>_`~'\"„“*-+/")
-  words = line.split
-  words.each do |w|
-    if h.has_key?(w)
-      h[w] = h[w] + 1
-    else
-      h[w] = 1
-    end
-  end
-end
-
-h.sort{|a,b| b[1]<=>a[1]}.each { |elem|
-  puts "#{elem[0]},#{elem[1]}"
-}
-if comma!=0
-	puts "\"marks\",#{comma}"
+require 'csv'
+require 'json'
+require 'rexml/document'
+require './B_11_Emil_Karbanov/Result'
+require './B_11_Emil_Karbanov/WordCounter'
+filename = ARGV[0]
+option = ARGV[1]
+word_counter = WordCounter.new
+result = word_counter.parse_file ARGV[0]
+if option == "csv"
+	result.to_csv
+elsif option == "json"
+	puts result.to_json
+elsif option == "xml"
+	puts result.to_xml
+else
+ 	result.to_csv
 end

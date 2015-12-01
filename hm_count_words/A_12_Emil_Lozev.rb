@@ -1,28 +1,34 @@
-filename = ARGV.first
+require_relative './A_12_Emil_Lozev/word_counter'
 
-res = open(filename).read.split(' ')
-
-marks_sum = 0
-
-res.each do |word|
-	marks_sum += word.count(". , ! ? :  ; = + -  _ ' \"[ ] ( ) { } „ “ * / \ ")
+def fileOrSite(filename)
+	first = filename.split('/').first
+	return first == 'http:' || first == 'https:'
 end
 
-res.map!{|item| item.gsub(/\p{^Alnum}/, '') }
-res.map!(&:downcase)
+def printRes(filename,option)
+  if File.file? filename
+    result = WordCounter.parse_file filename
+  elsif fileOrSite filename
+    result = WordCounter.parse_webpage filename
+  else
+    result = Parser.parse filename
+  end
 
-res.delete("")
+  if option == 'csv'
+	result.to_csv
+  elsif option == 'json'
+    puts result.to_json
+  elsif option == 'xml'
+  require 'builder'
+    puts result.to_xml
+  elsif option == 'svg'
+  	result.to_svg
+  else
+    puts result.to_csv
+  end
+  
+end 
 
-histogram = Hash.new(0)
-
-res.each do |word|
-	histogram[word] += 1
-end
-
-histogram = histogram.sort_by{|word, i| [-i, word]}
-
-histogram.each do |word, i|
-	puts "#{word},#{i}"
-end
-
-puts "\"marks\",#{marks_sum}" if marks_sum != 0
+filename = ARGV[0]
+option = ARGV[1]
+printRes(filename,option)

@@ -1,23 +1,26 @@
-file = File.open(ARGV[0], "r")
+require './B_6_Valentin_Stoyanov/word_counter'
+require 'uri'
 
-text = String.new
-number = Hash.new(0)
-marks = 0
+@input = ARGV[0]
+@format = ARGV[1]
 
-text = file.read
-marks = text.scan(/[,.!?()":\[\];]/).count
-text = text.downcase.split
-
-text.each do |word|
-	word = word.gsub(/[,.!?()":\[\];]/,'')
-	number[word] += 1 
+if File.file? @input
+	result = WordCounter::file_parse(@input)
+elsif @input =~ /\A#{URI::regexp}\z/
+	result = WordCounter::web_parse(@input)
 end
 
-number = number.sort_by {|word,num| [-num,word] }
 
-number.each do|word, num| 
-	puts word+','+num.to_s
+
+case @format
+when "json"
+	File.open('result.json', 'w') {|json| json << result.to_json}
+	puts result.to_json
+when "xml"
+	result.to_xml
+else 
+	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
+	puts result.to_csv
 end
-if not marks == 0
-  puts "\"marks\","+"#{marks}"
-end
+
+result.svg

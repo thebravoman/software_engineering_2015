@@ -1,34 +1,46 @@
-filename = ARGV[0].to_s
-script = String.new
-f = File.open(filename, "r") 
-freqs = Hash.new(0)
-i = 0
-looking_for = [',', '.', '!', '?']
+require_relative './A_15_Kalin_Karev/word_counter'
 
-f.each_line do |text|
-	looking_for.each do |symbol|
-		i = i + text.count(symbol).to_i
-	end
-	
-	words = text.split
+file_name = ARGV[0].to_s
+format_print = ARGV[1].to_s
+format = "string"
 
-	words.each do |val|
-		if not(val.gsub!(/\W+/, '') == nil)
-			val.gsub!(/\W+/, '')
-		end
-	
-		val = val.downcase
-		if not val == ""
-			freqs[val]+=1
-		end
-	end
+def ifSite(filename)
+	f = filename.split('/').first
+	return f == 'http:' || f == 'https:'
 end
 
-freqs = freqs.sort_by{|word,num| word}
-freqs = freqs.sort_by {|word,num| [-num,word]}
+if File.file? file_name
+	format = "file"
+end
 
-freqs.each {|word, freq| puts word+','+freq.to_s}
+if ifSite file_name 
+	format = "url"
+end
 
-if not i == 0
-	puts "\"marks\",#{i}"
+if format == "file" 
+	answer = WordCounter.parse_file file_name
+end
+
+if format == "url"
+	answer = WordCounter.parse_webpage file_name 
+end
+
+if format == "string"
+	answer = WordCounter.parse file_name
+end
+
+if format_print == "csv" || format == ""
+	puts answer.to_csv
+end
+
+if format_print == "json"
+	puts answer.to_json
+end
+
+if format_print == "xml"
+	puts answer.to_xml
+end
+
+if format_print == "svg"
+	puts anwer.to_svg
 end

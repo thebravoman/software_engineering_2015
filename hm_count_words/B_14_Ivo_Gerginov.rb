@@ -1,34 +1,30 @@
+require './B_14_Ivo_Gerginov/word_counter'
+
 f_path = ARGV[0]
-w_count = Hash.new(0)
-puncts = Array.new(40)
+op = ARGV[1]
 
-
-marks = 0
-f = File.new(f_path, "r")
-while (line = f.gets)
-  line.split(""). each do |l|
-    "!\"\#$%&'()*+,-./:;<=>?@[\\]^_`{|}~#".split("").each do |c|
-      if (c == l)
-      	marks += 1
-      end
-    end
-  end
-  
-  line = line.gsub!(/[!.?,;*<>=@~+-]/, "")
-  line = line.downcase
-  words = line.split(/\W+/)
-  
-  words.each{ |x|	
-    if w_count.has_key?("#{x}")
-      w_count["#{x}"] += 1
-    else
-      w_count["#{x}"] = 1
-      
-    end
-  }
+if f_path.start_with?("http://", "https://") == true
+  res = WordCounter::parseURL f_path
+else res = WordCounter::parseFile f_path 
 end
 
-w_count.sort{|a,b| a[0]<=>b[0]}.each{ |e|
-  puts "#{e[0]},#{e[1]}"
-}
-puts "\"marks\",#{marks}"
+if op == 'json'
+  res.toJSON
+  File.open('result.json', 'r').each_line do |line|
+  	puts line
+  end
+
+elsif op == 'xml'
+  res.toXML
+  File.open('result.xml', 'r').each_line do |line|
+  	puts line
+  end
+
+else res.toCSV
+  File.open('result.csv', 'r').each_line do |line|
+  	puts line
+  end
+
+end
+
+res.toSVG

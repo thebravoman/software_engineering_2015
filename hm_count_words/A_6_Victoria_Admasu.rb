@@ -1,29 +1,27 @@
-file = ARGV[0]
+require 'json'
+require 'rexml/document'
+require './A_6_Victoria_Admasu/word_counter.rb'
+require './A_6_Victoria_Admasu/word_counter/result.rb'
 
-marks = 0
-count = Hash.new
-text = File.open(file, "r")
+name = ARGV[0]
+type = ARGV[1]
+$marks = 0
+$count = Hash.new
 
-text.each_line { |line|
-  words = line.downcase.split
+p1 = name.split('/').first
 
-  words.each { |word|
-    marks += word.count("-_,.;:!?(){}")
-    word = word.gsub(/[-_,.;:!?(){}]/, '')
-    if count.has_key?(word)
-      count[word] += 1
-    else
-      count[word] = 1
-    end
-  }
-}
+if p1 == 'http:' || p1 == 'https:'
+  result = WordCounter.parse_web(name)
+else 
+  result = WordCounter.parse_file(name)
+end
 
-count = count.sort_by {|x, y| [-y, x]}
-
-count.each { |x, y|
-  puts "#{x},#{y}"
-}
-
-if marks > 0
-  puts "\"marks\",#{marks}"
+if type == 'json'
+  result.to_json
+elsif type == 'csv' or type == nil
+  result.to_csv
+elsif type == 'xml'
+  result.to_xml
+elsif type == 'svg'
+  result.to_svg
 end
