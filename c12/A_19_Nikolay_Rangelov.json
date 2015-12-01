@@ -4,18 +4,13 @@
 		"name":"TUES",
 		"class":
 		[{
-			"11A":
-			[{
-				student":"Valentin"
-				"student":"Sasho"
-				"student":"Petko"
-			}]
-			"11B":
-			[{
-				"student":"Ivo"
-				"student":"Aleksander"
-				"student":"Petar"
-			}]
+			"name":"11A",
+			"students":
+			[
+				{"name":"Valentin", "lname":"Ionev"}
+				{"name":"Petko", "lname":"Georgiev"}
+				{"name":"Sahso", "lname":"Velinov"}
+			]
 			
 		}]
 	}
