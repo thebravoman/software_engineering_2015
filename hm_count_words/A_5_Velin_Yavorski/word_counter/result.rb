@@ -1,5 +1,5 @@
 require 'csv'
-#require 'json'
+require 'json'
 require 'rexml/document'
 
 module WordCounter
