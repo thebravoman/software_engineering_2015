@@ -46,6 +46,25 @@ module WordCounter
 	  		final_xml.write(product, 1)
 	  		product	
 		end
+		
+		def to_svg
+			y=0
+			w=0
+			h=@answer.length * 20
+			key, value=@answer.first
+			puts'<figure>'
+			puts'<svg version="1.1 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" w="600" h="'+h.to_s+'" aria-labelledby="title" role="img">'
+			@answer.each do |word, j|
+				w = (500*j.to_i)/value.to_i
+				puts '<g class="bar">'
+					puts'<rect w="'+w.to_s+'" h="19" y="'+y.to_s+'"></rect>'
+				puts '<text x="'+(w+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+i.to_s+' '+word+'</text>'
+				puts '</g>'
+				y = y + 20
+			end
+			puts '</svg>'
+			puts '</figure>'
+		end
 
 	end
 end

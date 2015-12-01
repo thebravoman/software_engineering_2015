@@ -13,6 +13,8 @@ if ARGV[1] == 'json'
   result.to_json
 elsif ARGV[1] == 'xml'
   result.to_xml
+elsif ARGV[1] == 'svg'
+	result.to_svg
 else
   result.to_csv
 end

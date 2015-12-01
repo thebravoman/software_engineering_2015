@@ -11,7 +11,6 @@ else
   out = WordCounter.parse_file(input)
 end
 
-
 if output_format == 'json'
   out.json_format
   
@@ -19,5 +18,7 @@ elsif output_format == 'xml'
   out.xml_format
 
 else out.csv_format
+  
+WordCounter::SVGGenerator::create_graph(out.str)
 end
 

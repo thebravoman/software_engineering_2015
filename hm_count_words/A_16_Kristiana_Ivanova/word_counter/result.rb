@@ -1,3 +1,8 @@
+#require 'json'
+#require 'rexml/document'
+#require_relative ''
+
+#module WordCounter
 class Result
   attr_accessor :marks_count
   attr_accessor :word_counts
@@ -39,4 +44,29 @@ class Result
     json_output = { "marks" => marks_count, "items" => word_counts}
     puts JSON.pretty_generate(json_output)
   end
-end
+
+  def graph(size, x)
+    
+    y = 90
+      string = '<rect width="50" height="' + (size * 10).to_s + '" x = "' + x.to_s + '" y = "' + y.to_s+ '" style="fill:pink;stroke-width:3;stroke:rgb(0,0,0)"/>'
+      return string
+    end
+    
+  def to_svg  
+  
+    File.open("A_16_Kristiana_Ivanova_result.svg","w") do |f|
+      f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+      x = 10
+      @word_counts.each do |word,i|
+        f.write(graph(i, x))
+        f.write('<text x = "'+(x+2).to_s+'" y = "200" fill = "black">'+ word +'</text>')
+        x+= 60
+      end
+      f.write('</svg>')
+    end
+  
+  end
+
+end  
+
+

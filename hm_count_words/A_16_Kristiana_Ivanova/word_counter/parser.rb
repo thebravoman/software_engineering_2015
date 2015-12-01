@@ -1,13 +1,13 @@
-require 'word_counter/result'
+begin
+require_relative 'result.rb'
 
 module WordCounter
-  # counts words in text
   class Parser
-    def self.count_marks(string)
+    def count_marks(string)
       string.downcase.scan(/[^a-z0-9_ \n]/).count
     end
 
-    def self.count_words(words)
+    def count_words(words)
       res = Hash.new 0
 
       words.each do |word|
@@ -17,20 +17,17 @@ module WordCounter
       res
     end
 
-    def self.sort_counted_words(result_hash)
-      result_hash.sort_by { |word, count| [-count, word] }
+    def sort_counted_words(result_hash)
+      result_hash.sort_by { |word, count| [-count, word] }.to_h
     end
 
-    def self.split_words(string)
-      # the regex on the next line removes commented text, strings, regex
-      # and any other symbol that isn't a word
+    def split_words(string)
       removal_regex = /[^a-z0-9_ ]/
       string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
     end
 
-    def self.parse(string)
+    def parse(string)
       result = Result.new
-      # the regex on the next line select all marks
       result.marks_count = count_marks string
       words = split_words string
       result.word_counts = count_words words

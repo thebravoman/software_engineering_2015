@@ -17,7 +17,7 @@ module WordCounter
     end
 
     def sort_counted_words(result_hash)
-      result_hash.sort_by { |word, count| [-count, word] }
+      result_hash.sort_by { |word, count| [-count, word] }.to_h
     end
 
     def split_words(string)

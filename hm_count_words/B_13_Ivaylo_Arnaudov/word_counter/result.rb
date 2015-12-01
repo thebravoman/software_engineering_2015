@@ -66,8 +66,7 @@ module WordCounter
       y = 0
       h = MAX_BAR_HEIGHT
 
-      # TODO: refactor this to use interpolation instead of lame concatenation
-      File.open("result.svg", "w") do |file|
+      File.open("B_13_Ivaylo_Arnaudov.svg", "w") do |file|
         file.puts "<?xml version='1.0'?>"
         file.puts "<svg width='" + (word_counts.length * MAX_BAR_WIDTH).to_s +
           "' height='" + (MAX_BAR_HEIGHT + 50).to_s +
