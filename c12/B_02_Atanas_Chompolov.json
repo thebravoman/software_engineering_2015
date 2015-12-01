@@ -3,10 +3,10 @@
 		"ELSYS": {
 			"Classes": {
 				"11 A": {
-					"students": ["Cica", "Nedkov", "Pavlinarii"]
+					"Students": ["Cica", "Nedkov", "Pavlinarii"]
 				},
 				"11 B": {
-					"students": ["Bobi", "Marto", "Nasko"]
+					"Students": ["Bobi", "Marto", "Lucho"]
 				}
 	  		}
 		}
