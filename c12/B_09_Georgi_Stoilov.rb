@@ -9,7 +9,7 @@ output.each {|k,v| puts "#{k}"}
 =end
 require 'json'
 
-json_string = File.read('json.json')
+json_string = File.read('B_09_Georgi_Stoilov.json')
 json_object = JSON.parse(json_string)
 
 def print_hashmap(json_object, offset)
