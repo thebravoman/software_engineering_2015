@@ -1,16 +1,8 @@
 {
 	"ELSYS": {
 		"Classes": {
-			"11B": {
-				"Darth"
-				"Velioo"
-				"IDK"
-			},
-			"11A": {
-				"Teodor"
-				"Kalin"
-				"Svetlin"
-			}
+			"11A": ["Teodor","Kalin","Svetlin"],
+			"11B": ["DoNotKnow", "Borcheto", "Ivo"]
 		}
 	}
 }
