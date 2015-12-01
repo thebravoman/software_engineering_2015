@@ -1,16 +1,24 @@
 {
-	"school": {
-		"name": "TUES",
-		"classes": [
+	"school": "TUES",
+	"classes":
+		[
 			{
 				"class_name": "11A",
-				"student1": "Metodi Ilchev",
-				"student2": "Kalin Karev",
-				"student3": "Velin Yavorski"
+				"students":
+					{
+						"student1": "Metodi Ilchev",
+						"student2": "Kalin Karev",
+						"student3": "Velin Yavorski"
+					}
 			},
 			{
-				"class_name": "11B"
+				"class_name": "11B",
+				"students":
+					{
+						"student1": "ASDjs jdkasdj",
+						"student2": "daskjd dslsdk",
+						"student3": "dajskds jshd"
+					}
 			}
 		]
-	}
 }
