@@ -1,0 +1,16 @@
+{
+    "school":{
+        "TUES": {
+            "class": {
+                "11A": {
+                    "Svetlin"
+                    "Kalin"
+                    "Velin"
+                },
+                "11B": {
+                    "I have no idea what i'm doing!"
+                }
+            }
+        }
+    }
+}
