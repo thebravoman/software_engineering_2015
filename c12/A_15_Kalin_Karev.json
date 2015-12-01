@@ -1,8 +1,14 @@
 {
-	"TUES": {
-		"Classes": {
-			"11A": ["Kalin","Sletlin","Velin"],
-			"11B": ["Kalin","Sletlin","Velin"]
+	"ELSYS": {
+		"11A": [
+				"Kalin",
+				"Sletlin",
+				"Velin"
+		],
+		"11B": [
+				"Kalin",
+				"Sletlin",
+				"Velin"
+		]
 		}
-	}
 }
