@@ -1,0 +1,23 @@
+{
+  "school": {
+    "name": "TUES",
+    "classes": [
+      {
+        "name" : "Software Engineering",
+        "students": [
+          {
+            "name": "Ivo Gerginov"
+          },
+          {
+            "name": "Yordan Yankulov"
+          },
+          {
+            "name": "Georgi Stoilov"
+          }
+        ]
+      }
+    ]
+  }
+
+}
+
