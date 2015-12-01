@@ -1,0 +1,15 @@
+{
+	"school": {
+		"name": "ELSYS",
+		"classes": {
+			"11A":{
+				"students":{
+					"student1": "Svetlin Yordanov",
+					"student2": "Kalin Karev",
+					"student3": "Velin Yavorski",
+					"student4": "Metodi Ilchev"
+				}
+			}
+		}
+	}
+}
