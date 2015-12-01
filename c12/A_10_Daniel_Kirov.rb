@@ -4,14 +4,14 @@ require 'rubygems'
 json_file = File.read("A_10_Daniel_Kirov.json")
 json_parse = JSON.parse(json_file)
 
-json_parse.each do|key|
-  puts key[0]
-  in_hash = key[1].to_json
-  hash1 = JSON.parse(in_hash)
-  hash1.each do |name1|
-  puts name1
+json_parse.each do |x, y_hash|
+  puts "#{x}"
+  y_hash.each do |y, name_hash|
+    p " #{y}" 
+    name_hash.each do |name, value|
+      puts "    #{name}"
+    end
+  end
 end
-end
-
 
 
