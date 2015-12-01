@@ -1,17 +1,21 @@
-require 'rubygems'
 require 'json'
 
-path = ARGV[0]
+json_string = File.read('B_26_Plamen_Neshkov.json')
+json_object = JSON.parse(json_string)
 
-json = ''
+def print_hashmap(json_object, offset)
+  json_object.each do |key, value|
+    puts ' '*offset + key
 
-file = File.open(path)
-  file.each_line do |line|
-  json += line
+    case value
+    when Hash
+      print_hashmap(value, offset + 2)
+    when Array
+      value.each do |v|
+        puts ' '*(offset + 2) + v
+      end
+    end
+  end
 end
 
-parsed = JSON.parse(json)
-
-parsed.each do |result|
-  p result
-end	
+print_hashmap(json_object, 0)
