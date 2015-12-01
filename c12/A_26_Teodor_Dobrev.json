@@ -1,13 +1,8 @@
 {
-    "TUES": {
-        "11A": {
-            "Svetlin"
-            "Kalin"
-            "Velin"
-            "Teodor"
-        },
-        "11B": {
-             "Borcheto"
-        }
-    }
+	"ELSYS": {
+		"Classes": {
+			"11A": ["Teodor","Velin","Kalin"],
+			"11B": ["DoNotKnow", "Borcheto", "Ivo"]
+		}
+	}
 }

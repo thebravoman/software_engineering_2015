@@ -1,16 +1,20 @@
 {
-	"school": "tues", 
-		"class" : { 
-			"11A" : [
-			 "name_1"  
-			 "name_2"
-			 "name_3"
-			],
-
-			"11B": [
-			 "name_4"  
-			 "name_5"
-			 "name_6"
-			 ]
-		}
+    "school": {
+        "name": "tues",
+        "classes": [{
+            "name": "11A",
+            "students": [
+                "name_1",
+                "name_2"
+                "name_3"
+            ]
+        }, {
+            "name": "11B",
+            "students": [
+                "name_4"
+                "name_5"
+                "name_6"
+            ]
+        }]
+    }
 }
