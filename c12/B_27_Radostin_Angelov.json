@@ -1,13 +1,13 @@
 {
-	"name" : "TUES"
+	"name" : "TUES",
 	"classes" : [
 		"A" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
+			{"name" : "pesho", "age" : 7, "status" : "failure"},
+			{"name" : "gosho", "age" : 4, "status" : "einstein"}
 		],
 		"B" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
+			{"name" : "pesho", "age" : 7, "status" : "failure"},
+			{"name" : "gosho", "age" : 4, "status" : "einstein"}
 		]	
 	]
 }
