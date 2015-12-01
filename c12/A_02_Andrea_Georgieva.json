@@ -1,21 +1,18 @@
 {
-	"school" : 
-		"TUES"[
-    		{
-    			"classes" :
-    				"11A"[
-    					{"firstName":"Victoria", "lastName":"Admasu"},
-   						{"firstName":"Ivan-Asen", "lastName":"Ovedenski"},
-    					{"firstName":"Petar", "lastName":"Petrov"}
-					]
+	"TUES":[
+    	{
+    			
+    		"11A":[
+    			{"firstName":"Victoria", "lastName":"Admasu"},
+   			{"firstName":"Ivan-Asen", "lastName":"Ovedenski"},
+    			{"firstName":"Petar", "lastName":"Petrov"}
+		],
 		
-					"11B"[
-    					{"firstName":"Asen", "lastName":"Popov"},
-   						{"firstName":"Vanessa", "lastName":"Stoinova"},
-    					{"firstName":"Boriana", "lastName":"Savova"}
-					]
-			}
+		"11B":[
+    			{"firstName":"Asen", "lastName":"Popov"},
+   			{"firstName":"Vanessa", "lastName":"Stoinova"},
+    			{"firstName":"Boriana", "lastName":"Savova"}
 		]
+	}
+	]
 }
-
-
