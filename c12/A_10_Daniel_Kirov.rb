@@ -7,7 +7,7 @@ json_parse = JSON.parse(json_file)
 json_parse.each do |x, y_hash|
   puts "#{x}"
   y_hash.each do |y, name_hash|
-    p " #{y}" 
+    puts " #{y}" 
     name_hash.each do |name, value|
       puts "    #{name}"
     end
