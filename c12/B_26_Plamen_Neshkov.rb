@@ -18,4 +18,35 @@ def print_hashmap(json_object, offset)
   end
 end
 
-print_hashmap(json_object, 0)
+def svg_text(x, y, string)
+  %Q|<text x="#{x}" y="#{y}" fill="red">
+  #{string}
+  </text>|
+end
+
+def svg_hashmap(json_object, x, y)
+  json_object.each do |key, value|
+    $svg << svg_text(x, y, key)
+
+    case value
+    when Hash
+      svg_hashmap(value, x, y + 50)
+    when Array
+      value.each do |v|
+        $svg << svg_text(x, y + 50, v)
+        x += v.length * 15
+      end
+    end
+  end
+end
+
+$svg = ""
+$svg << '<svg width="1000" height="1000"
+        xmlns="http://www.w3.org/2000/svg">'
+
+svg_hashmap(json_object, 50, 50)
+
+$svg << '</svg>'
+puts $svg
+
+File.open('result.svg', 'w') { |f| f.write($svg) }

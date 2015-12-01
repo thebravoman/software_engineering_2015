@@ -1,13 +1,19 @@
 {
-	"name" : "TUES"
+	"name" : "TUES",
 	"classes" : [
-		"A" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		],
-		"B" : [
-			"pesho" : {"age" : 7, "status" : "failure"},
-			"gosho" : {"age" : 4, "status" : "einstein"}
-		]	
+		{
+			"index" : "A",
+			"people" : [
+				{"name" : "pesho", "age" : 7, "status" : "failure"},
+				{"name" : "gosho", "age" : 4, "status" : "einstein"}
+			]
+		},
+		{
+			"index" : "B",
+			"people" : [
+				{"name" : "pesho", "age" : 7, "status" : "failure"},
+				{"name" : "gosho", "age" : 4, "status" : "einstein"}
+			]
+		}
 	]
 }
