@@ -24,6 +24,6 @@ File.open("result.svg","w") do |f|
 	f.write(gime_a_circle1 50,40,40)
 	f.write(gime_a_circle2 50,120,40)
 	f.write(gime_a_circle3 50,200,40)
-	f.write('<text x="30" y="320" font-weight="bold" fill="black">Borislav Mihaylov.text>')	
+	f.write('<text x="30" y="320" font-weight="bold" fill="black">Borislav Mihaylov</text>')	
 	f.write('</svg>')
 end
