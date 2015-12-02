@@ -1,8 +1,8 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
-require './A_14_Ignat_Georgiev/word_counter.rb'
-require_relative './A_14_Ignat_Georgiev/word_counter/result'
+require 'word_counter'
+
 command = ARGV[1]
 filename = ARGV[0]
 def file_site(filename)
