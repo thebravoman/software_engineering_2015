@@ -24,7 +24,11 @@ class SVGTreeGenerator
       '" fill="black">' + str.to_s + '</text>'
   end
 
-  def draw_rectangles(node = @tree.root)
+  def line(x1, y1, x2, y2)
+    '<line x1="' + x1.to_s + '" y1="' + y1.to_s + '" x2="' + x2.to_s + '" y2="' + y2.to_s + '" style="stroke:rgb(255,0,0);stroke-width:2" />'
+  end
+
+  def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
     same_depth_elements = tree.get_elements_with_depth node.depth
     node_index = 0
 
@@ -39,8 +43,12 @@ class SVGTreeGenerator
     @result += rect rect_x, rect_y, @RECT_WIDTH, @RECT_HEIGHT
     @result += text rect_x + 30, rect_y + 30, node.value
 
+    if(!ancestor_x.nil? && !ancestor_y.nil?)
+      @result += line rect_x + @RECT_WIDTH / 2, rect_y, ancestor_x + @RECT_WIDTH / 2, ancestor_y + @RECT_HEIGHT
+    end
+
     node.descendants.each do |desc|
-      draw_rectangles desc
+      draw rect_x, rect_y, desc
     end
   end
 
@@ -60,8 +68,7 @@ class SVGTreeGenerator
 
   def generate_from_json(json)
     @tree.generate_from_json(json)
-    draw_rectangles
-    draw_lines
+    draw
     @result
   end
 end
