@@ -1,18 +1,48 @@
 {
-	"TUES": [
-		{
-			"11A": [
-			{"Student": ["Georgi", "Stoilov"]},
-			{"Student": ["Tuma", "Marinov"]},
-			{"Student": ["Bore4", "Cankovic"]}
-			]
-		},
-		{
-			"11B": [
-			{"Student": ["Georgi", "Stoilov"]},
-			{"Student": ["Tuma", "Marinov"]},
-			{"Student": ["Bore4", "Cankovic"]}
-			]
-		}
-	]
+   "TUES": [
+      {
+         "11A": [
+            {
+               "Student": [
+                  "Georgi",
+                  "Stoilov"
+               ]
+            },
+            {
+               "Student": [
+                  "Tuma",
+                  "Marinov"
+               ]
+            },
+            {
+               "Student": [
+                  "Bore4",
+                  "Cankovic"
+               ]
+            }
+         ]
+      },
+      {
+         "11B": [
+            {
+               "Student": [
+                  "Georgi",
+                  "Stoilov"
+               ]
+            },
+            {
+               "Student": [
+                  "Tuma",
+                  "Marinov"
+               ]
+            },
+            {
+               "Student": [
+                  "Bore4",
+                  "Cankovic"
+               ]
+            }
+         ]
+      }
+   ]
 }
