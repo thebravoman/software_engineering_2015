@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School name = "ELSYS">
+		<Class name = "11a">
+			<Student>
+				<name>Random Person</name>
+				<number>256</number>
+			</Student>
+			<Student>
+				<name>another random person</name>
+				<number>512</number>
+			</Student>
+		</Class>
+		<Class name = "11b">
+			<Student>
+				<name>Toma Marinov</name>
+				<number>28</number>
+			</Student>
+			<Student>
+				<name>rand</name>
+				<number>0</number>
+			</Student>
+		</Class>
+</School>
