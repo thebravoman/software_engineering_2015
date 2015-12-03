@@ -1,20 +1,5 @@
 require 'json'
-
-class SVGTreeGenerator
-
-  def initialize
-    @STARTING_X = 200
-    @STARTING_Y = 100
-    @RECT_WIDTH = 100
-    @RECT_HEIGHT = 50
-
-    @result = ''
-  end
-
-  def generate_from_json(json)
-    
-  end
-end
+require_relative 'A_21_Nikolay_Danailov/svg_tree_generator.rb'
 
 def rect(x, y, w, h)
   '<rect x="' + x.to_s + \
@@ -30,13 +15,11 @@ def text(x, y, str)
     '" fill="black">' + str.to_s + '</text>'
 end
 
+RESULT_FILE = "A_21_Nikolay_Danailov.svg"
+
 json_file = ARGV[0]
 file = File.read json_file
 json = JSON.parse file
-result_file_name = "A_21_Nikolay_Danailov.svg"
-
-File.open(result_file_name, 'w') do |f|
-  f << '<svg xmlns="http://www.w3.org/2000/svg">'
-  f << SVGTreeGenerator.new.generate_from_json(json)
-  f << '</svg>'
-end
+tree_generator = SVGTreeGenerator.new
+tree_generator.generate_from_json json
+tree_generator.draw
