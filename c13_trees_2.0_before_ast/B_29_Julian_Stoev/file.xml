@@ -1,4 +1,4 @@
-<schools>
+<schools foo="bar">
 	<school name="TUES">
 		<class name="11A">
 			<student>Pesho</student>
