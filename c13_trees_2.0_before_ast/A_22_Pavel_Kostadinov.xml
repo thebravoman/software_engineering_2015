@@ -1,0 +1,20 @@
+<schools>
+    <school name="ELSYS">
+        <class name="11A">
+            <students>
+		<name>Georgi</name>
+		<number>7</name>
+                <name>Daniel</name>
+                <number>10</number>
+            </students>
+        </class>
+        <class name="11B">
+            <students>
+                <name>Nasko</name>
+		<number>2</name>
+                <name>Borislav</name>
+                <number>3</number>
+            </students>
+        </class>
+    </school>
+</schools>
