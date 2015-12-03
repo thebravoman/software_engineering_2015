@@ -13,13 +13,13 @@ end
 case format
 when 'json'
 	result.to_json
-	#result.to_svg ???
+	result.to_svg
 when 'xml'
 	result.to_xml
-	#result.to_svg ???
+	result.to_svg
 when 'svg'
 	result.to_svg
 else
 	result.to_csv
-	#result.to_svg ???
+	result.to_svg
 end
