@@ -8,6 +8,7 @@ class SVGTreeGenerator
   @CIRCLE_RADIUS
   @RECT_WIDTH
   @RECT_HEIGHT
+  @Y_BETWEEN_ELEMENTS
 
   @result
 
@@ -43,7 +44,7 @@ class SVGTreeGenerator
 
     alotted_space = @SCREEN_WIDTH / (same_depth_elements.size + 1)
     element_x = alotted_space * (node_index + 1)
-    element_y = @STARTING_Y * (node.depth + 1)
+    element_y = @STARTING_Y + @Y_BETWEEN_ELEMENTS * node.depth
 
     if(node.leaf?)
       if(!ancestor_x.nil? && !ancestor_y.nil?)
@@ -74,10 +75,11 @@ class SVGTreeGenerator
     @result = ''
 
     @SCREEN_WIDTH = 1000
-    @STARTING_Y = 100
+    @STARTING_Y = 75
     @RECT_WIDTH = 100
     @RECT_HEIGHT = 50
     @CIRCLE_RADIUS = 50
+    @Y_BETWEEN_ELEMENTS = 125
   end
 
   def generate_from_json(json)
