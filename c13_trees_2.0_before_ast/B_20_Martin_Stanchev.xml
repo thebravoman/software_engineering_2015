@@ -1,0 +1,27 @@
+<schools>
+	<school name = "ELSYS">
+		<class name= "11B">
+			<student>
+				<name>Martin</name>
+				<number>20</number>
+			</student>
+
+			<studnet>
+				<name>Bojidar</name>
+				<numbe>03</number>
+			</student>
+		</class>
+
+		<class name = "11A">
+			<student>
+				<name>Hristyan</name>
+				<number>27</number>
+			</student>
+			
+			<student>
+				<name>Ignat</name>
+				<number>14</name>
+			</student>
+		</class>
+	</school>
+</schools>
