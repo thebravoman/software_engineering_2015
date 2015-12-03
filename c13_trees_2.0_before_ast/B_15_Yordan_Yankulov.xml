@@ -1,0 +1,12 @@
+<schools>
+  <school name = "TUES">
+    <class1 name = "11a">
+      <student1 name = "some1"/>
+      <student2 name = "hello" />
+    </class1>
+    <class2 name = "11b">
+      <student1 name = "Ivo" />
+      <student2 name = "Meh" />
+    </class2>
+  </school>
+</schools>
