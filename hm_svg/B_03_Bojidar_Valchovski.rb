@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'json'
 
-path = './B_03_Bojidar_Valchovski.json'
+path = ARGV[0]
 
 json = ''
 

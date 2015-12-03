@@ -30,6 +30,16 @@ class Tree
     end
   end
 
+  def get_elements_with_depth(depth, result_elements = [], node = @root)
+    result_elements << node if node.depth == depth
+
+    node.descendants.each do |desc|
+      result_elements = get_elements_with_depth(depth, result_elements, desc)
+    end
+
+    result_elements
+  end
+
   def print_tree(node = @root)
     puts "#{' ' * node.depth}#{node.value}"
 
