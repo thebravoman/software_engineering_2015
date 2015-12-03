@@ -1,9 +1,0 @@
-x = 10
-
-def foo
-  x = x + 10
-end
-
-foo
-foo
-puts x
