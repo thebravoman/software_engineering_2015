@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schools>
+	<school name="TUES">
+		<class name="11a">
+			<student>
+				<name>Autist</name>
+				<number>1</number>
+			</student>
+		</class>
+		<class name="11b">
+			<student>
+				<name>Bojidar Zaluhov</name>
+				<number>4</number>
+			</student>
+			<student>
+				<name>Borcheto</name>
+				<number>26</number>
+			</student>
+		</class>
+	</school>
+</schools>

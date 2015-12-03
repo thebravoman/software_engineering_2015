@@ -1,0 +1,33 @@
+?xml version="1.0" encoding="UTF-8"?>
+
+<schools>
+	<school name = "ELSYS">
+
+		<class name = "11a">
+			<student>
+				<name>cicka</name>
+				<number>8</number>
+			</student>
+			
+			<student>
+				<name>nedkov</name>
+				<number>13</number>
+			</student>
+
+		</class>
+
+		<class name = "11b">
+			<student>
+				<name>marto</name>
+				<number>19</number>
+			</student>
+			
+			<student>
+				<name>naseto</name>
+				<number>2</number>
+			</student>
+		</class>
+
+	</school>
+
+</schools>
