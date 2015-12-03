@@ -1,5 +1,4 @@
 require 'json'
-require 'pp'
 
 content = File.read(ARGV[0])
 parsed = Hash.new
@@ -15,9 +14,6 @@ end
 def circle x,y,name 
 string = '<circle cx="'+x.to_s+'" cy="'+y.to_s+'" r="50" stroke="black" stroke-width="3" fill="white" />' + 
 '<text x="' + (x - 25).to_s + '" y="' + (y - 5).to_s + '" font-family="Verdana" font-size="20" fill="black" >' + name.to_s + '</text>'
-end
-def line x,y,x1,y1
-'<line x1 = "'+x1.to_s+'" y1="'+y.to_s+'" x2="'+x1.to_s+'" y2="'+y1.to_s+'" style="stroke:rgb(255,0,0);stroke-width:2"/>'
 end
 File.open("A_14_Ignat_Georgiev.svg","w") do |f|
 	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
