@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<School name="TUES">
+  		<class name="11A">
+    			<student>
+      				<number>25</number>
+      				<name>Petur</name>
+    			</student>
+    			<student>
+     				<number>28</number>
+     				<name>Ico</name>
+    			</student>
+  		</class>
+  	<class name="11B">
+    		<student>
+      			<number>6</number>
+      			<name>Boriana</name>
+    		</student>
+    		<student>
+      			<number>8</number>
+      			<name>Vanessa</name>
+    		</student>
+    		<student>
+      			<number>26</number>
+      			<name>Plamen</name>
+    		</student>
+  	</class>
+</School>

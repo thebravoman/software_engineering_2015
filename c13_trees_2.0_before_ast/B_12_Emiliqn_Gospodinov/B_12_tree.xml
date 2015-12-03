@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<School>
+	<Elsys>
+		<A>
+			<students>
+				[Kubrat, Strahil, Djordjano]
+			</students>
+		</A>
+		<B>
+			<students>
+				[Asparuh, Tervel, Boris]
+			</students>
+		</B>
+	</Elsys>
+</School>

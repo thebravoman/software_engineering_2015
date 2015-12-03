@@ -15,15 +15,22 @@ def get_result(input)
   end
 end
 
+def write_to_file(file, data)
+  File.open(file, 'w') do |f|
+    f << data
+  end
+end
+
 def print_result(result, format)
   if format == 'json'
     puts result.to_json
   elsif format == 'xml'
     puts result.to_xml
-  elsif format == 'svg'
-    puts result.to_svg
-  else
+  elsif format == 'csv'
     puts result.to_csv
+  else
+    svg = result.to_svg
+    write_to_file('A_21_Nikolay_Danailov.svg', svg)
   end
 end
 

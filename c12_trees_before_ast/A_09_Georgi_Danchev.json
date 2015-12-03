@@ -1,0 +1,21 @@
+{  
+  "school":"TUES",
+  "classes":[
+    {
+      "class":"11A",
+      "students":[  
+         "Georgi Danchev",
+         "Georgi Danchev",
+         "Georgi Danchev"
+      ]
+    },
+    {
+      "class":"11B",
+      "students":[
+         "Georgi Danchev",
+         "Georgi Danchev",
+         "Georgi Danchev"
+      ]
+    }
+  ]
+}

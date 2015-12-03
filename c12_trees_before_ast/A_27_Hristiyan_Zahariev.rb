@@ -1,9 +1,7 @@
 require 'json'
 
-input_file = ARGV[0]
-
 json = ''
-fileName = File.read(input_file)
+fileName = File.read("A_27_Hristiyan_Zahariev.json")
 json_parser = JSON.parse(fileName)
   
 def print_hash(json_parser, set)

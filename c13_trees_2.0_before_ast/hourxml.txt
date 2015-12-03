@@ -1,0 +1,2 @@
+igrah si s exeption-i i prenapisvah json-tree s exeption-i
+po-kysno shte kacha xml-tree napraveno s exeption-i :)
