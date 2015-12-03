@@ -1,6 +1,6 @@
 require 'nokogiri'
-#file = File.open("B_09_Georgi_Stoilov.xml") { |f| Nokogiri::XML(f) }
+#file = File.open("A_20_Nikolay_Milanov.xml") { |f| Nokogiri::XML(f) }
 
-file = Nokogiri::XML(File.open("B_09_Georgi_Stoilov.xml"))
+file = Nokogiri::XML(File.open("A_20_Nikolay_Milanov.xml"))
 
 puts file
