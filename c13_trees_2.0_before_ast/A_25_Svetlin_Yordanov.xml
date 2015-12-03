@@ -1,0 +1,17 @@
+<schools>
+	<school name="TUES">
+		<class name="11A">
+			<student>Metodi Ilchev</student>
+			<student>Kalin Karev</student>
+			<student>Velin Yavorski</student>
+			<student>Teodor Dobrev</student>
+		</class>
+		
+		<class name="11B">
+			<student>Gosho Paraliata</student>
+			<student>Naiden Mainata</student>
+			<student>Ejko Taralejko</student>
+			<student>Malina Kalinova</student>
+		</class>
+	</school>
+</schools>
