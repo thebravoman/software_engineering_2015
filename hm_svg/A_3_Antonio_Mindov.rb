@@ -1,15 +1,5 @@
 require 'json'
 
-def print_hash hash, level
-	puts level + hash["node_name"]
-
-	if hash.has_key? "children"
-		hash["children"].each do |h|
-			print_hash(h, level + "  ")
-		end
-	end
-end
-
 def write_line x,y,x2,y2,width, color
 	'<line x1="'+x.to_s+'" y1="'+y.to_s+'" x2="'+x2.to_s+'" y2="'+y2.to_s+'" style="stroke:'+color.to_s+';stroke-width:'+width.to_s+'" />'
 end 
@@ -50,15 +40,11 @@ end
 def generate_tree hash
 	File.open("result.svg", "w") do |f|
 		f.write('<svg xmlns="http://www.w3.org/2000/svg" width="100% height = 5000">')
-		write_hash(hash, 1, 0, 1336, 100, 60, f)
+		write_hash(hash, 1, 0, 1111, 100, 60, f)
 		f.write('</svg>')
 	end
 end
 
 file = File.read("input.json")
-
 parsed = JSON.parse(file)
-
-print_hash(parsed, "")
-
 generate_tree(parsed)
