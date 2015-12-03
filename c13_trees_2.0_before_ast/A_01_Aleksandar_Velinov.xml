@@ -1,0 +1,14 @@
+<Schools>
+	<School name="ELSYS">
+		<Class name="11A">
+			<Student number = "23">Petko Georgiev</Student>
+			<Student number = "19">Nikolai Rangelov</Student>
+			<Student number = "17">Maritn Dimitrov</Student>
+		</Class>
+		<Class name="11B">
+			<Student number = "26">Plamen Neshkov</Student>
+			<Student number = "24">Petar Tsankov</Student>
+			<Student number = "6">Boriana Savova</Student>  <!-- Yes, we do have girls.-->
+		</Class>
+	</School>
+</Schools>
