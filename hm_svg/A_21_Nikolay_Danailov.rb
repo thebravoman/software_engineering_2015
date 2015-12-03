@@ -1,39 +1,25 @@
 require 'json'
+require_relative 'A_21_Nikolay_Danailov/svg_tree_generator.rb'
 
-class SVGTreeMaker
-  def self.rect(x, y, w, h)
-    '<rect x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" width="' + w.to_s + \
-      '" height="' + h.to_s + \
-      '" fill="red"/>'
-  end
-
-  def self.text(x, y, str)
-    '<text x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" fill="black">' + str.to_s + \
-      '</text>'
-  end
-
-  def self.parse_json(element, depth = 0)
-    spaces = ' ' * depth
-
-    if(element.class == Hash)
-      element.each do |key, value|
-        parse_json value, depth
-      end
-    elsif(element.class == Array)
-      element.each do |e|
-        parse_json e, depth + 2
-      end
-    else
-      puts "#{spaces}#{element}"
-    end
-  end
+def rect(x, y, w, h)
+  '<rect x="' + x.to_s + \
+    '" y="' + y.to_s + \
+    '" width="' + w.to_s + \
+    '" height="' + h.to_s + \
+    '" fill="red"/>'
 end
+
+def text(x, y, str)
+  '<text x="' + x.to_s + \
+    '" y="' + y.to_s + \
+    '" fill="black">' + str.to_s + '</text>'
+end
+
+RESULT_FILE = "A_21_Nikolay_Danailov.svg"
 
 json_file = ARGV[0]
 file = File.read json_file
 json = JSON.parse file
-SVGTreeMaker.parse_json json
+tree_generator = SVGTreeGenerator.new
+tree_generator.generate_from_json json
+tree_generator.draw

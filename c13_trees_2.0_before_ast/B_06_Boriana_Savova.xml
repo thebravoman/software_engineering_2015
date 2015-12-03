@@ -1,0 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<Schools>
+	<School name="Tues">
+		<Class name="11a">
+				<Student>
+					Asen4o
+				</Student>
+				<Student>
+					Asen4o2
+				</Student>
+		</Class>
+		<Class name="11b">
+				<Student>
+					Borqnka
+				</Student>
+				<Student>
+					Borqnka2
+				</Student>
+		</Class>
+	</School>
+</Schools> 
