@@ -1,18 +1,20 @@
 require 'json'
 
 def treeNode(x, y, str)
-	'<circle cx = "'+x.to_s+'" cy = "'+y.to_s+'" r = "30" stroke = "black" stroke-width = "2" fill = "yellow"/>' + "\n" +
+	'<circle cx = "'+x.to_s+'" cy = "'+y.to_s+'" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>' + "\n" +
 	'<text x = "'+(x - 15).to_s+'" y = "'+(y+5).to_s+'" fill = "black">'+str.to_s+'</text> ' + "\n"
 end
 
 def makeTree(x, y, hash, file) 
   hash.each do |key, value|
     file << treeNode(x, y, key)
+    x += 100
+    y += 100
     if value.kind_of?(Hash)
-	  file << makeTree(x + 60, y + 60, value, file)
+	  file << makeTree(x, y, value, file)
 	elsif value.kind_of?(Array)
 	  value.each do |e|
-	    file << makeTree(x + 60, y + 60, e, file)
+	    file << makeTree(x, y, e, file)
 	  end
 	end
   end
