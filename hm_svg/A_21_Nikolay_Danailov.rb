@@ -1,5 +1,4 @@
 require 'json'
-require 'pry'
 require_relative 'A_21_Nikolay_Danailov/svg_tree_generator.rb'
 
 
