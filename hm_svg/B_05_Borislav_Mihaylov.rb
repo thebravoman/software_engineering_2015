@@ -39,7 +39,7 @@ d = 60
 move_left = 300
 move_down = 200
 
-File.open("B_09_Georgi_Stoilov.svg", "w") do |f|
+File.open("B_05_Borislav_Mihaylov.svg", "w") do |f|
   f.write('<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1000">')
   f.write(draw_circle(default_x, default_y))
   f.write(add_text(default_x-20, default_y+5, data_hash[name]))
