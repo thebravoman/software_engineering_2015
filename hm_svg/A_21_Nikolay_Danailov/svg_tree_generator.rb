@@ -30,7 +30,7 @@ class SVGTreeGenerator
   end
 
   def circle x, y, r
-    '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" stroke-width="3" fill="red" />'
+    '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" fill="red" />'
   end
 
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
