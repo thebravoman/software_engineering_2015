@@ -12,15 +12,15 @@ class TreeNode
     @ancestor = ancestor
     @descendants = descendants
 
-    if(ancestor != nil)
+    if ancestor != nil 
       @depth = ancestor.depth + 1
 
-      if(!ancestor.descendants.include?(self))
+      if !ancestor.descendants.include?(self)
         ancestor.descendants << self
       end
     end
 
-    if(descendants.size > 0)
+    if descendants.size > 0
       @depth = descendants.first.depth - 1
       descendants.each { |descendant| descendant.ancestor = self }
     end
@@ -29,31 +29,31 @@ end
 
 class Tree
   attr_accessor :root
-  attr_accessor :current_node
 
   def initialize
-    @root = TreeNode.new 0
-    @current_node = @root
-    node_1 = TreeNode.new 1, @root
-    node_2 = TreeNode.new 2, @root
-    node_3 = TreeNode.new 2.5, node_2
-    node_4 = TreeNode.new 1.5, node_1
+    @root = nil
   end
 
-  def generate_from_json(element, depth = 0)
-    if(element.class == Hash)
-      element.each do |key, value|
-        generate_from_json value, depth
+  def generate_from_json(element, depth = 0, current_ancestor = @root, is_leaf = false)
+    puts "current_ancestor: #{current_ancestor.value}" if !current_ancestor.nil?
+    if element.class == Hash
+      if element.values[1].class == Array
+        element.each do |key, value|
+          current_ancestor = generate_from_json value, depth, current_ancestor
+        end
+      else
+        generate_from_json element.values.first, depth, current_ancestor, true
       end
-    elsif(element.class == Array)
+    elsif element.class == Array
       element.each do |e|
-        generate_from_json e, depth + 1
+        generate_from_json e, depth + 1, current_ancestor
       end
     else
       if depth == 0
         @root = TreeNode.new element
+        current_ancestor = @root
       else
-
+        current_ancestor = TreeNode.new element, current_ancestor
       end
     end
   end
@@ -106,4 +106,5 @@ json_file = ARGV[0]
 file = File.read json_file
 json = JSON.parse file
 tree_generator = SVGTreeGenerator.new
+tree_generator.generate_from_json json
 tree_generator.draw
