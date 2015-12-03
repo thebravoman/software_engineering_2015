@@ -1,7 +1,6 @@
 require 'json'
 require_relative 'A_21_Nikolay_Danailov/svg_tree_generator.rb'
 
-
 RESULT_FILE = "A_21_Nikolay_Danailov.svg"
 
 json_file = ARGV[0]
