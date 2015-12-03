@@ -21,7 +21,7 @@ class SVGTreeGenerator
   end
 
   def text(x, y, str)
-    '<text x="' + x.to_s + \
+    '<text text-anchor="middle" x="' + x.to_s + \
       '" y="' + y.to_s + \
       '" fill="black">' + str.to_s + '</text>'
   end
@@ -52,13 +52,13 @@ class SVGTreeGenerator
       end
 
       @result += rect element_x, element_y, @RECT_WIDTH, @RECT_HEIGHT
-      @result += text element_x + @RECT_WIDTH / 4, element_y + @RECT_HEIGHT / 2, node.value
+      @result += text element_x + @RECT_WIDTH / 2, element_y + @RECT_HEIGHT / 2, node.value
     else
       if(!ancestor_x.nil? && !ancestor_y.nil?)
         @result += line element_x, element_y, ancestor_x, ancestor_y
       end
       @result += circle element_x, element_y, @CIRCLE_RADIUS
-      @result += text element_x - @CIRCLE_RADIUS / 2, element_y, node.value
+      @result += text element_x, element_y, node.value
     end
 
     node.descendants.each do |desc|
