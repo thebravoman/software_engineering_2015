@@ -1,0 +1,13 @@
+<schools>
+	<school name = "ELSYS">
+		<class name = "11A">
+			<student name = "Kristiana Ivanova"/> 
+			<student name = "Nikolay Danailov"/>
+			<student name = "Georgi Danchev"/>
+		</class>
+		<class name = "11B">
+			<student name = "My name"/>
+			<student name = "My name"/>
+			<student name = "My name"/>
+		</class>
+</schools>
