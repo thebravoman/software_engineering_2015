@@ -1,0 +1,22 @@
+<schools>
+  <school name = "TUES">
+    <class name = "11B">
+      <student>
+        <name>Georgi Stoilov</name>
+      </student>
+      <student>
+        <name>Yordan Yankulov</name>
+      </student>
+      <student>
+        <name>Ivo Gerginov</name>
+      </student>
+    </class>
+    <class name = "11A">
+      <student>
+        <name>Some guy</name>
+      </student>
+    </class>
+    
+  </school>
+  
+</schools>
