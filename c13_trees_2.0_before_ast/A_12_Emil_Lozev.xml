@@ -8,7 +8,7 @@
 		<class name="11b">
 			<student name="Rado"></student>
 			<student name="Ivo"></student>
-			<student name="Vanessa"></student>
+			<studnet name="Vanessa"></studnet>
 		</class>
 	</school>
 </schools>
