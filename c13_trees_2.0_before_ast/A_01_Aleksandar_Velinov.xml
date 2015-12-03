@@ -8,7 +8,7 @@
 		<Class name="11B">
 			<Student number = "26">Plamen Neshkov</Student>
 			<Student number = "24">Petar Tsankov</Student>
-			<Student number = "6">Boriana Savova</Student>
+			<Student number = "6">Boriana Savova</Student>  <!-- Yes, we do have girls.-->
 		</Class>
 	</School>
 </Schools>
