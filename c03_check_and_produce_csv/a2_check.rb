@@ -24,6 +24,7 @@ checked_files = []
 
 script_input = ARGV[1]
 script_output = ARGV[2]
+include_folder = ARGV[3]
 
 CSV.open("result.csv", "w") do |csv_array|
 	previous_number = 0
@@ -37,7 +38,8 @@ CSV.open("result.csv", "w") do |csv_array|
 			clazz = name[0]
 			if !student_checked? checked_files,first_name,last_name
 				p "#{clazz},#{number},#{first_name},#{last_name}"
-				result= `ruby #{filename} #{script_input}`
+				include_folder_string = "-I #{clazz}_#{number}_#{first_name}_#{last_name}/" if include_folder
+				result= `ruby #{include_folder_string} #{filename} #{script_input}`
 				solved = solved? script_output, result
 				csv_array << [clazz,number,first_name,last_name,solved]
 				checked_files << [first_name, last_name]
