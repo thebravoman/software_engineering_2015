@@ -23,4 +23,8 @@ class TreeNode
       descendants.each { |descendant| descendant.ancestor = self }
     end
   end
+
+  def leaf?
+    descendants.size == 0
+  end
 end

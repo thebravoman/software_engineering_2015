@@ -5,6 +5,7 @@ class SVGTreeGenerator
 
   @SCREEN_WIDTH
   @STARTING_Y
+  @CIRCLE_RADIUS
   @RECT_WIDTH
   @RECT_HEIGHT
 
@@ -28,6 +29,10 @@ class SVGTreeGenerator
     '<line x1="' + x1.to_s + '" y1="' + y1.to_s + '" x2="' + x2.to_s + '" y2="' + y2.to_s + '" style="stroke:rgb(255,0,0);stroke-width:2" />'
   end
 
+  def circle x, y, r
+    '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" stroke-width="3" fill="red" />'
+  end
+
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
     same_depth_elements = tree.get_elements_with_depth node.depth
     node_index = 0
@@ -37,18 +42,26 @@ class SVGTreeGenerator
     end
 
     alotted_space = @SCREEN_WIDTH / (same_depth_elements.size + 1)
-    rect_x = alotted_space * (node_index + 1)
+    element_x = alotted_space * (node_index + 1)
+    element_y = @STARTING_Y * (node.depth + 1)
 
-    rect_y = @STARTING_Y * (node.depth + 1)
-    @result += rect rect_x, rect_y, @RECT_WIDTH, @RECT_HEIGHT
-    @result += text rect_x + 30, rect_y + 30, node.value
+    if(node.leaf?)
+      if(!ancestor_x.nil? && !ancestor_y.nil?)
+        @result += line element_x + @RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
+      end
 
-    if(!ancestor_x.nil? && !ancestor_y.nil?)
-      @result += line rect_x + @RECT_WIDTH / 2, rect_y, ancestor_x + @RECT_WIDTH / 2, ancestor_y + @RECT_HEIGHT
+      @result += rect element_x, element_y, @RECT_WIDTH, @RECT_HEIGHT
+      @result += text element_x + @RECT_WIDTH / 4, element_y + @RECT_HEIGHT / 2, node.value
+    else
+      if(!ancestor_x.nil? && !ancestor_y.nil?)
+        @result += line element_x, element_y, ancestor_x, ancestor_y
+      end
+      @result += circle element_x, element_y, @CIRCLE_RADIUS
+      @result += text element_x - @CIRCLE_RADIUS / 2, element_y, node.value
     end
 
     node.descendants.each do |desc|
-      draw rect_x, rect_y, desc
+      draw element_x, element_y, desc
     end
   end
 
@@ -64,6 +77,7 @@ class SVGTreeGenerator
     @STARTING_Y = 100
     @RECT_WIDTH = 100
     @RECT_HEIGHT = 50
+    @CIRCLE_RADIUS = 50
   end
 
   def generate_from_json(json)
