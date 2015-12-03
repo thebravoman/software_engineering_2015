@@ -1,0 +1,24 @@
+<schools>
+	<school name = "ELSYS">
+		<class name = "11a">
+			<student>
+				<name>Pesho</name>
+				<number>22</number>
+			</student>
+			<student>
+				<name>Gesho</name>
+				<number>11</number>
+			</student>		
+		</class>
+		<class name = "11b">
+			<student>
+				<name>Racho</name>
+				<number>7</number>
+			</student>
+			<student>
+				<name>Floyd Mayweather</name>
+				<number>1</number>
+			</student>
+		</class>	
+	</school>
+</schools>
