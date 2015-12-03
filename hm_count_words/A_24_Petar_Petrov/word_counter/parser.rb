@@ -3,7 +3,7 @@ require_relative 'result'
 module WordCounter
   class Parser 
       def mark_count(text)
-        text.count(",.?!():;\"\'/\\+=><*[]{}@|_#`&-")
+        text.count("0-9,.?!():;\"\'/\\+=><*[]{}@|_#`&-")
       end
     
       def split_string(text)
