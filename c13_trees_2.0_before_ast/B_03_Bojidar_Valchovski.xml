@@ -4,6 +4,8 @@
 			<student>
 				<name>Ignat Georgiev</name>
 				<number>14</number>
+			</student>
+			<student>
 				<name>Hristiyan Zahariev</name>
 				<number>27</number>
 			</student>		
@@ -12,6 +14,8 @@
 			<student>
 				<name>Bojidar Valchovski</name>
 				<number>3</number>
+			</student>
+			<student>
 				<name>Martin Stanchev</name>
 				<number>20</number>
 			</student>
