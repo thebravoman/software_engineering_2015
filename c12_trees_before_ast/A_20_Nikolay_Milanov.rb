@@ -24,7 +24,7 @@ end
 $hash_flag = 0
 
 def print_hashmap(result, offset, bar_offset)
-  File.open('B_03_Bojidar_Valchovski.svg', 'a') do |f|
+  File.open('A_20_Nikolay_Milanov.svg', 'a') do |f|
 	word_spacing = 40
  	bar_width = 150	
   	bar_height = 40
@@ -60,12 +60,12 @@ def print_hashmap(result, offset, bar_offset)
   end
 end
 
-File.open('B_03_Bojidar_Valchovski.svg', 'w') do |f|
+File.open('A_20_Nikolay_Milanov.svg', 'w') do |f|
   f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 end
 
 print_hashmap(result, 0,10)
 
-File.open('B_03_Bojidar_Valchovski.svg', 'a') do |f|
+File.open('A_20_Nikolay_Milanov.svg', 'a') do |f|
   f.write('</svg>')
 end

@@ -1,0 +1,22 @@
+{
+	"school" : "TUES"
+	{
+	    "class" : "11A"
+    	{
+		"students" :
+		[
+		    { "name" : "Nikolay Rangelov", "number" : "19" },
+		    { "name" : "Alexandar Velinov", "number" : "1" },
+		    { "name" : "Petko Georgiev", "number" : "23"}
+		]
+	    },
+	    "class" : "11B"
+	    {
+	    "students" :
+	    [
+	    	{ "name" : "Boriana Savova", "number" : "6" },
+	    	{ "name" : "Petio Cvetkov", "number" : "25" }
+	    ]
+	    }
+	}
+}
