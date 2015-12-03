@@ -1,7 +1,7 @@
 require 'json'
 
 hash = Hash.new(0)
-json_file = File.read('B_28_Toma_Marinov.json')
+json_file = File.read('B_14_Ivo_Gerginov.json')
 
 hash = JSON.parse(json_file)
 spaces = 0.to_i
