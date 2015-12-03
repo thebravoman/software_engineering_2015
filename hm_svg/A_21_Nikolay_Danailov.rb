@@ -14,20 +14,19 @@ def self.text(x, y, str)
     '" fill="black">' + str.to_s + '</text>'
 end
 
-class Tree
-  @title = ''
-  @nodes = []
-
-  def parse_json(json)
-    
-  end
-end
-
-class TreeNode
-  @subnodes = []
-end
-
 json_file = ARGV[0]
 file = File.read json_file
 json = JSON.parse file
-tree = TreeMaker.parse_json json
+
+elements = json.values
+first_element = elements
+puts first_element[0]
+first_element[1].each do |second_element|
+  second_element_values = second_element.values
+  puts "  #{second_element_values[0]}"
+
+  second_element_values[1].each do |third_element|
+    third_element_values = third_element.values
+    puts "    #{third_element_values[0]}"
+  end
+end
