@@ -1,11 +1,21 @@
 {
-    "School":
-        [{
-            "name": "TUES",
-            "classes":
-            [
-                {"name": "11A", "studentds":["Pesho", "Tedo", "Toni"]}
-                {"name": "11B", "studentds":["Utri", "Mono", "Vili"]}
-            ] 
-        }] 
-}           
+	"ELSYS:": {
+		"Classes": {
+			"11A" : {
+				"Students": [
+					"Ico",
+					"Gosho", 
+					"Toni"
+				]
+			},
+			"11B": {
+				"Students": [
+					"Ivan", 
+					"Pesho", 
+					"Doni"
+				]
+			}
+		}
+	}
+}
+
