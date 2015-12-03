@@ -1,0 +1,24 @@
+<schools>
+	<school name = "ELSYS">
+		<class name = "11a">
+			<student>
+				<name>Pavle Kostadinov</name>
+				<number>14</number>
+			</student>
+			<student>
+				<name>Hristiyan Zahariev</name>
+				<number>27</number>
+			</student>		
+		</class>
+		<class name = "11b">
+			<student>
+				<name>Ignat Racheto</name>
+				<number>3</number>
+			</student>
+			<student>
+				<name>Georgi Cicelkov</name>
+				<number>20</number>
+			</student>
+		</class>	
+	</school>
+</schools>
