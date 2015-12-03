@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School name="TUES">
+  <Class name="11A">
+    <Student>
+      <name>Niki Rangelov</name>>
+      <number>20</number>
+    </Student>
+    <Student>
+      <name>Teemo MalkataGubka</name>>
+      <number>28</number>
+    </Student>
+    <Student>
+      <name>Autizum</name>>
+      <number>666</number>
+    </Student>
+  </Class>
+  <Class name="11B">
+    <Student>
+      <name>Georki Stoilov</name>>
+      <number>9</number>
+    </Student>
+    <Student>
+      <name>Tuma Marinov</name>>
+      <number>28</number>
+    </Student>
+    <Student>
+      <name>Mart. Gulub.</name>>
+      <number>21</number>
+    </Student>
+  </Class>
+</School>
