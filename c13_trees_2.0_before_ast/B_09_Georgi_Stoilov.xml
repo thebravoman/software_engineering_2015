@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School name="TUES">
+  <class name="11A">
+    <student>
+      <number>25</number>
+      <name>Petur</name>
+    </student>
+    <student>
+      <number>28</number>
+      <name>Ico</name>
+    </student>
+    <student>
+      <number>14</number>
+      <name>Ivan</name>
+    </student>
+  </class>
+  <class name="11B">
+    <student>
+      <number>9</number>
+      <name>Georgi</name>
+    </student>
+    <student>
+      <number>14</number>
+      <name>Ivo</name>
+    </student>
+    <student>
+      <number>15</number>
+      <name>Yordan</name>
+    </student>
+    <student>
+      <number>21</number>
+      <name>Mart. Gulub.</name>
+    </student>
+  </class>
+</School>
