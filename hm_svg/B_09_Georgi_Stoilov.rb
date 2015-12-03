@@ -13,7 +13,7 @@ def line x1, y1, x2, y2
 end
 
 def draw_rectangle x, y
-  '<rect x="'+x.to_s+'" y="'+y.to_s+'" width="100" height="50" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />'
+  '<rect x="'+x.to_s+'" y="'+y.to_s+'" width="110" height="50" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />'
 end
 
 file = File.read('B_09_Georgi_Stoilov.json')
@@ -50,9 +50,9 @@ File.open("B_09_Georgi_Stoilov.svg", "w") do |f|
     f.write(add_text(x-20, y+5, data_hash[clazz][i][name]))
     f.write(line(default_x-c/2, default_y+60, x+c/2, y-60))
     for count in 0...3
-      f.write(draw_circle(x-move_left+150+b, y+move_down))
-      #f.write(draw_rectangle(x-move_left+150+b, y+move_down))
-      f.write(add_text(x-move_left+150+b-25, y+move_down+5, data_hash[clazz][i][clazz][count][name]))
+      #f.write(draw_circle(x-move_left+150+b, y+move_down))
+      f.write(draw_rectangle(x-move_left+100+b, y+move_down-50))
+      f.write(add_text(x-move_left+150+b-25, y+move_down+5-25, data_hash[clazz][i][clazz][count][name]))
       f.write(line(x-d/3, y+60, x-move_left+150+b+d/3, y+move_down-60))
       b = b + 150
       d = d - 60
