@@ -1,0 +1,26 @@
+<schools>
+  <school name="TUES">
+    <class name="11a">
+      <student id="1">Petar Spasov Petrov</student>
+      <student id="2">Ivan-Asen Borisov Ovedenski</student>
+      <student id="3">Hristo Georgiev Ezekiev</student>
+    </class>  
+    <class name="11b">
+      <student>Georgi Ivanov Stoilov</student>
+      <student>Dimitur Petrov Djadjarov</student>
+      <student>Tyrone Ghana Syria</student>
+    </class>
+  </school> 
+  <school name="NPMG">
+    <class name="11a">
+      <student>Emil Spasov Lozev</student>
+      <student>Nikola Dimitrov Beliiski</student>
+      <student>WOw dasd DSAD</student>
+    </class> 
+    <class name="11b">
+      <student>Az SUm HAHA</student>
+      <student>WHOLE MAY GO</student>
+      <student>dasd ASDA dasd</student>
+    </class>
+  </school>
+</schools>

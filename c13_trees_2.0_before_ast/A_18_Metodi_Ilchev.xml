@@ -1,0 +1,8 @@
+<schools>
+  <school name="TUES">
+    <class name="11A">
+      <student name="Pesho"></student>
+      <student name="Gosho"></student>
+    </class>
+  </school>
+</schools>

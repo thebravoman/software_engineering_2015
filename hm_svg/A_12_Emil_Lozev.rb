@@ -4,7 +4,6 @@ file = File.read(ARGV[0])
 
 data_hash = JSON.parse(file)
 
-
 def draw_circle(x,y,name) 
 	string = '	
 	<g>
@@ -37,33 +36,49 @@ pos_classes_line = pos_classes
 pos_counter = 0
 
 File.open("A_12_Emil_Lozev.svg","w") do |f|
-	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
-	data_hash.each do |x, y_hash|
+f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 
-		f.write(draw_circle(500,50,x))		
-		pos += 60
-		puts "#{x}"
-	  
-	  	y_hash.each do |y, name_hash|
-	  		f.write(draw_circle(pos_classes,150,y))	
-	   		f.write(draw_lines(pos_start_line,50,pos_classes_line,120))
+	data_hash.each do |key,value|
+		if(key == 'node_name')
+			
+			f.write(draw_circle(500,50,value))		
+			pos += 60
+			puts "#{value}" #<-------------------------------- Puts TUES
+		
+		elsif(key != 'node_name')
+			value.each do |y_key, y_hash|
+					y_key.each do |z_key, classes|
+						if(z_key == 'node_name')
 
-			pos_classes += 500
-			pos_classes_line += 500
-			pos_classes_line -= 20
-			pos_start_line += 20
-			puts "  #{y}"
-	    	name_hash.each do |name|
-	    		f.write(draw_rect(pos_names,250,name))
-	    		f.write(draw_lines(pos_names_start,190,pos_names,250))
-	    		pos_counter += 1
-	    		if(pos_counter == 3)
-	    			pos_names_start += 500
-	    		end
-	    		pos_names += 150
-	      		puts "    #{name}"
-	    	end
-	  	end
+							f.write(draw_circle(pos_classes,150,classes))	
+	   						f.write(draw_lines(pos_start_line,50,pos_classes_line,120))
+							puts " #{classes}" #<----------------- Puts class
+
+							pos_classes += 500
+							pos_classes_line += 500
+							pos_classes_line -= 20
+							pos_start_line += 20
+						
+						elsif(z_key == 'children')
+							classes.each do |children_key, children_name|
+								children_key.each do |name,name_value|
+									f.write(draw_rect(pos_names,250,name_value))
+	    							f.write(draw_lines(pos_names_start,190,pos_names,250))
+									puts "  #{name_value}" #<--- Puts names
+
+									pos_counter += 1
+						    		if(pos_counter == 3)
+						    			pos_names_start += 500
+						    		end
+						    		pos_names += 150
+
+								end
+							end
+						end
+					end
+			end
+		end
 	end
-	f.write('</svg>')
+
+f.write('</svg>')
 end
