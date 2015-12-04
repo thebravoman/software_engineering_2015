@@ -45,6 +45,6 @@ def generate_tree hash
 	end
 end
 
-file = File.read("input.json")
+file = File.read(ARGV[0])
 parsed = JSON.parse(file)
 generate_tree(parsed)
