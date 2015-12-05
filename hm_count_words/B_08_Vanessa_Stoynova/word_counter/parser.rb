@@ -1,4 +1,4 @@
-require_relative 'result'
+require 'word_counter/result.rb'
 
 module WordCounter
 	class Parser

@@ -1,4 +1,4 @@
-require_relative 'parser'
+require 'word_counter/parser'
 
 require 'net/http'
 require 'sanitize'

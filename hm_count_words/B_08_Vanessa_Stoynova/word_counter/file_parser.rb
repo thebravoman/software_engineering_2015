@@ -1,8 +1,7 @@
-require_relative 'parser.rb'
+require 'word_counter/parser.rb'
 
 module WordCounter 
-
-	class FileParser
+	class FileParser < Parser
 		def parse(file)
 			words = Hash.new(0)
 			max_marks = 0
@@ -11,7 +10,7 @@ module WordCounter
 				f.each_line do |line|
 					result = super(line)
 					words = words.merge(result.word_counts.to_h) { |key, ov, nv| ov + nv }
-					max_marks += result.marks
+					max_marks += result.marks_count
 				end
 			end
 			

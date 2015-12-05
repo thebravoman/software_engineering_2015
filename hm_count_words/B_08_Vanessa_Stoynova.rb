@@ -1,4 +1,4 @@
-require './B_08Vanessa_Stoynova/word_counter'
+require 'word_counter'
 
 file = ARGV[0]
 file_format = ARGV[1]
@@ -9,7 +9,7 @@ if file.start_with?('https://') || file.start_with?('http://')
     	result = WordCounter.parse_file(file)
 end
 
-case format
+case file_format
 	when 'json'
   		puts result.to_json
 	when 'xml'
