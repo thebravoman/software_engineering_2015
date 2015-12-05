@@ -24,7 +24,7 @@ def printRes(filename,option)
   elsif option == 'svg'
   	result.to_svg
   else
-    puts result.to_csv
+    result.to_csv
   end
   
 end 
