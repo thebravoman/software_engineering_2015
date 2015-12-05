@@ -40,6 +40,5 @@ module WordCounter
 	
 			xml
 		end
-		end
 	end
 end

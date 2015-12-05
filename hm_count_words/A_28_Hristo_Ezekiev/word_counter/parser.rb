@@ -16,7 +16,7 @@ module WordCounter
 			
 			hash = hash.sort{|word, count| word <=> count}.sort{|word, count| count[1] <=> word[1]}
 
-			Result.new(marks.length, hash)
+			Result.new(marks, hash)
 		end
 	end
 end
