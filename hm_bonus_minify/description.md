@@ -72,11 +72,13 @@ Build a program that accepts:
  - a string "xml"
 The program should display on the standard output:
  - the original final converted to xml where:
+```xml
  	- the root node of the xml is called <minify>
 	- the root node has many <account> children. The <account> children are sorted ASC
 		- the <account> node has <date> children. The <date> children are sorted ASC
 			- the <date> node has <amount> children. The <amount> children are sorted ASC
 				- the <amount> node contains the value from column "amount" as <amount>-100</amount>
+```
 
 ### Points 
 0.5 
