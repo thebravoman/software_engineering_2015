@@ -2,11 +2,20 @@ require 'csv'
 
 file = File.open(ARGV[0])
 date = ARGV[1]
+value = ARGV[2]
 output = []
 
 file.each do |line|
-	if line.split.first == date
-		output << line
+	l = line.split
+	if l[0] == date
+		if value != nil 
+			value = value.to_i
+			if l[3].to_i > value - 10 and l[3].to_i < value + 10
+				output << line
+			end
+		else
+			output << line
+		end
 	end
 end
 
@@ -20,4 +29,3 @@ output.sort_by!{|d|
 }
 
 puts output
-
