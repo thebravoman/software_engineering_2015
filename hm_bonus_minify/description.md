@@ -99,6 +99,7 @@ Build a program that accepts:
  - a number - called "months"
 The program should display on the standard output:
  - an xml in the format
+```xml
  <minify>
   <gain> 
     <date_start>the_start_date</date_start>
@@ -111,7 +112,7 @@ The program should display on the standard output:
     <value>the_value</value>
   </expense>
  </minify>
-
+```
 Where the actual values for "the_start_date", "the_end_date", "the_value" are calculated in the following way.
  - For the gain node:
 	Which is the period of "months" for which the sum of the possitive "amounts" is the largest. 
