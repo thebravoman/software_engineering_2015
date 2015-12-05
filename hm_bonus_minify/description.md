@@ -27,7 +27,7 @@ The submited program is always called Class_Number_FirstName_LastName.rb and sho
 ## Version 1 - 
 Build a program that accepts:
  - a file name as a first command line argument
- - a date as a second line argument. Date is in format "MM/DD/YYYY"
+ - a date as a second line argument. Date is in format "DD/MM/YYYY"
 The program should display on the standard output all the rows from the original file that are for the given date. 
 The output should be sorted by "date" ASC
 
