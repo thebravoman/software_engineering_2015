@@ -1,29 +1,22 @@
 require 'word_counter/result'
 
 module WordCounter
-  class Parser
-    def parse(string)
-    res = Result.new
-    punct = 0
-    h = Hash.new()
-	punct = string.downcase.scan(/[^a-z0-9_\s]/).count		
-    words = string.downcase.gsub(/[^a-z0-9_ ]/, ' ').split(" ").reject(&:empty?)
-	words.each do |word|
-	  if(word == '_')	
-		punct = punct + 1
-		word = word.gsub("_",'')
-	  end
-		if(word != '')	
-	      if(h[word])
-			h[word] += 1
-		  else
-			h[word] = 1
-		  end
+	class Parser
+		def parse contents
+			contents = contents.downcase
+			marks = contents.gsub(/[a-z_0-9\s]/, "");
+			words = contents.gsub(/[^a-z_0-9\s]/, " ").split
+
+			hash = Hash.new(0)
+
+			words.each do |word|
+				hash[word] += 1
+			end
+
+			
+			hash = hash.sort{|word, count| word <=> count}.sort{|word, count| count[1] <=> word[1]}
+
+			Result.new(marks.length, hash)
 		end
 	end
-   h = h.sort_by { |key, value| [ -value, key ] }
-   res.setWordsMarks h, punct
-   res
-  end
-  end
 end
