@@ -1,22 +1,22 @@
-require './B_08_Vanessa_Stoynova/word_counter.rb'
+require './B_08Vanessa_Stoynova/word_counter'
 
 file = ARGV[0]
 file_format = ARGV[1]
 
-if(file.start_with?('https://') || file.start_with?('http://'))
-	result = WordCounter.parsing_web_source file
-  else if(file.include?(" "))
-  	result = WordCounter.parse file
+if file.start_with?('https://') || file.start_with?('http://')
+  	result = WordCounter.parse_webpage(file)
   else
-    	result = WordCounter.parse_the_file file
-  end
+    	result = WordCounter.parse_file(file)
 end
 
-if file_format == 'csv' || file_format == nil
-	result.to_csv
-elsif file_format == 'json'
-	result.to_json
-elsif file_format == 'xml'
-	result.to_xml
+case format
+	when 'json'
+  		puts result.to_json
+	when 'xml'
+  		puts result.to_xml
+	when 'svg'
+  		result.to_svg
+	else
+  		puts result.to_csv
 end
 
