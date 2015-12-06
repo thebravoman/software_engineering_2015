@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schools>
+    <school name="TUES">
+        <class name="11B">
+            <students>
+                <student name="Petyo" age="17" />
+                <student name="Dancho" age="17" />
+            </students>
+        </class>
+        <class name="11A">
+            <students>
+                <student name="Mitko" age="17" />
+                <student name="Pesho" age="17" />
+            </students>
+        </class>
+    </school>
+</schools>
