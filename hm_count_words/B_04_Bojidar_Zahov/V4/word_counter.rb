@@ -7,7 +7,7 @@ class WordCounter
 		result = Result.new
 		result.marks = string.gsub(/[^[^a-zA-Z0-9]]/,"").split.join('').length
 	 	
-		string.downcase.gsub(/[\W\d_]/,' ').split.each do |word|
+		string.downcase.gsub(/[\W_]/,' ').split.each do |word|
 			result.words[word] += 1 
 		end
 
