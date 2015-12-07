@@ -87,7 +87,7 @@ class Result
 				file << make_rectangle(height, x_axis, y_axis)
 				
 				#not sure if I should print the words?
-				#file << print_words(x_axis, (MAX_HEIGHT + 15), word)
+				file << print_words(x_axis, (MAX_HEIGHT + 15), word)
 
 				x_axis = x_increment x_axis
 				y_axis = y_increment word_occurrence, count, ratio
@@ -105,9 +105,9 @@ class Result
 	end
 
 	#not sure if I should print the words?
-	#def print_words x, y, string
-	#	'<text x = "'+x.to_s+'" y = "'+y.to_s+'" fill = "black">'+string.to_s+'</text>'
-	#end
+	def print_words x, y, string
+		'<text x = "'+x.to_s+'" y = "'+y.to_s+'" fill = "black">'+string.to_s+'</text>'
+	end
 
 	def x_increment value
 		value += MAX_WIDTH
