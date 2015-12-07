@@ -1,15 +1,15 @@
-require 'csv'
-require 'json'
-require 'rexml/document'
-require './A_5_Velin_Yavorski/word_counter.rb'
-require './A_5_Velin_Yavorski/result.rb'
+require 'word_counter'
 
 filepath = ARGV[0]
 format = ARGV[1]
 
 
-word_counter = WordCounter.new
-result = word_counter.parse_file(filepath)
+if( filepath.start_with?('http://') || filepath.start_with?('https://'))
+	result = WordCounter.parse_webpage(filepath)
+else
+	result = WordCounter.parse_file(filepath)
+end
+
 if(format == "json")
   puts result.to_json
 elsif(format == "xml")
@@ -17,3 +17,4 @@ elsif(format == "xml")
 else
   result.to_csv
 end
+result.make_svg

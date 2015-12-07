@@ -1,0 +1,19 @@
+{	  
+		"School": { 
+	  	"Name": "TUES",  
+	    "Class": [
+	    	{ 
+	    	"11A": [ 
+	    		"Petar Spasov Petrov",
+	        "Ivan-Asen Borisov Ovedenski",  
+	        "Hristo Georgiev Ezekiev"
+	      ]},
+	      {   
+	      "11B": [
+	        "Georgi Radoev Stoilov",
+	        "Dimitur Stoev Djadjarov", 
+	        "Martin Spasov Dimitrov"
+	      ]}
+	    ]
+	  }
+} 

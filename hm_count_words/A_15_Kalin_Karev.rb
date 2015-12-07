@@ -1,24 +1,46 @@
-require './A_15_Kalin_Karev/word_counter.rb'
-require './A_15_Kalin_Karev/result.rb'
-
-require 'json'
-require 'csv'
-require 'rexml/document'
+require_relative './A_15_Kalin_Karev/word_counter'
 
 file_name = ARGV[0].to_s
-format = ARGV[1].to_s
-words_hasedword_counter = WordCounter.new
+format_print = ARGV[1].to_s
+format = "string"
 
-answer = words_hasedword_counter.parse_file(file_name)
+def ifSite(filename)
+	f = filename.split('/').first
+	return f == 'http:' || f == 'https:'
+end
 
-if format == "csv" || format == ""
+if File.file? file_name
+	format = "file"
+end
+
+if ifSite file_name 
+	format = "url"
+end
+
+if format == "file" 
+	answer = WordCounter.parse_file file_name
+end
+
+if format == "url"
+	answer = WordCounter.parse_webpage file_name 
+end
+
+if format == "string"
+	answer = WordCounter.parse file_name
+end
+
+if format_print == "csv" || format == ""
 	puts answer.to_csv
 end
 
-if format == "json"
+if format_print == "json"
 	puts answer.to_json
 end
 
-if format == "xml"
+if format_print == "xml"
 	puts answer.to_xml
+end
+
+if format_print == "svg"
+	puts anwer.to_svg
 end

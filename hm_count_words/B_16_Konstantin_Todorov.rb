@@ -1,87 +1,43 @@
-require 'csv'
-require 'json'
-require 'rexml/document'
 
 
-
-class Result
-
-  attr_accessor :marks_count
-  attr_accessor :word_counts
-  def initialize
-    @marks_count = 0
-    @word_counts = Hash.new 0
-  end
-  def to_csv
-    word_counts.each do |word,i|
-      puts "#{word},#{i}"
-    end
-    puts  "\"marks\",#{marks_count}" if marks_count != 0
-  end
-  def to_json
-    require 'json'
-    json_output = { marks: marks_count, words: word_counts }
-    JSON.pretty_generate(json_output)
-  end
-  def to_xml
-    require 'rexml/document'
-    xml_counts = REXML::Document.new("")
-    xml_word_counts = xml_counts.add_element('word-counts')
-    xml_marks = xml_word_counts.add_element('marks')
-    xml_marks.add_text "#{marks_count}"
-    xml_words = xml_word_counts.add_element('words')
-    word_counts.each do |index, key|
-      word = xml_words.add_element('word')
-      word.add_attribute( 'count', key)
-      word.add_text "#{index}"
-    end
-    out = ""
-    xml_counts.write(out, 1)
-    return out
-  end
+###############################################################################
+def rectangle height, position, word
+	'<rect width="100" height="'+height.to_s+'" x="'+position.to_s+'"
+	style="fill:black;stroke-width:3;stroke:rgb(0,0,0)"/>
+	
+	<text x="'+position.to_s+'" y="'+height.to_s+'" font-family="Verdana" font-size="20" fill="blue" > '+word.to_s+' </text>'
 end
 
-class WordCounter
-  private
 
-  def parse(string)
-    result = Result.new
-    result.marks_count = string.scan(/[,.!?:;"()\[\]]/).count
-    words = string.downcase.gsub(/[^a-z'\s-]/, '').split(' ')
+words = {}
+punctuation_marks = 0
 
-    words.each do |word|
-      result.word_counts[word] += 1
-    end
+word_separator = /\b[\w-]+\b/i
+punctuation_marks_separator = /\p{P}/
 
-    result.word_counts = result.word_counts.sort_by { |word, _count| word }
-    result
-  end
 
-  public
-
-  def parse_file(filename)
-    text = ''
-
-    File.open(filename) do |file|
-      file.each_line do |line|
-        text += line
+File.open(ARGV[0], "r") do |text|
+  text.each_line do |line|
+    line.downcase.scan(word_separator).each do |word|
+      if words.key?(word)
+        words[word] += 1
+      else
+        words[word] = 1
       end
     end
 
-    parse text
+    line.downcase.scan(punctuation_marks_separator).each { |word| punctuation_marks += 1 } 
   end
 end
 
-
-file_name = ARGV[0]
-format = ARGV[1]
-word_counter = WordCounter.new
-word_counter = word_counter.parse_file file_name
-
-if format == "json"
-  puts word_counter.to_json
-elsif format == "xml"
-  puts word_counter.to_xml
-else
-  puts word_counter.to_csv
+sorted_words = words.sort_by { |word, occur| [-occur, word] }
+bar_position = 0
+File.open("result.svg", "w") do |f|
+	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+	sorted_words.each do |word, occur|
+		bar_height = occur*100
+		bar_position = (bar_position + 200)
+		f.write (rectangle "#{bar_height}", "#{bar_position}", "#{word}")
+	end
+	f.write('</svg>')
 end

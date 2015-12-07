@@ -1,72 +1,19 @@
-require 'csv'
-require 'json'
-require 'rexml/document'
+require_relative 'word_counter/parser'
+require_relative 'word_counter/file_parser'
+require_relative 'word_counter/web_parser'
+require_relative 'word_counter/result'
+require_relative 'word_counter/graph_generator'
 
-class WordCounter
-  def parse(text)
-    word_pattern = /\b[A-Za-z0-9-]+\b/i
-    punctuation_pattern = /[\p{P}_]/
-
-    words = {}
-    punctuation_marks = 0
-
-    text.each_line do |line|
-      line.downcase.scan(word_pattern).each do |word|
-        if words.key?(word)
-          words[word] += 1
-        else
-          words[word] = 1
-        end
-      end
-
-      line.downcase.scan(punctuation_pattern)
-        .each { punctuation_marks += 1 }
-    end
-
-    words = words.sort_by { |word, occur| [-occur, word] }
-
-    Result.new(words, punctuation_marks)
+module WordCounter
+  def self.parse(text)
+    Parser.new.parse(text)
   end
 
-  def parse_file(filepath)
-    text = File.read(filepath)
-    parse(text)
-  end
-end
-
-class Result
-  attr_reader :marks_count, :word_counts
-
-  def initialize(word_counts, marks_count)
-    @marks_count = marks_count
-    @word_counts = word_counts
+  def self.parse_file(filepath)
+    FileParser.new.parse(filepath)
   end
 
-  def to_csv
-    CSV.generate(quote_char: "'") do |csv|
-      @word_counts.each do |word, occur|
-        csv << [word, occur]
-      end
-      csv << ['"marks"', @marks_count] unless @marks_count == 0
-    end
-  end
-
-  def to_json
-    json_hash = { "marks": @marks_count, "words": @word_counts }
-    JSON.generate(json_hash)
-  end
-
-  def to_xml
-    document = REXML::Document.new
-    word_counts = document.add_element('word-counts')
-    word_counts.add_element('marks').add_text(@marks_count.to_s)
-    words_element = word_counts.add_element('words')
-    @word_counts.each do |word, occur|
-      words_element.add_element('word')
-        .add_text(word)
-        .add_attribute('count', occur.to_s)
-    end
-
-    document.to_s
+  def self.parse_webpage(url)
+    WebpageParser.new.parse(url)
   end
 end

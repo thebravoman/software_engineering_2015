@@ -12,6 +12,10 @@ Count the words and symbols in a file and generate CSV, XML, JSON
 # Version 4 - V4
 Count the words and symbols in a Ruby file and generate CSV, XML, JSON
 
-# Version 4 - V5
+# Version 5 - V5
 Count the words and symbols in a ruby file and generate CSV, XML, JSON, but accept an url as an input and remove all html meta from the url contents
+
+# Version 6 - V6
+Count the words and symbols in a ruby file and generate CSV, XML, JSON, but accept an url as an input and remove all html meta from the url contents. 
+Generate a SVG with a graphic showing the distribution with bars
 

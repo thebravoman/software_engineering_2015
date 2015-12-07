@@ -1,0 +1,33 @@
+{
+  "school": {
+    "name": "ELSYS",
+    "classes": [
+      {
+        "id": "11a",
+        "students": [
+          {
+            "number": "13",
+            "name": "Ivaylo Arnaudov"
+          },
+          {
+            "number": "12",
+            "name": "Ivo Gerginov"
+          },
+          {
+            "number": "8",
+            "name": "GeorgiStoilov"
+          }
+        ]
+      },
+      {
+        "id": "11b",
+        "students": [
+          {
+            "number": "31",
+            "name": "Some Random Guy"
+          }
+        ]
+      }
+    ]
+  }
+}

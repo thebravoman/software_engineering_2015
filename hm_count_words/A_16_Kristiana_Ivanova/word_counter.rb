@@ -1,17 +1,16 @@
-class WordCounter
+require_relative './word_counter/file_parser.rb'
+require_relative './word_counter/web_parser.rb'
 
-  def parse(string)
-    result = Result.new
-    result.marks_count = string.scan(/[^A-Za-z_0-9 ]/).count
-    removal_regex = %r{(/.+/)|(['"].+['"])|[^A-Za-z_ ]}
-    items = string.downcase.gsub(removal_regax, ' ').split(' ').reject(&:empty?)
-
-    items.each {|item| result.word_counts[item] += 1} 
-    result.word_counts = result.word_counts.sort_by { |item, amount| [-amount, item]}
-    result
+module WordCounter
+  def self.parser(string)
+    Parser.new.parse string
   end
 
-def parse_file(filename)
-    parse File.read(filename).encode('UTF-8', 'UTF-8', invalid: :replace)
+  def self.parse_file(filename)
+    FileParser.new.parse filename
+  end
+
+  def self.parse_webpage(uri)
+    WebParser.new.parse uri
   end
 end

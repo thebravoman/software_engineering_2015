@@ -1,22 +1,16 @@
-require './B_08_Vanessa_Stoynova/result.rb'
+require 'word_counter/file_parser.rb'
+require 'word_counter/web_parser.rb'
 
-class WordCounter
-	def parse_string(string)
+module WordCounter
+	def self.parse(string)
+		Parser.new.parse(string)
+	end
 	
-		result = Result.new
-		result.marks = string.scan(/[,.!?()":\[\];]/).count
-		string = string.downcase.split
-		string.each do |word|
-			word = word.gsub(/[,.!?()":\[\];]/,'')
-			result.word_counter[word] += 1
-		end
-		result.word_counter = result.word_counter.sort_by { |key, value| [-value, key] }
-		result 
-	end 
+	def self.parse_file(file_name)
+		FileParser.new.parse(file_name)
+	end
 	
-	def parse_file(file)
-		files = File.open(file, 'r')
-		what_is_in_the_file = files.read
-		parse_string what_is_in_the_file
+	def self.parse_webpage(url)
+		WebpageParser.new.parse(url)
 	end
 end

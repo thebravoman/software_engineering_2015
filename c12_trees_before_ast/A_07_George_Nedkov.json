@@ -1,0 +1,29 @@
+{
+"School":
+	{
+            "Elsys":
+           
+          	{
+                   "classes":{
+
+                                 "11 A ": {
+                                                   "student":   ["nedkov", "cicelkov"," icaka" ] 
+
+
+                                               },
+                                       "11 B": {
+                                                    "students": [ "nasko"," bobi"," marto"]
+                                            }
+                                          
+                                              }
+
+
+                                      }
+
+                             }
+                      
+
+
+
+
+    }   

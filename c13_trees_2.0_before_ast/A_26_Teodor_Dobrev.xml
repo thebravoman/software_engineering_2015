@@ -1,0 +1,17 @@
+<schools>
+	<school name="TUES">
+		<class name="11A">
+			<student>Metodi</student>
+			<student>Kalin</student>
+			<student>Velin</student>
+			<student>Svetlin</student>
+		</class>
+		
+		<class name="11B">
+			<student>Superman</student>
+			<student>Phineans and Pherb</student>
+			<student>Perry the platipus</student>
+			<student>A secret agent</student>
+		</class>
+	</school>
+</schools>

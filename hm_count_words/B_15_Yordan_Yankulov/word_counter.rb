@@ -1,35 +1,19 @@
-require './B_15_Yordan_Yankulov/result.rb'
-class WordCounter
+require_relative 'word_counter/parser'
+require_relative 'word_counter/file_parser'
+require_relative 'word_counter/web_parser'
+require_relative 'word_counter/result'
 
-	def parse(string)
-      help = Hash.new
-      punctuation = string.scan(/[[:punct:]]/).count
-      the_words = string.downcase.split
-      the_words.each { |words|
-				words = words.gsub(/[\W+_\d+]/, ' ')
-				if (words.include?(" "))
-					words = words.split(" ")
-					words.each do |smth|
-	        	if help.has_key?(smth)
-	          	help[smth] = help[smth] + 1
-	        	else
-	          	help[smth] = 1
-	        	end
-					end
-				else
-					if help.has_key?(words)
-	          help[words] = help[words] + 1
-	        else
-	          help[words] = 1
-	        end
-				end
-      }
-      my_help = help.sort {|first,second| (second[1] == first[1]) ? (first[0] <=> second[0]) : (second[1]<=>first[1])}
-      return Result.new(punctuation, my_help)
+
+module WordCounter
+	def self.parse(string)
+		Parser.new.parse(string)
 	end
-	def parse_file(filename)
-    result = File.open(filename,"r")
-    result = result.read
-    parse result
+
+	def self.parse_file(file)
+		FileParser.new.parse_file(file)
+	end
+
+	def self.parse_webpage(address)
+		WebpageParser.new.parse_url(address)
 	end
 end

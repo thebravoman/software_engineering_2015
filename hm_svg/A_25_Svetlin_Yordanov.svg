@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600"><circle cx="500" cy="100" r="100" stroke="black" stroke-width="3" fill="red" />
+	 <text x="480" y="100" fill="back">TUES</text><circle cx="300" cy="300" r="100" stroke="black" stroke-width="3" fill="orange" />
+	 <text x="285" y="300" fill="back">11a</text><circle cx="150" cy="500" r="50" stroke="black" stroke-width="3" fill="orange" />
+	 <text x="100" y="500" fill="back">Aleksandar</text><circle cx="250" cy="500" r="50" stroke="black" stroke-width="3" fill="orange" />
+	 <text x="220" y="500" fill="back">Andrea</text><circle cx="350" cy="500" r="50" stroke="black" stroke-width="3" fill="orange" />
+	 <text x="315" y="500" fill="back">Antonio</text><circle cx="700" cy="300" r="100" stroke="black" stroke-width="3" fill="orange" />
+	 <text x="685" y="300" fill="back">11b</text></svg>
