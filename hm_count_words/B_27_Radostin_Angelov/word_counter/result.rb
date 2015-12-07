@@ -16,7 +16,7 @@ module WordCounter
           csv << [word, count]
         end
         puts "\"marks\",#{@marks_count}"
-        csv << ["\"marks\"", @marks_count]
+        csv << ['"marks"', @marks_count] unless @marks_count == 0
       end
     end
 
@@ -54,7 +54,7 @@ module WordCounter
   
 	def to_svg
 		rect_x = 20
-		File.open("result.svg", "w") do
+		File.open("B_27_Radostin_Angelov.svg", "w") do
 			|file|
 				file << '<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="300">'
 				
