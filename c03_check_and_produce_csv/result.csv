@@ -3,12 +3,12 @@ A,02,Andrea,Georgieva,0
 A,3,Antonio,Mindov,0
 A,5,Velin,Yavorski,0
 A,6,Victoria,Admasu,0
-A,7,George,Nedkov,0
+A,07,George,Nedkov,0
 A,8,Georgi,Tsitselkov,0
 A,9,Georgi,Danchev,0
 A,10,Daniel,Kirov,0
 A,11,Dimitur,Katzarov,0
-A,12,Emil,Lozev,0
+A,12,Emil,Lozev,1
 A,13,Ivan-Asen,Ovedenski,0
 A,14,Ignat,Georgiev,0
 A,15,Kalin,Karev,0
@@ -23,7 +23,7 @@ A,23,Petko,Georgiev,0
 A,24,Petar,Petrov,0
 A,25,Svetlin,Yordanov,0
 A,26,Teodor,Dobrev,0
-A,27,Hristiyan,Zahariev,0
+A,27,Hristiyan,Zahariev,1
 A,28,Hristo,Ezekiev,0
 A,29,Yassen,Alexiev,0
 B,02,Atanas,Chompolov,0
@@ -32,7 +32,7 @@ B,04,Bojidar,Zahov,0
 B,05,Borislav,Mihaylov,0
 B,6,Valentin,Stoyanov,0
 B,08,Vanessa,Stoynova,0
-B,09,Georgi,Stoilov,0
+B,09,Georgi,Stoilov,1
 B,10,Dimitar,Djadjarov,0
 B,11,Emil,Karbanov,0
 B,12,Emiliqn,Gospodinov,0
@@ -40,11 +40,11 @@ B,13,Ivaylo,Arnaudov,0
 B,14,Ivo,Gerginov,0
 B,15,Yordan,Yankulov,0
 B,16,Konstantin,Todorov,0
-B,16,Luchezar,Ivanov,0
 B,17,Lubomir,Kiprov,0
-B,19,Martin,Galabov,0
+B,17,Luchezar,Ivanov,0
 B,19,Martin,Angelov,0
-B,20,Martin,Stanchev,0
+B,20,Martin,Stanchev,1
+B,21,Martin,Galabov,0
 B,22,Nikolay,Karagyozov,0
 B,23,Petar,Georgiev,0
 B,24,Petar,Tsankov,0
@@ -53,3 +53,4 @@ B,26,Plamen,Neshkov,0
 B,27,Radostin,Angelov,0
 B,28,Toma,Marinov,0
 B,29,Julian,Stoev,0
+ruby,program,for,counting,0
