@@ -1,4 +1,4 @@
-require './B_14_Ivo_Gerginov/word_counter/result'
+require_relative 'result'
 
 module WordCounter
 
