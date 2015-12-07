@@ -10,14 +10,14 @@ module WordCounter
     end
 
     def to_csv
-      CSV.open("result.csv", "w") do |csv|
-        @words_count.each do |word, count|
-          puts "#{word},#{count}"
-          csv << [word, count]
-        end
-        puts "\"marks\",#{@marks_count}"
-        csv << ['"marks"', @marks_count] unless @marks_count == 0
-      end
+	CSV.open("result.csv", "w", {:col_sep => ",",  :quote_char => "'"}) do |csv|
+		@words_count.each do |word, count|
+			puts "#{word},#{count}"
+			csv << [word, count]
+		end
+		puts "\"marks\",#{@marks_count}"
+		csv << ["\"marks\"", @marks_count] unless @marks_count == 0
+	end
     end
 
     def to_xml
