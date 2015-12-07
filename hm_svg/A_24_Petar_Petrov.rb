@@ -1,7 +1,7 @@
 require 'json'
 
 class SVG_Parser
-	attr_accessor :initial_x, :initial_y
+	attr_accessor :initial_x, :initial_y, :line_x_1, :line_y_1, :line_x_2, :line_y_2
 	def initialize	
 		@initial_x = 600
 		@initial_y = 50
@@ -10,6 +10,10 @@ class SVG_Parser
 		@stroke_width = 2
 		@stroke_color = 'black'
 		@c_counter = 0
+		@line_x_1 = 590 
+		@line_y_1 = 55
+		@line_x_2 = @line_x_1 + 20
+		@line_y_2 = @line_y_1 + 20
 	end
 	def generate_svg_tree(parsed)
 		puts parsed
@@ -31,6 +35,7 @@ class SVG_Parser
 					else
 						draw_circle(key,file,i)
 					end
+					draw_line(file)
 					iteration(value,file) 
 				end
 			elsif hash.is_a?(Array)
@@ -40,13 +45,22 @@ class SVG_Parser
 			end
 		end
 		
+		def draw_line(file)
+			file.write('<line x1="'+@line_x_1.to_s+'" y1="'+@line_y_1.to_s+'" x2="'+@line_x_2.to_s+'" y2="'+@line_y_2.to_s+'" stroke-width="2"/>')
+		end
+		
 		def draw_circle(parent,file,index)
 			if(@c_counter > 0)
 				if index == 0
 					@initial_x -= 100
 					@initial_y += 100
+					@line_x_1 -= 100 + 10
+					@line_y_1 += 100 + 5
+					@line_x_2 += @line_x_1 + 20
+					@line_y_2 += @line_y_1 + 20
 				elsif index > 0
-					@initial_x += 2*100			
+					@initial_x += 2*100	
+					@line_x_1 += 2*100 - 10		
 				end
 			end
 			file.write('<circle cx="'+@initial_x.to_s+'" cy="'+@initial_y.to_s+'" r="'+@circle_radius.to_s+'" fill="'+@fill+'" stroke="'+@stroke_color+'" stroke-width="'+@stroke_width.to_s+'"/>')
