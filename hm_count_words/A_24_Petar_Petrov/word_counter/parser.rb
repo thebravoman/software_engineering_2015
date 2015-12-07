@@ -3,7 +3,11 @@ require_relative 'result'
 module WordCounter
   class Parser 
       def mark_count(text)
-      	text.scan(/[^a-z\s_0-9]/).size
+      	if ARGV[0].split('.').last == 'rb' || ARGV[0].split('/').first == 'http:' || ARGV[0].split('/').first == 'https:'
+        	text.scan(/[^a-z\s_0-9]/).size
+        else
+        	text.scan(/[^a-z _0-9]/).size
+        end
       end
     
       def split_string(text)
