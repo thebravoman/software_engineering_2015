@@ -1,4 +1,3 @@
-#TODO: classes and files
 require 'rexml/document'
 require 'rexml/element'
 require 'json'
