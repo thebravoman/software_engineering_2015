@@ -21,7 +21,6 @@ File.open("A_14_Ignat_Georgiev.svg","w") do |f|
 		if key == 'node_name'
 		puts value
 		f.write(circle(def_pos_x,def_pos_y,value))
-		f.write(line(def_pos_x-100,def_pos_y+200,def_pos_x,def_pos_y+200))
 		def_pos_y += 200
 		elsif key != 'node_name'
 			def_pos_x -= 100
