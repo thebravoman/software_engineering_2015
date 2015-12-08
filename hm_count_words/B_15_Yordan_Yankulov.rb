@@ -3,10 +3,12 @@ require_relative 'B_15_Yordan_Yankulov/word_counter'
 file_name = ARGV[0]
 format_of_output = ARGV[1]
 
-if file_name.start_with?('https://') || file_name.start_with?('http://')
-  result = WordCounter::parse_webpage(file_name)
+input_format = file_name.split('/').first
+
+if input_format.start_with?('https:') || input_format.start_with?('http:')
+  result = WordCounter.parse_webpage(file_name)
 else
-  result = WordCounter::parse_file(file_name)
+  result = WordCounter.parse_file(file_name)
 end
 
 if format_of_output == 'json'

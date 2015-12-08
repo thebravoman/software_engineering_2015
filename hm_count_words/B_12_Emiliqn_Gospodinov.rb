@@ -1,18 +1,51 @@
-require_relative 'B_12_Emiliqn_Gospodinov/word_counter'
-format = ARGV[1]
+require 'rexml/document'
+require 'rexml/element'
+require 'json'
+require 'csv'
 
-is_url = ARGV[0].split("_").last.split("/").first
+result = Hash.new
+words = File.read(ARGV[0])
+my_xml = REXML::Document.new('')
+marks_counter = 0
+marks_pat = /[\p{P}\p{S}]/u
 
-if (is_url == "https:") || (is_url == "http:") 
-  result = WordCounter::parse_web(ARGV[0])
-else
-  result = WordCounter::parse_file(ARGV[0])
+words.each_line do |line|
+	line.downcase.scan(/\b[A-Za-z0-9]+\b/i).each do |word|
+		marks_counter += word.count(".,!?()[]\"")
+		word = word.gsub(/[,()!.?_"]/,'')
+			if result.has_key?(word)
+				result[word]+=1
+			else
+				result[word] = 1
+			end
+	end
+
+	line.downcase.scan(marks_pat)
+.each { marks_counter += 1 }
+
 end
+result=result.sort_by{|k,v| [-v,k]}
 
-if format == "json"
-  puts result.to_json
-elsif format == "xml"
-  puts result.to_xml
-elsif format == "csv" or format == nil
-  puts result.to_csv
+if ARGV[1] == 'csv' or ARGV[1] == nil
+	result.each do |elements|
+		puts "#{elements[0]},#{elements[1]}"
+	end
+	if marks_counter!=0
+		puts '"marks",'+"#{marks_counter}"
+	end
+	CSV.open("result.csv", "w") do |csv|
+  	result.each {|element| csv << element}
+	end
+
+elsif ARGV[1] == 'json'
+	puts JSON.pretty_generate("marks" => marks_counter,"words" => result.to_a)
+elsif ARGV[1] == 'xml'
+	word = my_xml.add_element('word-counts')
+	word.add_element('marks').add_text"#{marks_counter}"
+	words_element = REXML::Element.new 'words'
+	result.each do |k,v|
+		words_element.add_element('word',{'count' => v}).add_text("#{k}")
+	end
+	word.add_element(words_element)
+	puts my_xml
 end

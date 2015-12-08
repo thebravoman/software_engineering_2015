@@ -30,7 +30,7 @@ module WordCounter
           "marks" => @marks_count,
           "words" => word_format
         }
-        json = JSON.pretty_generate(json_format)
+        json = JSON.generate(json_format)
         file << json
 
         json

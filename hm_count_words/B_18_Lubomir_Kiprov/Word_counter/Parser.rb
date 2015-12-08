@@ -8,7 +8,7 @@ def parse(string)
 		wordhash = Hash.new 0
 		
 		countmarks = string.scan(/[[:punct:]=`~$^+|<>]/u).count
-		searchword  =  string.tr("\n","")
+		searchword  =  string.tr("\n"," ").downcase
 		searchword = searchword .split(' ')
 		searchword =  searchword.sort
 		j = searchword.first
@@ -42,4 +42,3 @@ def parse(string)
 	end
 end
 end
-

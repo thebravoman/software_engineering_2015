@@ -1,4 +1,4 @@
-require './B_14_Ivo_Gerginov/word_counter/result'
+require_relative 'result'
 
 module WordCounter
 
@@ -8,7 +8,7 @@ module WordCounter
   	  w_count = Hash.new(0)
       marks = f_str.scan(/[\p{P}\p{S}]/u).count
 	  f_str.each_line do |line|
-        line = line.gsub!(/[\W+_\d+]/, ' ')
+        line = line.gsub!(/[\W+_]/, ' ')
         words = line.downcase.split
         words.each{ |x|	
       	  if w_count.has_key?("#{x}")
