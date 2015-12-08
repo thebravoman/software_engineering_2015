@@ -14,6 +14,8 @@ class SVGTreeGenerator
   @result
 
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
+    @result += '<svg xmlns="http://www.w3.org/2000/svg">'
+    
     drawer = SVGDrawer.new
     same_depth_elements = tree.get_elements_with_depth node.depth
     node_index = 0
@@ -45,6 +47,8 @@ class SVGTreeGenerator
     node.descendants.each do |desc|
       draw element_x, element_y, desc
     end
+
+    @result += '</svg>'
   end
 
   public
