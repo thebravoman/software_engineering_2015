@@ -83,7 +83,7 @@ def print_svg_tree(json, svg, w, h)
 end
 
 def print_svg
-	File.open("result.svg", "w") do |svg|
+	File.open("B_27_Radostin_Angelov.svg", "w") do |svg|
 		svg << '<svg xmlns="http://www.w3.org/2000/svg" height="3000" width="1000">'
 		print_svg_tree(result, svg, 500, 200)
 		svg << '</svg>'
