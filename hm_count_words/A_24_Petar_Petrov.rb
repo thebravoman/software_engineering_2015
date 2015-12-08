@@ -4,7 +4,7 @@ require 'word_counter'
 
 start = ARGV[0].split('/').first
 if start == 'http:' || start == 'https:'
-  result = WordCounter.parse_website(ARGV[0])
+  result = WordCounter.parse_webpage(ARGV[0])
 else
   result = WordCounter.parse_file(ARGV[0])
 end

@@ -25,7 +25,7 @@ class Result
 		"marks" => @marks_count,
 		"words" => @word_counts,
 	}
-	puts JSON.pretty_generate(hash)
+		puts JSON.pretty_generate(hash)
 	end
 	
 	def to_xml

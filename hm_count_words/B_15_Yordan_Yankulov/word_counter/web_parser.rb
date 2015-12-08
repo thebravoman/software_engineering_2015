@@ -1,11 +1,13 @@
 require 'net/http'
 require 'sanitize'
 require 'openssl'
+require_relative 'result'
+require_relative 'parser'
 
 module WordCounter
-  class WebpageParser < Parser
-    def parse_url(url)
-      uri  = URI.parse(url)
+  class WebpageParser
+    def parse_url(uri)
+      uri  = URI.parse(ARGV[0])
 
       http = Net::HTTP.new(uri.host, uri.port)
 
@@ -16,8 +18,8 @@ module WordCounter
 
     result = http.get(uri.request_uri)
 
-    text = Sanitize.fragment(result.body)
-    puts text
+    string = Sanitize.fragment(result.body)
+    Parser.new.parse string
     end
   end
 end

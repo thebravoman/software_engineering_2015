@@ -1,4 +1,4 @@
-require_relative 'Word_counter.rb'
+require_relative '/Word_counter.rb'
 
 
 filename = ARGV[0]
