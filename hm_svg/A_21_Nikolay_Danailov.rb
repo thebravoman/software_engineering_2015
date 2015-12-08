@@ -9,7 +9,5 @@ json = JSON.parse file
 tree_generator = SVGTreeGenerator.new
 
 File.open(RESULT_FILE, 'w') do |file|
-  file << '<svg xmlns="http://www.w3.org/2000/svg">'
   file << tree_generator.generate_from_json(json)
-  file << '</svg>'
 end

@@ -1,4 +1,5 @@
 require_relative 'tree/tree.rb'
+require_relative 'svg_drawer.rb'
 
 class SVGTreeGenerator
   private
@@ -12,29 +13,10 @@ class SVGTreeGenerator
 
   @result
 
-  def rect(x, y, w, h)
-    '<rect x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" width="' + w.to_s + \
-      '" height="' + h.to_s + \
-      '" fill="red"/>'
-  end
-
-  def text(x, y, str)
-    '<text text-anchor="middle" x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" fill="black">' + str.to_s + '</text>'
-  end
-
-  def line(x1, y1, x2, y2)
-    '<line x1="' + x1.to_s + '" y1="' + y1.to_s + '" x2="' + x2.to_s + '" y2="' + y2.to_s + '" style="stroke:rgb(255,0,0);stroke-width:2" />'
-  end
-
-  def circle x, y, r
-    '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" fill="red" />'
-  end
-
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
+    @result += '<svg xmlns="http://www.w3.org/2000/svg">'
+    
+    drawer = SVGDrawer.new
     same_depth_elements = tree.get_elements_with_depth node.depth
     node_index = 0
 
@@ -48,22 +30,25 @@ class SVGTreeGenerator
 
     if(node.leaf?)
       if(!ancestor_x.nil? && !ancestor_y.nil?)
-        @result += line element_x + @RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
+        @result += drawer.line element_x + @RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
       end
 
-      @result += rect element_x, element_y, @RECT_WIDTH, @RECT_HEIGHT
-      @result += text element_x + @RECT_WIDTH / 2, element_y + @RECT_HEIGHT / 2, node.value
+      @result += drawer.rect element_x, element_y, @RECT_WIDTH, @RECT_HEIGHT
+      @result += drawer.text element_x + @RECT_WIDTH / 2, element_y + @RECT_HEIGHT / 2, node.value
     else
       if(!ancestor_x.nil? && !ancestor_y.nil?)
-        @result += line element_x, element_y, ancestor_x, ancestor_y
+        @result += drawer.line element_x, element_y, ancestor_x, ancestor_y
       end
-      @result += circle element_x, element_y, @CIRCLE_RADIUS
-      @result += text element_x, element_y, node.value
+      
+      @result += drawer.circle element_x, element_y, @CIRCLE_RADIUS
+      @result += drawer.text element_x, element_y, node.value
     end
 
     node.descendants.each do |desc|
       draw element_x, element_y, desc
     end
+
+    @result += '</svg>'
   end
 
   public
