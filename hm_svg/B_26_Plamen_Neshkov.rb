@@ -44,7 +44,7 @@ def generate_svg(json_object)
   end
 end
 
-File.open('result.svg', 'w') do |f|
+File.open('B_26_Plamen_Neshkov.svg', 'w') do |f|
   f.write('<svg width="1000" height="1000"
            xmlns="http://www.w3.org/2000/svg">')
 
