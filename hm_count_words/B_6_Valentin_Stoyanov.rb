@@ -18,7 +18,9 @@ when "json"
 	puts result.to_json
 when "xml"
 	result.to_xml
-else 
+when nil
+	puts result.to_csv
+else
 	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
 	puts result.to_csv
 end

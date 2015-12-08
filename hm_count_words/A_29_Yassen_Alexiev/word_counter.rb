@@ -2,15 +2,15 @@ require 'word_counter/file_parser'
 require 'word_counter/web_parser'
 
 module WordCounter
-  def parse(string)
+  def self.parse(string)
     Parser.new.parse string
   end
 
-  def parse_file(filename)
+  def self.parse_file(filename)
     FileParser.new.parse filename
   end
 
-  def parse_webpage(url)
+  def self.parse_webpage(url)
     WebpageParser.new.parse url
   end
 end

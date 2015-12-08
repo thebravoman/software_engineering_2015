@@ -5,8 +5,8 @@ format_print = ARGV[1].to_s
 format = "string"
 
 def ifSite(filename)
-	f = filename.split('/').first
-	return f == 'http:' || f == 'https:'
+	first = filename.split('/').first
+	return first == 'http:' || first == 'https:'
 end
 
 if File.file? file_name

@@ -15,7 +15,7 @@ dism = 0
 counter = 0
 
 def rectangle x, y, w, h
-	'<rect width="'+w.to_s+'" height="'+h.to_s+'" x="'+x.to_s+'" y="'+y.to_s+'" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />'
+	'<rect width="'+w.to_s+'" height="'+h.to_s+'" x="'+x.to_s+'" y="'+y.to_s+'" style="fill:rgb(255,250,255);stroke-width:3;stroke:rgb(0,0,0)" />'
 end
 
 def circle x, y, r, cr, cg, cb
@@ -27,7 +27,7 @@ def line x1, y1, x2, y2
 end
 
 def text x, y, s 
-	'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="red">'+s.to_s+'</text>'
+	'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="blue">'+s.to_s+'</text>'
 end
 
 File.open("A_15_Kalin_Karev.svg", "w") do |f|
@@ -51,7 +51,7 @@ File.open("A_15_Kalin_Karev.svg", "w") do |f|
 							dis += 40
 							disleaf += 90
 							k4.each do |k5, v5|
-								f.write(text (disleaf + distext - 100), 550, v5)
+								f.write(text (disleaf + distext - 85), 430, v5)
 								distext += 40
 								f.write(line (disleaf + distext - 95), 400, disclass + 25, 300)
 							end

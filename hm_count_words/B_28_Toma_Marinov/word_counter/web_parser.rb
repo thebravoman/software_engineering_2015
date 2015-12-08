@@ -1,7 +1,7 @@
 require_relative './parser'
 
 require 'net/http'
-#require 'sanitize'    -cannot load such file --sanitize
+require 'sanitize'    #-cannot load such file --sanitize
 require 'openssl'
 
 module WordCounter
@@ -19,9 +19,22 @@ module WordCounter
 			end
 
 			result = http.get(url.request_uri)
-			text = Sanitize.fragment(result.body)
+			text = Sanitize.clean(result.body, remove_contents: %w(script))
 
-			parse text
+			some_hash = Hash.new(0)
+			counter = 0.to_i
+
+			text.each_line do |line|
+				result = super(line)
+				some_hash = some_hash.merge(result.hash.to_h) { |key, oldval, newval| oldval + newval }
+
+				counter += result.count
+			end
+
+			sorted = Hash.new(0)
+			sorted = some_hash.sort_by { |key, value| [-value, key] }
+
+			Result.new(sorted, counter)
 		end
 	end
 end

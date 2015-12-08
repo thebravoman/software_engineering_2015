@@ -10,14 +10,14 @@ module WordCounter
     end
 
     def to_csv
-      CSV.open("result.csv", "w") do |csv|
-        @words_count.each do |word, count|
-          puts "#{word},#{count}"
-          csv << [word, count]
-        end
-        puts "\"marks\",#{@marks_count}"
-        csv << ["\"marks\"", @marks_count]
-      end
+	CSV.open("result.csv", "w", {:col_sep => ",",  :quote_char => "'"}) do |csv|
+		@words_count.each do |word, count|
+			puts "#{word},#{count}"
+			csv << [word, count]
+		end
+		puts "\"marks\",#{@marks_count}"
+		csv << ["\"marks\"", @marks_count] unless @marks_count == 0
+	end
     end
 
     def to_xml
@@ -54,7 +54,7 @@ module WordCounter
   
 	def to_svg
 		rect_x = 20
-		File.open("result.svg", "w") do
+		File.open("B_27_Radostin_Angelov.svg", "w") do
 			|file|
 				file << '<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="300">'
 				

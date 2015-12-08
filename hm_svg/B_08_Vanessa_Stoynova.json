@@ -1,0 +1,17 @@
+{
+  "node_name" : "TUES",
+  "children" : [
+    { "node_name": "11a",
+      "children" : [
+                        {"node_name": "Martin"},
+                        {"node_name": "Valio"},
+                        {"node_name": "Andrea"}
+    ]},
+    { "node_name": "11b",
+      "children" : [
+                        {"node_name": "Boriana"},
+                        {"node_name": "Vanessa"},
+                        {"node_name": "Plamen"}
+    ]}
+  ]
+}

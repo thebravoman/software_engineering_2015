@@ -21,7 +21,7 @@ def print_hashmap(json_object, offset)
       print_hashmap(value, offset + 2)
     when Array
       value.each do |v|
-        puts ' '*(offset + 2) + v
+        puts ' '*(offset + 2) + v.to_s
       end
     end
   end

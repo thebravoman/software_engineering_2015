@@ -38,13 +38,13 @@ def write_hash hash, level, cx, cxMax, width, height, f
 end
 
 def generate_tree hash
-	File.open("result.svg", "w") do |f|
+	File.open("A_3_Antonio_Mindov.svg", "w") do |f|
 		f.write('<svg xmlns="http://www.w3.org/2000/svg" width="100% height = 5000">')
 		write_hash(hash, 1, 0, 1111, 100, 60, f)
 		f.write('</svg>')
 	end
 end
 
-file = File.read("input.json")
+file = File.read(ARGV[0])
 parsed = JSON.parse(file)
 generate_tree(parsed)

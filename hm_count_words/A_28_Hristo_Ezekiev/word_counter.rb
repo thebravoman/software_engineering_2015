@@ -1,26 +1,17 @@
-require 'word_counter/parser'
 require 'word_counter/file_parser'
-require 'word_counter/website_parser'
-require 'word_counter/result'
+require 'word_counter/web_parser'
+require 'word_counter/parser'
 
 module WordCounter
-    def self.parse(string)   
-		Parser.new.parse(string)
-	end     
+	def self.parse(contents)
+		Parser.newparse(contents)
+	end
 
-    def self.parse_file(filename)
+	def self.parse_file(filename)
 		FileParser.new.parse(filename)
 	end
 
-    def self.parse_webpage(url)   
-		WebsiteParser.new.parse(url)
+	def self.parse_webpage(url)
+		WebpageParser.new.parse(url)
 	end
-	
-	def self.marks
-		Result.new.marks_count
-	end
-	
-	def self.words
-		Result.new.word_counts
-	end
-end     
+end
