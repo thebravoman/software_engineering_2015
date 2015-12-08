@@ -15,18 +15,18 @@ File.open("B_25_Petyo_Cvetkov.svg", "w") do |svg|
   svg.write('<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600">')
 	svg.write(draw_circle 500, 100, 100, "red", result["node_name"])
 	result["children"].each do |classes|
-		puts classes["node_name"]
 
+			puts classes["node_name"]
 			svg.write(draw_circle x2, 300, 100, "red", classes["node_name"])
       x2 +=500
 
 		classes["children"].each do |students|
-			puts students["node_name"]
+				puts students["node_name"]
 				svg.write(draw_circle x, 500, 50, "red", students["node_name"])
         x += 100
-			end
-      x += 150
-			end
+		end
+    x += 250
+	end
 
 
 
