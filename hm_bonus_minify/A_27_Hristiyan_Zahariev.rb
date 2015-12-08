@@ -22,7 +22,7 @@ value = ARGV[2].to_s
 
 DATE_ROW = 0 #Kato go zloja v metoda mi dava error ;()
 if ARGV[2] 
-  Printer.new.printing_with_value(csv_file, date, value.to_i)
+  Printing.new.printing_with_value(csv_file, date, value.to_i)
 else 
-  Printer.new.printing_without_value(csv_file, date)
+  Printing.new.printing_without_value(csv_file, date)
 end
