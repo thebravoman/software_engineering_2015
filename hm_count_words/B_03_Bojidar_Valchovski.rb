@@ -14,13 +14,10 @@ end
 
 if format == "xml" 
   puts result.to_xml
-  result.to_svg
 elsif format == "json"
   puts result.to_json
-  result.to_svg
-elsif format == "svg"
-  result.to_svg
 else
   puts result.to_csv
-  result.to_svg 
 end
+
+result.to_svg

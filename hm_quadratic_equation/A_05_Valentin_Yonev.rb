@@ -2,13 +2,12 @@
 
 def solve(a, b, c)
   discriminant = (b ** 2) - (4 * a * c)
-  puts discriminant
   if discriminant == 0
     return -b / (2 * a)
   elsif discriminant > 0
     x1 = (-b + Math.sqrt(discriminant)) / (2 * a)
     x2 = (-b - Math.sqrt(discriminant)) / (2 * a)
-    return x1 , x2
+    return "#{x1}, #{x2}"
   end
   return ""
 end

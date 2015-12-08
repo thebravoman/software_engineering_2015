@@ -4,6 +4,7 @@ file_csv = ARGV[0]
 command = ARGV[1]
 
 
+
 my_csv = CSV.read file_csv
 
 def write_csv my_csv

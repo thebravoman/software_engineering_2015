@@ -3,7 +3,7 @@ module WordCounter
     def parse(string)
         help = Hash.new
         a = 0
-        punctuation = string.scan(/[[:punct:]]/).count
+        punctuation = string.scan(/[\p{P}\p{S}]/u).count
         the_words = string.downcase.split
         the_words.each { |words|
           words = words.gsub(/[\W+_]/, ' ')
