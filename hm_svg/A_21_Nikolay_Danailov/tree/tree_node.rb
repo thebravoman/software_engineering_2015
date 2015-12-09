@@ -1,3 +1,4 @@
+# Represents a node from the tree
 class TreeNode
   attr_accessor :value
   attr_accessor :depth
@@ -10,18 +11,15 @@ class TreeNode
     @ancestor = ancestor
     @descendants = descendants
 
-    if ancestor != nil 
+    unless ancestor.nil?
       @depth = ancestor.depth + 1
-
-      if !ancestor.descendants.include?(self)
-        ancestor.descendants << self
-      end
+      ancestor.descendants << self unless ancestor.descendants.include?(self)
     end
 
-    if descendants.size > 0
-      @depth = descendants.first.depth - 1
-      descendants.each { |descendant| descendant.ancestor = self }
-    end
+    return if descendants.size <= 0
+
+    @depth = descendants.first.depth - 1
+    descendants.each { |descendant| descendant.ancestor = self }
   end
 
   def leaf?
