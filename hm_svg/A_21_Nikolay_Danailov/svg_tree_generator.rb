@@ -1,6 +1,7 @@
 require_relative 'tree/tree.rb'
 require_relative 'svg_drawer.rb'
 
+# Generator an SVG graphic tree
 class SVGTreeGenerator
   private
 
@@ -10,8 +11,6 @@ class SVGTreeGenerator
   RECT_HEIGHT = 50
   CIRCLE_RADIUS = 50
   Y_BETWEEN_ELEMENTS = 125
-
-  @result
 
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
     @result += '<svg xmlns="http://www.w3.org/2000/svg">'
@@ -28,18 +27,18 @@ class SVGTreeGenerator
     element_x = alotted_space * (node_index + 1)
     element_y = STARTING_Y + Y_BETWEEN_ELEMENTS * node.depth
 
-    if(node.leaf?)
-      if(!ancestor_x.nil? && !ancestor_y.nil?)
+    if node.leaf?
+      if !ancestor_x.nil? && !ancestor_y.nil?
         @result += drawer.line element_x + RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
       end
 
       @result += drawer.rect element_x, element_y, RECT_WIDTH, RECT_HEIGHT
       @result += drawer.text element_x + RECT_WIDTH / 2, element_y + RECT_HEIGHT / 2, node.value
     else
-      if(!ancestor_x.nil? && !ancestor_y.nil?)
+      if !ancestor_x.nil? && !ancestor_y.nil?
         @result += drawer.line element_x, element_y, ancestor_x, ancestor_y
       end
-      
+
       @result += drawer.circle element_x, element_y, CIRCLE_RADIUS
       @result += drawer.text element_x, element_y, node.value
     end
