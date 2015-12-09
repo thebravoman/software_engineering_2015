@@ -43,7 +43,8 @@ The output should be sorted by "date" ASC
 Build a program that accepts:
  - a file name as a first command line argument
  - a date as a second line argument. Date is in format "DD/MM/YYYY"
- - a value 
+ - a value
+
 The program should display on the standard output:
  - all the rows from the original file that are for the given date and have an amount between (value-10) and (value+10)
 The output should be sorted by "date" ASC

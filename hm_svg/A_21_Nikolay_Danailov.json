@@ -5,11 +5,13 @@
       "children" : [
         {"node_name": "Aleksandar"},
         {"node_name": "Andrea"},
+        {"node_name": "Andrea"},
         {"node_name": "Antonio"}
     ]},
     { "node_name": "11b",
       "children" : [
         {"node_name": "Asen"},
+        {"node_name": "Andrea"},
         {"node_name": "Atanas"},
         {"node_name": "Bojidar"}
     ]}
