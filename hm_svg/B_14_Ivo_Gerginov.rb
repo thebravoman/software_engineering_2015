@@ -8,16 +8,10 @@ def treeNode(x, y, str)
 	'<text x = "'+textX.to_s+'" y = "'+textY.to_s+'" fill = "black">'+str.to_s+'</text> '+"\n"
 end
 
-def line()
-  
-end
-
 def makeTree(x, y, hash, file)
  
- xDistance = 200
+ xDistance = 140
  yDistance = 100
- xLineStart = x + 40
- yLineStart = y + 40 
  
  hash.each do |key, value| 
     if value.kind_of?(String)
@@ -27,12 +21,13 @@ def makeTree(x, y, hash, file)
 	elsif value.kind_of?(Array)
 	  value.each do |e|
 	    file << makeTree(x, y, e, file)
-	    x += 200
+	    x += xDistance
 	  end
 	end
-	y += 100
+	y += yDistance
   end
 end
+
 jsonFile = ARGV[0]
 data = Hash.new()
 file = File.read(jsonFile)
