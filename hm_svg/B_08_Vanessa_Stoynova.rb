@@ -16,7 +16,7 @@ def draw_rectangle x, y
   '<rect x = "'+x.to_s+'" y = "'+y.to_s+'" width="110" height = "50" style = "fill:rgb(199,21,133);stroke-width:3;stroke:rgb(0,0,0)" />'
 end
 
-file = File.read('B_08_Vanessa_Stoynova.json')
+file = File.read(ARGV[0])
 data_hash = JSON.parse(file)
 
 name = "node_name"

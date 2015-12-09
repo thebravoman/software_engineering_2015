@@ -24,6 +24,8 @@ date		account		category	amount		currency	description
 You must build 6 versions of a ruby program that:
 The submited program is always called Class_Number_FirstName_LastName.rb and should be submited in the folder where this description is
 
+The program accepts the file with the headers given above. In the result, the headers must be skipped.
+
 ## Version 1 - 
 Build a program that accepts:
  - a file name as a first command line argument
@@ -40,8 +42,9 @@ The output should be sorted by "date" ASC
 ## Version 2
 Build a program that accepts:
  - a file name as a first command line argument
- - a date as a second line argument. Date is in format "MM/DD/YYYY"
- - a value 
+ - a date as a second line argument. Date is in format "DD/MM/YYYY"
+ - a value
+
 The program should display on the standard output:
  - all the rows from the original file that are for the given date and have an amount between (value-10) and (value+10)
 The output should be sorted by "date" ASC
