@@ -27,7 +27,6 @@ class SvgGenerator
 	SCREEN_WIDTH = 1000
 
 	def draw_element(element, depth, at_this_level, total_levels)
-		puts element
 		@@arr ||= Array.new(total_levels, 0)
 		@@arr[depth] += 1
 		num = @@arr[depth]
