@@ -7,8 +7,6 @@ def putsRow(csvRead, dateArg, valueArg)
 
 		if (date == dateArg) and value.between?((valueArg-10),(valueArg+10))  
 			puts row.join(" ")
-		elsif (date == dateArg)
-			puts row.join(" ")
 		end
 	end
 end
