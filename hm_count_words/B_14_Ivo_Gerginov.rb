@@ -1,4 +1,4 @@
-require './B_14_Ivo_Gerginov/word_counter'
+require_relative 'B_14_Ivo_Gerginov/word_counter'
 
 f_path = ARGV[0]
 op = ARGV[1]
