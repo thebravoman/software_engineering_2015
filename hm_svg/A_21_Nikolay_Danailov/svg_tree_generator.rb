@@ -33,22 +33,22 @@ class SVGTreeGenerator
     x_per_element = alotted_space / (siblings_size + 1)
     element_x = ancestor_index * alotted_space + x_per_element * (node.index + 1)
     element_y = STARTING_Y + Y_BETWEEN_ELEMENTS * node.depth
-
-    puts "x_per_element: #{x_per_element}\nelement_x: #{element_x}\nelement_y: #{element_y}\n\n"
+    same_depth_elements = tree.get_elements { |n| n.depth == node.depth }
+    size_coeficient = 1
 
     if node.leaf?
       if !ancestor_x.nil? && !ancestor_y.nil?
         @result += drawer.line element_x + RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
       end
 
-      @result += drawer.rect element_x, element_y, RECT_WIDTH, RECT_HEIGHT
+      @result += drawer.rect element_x, element_y, RECT_WIDTH * size_coeficient, RECT_HEIGHT * size_coeficient
       @result += drawer.text element_x + RECT_WIDTH / 2, element_y + RECT_HEIGHT / 2, node.value
     else
       if !ancestor_x.nil? && !ancestor_y.nil?
         @result += drawer.line element_x, element_y, ancestor_x, ancestor_y
       end
 
-      @result += drawer.circle element_x, element_y, CIRCLE_RADIUS
+      @result += drawer.circle element_x, element_y, CIRCLE_RADIUS * size_coeficient
       @result += drawer.text element_x, element_y, node.value
     end
 
