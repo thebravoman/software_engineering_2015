@@ -8,7 +8,7 @@ mon_csv.each do |row|
 		row.each do |key, val|
 			at_col = at_col + 1
 			print val
-			if  !(at_col == row.size)
+			unless at_col == row.size
 				print ","
 			end
 		end
