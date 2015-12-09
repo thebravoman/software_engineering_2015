@@ -1,6 +1,6 @@
 require 'net/http'
 require 'sanitize'
-require 'uri'
+require 'openssl'
 
 module WordCounter
 

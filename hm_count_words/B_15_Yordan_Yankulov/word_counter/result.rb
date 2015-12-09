@@ -17,10 +17,10 @@ module WordCounter
     end
   	def to_csv
       @help.each{ |element|
-    	puts "#{element[0]},#{element[1]}"
+    	   puts "#{element[0]},#{element[1]}"
     	}
     	if @punctuation!=0
-    		puts "\"marks\", #{@punctuation}"
+    		puts "\"marks\",#{@punctuation}"
     	end
   	end
 

@@ -12,6 +12,7 @@ module WordCounter
     result = WordCounter.parse_file(input_to_parse)
   end
   
+  result.to_svg
   case file_format
     when "json"
       result.to_json

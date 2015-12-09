@@ -2,7 +2,7 @@ module WordCounter
   class Parser
     def parse(text)
 	words_count = Hash.new(0)
-	    words = text.downcase.scan(/[a-zA-Z0-9]+/)
+	    words = text.downcase.scan(/\b[A-Za-z0-9]+\b/i)
 
 	    words.each {
 		|x|
@@ -14,7 +14,7 @@ module WordCounter
 	    }
 	words_count = words_count.sort_by {|word, count| [-count, word]}
 	
-	marks_count = text.scan(/[[:punct:]|+-=\/\\p{S}]/).size
+	marks_count = text.scan(/[\p{P}\p{S}]/).size
 	
 	Result.new(words_count, marks_count)      
     end

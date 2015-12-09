@@ -1,0 +1,12 @@
+<School name="TUES">
+	<Class name="11a">
+		<Student name="Petko Georgiev" number="23"></Student>
+		<Student name="Alexandar Velinov" number="01"></Student>
+		<Student name="Chuck Norris" number="42"></Student>
+	</Class>
+	<Class name="11b">
+		<Student name="Petar Tzankov" number="23"></Student>
+		<Student name="Martin Stanchev" number="20"></Student>
+		<Student name="Over 9000" number="9001"></Student>
+	</Class>
+</School>

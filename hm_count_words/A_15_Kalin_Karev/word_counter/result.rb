@@ -28,6 +28,7 @@ module WordCounter
 		def to_json
 			json_result = { :marks => "#{@counter}".to_i, :words => @answer, }
 	  		JSON.pretty_generate(json_result)
+	  		json_result
 		end
 
 		def to_xml
@@ -35,7 +36,7 @@ module WordCounter
 			final_xml = REXML::Document.new("")
 	  		words_xml = final_xml.add_element("word-counts")
 	  		marks_xml = words_xml.add_element("marks")
-	  		marks_xml.add_text (@counter.to_s)
+	  		marks_xml.add_text "#{@counter}"
 	  		words_final = words_xml.add_element("words")
 	  
 	  		@answer.each do |index, key|
