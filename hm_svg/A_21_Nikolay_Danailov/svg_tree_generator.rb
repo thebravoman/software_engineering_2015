@@ -13,19 +13,28 @@ class SVGTreeGenerator
   Y_BETWEEN_ELEMENTS = 125
 
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
-    @result += '<svg xmlns="http://www.w3.org/2000/svg">'
-
     drawer = SVGDrawer.new
-    same_depth_elements = tree.get_elements_with_depth node.depth
-    node_index = 0
+    siblings_size = 1
 
     if node != @tree.root
-      node_index = Hash[same_depth_elements.map.with_index.to_a][node]
+      siblings_size = node.ancestor.descendants.size
     end
 
-    alotted_space = SCREEN_WIDTH / (same_depth_elements.size + 1)
-    element_x = alotted_space * (node_index + 1)
+    ancestor_level_elements = tree.get_elements { |n| n.depth == node.depth - 1 }.size
+    alotted_space = SCREEN_WIDTH
+
+    unless ancestor_level_elements == 0
+      alotted_space /= (ancestor_level_elements)
+    end
+
+    ancestor_index = 0
+    ancestor_index = node.ancestor.index unless node.ancestor.nil?
+
+    x_per_element = alotted_space / (siblings_size + 1)
+    element_x = ancestor_index * alotted_space + x_per_element * (node.index + 1)
     element_y = STARTING_Y + Y_BETWEEN_ELEMENTS * node.depth
+
+    puts "x_per_element: #{x_per_element}\nelement_x: #{element_x}\nelement_y: #{element_y}\n\n"
 
     if node.leaf?
       if !ancestor_x.nil? && !ancestor_y.nil?
@@ -46,8 +55,6 @@ class SVGTreeGenerator
     node.descendants.each do |desc|
       draw element_x, element_y, desc
     end
-
-    @result += '</svg>'
   end
 
   public
@@ -61,7 +68,9 @@ class SVGTreeGenerator
 
   def generate_from_json(json)
     @tree.generate_from_json(json)
+    @result += '<svg xmlns="http://www.w3.org/2000/svg">'
     draw
+    @result += '</svg>'
     @result
   end
 end
