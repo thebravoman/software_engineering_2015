@@ -1,15 +1,18 @@
 file_path = ARGV[0]
-date = ARGV[1]
-value = ARGV[2].to_f
+account = ARGV[1]
 
-output = []
-
+matching_accounts = []
+matching_amount = 0
 File.readlines(file_path).each do |line|
    line_details = line.split(',')
-   line_date = line_details.first
-   line_account = line_details.second
+   line_account = line_details[1]
    line_amount = line_details[3].to_f
-   output.push(line) if line_date == date && line_amount.between?(value - 10, value + 10)
+
+   if (line_account == account)
+     matching_accounts.push(line)
+     matching_amount += line_amount
+   end
 end
 
-puts output
+puts matching_accounts
+puts matching_amount.to_i
