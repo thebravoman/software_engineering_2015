@@ -1,3 +1,4 @@
+# Handles creation of svg elements
 class SVGDrawer
   def rect(x, y, w, h)
     '<rect x="' + x.to_s + \
@@ -17,7 +18,7 @@ class SVGDrawer
     '<line x1="' + x1.to_s + '" y1="' + y1.to_s + '" x2="' + x2.to_s + '" y2="' + y2.to_s + '" style="stroke:rgb(255,0,0);stroke-width:2" />'
   end
 
-  def circle x, y, r
+  def circle(x, y, r)
     '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" fill="red" />'
   end
 end
