@@ -7,10 +7,10 @@ csv.each do |line|
 	if line[0]==date
 		if ARGV[2]
 		  if line[3].to_i.between?((value-10),(value+10))
-		  	puts line.join(' ')
+		  	puts line.join(',')
 		  end
 	    else
-	    	puts line.join(' ')
+	    	puts line.join(',')
 	    end
 	end
 end
