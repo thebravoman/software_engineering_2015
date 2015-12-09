@@ -23,7 +23,7 @@ def draw_rectangle x, y, text
 end
 
 
-File.open("B_08_Vanessa_Stoynova", "w") do |f|
+File.open("B_08_Vanessa_Stoynova.svg", "w") do |f|
 
 	f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 	json_object.each do |key, value|   
