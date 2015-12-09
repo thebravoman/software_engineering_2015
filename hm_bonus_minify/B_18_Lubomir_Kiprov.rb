@@ -1,7 +1,7 @@
 require 'csv'
 
 def chek_range_of_amount (value, line)
-	if line.split(',')[3]	.to_i > value.to_i - 10 and line.split(',')[3].to_i < value.to_i + 10
+	if (line.split(',')[3].to_i > value.to_i - 10 and line.split(',')[3].to_i < value.to_i + 10) || ARGV.size == 2
 		print_line(line)
 	end
 end
