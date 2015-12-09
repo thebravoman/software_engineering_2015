@@ -30,6 +30,7 @@ fileArg = ARGV[0]
 csvRead = CSV.read(fileArg)
 accountArg = ARGV[1]
 
+
 result = check(csvRead, accountArg)
 result.sort! { |a,b| [a[0],a[1].to_i] <=> [b[0],b[1].to_i] }
 
