@@ -1,19 +1,19 @@
 {	  
-		"School": { 
-	  	"Name": "TUES",  
-	    "Class": [
+	  	"School": "TUES",  
+	    "Classes": [
 	    	{ 
-	    	"11A": [ 
-	    		"Petar Spasov Petrov",
-	        "Ivan-Asen Borisov Ovedenski",  
-	        "Hristo Georgiev Ezekiev"
+	    	"ClassName": "11A",
+	    	"Students": [ 
+	    		{"Student1": "Petar"},
+	        {"Student2": "Ivan"},  
+	        {"Student3": "Hristo"}
 	      ]},
 	      {   
-	      "11B": [
-	        "Georgi Radoev Stoilov",
-	        "Dimitur Stoev Djadjarov", 
-	        "Martin Spasov Dimitrov"
+	      "ClassName": "11B",
+	      "Students": [
+	        {"Student1": "Georgi"},
+	        {"Student2": "Dimitur"}, 
+	        {"Student3": "Martin"}
 	      ]}
 	    ]
-	  }
 } 
