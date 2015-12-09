@@ -1,19 +1,37 @@
 require 'csv'
 
-def putsRow(csvRead, dateArg, valueArg)
-	csvRead.each do |row|
-		date = row[0]	
-		value = row[3].to_i
+def check(csvRead, accountArg)
+	$sum = 0	
+	result = []	
 
-		if (date == dateArg) and value.between?((valueArg-10),(valueArg+10))  
-			puts row.join(" ")
+	csvRead.each do |row|
+		#date = row[0]
+		account = row[1]
+		value = row[3].to_i
+		#currency = row[4]	
+		
+		if (account == accountArg) 
+			result.push(row)
+			$sum += value
 		end
 	end
+	
+	return result
 end
+
+def putsRow(result)
+	result.each do |row|
+		puts row.join(" ")
+	end
+	puts "Total cash = #{$sum}"
+end 
 
 fileArg = ARGV[0]
 csvRead = CSV.read(fileArg)
-dateArg = ARGV[1]
-valueArg = ARGV[2].to_i
+accountArg = ARGV[1]
 
-putsRow(csvRead, dateArg, valueArg)
+
+result = check(csvRead, accountArg)
+result.sort! { |a,b| [a[0],a[1].to_i] <=> [b[0],b[1].to_i] }
+
+putsRow(result)
