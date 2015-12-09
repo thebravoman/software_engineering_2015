@@ -15,6 +15,12 @@ rescue ArgumentError
 	bool_is_string = true
 end
 
+def sort_result(result)
+	sorted_result = result.sort { |first, second| first <=> second }
+
+	return sorted_result
+end
+
 def write_date_result(file_name, date, value, any_value)
 	result = []
 
@@ -52,6 +58,7 @@ def write_account_result(file_name, string)
 		end
 	end
 
+	result = sort_result(result)
 	result << overall_amount
 
 	return result
