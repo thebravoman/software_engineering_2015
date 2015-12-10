@@ -1,6 +1,7 @@
 date,account,category,amount,currency,description
 01/12/2014,PersonalCash,K,-100,BGN,Some description
-21/03/2007,PersonalCash,K,20.99,BGN,money from work
+21/03/2007,PersonalCash,K,21,BGN,money from work
+21/03/2007,PersonalCash,K,-3,BGN,bought Cola
 17/06/2009,SchoolCash,K,21.99,BGN,money from scholarship
 11/01/2012,PersonalCash,K,45.99,BGN,money from work
 11/01/2012,SchoolCash,K,50.19,BGN,money from scholarship again
