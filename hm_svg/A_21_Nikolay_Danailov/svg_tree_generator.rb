@@ -12,29 +12,36 @@ class SVGTreeGenerator
   CIRCLE_RADIUS = 50
   Y_BETWEEN_ELEMENTS = 125
 
-  def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
-    drawer = SVGDrawer.new
+  def get_siblings_size(node)
     siblings_size = 1
+    siblings_size = node.ancestor.descendants.size unless node == @tree.root
+    siblings_size
+  end
 
-    if node != @tree.root
-      siblings_size = node.ancestor.descendants.size
-    end
-
+  def get_alotted_space(node)
     ancestor_level_elements = tree.get_elements { |n| n.depth == node.depth - 1 }.size
     alotted_space = SCREEN_WIDTH
+    alotted_space /= ancestor_level_elements unless ancestor_level_elements == 0
+    alotted_space
+  end
 
-    unless ancestor_level_elements == 0
-      alotted_space /= (ancestor_level_elements)
-    end
-
+  def get_ancestor_index(node)
     ancestor_index = 0
     ancestor_index = node.ancestor.index unless node.ancestor.nil?
+    ancestor_index
+  end
+
+  def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
+    drawer = SVGDrawer.new
+    siblings_size = get_siblings_size node
+    alotted_space = get_alotted_space node
+    ancestor_index = get_ancestor_index node
 
     x_per_element = alotted_space / (siblings_size + 1)
     element_x = ancestor_index * alotted_space + x_per_element * (node.index + 1)
     element_y = STARTING_Y + Y_BETWEEN_ELEMENTS * node.depth
     same_depth_elements = tree.get_elements { |n| n.depth == node.depth }
-    size_coeficient = 1
+    size_coeficient = 1 # not implemented yet
 
     if node.leaf?
       if !ancestor_x.nil? && !ancestor_y.nil?
