@@ -13,13 +13,35 @@ def printing_with_value(csv_file, date, value)
     end
   end
 end
+def printing_matched_string(csv_file, date_or_string)
+sum_amount = 0
+csv_file=csv_file.sort!
+  csv_file.each do |line|
+    if date_or_string == line[1]
+      sum_amount += line[3].to_i 
+      puts line.join(',') 
+    end
+  end
+  if sum_amount != 0
+    puts sum_amount.to_i
+  end
+end
 
 file = CSV.read ARGV[0]
-date = ARGV[1]
+date_or_string = ARGV[1]
 value = ARGV[2].to_i
 
-if ARGV[2]
-  printing_with_value(file, date, value)
-else 
-  printing(file, date) 
+not_a_date =  date_or_string.count("/")
+valid_date = date_or_string.scan(/[a-z_\s]/).count
+
+if not_a_date == 2 && valid_date == 0
+  if ARGV[2]
+    printing_with_value(file, date_or_string, value)
+  else 
+    printing(file, date_or_string) 
+  end
+end
+
+if !(not_a_date == 2 && valid_date == 0)
+  printing_matched_string(file, date_or_string)
 end
