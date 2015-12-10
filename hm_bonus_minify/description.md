@@ -33,6 +33,8 @@ Build a program that accepts:
 The program should display on the standard output all the rows from the original file that are for the given date. 
 The output should be sorted by "date" ASC
 
+UPDATE on 10 Dec 2015: The output is in a csv format separated by comma.
+
 ### Points
  0.5
 
@@ -49,6 +51,8 @@ The program should display on the standard output:
  - all the rows from the original file that are for the given date and have an amount between (value-10) and (value+10)
 The output should be sorted by "date" ASC
 
+UPDATE on 10 Dec 2015: The output is in a csv format separated by comma.
+
 ### Points
  0.5
 
@@ -63,6 +67,7 @@ The program should display on the standard output:
  - all the rows for which second argument is equals to the account column
  - as a final row the sum of the amount value for all the output rows. The sum should be an integer.
 The output should be sorted by "date" ASC
+UPDATE on 10 Dec 2015: The output is in a csv format separated by comma.
 
 ### Points 
  0.5
