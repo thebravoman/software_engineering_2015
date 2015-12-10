@@ -13,6 +13,7 @@ my_csv.each do |line|
 end
 
 output_info.each do |element|
-	p element
+	print element
 end
+puts
 
