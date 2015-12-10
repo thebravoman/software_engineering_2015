@@ -1,12 +1,10 @@
-require 'csv'
-
 file = File.open(ARGV[0])
 string = ARGV[1]
 output = []
 sum = 0
 
 file.each do |line|
-	l = line.split
+	l = line.split(',')
 	if l[1].to_s == string.to_s
 		output << line
 	end
@@ -22,9 +20,9 @@ output.sort_by!{|d|
 }
 
 output.each do |element|
-	element = element.split
-	sum += element[3].to_i
+	element = element.split(',')
+	sum += element[3].to_f
 end
 
 puts output
-puts sum
+puts sum.round(2)
