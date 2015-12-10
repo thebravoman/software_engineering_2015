@@ -1,26 +1,30 @@
 require 'json'
 
 
-x = 40
-y = 40
-
 def treeNode(x, y, str)
-	'<circle cx = "'+x.to_s+'" cy = "'+y.to_s+'" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>' + "\n" +
-	'<text x = "'+(x - 15).to_s+'" y = "'+(y+5).to_s+'" fill = "black">'+str.to_s+'</text> ' + "\n"
+	textX = x - 15
+	textY = y + 5
+	'<circle cx = "'+x.to_s+'" cy = "'+y.to_s+'" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>'+"\n"+
+	'<text x = "'+textX.to_s+'" y = "'+textY.to_s+'" fill = "black">'+str.to_s+'</text> '+"\n"
 end
 
-def makeTree(hash, file) 
-  hash.each do |key, value|
-    file << treeNode(x, y, key)
-    x += 100
-    if value.kind_of?(Hash)
-	  file << makeTree(value, file)
+def makeTree(x, y, hash, file)
+ 
+ xDistance = 140
+ yDistance = 100
+ 
+ hash.each do |key, value| 
+    if value.kind_of?(String)
+      file << treeNode(x, y, value)
+    elsif value.kind_of?(Hash)
+	  file << makeTree(x, y, value, file)
 	elsif value.kind_of?(Array)
 	  value.each do |e|
-	  	y+= 100
-	    file << makeTree(e, file)
+	    file << makeTree(x, y, e, file)
+	    x += xDistance
 	  end
 	end
+	y += yDistance
   end
 end
 
@@ -31,6 +35,6 @@ data = JSON.parse(file)
 
 File.open('B_14_Ivo_Gerginov.svg', 'w') do |svg|
   svg << '<svg xmlns = "http://www.w3.org/2000/svg" width="10000" height="10000">' + "\n"
-  makeTree(data, svg)
+  makeTree(60, 60, data, svg)
   svg << '</svg>'
 end

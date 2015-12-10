@@ -31,11 +31,11 @@ class Tree
     end
   end
 
-  def get_elements_with_depth(depth, result_elements = [], node = @root)
-    result_elements << node if node.depth == depth
+  def get_elements(result_elements = [], node = @root, &block)
+    result_elements << node if block.call node
 
     node.descendants.each do |desc|
-      result_elements = get_elements_with_depth(depth, result_elements, desc)
+      result_elements = get_elements(result_elements, desc, &block)
     end
 
     result_elements
