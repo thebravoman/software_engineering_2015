@@ -16,7 +16,7 @@ $value = ARGV[2].to_i
 
 
 def date_value_print? line
-	if ARGV[2]
+	if $value != nil
 		puts line.join(",") if ( (line[0] == $date) && (line[3].to_i.between?($value-10, $value+10)))
 	else
 		puts line.join(",") if line[0] == $date
