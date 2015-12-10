@@ -1,3 +1,4 @@
+date,account,category,amount,currency,description
 01/12/2014,PersonalCash,K,-100,BGN,Some description
 21/03/2007,work,K,20.99,BGN,money from work
 17/06/2009,school,K,21.99,BGN,money from scholarship
