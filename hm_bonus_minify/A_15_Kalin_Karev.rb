@@ -14,18 +14,18 @@ end
 
 $value = ARGV[2].to_i;
 
+def sum_account val 
+	if (val[1] == $account)
+		puts val.join(",")
+		$sum += val[3].to_f
+	end
+end
+
 def data_print? val 
 	if $value != nil
 		puts val.join(",") if ((val[0] == $data_work) && (val[3].to_i.between?($value-10, $value+10)))
 	else 
 		puts val.join(",") if val[0] == $data_work
-	end
-end
-
-def sum_account val 
-	if (val[1] == $account)
-		puts val.join(",")
-		$sum += val[3].to_f
 	end
 end
 
