@@ -6,4 +6,6 @@ value = ARGV[2].to_f if ARGV.size > 2
 
 output = CSVSearcher.get_date_output filename, date, value
 
-p output.to_a if output.size > 0
+output.each do |row|
+  puts row.join ','
+end
