@@ -21,8 +21,10 @@ class CSVSearcher
     result = row[DATE_COLUMN] == wanted_date
     row_value = row[VALUE_COLUMN].to_f
 
-    return result if wanted_value.nil?
+    unless wanted_value.nil?
+      result &&= (row_value < wanted_value + 10 && row_value > wanted_value - 10)
+    end
 
-    result && (row_value < wanted_value + 10 && row_value > wanted_value - 10)
+    result
   end
 end

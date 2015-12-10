@@ -23,7 +23,7 @@ def putsRow(result)
 	result.each do |row|
 		puts row.join(" ")
 	end
-	puts "Sum = #{$sum}"
+	puts "Total cash = #{$sum}"
 end 
 
 fileArg = ARGV[0]
@@ -35,13 +35,3 @@ result = check(csvRead, accountArg)
 result.sort! { |a,b| [a[0],a[1].to_i] <=> [b[0],b[1].to_i] }
 
 putsRow(result)
-
-
-
-
-
-
-
-
-
-
