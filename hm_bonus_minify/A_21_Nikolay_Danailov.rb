@@ -20,8 +20,8 @@ arg3 = ARGV[2].to_f if ARGV.size > 2
 
 if date? arg2
   CSVSearcher.print_date_output arg1, arg2, arg3
-elsif !number? arg2 || arg2 != 'xml'
+elsif !number?(arg2) && arg2 != 'xml'
   CSVSearcher.print_account_output arg1, arg2
 else
-  puts 'xml'
+
 end
