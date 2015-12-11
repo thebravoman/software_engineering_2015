@@ -23,7 +23,7 @@ csv_file.each do |line|
 			if !date? (date)
 				if ARGV[2] != nil 
 					if 	line[0] == date
-						if (line[3].to_i <= value_1) and (line[3].to_i >= value_2) and line[0] == date
+						if (line[3].to_i <= value_1) and (line[3].to_i >= value_2)
 							string<< line.join(",").to_s
 						end
 					end
