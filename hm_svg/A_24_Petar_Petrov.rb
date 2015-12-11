@@ -10,10 +10,10 @@ class SVG_Parser
 		@stroke_width = 2
 		@stroke_color = 'black'
 		@c_counter = 0
-		@line_x_1 = @initial_x - 30 
-		@line_y_1 = @initial_y + 30
-		@line_x_2 = @line_x_1 - 20
-		@line_y_2 = @line_y_1 + 20
+		@line_x_1 = 0
+		@line_y_1 = 0
+		@line_x_2 = 0
+		@line_y_2 = 0
 		@rect_width = 100
 		@rect_height = 50
 		@arr_index = 0
@@ -59,15 +59,16 @@ class SVG_Parser
 		def draw_circle(parent,file,arr_size,hash_size)
 			if(@c_counter > 0)
 				if @hash_index == 0 && @arr_index == 0
+					@line_x_1 = @initial_x - 30
+					@line_y_1 = @initial_y + 28
 					@initial_x -= 250*(arr_size-1)
 					@initial_y += 100
-					@line_x_1 -= @initial_x + 10
-					@line_y_1 += @initial_y + 5
-					@line_x_2 += @line_x_1 + 20
-					@line_y_2 += @line_y_1 + 10
+					@line_x_2 = @initial_x + 35
+					@line_y_2 = @initial_y
 				elsif @arr_index > 0 && @hash_index == 0
+					@line_x_1 = @initial_x - 20
 					@initial_x += 2*200	
-					@line_x_1 += @initial_x - 20		
+					@line_x_2 = @initial_x + 10		
 				end
 			end
 			file.write('<circle cx="'+@initial_x.to_s+'" cy="'+@initial_y.to_s+'" r="'+@circle_radius.to_s+'" fill="'+@fill+'" stroke="'+@stroke_color+'" stroke-width="'+@stroke_width.to_s+'"/>')
@@ -76,16 +77,17 @@ class SVG_Parser
 		end
 		
 		def draw_rectangle(child,file,arr_size,hash_size)
-			if @hash_index == 0 && @arr_index == 0
+				if @hash_index == 0 && @arr_index == 0
+					@line_x_1 = @initial_x - 30
+					@line_y_1 = @initial_y + 28
 					@initial_x -= 100*(arr_size-1)
 					@initial_y += 100
-					@line_x_1 -= 100 + 10
-					@line_y_1 += 100 + 5
-					@line_x_2 += @line_x_1 + 20
-					@line_y_2 += @line_y_1 + 20
+					@line_x_2 = @initial_x + 20
+					@line_y_2 = @initial_y
 				elsif @hash_index == 0 && @arr_index > 0
+					@line_x_1 = @initial_x
 					@initial_x += 150	
-					@line_x_1 += 150 - 10		
+					@line_x_2 = @initial_x - 10	
 				end		
 			file.write('<rect x="'+@initial_x.to_s+'" y="'+@initial_y.to_s+'" width="'+@rect_width.to_s+'" height="'+@rect_height.to_s+'" fill="'+@fill+'" stroke="'+@stroke_color+'" stroke-width="'+@stroke_width.to_s+'"></rect>')
 			file.write('<text x="'+(@initial_x+(100/child.length)).to_s+'" y="'+(@initial_y+30).to_s+'">'+child+'</text>')
