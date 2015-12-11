@@ -36,13 +36,15 @@ if (date? d) || (string == 'xml') || (numeric? string)
 	    end
     end
 else
-  CSV.open(filename, 'r').each do |row|
-    if row[ACC_ELEMENT] == string
-      sum = sum + row[3].to_i
-      arr << row.to_a
-    end
-  end
-  arr.sort{|a, b| a[0] <=> b[0]}
-  puts arr.join(",")
-  puts sum
+  	CSV.open(filename, 'r').each do |row|
+    	if row[ACC_ELEMENT] == string
+			sum = sum + row[3].to_f
+      		arr << row.to_a
+    	end
+  	end
+  	arr = arr.sort{|a, b| DateTime.parse(a[0]) <=> DateTime.parse(b[0])}
+  	arr.each do |row|
+		puts row.join(",")
+	end 
+  	puts sum
 end

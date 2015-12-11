@@ -27,7 +27,7 @@ csv = CSV.read(ARGV[0])
 second = ARGV[1]
 third = ARGV[2].to_i
 check_if_date = second.scan(/[a-zA-z]/).count
-if check_if_date>0 && !second["xml"]
+if check_if_date>0 && second != "xml"
 string_csv csv,second
 else
 date_value csv,second,third
