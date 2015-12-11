@@ -1,0 +1,8 @@
+module COL
+	DATE = 0
+	ACCOUNT = 1
+	CATEGORY = 2
+	AMOUNT = 3
+	CURRENCY = 4
+	DESCRIPTION = 5
+end
