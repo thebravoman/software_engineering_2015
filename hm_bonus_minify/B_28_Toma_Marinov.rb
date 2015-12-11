@@ -16,7 +16,7 @@ rescue ArgumentError
 end
 
 def sort_result(result)
-	sorted_result = result.sort { |first, second| first <=> second }
+	sorted_result = result.sort { |first, second| first[6..9][3..4][0..1] <=> second[6..9][3..4][0..1] }
 
 	return sorted_result
 end
