@@ -15,17 +15,25 @@ def is_date(string)
   true
 end
 
+def print_output(arr)
+  arr.each { |element|}
+end
+
 file_path = ARGV[0]
 first_argument = ARGV[1]
 has_value = ARGV[2] != nil
 value = ARGV[2].to_f if has_value
 is_version3 = false
+is_version1 = false
 sum = 0
 
 if (!is_date(first_argument) && !first_argument.is_number?)
   is_version3 = true
 end
 
+if (is_date(first_argument) && !has_value)
+  is_version1 = true
+end
 output = []
 
 File.readlines(file_path).each do |line|
@@ -48,6 +56,8 @@ File.readlines(file_path).each do |line|
    end
 
 end
+
+output.sort! if !is_version1
 
 puts output
 puts sum.to_i if is_version3
