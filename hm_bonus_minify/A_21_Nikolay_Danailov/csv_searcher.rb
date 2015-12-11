@@ -3,28 +3,51 @@ require 'csv'
 # Searches for data in the passed csv
 class CSVSearcher
   DATE_COLUMN = 0
+  ACCOUNT_COLUMN = 1
   VALUE_COLUMN = 3
 
-  def self.get_date_output(csv_filename, date, value = nil)
+  def self.print_date_output(csv_filename, date, value = nil)
     output = []
+    csv = CSV.read(csv_filename)[1..-1]
 
-    CSV.foreach(csv_filename) do |row|
-      output << row if wanted_row? row, date, value
+    csv.each do |row|
+      wanted = row[DATE_COLUMN] == date
+      row_value = row[VALUE_COLUMN].to_f
+
+      unless value.nil?
+        wanted &&= row_value < value + 10 && row_value > value - 10
+      end
+
+      output << row if wanted
     end
     
-    output
+    print_csv output
   end
 
-  private
+  def self.print_account_output(csv_filename, account)
+    output = []
+    sum = 0.0
+    csv = CSV.read(csv_filename)[1..-1]
 
-  def self.wanted_row?(row, wanted_date, wanted_value)
-    result = row[DATE_COLUMN] == wanted_date
-    row_value = row[VALUE_COLUMN].to_f
-
-    unless wanted_value.nil?
-      result &&= (row_value < wanted_value + 10 && row_value > wanted_value - 10)
+    csv.each do |row|
+      if row[ACCOUNT_COLUMN] == account
+        output << row
+        sum += row[VALUE_COLUMN].to_f
+      end
     end
 
-    result
+    output.sort_by! do |row| 
+      date = row[DATE_COLUMN].split '/'
+      [date[2].to_i, date[1].to_i, date[0].to_i]
+    end
+
+    print_csv output
+    puts sum.round 2
+  end
+
+  def self.print_csv(csv)
+    csv.each do |row|
+      puts row.join ','
+    end
   end
 end
