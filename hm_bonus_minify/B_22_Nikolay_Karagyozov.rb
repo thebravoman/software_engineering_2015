@@ -1,7 +1,29 @@
+require 'date'
+
+class String
+  def is_number?
+    true if Float(self) rescue false
+  end
+end
+
+def is_date(string)
+  begin
+   Date.parse(string)
+  rescue ArgumentError
+     return false
+  end
+  true
+end
+
 file_path = ARGV[0]
-date = ARGV[1]
+first_argument = ARGV[1]
 has_value = ARGV[2] != nil
 value = ARGV[2].to_f if has_value
+is_version3 = false
+
+if (!is_date(first_argument) && !first_argument.is_number?)
+  is_version3 = true
+end
 
 output = []
 
@@ -11,11 +33,16 @@ File.readlines(file_path).each do |line|
    line_account = line_details[1]
    line_amount = line_details[3].to_f
 
-   if (has_value)
-     output.push(line) if line_date == date && line_amount.between?(value - 10, value + 10)
+   if (is_version3)
+     output.push(line) if (line_account == first_argument)
    else
-     output.push(line) if line_date == date
+     if (has_value)
+       output.push(line) if line_date == first_argument && line_amount.between?(value - 10, value + 10)
+     else
+       output.push(line) if line_date == first_argument
+     end
    end
+
 end
 
 puts output
