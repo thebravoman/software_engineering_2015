@@ -76,10 +76,6 @@ file = File.open(file, 'r') do |f|
       key = res[counter1]
       counter1 += 1
       puts hash.values_at(key).join(',')
-    if line[0] == sec_argv && !$is_there_value
-      puts line.join(',')
-    elsif line[0] == sec_argv && $is_there_value && (amount >= value.to_i-10 && amount <= value.to_i+10)
-      puts line.join(',')
     end
     puts sum.to_i
   end
