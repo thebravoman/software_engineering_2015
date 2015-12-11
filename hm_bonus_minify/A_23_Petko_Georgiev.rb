@@ -1,14 +1,21 @@
-require 'csv'
+require_relative 'A_23_Petko_Georgiev/read_csv.rb'
+
+def date? str
+  /\d{1,2}\/\d{1,2}\/\d*/.match str
+end
+
+def number? str
+  true if Float(str) rescue false
+end
 
 filename = ARGV[0]
-requested_date = ARGV[1]
-value = ARGV[2]
-min_value = value.to_f-10
-max_value = value.to_f+10
+arg1 = ARGV[1]
+arg2 = ARGV[2]
 
-CSV.foreach(filename) do |row|
-	amount = row[3].to_f
-	if row[0] == requested_date && (value==nil||( amount>min_value && amount<max_value ))
-		puts "#{row.join(', ')}"
-	end
+if date? arg1
+	ReadCSV.print_date_input filename, arg1, arg2
+elsif number? arg1
+elsif arg1 == 'xml'
+else
+	ReadCSV.print_account_input filename, arg1
 end

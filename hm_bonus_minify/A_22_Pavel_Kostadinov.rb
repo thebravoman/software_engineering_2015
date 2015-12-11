@@ -15,13 +15,15 @@ def printing_with_value(csv_file, date, value)
 end
 def printing_matched_string(csv_file, date_or_string)
 sum_amount = 0
-csv_file=csv_file.sort!
+csv_file=csv_file.sort{|a,b|DateTime.parse(a[0]) <=> DateTime.parse(b[0])}
+
   csv_file.each do |line|
     if date_or_string == line[1]
       sum_amount += line[3].to_i 
       puts line.join(',') 
     end
   end
+  
   if sum_amount != 0
     puts sum_amount.to_i
   end
@@ -34,7 +36,7 @@ value = ARGV[2].to_i
 not_a_date =  date_or_string.count("/")
 valid_date = date_or_string.scan(/[a-z_\s]/).count
 
-if date_or_string != "xml" && not_a_date == 2 && valid_date == 0
+if not_a_date == 2 && valid_date == 0
   if ARGV[2]
     printing_with_value(file, date_or_string, value)
   else 
@@ -42,6 +44,6 @@ if date_or_string != "xml" && not_a_date == 2 && valid_date == 0
   end
 end
 
-if !(not_a_date == 2 && valid_date == 0)
+if !(not_a_date == 2) && !(valid_date == 0) && !(date_or_string == 'xml')
   printing_matched_string(file, date_or_string)
 end
