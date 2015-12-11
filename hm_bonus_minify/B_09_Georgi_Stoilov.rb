@@ -51,7 +51,6 @@ file = File.open(file, 'r') do |f|
     account = line[1].to_s
     category = line[2].to_s
     amount = line[3].to_i
-<<<<<<< HEAD
     currency = line[4].to_s
     description = line[5]
 
@@ -77,12 +76,10 @@ file = File.open(file, 'r') do |f|
       key = res[counter1]
       counter1 += 1
       puts hash.values_at(key).join(',')
-=======
     if line[0] == sec_argv && !$is_there_value
       puts line.join(',')
     elsif line[0] == sec_argv && $is_there_value && (amount >= value.to_i-10 && amount <= value.to_i+10)
       puts line.join(',')
->>>>>>> 5725d0e26affd2f9757f71074fee30db9b79e0f6
     end
     puts sum.to_i
   end
