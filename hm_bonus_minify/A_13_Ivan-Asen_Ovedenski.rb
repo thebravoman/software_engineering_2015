@@ -1,5 +1,9 @@
 require 'csv'
 
+def is_date? date_wannabe
+	/\d{1,2}\/\d{1,2}\/\d*/.match date_wannabe
+end
+
 def match_dates? line, date
 	line[0] == date
 end
@@ -17,16 +21,25 @@ sum = 0
 my_csv = CSV.read filename
 
 my_csv.each do |line|
-	if value == 0
-		if	(line[0] == first_argument)
+	if is_date? first_argument 
+		if value == 0
+			if	(line[0] == first_argument)
+				output_info << line.join(',')
+			end
+		elsif (is_within_value? line, first_argument, value) && (match_dates? line, first_argument)
 			output_info << line.join(',')
 		end
-	elsif (is_within_value? line, first_argument, value) && (match_dates? line, first_argument)
-		output_info << line.join(',')
+	else
+		if line[1] == first_argument 
+			output_info << line.join(',')
+			sum += line[3].to_f
+		end
 	end
 end
 
 output_info.each do |element|
 	puts element
 end
-
+if sum != 0 
+	puts sum.round 3
+end
