@@ -20,6 +20,7 @@ first_argument = ARGV[1]
 has_value = ARGV[2] != nil
 value = ARGV[2].to_f if has_value
 is_version3 = false
+sum = 0
 
 if (!is_date(first_argument) && !first_argument.is_number?)
   is_version3 = true
@@ -34,7 +35,10 @@ File.readlines(file_path).each do |line|
    line_amount = line_details[3].to_f
 
    if (is_version3)
-     output.push(line) if (line_account == first_argument)
+     if (line_account == first_argument)
+       output.push(line)
+       sum += line_amount.to_f
+     end
    else
      if (has_value)
        output.push(line) if line_date == first_argument && line_amount.between?(value - 10, value + 10)
@@ -46,3 +50,4 @@ File.readlines(file_path).each do |line|
 end
 
 puts output
+puts sum.to_i if is_version3
