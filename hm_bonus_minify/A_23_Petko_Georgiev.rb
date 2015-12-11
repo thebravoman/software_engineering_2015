@@ -2,14 +2,13 @@ require 'csv'
 
 filename = ARGV[0]
 requested_date = ARGV[1]
+value = ARGV[2]
+min_value = value.to_f-10
+max_value = value.to_f+10
 
-output = []
 CSV.foreach(filename) do |row|
-	if row[0] == requested_date
-		output << row
+	amount = row[3].to_f
+	if row[0] == requested_date && (value==nil||( amount>min_value && amount<max_value ))
+		puts "#{row.join(', ')}"
 	end
-end
-
-output.each do |row|
-	puts "#{row.join(', ')}"
 end

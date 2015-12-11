@@ -13,9 +13,9 @@ if file.split(".").last == "csv"
 	  currency = row[4] 
 	  description = row[5] 
 		if row[0] == date_requested && row.size == 6 && value.nil?
-			puts "#{date}, #{account}, #{category}, #{amount}, #{currency}, #{description}"
+			puts "#{date},#{account},#{category},#{amount},#{currency},#{description}"
 		elsif row[0] == date_requested && row.size == 6 && !value.nil? && (amount.to_f >= value.to_f-10 && amount.to_f <= value.to_f+10)
-		  puts "#{date}, #{account}, #{category}, #{amount}, #{currency}, #{description}"
+		  puts "#{date},#{account},#{category},#{amount},#{currency},#{description}"
 		end
 	end
 end

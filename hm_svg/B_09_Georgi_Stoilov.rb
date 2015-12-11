@@ -23,40 +23,35 @@ end
 file = File.read(ARGV[0])
 data_hash = JSON.parse(file)
 counter_array = 1
-default_x = 300
+$default_x = 300
 default_y = 100
-$counter = 0
 
-def DrawTree x, y, data_hash, counter_array,svg
+def DrawTree x, y, data_hash, counter_array, svg
   draw = CanYouDraw.new()
-  y1 = 0
+  line_y1 = 0
   data_hash.each do |key,value|
     if(value.is_a? Hash)
       counter_array = 1
       DrawTree(x, y, value, counter_array, svg)
     end
     if(value.is_a? Array)
-      $x1 = x
-      #puts $x1
+      $line_x1 = $default_x
       value.each do |a|
-        x = x + 150
-        DrawTree(x, y, a, counter_array, svg).to_s
+        DrawTree($default_x, y, a, counter_array, svg)
+        $default_x = $default_x + 150
       end
     end
     if(value.is_a? String)
-      puts value
-      puts x
       if(counter_array > 0)
         counter_array = 0
         svg << draw.circle(x,y)
         svg << draw.add_text(x,y,value)
       else
-        y1 = y
-      #  puts $x1
+        line_y1 = y
         y = y + 220
         svg << draw.circle(x,y)
+        svg << draw.line($line_x1,line_y1,x,y)
         svg << draw.add_text(x,y,value)
-        svg << draw.line($x1,y1,x,y)
       end
       counter_array = 0
     end
@@ -64,7 +59,8 @@ def DrawTree x, y, data_hash, counter_array,svg
 end
 
 svg = Array.new
-DrawTree default_x, default_y, data_hash, counter_array, svg
+
+DrawTree $default_x, default_y, data_hash, counter_array, svg
 
 File.open("B_09_Georgi_Stoilov.svg", "w") do |f|
   f.write('<svg xmlns="http://www.w3.org/2000/svg" width="10000" height="10000">')
