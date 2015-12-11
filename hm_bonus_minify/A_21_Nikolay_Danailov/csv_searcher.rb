@@ -36,6 +36,11 @@ class CSVSearcher
       end
     end
 
+    output.sort_by! do |row| 
+      date = row[DATE_COLUMN].split '/'
+      [date[2].to_i, date[1].to_i, date[0].to_i]
+    end
+
     print_csv output
     puts sum.round 2
   end
