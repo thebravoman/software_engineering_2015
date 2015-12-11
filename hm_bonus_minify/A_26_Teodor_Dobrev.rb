@@ -21,7 +21,7 @@ CSV.foreach("#{file_name}") do |row|
   if ( (row.first == date_given) and (space_of_value_plus_minus_10 == array[3]) )
 	array[counter] = row
 	counter = counter+1
-	sum_of_usable_values = sum_of_usable_values + array[3]
+	sum_of_usable_values = sum_of_usable_values + array[3].to_i
   end
 end
 array << sum_of_usable_values
