@@ -10,7 +10,7 @@ line_holder = []
 
 file_for_reading.each do |column|
 	if column[1] == description.to_s
-		sum = sum + column[2].to_i
+		sum = sum + column[3].to_i
 		line_holder << column
 	end
 end
@@ -38,7 +38,7 @@ date = ARGV[1]
 value = ARGV[2]
 
 file_for_reading.each do |column|
-	if column[0] == date and column[2].to_i >= value.to_i - 10 and column[2].to_i <= value.to_i + 10 
+	if column[0] == date and column[3].to_i >= value.to_i - 10 and column[3].to_i <= value.to_i + 10 
 		puts column.join(",")
 	end
 end
