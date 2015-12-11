@@ -34,7 +34,7 @@ value = ARGV[2].to_i
 not_a_date =  date_or_string.count("/")
 valid_date = date_or_string.scan(/[a-z_\s]/).count
 
-if not_a_date == 2 && valid_date == 0
+if date_or_string != "xml" && not_a_date == 2 && valid_date == 0
   if ARGV[2]
     printing_with_value(file, date_or_string, value)
   else 
