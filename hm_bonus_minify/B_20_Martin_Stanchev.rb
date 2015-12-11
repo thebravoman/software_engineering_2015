@@ -1,4 +1,5 @@
 require 'csv'
+require 'rexml/document'
 
 class PersonalFinance
   
@@ -14,6 +15,7 @@ class PersonalFinance
     end 
   end
 
+  
   def by_account csv_doc, string 
     sum = 0
     acc = []
@@ -30,6 +32,53 @@ class PersonalFinance
     puts sum
   end
   
+  
+  def to_xml csv_doc
+    temp = []
+    
+    xml_doc = REXML::Document.new("")
+    
+    node = xml_doc.add_element('minify')
+    
+    temp = csv_doc[0][1]
+    account = node.add_element("account")
+    account.add_attribute("", "#{temp}")
+    
+    temp_date = csv_doc[0][0]
+    
+    csv_doc.each do |row|   # Same dates appear as different nodes - have to fix
+      
+      if row [1] == temp 
+        date = account.add_element("date")
+        date.add_attribute("", "#{row[0]}")
+        
+        amount = date.add_element("amount")
+        amount.add_attribute("", "#{row[3]}")
+        
+      elsif row[1] != temp
+        temp = row[1]
+        account = node.add_element("account")
+        account.add_attribute("", "#{row[1]}")
+        
+        date = account.add_element("date")
+        date.add_attribute("", "#{row[0]}")
+        
+        amount = date.add_element("amount")
+        amount.add_attribute("", "#{row[3]}")
+      end
+
+    end
+    
+    out = ''
+    xml_doc.write(out, 1)
+    puts out
+    
+  end
+  
+  def sort_csv csv_doc 
+    return csv_doc.sort! {|a, b| [b[1].to_s, a[0].to_s, a[3].to_i] <=> [a[1].to_s, b[0].to_s, b[3].to_i] }  # i think this doesn't sort correctly
+  end
+  
 end
 
 
@@ -42,9 +91,16 @@ csv_doc.shift
 
 my_account = PersonalFinance.new
 
-if in_string.count("/") == 2 #the string is a date becasue date format is DD/MM/YYYY
+if in_string.count("/") == 2 #the string is a date becasue it has 2 'slashes'. Date format is DD/MM/YYYY
   my_account.value_and_date csv_doc, in_string, value.to_i
   
 elsif in_string =~ /[\w]/ #the string has letters so it's not a date
-  my_account.by_account csv_doc, in_string
+  
+  if in_string != "xml"
+    my_account.by_account csv_doc, in_string
+  
+  elsif in_string == "xml"
+    my_account.to_xml(my_account.sort_csv(csv_doc))
+  end
+    
 end
