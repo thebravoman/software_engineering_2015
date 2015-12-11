@@ -36,10 +36,14 @@ my_csv.each do |line|
 		end
 	end
 end
-
+p output_info 
+output_info.sort! { |a,b| Date.parse(a.split(",").first) <=> Date.parse(b.split(",").first) }
+#p Date.parse output_info[0].split(",").first
 output_info.each do |element|
 	puts element
 end
 if sum != 0 
 	puts sum.round 3
 end
+
+
