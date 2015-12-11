@@ -1,11 +1,11 @@
 require 'csv'
 
-def parse_csv path, input_date, input_value
+def parse_csv path, input_account
 	result = []
 	data = CSV.read(path)
 	data.shift
 	data.each do |row|
-		if row[0] == input_date and row[3].to_f.between?(input_value - 10, input_value + 10)
+		if row[1] == input_account
 			result.push(row)
 		end
 	end
@@ -14,15 +14,19 @@ def parse_csv path, input_date, input_value
 end
 
 def print_result result
+	sum = 0
 	result.each do |row_values|
 		puts row_values.join(',')
+		sum += row_values[3].to_i
 	end
+	
+	puts sum
 end
 
 path = ARGV[0]
-input_date = ARGV[1]
-input_value = ARGV[2].to_f
+account = ARGV[1]
 
-result = parse_csv(path, input_date, input_value)
-result.sort_by {|first, second| first[0] <=> second[0]}
+result = parse_csv(path, account)
+date_format = '%d/%m/%Y'
+result.sort! {|first, second| Date.strptime(first[0], date_format) <=> Date.strptime(second[0], date_format)}
 print_result(result)
