@@ -1,51 +1,37 @@
+require_relative 'A_19_Nikolay_Rangelov/filter.rb'
+require_relative 'A_19_Nikolay_Rangelov/print.rb'
+require_relative 'A_19_Nikolay_Rangelov/constants.rb'
+require_relative 'A_19_Nikolay_Rangelov/sort.rb'
+require_relative 'A_19_Nikolay_Rangelov/minify_math.rb'
 require 'csv'
+require 'date'
 
-def date_filter(monefy_csv, date, date_col)
-	result = Array.new
-	for i in 0..monefy_csv.length - 1
-		if (monefy_csv[i][date_col]).to_s == date
-			result << monefy_csv[i]
-		end
-	end
-	result
+
+def date?(date_string)
+	d, m, y = date_string.split '/'
+	Date.valid_date? y.to_i, m.to_i, d.to_i
 end
 
-def value_filter(monefy_csv, value, value_col)
-	result = Array.new
-	value = value.to_i
-	for i in 0..monefy_csv.length - 1
-		if ((monefy_csv[i][value_col]).to_i).between?(value - 10, value + 10)
-			result << monefy_csv[i]
-		end
-	end
-	result
+def number?(in_string)
+  true if Float(in_string) rescue false
 end
 
-def print_csv(monefy_csv)
-	for i in 0..monefy_csv.length-1
-		for j in 0..monefy_csv[i].length-1
-			print monefy_csv[i][j]
-			if not j == monefy_csv[i].length-1
-				print ","
-			end
-		end
-		print "\n"
-	end
-end
+in_01 = ARGV[0] # filepath
+in_02 = ARGV[1] # date / other 
+in_03 = ARGV[2] # value
 
-in_filepath = ARGV[0]
-in_date = ARGV[1]
-in_value = ARGV[2]
-DATE_COL = 0
-VALUE_COL = 3
-
-
-monefy_csv = CSV.read(in_filepath)
+monefy_csv = CSV.read(in_01)
 monefy_csv.shift
 
-output = date_filter(monefy_csv, in_date, DATE_COL)
-if not in_value == nil
-	output = value_filter(output, in_value, VALUE_COL)
+if !date?(in_02) && in_02 != "xml" && !number?(in_02)
+	output = Filter.by_string(monefy_csv, in_02,COL::ACCOUNT)
+	output = Sort.csv_sort_by_col(output,COL::DATE)
+	Print.print_csv(output)	
+	puts MinifyMath.csv_sum_cols(output, COL::AMOUNT)
+else
+	output = Filter.by_date(monefy_csv, in_02, COL::DATE)
+	if not in_03 == nil
+		output = Filter.by_int(output, in_03, COL::AMOUNT)
+	end
+	Print.print_csv(output)
 end
-
-print_csv(output)

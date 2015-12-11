@@ -1,15 +1,31 @@
 require 'csv'
 
 file = ARGV[0]
-date = ARGV[1]
-value = ARGV[2].to_i
+account = ARGV[1]
 csv = CSV.read file
-
+csvHash = Hash.new
+counter1 = 1
+sum = 0
 csv.each do |line|
-  if line[0] == date && line[3].to_i > value-10 && line[3].to_i < value+10
-	line.each do |e|
-	  print"#{e},"
-	end
-	puts ""
-  end
+  if line[1] == account
+	counter2 = 0
+  	tempArr = Array.new
+  	sum += line[3].to_i
+  	line.each do |e|
+  		tempArr[counter2] = e
+  		counter2 += 1
+  	end
+  	csvHash["#{counter1}"] = tempArr
+  	counter1 += 1
+  end  
 end
+
+csvHash.sort_by {|key, value| value[0]}
+
+csvHash.each do |key, value|
+  value.each do |e|
+  	print "#{e},"
+  end
+  puts ""
+end
+p sum

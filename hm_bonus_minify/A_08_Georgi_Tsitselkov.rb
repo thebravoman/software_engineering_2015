@@ -15,7 +15,7 @@ if ARGV[2]
  	end
 
 else
-  CSV.open(filename, 'r').each do |row|
+  CSV.read(filename).each do |row|
   if row[0] == date
     puts row.join(",").to_s
     end
