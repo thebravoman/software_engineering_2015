@@ -4,19 +4,24 @@ file_name = ARGV[0]
 date = ARGV[1]
 value = ARGV[2]
 res = []
+sum = 0
 
-my_csv = CSV.read ARGV[0]
+my_csv = CSV.read(file_name)
 
-file_name.each do |line|
-	if line[0] == ARGV[1]
-		puts line.join(",")
-	end
+my_csv.sort! do |element|
+	date = element[0],split("/")
+	[date[2].to_i,date[1].to_i,date[0].to_i] 
+end 
 
-	l = line.split(',')
-	if l[0] == date and l[2].to_i >= value.to_i - 10 and l[2].to_i <= value.to_i + 10 
-	
+file_name.each do |row|
+	if line[1] == date.to_s
 	res << line
- 	
+	sum = sum + line[3].to_i
+	end
 end
 
-puts res
+res.each {
+	puts element.join(".")
+}
+
+puts sum
