@@ -1,17 +1,24 @@
 require 'csv'
-
-filename = ARGV[0]
-$date = nil
-$account = nil
-my_csv = CSV.read(filename)
+require 'rexml/document'
  
-if (!ARGV[1].include?("/")) && !(ARGV[1] =~ /\d/) && (ARGV[1] != "xml")
-	$account = ARGV[1]
-	$sum_value = 0
-else
-	$date = ARGV[1] 
+ def convert_to_xml my_csv
+	xml = REXML::Document.new
+    minify = xml.add_element("minify")
+	my_csv[1 .. -1] = my_csv[1 .. -1].sort_by! do |e|
+	  d = e[0].split("/")
+	  [e[1], d[2].to_i, d[1].to_i, d[0].to_i, e[3]]
+	end
+	my_csv[1 .. -1].each do |e|
+	  account = minify.add_element("account")
+	  account.add_text e[1] #add_attribute("node", e[1])
+	  date = account.add_element("date")
+	  date.add_text e[0]#add_attribute("node", e[0])
+	  amount = date.add_element("amount").add_text e[3].to_s  
+	end
+    formatter = REXML::Formatters::Pretty.new(4)
+    formatter.compact = true
+    formatter.write(xml, $stdout)
 end
-$value = ARGV[2].to_i
 
 def date_value_print? line
 	if ARGV[2]
@@ -21,7 +28,6 @@ def date_value_print? line
 	end
 end
 
-
 def account_sum line
 	if(line[1] == $account)
 		puts line.join(",")
@@ -29,17 +35,37 @@ def account_sum line
 	end 
 end
 
-my_csv.sort_by! do |e|
-  d = e[0].split("/")
-  [d[2].to_i, d[1].to_i, d[0].to_i]
+def sort_by_date my_csv
+  my_csv.sort_by! do |e|
+    d = e[0].split("/")
+    [d[2].to_i, d[1].to_i, d[0].to_i]
+  end
 end
 
-my_csv.each do |line|
-	if($date != nil) 
-		date_value_print? line
-	else
-		account_sum line if($account != nil)
-	end
+filename = ARGV[0]
+my_csv = CSV.read(filename)
+$date = nil
+$account = nil
+
+if (!ARGV[1].include?("/")) && !(ARGV[1] =~ /\d/) && (ARGV[1] != "xml")
+	$account = ARGV[1]
+	$sum_value = 0
+elsif (ARGV[1] == "xml")
+	convert_to_xml my_csv
+else
+	$date = ARGV[1] 
+end
+$value = ARGV[2].to_i
+
+if ARGV[1] != "xml"
+  sort_by_date my_csv
+  my_csv.each do |line|
+	  if($date != nil) 
+		  date_value_print? line
+	  else
+		  account_sum line if($account != nil)
+	  end
+  end
 end
 
-puts $sum_value.round(2) if($account != nil)
+puts $sum_value.round.to_i if($account != nil)
