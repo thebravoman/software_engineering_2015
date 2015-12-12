@@ -1,7 +1,7 @@
 require 'csv'
 require 'rexml/document'
 
-file_name = CSV.read ARGV[0]
+file = CSV.read(ARGV[0])[1..-1]
 date_or_string = ARGV[1]
 value = ARGV[2]
 
@@ -13,10 +13,10 @@ def is_number?(value)
   true if Float(value) rescue false
 end
 
-def print_and_sort_string (file_name, date_or_string) 
+def print_and_sort_string (file, date_or_string) 
 	amount_value = 0.0
 	array = []
-	file_name.each do |row|
+	file.each do |row|
 		if row[1] == date_or_string
 			amount_value += row[3].to_f
 			array << row
@@ -33,19 +33,22 @@ def print_and_sort_string (file_name, date_or_string)
 	puts amount_value.round 2
 end
 
-def xml_output_print file_name
-	file_name.sort! {|k, m| [m[1].to_s, k[0].to_s, k[3].to_i] <=> [k[1].to_s, m[0].to_s, m[3].to_i] } 
+def xml_output_print file
+	file.sort_by! do |row|
+		date = row[0].split("/")
+		[row[1], date[2].to_i, date[1].to_i, date[0].to_i, row[3]]
+	end
     array = []
     xml = REXML::Document.new  
     minify = xml.add_element('minify')
     
-    array = file_name[0][1]
+    array = file[0][1]
     account = minify.add_element("account")
     account.add_attribute("", "#{array}")
     
-    temp_date = file_name[0][0]
+    temp_date = file[0][0]
     
-    file_name.each do |element|
+    file.each do |element|
     	if element[1] == array  
         	if element[0] != array
     			date = account.add_element("date")
@@ -76,20 +79,20 @@ def xml_output_print file_name
   end
 
 if date_or_string == 'xml'
-	xml_output_print(file_name)
+	xml_output_print(file)
 else
 	if !valid_date?(date_or_string)
-		print_and_sort_string(file_name,date_or_string)
+		print_and_sort_string(file,date_or_string)
 	else
 		if is_number? value
 			value = value.to_i
-			file_name.each do |row|
+			file.each do |row|
 				if row[0] == date_or_string && row[3].to_i >= (value-10) && row[3].to_i <= (value+10)
 					puts row.join(",")
 				end
 			end
 		else
-			file_name.each do |row|
+			file.each do |row|
 				if row[0] == date_or_string
 					puts row.join(",")
 				end
