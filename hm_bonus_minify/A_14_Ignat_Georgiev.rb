@@ -25,7 +25,7 @@ csv.sort!
 puts sum
 end
 def to_xml csv 
- csv.sort!
+  csv = csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/").last , a[0].split("/")[1], a[0].split("/").first, a[3].to_f]}
   xml_new = REXML::Document.new('')
   xml_root=xml_new.add_element('minify')
   csv.each do |line|
