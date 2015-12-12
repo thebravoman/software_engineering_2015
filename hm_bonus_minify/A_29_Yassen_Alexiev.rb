@@ -1,4 +1,5 @@
 require 'csv'
+require 'rexml/document'
 
 file_name = CSV.read ARGV[0]
 date_or_string = ARGV[1]
@@ -32,20 +33,66 @@ def print_and_sort_string (file_name, date_or_string)
 	puts amount_value.round 2
 end
 
-if !valid_date?(date_or_string)
-	print_and_sort_string(file_name,date_or_string)
+def xml_output_print file_name
+	file_name.sort! {|k, m| [m[1].to_s, k[0].to_s, k[3].to_i] <=> [k[1].to_s, m[0].to_s, m[3].to_i] } 
+    array = []
+    xml = REXML::Document.new  
+    minify = xml.add_element('minify')
+    
+    array = file_name[0][1]
+    account = minify.add_element("account")
+    account.add_attribute("", "#{array}")
+    
+    temp_date = file_name[0][0]
+    
+    file_name.each do |element|
+    	if element[1] == array  
+        	if element[0] != array
+    			date = account.add_element("date")
+        		date.add_attribute("", "#{element[0]}")
+				
+	       		amount = date.add_element("amount")
+	        	amount.add_attribute("", "#{element[3]}")
+	        else 
+	        	array = element[0]
+	       		amount = date.add_element("amount")
+	        	amount.add_attribute("", "#{element[3]}")
+        	end	
+    	elsif element[1] != array
+        	array = element[1]
+        	account = minify.add_element("account")
+        	account.add_attribute("", "#{element[1]}")
+        	
+        	date = account.add_element("date")
+        	date.add_attribute("", "#{element[0]}")
+        	
+        	amount = date.add_element("amount")
+        	amount.add_attribute("", "#{element[3]}")
+    	end
+    end
+    out = ''
+    xml.write(out, 2)
+    puts out 
+  end
+
+if date_or_string == 'xml'
+	xml_output_print(file_name)
 else
-	if is_number? value
-		value = value.to_i
-		file_name.each do |row|
-			if row[0] == date_or_string && row[3].to_i >= (value-10) && row[3].to_i <= (value+10)
-				puts row.join(",")
-			end
-		end
+	if !valid_date?(date_or_string)
+		print_and_sort_string(file_name,date_or_string)
 	else
-		file_name.each do |row|
-			if row[0] == date_or_string
-				puts row.join(",")
+		if is_number? value
+			value = value.to_i
+			file_name.each do |row|
+				if row[0] == date_or_string && row[3].to_i >= (value-10) && row[3].to_i <= (value+10)
+					puts row.join(",")
+				end
+			end
+		else
+			file_name.each do |row|
+				if row[0] == date_or_string
+					puts row.join(",")
+				end
 			end
 		end
 	end
