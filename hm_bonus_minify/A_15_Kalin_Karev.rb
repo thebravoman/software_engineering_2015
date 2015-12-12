@@ -86,4 +86,4 @@ if ARGV[1] != "xml"
 end
 
 
-puts $sum;
+puts #$sum;
