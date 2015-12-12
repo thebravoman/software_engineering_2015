@@ -76,7 +76,7 @@ end
 $value = ARGV[2].to_i
 
 if ARGV[1] != "xml"
-  sort_by_date my_csv
+  sort_by_date my_csv if ($account != nil)
   my_csv.each do |line|
 	  if($date != nil) 
 		  date_value_print? line
