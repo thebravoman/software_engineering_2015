@@ -1,6 +1,8 @@
 require 'csv'
 require 'date'
 require 'rexml/document'
+require 'net/http'
+require 'openssl'
 
 DATE_FORMAT = "%d/%m/%Y"
 
@@ -45,13 +47,36 @@ def print_xml(contents)
   puts "#{res}"
 end
 
-filename = ARGV[0]
+def download_csv(path)
+  url = URI.parse(path)
+  http_client = Net::HTTP.new(url.host, url.port)
+
+  if url.scheme == 'https'
+    http_client.use_ssl = true
+    http_client.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+
+  res = http_client.get(url.request_uri)
+
+  contents = []
+  CSV.parse(res.body) do |row|
+    contents.push(row)
+  end
+
+  return contents
+end
+
+path = ARGV[0]
 second_arg = ARGV[1]
 value = ARGV[2].to_i if ARGV[2] != nil
 
 contents = []
-CSV.foreach(filename) do |row|
-  contents.push(row)
+if path.start_with?("http://", "https://")
+  contents = download_csv(path)
+else
+  CSV.foreach(path) do |row|
+    contents.push(row)
+  end
 end
 
 # Remove headers
