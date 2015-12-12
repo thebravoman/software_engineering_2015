@@ -1,4 +1,5 @@
 require 'csv'
+require 'rexml/document'
 
 class Printing
   def without_value csv_file, string
@@ -27,6 +28,22 @@ class Printing
     end
     puts "#{sum_of_values}"
   end
+  def xml csv_file
+    xml_file = REXML::Document.new("")
+    node = xml_file.add_element("minify")
+    csv_file.sort! {|a, b| [a[1].to_s, b[0].to_s, b[3].to_i] <=> [b[1].to_s, a[0].to_s, a[3].to_i] }
+    csv_file.each do |row|
+      account = node.add_element("account")
+      account.add_text row[1]
+      date = account.add_element("date")
+      date.add_text row[0]
+      amount = date.add_element("amount").add_text row[3].to_s  
+	end
+    
+    out = ''
+    xml_file.write(out, 1)
+    puts out
+  end
 end
 
 def date? str
@@ -53,13 +70,15 @@ string = ARGV[1]
 value = ARGV[2]
 sum_of_values = 0
  
-
 if date? string
   if ARGV[2]
     printer.with_value(csv_file, string, value)
   else 
     printer.without_value(csv_file, string) 
   end
-elsif !(xml? string) && !(number? string)
+end
+if xml? string
+  printer.xml(csv_file)
+elsif !(number? string)
   printer.matched_string(csv_file, string, sum_of_values)
 end
