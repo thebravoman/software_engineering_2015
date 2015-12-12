@@ -1,52 +1,7 @@
-require 'csv'
 require 'rexml/document'
+require_relative 'minify_printer.rb'
 
-# Searches for data in the passed csv
-class CSVSearcher
-  DATE_COLUMN = 0
-  ACCOUNT_COLUMN = 1
-  AMOUNT_COLUMN = 3
-  DESCRIPTION_COLUMN = 5
-
-  def self.print_date_output(csv_filename, date, value = nil)
-    output = []
-    csv = CSV.read(csv_filename)[1..-1]
-
-    csv.each do |row|
-      wanted = row[DATE_COLUMN] == date
-      row_value = row[AMOUNT_COLUMN].to_f
-
-      unless value.nil?
-        wanted &&= row_value < value + 10 && row_value > value - 10
-      end
-
-      output << row if wanted
-    end
-    
-    print_csv output
-  end
-
-  def self.print_account_output(csv_filename, account)
-    output = []
-    sum = 0.0
-    csv = CSV.read(csv_filename)[1..-1]
-
-    csv.each do |row|
-      if row[ACCOUNT_COLUMN] == account
-        output << row
-        sum += row[AMOUNT_COLUMN].to_f
-      end
-    end
-
-    output.sort_by! do |row| 
-      date = row[DATE_COLUMN].split '/'
-      [date[2].to_i, date[1].to_i, date[0].to_i]
-    end
-
-    print_csv output
-    puts sum.round 2 if output.size > 0
-  end
-
+class MinifyXMLPrinter < MinifyPrinter
   def self.print_to_xml(csv_filename)
     csv = CSV.read(csv_filename)[1..-1]
 
@@ -57,8 +12,6 @@ class CSVSearcher
 
     xml = REXML::Document.new
     minify_el = xml.add_element 'minify'
-
-    current_acc = ''
     i = 0
 
     while i < csv.size
@@ -98,16 +51,5 @@ class CSVSearcher
 
     print_csv csv
     print_xml xml
-  end
-
-  def self.print_xml(xml)
-    formatter = REXML::Formatters::Pretty.new
-    formatter.write(xml, $stdout)
-  end
-
-  def self.print_csv(csv)
-    csv.each do |row|
-      puts row.join ','
-    end
   end
 end
