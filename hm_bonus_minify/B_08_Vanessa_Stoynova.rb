@@ -18,18 +18,19 @@ def to_xml my_csv
 
   	my_csv.each do |line|
   	
-    		puts line[0].gsub("/",'')
+    		#puts line[0].gsub("/",'')
     		acc = node.add_element('account')
     		date = acc.add_element('date')
     		amount = date.add_element('amount').text = "#{line[3]}"
 		acc.add_attribute('', "#{line[1]}")
     		date.add_attribute('', "#{line[0]}")
+    		
   	end
 
   	formatter = REXML::Formatters::Pretty.new
   	formatter.compact = true
   	formatter.write(document, $stdout)
-  p 
+  	p 
 end
 
 def print_and_sort_array array
