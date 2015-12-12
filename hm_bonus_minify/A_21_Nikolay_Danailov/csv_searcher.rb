@@ -6,6 +6,7 @@ class CSVSearcher
   DATE_COLUMN = 0
   ACCOUNT_COLUMN = 1
   AMOUNT_COLUMN = 3
+  DESCRIPTION_COLUMN = 5
 
   def self.print_date_output(csv_filename, date, value = nil)
     output = []
@@ -51,7 +52,7 @@ class CSVSearcher
 
     csv.sort_by! do |row| 
       date = row[DATE_COLUMN].split '/'
-      [row[ACCOUNT_COLUMN], date[2].to_i, date[1].to_i, date[0].to_i, row[AMOUNT_COLUMN]]
+      [row[ACCOUNT_COLUMN], date[2].to_i, date[1].to_i, date[0].to_i, row[AMOUNT_COLUMN].to_i]
     end
 
     xml = REXML::Document.new
@@ -74,13 +75,14 @@ class CSVSearcher
 
         if date != current_date
           date_el = account_el.add_element 'date'
-          date_el.add_attribute 'name', date
+          date_el.add_attribute 'value', date
           current_date = date
           row = csv[i]
 
           while current_date == date && i < csv.size
             amount = row[AMOUNT_COLUMN]
-            date_el.add_element('amount').add_text amount
+            amount_el = date_el.add_element('amount')
+            amount_el.add_text amount
 
             i += 1
             row = csv[i]
