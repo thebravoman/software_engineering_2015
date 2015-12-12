@@ -8,12 +8,30 @@ require 'rexml/document'
 	  d = e[0].split("/")
 	  [e[1], d[2].to_i, d[1].to_i, d[0].to_i, e[3]]
 	end
+	checked_account = []
+	checked_date = []
+	account = ""
+	date = ""
 	my_csv[1 .. -1].each do |e|
-	  account = minify.add_element("account")
-	  account.add_text e[1] #add_attribute("node", e[1])
-	  date = account.add_element("date")
-	  date.add_text e[0]#add_attribute("node", e[0])
-	  amount = date.add_element("amount").add_text e[3].to_s  
+	  if checked_account.include?(e[1].to_s)
+	    if checked_date.include?(e[0].to_s)
+	      amount = date.add_element("amount").add_text e[3].to_s
+		else
+		  date = account.add_element("date")
+	      date.add_attribute("value", e[0])
+	      amount = date.add_element("amount").add_text e[3].to_s 
+		  checked_date << e[0].to_s
+		end
+	  else
+		checked_date.clear
+	    checked_account << e[1].to_s
+		checked_date << e[0].to_s
+		account = minify.add_element("account")
+		account.add_attribute("value", e[1])
+	    date = account.add_element("date")
+	    date.add_attribute("value", e[0])
+	    amount = date.add_element("amount").add_text e[3].to_s
+	  end
 	end
     formatter = REXML::Formatters::Pretty.new(4)
     formatter.compact = true
