@@ -23,5 +23,5 @@ if date? arg2
 elsif !number?(arg2) && arg2 != 'xml'
   CSVSearcher.print_account_output arg1, arg2
 else
-
+  CSVSearcher.print_to_xml arg1
 end
