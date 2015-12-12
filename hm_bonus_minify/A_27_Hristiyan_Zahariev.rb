@@ -37,9 +37,8 @@ class Printing
       account.add_text row[1]
       date = account.add_element("date")
       date.add_text row[0]
-      amount = date.add_element("amount").add_text row[3].to_s  
-	end
-    
+      amount = date.add_element("amount").add_text row[3].to_s
+    end
     out = ''
     xml_file.write(out, 1)
     puts out
