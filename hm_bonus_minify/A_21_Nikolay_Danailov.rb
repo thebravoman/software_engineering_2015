@@ -1,10 +1,6 @@
-require_relative 'A_21_Nikolay_Danailov/csv_searcher.rb'
-
-def print_output output
-  output.each do |row|
-    puts row.join ','
-  end
-end
+require_relative 'A_21_Nikolay_Danailov/minify_date_printer.rb'
+require_relative 'A_21_Nikolay_Danailov/minify_account_printer.rb'
+require_relative 'A_21_Nikolay_Danailov/minify_xml_printer.rb'
 
 def number? str
   true if Float(string) rescue false
@@ -19,9 +15,9 @@ arg2 = ARGV[1]
 arg3 = ARGV[2].to_f if ARGV.size > 2
 
 if date? arg2
-  CSVSearcher.print_date_output arg1, arg2, arg3
+  MinifyDatePrinter.print_date_output arg1, arg2, arg3
 elsif !number?(arg2) && arg2 != 'xml'
-  CSVSearcher.print_account_output arg1, arg2
+  MinifyAccountPrinter.print_account_output arg1, arg2
 else
-
+  MinifyXMLPrinter.print_to_xml arg1
 end
