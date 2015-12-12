@@ -45,5 +45,4 @@ class ReadCSV
 		end
 		puts "#{amount_sum.round 2}"
 	end
-
 end
