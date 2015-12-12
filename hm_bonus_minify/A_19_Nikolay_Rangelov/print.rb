@@ -11,4 +11,8 @@ class Print
 			print "\n"
 		end
 	end
+
+	def self.print_xml(string_xml)
+		puts string_xml
+	end
 end

@@ -13,9 +13,9 @@ class Filter
 
 	def self.by_int(monefy_csv, value, value_col)
 		result = Array.new
-		value = value.to_i
+		value = value.to_f
 		for i in 0..monefy_csv.length - 1
-			if ((monefy_csv[i][value_col]).to_i).between?(value - 10, value + 10)
+			if ((monefy_csv[i][value_col]).to_f).between?(value - 10, value + 10)
 				result << monefy_csv[i]
 			end
 		end
