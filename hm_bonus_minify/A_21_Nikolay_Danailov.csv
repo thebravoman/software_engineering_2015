@@ -1,17 +1,17 @@
 date,account,category,amount,currency,description
-01/12/2014,PersonalCash,K,-40,BGN,bough new chair
-21/03/2007,PersonalCash,K,2000,BGN,salary
-21/03/2007,SchoolCash,K,-0.5,BGN,bought bread
-12/06/2011,ParentsCash,K,20,BGN,money from parents
-21/03/2007,PersonalCash,K,-119.99,BGN,bought new sofa
-17/06/2009,SchoolCash,K,50,BGN,money from scholarship
-11/01/2012,PersonalCash,K,2100,BGN,salary
-11/01/2012,SchoolCash,K,50,BGN,money from scholarship
-09/09/2003,ParentsCash,K,5,BGN,money from parents
-21/03/2007,PersonalCash,K,-1.6,BGN,bought Cola
-17/06/2009,PersonalCash,K,-2.5,BGN,bought ice cream
-09/09/2003,PersonalCash,K,20.5,BGN,found money
-16/09/2003,SchoolCash,K,-2,BGN,bought sandwhich
-24/11/2016,PersonalCash,K,-849.99,BGN,bought a new PC
-16/09/2003,SchoolCash,K,-20,BGN,bought a card for public transport
-21/03/2001,SchoolCash,K,-1,BGN,bought a ticket for public transport
+01/12/2014,PersonalCash,K,-40,BGN,1. bough new chair
+21/03/2007,PersonalCash,K,2000,BGN,2. salary
+21/03/2007,SchoolCash,K,-0.5,BGN,3. bought bread
+12/06/2011,ParentsCash,K,20,BGN,4. money from parents
+21/03/2007,PersonalCash,K,-119.99,BGN,5. bought new sofa
+17/06/2009,SchoolCash,K,50,BGN,6. money from scholarship
+11/01/2012,PersonalCash,K,2100,BGN,7. salary
+11/01/2012,SchoolCash,K,50,BGN,8. money from scholarship
+09/09/2003,ParentsCash,K,5,BGN,9. money from parents
+21/03/2007,PersonalCash,K,-1.6,BGN,10. bought Cola
+17/06/2009,PersonalCash,K,-2.5,BGN,11. bought ice cream
+09/09/2003,PersonalCash,K,20.5,BGN,12. found money
+16/09/2003,SchoolCash,K,-2,BGN,13. bought sandwhich
+24/11/2016,PersonalCash,K,-849.99,BGN,14. bought a new PC
+16/09/2003,SchoolCash,K,-20,BGN,15. bought a card for public transport
+21/03/2001,SchoolCash,K,-1,BGN,16. bought a ticket for public transport
