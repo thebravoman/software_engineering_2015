@@ -17,8 +17,8 @@ if ARGV[1] == 'json'
 
 elsif ARGV[1] == 'xml'
     puts result.to_xml
-#elsif ARGV[1] == "svg"
-	#result coming soon...
+elsif ARGV[1] == "svg"
+	result.to_svg
 else
     puts result.to_csv
 end
