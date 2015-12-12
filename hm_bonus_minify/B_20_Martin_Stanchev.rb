@@ -44,7 +44,7 @@ class PersonalFinance
     account = node.add_element("account")
     account.add_attribute("", "#{temp}")
     
-    temp_date = csv_doc[0][0]
+    temp_date = csv_doc[0][0] 
     
     csv_doc.each do |row|   # Same dates appear as different nodes - have to fix
       
@@ -76,7 +76,7 @@ class PersonalFinance
   end
   
   def sort_csv csv_doc 
-    return csv_doc.sort! {|a, b| [b[1].to_s, a[0].to_s, a[3].to_i] <=> [a[1].to_s, b[0].to_s, b[3].to_i] }  # i think this doesn't sort correctly
+    return csv_doc.sort! {|a, b| [a[1], a[0], a[3].to_i] <=> [b[1], b[0], b[3].to_i] }
   end
   
 end
