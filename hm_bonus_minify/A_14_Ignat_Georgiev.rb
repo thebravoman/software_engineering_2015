@@ -1,5 +1,8 @@
 require 'csv'
 require "rexml/document"
+require 'net/http'
+require 'sanitize'
+require 'openssl'
 def date_value csv , date , value
   csv.each do |line|
     if line[0]==date
@@ -40,14 +43,35 @@ def to_xml csv
   formatter.compact
   formatter.write(xml_new, $stdout)
   end
-csv = CSV.read(ARGV[0])
+def parse_url uri
+      uri = URI.parse(uri)
+      http = Net::HTTP.new(uri.host, uri.port)
+      if uri.scheme == 'https'
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      end
+      result = http.get(uri.request_uri)
+      string = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])
+      csv = CSV.parse(string)
+
+  end
+def file_site filename
+  protocol = filename.split('/').first
+  return protocol == 'http:' || protocol == "https:"
+end
+puts ARGV[0].split('.').last
+if file_site ARGV[0]
+array = parse_url ARGV[0]
+else
+array = CSV.read(ARGV[0])
+end
 second = ARGV[1]
 third = ARGV[2].to_i
 check_if_date = second.scan(/[a-zA-z]/).count
 if check_if_date>0 && second != "xml"
-string_csv csv,second
+string_csv array,second
 elsif second =="xml"
-	to_xml csv
+	to_xml array
 else
-date_value csv,second,third
+date_value array,second,third
 end	

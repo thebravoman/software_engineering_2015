@@ -1,47 +1,75 @@
 require 'csv'
+require 'rexml/document'
 
-file = CSV.read ARGV[0]
-date = ARGV[1]
-value = ARGV[2]
+string = []
 
-#my_csv = CSV.read file
+file = ARGV[0]
+account = ARGV[1].to_s
+sum = 0
 
-def valid_date? date_or_string
-	/\d{1,2}\/{1,2}\/\d*/.match date_or_string
-end
-
-def is_number? value
-	true if Float(value) rescue false 
-end
-
-def output_sort_string file, date_or_string
-	value = 0.0
-	file = file.sort!
-	file.each do |row|
-		if row[1] == date_or_string
-			value +=r row[3].to_f
-			puts row.join(",")
-		end
+def to_xml my_csv
+	my_csv = my_csv.sort_by do |a|
+		 [a[1].to_s.downcase , a[0].split("/")[2].to_i, a[0].split("/")[1].to_i, a[0].split("/")[0].to_i, a[3].to_f]}
 	end
-	puts value.round 2
+
+  	document = REXML::Document.new('')  
+  	node = document.add_element('minify')
+
+  	my_csv.each do |row|
+    		account2 = node.add_element('account')
+    		date = account2.add_element('date')
+    		amount = date.add_element('amount').text = "#{row[3]}"
+			account2.add_attribute('', "#{row[1]}")
+    		date.add_attribute('', "#{row[0]}")  		
+  	end
+  	formatter = REXML::Formatters::Pretty.new
+  	formatter.compact = true
+  	formatter.write(document, $stdout)
+  	p 
 end
 
-if !valid_date?(date_or_string)
-	output_sort_string(file, date_or_string)
-
-else
-	if is_number? value
-		value = value.to_i
-		file.each do |row|
-			if row[0] == date && row[3].to_i >= (value - 10) && row[3].to_i <= (value + 10)
-				puts row.join(",")
-			end
-		end
-	else 
-		file.each do |row|
-			if row[0] == date
-				puts row.join(",").to_s
-			end
-		end
+def output_sort_string string
+	string.sort_by! do |date|
+		time = date[0].split("/") 
+		[time[2].to_i, time[1].to_i, time[0].to_i];
 	end
+	
+	string.each do |row|
+		puts row.join(",")
+	end
+end
+
+my_csv = CSV.read file
+my_csv.each do |row|
+
+	if account == "xml" 
+		puts to_xml(my_csv)	
+		break
+	end
+	
+	if ARGV[2] == nil
+		account = ARGV[1].to_s
+			 
+		if row[1] == account
+    			sum += row[3].to_i
+    			string.push(row)
+  		end
+  		
+  	elsif ARGV[2] != nil
+  		date = ARGV[1]
+  		value = ARGV[2]
+  		
+  		if row[0] == date && !value
+  			string.push(row)
+  		 elsif row[0] == date && (value.to_i - 10 <= row[3].to_i && value.to_i + 10 >= line[3].to_i)
+  			string.push(row)
+  		 end
+  		end 
+  	end
+end
+
+output_sort_string string
+
+if ARGV[2] == nil && ARGV[1] != "xml"
+	puts "#{sum}\n"
 end
