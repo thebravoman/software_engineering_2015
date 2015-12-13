@@ -3,10 +3,10 @@ require_relative 'printer.rb'
 class AccountPrinter < Printer
 	public
 
-	def self.print filename, requested_account
+	def self.print csv, requested_account
 		output = []
 		amount_sum = 0;
-		CSV.foreach(filename) do |row|
+		csv.each do |row|
 			account = row[ACCOUNT_COLUMN]
 			if account == requested_account
 				output << row
@@ -18,6 +18,6 @@ class AccountPrinter < Printer
 		output.each do |row|
 			puts "#{row.join(',')}"
 		end
-		puts "#{amount_sum.round 2}"
+		puts "#{amount_sum.round 2}" unless output.empty?
 	end
 end

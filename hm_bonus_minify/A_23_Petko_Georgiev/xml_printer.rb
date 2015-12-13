@@ -34,8 +34,7 @@ class XMLPrinter < Printer
         xml
     end
 
-    def self.print(filename)
-        csv = CSV.read(filename)[1..-1]
+    def self.print(csv)
         csv.sort_by! { |row| [ row[ACCOUNT_COLUMN], ConvertDate(row[DATE_COLUMN]), row[AMOUNT_COLUMN].to_f ] }
         xml = generate_xml csv
         print_xml xml
