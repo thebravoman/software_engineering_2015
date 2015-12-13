@@ -106,20 +106,20 @@ end
 csv get_contents file #version 5
 
 if date_or_string == 'xml' #version 4
-	xml_output_print(file)
+	xml_output_print(csv)
 else #version 3
 	if !valid_date?(date_or_string)
-		print_and_sort_string(file,date_or_string)
+		print_and_sort_string(csv,date_or_string)
 	else #version 2
 		if is_number? value
 			value = value.to_i
-			file.each do |row|
+			csv.each do |row|
 				if row[0] == date_or_string && row[3].to_i >= (value-10) && row[3].to_i <= (value+10)
 					puts row.join(",")
 				end
 			end
 		else #version 1
-			file.each do |row|
+			csv.each do |row|
 				if row[0] == date_or_string
 					puts row.join(",")
 				end
