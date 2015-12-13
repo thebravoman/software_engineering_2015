@@ -56,7 +56,8 @@ class Printing
       end
       result = http.get(uri.request_uri)
       string = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])
-      csv = CSV.parse(string)    
+      csv = CSV.parse(string)   
+      puts xml csv
   end
 end
 
