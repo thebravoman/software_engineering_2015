@@ -42,9 +42,9 @@ class Printing
       date.add_text row[0]
       amount = date.add_element("amount").add_text row[3].to_s
     end
-    xmlprint = ''
-    xml_file.write(xmlprint, 1)
-    puts xmlprint
+    formatter = REXML::Formatters::Pretty.new
+    formatter.compact = true
+    formatter.write(xml_file, $stdout)
   end
 
   def if_url input_file
