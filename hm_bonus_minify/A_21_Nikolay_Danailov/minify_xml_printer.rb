@@ -2,7 +2,7 @@ require 'rexml/document'
 require_relative 'minify_printer.rb'
 
 class MinifyXMLPrinter < MinifyPrinter
-  def self.make_account_elements csv, minify_el
+  def self.make_account_elements(csv, minify_el)
     i = 0
 
     while i < csv.size
@@ -52,9 +52,7 @@ class MinifyXMLPrinter < MinifyPrinter
     xml
   end
 
-  def self.print_to_xml(csv_filename)
-    csv = CSV.read(csv_filename)[1..-1]
-
+  def self.print_to_xml(csv)
     csv.sort_by! do |row| 
       date = row[DATE_COLUMN].split '/'
       [row[ACCOUNT_COLUMN], date[2].to_i, date[1].to_i, date[0].to_i, row[AMOUNT_COLUMN].to_i]

@@ -31,7 +31,7 @@ class Printing
   def xml csv_file
     xml_file = REXML::Document.new("")
     node = xml_file.add_element("minify")
-    csv_file.sort! {|a, b| [a[1].to_s, b[0].to_s, b[3].to_i] <=> [b[1].to_s, a[0].to_s, a[3].to_i] }
+    csv_file.sort! {|a, b| [a[1].to_s, a[0].to_s, a[3].to_i] <=> [b[1].to_s, b[0].to_s, b[3].to_i] }
     csv_file.each do |row|
       account = node.add_element("account")
       account.add_text row[1]

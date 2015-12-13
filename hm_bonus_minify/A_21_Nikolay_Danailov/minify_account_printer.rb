@@ -1,10 +1,9 @@
 require_relative 'minify_printer.rb'
 
 class MinifyAccountPrinter < MinifyPrinter
-  def self.print_account_output(csv_filename, account)
+  def self.print_account_output(csv, account)
     output = []
     sum = 0.0
-    csv = CSV.read(csv_filename)[1..-1]
 
     csv.each do |row|
       if row[ACCOUNT_COLUMN] == account
