@@ -1,3 +1,6 @@
+require 'net/http'
+require 'sanitize'
+require 'openssl'
 require 'rexml/document'
 require 'date'
 require 'csv'
@@ -8,8 +11,30 @@ value = ARGV[2].to_f
 sum = 0 
 line = 0
 
-my_csv = CSV.read(path)
-my_csv.sort!
+is_url = option.start_with?("http://") || option.start_with?("https://")
+
+if is_url
+  parse_web(path)
+else
+  my_csv = CSV.read(path)
+  my_csv.sort!
+end
+
+def parse_web(url)
+  uri  = URI.parse(url)
+
+  http = Net::HTTP.new(uri.host, uri.port)
+
+  if uri.scheme == 'https'
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+ 
+  result = http.get(uri.request_uri)
+
+  text = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])  
+  puts to_xml(text)
+end
 
 def to_xml(my_csv)
   my_csv = my_csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/").last , a[0].split("/")[1], a[0].split("/").first, a[3].to_f]}
