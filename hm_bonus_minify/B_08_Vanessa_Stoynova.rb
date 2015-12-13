@@ -46,6 +46,7 @@ def link_convertor file
   	res = http_client.get(url.request_uri)
 
 	content = []
+	
   	CSV.parse(res.body) do |line|
     		content.push(line)
   	end
@@ -66,84 +67,48 @@ def print_and_sort_result result
 	end
 end
 
-if file.start_with?("http://", "https://")
+result = []
 
-	#result = []
-	result = link_convertor(file)
-	
-	if ARGV[1] != nil
-	
-		result.each do |line|
-			if account == "xml" 
-				puts to_xml(my_csv)	
-				break
-			elsif ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99
-				date = ARGV[1]
-				if line[0] == date
-					result.push(line)
-				end
-			end 
-	
-			if ARGV[2] == nil 
-				account = ARGV[1].to_s
-		 
-				if line[1] == account
-    					sum += line[3].to_i
-    					result.push(line)
-  				end	
-  			elsif ARGV[2] != nil
-  				date = ARGV[1]
-  				value = ARGV[2]
-  	
-  				if line[0] == date && !value
-  					result.push(line)
-  	 	 	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
-  					result.push(line)
-  	 	 	  	 end
-  				end
-			end
-		end
-	end
-	print_and_sort_result result
+if file.start_with?("http://", "https://") #version 5
+	my_csv = link_convertor file
 else
-	result = []
 	my_csv = CSV.read file
+end
  
- 	my_csv.each do |line|
+my_csv.each do |line|
  		
-		if account == "xml" 
-			puts to_xml(my_csv)	
-			break
-		elsif ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99
-			date = ARGV[1]
-			if line[0] == date
-				result.push(line)
-			end
-		end 
-	
-		if ARGV[2] == nil 
-			account = ARGV[1].to_s
-		 
-			if line[1] == account
-    				sum += line[3].to_i
-    				result.push(line)
-  			end	
-  		elsif ARGV[2] != nil
-  			date = ARGV[1]
-  			value = ARGV[2]
-  	
-  			if line[0] == date && !value
-  				result.push(line)
-  	 	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
-  				result.push(line)
-  	 	 	 end
-  			end
+	if account == "xml" #version 4
+		puts to_xml(my_csv)	
+		break
+	elsif (ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99) && ARGV[2] == nil # version 1
+		date = ARGV[1]
+		if line[0] == date
+			result.push(line)
 		end
-	end
+	end 
 	
-	print_and_sort_result result
-
-	if ARGV[2] == nil && ARGV[1] != "xml"
-		puts "The amount value for all the output rows is: #{sum}\n"
+	if ARGV[2] == nil # version 3
+		account = ARGV[1].to_s
+		 
+		if line[1] == account
+    			sum += line[3].to_i
+    			result.push(line)
+  		end	
+  	elsif ARGV[2] != nil #version 2
+  		date = ARGV[1]
+  		value = ARGV[2]
+  	
+  		if line[0] == date && !value
+  			result.push(line)
+  	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
+  			result.push(line)
+  	 	 end
+  		end
 	end
-end 
+end
+	
+print_and_sort_result result
+
+if ARGV[2] == nil && ARGV[1] != "xml"
+	puts "The amount value for all the output rows is: #{sum}\n"
+end
