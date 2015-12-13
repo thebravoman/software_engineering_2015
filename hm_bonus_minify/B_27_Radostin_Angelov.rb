@@ -46,7 +46,7 @@ class Csv_Parser
 		
 		result = http.get(uri.request_uri)
 		text = Sanitize.fragment(result.body)
-		return CSV.read(text)
+		return CSV.parse(text)
 	end
 end
 
@@ -68,7 +68,9 @@ def print_result result
 		sum += row_values[3].to_i
 	end
 	
-	puts sum
+	if not result.empty?
+		puts sum
+	end
 end
 
 #date account category amount currency description 
