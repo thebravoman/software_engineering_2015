@@ -110,7 +110,6 @@ class Monefy
     #puts path
     path = path.to_s.gsub("github.com", "raw.githubusercontent.com")
     path = path.to_s.gsub("/blob", "")
-    puts path
 
       open(path.to_s) do |f|
         @my_csv = CSV.parse(f)
