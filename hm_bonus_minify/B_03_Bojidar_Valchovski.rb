@@ -1,3 +1,6 @@
+require 'net/http'
+require 'sanitize'
+require 'openssl'
 require 'rexml/document'
 require 'date'
 require 'csv'
@@ -8,8 +11,9 @@ value = ARGV[2].to_f
 sum = 0 
 line = 0
 
-my_csv = CSV.read(path)
-my_csv.sort!
+my_csv = ""
+
+is_url = path.start_with?("http://") || path.start_with?("https://")
 
 def to_xml(my_csv)
   my_csv = my_csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/").last , a[0].split("/")[1], a[0].split("/").first, a[3].to_f]}
@@ -33,6 +37,23 @@ def to_xml(my_csv)
 
   p    
 end
+
+def parse_web(url)
+  uri  = URI.parse(url)
+
+  http = Net::HTTP.new(uri.host, uri.port)
+
+  if uri.scheme == 'https'
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+ 
+  result = http.get(uri.request_uri)
+
+  text = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])  
+  my_csv = CSV.parse(text)  
+  puts to_xml(my_csv)
+end
 	
 def is_date(option)
   begin
@@ -43,7 +64,11 @@ def is_date(option)
   end
 end
 
-my_csv.each do |row|
+if is_url
+  parse_web(path)
+else
+  my_csv = CSV.read(path)
+  my_csv.each do |row|
   if ARGV.length == 2
     if is_date(option)
 	  if row[0] == option
@@ -69,4 +94,5 @@ my_csv.each do |row|
       end
     end
   end
+end
 end

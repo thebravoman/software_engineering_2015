@@ -1,6 +1,7 @@
 require 'csv'
-require 'date'
 require 'rexml/document'
+require 'open-uri'
+
 
 
   DATE = 0
@@ -105,18 +106,34 @@ class Monefy
 
   end
 
+  def download_csv(path)
+    #puts path
+    path = path.to_s.gsub("github.com", "raw.githubusercontent.com")
+    path = path.to_s.gsub("/blob", "")
 
+      open(path.to_s) do |f|
+        @my_csv = CSV.parse(f)
+      end
+      if !@my_csv[0][0].match(/\d{2}\/\d{2}\/\d{4}/)
+        @my_csv.delete_at(0)
+      end
+    end
 
-  end
-
-
+end
 
 myApp = Monefy.new ARGV[0]
+if ARGV[0].start_with?("http://", "https://")
+  myApp.download_csv(ARGV[0])
+else
 myApp.read_csv
+end
+
 if myApp.is_date? ARGV[1]
   myApp.filter_by_date ARGV[1]
   myApp.printing_for_date
+
 elsif myApp.is_string ARGV[1]
+
 myApp.filter_by_account ARGV[1]
 myApp.print_acc_format
 else

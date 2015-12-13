@@ -1,81 +1,43 @@
+require_relative 'printer.rb'
 require 'rexml/document'
 
-class XMLPrinter
-  DATE_COLUMN = 0
-  ACCOUNT_COLUMN = 1
-  AMOUNT_COLUMN = 3
-  DESCRIPTION_COLUMN = 5
+class XMLPrinter < Printer
 
-  def self.print_xml(xml)
-    formatter = REXML::Formatters::Pretty.new
-    formatter.write(xml, $stdout)
-  end
-
-  def self.print_csv(csv)
-    csv.each do |row|
-      puts row.join ','
-    end
-  end
-
-  def self.make_account_elements csv, minify_el
-    i = 0
-
-    while i < csv.size
-      row = csv[i]
-      account = row[ACCOUNT_COLUMN]
-
-      account_el = minify_el.add_element 'account'
-      account_el.add_attribute 'name', account
-      current_acc = account
-      current_date = ''
-
-      while current_acc == account && i < csv.size
-        date = row[DATE_COLUMN]
-
-        if date != current_date
-          date_el = account_el.add_element 'date'
-          date_el.add_attribute 'value', date
-          current_date = date
-          row = csv[i]
-
-          while current_acc == account && current_date == date && i < csv.size
-            amount = row[AMOUNT_COLUMN]
-            amount_el = date_el.add_element('amount')
-            amount_el.add_text amount
-
-            i += 1
-            row = csv[i]
-
-            if i < csv.size
-              date = row[DATE_COLUMN]
-              account = row[ACCOUNT_COLUMN]
+    def self.add_account_elements csv, xml
+        account_name = ''
+        current_date = ''
+        account_element = nil
+        date_element = nil
+        csv.each do |row|
+            previous_account_name = account_name
+            previous_date = current_date
+            account_name = row[ACCOUNT_COLUMN]
+            current_date = row[DATE_COLUMN]
+            if account_name != previous_account_name
+                account_element = xml.add_element 'account'
+                account_element.add_attribute 'name', account_name
+                previous_date = nil
             end
-          end
+            if current_date != previous_date
+                date_element = account_element.add_element 'date'
+                date_element.add_attribute 'value', current_date
+            end
+            amount_element = date_element.add_element 'amount'
+            amount_element.text = row[AMOUNT_COLUMN]
         end
-
-        # change the row and account before the loop checks
-        row = csv[i]
-        account = csv[i][ACCOUNT_COLUMN] if i < csv.size
-      end
-    end
-  end
-
-  def self.generate_xml(csv)
-    xml = REXML::Document.new
-    minify_el = xml.add_element 'minify'
-    make_account_elements csv, minify_el
-    xml
-  end
-
-  def self.print_to_xml(csv_filename)
-    csv = CSV.read(csv_filename)[1..-1]
-
-    csv.sort_by! do |row| 
-      date = row[DATE_COLUMN].split '/'
-      [row[ACCOUNT_COLUMN], date[2].to_i, date[1].to_i, date[0].to_i, row[AMOUNT_COLUMN].to_i]
     end
 
-    xml = generate_xml csv
-    print_xml xml
-  end
+    def self.generate_xml csv
+        xml = REXML::Document.new
+        minify_element = xml.add_element 'minify'
+        add_account_elements csv, minify_element
+        xml
+    end
+
+    def self.print(csv)
+        csv.sort_by! { |row| [ row[ACCOUNT_COLUMN], ConvertDate(row[DATE_COLUMN]), row[AMOUNT_COLUMN].to_f ] }
+        xml = generate_xml csv
+        print_xml xml
+    end
+
 end

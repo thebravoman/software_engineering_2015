@@ -1,7 +1,10 @@
 require 'csv'
 require 'rexml/document'
+require 'net/http'
+require 'openssl'
+require 'sanitize'
 
-file = CSV.read(ARGV[0])[1..-1]
+file = ARGV[0]
 date_or_string = ARGV[1]
 value = ARGV[2]
 
@@ -76,23 +79,48 @@ def xml_output_print file
     out = ''
     xml.write(out, 2)
     puts out 
-  end
+end
 
-if date_or_string == 'xml'
-	xml_output_print(file)
-else
+def is_url? str
+  str_beginning = str.split(':').first
+  str_beginning == 'http' || str_beginning == 'https'
+end
+
+def get_contents str
+  if !is_url? str
+    CSV.read(str)[1..-1]
+  else
+    url = URI.parse(str)
+    http = Net::HTTP.new(url.host, url.port)
+
+    if url.scheme == 'https'
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    end
+
+    contents = http.get(url.request_uri)
+    text = Sanitize.clean(contents.body, remove_contents: ['script', 'style'])
+    CSV.parse(text)[1..-1]
+  end
+end
+
+csv = get_contents file #version 5
+
+if date_or_string == 'xml' #version 4
+	xml_output_print(csv)
+else #version 3
 	if !valid_date?(date_or_string)
-		print_and_sort_string(file,date_or_string)
-	else
+		print_and_sort_string(csv,date_or_string)
+	else #version 2
 		if is_number? value
 			value = value.to_i
-			file.each do |row|
+			csv.each do |row|
 				if row[0] == date_or_string && row[3].to_i >= (value-10) && row[3].to_i <= (value+10)
 					puts row.join(",")
 				end
 			end
-		else
-			file.each do |row|
+		else #version 1
+			csv.each do |row|
 				if row[0] == date_or_string
 					puts row.join(",")
 				end

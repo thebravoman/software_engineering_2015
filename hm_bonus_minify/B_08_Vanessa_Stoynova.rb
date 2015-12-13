@@ -1,16 +1,17 @@
 require 'csv'
 require 'rexml/document'
+require 'net/http'
+require 'sanitize'
+require 'openssl'
 
 sum = 0
 
-file_name = ARGV[0]
+file = ARGV[0]
 account = ARGV[1].to_s
-array = []
-
-
+	
 def to_xml my_csv
 
-	my_csv = my_csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/")[2].to_i, a[0].split("/")[1].to_i, a[0].split("/")[0].to_i, a[3].to_f]}
+	my_csv = my_csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/")[2].to_i, a[0].split("/")[1].to_i, a[0].split("/")[0].to_i, a[3].to_i]}
 
   	document = REXML::Document.new('')
 	  
@@ -18,7 +19,6 @@ def to_xml my_csv
 
   	my_csv.each do |line|
   	
-    		#puts line[0].gsub("/",'')
     		acc = node.add_element('account')
     		date = acc.add_element('date')
     		amount = date.add_element('amount').text = "#{line[3]}"
@@ -33,49 +33,81 @@ def to_xml my_csv
   	p 
 end
 
-def print_and_sort_array array
+def link_convertor file
 
-	array.sort_by! do |date|
+	url = URI.parse(file)
+  	http_client = Net::HTTP.new(url.host, url.port)
+
+  	if url.scheme == 'https'
+    		http_client.use_ssl = true
+    		http_client.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  	end
+
+  	res = http_client.get(url.request_uri)
+
+	content = []
+	
+  	CSV.parse(res.body) do |line|
+    		content.push(line)
+  	end
+	
+	return content
+  
+end
+
+def print_and_sort_result result
+
+	result.sort_by! do |date|
 		time = date[0].split("/") 
 		[time[2].to_i, time[1].to_i, time[0].to_i];
 	end
 	
-	array.each do |line|
+	result.each do |line|
 		puts line.join(",")
 	end
 end
 
-my_csv = CSV.read file_name
+result = []
 
+if file.start_with?("http://", "https://") #version 5
+	my_csv = link_convertor file
+else
+	my_csv = CSV.read file
+end
+ 
 my_csv.each do |line|
-
-	if account == "xml" 
+ 		
+	if account == "xml" #version 4
 		puts to_xml(my_csv)	
 		break
-	end
+	elsif (ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99) && ARGV[2] == nil # version 1
+		date = ARGV[1]
+		if line[0] == date
+			result.push(line)
+		end
+	end 
 	
-	if ARGV[2] == nil
+	if ARGV[2] == nil # version 3
 		account = ARGV[1].to_s
-			 
+		 
 		if line[1] == account
     			sum += line[3].to_i
-    			array.push(line)
-  		end
-  		
-  	elsif ARGV[2] != nil
+    			result.push(line)
+  		end	
+  	elsif ARGV[2] != nil #version 2
   		date = ARGV[1]
   		value = ARGV[2]
-  		
+  	
   		if line[0] == date && !value
-  			array.push(line)
-  		 else if line[0] == date && (value.to_i - 10 <= line[3].to_i && value.to_i + 10 >= line[3].to_i)
-  			array.push(line)
-  		 end
-  		end 
-  	end
+  			result.push(line)
+  	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
+  			result.push(line)
+  	 	 end
+  		end
+	end
 end
-
-print_and_sort_array array
+	
+print_and_sort_result result
 
 if ARGV[2] == nil && ARGV[1] != "xml"
 	puts "The amount value for all the output rows is: #{sum}\n"
