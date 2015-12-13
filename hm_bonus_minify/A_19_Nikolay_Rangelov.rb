@@ -3,6 +3,7 @@ require_relative 'A_19_Nikolay_Rangelov/print.rb'
 require_relative 'A_19_Nikolay_Rangelov/constants.rb'
 require_relative 'A_19_Nikolay_Rangelov/sort.rb'
 require_relative 'A_19_Nikolay_Rangelov/minify_math.rb'
+require_relative 'A_19_Nikolay_Rangelov/xml.rb'
 require 'csv'
 require 'date'
 
@@ -23,6 +24,7 @@ in_03 = ARGV[2] # value
 monefy_csv = CSV.read(in_01)
 monefy_csv.shift
 
+
 if !date?(in_02) && in_02 != "xml" && !number?(in_02)
 	output = Filter.by_string(monefy_csv, in_02,COL::ACCOUNT)
 	output = Sort.csv_sort_by_col(output,COL::DATE)
@@ -34,4 +36,12 @@ else
 		output = Filter.by_int(output, in_03, COL::AMOUNT)
 	end
 	Print.print_csv(output)
+end
+
+if in_02.to_s == "xml"
+	output = Sort.csv_sort_by_col(monefy_csv, COL::ACCOUNT)
+	output = Sort.csv_sort_by_col(output, COL::DATE)
+	output = Sort.csv_sort_by_col(output, COL::AMOUNT)
+	result = Xml.generate_xml_from_csv(output)
+	Print.print_xml(result)
 end

@@ -66,20 +66,24 @@ def to_xml result
 	xml_minify = xml_result.add_element('minify')
 	
 	result_hash = array_to_hash(result)
-	result_hash.sort.to_h
+	result_hash = result_hash.sort.to_h
 	
 	#xml_marks = xml_word_counts.add_element('marks')
 	#xml_marks.add_text "#{@marks_count}"
 
-	result_hash.each do |key, value|
+	result_hash.each do |account, dates|
 		xml_account = xml_minify.add_element('account')
 		#xml_account.add_text(key)
 		#value.sort
-		value.sort.each do |date_key, amounts|
+		#p account
+		date_format = '%d/%m/%Y'
+		sorted_dates = dates.sort{|first, second| Date.strptime(first[0], date_format) <=> Date.strptime(second[0], date_format)}
+		sorted_dates.each do |date_key, amounts|
 			xml_date = xml_account.add_element('date')
 			#xml_date.add_text(date_key)
 			
-			amounts.sort.each do |amount|
+			amounts.sort! {|a, b| a.to_i <=> b.to_i}
+			amounts.each do |amount|
 				xml_amount = xml_date.add_element('amount')
 				xml_amount.add_text(amount)
 			end
