@@ -71,7 +71,7 @@ end
 if file.start_with?("http://", "https://")
 	link_convertor file
 else
-  	CSV.foreach(path) do |line|
+  	CSV.foreach(file) do |line|
     		result.push(line)
   	end
 end
