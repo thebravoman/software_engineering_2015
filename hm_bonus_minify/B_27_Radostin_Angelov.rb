@@ -1,17 +1,53 @@
 require 'csv'
 require 'rexml/document'
+require 'net/http'
+require 'sanitize'
+require 'openssl'
+#require 'open-uri'
 
-def parse_csv path, input_account
-	result = []
-	data = CSV.read(path)
-	data.shift
-	data.each do |row|
-		if row[1] == input_account
-			result.push(row)
-		end
+
+class Csv_Parser
+	def initialize
+		@data = ''
 	end
 	
-	return result
+	def parse path, input_account
+		if path.start_with? 'http' or path.start_with? 'https'
+			@data = parse_webpage(path)
+		else
+			@data = parse_file(path)
+		end
+		
+		result = []
+		@data.shift
+		@data.each do |row|
+			if row[1] == input_account
+				result.push(row)
+			end
+		end
+		
+		return result
+	end
+	
+	def parse_file(path)
+		data = CSV.read(path)
+		return data
+	end
+	
+	def parse_webpage url
+		uri = URI.parse(url)
+		http = Net::HTTP.new(uri.host, uri.port)
+		
+		if uri.scheme == 'https'
+			http.use_ssl = true
+			#you have to take risks
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+		end
+		
+		result = http.get(uri.request_uri)
+		text = Sanitize.fragment(result.body)
+		return CSV.read(text)
+	end
 end
 
 def read_csv path
@@ -96,8 +132,10 @@ end
 path = ARGV[0]
 account = ARGV[1]
 
+parser = Csv_Parser.new
+
 if account != "xml"
-	result = parse_csv(path, account)
+	result = parser.parse(path, account)
 	date_format = '%d/%m/%Y'
 	result.sort! {|first, second| Date.strptime(first[0], date_format) <=> Date.strptime(second[0], date_format)}
 	print_result(result)
