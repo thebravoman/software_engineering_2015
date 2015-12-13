@@ -2,6 +2,7 @@ require 'csv'
 require 'rexml/document'
 require 'net/http'
 require 'openssl'
+require 'sanitize'
 
 file = ARGV[0]
 date_or_string = ARGV[1]
@@ -103,7 +104,7 @@ def get_contents str
   end
 end
 
-csv get_contents file #version 5
+csv = get_contents file #version 5
 
 if date_or_string == 'xml' #version 4
 	xml_output_print(csv)
