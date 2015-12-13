@@ -114,7 +114,11 @@ class Monefy
       open(path.to_s) do |f|
         @my_csv = CSV.parse(f)
       end
+      if !@my_csv[0][0].match(/\d{2}\/\d{2}\/\d{4}/)
+        @my_csv.delete_at(0)
+      end
     end
+
 end
 
 myApp = Monefy.new ARGV[0]
