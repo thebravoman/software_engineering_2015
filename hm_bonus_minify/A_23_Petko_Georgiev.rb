@@ -1,4 +1,5 @@
-require_relative 'A_23_Petko_Georgiev/read_csv.rb'
+require_relative 'A_23_Petko_Georgiev/date_printer.rb'
+require_relative 'A_23_Petko_Georgiev/account_printer.rb'
 require_relative 'A_23_Petko_Georgiev/xml_printer.rb'
 
 def date? str
@@ -14,10 +15,10 @@ arg1 = ARGV[1]
 arg2 = ARGV[2]
 
 if date? arg1
-	ReadCSV.print_date_input filename, arg1, arg2
+	DatePrinter.print filename, arg1, arg2
 elsif number? arg1
 elsif arg1 == 'xml'
-	XMLPrinter.print_to_xml filename
+	XMLPrinter.print filename
 else
-	ReadCSV.print_account_input filename, arg1
+	AccountPrinter.print filename, arg1
 end
