@@ -11,6 +11,8 @@ value = ARGV[2].to_f
 sum = 0 
 line = 0
 
+my_csv = ""
+
 is_url = path.start_with?("http://") || path.start_with?("https://")
 
 def to_xml(my_csv)
@@ -49,7 +51,7 @@ def parse_web(url)
   result = http.get(uri.request_uri)
 
   text = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])  
-  puts to_xml(text)
+  my_csv = CSV.parse(text)  
 end
 	
 def is_date(option)
@@ -65,10 +67,7 @@ if is_url
   parse_web(path)
 else
   my_csv = CSV.read(path)
-  my_csv.sort!
-end
-
-my_csv.each do |row|
+  my_csv.each do |row|
   if ARGV.length == 2
     if is_date(option)
 	  if row[0] == option
@@ -94,4 +93,5 @@ my_csv.each do |row|
       end
     end
   end
+end
 end
