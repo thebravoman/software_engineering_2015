@@ -52,6 +52,7 @@ def parse_web(url)
 
   text = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])  
   my_csv = CSV.parse(text)  
+  puts to_xml(my_csv)
 end
 	
 def is_date(option)
