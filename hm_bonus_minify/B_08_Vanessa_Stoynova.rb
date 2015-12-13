@@ -109,6 +109,6 @@ end
 	
 print_and_sort_result result
 
-if ARGV[2] == nil && ARGV[1] != "xml"
+if ARGV[2] == nil && ARGV[1] != "xml" && !(ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99)
 	puts "The amount value for all the output rows is: #{sum}\n"
 end
