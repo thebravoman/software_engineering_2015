@@ -8,9 +8,7 @@ sum = 0
 
 file = ARGV[0]
 account = ARGV[1].to_s
-result = []
 	
-
 def to_xml my_csv
 
 	my_csv = my_csv.sort_by { |a| [a[1].to_s.downcase , a[0].split("/")[2].to_i, a[0].split("/")[1].to_i, a[0].split("/")[0].to_i, a[3].to_i]}
@@ -47,12 +45,12 @@ def link_convertor file
 
   	res = http_client.get(url.request_uri)
 
-	result = []
+	content = []
   	CSV.parse(res.body) do |line|
-    		result.push(line)
+    		content.push(line)
   	end
 	
-	return result
+	return content
   
 end
 
@@ -69,44 +67,83 @@ def print_and_sort_result result
 end
 
 if file.start_with?("http://", "https://")
-	link_convertor file
+
+	#result = []
+	result = link_convertor(file)
+	
+	if ARGV[1] != nil
+	
+		result.each do |line|
+			if account == "xml" 
+				puts to_xml(my_csv)	
+				break
+			elsif ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99
+				date = ARGV[1]
+				if line[0] == date
+					result.push(line)
+				end
+			end 
+	
+			if ARGV[2] == nil 
+				account = ARGV[1].to_s
+		 
+				if line[1] == account
+    					sum += line[3].to_i
+    					result.push(line)
+  				end	
+  			elsif ARGV[2] != nil
+  				date = ARGV[1]
+  				value = ARGV[2]
+  	
+  				if line[0] == date && !value
+  					result.push(line)
+  	 	 	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
+  					result.push(line)
+  	 	 	  	 end
+  				end
+			end
+		end
+	end
+	print_and_sort_result result
 else
-  	CSV.foreach(file) do |line|
-    		result.push(line)
-  	end
-end
-
-result.shift
-
-begin
-		
-	if account == "xml" 
-		puts to_xml(my_csv)	
+	result = []
+	my_csv = CSV.read file
+ 
+ 	my_csv.each do |line|
+ 		
+		if account == "xml" 
+			puts to_xml(my_csv)	
+			break
+		elsif ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99
+			date = ARGV[1]
+			if line[0] == date
+				result.push(line)
+			end
+		end 
+	
+		if ARGV[2] == nil 
+			account = ARGV[1].to_s
+		 
+			if line[1] == account
+    				sum += line[3].to_i
+    				result.push(line)
+  			end	
+  		elsif ARGV[2] != nil
+  			date = ARGV[1]
+  			value = ARGV[2]
+  	
+  			if line[0] == date && !value
+  				result.push(line)
+  	 	 	 else if line[0] == date && ((value.to_i - 10 <= line[3].to_i) && (value.to_i + 10 >= line[3].to_i))
+  				result.push(line)
+  	 	 	 end
+  			end
+		end
 	end
 	
-	if ARGV[2] == nil
-		account = ARGV[1].to_s
-		 
-		if line[1] == account
-    			sum += line[3].to_i
-    			result.push(line)
-  		end
-  		
-  	elsif ARGV[2] != nil
-  		date = ARGV[1]
-  		value = ARGV[2]
-  	
-  		if line[0] == date && !value
-  			result.push(line)
-  	 	 else if line[0] == date && (value.to_i - 10 <= line[3].to_i && value.to_i + 10 >= line[3].to_i)
-  			result.push(line)
-  	 	 end
-  		end
+	print_and_sort_result result
+
+	if ARGV[2] == nil && ARGV[1] != "xml"
+		puts "The amount value for all the output rows is: #{sum}\n"
 	end
 end 
-
-print_and_sort_result result
-
-if ARGV[2] == nil && ARGV[1] != "xml"
-	puts "The amount value for all the output rows is: #{sum}\n"
-end
