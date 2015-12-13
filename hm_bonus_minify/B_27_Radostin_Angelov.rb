@@ -7,11 +7,14 @@ require 'openssl'
 DATE_FORMAT  = '%d/%m/%Y'
 
 class Csv_Parser
-	def initialize
+	def initialize(should_parse_date, should_parse_value, value)
 		@data = ''
+		@should_parse_date = should_parse_date
+		@should_parse_value = should_parse_value
+		@value = value.to_f
 	end
 	
-	def parse path, input_account
+	def parse path, account_or_date
 		if path.start_with? 'http' or path.start_with? 'https'
 			@data = parse_webpage(path)
 		else
@@ -20,10 +23,34 @@ class Csv_Parser
 		
 		result = []
 		@data.shift
-		@data.each do |row|
-			if row[1] == input_account
-				result.push(row)
+		
+		if @should_parse_date
+			@data.each do |row|
+				#p row[0]
+				#p row[0] == account_or_date
+				if row[0] == account_or_date
+					result.push(row)
+				end
 			end
+		else
+			@data.each do |row|
+				if row[1] == account_or_date
+					result.push(row)
+				end
+			end
+		end
+		
+		if @should_parse_value
+			current_index = 0
+			
+			begin
+				current_row_value = result[current_index][3].to_f
+				if current_row_value < @value - 10 or current_row_value > @value + 10
+					result.delete_at(current_index)
+				else
+					current_index += 1
+				end
+			end until current_index >= result.length
 		end
 		
 		return result
@@ -124,16 +151,29 @@ def array_to_hash array
 	return hash
 end
 
+def is_date string, format
+	begin
+		Date.strptime(string, format)
+		rescue ArgumentError
+			return false
+		else
+			return true
+	end
+end
 
 
 path = ARGV[0]
-account = ARGV[1]
+account_or_date = ARGV[1]
+value = ARGV[2]
 
-parser = Csv_Parser.new
+should_parse_value = not(value.nil?)
+should_parse_date = is_date(account_or_date, DATE_FORMAT)
+
+parser = Csv_Parser.new(should_parse_date, should_parse_value, value)
 printer = ResultPrinter.new
 
-if account != "xml"
-	result = parser.parse(path, account)
+if account_or_date != "xml"
+	result = parser.parse(path, account_or_date)
 	result.sort! {|first, second| Date.strptime(first[0], DATE_FORMAT) <=> Date.strptime(second[0], DATE_FORMAT)}
 	printer.print_result(result)
 else
