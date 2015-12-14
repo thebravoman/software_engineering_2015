@@ -9,13 +9,16 @@ module WordCounter
 			@counter = counter
 		end
 
+
 		def marks_count
 			@counter
 		end
 
+
 		def word_counts
 			@answer
 		end
+
 
 		def to_csv
 			res = ""
@@ -25,11 +28,13 @@ module WordCounter
 			res
 		end
 
+
 		def to_json
 			json_result = { :marks => "#{@counter}".to_i, :words => @answer, }
 	  		JSON.pretty_generate(json_result)
 	  		json_result
 		end
+
 
 		def to_xml
 			product = ""
@@ -48,22 +53,23 @@ module WordCounter
 	  		product	
 		end
 		
+		
 		def to_svg
-			y=0
-			w=0
-			h=@answer.length * 20
-			key, value=@answer.first
+			y = 0;
+			width = 0;
+			height = @answer.length * 20 
+			key, value = @answer.first
 			puts'<figure>'
-			puts'<svg version="1.1 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" w="600" h="'+h.to_s+'" aria-labelledby="title" role="img">'
-			@answer.each do |word, j|
-				w = (500*j.to_i)/value.to_i
-				puts '<g class="bar">'
-					puts'<rect w="'+w.to_s+'" h="19" y="'+y.to_s+'"></rect>'
-				puts '<text x="'+(w+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+j.to_s+' '+word+'</text>'
-				puts '</g>'
-				y = y + 20
-			end
-			puts '</svg>'
+			puts '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" width="600" height="'+height.to_s+'" aria-labelledby="title" role="img">'
+			@answer.each do|word, i|
+				width = (500*i.to_i)/value.to_i	
+    			puts '<g class="bar">'
+   		 		puts '<rect width="'+width.to_s+'" height="19" y="'+y.to_s+'"></rect>'
+    			puts '<text x="'+(width+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+i.to_s+' '+word+'</text>'
+  				puts'</g>';
+  				y = y + 20
+  			end
+  			puts '</svg>'
 			puts '</figure>'
 		end
 
