@@ -153,41 +153,32 @@ class PeriodsPrinter
 	def initialize
 	end
 	
-	def to_xml result
+	def to_xml (gain_start, gain_end, gain_value, expense_start, expense_end, expense_value)
 		xml_result = REXML::Document.new("")
 		
 		xml_minify = xml_result.add_element('minify')
 		
-		result_hash = array_to_hash(result)
-		result_hash = result_hash.sort.to_h
+		xml_gain = xml_minify.add_element('gain')
 		
-		#xml_marks = xml_word_counts.add_element('marks')
-		#xml_marks.add_text "#{@marks_count}"
-
-		result_hash.each do |account, dates|
-			if not account == "account"
-				xml_account = xml_minify.add_element('account')
-				xml_account.add_text(account)
-				#value.sort
-				#p account
-				sorted_dates = dates.sort{|first, second| Date.strptime(first[0], DATE_FORMAT) <=> Date.strptime(second[0], DATE_FORMAT)}
-				sorted_dates.each do |date_key, amounts|
-					if not date_key == "date"
-						xml_date = xml_account.add_element('date')
-						xml_date.add_text(date_key)
-						
-						amounts.sort! {|a, b| a.to_i <=> b.to_i}
-						amounts.each do |amount|
-							if not amount == "amount"
-								xml_amount = xml_date.add_element('amount')
-								xml_amount.add_text(amount)
-							end
-						end
-					end
-				end
-			end
-		end
-
+		gain_date_start = xml_gain.add_element('date_start')
+		gain_date_start .add_text(gain_start)
+		
+		gain_date_end = xml_gain.add_element('date_end')
+		gain_date_end.add_text(gain_end)
+		
+		xml_gain_value = xml_gain.add_element('value')
+		xml_gain_value.add_text(gain_value)
+		
+		xml_expense = xml_minify.add_element('expense')
+		xml_expense_start = xml_expense.add_element('date_start')
+		xml_expense_start.add_text(expense_start)
+		
+		xml_expense_end = xml_expense.add_element('date_end')
+		xml_expense_end.add_text(expense_end)
+		
+		xml_expense_value = xml_expense.add_element('value')
+		xml_expense_value.add_text(expense_value)
+		
 		puts xml_result
 	end
 end
@@ -244,7 +235,7 @@ if not should_parse_date and ((true if Float(account_or_date) rescue false) or (
 	data.sort! {|first, second| Date.strptime(first[0], DATE_FORMAT) <=> Date.strptime(second[0], DATE_FORMAT)}
 	#p data
 	period_start_index = 0
-	period_end_month = 3
+	period_end_index = 0
 	index = 0
 	max_sum_start_month = 1
 	
@@ -289,12 +280,13 @@ if not should_parse_date and ((true if Float(account_or_date) rescue false) or (
 			end
 		end
 		
-		puts "period: " + current_month.to_s + ", " + end_month.to_s + " sum is: " + period_sum.to_s
+		#puts "period: " + current_month.to_s + ", " + end_month.to_s + " sum is: " + period_sum.to_s
 		
 		if period_sum > max_sum
 			max_sum = period_sum
 			max_sum_start_month = current_month
 			period_start_index = index
+			period_end_index = end_month - 1
 		end
 		
 		#p data[index][0].split('/')[1].to_i 
@@ -307,7 +299,83 @@ if not should_parse_date and ((true if Float(account_or_date) rescue false) or (
 		end
 	end
 	
-	puts period_start_index.to_s + " " + data[period_start_index][0]
+	#puts period_start_index.to_s + " " + data[period_start_index][0] + " " + period_end_index.to_s + " " + data[period_end_index][0] + " sum : " + max_sum.to_s
+	#pprinter = PeriodsPrinter.new
+	#pprinter.to_xml(data[period_start_index][0], data[period_end_index][0], max_sum)
+	
+	#MINIMAL VALUES
+	
+	period_min_start_index = 0
+	period_min_end_index = 0
+	index = 0
+	max_sum_start_month = 1
+	
+	min_sum = 0
+	
+	while index < data.length
+		line = data[index]
+		current_month = data[index][0].split('/')[1].to_i
+		
+		#p data[index][0]
+		end_month = current_month + 2
+		if current_month == 12
+			end_month = 2
+		end
+		
+		if end_month > 12
+			break #this should not break
+		end
+		
+		period_sum = 0.0
+		
+		
+		current_year = data[index][0].split('/')[2].to_i
+		current_period_index = index
+		month_changes = 1
+		current_period_month = current_month
+		#p "STARTING TO MINUS SUM"
+		while(month_changes <= 3 and current_period_index < data.length)
+			#p "added sum for date: " + data[current_period_index][0]
+			if data[current_period_index ][3].to_f < 0
+				period_sum += data[current_period_index ][3].to_f
+			end
+			
+			#p "sum: " + period_sum.to_s
+			next_line_month = data[current_period_index][0].split('/')[1].to_i
+			next_line_year = data[current_period_index ][0].split('/')[2].to_i
+			
+			
+			current_period_month = next_line_month
+			current_period_index += 1
+			break if current_period_index >= data.length
+			if data[current_period_index][0].split('/')[1].to_i != current_period_month || current_year != data[current_period_index ][0].split('/')[2].to_i
+				month_changes += 1
+				#p "month_changes: " + month_changes.to_s + " current date: " + data[current_period_index][0]
+			end
+		end
+		
+		#puts "period: " + current_month.to_s + ", " + end_month.to_s + " sum is: " + period_sum.to_s
+		
+		if period_sum < min_sum
+			min_sum = period_sum
+			max_sum_start_month = current_month
+			period_min_start_index = index
+			period_min_end_index = current_period_index - 1
+		end
+		
+		#p data[index][0].split('/')[1].to_i 
+		#p current_month
+		#p data[index][0].split('/')[2].to_i 
+		#p current_year
+		while(data[index][0].split('/')[1].to_i == current_month && data[index][0].split('/')[2].to_i == current_year) do
+			index += 1
+			#p index
+		end
+	end
+	
+	#puts period_start_index.to_s + " " + data[period_min_start_index][0] + " " + period_end_index.to_s + " " + data[period_min_end_index][0] + " sum : " + min_sum.to_s
+	pprinter = PeriodsPrinter.new
+	pprinter.to_xml(data[period_start_index][0], data[period_end_index][0], max_sum.to_s, data[period_min_start_index][0], data[period_min_end_index][0], min_sum.to_s)
 else
 	if account_or_date != "xml"
 		result = parser.parse(path, account_or_date)
