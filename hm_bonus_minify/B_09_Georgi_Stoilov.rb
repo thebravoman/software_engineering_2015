@@ -3,14 +3,29 @@ require 'date'
 file = ARGV[0]
 sec_argv = ARGV[1]
 value = ARGV[2]
-res = []
-hash = Hash.new
-counter = 0
-counter1 = 0
+
 sum = 0
+
+#arrays
+res = []
+arr3 = []
+
+hash = Hash.new
+
+#help varaibles
+datte = 0
+help = 0
+save_line = 0
+
 $is_there_value = false
 $string = false
 $date = false
+
+#counters:
+counter1 = 0
+counter = 0
+c = 0
+i = 0
 
 def check_value value
   if value.nil?
@@ -32,14 +47,6 @@ def is_valid_date? sec_argv
   end
 end
 
-def is_string_or_date sec_argv
-  if(is_valid_date? sec_argv)
-    $date = true
-  else
-    $string = true
-  end
-end
-
 check_value value
 
 file = File.open(file, 'r') do |f|
@@ -54,28 +61,45 @@ file = File.open(file, 'r') do |f|
     currency = line[4].to_s
     description = line[5]
 
-    if(is_valid_date? sec_argv)
+    if(is_valid_date? sec_argv) #version 1 and 2
       if (date == sec_argv && !$is_there_value)
         puts line.join(',')
       elsif ( date == sec_argv && $is_there_value && (amount >= value.to_i-10 && amount <= value.to_i+10) )
         puts line.join(',')
       end
-    else
+    else #version 3
       sec_argv = sec_argv.to_s
       if( account == sec_argv )
         arr << date
         arr2 << line
-        res = arr.sort_by{|date| d,m,y=date.split("/");[y,m,d]}
-        hash["#{date}"] = line
+        if(datte == date)
+          if(i < 1)
+            arr3 << save_line.join(',')
+            arr3 << line.join(',')
+          else
+            arr3 << line.join(',')
+          end
+          i = i + 1
+          help = datte
+        else
+          res = arr.sort_by{|date| d,m,y=date.split("/");[y,m,d]}
+          hash["#{date}"] = line
+          save_line = line
+        end
         sum = sum + amount
+        datte = date
       end
     end
   end
-  if(!is_valid_date? sec_argv)
-    hash.each_key do |key|
-      key = res[counter1]
-      counter1 += 1
-      puts hash.values_at(key).join(',')
+  if(!is_valid_date? sec_argv) # version 3 continue
+    res.each do |element|
+      key = element
+      if(key == help)
+        puts arr3[c]
+        c = c + 1
+      else
+        puts hash.values_at(key).join(',')
+      end
     end
     puts sum.to_i
   end

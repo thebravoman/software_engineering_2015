@@ -42,5 +42,5 @@ if format_print == "xml"
 end
 
 if format_print == "svg"
-	puts anwer.to_svg
+	puts answer.to_svg
 end
