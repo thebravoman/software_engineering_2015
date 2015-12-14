@@ -3,7 +3,7 @@ require_relative 'A_01_Aleksandar_Velinov/account_printer.rb'
 require 'csv'
 
 
-file = ARGV[0]
+file_csv = ARGV[0]
 arg = ARGV[1]
 arg2 = ARGV[2]
 
