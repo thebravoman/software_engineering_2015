@@ -1,8 +1,8 @@
-require 'csv'
 require 'rexml/document'
 require 'net/http'
 require 'sanitize'
 require 'openssl'
+require 'csv'
 
 sum = 0
 
@@ -80,6 +80,15 @@ my_csv.each do |line|
 	if account == "xml" #version 4
 		puts to_xml(my_csv)	
 		break
+		
+	elsif ARGV[1].to_i > 0 && ARGV[2] == nil # version 6
+		month_sum = []
+		month = line[0].split("/")[1].to_i
+		
+		month_sum[month] = line[3].to_i + month_sum[month]
+		
+		#puts month_sum[month]
+	
 	elsif (ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99) && ARGV[2] == nil # version 1
 		date = ARGV[1]
 		if line[0] == date
@@ -109,6 +118,6 @@ end
 	
 print_and_sort_result result
 
-if ARGV[2] == nil && ARGV[1] != "xml" && !(ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 99)
+if ARGV[2] == nil && ARGV[1] != "xml" && !(ARGV[1].split("/").first.to_i >= 0 && ARGV[1].split("/").first.to_i <= 31)
 	puts "The amount value for all the output rows is: #{sum}\n"
 end

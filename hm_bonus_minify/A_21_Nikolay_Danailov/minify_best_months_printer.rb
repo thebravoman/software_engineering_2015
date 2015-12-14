@@ -96,6 +96,20 @@ class MinifyBestMonthsPrinter < MinifyPrinter
     best_months
   end
 
+  def self.generate_xml best_months
+    xml = REXML::Document.new
+    minify_el = xml.add_element('minify')
+    gain_el = minify_el.add_element('gain')
+    expense_el = minify_el.add_element('expense')
+    gain_el.add_element('date_start').add_text best_months[:gain_start_date]
+    gain_el.add_element('date_end').add_text best_months[:gain_end_date]
+    gain_el.add_element('value').add_text best_months[:gain_value].to_s
+    expense_el.add_element('date_start').add_text best_months[:expense_start_date]
+    expense_el.add_element('date_end').add_text best_months[:expense_end_date]
+    expense_el.add_element('value').add_text best_months[:expense_value].to_s
+    xml
+  end
+
   def self.print_best_months(csv, wanted_months)
     csv.sort_by! do |row|
       date = row[DATE_COLUMN].split('/').map(&:to_i)
@@ -103,8 +117,8 @@ class MinifyBestMonthsPrinter < MinifyPrinter
     end
 
     months = get_month_data csv
-    result = get_best_months months, wanted_months
-    print_csv months
-    puts result
+    best_months = get_best_months months, wanted_months
+    xml = generate_xml best_months
+    print_xml xml
   end
 end

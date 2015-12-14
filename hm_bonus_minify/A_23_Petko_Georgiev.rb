@@ -1,6 +1,7 @@
 require_relative 'A_23_Petko_Georgiev/date_printer.rb'
 require_relative 'A_23_Petko_Georgiev/account_printer.rb'
 require_relative 'A_23_Petko_Georgiev/xml_printer.rb'
+require_relative 'A_23_Petko_Georgiev/months_printer.rb'
 require 'csv'
 require 'uri'
 require 'net/http'
@@ -46,6 +47,7 @@ csv = get_input_data input
 if date? arg1
 	DatePrinter.print csv, arg1, arg2
 elsif number? arg1
+	MonthsPrinter.print csv, arg1
 elsif arg1 == 'xml'
 	XMLPrinter.print csv
 else
