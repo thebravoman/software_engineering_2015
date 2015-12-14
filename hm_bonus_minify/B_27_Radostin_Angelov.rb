@@ -57,7 +57,11 @@ class Csv_Parser
 	end
 	
 	def parse_file(path)
-		data = CSV.read(path)
+		if path.start_with? 'http' or path.start_with? 'https'
+			data = parse_webpage(path)
+		else
+			data = CSV.read(path)
+		end
 		return data
 	end
 	
