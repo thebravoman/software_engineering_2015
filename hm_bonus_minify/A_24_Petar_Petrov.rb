@@ -1,8 +1,15 @@
-require_relative './A_24_Petar_Petrov/csv_parser.rb'
+require_relative './A_24_Petar_Petrov/monefy.rb'
+
+def is_url?(str)
+	str.split("/").first == "http:" || str.split("/").first == "https:"
+end
 
 file = ARGV[0]
-if file.split(".").last == "csv"	
-	result = CSVParser.new.parse_csv(file)
+if is_url?(file)
+	result = Monefy.parse_website(file)
+else
+	result = Monefy.parse_file(file)
+end
 	if ARGV[1] == "xml"
 		puts result
 	else
@@ -10,4 +17,4 @@ if file.split(".").last == "csv"
 	 		puts row.join(',')
 		end
 	end
-end
+
