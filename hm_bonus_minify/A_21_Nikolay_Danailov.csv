@@ -15,3 +15,10 @@ date,account,category,amount,currency,description
 24/11/2016,PersonalCash,K,-849.99,BGN,bought a new PC
 16/09/2003,SchoolCash,K,-20,BGN,bought a card for public transport
 21/03/2001,SchoolCash,K,-1,BGN,bought a ticket for public transport
+27/03/2001,SchoolCash,K,-2,BGN,bought banica
+03/04/2001,PersonalCash,K,1,BGN,found some money
+23/04/2001,PersonalCash,K,5000,BGN,made a big company deal
+11/05/2001,SchoolCash,K,4000,BGN,made a big company deal
+21/05/2001,SchoolCash,K,2000,BGN,made a small company deal
+10/06/2001,SchoolCash,K,8000,BGN,made a big company deal
+15/06/2001,SchoolCash,K,-2,BGN,bought boza
