@@ -52,6 +52,8 @@ def parse_url uri
       end
       result = http.get(uri.request_uri)
       string = Sanitize.clean(result.body, :remove_contents => ['script', 'style'])
+      csv = CSV.parse(string)
+
   end
 def file_site filename
   protocol = filename.split('/').first
