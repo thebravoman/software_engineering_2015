@@ -59,7 +59,7 @@ module WordCounter
 				w = (500*j.to_i)/value.to_i
 				puts '<g class="bar">'
 					puts'<rect w="'+w.to_s+'" h="19" y="'+y.to_s+'"></rect>'
-				puts '<text x="'+(w+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+i.to_s+' '+word+'</text>'
+				puts '<text x="'+(w+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+j.to_s+' '+word+'</text>'
 				puts '</g>'
 				y = y + 20
 			end
