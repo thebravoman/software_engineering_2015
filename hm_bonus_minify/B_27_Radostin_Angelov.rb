@@ -73,6 +73,7 @@ class Csv_Parser
 		
 		result = http.get(uri.request_uri)
 		text = Sanitize.fragment(result.body)
+		
 		return CSV.parse(text)
 	end
 	
@@ -212,6 +213,8 @@ def is_date string, format
 	begin
 		Date.strptime(string, format)
 		rescue ArgumentError
+			return false
+		rescue TypeError
 			return false
 		else
 			return true
