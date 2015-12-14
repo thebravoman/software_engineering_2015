@@ -1,6 +1,7 @@
 require 'csv'
 require 'rexml/document'
 require 'open-uri'
+require 'date'
 
 
 
@@ -15,8 +16,97 @@ require 'open-uri'
 class Monefy
   def initialize filename
     @filename = filename
-
+    @my_csv = []
   end
+
+  def get_month months_range
+      best_gain = 0
+      best_expense = 0
+      expense_start_date  = ''
+      expense_end_date = ''
+      gain_start_date = ''
+      gain_end_date = ''
+      @my_csv.sort_by!{|date|
+    		array = date[0].split('/')
+    		month = array[1].to_i
+    		day = array[0].to_i
+    		year = array[2].to_i
+
+    		[year, month, day]
+    	}
+      save = []
+      j = 0
+      while j < @my_csv.size
+        gain_test = 0
+        expense_test = 0
+        date = @my_csv[j][DATE].split('/')
+        i = date[1].to_i
+        counter = j
+        while counter  < @my_csv.size
+          date_from_csv = @my_csv[counter][DATE].split('/')
+          if date_from_csv[1].to_i <= (i + months_range.to_i - 1) && date_from_csv[1].to_i >= i && date_from_csv[2].to_i == date[2].to_i
+            if @my_csv[counter][AMOUNT].to_i > 0
+              gain_end_date_test = @my_csv[counter][DATE]
+              gain_test += @my_csv[counter][AMOUNT].to_i
+            else
+              expense_end_date_test = @my_csv[counter][DATE]
+              expense_test += @my_csv[counter][AMOUNT].to_i
+            end
+          else
+            break
+          end
+          counter += 1
+        end
+        if gain_test > best_gain
+          best_gain = gain_test
+          gain_start_date = @my_csv[j][DATE]
+          gain_end_date = gain_end_date_test
+        end
+        if expense_test < best_expense
+          best_expense = expense_test
+          expense_start_date = @my_csv[j][DATE]
+          expense_end_date = expense_end_date_test
+        end
+        j +=1
+      end
+      print_periods gain_start_date.to_s, gain_end_date.to_s, best_gain.to_s, expense_start_date.to_s , expense_end_date.to_s, best_expense.to_s
+    end
+
+    def print_periods (gain_start, gain_end, gain_value, expense_start, expense_end, expense_value)
+      xml_result = REXML::Document.new("")
+
+  		xml_minify = xml_result.add_element('minify')
+
+  		xml_gain = xml_minify.add_element('gain')
+
+  		gain_date_start = xml_gain.add_element('date_start')
+  		gain_date_start .add_text(gain_start)
+
+  		gain_date_end = xml_gain.add_element('date_end')
+  		gain_date_end.add_text(gain_end)
+
+  		xml_gain_value = xml_gain.add_element('value')
+  		xml_gain_value.add_text(gain_value)
+
+  		xml_expense = xml_minify.add_element('expense')
+  		xml_expense_start = xml_expense.add_element('date_start')
+  		xml_expense_start.add_text(expense_start)
+
+  		xml_expense_end = xml_expense.add_element('date_end')
+  		xml_expense_end.add_text(expense_end)
+
+  		xml_expense_value = xml_expense.add_element('value')
+  		xml_expense_value.add_text(expense_value)
+      out = ''
+      xml_result.write(out, 1)
+      puts out
+
+
+
+    end
+
+
+
   def is_date? string
    string.match(/\d{2}\/\d{2}\/\d{4}/)
   end
@@ -107,7 +197,6 @@ class Monefy
   end
 
   def download_csv(path)
-    #puts path
     path = path.to_s.gsub("github.com", "raw.githubusercontent.com")
     path = path.to_s.gsub("/blob", "")
 
@@ -121,6 +210,7 @@ class Monefy
 
 end
 
+
 myApp = Monefy.new ARGV[0]
 if ARGV[0].start_with?("http://", "https://")
   myApp.download_csv(ARGV[0])
@@ -131,6 +221,9 @@ end
 if myApp.is_date? ARGV[1]
   myApp.filter_by_date ARGV[1]
   myApp.printing_for_date
+elsif ARGV[1] =~ /\A\d+\Z/
+
+myApp.get_month ARGV[1]
 
 elsif myApp.is_string ARGV[1]
 
