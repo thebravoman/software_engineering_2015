@@ -19,6 +19,18 @@ module Monefy
 			@xml_created = false
 			@xml_doc = ""
 			@tags = ""
+			@v6 = false
+			@hash = {}
+			@counter = 0
+			@entry_date = ""
+			@end_date = ""
+			@array = []
+			@previous_date = ""
+			@current_day = ""
+			@current_month = ""
+			@current_year = ""
+			@current_month_year = ""
+			@date_array = []
 		end
 	
 		def parse_csv(file)
@@ -28,15 +40,31 @@ module Monefy
 		def is_empty(str)
 			str.nil?
 		end
-	
+		
 		def is_number(str)
-			!str.match(/[^0-9]/)
+				!str.match(/[^0-9]/)
 		end
 	
 		def is_date(str)
 			str.match(/\d{2}\/\d{2}\/\d{4}/)
 		end
 	
+		def sort_by_date(csv)
+			csv.sort_by! do |row|
+				date_split = row[0].split('/')
+				[date_split[2].to_i,date_split[1].to_i,date_split[0].to_i]
+			end
+			csv
+		end
+		
+		def sort_by_all(csv)
+			csv.sort_by! do |row|
+					date_split = row[0].split('/')
+					clear[row[1].downcase,date_split[2].to_i,date_split[1].to_i,date_split[0].to_i,row[3].to_f]
+			end
+			csv
+		end
+		
 		def v1?
 			@date == @arg_2 && is_empty(@arg_3)
 		end
@@ -70,11 +98,7 @@ module Monefy
 			if @xml_created == false
 				@xml_doc = REXML::Document.new
 				@tags = REXML::Element.new('minify')
-				csv_file = @csv
-				csv_file.sort_by! do |row|
-					date_split = row[0].split('/')
-					[row[1].downcase,date_split[2].to_i,date_split[1].to_i,date_split[0].to_i,row[3].to_f]
-				end
+				csv_file = sort_by_all(@csv)
 				csv_file.each do |row|
 					@date = row[0]
 					@account = row[1] 
@@ -87,6 +111,68 @@ module Monefy
 				@xml_created = true
 			end
 		
+		end
+		
+		def v6?
+			is_number(@arg_2) && is_empty(@arg_3)
+		end
+		
+		def v6
+			if @v6 == false
+				csv_file = sort_by_date(@csv)
+				csv_file.keep_if{ |a|
+					is_date(a[0])
+				}
+				@counter = 1
+				csv_file.each do |row|
+					@date = row[0]
+					@account = row[1] 
+					@category = row[2] 
+					@amount = row[3].to_f 
+					@currency = row[4] 
+					@description = row[5] 
+					@current_day = @date.split('/').first
+					@current_month = @date.split('/')[1]
+					@current_year = @date.split('/').last
+					@current_month_year = @current_month+'/'+@current_year
+					if !@date_array.include?(@current_month_year) && @current_year != @entry_date.split('/').last
+						if @entry_date != "" && @counter < 4 
+							@array << @hash
+							@hash.clear
+							@counter = 1
+							@entry_date = @date
+							@hash.store('entry_date', @entry_date)
+							@hash.store('sum', @amount)
+						else
+							if @counter == 1
+								@entry_date = @date
+								@hash.store('entry_date', @entry_date)
+								@hash.store('sum', @amount)
+							end
+							@previous_date = @date
+						end
+						@date_array << @current_month_year
+					elsif @date_array.include?(@current_month_year) || (@entry_date.split('/').last == @current_year)
+						if @counter == 3
+							@counter = 1
+							@array << @hash
+							puts @array
+							@hash.clear
+							@entry_date = @date
+							@hash.store('entry_date', @entry_date)
+							@hash.store('sum', @amount)
+							@previous_date = @date
+						else
+							@hash['sum'] += @amount
+							if @current_month != @previous_date.split('/')[1]
+								@counter += 1
+							end
+							@previous_date = @date
+						end
+					end
+				end
+			end
+			@v6 = true
 		end
 	
 		def read_csv(file)
@@ -112,13 +198,12 @@ module Monefy
 					v3
 				elsif v4? # same as V5
 					v4
+				elsif v6?
+					v6
 				end
 			end
 			if is_v3 == true
-				@result.sort_by! do |row|
-					date_split = row[0].split('/')
-					[date_split[2].to_i,date_split[1].to_i,date_split[0].to_i]
-				end
+				sort_by_date(@result)
 				@result << [@sum_amount.round(2)]
 			end
 			if @xml_created == true
