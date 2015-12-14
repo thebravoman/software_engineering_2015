@@ -1,6 +1,7 @@
 require_relative 'A_21_Nikolay_Danailov/minify_date_printer.rb'
 require_relative 'A_21_Nikolay_Danailov/minify_account_printer.rb'
 require_relative 'A_21_Nikolay_Danailov/minify_xml_printer.rb'
+require_relative 'A_21_Nikolay_Danailov/minify_most_months_printer.rb'
   
 def is_url? str
   str_beginning = str.split(':').first
@@ -26,7 +27,7 @@ def get_contents str
 end
 
 def number? str
-  true if Float(string) rescue false
+  /[0-9]+/.match str
 end
 
 def date? str
@@ -41,8 +42,10 @@ csv = get_contents arg1
 
 if date? arg2
   MinifyDatePrinter.print_date_output csv, arg2, arg3
-elsif !number?(arg2) && arg2 != 'xml'
-  MinifyAccountPrinter.print_account_output csv, arg2
-else
+elsif number? arg2
+  MinifyMostMonthsPrinter.print_most_months csv, arg2
+elsif arg2 == 'xml'
   MinifyXMLPrinter.print_to_xml csv
+else
+  MinifyAccountPrinter.print_account_output csv, arg2
 end
