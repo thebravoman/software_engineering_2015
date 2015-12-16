@@ -28,7 +28,7 @@ include_folder = ARGV[3]
 
 CSV.open("result.csv", "w") do |csv_array|
 	previous_number = 0
-	files = Dir.glob(ARGV[0] + '*').select { |f| File.file? f }
+	files = Dir.glob(ARGV[0] + '*.rb').select { |f| File.file? f }
 	files.each do |filename|
 		name = get_names filename
 		if valid_names? name 
@@ -41,11 +41,19 @@ CSV.open("result.csv", "w") do |csv_array|
 				include_folder_string = "-I #{clazz}_#{number}_#{first_name}_#{last_name}/" if include_folder
 				result= `ruby #{include_folder_string} #{filename} #{script_input}`
 				solved = solved? script_output, result
+				print_result result,solved
 				csv_array << [clazz,number,first_name,last_name,solved]
 				checked_files << [first_name, last_name]
 			end
 		end
 	end
+end
+
+def print_result result, solved
+	p "The result is"
+	p result
+	p "Solved is:"
+	p solved
 end
 
 def sort_result
