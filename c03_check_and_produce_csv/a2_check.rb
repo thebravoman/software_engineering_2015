@@ -20,6 +20,13 @@ def remove_file_ext value
 	value.split(".").first
 end
 
+def print_result result, solved
+	p "The result is"
+	p result
+	p "Solved is:"
+	p solved
+end
+
 checked_files = []
 
 script_input = ARGV[1]
@@ -47,13 +54,6 @@ CSV.open("result.csv", "w") do |csv_array|
 			end
 		end
 	end
-end
-
-def print_result result, solved
-	p "The result is"
-	p result
-	p "Solved is:"
-	p solved
 end
 
 def sort_result
