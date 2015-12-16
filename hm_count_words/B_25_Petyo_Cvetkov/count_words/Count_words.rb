@@ -2,7 +2,7 @@ module WordCounter
   class Parser
     def parse(string)
       result = Result.new
-      result.marks_count = string.scan(/[,!@#$%^&*'""'()=+-]/).count
+      result.marks_count = string.scan(/[,?!@#$%^&*'""'()=+-]/).count
       words = string.downcase.gsub(/[^a-z0-9\s-]/, ' ').split(' ')
 
       words.each do |word|
