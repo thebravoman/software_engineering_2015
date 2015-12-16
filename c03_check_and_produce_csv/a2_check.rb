@@ -46,7 +46,7 @@ CSV.open("result.csv", "w") do |csv_array|
 			if !student_checked? checked_files,first_name,last_name
 				p "#{clazz},#{number},#{first_name},#{last_name}"
 				include_folder_string = "-I #{clazz}_#{number}_#{first_name}_#{last_name}/" if include_folder
-				result= `ruby #{include_folder_string} #{filename} #{script_input}`
+				result= `ruby #{include_folder_string} #{filename} #{script_input} csv`
 				solved = solved? script_output, result
 				print_result result,solved
 				csv_array << [clazz,number,first_name,last_name,solved]
