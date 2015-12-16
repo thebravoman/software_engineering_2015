@@ -19,7 +19,6 @@ module WordCounter
 			@answer
 		end
 
-
 		def to_csv
 			res = ""
 			@answer.each do |word, i|
@@ -28,11 +27,12 @@ module WordCounter
 			res
 		end
 
-
 		def to_json
-			json_result = { :marks => "#{@counter}".to_i, :words => @answer, }
-	  		JSON.pretty_generate(json_result)
-	  		json_result
+			json_h = {
+				"marks"=>@counter,
+				"words"=>@answer
+			}
+			json_2 = JSON.pretty_generate(json_h)
 		end
 
 
@@ -52,25 +52,26 @@ module WordCounter
 	  		final_xml.write(product, 1)
 	  		product	
 		end
-		
+
+def rect x,y,width,height
+	'<rect width="'+width.to_s+'" y ="'+y.to_s+'" x ="'+x.to_s+'" height="'+height.to_s+'" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)"/>'
+end		
 		
 		def to_svg
-			y = 0;
-			width = 0;
-			height = @answer.length * 20 
-			key, value = @answer.first
-			puts'<figure>'
-			puts '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" width="600" height="'+height.to_s+'" aria-labelledby="title" role="img">'
-			@answer.each do|word, i|
-				width = (500*i.to_i)/value.to_i	
-    			puts '<g class="bar">'
-   		 		puts '<rect width="'+width.to_s+'" height="19" y="'+y.to_s+'"></rect>'
-    			puts '<text x="'+(width+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+i.to_s+' '+word+'</text>'
-  				puts'</g>';
-  				y = y + 20
-  			end
-  			puts '</svg>'
-			puts '</figure>'
+			File.open("result.svg","w") do |f|
+				f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+				t = @answer.first.last
+				y = t
+				t = (t/200) + 1
+				x = 40
+				@answer.each do |word, n|
+					t_y = (300-y)-y
+					f.write(rect(x,t_y,30,t*n*10))
+					f.write('<text x="'+(x+2).to_s+'" y="'+(t_y-7).to_s+'" textLength = "'+(word.length*5).to_s+'" fill="black">'+word+'</text>')
+					x += 60
+				end
+				f.write('</svg>')
+			end
 		end
 
 	end
