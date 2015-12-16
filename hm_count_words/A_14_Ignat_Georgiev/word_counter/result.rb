@@ -27,7 +27,7 @@ def rect x,y,width,height
 '<rect width="'+width.to_s+'" y ="'+y.to_s+'" x ="'+x.to_s+'" height="'+height.to_s+'" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)"/>'
 end
   def to_svg
-    File.open("result.svg","w") do |f|
+    File.open("A_14_Ignat_Georgiev.svg","w") do |f|
       f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 	temp = word_counts.first.last
 	y = temp
