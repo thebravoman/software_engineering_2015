@@ -4,8 +4,8 @@ module WordCounter
       word_list = Hash.new(0)
       marks = []
 
-      words = string.downcase.scan(/[a-zA-Z0-9]+/)
-      marks.push(string.scan(/[[:punct:]|+-=\/\\]/).size)
+      words = string.downcase.scan(/\b[A-Za-z0-9]+\b/i)
+      marks.push(string.scan(/[\p{P}\p{S}]/).size)
 
       words.each { |word| word_list[word] += 1 }
       sorted_list = word_list.sort_by {|key, val| [-val, key] }.to_h

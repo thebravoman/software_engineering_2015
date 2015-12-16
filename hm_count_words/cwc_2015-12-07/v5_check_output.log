@@ -1,4 +1,4 @@
-ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb "end,20,1class,1def,1i,1method,1myclass,1p,1q,1\"marks\",4" "-I"
+ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ "https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb csv" "end,20,1class,1def,1i,1method,1myclass,1p,1q,1\"marks\",4" "-I"
 "A,02,Andrea,Georgieva"
 /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected tGVAR, expecting '(' (SyntaxError)
     $marks += duma.$hash_n("-_,.;:!?(){}")
