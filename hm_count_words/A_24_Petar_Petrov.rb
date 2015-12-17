@@ -11,10 +11,16 @@ end
 
 if ARGV[1] == 'json'
   result.to_json
+  result.to_svg
 elsif ARGV[1] == 'xml'
   result.to_xml
-elsif ARGV[1] == 'svg'
+  result.to_svg
+elsif ARGV[1] == 'csv'
+	result.to_csv
 	result.to_svg
+elsif ARGV[1] == 'svg'
+  result.to_svg
 else
   result.to_csv
+  result.to_svg
 end
