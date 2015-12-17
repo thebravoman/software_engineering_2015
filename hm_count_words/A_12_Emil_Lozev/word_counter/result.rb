@@ -31,7 +31,7 @@ class Result
 	def to_xml
 	
 		xml = Builder::XmlMarkup.new(:indent => 2)
-		xml.tag!("words-counts"){
+		xml.tag!("word-counts"){
 	  	xml.marks @marks_count.to_s
 	   	 xml.words {
 	     	@word_counts.each do |word,i|
