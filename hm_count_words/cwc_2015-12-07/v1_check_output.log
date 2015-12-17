@@ -1,4 +1,4 @@
-ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ "/home/student/cwc/v1_input.txt csv" "for,2check,1sentence,1some,1this,1" "-I"
+ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ /home/student/cwc/v1_input.txt "for,2check,1sentence,1some,1this,1" "-I"
 "A,02,Andrea,Georgieva"
 /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected tGVAR, expecting '(' (SyntaxError)
     $marks += duma.$hash_n("-_,.;:!?(){}")
