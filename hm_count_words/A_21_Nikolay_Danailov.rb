@@ -26,12 +26,12 @@ def print_result(result, format)
     puts result.to_json
   elsif format == 'xml'
     puts result.to_xml
-  elsif format == 'csv'
-    puts result.to_csv
   else
-    svg = result.to_svg
-    write_to_file('A_21_Nikolay_Danailov.svg', svg)
+    puts result.to_csv
   end
+
+  svg = result.to_svg
+  write_to_file('A_21_Nikolay_Danailov.svg', svg)
 end
 
 input = ARGV[0]
