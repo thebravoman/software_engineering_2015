@@ -1,13 +1,24 @@
 module WordCounter
+
 	require 'json'
   	require 'rexml/document'
   	require 'stringio'
 
   	class Result
-    		MAX_BAR_HEIGHT = 200
-    		MAX_BAR_WIDTH = 40
+  	
+  		BAR_HEIGHT = 1000
+  		BAR_WIDTH = 20
+		
 
     		attr_reader :word_counts, :marks_count
+
+		def add_text x, y, word
+			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="black">'+word.to_s+'</text>'
+		end
+		
+		def draw_bar x, y, w, h
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="pink" style="stroke-width:2;stroke:rgb(0,0,0)"/>'
+		end
 
     		def initialize(word_counts, marks_count)
       			@word_counts = word_counts
@@ -60,24 +71,23 @@ module WordCounter
     		end
 
     		def to_svg
+    		
       			max_occur = word_counts[0][1]
-      			ratio = MAX_BAR_HEIGHT / max_occur
+      			ratio = BAR_HEIGHT / max_occur
       			
       			x = 0
       			y = 0
-      			h = MAX_BAR_HEIGHT
+      			h = 20
+      			w = 50
 
       			File.open("B_08_Vanessa_Stoynova.svg", "w") do |file|
-        			file.puts "<?xml version='1.0'?>"
-        			file.puts "<svg width='" + (word_counts.length * MAX_BAR_WIDTH).to_s +
-          			"' height='" + (MAX_BAR_HEIGHT + 50).to_s +
-          			"' xmlns='http://www.w3.org/2000/svg'>"
+        			file.write('<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">')
 
         			word_counts.each do |word, count|
-         				 bar_color = "%06x" % (rand * 0xffffff)
-          				file.puts "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}' " +
-          				"x='#{x.to_s}' y='#{y.to_s}' stroke-width='0' fill='##{bar_color}'/>"
-
+        			
+         				file.write(draw_bar(x, y, w, h*count))
+         				file.write(add_text(5, 35, "\"Marks\":"))
+      					file.write(add_text(75,35, word)) 
           				x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
         			end
 
@@ -87,9 +97,9 @@ module WordCounter
 
     		private
     			def get_next_word_rectangle(current_x, ratio, max_occur, curr_occur)
-      				x = current_x + MAX_BAR_WIDTH
+      				x = 1000
       				y = (max_occur - curr_occur) * ratio
-      				height = MAX_BAR_HEIGHT - y
+      				height = 20
       				return x, y, height
     			end
   	end
