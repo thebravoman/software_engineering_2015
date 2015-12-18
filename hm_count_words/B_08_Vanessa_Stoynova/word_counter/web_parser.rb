@@ -17,16 +17,15 @@ module WordCounter
       			end
 
       			contents = http_client.get(url.request_uri) 
-      			sanitized_content = Sanitize.clean(contents.body,
-                     remove_contents: %w(script))
+      			sanitized = Sanitize.clean(contents.body, remove_contents: %w(script))
 
       			words = Hash.new(0)
       			max_marks = 0
 
-      			sanitized_content.each_line do |line|
+      			sanitized.each_line do |line|
         			result = super(line)
         			words = words.merge(result.word_counts.to_h) { |key, ov, nv| ov + nv }
-        			max_marks += result.marks
+        			max_marks += result.marks_count
       			end
 
       			sorted_words = words.sort_by { |word, occurence| [-occurence, word] }
