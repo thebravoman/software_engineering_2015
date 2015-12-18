@@ -15,7 +15,7 @@ module WordCounter
 		end
 		
 		def draw_bar x, y, w, h
-			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="pink" style="stroke-width:3;stroke:rgb(0,0,0)"/>'
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="purple" style="stroke-width:3;stroke:rgb(0,0,0)"/>'
 		end
 
     		def initialize(word_counts, marks_count)
@@ -83,7 +83,6 @@ module WordCounter
         			word_counts.each do |word, count|
         			
          				file.write(draw_bar(current_x, current_y, width, height*count ))
-         				puts height*count
          				file.write(add_text(5, 35, "\"Marks\":"))
          				file.write(add_text(55, 35, marks_count))
       					file.write(add_text(current_x, current_y - 10, word)) 
