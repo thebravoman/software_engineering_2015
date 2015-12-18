@@ -5,11 +5,9 @@ module WordCounter
   	require 'stringio'
 
   	class Result
-  	
-  		BAR_HEIGHT = 1000
+
   		BAR_WIDTH = 20
 		
-
     		attr_reader :word_counts, :marks_count
 
 		def add_text x, y, word
@@ -17,7 +15,7 @@ module WordCounter
 		end
 		
 		def draw_bar x, y, w, h
-			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="pink" style="stroke-width:2;stroke:rgb(0,0,0)"/>'
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="pink" style="stroke-width:3;stroke:rgb(0,0,0)"/>'
 		end
 
     		def initialize(word_counts, marks_count)
@@ -73,34 +71,32 @@ module WordCounter
     		def to_svg
     		
       			max_occur = word_counts[0][1]
-      			ratio = BAR_HEIGHT / max_occur
       			
-      			x = 0
-      			y = 0
-      			h = 20
-      			w = 50
+      			current_x = 10
+      			current_y = 100
+      			height = 50
+      			width = 30
 
       			File.open("B_08_Vanessa_Stoynova.svg", "w") do |file|
         			file.write('<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">')
 
         			word_counts.each do |word, count|
         			
-         				file.write(draw_bar(x, y, w, h*count))
+         				file.write(draw_bar(current_x, current_y, width, height*count ))
+         				puts height*count
          				file.write(add_text(5, 35, "\"Marks\":"))
-      					file.write(add_text(75,35, word)) 
-          				x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
+         				file.write(add_text(55, 35, marks_count))
+      					file.write(add_text(current_x, current_y - 10, word)) 
+      					file.write(add_text(current_x + 10, current_y + height * count + 13, count)) 
+      					
+          				current_x += BAR_WIDTH + 30
+          				current_y = 100
+          				width = 30
+          				
         			end
 
         			file.puts "</svg>"
       			end
     		end
-
-    		private
-    			def get_next_word_rectangle(current_x, ratio, max_occur, curr_occur)
-      				x = 1000
-      				y = (max_occur - curr_occur) * ratio
-      				height = 20
-      				return x, y, height
-    			end
   	end
 end
