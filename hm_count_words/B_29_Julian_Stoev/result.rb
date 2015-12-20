@@ -40,7 +40,7 @@ class Result
 
 	def to_xml
 		file_xml = REXML::Document.new('')
-		word_count = file_xml.add_element('word-count')
+		word_count = file_xml.add_element('word-counts')
 		marks_xml = word_count.add_element('marks').add_text(sumofmarks.to_s)
 		words_xml = word_count.add_element('words')
 		words_hash.each do |key, value|

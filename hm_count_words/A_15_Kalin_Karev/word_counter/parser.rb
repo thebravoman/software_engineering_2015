@@ -6,7 +6,7 @@ module WordCounter
 			answer=[]
 			word_h=Hash.new(0)
 			counter=0
-			for_search=['.',',','!','?',';',':','%','#','@']
+			for_search=['.',',','!','?',';',':','%','#','@','(',')','_','=']
 			
 			for_search.each do |s_search|
 				counter=counter+file_in.count(s_search).to_i

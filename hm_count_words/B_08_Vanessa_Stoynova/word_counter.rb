@@ -1,13 +1,13 @@
-require 'word_counter/file_parser.rb'
-require 'word_counter/web_parser.rb'
+require 'word_counter/file_parser'
+require 'word_counter/web_parser'
 
 module WordCounter
 	def self.parse(string)
 		Parser.new.parse(string)
 	end
 	
-	def self.parse_file(file_name)
-		FileParser.new.parse(file_name)
+	def self.parse_file(filename)
+		FileParser.new.parse(filename)
 	end
 	
 	def self.parse_webpage(url)

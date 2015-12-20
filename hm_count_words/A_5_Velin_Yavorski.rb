@@ -1,13 +1,15 @@
 require 'word_counter'
 
-filepath = ARGV[0]
+input = ARGV[0]
 format = ARGV[1]
 
 
-if( filepath.start_with?('http://') || filepath.start_with?('https://'))
-	result = WordCounter.parse_webpage(filepath)
+if( input.start_with?('http://') || input.start_with?('https://'))
+	result = WordCounter.parse_webpage(input)
+elsif File.file? input
+	result = WordCounter.parse_file(input)
 else
-	result = WordCounter.parse_file(filepath)
+	result = WordCounter.parse input
 end
 
 if(format == "json")

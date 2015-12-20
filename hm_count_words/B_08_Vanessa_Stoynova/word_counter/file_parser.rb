@@ -8,6 +8,7 @@ module WordCounter
 			
 			File.open(file, "r") do |f|
 				f.each_line do |line|
+				
 					result = super(line)
 					words = words.merge(result.word_counts.to_h) { |key, ov, nv| ov + nv }
 					max_marks += result.marks_count
