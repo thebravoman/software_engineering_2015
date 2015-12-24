@@ -23,7 +23,7 @@ Generate a SVG with a graphic showing the distribution with bars
 Add an option to V6 to pass a folder as an argument.
 
 Arguments:
-	-d - if there is this option the argument is a folder and should be traversed recursivelly to find all the files in this folder and count the words in this file.
+	-d - if there is this option the argument is a folder and should be traversed recursively to find all the files in this folder and count the words in this file.
 	
 Example:
 	ruby program.rb -d the_folder_to_traverse_recursively
@@ -45,7 +45,7 @@ You could use
  - anything else you could think of or find appropriate
  
 ## Language
-The program could be implemented in language of your choice although Ruby is the prefered for this project.
+The program could be implemented in language of your choice although Ruby is the preferred for this project.
 
 ## Code
 The code for parsing could be retrieved from github.com, eclipse.org, apache.org the GNU project and linux project repositories or any other public repository.
@@ -53,14 +53,14 @@ The code for parsing could be retrieved from github.com, eclipse.org, apache.org
 ## Result in JSON format
 The result should be in the following JSON format.
 {
-  "word1" : number_of_occurences,
-  "word2" : number_of_occurences,
+  "word1" : number_of_occurrences,
+  "word2" : number_of_occurrences,
   ...
-  "wordN" : number_of_occurences,
+  "wordN" : number_of_occurrences,
   "marks" : number_of_marks_in_the_file
 }
 
-The result should be sorted by number_of_occurences in DESC. If number of occurences is equal for two words they should be sorted in ASC
+The result should be sorted by number_of_occurences in DESC. If number of occurrences is equal for two words they should be sorted in ASC
 The last row is the number of marks found. "mark" is everything that is not a word.
 
 Example 
@@ -74,7 +74,7 @@ Example
 Three files should be present. One for Ruby, Java and C++.
 
 ## SVG graphic. 
-The first bar, for the world with most occurences should be 500 pixels height and on the left. The others should be proportionally smaller. The smaller bar should be 1 pixel.
+The first bar, for the world with most occurrences should be 500 pixels height and on the left. The others should be proportionally smaller. The smaller bar should be 1 pixel.
 
 ## What is a "word"
 
@@ -85,8 +85,8 @@ A word in all the three languages is a:
 	- keyword
 	- literal 
 	- enum
-	- and also any other combitation of symbols that follow the rules for identifier in the given language
-	- is not a digit in eighter binary, decimal or hex format
+	- and also any other combination of symbols that follow the rules for identifier in the given language
+	- is not a digit in binary, decimal or hex format
 
 Examples for words:
  - i is a word understood as i
@@ -107,9 +107,13 @@ As a final result from the project you should have the following files:
  - cpp.svg  - svg file representing the distribution in the cpp files
  - java.json - words in the java repositories
  - java.svg  - svg file representing the distribution in the java files
- - repositoires.csv - a csv document with a link to the repositories parsed in the following project and the number of lines in the parsed files in this repository. The file should be sorted by "words" in desc order
+ - repositoires.csv - a csv document with a link to the repositories parsed in the following project and the number of lines in the parsed files in this repository. The file should be sorted by "words" in DESC order
 			repo1, words
 			repo2, words
 
 ## Deadline 
+11 Jan 22:00 
 Should be presented on 12 Jan in class
+
+## Commit 
+The 7 files should be commited in folder hm_3_millions_lines/Class_Number_FirstName_LastName where Class,Number,FirstName,LastName are values for each student.
