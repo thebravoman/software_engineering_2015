@@ -12,9 +12,11 @@ module WordCounter
 				end
 			end
 			main = main.sort_by {|key, val| [-val, key] }
+			main = main.to_h
 			res.word_counts = main
 			res.marks_count = sum
 			res.to_csv
+			res.svg
 		end
 	end
 end

@@ -4,7 +4,6 @@ require 'uri'
 @input = ARGV[0]
 @format = ARGV[1]
 dir = false
-main = {}
 
 if File.file? @input
 	result = WordCounter::file_parse(@input)
@@ -12,7 +11,6 @@ elsif @input =~ /\A#{URI::regexp}\z/
 		result = WordCounter::web_parse(@input)
 	elsif @input == '-d' and File.directory? @format
 		result = WordCounter::dir_parse(@format)
-		#result.to_csv
 		dir = true
 	end
 
@@ -25,6 +23,6 @@ unless dir
 	else
 		result.to_csv
 	end
+	result.svg
 end
 
-#result.svg
