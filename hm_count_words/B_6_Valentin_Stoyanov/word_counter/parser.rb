@@ -8,10 +8,15 @@ module WordCounter
 			string = string.downcase.scan(/[\w]+/)
 			
 			string.each do |word|
-				result.word_counts[word] += 1 
+				if result.word_counts.key?(word)
+					result.word_counts[word] += 1 
+				else
+					result.word_counts[word] = 1
+				end
 			end
 			
-			result.word_counts = result.word_counts.sort_by {|word,num| [-num,word] }
+			result.word_counts = result.word_counts.sort_by {|word, num| [-num, word] }
+			result.word_counts = result.word_counts.to_h
 			result
 		end
 	end
