@@ -44,6 +44,7 @@ def iterate_folder(folder)
     result.marks_count += temp.marks_count
   end
 
+  result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }.to_h
   result
 end
 
@@ -51,7 +52,6 @@ if ARGV[0] == '-d'
   folder = ARGV[1]
   format = ARGV[2]
   result = iterate_folder folder
-  result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }.to_h
   print_result result, format
 else
   input = ARGV[0]
