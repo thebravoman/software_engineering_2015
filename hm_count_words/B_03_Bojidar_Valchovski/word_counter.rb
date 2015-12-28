@@ -3,6 +3,7 @@ require './B_03_Bojidar_Valchovski/word_counter/file_parser'
 require './B_03_Bojidar_Valchovski/word_counter/web_parser'
 require './B_03_Bojidar_Valchovski/word_counter/parser'
 require './B_03_Bojidar_Valchovski/word_counter/result'
+require './B_03_Bojidar_Valchovski/word_counter/folder_parser'
 
 module WordCounter
 	def self.parse string
@@ -15,5 +16,9 @@ module WordCounter
 
 	def self.parse_web path
 	  WebParser.new.parse(path)
+	end
+
+	def self.parse_folder path
+	  FolderParser.new.parse(path)
 	end
 end
