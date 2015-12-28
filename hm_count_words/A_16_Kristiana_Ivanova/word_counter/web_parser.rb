@@ -3,7 +3,6 @@ require 'net/http'
 require 'openssl'
 require 'sanitize'
 
-
 module WordCounter
   class WebParser < Parser
     def parse(uri)
@@ -15,8 +14,8 @@ module WordCounter
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
-      contents = http.get(uri.request_uri)
-      text = Sanitize.clean(contents.body, remove_contents: %w(script, style))
+      res = http.get(uri.request_uri)
+      string = Sanitize.clean(res.body, remove_contents: %w(script, style))
       super (string)
     end
   end
