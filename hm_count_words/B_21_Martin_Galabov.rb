@@ -9,7 +9,7 @@ if (file_path.start_with?('http://') || file_path.start_with?('https://'))
 	result = WordCounter.web_parse
 elsif(file_path == "-d")
 	folder = command.gsub("\n", '')
-  folder.insert(folder.size, '/**/*.*') 
+	folder.insert(folder.size, '/**/*.*') 
 	Dir.glob(folder).each do |file|
 		result = WordCounter.parse_file file
 	end
