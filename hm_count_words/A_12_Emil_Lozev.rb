@@ -1,5 +1,4 @@
 require_relative './A_12_Emil_Lozev/word_counter'
-require 'csv'
 
 def fileOrSite(filename)
 	first = filename.split('/').first
@@ -39,12 +38,7 @@ def filepathparser(filepath,format)
   merged_files = []
 
   files.each do |file|
-   # File.open(file,'r') do |line|
-    #  puts line
-    #  merged_files << line
-    #end
     con = File.read(file)
-
     merged_files << con
   end
 
