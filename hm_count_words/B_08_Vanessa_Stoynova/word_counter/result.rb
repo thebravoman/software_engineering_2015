@@ -74,11 +74,11 @@ module WordCounter
       			
       			current_x = 10
       			current_y = 100
-      			height = 50
+      			height = 40
       			width = 30
 
       			File.open("B_08_Vanessa_Stoynova.svg", "w") do |file|
-        			file.write('<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">')
+        			file.write('<svg xmlns="http://www.w3.org/2000/svg" width="9000" height="1000">')
 
         			word_counts.each do |word, count|
         			

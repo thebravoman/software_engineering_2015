@@ -39,13 +39,21 @@ class Result
 	end
   end
 
+  $text = ""
 
-
-  def to_csv
-    wordhash.each do |word, i|
-      puts "#{word},#{i}"
+  def to_csv(is_recursive)
+    
+    if is_recursive == true
+      wordhash.each do |word, i|
+        $text += word + ' '
+      end
+     return $text
+    else
+      wordhash.each do |word, i|
+        puts "#{word},#{i}"
+      end
+      puts  "\"marks\",#{countmarks}" if countmarks != 0
     end
-    puts  "\"marks\",#{countmarks}" if countmarks != 0
   end
   def to_json
     require 'json'
@@ -72,5 +80,7 @@ class Result
   end
 end
 end
+
+
 
 
