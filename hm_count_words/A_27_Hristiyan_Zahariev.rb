@@ -41,13 +41,13 @@ def PathParser (input_filename, output_option)
   combined_files = []
 
   files.each do |file|
-    con = File.read(file)
-    combined_files << con
+    read = File.read(file)
+    combined_files << read
   end
   Dir.mkdir("SomeFolder")  unless Dir.exist?("SomeFolder") #Trying something stupid
   File.open("SomeFolder/combined.txt","w") do |file| 
-    combined_files.each do |line|
-      file << line 
+    combined_files.each do |element|
+      file << element
     end
   end
   WhatToCall?("SomeFolder/combined.txt",output_option)
