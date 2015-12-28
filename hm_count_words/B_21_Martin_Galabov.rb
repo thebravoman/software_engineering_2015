@@ -24,10 +24,3 @@ result.to_xml
 elsif
 result.to_csv
 end
-
-
-
-
-
-
-
