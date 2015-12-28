@@ -6,7 +6,9 @@ module WordCounter
 
 	def parse(path)
 	  Dir.glob(path+"**/"+"*").each do |file|
-        @res << File.read(file)
+		if File.file? file         
+		  @res << File.read(file)
+        end
       end
 	  super(@res)
 	end
