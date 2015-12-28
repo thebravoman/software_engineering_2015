@@ -1,12 +1,12 @@
 require 'word_counter'
 
-file = ARGV[0]
+filename = ARGV[0]
 file_format = ARGV[1]
 
-if file.start_with?('https://') || file.start_with?('http://')
-  	result = WordCounter.parse_webpage(file)
+if filename.start_with?("https://") || filename.start_with?("http://")
+  	result = WordCounter.parse_webpage(filename)
   else
-    	result = WordCounter.parse_file(file)
+    	result = WordCounter.parse_file(filename)
 end
 
 case file_format

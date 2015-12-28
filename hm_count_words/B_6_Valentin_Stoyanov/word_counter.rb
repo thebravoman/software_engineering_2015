@@ -1,6 +1,7 @@
 require './B_6_Valentin_Stoyanov/word_counter/parser'
 require './B_6_Valentin_Stoyanov/word_counter/file_parser'
 require './B_6_Valentin_Stoyanov/word_counter/web_parser'
+require './B_6_Valentin_Stoyanov/word_counter/dir'
 require './B_6_Valentin_Stoyanov/word_counter/result'
 
 module WordCounter
@@ -14,5 +15,9 @@ module WordCounter
 
   def self.web_parse(url)
     WebParser.new.web_parse(url)
+  end
+  
+  def self.dir_parse(path)
+  	DirParser.new.dir_parse(path)
   end
 end

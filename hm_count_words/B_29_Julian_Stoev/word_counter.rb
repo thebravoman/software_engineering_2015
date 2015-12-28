@@ -1,4 +1,7 @@
 require './B_29_Julian_Stoev/result.rb'
+require 'net/http'
+require 'sanitize'
+require 'openssl'
 
 class WordCounter
 	def parse txt
@@ -20,5 +23,20 @@ class WordCounter
 		txtfile = File.open(file, "r")
 		txt = IO.read(txtfile)
 		parse txt
+	end
+	
+	def parse_url url
+		uri = URI.parse(url)
+      		http = Net::HTTP.new(uri.host, uri.port)
+
+		if uri.scheme == 'https'
+			http.use_ssl = true
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+     		end
+
+      		result = http.get(uri.request_uri)
+		txt = Sanitize.fragment(result.body)
+
+		parse txt 
 	end
 end

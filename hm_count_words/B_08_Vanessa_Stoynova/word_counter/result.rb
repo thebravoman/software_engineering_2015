@@ -1,13 +1,22 @@
 module WordCounter
+
 	require 'json'
   	require 'rexml/document'
   	require 'stringio'
 
   	class Result
-    		MAX_BAR_HEIGHT = 200
-    		MAX_BAR_WIDTH = 40
 
+  		BAR_WIDTH = 20
+		
     		attr_reader :word_counts, :marks_count
+
+		def add_text x, y, word
+			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="black">'+word.to_s+'</text>'
+		end
+		
+		def draw_bar x, y, w, h
+			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" fill="purple" style="stroke-width:3;stroke:rgb(0,0,0)"/>'
+		end
 
     		def initialize(word_counts, marks_count)
       			@word_counts = word_counts
@@ -60,37 +69,33 @@ module WordCounter
     		end
 
     		def to_svg
+    		
       			max_occur = word_counts[0][1]
-      			ratio = MAX_BAR_HEIGHT / max_occur
       			
-      			x = 0
-      			y = 0
-      			h = MAX_BAR_HEIGHT
+      			current_x = 10
+      			current_y = 100
+      			height = 50
+      			width = 30
 
       			File.open("B_08_Vanessa_Stoynova.svg", "w") do |file|
-        			file.puts "<?xml version='1.0'?>"
-        			file.puts "<svg width='" + (word_counts.length * MAX_BAR_WIDTH).to_s +
-          			"' height='" + (MAX_BAR_HEIGHT + 50).to_s +
-          			"' xmlns='http://www.w3.org/2000/svg'>"
+        			file.write('<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">')
 
         			word_counts.each do |word, count|
-         				 bar_color = "%06x" % (rand * 0xffffff)
-          				file.puts "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}' " +
-          				"x='#{x.to_s}' y='#{y.to_s}' stroke-width='0' fill='##{bar_color}'/>"
-
-          				x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
+        			
+         				file.write(draw_bar(current_x, current_y, width, height*count ))
+         				file.write(add_text(5, 35, "\"Marks\":"))
+         				file.write(add_text(55, 35, marks_count))
+      					file.write(add_text(current_x, current_y - 10, word)) 
+      					file.write(add_text(current_x + 10, current_y + height * count + 13, count)) 
+      					
+          				current_x += BAR_WIDTH + 30
+          				current_y = 100
+          				width = 30
+          				
         			end
 
         			file.puts "</svg>"
       			end
     		end
-
-    		private
-    			def get_next_word_rectangle(current_x, ratio, max_occur, curr_occur)
-      				x = current_x + MAX_BAR_WIDTH
-      				y = (max_occur - curr_occur) * ratio
-      				height = MAX_BAR_HEIGHT - y
-      				return x, y, height
-    			end
   	end
 end
