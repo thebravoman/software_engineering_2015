@@ -1,30 +1,24 @@
-require_relative 'result.rb'
+require_relative 'result'
 
 module WordCounter
-  class Parser
+	class Parser
+		def parse_string (string)
+			result = Result.new
+			result.marks_counter = string.scan(/[\p{P}\p{S}]/u).count
 
-    def parse(string)
-      result = Result.new
-      marks_counter = 0
-      words = File.read(ARGV[0])
-      h = Hash.new
-      words.each_line do |line|
-        wordz = line.downcase.split
-        wordz.each do |word|
-          marks_counter += word.scan(/[ ,().?!:; ]/).count
-          word = word.gsub(/[ ,()'.?!:; ]/,'')
-          if word!=''
-            if h[word]
-              h[word] += 1
-          else
-              h[word] = 1
-            end
-          end
-        end
-      end
-      h = h.sort_by { |k,v| (v[1] == k[1]) ? (k[0] <=> v[0]) : (v[1]<=>k[1]) }
-      result.setWordsMarks h, marks_counter
-      result
-    end
-  end
+			string.each_line do |line|
+				line.downcase.scan(/\b[A-Za-z0-9]+\b/i).each do |word|
+					result.marks_counter += word.count(".,!?()[]\"")
+					word = word.gsub(/[,()!.?_"]/,'')
+						if result.word_counter.has_key?(word)
+							result.word_counter[word]+=1
+						else
+							result.word_counter[word] = 1
+						end
+				end
+			end
+			result.word_counter=result.word_counter.sort_by{|k,v| [-v,k]}	
+			result	
+		end
+	end
 end

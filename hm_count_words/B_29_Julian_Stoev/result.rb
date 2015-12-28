@@ -51,4 +51,58 @@ class Result
  	 	form.write(file_xml, $stdout)
  	 	puts
 	end
+	
+	def rect x, y, w, h
+		'<rect 
+			x="'+x.to_s+'" 
+			y="'+y.to_s+'" 
+			width="'+w.to_s+'" 
+			height="'+h.to_s+'"
+			style="fill:green;
+			stroke:black;
+			opacity:0.9;
+			stroke-width:4;"
+		/>'
+	end
+
+	def text x, y, contents
+		'<text 
+			x="'+x.to_s+'" 
+			y="'+y.to_s+'"
+			fill="black"
+			font-size="15" 
+			transform="rotate('+x.to_s+','+y.to_s+')">'+contents+'
+       	</text>'
+	end
+
+	def generate_svg
+		File.open('B_29_Julian_Stoev.svg', 'w') do |f|
+			ratio = 600.0 / words_hash.first[1]
+        	f.write('<svg xmlns="http://www.w3.org/2000/svg">')		
+			y_cor = 630
+			width = 80
+			x_cor = width 
+			y_cor = y_cor + width
+			words_hash.each do |word|
+	          	rect_relative_height = word[1] * ratio
+	          	f.write(rect(x_cor, y_cor - rect_relative_height, width, rect_relative_height))
+	          	f.write(text(x_cor, y_cor + width/4, word[0]))
+	         	x_cor = x_cor + width + 15
+	        end
+			f.write('</svg>')
+      	end
+	end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

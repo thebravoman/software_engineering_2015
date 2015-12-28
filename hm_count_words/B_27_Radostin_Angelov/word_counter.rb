@@ -16,6 +16,6 @@ module WordCounter
   end
 
   def self.parse_string(string)
-    return Parser.new.parse(string)
+    return  Parser.new.parse(string)
   end
 end

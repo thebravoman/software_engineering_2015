@@ -24,4 +24,4 @@ elsif (format=='words')
 elsif (format=='csv' || format.nil?) 
 	result.to_csv
 end
-
+result.generate_svg
