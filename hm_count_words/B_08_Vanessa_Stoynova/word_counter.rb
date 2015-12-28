@@ -1,4 +1,4 @@
-require 'word_counter/folde_parser'
+require 'word_counter/folder_parser'
 require 'word_counter/file_parser'
 require 'word_counter/web_parser'
 require 'word_counter/parser'
