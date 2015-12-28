@@ -67,7 +67,7 @@ module WordCounter
 	end
 
     def to_svg
-      File.open('result.svg', 'w') do |f|
+      File.open('B_03_Bojidar_Valchovski.svg', 'w') do |f|
         f.write('<svg xmlns="http://www.w3.org/2000/svg">')
 		
 		keyword = @words[0][1]		
