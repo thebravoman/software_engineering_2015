@@ -5,7 +5,7 @@ require './B_25_Petyo_Cvetkov/count_words/Count_words'
 
 module WordCounter
   class WebpageParser < Parser
-    def parse(url,result)
+    def parse(url)
       uri = URI.parse(url)
       http = Net::HTTP.new(uri.host, uri.port)
 
@@ -16,8 +16,7 @@ module WordCounter
 
       result = http.get(uri.request_uri)
       text = Sanitize.fragment(result.body)
-
-      super(text,result)
+      super(text)
     end
   end
 end

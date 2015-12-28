@@ -3,8 +3,8 @@ require './B_25_Petyo_Cvetkov/count_words/wb_parse'
 require './B_25_Petyo_Cvetkov/count_words/Count_words'
 require './B_25_Petyo_Cvetkov/count_words/make_graph'
 module WordCounter
-  def self.parse(text,result)
-      Parser.new.parse(text,result)
+  def self.parse(text)
+      Parser.new.parse(text)
     end
 
     def self.parse_file(filepath)
