@@ -5,8 +5,9 @@ require 'openssl'
 module WordCounter
 
   class WebParser
-  
+
     def parse_web (url)
+      puts url
       uri = URI.parse(url)
       source = Net::HTTP.new(uri.host, uri.port)
       if(uri.scheme == 'https')
@@ -17,7 +18,7 @@ module WordCounter
       text = Sanitize.fragment(result.body)
       Parser.new.parse_string text
     end
-    
+
   end
-  
-end 
+
+end
