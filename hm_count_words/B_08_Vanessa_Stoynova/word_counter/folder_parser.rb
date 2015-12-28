@@ -1,5 +1,4 @@
-require 'word_counter/file_parser.rb'
-require 'word_counter/parser.rb'
+require 'word_counter/file_parser'
 
 module WordCounter
 	class FolderParser < Parser
