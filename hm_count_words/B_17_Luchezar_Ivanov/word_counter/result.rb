@@ -1,80 +1,84 @@
+require 'csv'
 require 'json'
 require 'rexml/document'
-require 'csv'
 
 module WordCounter
-	class Result
-		attr_accessor :marks_count
-		attr_accessor :word_counts
-	
-		def initialize
-			@marks_count = 0
-			@word_counts = Hash.new(0)
-		end
-	
-		def to_json
-			hash = Hash.new(Hash.new(0))
-			hash = {"marks" => @marks_count, "words" => @word_counts}
-			JSON.pretty_generate(hash)
-		end
+  class Result
+    attr_accessor :marks_count, :word_counts
 
-		def to_xml
-			my_xml = REXML::Document.new('')
-			word_counts_tag = my_xml.add_element('word-counts')
-			marks_tag = word_counts_tag.add_element('marks')
-			marks_tag.add_text(@marks_count.to_s)
-			words_tag = word_counts_tag.add_element('words')
-			@word_counts.each do |element|
-				word_tag = words_tag.add_element('word',{'count' => element[1]})
-				word_tag.add_text(element[0])
-			end
-			formatter = REXML::Formatters::Pretty.new()
-			formatter.compact = true
-			File.open('result.xml', 'w') {|xml| formatter.write(my_xml, xml)}
-			formatter.write(my_xml, $stdout)
-		end
-	
-		def to_csv
-			my_csv = CSV.generate(quote_char: "'") do |csv|
-				@word_counts.each do |element|
-					csv << element
-				end
-				if not @marks_count == 0
-					csv << ['"marks"', @marks_count.to_s]
-				end
-				my_csv
-			end
-		end
+    def initialize(word_list, marks_count)
+      @word_counts = word_list
+      @marks_count = marks_count
+    end
 
-		def text(x,y,contents)
-			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="green" font-size="9" transform="rotate(90 '+x.to_s+','+y.to_s+')">'+contents+'
-      			 </text>'
-		end
-			
-		def rect(x, y, w, h)
-			'<rect x="'+x.to_s+'" y="'+y.to_s+'"
-			width="'+w.to_s+'" height="'+h.to_s+'
-			style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)" />'
-		end
-		
-		def to_svg
-			File.open('result.svg', 'w') do |f|
-				ratio = 200.0 / @word_counts.first[1]
-        			f.write('<svg xmlns="http://www.w3.org/2000/svg">')
-				h = 200
-				w = 10
-				holder = w 
-				h = h + w
-			
-		@word_counts.each do |element|
-		value = element[1] * ratio
-		f.write(rect(holder, h - value, w, value))
- 		f.write(text(holder + 3, h + w/2, element[0]))
-         	holder = holder + w
+    def to_csv
+      CSV.open("result.csv","w") do |csv|
+        @word_counts.each do |key, val|
+          csv << [key, val]
+          puts "#{key},#{val}"
         end
-
-        f.write('</svg>')
+        csv << ["marks", @marks_count] if @marks_count > 0
+        puts "\"marks\",#{@marks_count}" if @marks_count > 0
       end
-		end
-	end
+    end
+
+    def to_json
+      File.open("result.json", "w") do |file|
+        word_format = []
+        @word_counts.each { |k, v| word_format.push([k, v]) }
+        json_format = {
+          "marks" => @marks_count,
+          "words" => word_format
+        }
+        json = JSON.generate(json_format)
+        file << json
+
+        json
+      end
+    end
+
+    def to_xml
+      xml = REXML::Document.new
+
+      words_counts_e = xml.add_element("word-counts")
+      words_counts_e.add_element("marks").add_text("#{@marks_count}")
+      words_xml = words_counts_e.add_element("words")
+
+      @word_counts.each do |key, val|
+        word = words_xml.add_element("word")
+        word.add_attribute("count", val)
+        word.add_text("#{key}")
+      end
+
+      output = ''
+      xml.write(output, 1)
+      File.open("result.xml", "w") { |file| file << output }
+      output
+    end
+
+    def to_svg
+      best_key, best_value = @word_counts.first
+      height_ratio = 200.0 / best_value
+      File.open("result.svg", "w") do |f|
+        f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+        f.write('<g transform="translate(0,450) scale(1,-1)">')
+        @word_counts.each_with_index do |(key, val), index|
+          f.write(get_rekt(15, val * height_ratio, 15 * index,))
+          f.write(get_text(15 * index, 200, key))
+        end
+        f.write('</g>')
+        f.write("</svg>")
+      end
+    end
+
+    private
+    def get_rekt(width, height, x_pos) #lol
+      '<rect x="' + x_pos.to_s + '" y="200" width="' + width.to_s + '" height="' + height.to_s + '" stroke="red" fill="black" />' + "\n"
+    end
+    def get_text(x, y, text)
+      x += 3
+      '<text fill="green" x="' + x.to_s + '" y="' + y.to_s + '" font-family="Verdana" font-size="10"
+      transform="rotate(90, ' + x.to_s + ', ' + y.to_s + ')">' + text + '</text>' + "\n"
+    end
+  end
 end
