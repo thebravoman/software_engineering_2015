@@ -1,16 +1,25 @@
-begin
 require_relative 'result.rb'
 
 module WordCounter
   class Parser
-    def count_marks(string)
-      string.downcase.scan(/[^a-z0-9_ \n]/).count
+    def parse(string)
+      result = Result.new
+      result.marks_count = string.count(".,=[]()'!{}?:_;\"")
+      string = string.gsub(/[^A-Za-z_0-9\s]/, ' ').downcase
+      word_list = string.split(' ')
+      word_list.each do |word|
+        result.word_counts[word] += 1
+      end
+      result.word_counts = result.word_counts.sort_by{|word,num| word.downcase}
+      result.word_counts = result.word_counts.sort_by {|word,num| [-num,word]}
+      result
     end
+  end
+end
 
-    def count_words(words)
-      res = Hash.new 0
+=begin
 
-      words.each do |word|
+     words.each do |word|
         res[word] += 1
       end
 
@@ -26,13 +35,4 @@ module WordCounter
       string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
     end
 
-    def parse(string)
-      result = Result.new
-      result.marks_count = count_marks string
-      words = split_words string
-      result.word_counts = count_words words
-      result.word_counts = sort_counted_words result.word_counts
-      result
-    end
-  end
-end
+=end
