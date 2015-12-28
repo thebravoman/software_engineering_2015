@@ -1,4 +1,5 @@
 require_relative './A_12_Emil_Lozev/word_counter'
+require 'csv'
 
 def fileOrSite(filename)
 	first = filename.split('/').first
@@ -13,7 +14,10 @@ def printRes(filename,option)
   else
     result = Parser.parse filename
   end
+  print(result,option)
+end
 
+def print(result,option)
   if option == 'csv'
     result.to_csv
   elsif option == 'json'
@@ -28,9 +32,37 @@ def printRes(filename,option)
   end
 
   result.to_svg
-  
 end 
 
-filename = ARGV[0]
-option = ARGV[1]
-printRes(filename,option)
+def filepathparser(filepath,format)
+  files = Dir.glob("#{filepath}/**/*").select { |f| File.file? f }
+  merged_files = []
+
+  files.each do |file|
+   # File.open(file,'r') do |line|
+    #  puts line
+    #  merged_files << line
+    #end
+    con = File.read(file)
+
+    merged_files << con
+  end
+
+  File.open("files.txt","w") do |f|
+    merged_files.each do |line|
+      f << line 
+    end
+  end
+
+  printRes("files.txt",format)
+end
+
+if ARGV[0] == '-d'
+  filepath = ARGV[1]
+  format = ARGV[2]
+  filepathparser(filepath,format)
+else
+  filename = ARGV[0]
+  option = ARGV[1]
+  printRes(filename,option)
+end
