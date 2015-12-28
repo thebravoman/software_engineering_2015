@@ -1,5 +1,5 @@
+require 'word_counter/file_parser.rb'
 require 'word_counter/parser.rb'
-require 'word_counter/result.rb'
 
 module WordCounter
 	class FolderParser < Parser
@@ -16,7 +16,7 @@ module WordCounter
 				end
 			end	
 			
-			sorted_words = result.words.sort_by { |word, occurence| [-occurence, word]}
+			sorted_words = words.sort_by { |word, occurence| [-occurence, word]}
 			Result.new(sorted_words, max_marks)
 		end
 	end
