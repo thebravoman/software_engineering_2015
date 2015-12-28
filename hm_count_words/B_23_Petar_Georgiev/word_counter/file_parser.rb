@@ -1,8 +1,9 @@
-module word_Count
-  class FileParser < Parser
-    def parse(path)
-      text = File.read(path)
-      super(content)
-    end
-  end
+module WordCounter
+	class FileParser < Parser
+		def file_parse(filename)
+			filename = File.open(filename, 'r')
+			file_content = filename.read
+			parse(file_content)
+		end
+	end
 end
