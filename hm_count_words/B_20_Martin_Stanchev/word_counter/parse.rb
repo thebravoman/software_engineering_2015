@@ -19,7 +19,6 @@ module WordCounter
       str_res.str = str_res.str.sort_by {|index,key| [-key,index]}
 
       str_res
-
     end
   end
 end
