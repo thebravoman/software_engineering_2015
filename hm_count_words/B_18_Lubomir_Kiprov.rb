@@ -19,7 +19,7 @@ format = ARGV[1]
 
 
 if( filename.start_with?('http://') || filename.start_with?('https://'))
-	result = Word_counter.parse(filename)
+	result = Word_counter.parse_web(filename)
 else
 	
 	if ARGV[0] == "-d" 
