@@ -1,7 +1,7 @@
 require 'net/http'
 require 'sanitize'
 require 'openssl'
-require 'word_counter/parser'
+require_relative 'parser.rb'
 
 module WordCounter
   class WebParser < Parser

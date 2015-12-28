@@ -1,9 +1,9 @@
 #!/usr/bin/ruby
-require './B_03_Bojidar_Valchovski/word_counter/file_parser'
-require './B_03_Bojidar_Valchovski/word_counter/web_parser'
-require './B_03_Bojidar_Valchovski/word_counter/parser'
-require './B_03_Bojidar_Valchovski/word_counter/result'
-require './B_03_Bojidar_Valchovski/word_counter/folder_parser'
+require_relative './word_counter/file_parser.rb'
+require_relative './word_counter/web_parser.rb'
+require_relative './word_counter/parser.rb'
+require_relative './word_counter/result.rb'
+require_relative './word_counter/folder_parser.rb'
 
 module WordCounter
 	def self.parse string
