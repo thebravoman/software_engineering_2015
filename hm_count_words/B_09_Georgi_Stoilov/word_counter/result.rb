@@ -6,19 +6,19 @@ class Result
   attr_accessor :word_counter
   attr_accessor :marks
 
-  def initialize
-    @marks = 0
-    @word_counter = Hash.new(0)
+  def initialize(marks, words)
+    @marks = marks
+    @word_counter = words
+    #to_csv
   end
 
   def to_csv
-			sorted_array = @word_counter.sort_by { |key, value| [-value, key] }
-      sorted_array.each do |key, value|
-        puts "#{key},#{value}"
-      end
-		  if @marks != 0
-				puts "\"marks\",#{@marks}"
-			end
+    @word_counter.each do |key, value|
+      puts "#{key},#{value}"
+    end
+	  if @marks != 0
+			puts "\"marks\",#{@marks}"
+		end
 	end
 
   def to_json
