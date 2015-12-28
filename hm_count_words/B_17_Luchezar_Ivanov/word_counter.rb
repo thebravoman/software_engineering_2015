@@ -1,18 +1,22 @@
-require './B_17_Luchezar_Ivanov/word_counter/parser'
-require './B_17_Luchezar_Ivanov/word_counter/file_parser'
-require './B_17_Luchezar_Ivanov/word_counter/web_parser'
-require './B_17_Luchezar_Ivanov/word_counter/result'
+require_relative './word_counter/result'
+require_relative './word_counter/parser'
+require_relative './word_counter/file_parser'
+require_relative './word_counter/webpage_parser'
+require_relative './word_counter/folder_parser'
 
 module WordCounter
-  def self.parse(string)
-    Parser.new.parse(string)
+  def self.parse(text)
+    Parser.new.parse(text)
   end
 
-  def self.file_parse(filename)
-    FileParser.new.file_parse(filename)
+  def self.parse_file(path)
+    FileParser.new.parse(path)
   end
 
-  def self.web_parse(url)
-    WebParser.new.web_parse(url)
+  def self.parse_webpage(url)
+    WebpageParser.new.parse(url)
+  end
+  def self.parse_folder(folder)
+    FolderParser.new.parse(folder)
   end
 end
