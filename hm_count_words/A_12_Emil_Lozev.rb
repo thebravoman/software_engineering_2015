@@ -38,17 +38,20 @@ def filepathparser(filepath,format)
   merged_files = []
 
   files.each do |file|
-    con = File.read(file)
-    merged_files << con
+    con = File.open(file).read
+    con.each_line do |line|
+    	merged_files << line
+	end
   end
 
-  File.open("files.txt","w") do |f|
+  File.open("../filе.txt","w") do |f|
     merged_files.each do |line|
       f << line 
     end
   end
 
-  printRes("files.txt",format)
+  printRes("../filе.txt",format)
+  File.delete("../filе.txt")
 end
 
 if ARGV[0] == '-d'
