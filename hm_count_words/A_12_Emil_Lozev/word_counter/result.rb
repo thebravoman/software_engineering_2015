@@ -41,8 +41,9 @@ class Result
 		}
 		
 	end
+
 	def graph(size,x,y)
-		'<rect width="40" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + (y - (size * 10)).to_s+ '" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>'
+		'<rect width="40" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + (y - (size * 10)).to_s+ '" style="fill:rgb(0,255,128);stroke-width:3;stroke:rgb(0,0,0)"/>'
 	end
 		
 	def to_svg	
