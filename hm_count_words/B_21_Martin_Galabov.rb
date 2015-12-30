@@ -3,6 +3,7 @@ require 'csv'
 require 'rubygems'
 require 'json'
 require './B_21_Martin_Galabov/word_counter' 
+
 file_path = ARGV[0]
 command = ARGV[1]
 if (file_path.start_with?('http://') || file_path.start_with?('https://'))
@@ -10,9 +11,7 @@ if (file_path.start_with?('http://') || file_path.start_with?('https://'))
 elsif(file_path == "-d")
 	folder = command.gsub("\n", '')
 	folder.insert(folder.size, '/**/*.*') 
-	Dir.glob(folder).each do |file|
-		result = WordCounter.parse_file file
-	end
+	result = WordCounter.folder_parse folder
 else
 	result = WordCounter.parse_file file_path
 end

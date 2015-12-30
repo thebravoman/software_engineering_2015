@@ -1,6 +1,7 @@
 require 'json'
 require 'csv'
 require 'rexml/document'
+module WordCounter
 class Result
 	attr_reader :word_counter, :marks_counter
 	def initialize(word_counter, marks_counter)
@@ -44,4 +45,5 @@ class Result
 		puts "\n"
 	end
 	
+end
 end

@@ -2,11 +2,12 @@ require_relative 'result'
 module WordCounter
 class Parse
 
-def parse(txt)
+def folder_parse(folder)
 	word_counter = Hash.new(0)
- 		marks = 0 
- 		file = txt
- 		marks = file.scan(/[\p{S}\p{P}]/u).count 
+	marks = 0
+	Dir.glob(folder).each do |txt|
+ 		file = File.open(txt, "r").read
+ 		marks += file.scan(/[\p{S}\p{P}]/u).count 
  		file.each_line do |line|  
  			words = line.downcase.split   
  			words.each do |word|  
@@ -20,11 +21,12 @@ def parse(txt)
  					word_counter[word] += 1
  				end
  			end   
- 		end  
+ 		end
+	end  
  		word_counter = word_counter.sort_by{|key, value|[-value, key]}
 	
-		Result.new(word_counter, marks) 
+	Result.new(word_counter, marks) 
 	
-	end
+end
 end
 end
