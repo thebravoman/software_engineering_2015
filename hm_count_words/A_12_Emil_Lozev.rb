@@ -17,8 +17,20 @@ def printRes(filename,option)
 end
 
 def print(result,option)
-	result.to_json
-	result.to_svg
+  if option == 'csv'
+    result.to_csv
+  elsif option == 'json'
+    puts result.to_json
+  elsif option == 'xml'
+  require 'builder'
+    puts result.to_xml
+  elsif option == 'svg'
+  	#result.to_svg
+  else
+    result.to_csv
+  end
+
+  result.to_svg
 end 
 
 def filepathparser(filepath,format)
