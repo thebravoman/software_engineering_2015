@@ -24,7 +24,7 @@ elsif output_format == 'xml'
   out.xml_format
 
 elsif input == '-d'
-    out.json_format
+  out.json_format
 
 else out.csv_format
 end
