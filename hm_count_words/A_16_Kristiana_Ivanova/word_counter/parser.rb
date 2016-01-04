@@ -17,22 +17,4 @@ module WordCounter
   end
 end
 
-=begin
 
-     words.each do |word|
-        res[word] += 1
-      end
-
-      res
-    end
-
-    def sort_counted_words(result_hash)
-      result_hash.sort_by { |word, count| [-count, word] }.to_h
-    end
-
-    def split_words(string)
-      removal_regex = /[^a-z0-9_ ]/
-      string.downcase.gsub(removal_regex, ' ').split(' ').reject(&:empty?)
-    end
-
-=end

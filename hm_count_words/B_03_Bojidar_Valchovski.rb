@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-require './B_03_Bojidar_Valchovski/word_counter'
+require_relative 'B_03_Bojidar_Valchovski/word_counter.rb'
 
 if ARGV[0] == "-d"
   path = ARGV[1]

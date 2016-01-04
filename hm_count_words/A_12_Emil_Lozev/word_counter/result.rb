@@ -41,8 +41,9 @@ class Result
 		}
 		
 	end
+
 	def graph(size,x,y)
-		'<rect width="40" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + (y - (size * 10)).to_s+ '" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"/>'
+		'<rect width="40" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + (y - (size * 10)).to_s+ '" style="fill:rgb(0,255,128);stroke-width:3;stroke:rgb(0,0,0)"/>'
 	end
 		
 	def to_svg	
@@ -53,7 +54,13 @@ class Result
 			y = value.to_i * 10 + 100
 			@word_counts.each do |word,i|
 				f.write(graph(i,x,y))
-				f.write('<text x="'+(x+2).to_s+'" y="' + (y + 40).to_s + '" fill="black">'+word+'</text>')
+				#f.write('<svg height="100" width="200">')
+				if(x == 10)
+					f.write('<text x="'+(x+2).to_s+'" y="' + (y + 40).to_s + '" fill="black" transform="rotate(90 10,20)" >'+word+'</text>')
+				else
+					f.write('<text x="'+(x+2).to_s+'" y="' + (-(y + 40)).to_s + '" fill="black" transform="rotate(90 10,20)" >'+word+'</text>')
+				end
+				#f.write('</svg>')
 				x+= 60
 			end
 			f.write(graph(@marks_count,x, y))

@@ -16,7 +16,6 @@ module WordCounter
 
       result = http.get(uri.request_uri)
       text = Sanitize.fragment(result.body)
-
       super(text)
     end
   end
