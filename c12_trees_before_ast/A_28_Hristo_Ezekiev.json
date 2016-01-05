@@ -1,0 +1,21 @@
+{
+	"ELSYS:": {
+		"Classes": {
+			"11A" : {
+				"Students": [
+					"Ico",
+					"Gosho", 
+					"Toni"
+				]
+			},
+			"11B": {
+				"Students": [
+					"Ivan", 
+					"Pesho", 
+					"Doni"
+				]
+			}
+		}
+	}
+}
+

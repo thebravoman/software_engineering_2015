@@ -1,18 +1,20 @@
-require_relative 'B_12_Emiliqn_Gospodinov/word_counter'
-format = ARGV[1]
+require_relative 'B_12_Emiliqn_Gospodinov/word_counter.rb'
 
-is_url = ARGV[0].split("_").last.split("/").first
+words = ARGV[0]
 
-if (is_url == "https:") || (is_url == "http:") 
-  result = WordCounter::parse_web(ARGV[0])
-else
-  result = WordCounter::parse_file(ARGV[0])
+if(words.start_with?('https://') || words.start_with?('http://'))
+	result = WordCounter.parsing_web_source words
+	else if(words.include?(" "))
+	result = WordCounter.parse words
+	else
+		result = WordCounter.parsing_the_file words
+	end
 end
 
-if format == "json"
-  puts result.to_json
-elsif format == "xml"
-  puts result.to_xml
-elsif format == "csv" or format == nil
-  puts result.to_csv
+if ARGV[1] == 'csv' or ARGV[1] == nil
+	result.to_csv
+elsif ARGV[1] == 'json'
+	result.to_json
+elsif ARGV[1] == 'xml'
+	result.to_xml
 end

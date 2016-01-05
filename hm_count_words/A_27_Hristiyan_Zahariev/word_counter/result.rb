@@ -28,9 +28,9 @@ class Result
     xml_counts = REXML::Document.new("")
     xml_word_counts = xml_counts.add_element("word-counts")
     xml_marks = xml_word_counts.add_element("marks")
-    xml_marks.add_text "#{markz_count}"
+    xml_marks.add_text "#{marks_count}"
     xml_words = xml_word_counts.add_element("words")
-    wordsnum.each do |index, key|
+    word_counts.each do |index, key|
 	word = xml_words.add_element('word')
 	word.add_attribute("count", key.to_s)
     	word.add_text "#{index}"

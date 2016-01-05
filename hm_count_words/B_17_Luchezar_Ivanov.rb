@@ -1,26 +1,31 @@
-require './B_17_Luchezar_Ivanov/word_counter'
-require 'uri'
+require 'word_counter'
 
-@input = ARGV[0]
-@format = ARGV[1]
+is_folder = false
+ARGV.each { |arg| is_folder = true if arg == "-d" }
 
-if File.file? @input
-	result = WordCounter::file_parse(@input)
-elsif @input =~ /\A#{URI::regexp}\z/
-	result = WordCounter::web_parse(@input)
+uri = ARGV[is_folder ? 1 : 0]
+format = ARGV[is_folder ? 2 : 1]
+
+result = ''
+if (is_folder)
+  folder = ARGV[1]
+  result = WordCounter.parse_folder(folder)
+elsif uri.start_with?("http://") || uri.start_with?("https://")
+  result = WordCounter.parse_webpage(uri)
+else
+  result = WordCounter.parse_file(uri)
 end
 
-
-
-case @format
-when "json"
-	File.open('result.json', 'w') {|json| json << result.to_json}
-	puts result.to_json
-when "xml"
-	result.to_xml
-when "svg"
-	result.to_svg
-else 
-	File.open('result.csv', 'w') {|csv| csv << result.to_csv}
-	puts result.to_csv
+output = ''
+case format
+when 'json'
+  output = result.to_json
+  puts output
+when 'xml'
+  output = result.to_xml
+  puts output
+when 'svg'
+  output = result.to_svg
+else
+  output = result.to_csv
 end

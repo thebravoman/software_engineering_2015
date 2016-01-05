@@ -1,13 +1,10 @@
 require_relative './parser'
 
 module WordCounter
-	class FileParser<Parser
-		def self.parse(filename)
-			working_with = File.read filename
-			super working_with
-		
+	class FileParser < Parser
+		def parse(filename)
+			c = File.read filename
+			super c
 		end
-	
 	end
-
 end

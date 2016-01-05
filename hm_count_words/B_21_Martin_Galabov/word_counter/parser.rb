@@ -6,11 +6,11 @@ def parse(txt)
 	word_counter = Hash.new(0)
  		marks = 0 
  		file = txt
- 		marks = file.scan(/[^a-zA-Z0-9 ]/).count 
+ 		marks = file.scan(/[\p{S}\p{P}]/u).count 
  		file.each_line do |line|  
  			words = line.downcase.split   
  			words.each do |word|  
- 				word = word.gsub(/[^a-zA-Z0-9 ]/, ' ')
+ 				word = word.gsub(/[\W+ ._\s]/, ' ')
  				if (word.include?(" "))
  				word = word.split(" ")
  				word.each do |splits|  
@@ -21,9 +21,10 @@ def parse(txt)
  				end
  			end   
  		end  
-
-		word_counter = word_counter.sort_by{|key, value|[-value, key]}
+ 		word_counter = word_counter.sort_by{|key, value|[-value, key]}
+	
 		Result.new(word_counter, marks) 
+	
 	end
-	end
-	end
+end
+end

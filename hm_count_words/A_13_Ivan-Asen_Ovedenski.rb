@@ -10,19 +10,25 @@ def get_result input
 		WordCounter.parse_file input 
 	end 
 end 
-
-def print_result result, format 
-	if format == 'json'
-		result.to_json 
-	elsif format == 'xml' 
-		result.to_xml 
-	elsif format == 'svg'
-		result.to_svg
-	else 
-		result.to_csv 
+	def print_result result, format 
+		if format == 'json'
+			result.to_json 
+		elsif format == 'xml' 
+			result.to_xml 
+		elsif format == 'svg'
+			result.to_svg
+		else 
+			result.to_csv 
+		end 
 	end 
-end 
 parsed_input = ARGV[0]
 format = ARGV[1] 
 result = get_result parsed_input 
-print_result result, format
+#print_result result, format
+
+if format == 'xml' || format == 'json' || format == 'csv'
+	print_result result, format
+else 
+	format = 'csv'
+	print_result result , format
+end

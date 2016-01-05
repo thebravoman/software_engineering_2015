@@ -5,7 +5,8 @@ module WordCounter
 
   class Result
     MAX_BAR_HEIGHT = 200
-    MAX_BAR_WIDTH = 40
+    MAX_BAR_WIDTH = 15
+    WORD_TEXT_Y = MAX_BAR_HEIGHT + 10
 
     attr_reader :word_counts, :marks_count
 
@@ -61,23 +62,24 @@ module WordCounter
 
     def to_svg
       max_occur = word_counts[0][1]
-      ratio = MAX_BAR_HEIGHT / max_occur
+      ratio = MAX_BAR_HEIGHT / max_occur.to_f
       x = 0
       y = 0
       h = MAX_BAR_HEIGHT
 
       File.open("B_13_Ivaylo_Arnaudov.svg", "w") do |file|
-        file.puts "<?xml version='1.0'?>"
-        file.puts "<svg width='" + (word_counts.length * MAX_BAR_WIDTH).to_s +
-          "' height='" + (MAX_BAR_HEIGHT + 50).to_s +
-          "' xmlns='http://www.w3.org/2000/svg'>"
+        file.puts get_headers_as_svg_string(word_counts.length)
 
-        word_counts.each do |word, count|
-          bar_color = "%06x" % (rand * 0xffffff)
-          file.puts "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}' " +
-          "x='#{x.to_s}' y='#{y.to_s}' stroke-width='0' fill='##{bar_color}'/>"
+        color = get_word_color()
+        file.puts get_bar_rect_as_svg_string(x, y, h, color)
+        file.puts get_word_text_as_svg_string(x, word_counts[0][0], color)
 
+        word_counts.drop(1).each do |word, count|
           x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
+          color = get_word_color()
+
+          file.puts get_bar_rect_as_svg_string(x, y, h, color)
+          file.puts get_word_text_as_svg_string(x, word, color)
         end
 
         file.puts "</svg>"
@@ -91,5 +93,34 @@ module WordCounter
       height = MAX_BAR_HEIGHT - y
       return x, y, height
     end
-  end
-end
+
+    private
+    def get_headers_as_svg_string(word_counts_len)
+      s = StringIO.new
+      s << "<?xml version='1.0'?>\n"
+      s << "<svg width='#{(word_counts_len * MAX_BAR_WIDTH).to_s}'" +
+           " height='#{(MAX_BAR_HEIGHT + 150).to_s}'" +
+           " xmlns='http://www.w3.org/2000/svg'>"
+      s.string
+    end
+
+    private
+    def get_word_color()
+      "%06x" % (rand * 0xffffff)
+    end
+
+    private
+    def get_word_text_as_svg_string(x, word, color)
+      x_with_offset = (x + (MAX_BAR_WIDTH / 5.0)).to_s
+      "<text transform='rotate(90 #{x_with_offset},#{WORD_TEXT_Y.to_s})'" +
+      " x='#{x_with_offset}'" +
+      " y='#{WORD_TEXT_Y}' fill='##{color}'" +
+      " font-size='13' font-family='Tahoma'>#{word.to_s}</text>"
+    end
+
+    private
+    def get_bar_rect_as_svg_string(x, y, h, color)
+      "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}'" +
+      " x='#{x.to_s}' y='#{y.to_s}' fill='##{color}'/>"
+    end
+  end end

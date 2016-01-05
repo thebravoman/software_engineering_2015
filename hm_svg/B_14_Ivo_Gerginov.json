@@ -1,0 +1,18 @@
+{
+	"TUES": [
+		{
+			"11A": [
+			{"Student": [{"name":"Georgi"}, {"fname":"Stoilov"}]},
+			{"Student": [{"name":"Tuma"}, {"fname":"Marinov"}]},
+			{"Student": [{"name":"Bore4"}, {"fname":"Cankovic"}]}
+			]
+		},
+		{
+			"11B": [
+			{"Student": [{"name":"Georgi"}, {"fname":"Stoilov"}]},
+			{"Student": [{"name":"Tuma"}, {"fname":"Marinov"}]},
+			{"Student": [{"name":"Bore4"}, {"fname":"Cankovic"}]}
+			]
+		}
+	]
+}

@@ -1,0 +1,201 @@
+ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb "end,20,1class,1def,1i,1method,1myclass,1p,1q,1\"marks\",4" "-I"
+"A,02,Andrea,Georgieva"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected tGVAR, expecting '(' (SyntaxError)
+    $marks += duma.$hash_n("-_,.;:!?(){}")
+                          ^
+/home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected ')', expecting keyword_end
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva.rb:3:in `<main>'
+"A,24,Petar,Petrov"
+"A,19,Nikolay,Rangelov"
+"A,22,Pavel,Kostadinov"
+"A,14,Ignat,Georgiev"
+"A,5,Velin,Yavorski"
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><rect x="20" y = "300" width="...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...w3.org/2000/svg"><rect x="20" y = "300" width="50" height="5...
+...                               ^
+"A,20,Nikolay,Milanov"
+/home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `initialize': No such file or directory @ rb_sysopen - file.txt (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `<main>'
+"A,26,Teodor,Dobrev"
+/home/student/software_engineering_2015/hm_count_words/A_26_Teodor_Dobrev.rb:7:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_26_Teodor_Dobrev.rb:7:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_26_Teodor_Dobrev.rb:7:in `<main>'
+"B,6,Valentin,Stoyanov"
+"B,23,Petar,Georgiev"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/B_23_Petar_Georgiev/word_counter.rb:6: class/module name must be CONSTANT (SyntaxError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_23_Petar_Georgiev.rb:1:in `<main>'
+"A,07,George,Nedkov"
+/home/student/software_engineering_2015/hm_count_words/A_07_George_Nedkov.rb:70:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_07_George_Nedkov.rb:70:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_07_George_Nedkov.rb:70:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_07_George_Nedkov.rb:80:in `<main>'
+"A,27,Hristiyan,Zahariev"
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><rect x="20" y ="1" width ="65...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...w3.org/2000/svg"><rect x="20" y ="1" width ="65" height="25"...
+...                               ^
+"A,21,Nikolay,Danailov"
+"B,16,Luchezar,Ivanov"
+/home/student/software_engineering_2015/hm_count_words/B_16_Luchezar_Ivanov.rb:47:in `read': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_16_Luchezar_Ivanov.rb:47:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/B_16_Luchezar_Ivanov.rb:84:in `<main>'
+"B,09,Georgi,Stoilov"
+"B,12,Emiliqn,Gospodinov"
+/home/student/software_engineering_2015/hm_count_words/B_12_Emiliqn_Gospodinov.rb:7:in `read': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_12_Emiliqn_Gospodinov.rb:7:in `<main>'
+"B,29,Julian,Stoev"
+/home/student/software_engineering_2015/hm_count_words/B_29_Julian_Stoev/word_counter.rb:20:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_29_Julian_Stoev/word_counter.rb:20:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/B_29_Julian_Stoev/word_counter.rb:20:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/B_29_Julian_Stoev.rb:91:in `<main>'
+"B,13,Ivaylo,Arnaudov"
+"B,27,Radostin,Angelov"
+/home/student/software_engineering_2015/hm_count_words/B_27_Radostin_Angelov.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/B_27_Radostin_Angelov.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...tp://www.w3.org/2000/svg" width="2000" height="300"><rect x=...
+...                               ^
+"B,02,Atanas,Chompolov"
+"B,03,Bojidar,Valchovski"
+"B,24,Petar,Tsankov"
+/home/student/software_engineering_2015/hm_count_words/B_24_Petar_Tsankov.rb:5:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_24_Petar_Tsankov.rb:5:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/B_24_Petar_Tsankov.rb:5:in `<main>'
+"A,3,Antonio,Mindov"
+"A,12,Emil,Lozev"
+"A,9,Georgi,Danchev"
+/home/student/software_engineering_2015/hm_count_words/A_9_Georgi_Danchev.rb:62:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_9_Georgi_Danchev.rb:62:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_9_Georgi_Danchev.rb:62:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_9_Georgi_Danchev.rb:68:in `<main>'
+"B,20,Martin,Stanchev"
+"A,18,Metodi,Ilchev"
+/home/student/software_engineering_2015/hm_count_words/A_18_Metodi_Ilchev.rb:3:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_18_Metodi_Ilchev.rb:3:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_18_Metodi_Ilchev.rb:3:in `<main>'
+"B,25,Petyo,Cvetkov"
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><text x="5" y="35" fill="red" ...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+....w3.org/2000/svg"><text x="5" y="35" fill="red" font-size="9"
+...                               ^
+"B,28,Toma,Marinov"
+/home/student/software_engineering_2015/hm_count_words/B_28_Toma_Marinov/word_counter/web_parser.rb:28:in `block in parse_web': super: no superclass method `parse_web' for #<WordCounter::WebParser:0x00000001f5d1f0> (NoMethodError)
+	from /home/student/software_engineering_2015/hm_count_words/B_28_Toma_Marinov/word_counter/web_parser.rb:27:in `each_line'
+	from /home/student/software_engineering_2015/hm_count_words/B_28_Toma_Marinov/word_counter/web_parser.rb:27:in `parse_web'
+	from /home/student/software_engineering_2015/hm_count_words/B_28_Toma_Marinov/word_counter.rb:15:in `parse_web'
+	from /home/student/software_engineering_2015/hm_count_words/B_28_Toma_Marinov.rb:7:in `<main>'
+"B,26,Plamen,Neshkov"
+"B,05,Borislav,Mihaylov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_05_Borislav_mihaylov/result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_05_Borislav_Mihaylov.rb:4:in `<main>'
+"B,19,Martin,Angelov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_19_Martin_Angelov/result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_19_Martin_Angelov.rb:4:in `<main>'
+"B,04,Bojidar,Zahov"
+/home/student/software_engineering_2015/hm_count_words/B_04_Bojidar_Zahov.rb:4:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_04_Bojidar_Zahov.rb:4:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/B_04_Bojidar_Zahov.rb:4:in `<main>'
+"B,17,Lubomir,Kiprov"
+/home/student/software_engineering_2015/hm_count_words/B_17_Lubomir_Kiprov.rb:1:in `require_relative': cannot load such file -- /Word_counter.rb (LoadError)
+	from /home/student/software_engineering_2015/hm_count_words/B_17_Lubomir_Kiprov.rb:1:in `<main>'
+"A,16,Kristiana,Ivanova"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- parser.rb (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter/file_parser.rb:1:in `<top (required)>'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter.rb:1:in `require_relative'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter.rb:1:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova.rb:4:in `<main>'
+"B,10,Dimitar,Djadjarov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_10_Dimitar_Djadjarov/Legit/file_parser (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_10_Dimitar_Djadjarov/word_counter.rb:2:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_10_Dimitar_Djadjarov.rb:1:in `<main>'
+"A,23,Petko,Georgiev"
+/home/student/software_engineering_2015/hm_count_words/A_23_Petko_Georgiev.rb:39:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_23_Petko_Georgiev.rb:39:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_23_Petko_Georgiev.rb:39:in `<main>'
+"A,11,Dimitur,Katzarov"
+/home/student/software_engineering_2015/hm_count_words/A_11_Dimitur_Katzarov.rb:62:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_11_Dimitur_Katzarov.rb:62:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_11_Dimitur_Katzarov.rb:62:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_11_Dimitur_Katzarov.rb:68:in `<main>'
+"B,14,Ivo,Gerginov"
+"B,15,Yordan,Yankulov"
+"B,21,Martin,Galabov"
+"B,08,Vanessa,Stoynova"
+/home/student/software_engineering_2015/hm_count_words/B_08_Vanessa_Stoynova/word_counter/web_parser.rb:29:in `block in parse': undefined method `marks' for #<WordCounter::Result:0x000000012d0a40> (NoMethodError)
+	from /home/student/software_engineering_2015/hm_count_words/B_08_Vanessa_Stoynova/word_counter/web_parser.rb:26:in `each_line'
+	from /home/student/software_engineering_2015/hm_count_words/B_08_Vanessa_Stoynova/word_counter/web_parser.rb:26:in `parse'
+	from /home/student/software_engineering_2015/hm_count_words/B_08_Vanessa_Stoynova/word_counter.rb:14:in `parse_webpage'
+	from /home/student/software_engineering_2015/hm_count_words/B_08_Vanessa_Stoynova.rb:7:in `<main>'
+"A,8,Georgi,Tsitselkov"
+/home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:70:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:70:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:70:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:80:in `<main>'
+"B,11,Emil,Karbanov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_11_Emil_Karbanov/Result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_11_Emil_Karbanov.rb:4:in `<main>'
+"A,6,Victoria,Admasu"
+/home/student/software_engineering_2015/hm_count_words/A_6_Victoria_Admasu.rb:14:in `<main>': undefined method `parse_web' for WordCounter:Module (NoMethodError)
+"B,22,Nikolay,Karagyozov"
+"A,17,Martin,Dimitrov"
+/home/student/software_engineering_2015/hm_count_words/A_17_Martin_Dimitrov.rb:8:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_17_Martin_Dimitrov.rb:8:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_17_Martin_Dimitrov.rb:8:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_17_Martin_Dimitrov.rb:86:in `<main>'
+"B,16,Konstantin,Todorov"
+/home/student/software_engineering_2015/hm_count_words/B_16_Konstantin_Todorov.rb:19:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/B_16_Konstantin_Todorov.rb:19:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/B_16_Konstantin_Todorov.rb:19:in `<main>'
+"A,01,Aleksandar,Velinov"
+/home/student/software_engineering_2015/hm_count_words/A_01_Aleksandar_Velinov.rb:1:in `initialize': No such file or directory @ rb_sysopen - https://raw.githubusercontent.com/thebravoman/software_engineering_2015/master/hm_count_words/ruby_program_for_counting.rb (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_01_Aleksandar_Velinov.rb:1:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_01_Aleksandar_Velinov.rb:1:in `<main>'
+"A,15,Kalin,Karev"
+"A,13,Ivan-Asen,Ovedenski"
+"A,28,Hristo,Ezekiev"
+"ruby,program,for,counting"
+"A,29,Yassen,Alexiev"
+/home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/result.rb:7:in `initialize': wrong number of arguments (0 for 2) (ArgumentError)
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/parser.rb:29:in `new'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/parser.rb:29:in `parse'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/web_parser.rb:19:in `parse'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter.rb:14:in `parse_webpage'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev.rb:12:in `get_result'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev.rb:39:in `<main>'
+"A,25,Svetlin,Yordanov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- word_counter/parser (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski/word_counter.rb:1:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_25_Svetlin_Yordanov.rb:4:in `<main>'
+"A,10,Daniel,Kirov"

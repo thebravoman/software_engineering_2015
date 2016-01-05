@@ -1,22 +1,25 @@
 require 'word_counter'
 filepath = ARGV[0]
-def webb
-	if( filepath.start_with?('http://') || filepath.start_with?('https://'))
-		result = WordCounter.parse_webpage(filepath)
+beginning = ARGV[0].split('/').first
+
+def webb beginning, filepath
+	if( beginning == 'http:' || beginning == 'https:')
+		WordCounter.parse_webpage(filepath)
 	else
-		result = WordCounter.parse_file(filepath)
+		WordCounter.parse_file(filepath)
 	end
 end
-webb
+
+result = webb(beginning, filepath)
+
 if ARGV[1] == 'json'
     puts result.to_json
 
 elsif ARGV[1] == 'xml'
     puts result.to_xml
 elsif ARGV[1] == "svg"
-	puts coming soon...
+	result.to_svg
 else
     puts result.to_csv
 end
-
 

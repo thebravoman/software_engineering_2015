@@ -1,8 +1,11 @@
 module WordCounter
   class Parser
+    def initialize
+      @text = " "
+    end
     def parse(string)
       result = Result.new
-      result.marks_count = string.scan(/[,!@#$%^&*'""'()=+-]/).count
+      result.marks_count = string.scan(/[,?!@#$%^&*'""'()=+-]/).count
       words = string.downcase.gsub(/[^a-z0-9\s-]/, ' ').split(' ')
 
       words.each do |word|
@@ -25,6 +28,21 @@ module WordCounter
       end
 
       parse text
+    end
+    def dir_parser(dir)
+      if dir[dir.size - 1] != "/"
+        dir += "/"
+      end
+      files = Dir.glob(dir + '*')
+      files.each do |filename|
+        if File.directory? filename
+          dir_parser filename
+        else
+        @text += File.read(filename)
+        @text += " "
+        end
+      end
+      parse(@text)
     end
   end
 end

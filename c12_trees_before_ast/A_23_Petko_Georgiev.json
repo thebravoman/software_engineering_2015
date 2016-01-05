@@ -1,0 +1,18 @@
+{
+	"school": "TUES",
+	"classes":
+	{
+		"11A":
+		[
+			"Petko Georgiev",
+			"Alexandar Velinov",
+			"JOHN CENA"
+		],
+		"11B":
+		[
+			"Georgi_Stoilov",
+			"Dimitar_Djadjarov",
+			"Zohan"
+		]
+	}
+}

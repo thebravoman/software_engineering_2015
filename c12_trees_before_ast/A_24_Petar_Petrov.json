@@ -1,0 +1,19 @@
+{	  
+	  	"School": "TUES",  
+	    "Classes": [
+	    	{ 
+	    	"ClassName": "11A",
+	    	"Students": [ 
+	    		{"Student1": "Petar"},
+	        {"Student2": "Ivan"},  
+	        {"Student3": "Hristo"}
+	      ]},
+	      {   
+	      "ClassName": "11B",
+	      "Students": [
+	        {"Student1": "Georgi"},
+	        {"Student2": "Dimitur"}, 
+	        {"Student3": "Martin"}
+	      ]}
+	    ]
+} 

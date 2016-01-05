@@ -1,0 +1,152 @@
+ruby ../c03_check_and_produce_csv/a2_check.rb /home/student/software_engineering_2015/hm_count_words/ "/home/student/cwc/v3_input.txt xml" "<word-counts><marks>3</marks><words><wordcount='2'>for</word><wordcount='1'>check</word><wordcount='1'>sentence</word><wordcount='1'>some</word><wordcount='1'>this</word></words></word-counts>" "-I"
+"A,02,Andrea,Georgieva"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected tGVAR, expecting '(' (SyntaxError)
+    $marks += duma.$hash_n("-_,.;:!?(){}")
+                          ^
+/home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva/word_counter.rb:13: syntax error, unexpected ')', expecting keyword_end
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_02_Andrea_Georgieva.rb:3:in `<main>'
+"A,24,Petar,Petrov"
+"A,19,Nikolay,Rangelov"
+"A,22,Pavel,Kostadinov"
+"A,14,Ignat,Georgiev"
+"A,5,Velin,Yavorski"
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><rect x="20" y = "300" width="...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...w3.org/2000/svg"><rect x="20" y = "300" width="50" height="5...
+...                               ^
+"A,20,Nikolay,Milanov"
+/home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `initialize': No such file or directory @ rb_sysopen - file.txt (Errno::ENOENT)
+	from /home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `open'
+	from /home/student/software_engineering_2015/hm_count_words/A_20_Nikolay_Milanov.rb:5:in `<main>'
+"A,26,Teodor,Dobrev"
+/home/student/software_engineering_2015/hm_count_words/A_26_Teodor_Dobrev.rb:26: warning: already initialized constant WORDS_COUNT
+/home/student/software_engineering_2015/hm_count_words/A_26_Teodor_Dobrev.rb:6: warning: previous definition of WORDS_COUNT was here
+"B,6,Valentin,Stoyanov"
+"B,23,Petar,Georgiev"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': /home/student/software_engineering_2015/hm_count_words/B_23_Petar_Georgiev/word_counter.rb:6: class/module name must be CONSTANT (SyntaxError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_23_Petar_Georgiev.rb:1:in `<main>'
+"A,07,George,Nedkov"
+/home/student/software_engineering_2015/hm_count_words/A_07_George_Nedkov.rb:85:in `<main>': undefined local variable or method `result' for main:Object (NameError)
+"A,27,Hristiyan,Zahariev"
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><rect x="20" y ="1" width ="65...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/A_27_Hristiyan_Zahariev.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...w3.org/2000/svg"><rect x="20" y ="1" width ="65" height="25"...
+...                               ^
+"A,21,Nikolay,Danailov"
+"B,16,Luchezar,Ivanov"
+"B,09,Georgi,Stoilov"
+"B,12,Emiliqn,Gospodinov"
+"B,29,Julian,Stoev"
+"B,13,Ivaylo,Arnaudov"
+"B,27,Radostin,Angelov"
+/home/student/software_engineering_2015/hm_count_words/B_27_Radostin_Angelov.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/B_27_Radostin_Angelov.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+...tp://www.w3.org/2000/svg" width="2000" height="300"><rect x=...
+...                               ^
+"B,02,Atanas,Chompolov"
+"B,03,Bojidar,Valchovski"
+"B,24,Petar,Tsankov"
+/home/student/software_engineering_2015/hm_count_words/B_24_Petar_Tsankov.rb:21:in `<main>': undefined local variable or method `punctuation_marks' for main:Object (NameError)
+"A,3,Antonio,Mindov"
+"A,12,Emil,Lozev"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- builder (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_12_Emil_Lozev.rb:22:in `printRes'
+	from /home/student/software_engineering_2015/hm_count_words/A_12_Emil_Lozev.rb:34:in `<main>'
+"A,9,Georgi,Danchev"
+"B,20,Martin,Stanchev"
+"A,18,Metodi,Ilchev"
+"B,25,Petyo,Cvetkov"
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected '<'
+<svg xmlns="http://www.w3.org/...
+ ^
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected '<'
+...="http://www.w3.org/2000/svg"><text x="5" y="35" fill="red" ...
+...                               ^
+/home/student/software_engineering_2015/hm_count_words/B_25_Petyo_Cvetkov.svg:1: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+....w3.org/2000/svg"><text x="5" y="35" fill="red" font-size="9"
+...                               ^
+"B,28,Toma,Marinov"
+"B,26,Plamen,Neshkov"
+"B,05,Borislav,Mihaylov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_05_Borislav_mihaylov/result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_05_Borislav_Mihaylov.rb:4:in `<main>'
+"B,19,Martin,Angelov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_19_Martin_Angelov/result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_19_Martin_Angelov.rb:4:in `<main>'
+"B,04,Bojidar,Zahov"
+"B,17,Lubomir,Kiprov"
+/home/student/software_engineering_2015/hm_count_words/B_17_Lubomir_Kiprov.rb:1:in `require_relative': cannot load such file -- /Word_counter.rb (LoadError)
+	from /home/student/software_engineering_2015/hm_count_words/B_17_Lubomir_Kiprov.rb:1:in `<main>'
+"A,16,Kristiana,Ivanova"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- parser.rb (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter/file_parser.rb:1:in `<top (required)>'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter.rb:1:in `require_relative'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova/word_counter.rb:1:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_16_Kristiana_Ivanova.rb:4:in `<main>'
+"B,10,Dimitar,Djadjarov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_10_Dimitar_Djadjarov/Legit/file_parser (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_10_Dimitar_Djadjarov/word_counter.rb:2:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_10_Dimitar_Djadjarov.rb:1:in `<main>'
+"A,23,Petko,Georgiev"
+"A,11,Dimitur,Katzarov"
+"B,14,Ivo,Gerginov"
+"B,15,Yordan,Yankulov"
+"B,21,Martin,Galabov"
+"B,08,Vanessa,Stoynova"
+"A,8,Georgi,Tsitselkov"
+/home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:37:in `to_xml': undefined local variable or method `word_count' for #<Result:0x00000001abe4f0> (NameError)
+	from /home/student/software_engineering_2015/hm_count_words/A_8_Georgi_Tsitselkov.rb:85:in `<main>'
+"B,11,Emil,Karbanov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- ./B_11_Emil_Karbanov/Result (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/B_11_Emil_Karbanov.rb:4:in `<main>'
+"A,6,Victoria,Admasu"
+/home/student/software_engineering_2015/hm_count_words/A_6_Victoria_Admasu.rb:16:in `<main>': undefined method `parse_file' for WordCounter:Module (NoMethodError)
+"B,22,Nikolay,Karagyozov"
+"A,17,Martin,Dimitrov"
+"B,16,Konstantin,Todorov"
+"A,01,Aleksandar,Velinov"
+"A,15,Kalin,Karev"
+"A,13,Ivan-Asen,Ovedenski"
+"A,28,Hristo,Ezekiev"
+"ruby,program,for,counting"
+"A,29,Yassen,Alexiev"
+/home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/result.rb:7:in `initialize': wrong number of arguments (0 for 2) (ArgumentError)
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/parser.rb:29:in `new'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/parser.rb:29:in `parse'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter/file_parser.rb:8:in `parse'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev/word_counter.rb:10:in `parse_file'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev.rb:10:in `get_result'
+	from /home/student/software_engineering_2015/hm_count_words/A_29_Yassen_Alexiev.rb:39:in `<main>'
+"A,25,Svetlin,Yordanov"
+/home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load such file -- word_counter/parser (LoadError)
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_5_Velin_Yavorski/word_counter.rb:1:in `<top (required)>'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/.rvm/rubies/ruby-2.2.1/lib/ruby/site_ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+	from /home/student/software_engineering_2015/hm_count_words/A_25_Svetlin_Yordanov.rb:4:in `<main>'
+"A,10,Daniel,Kirov"
+

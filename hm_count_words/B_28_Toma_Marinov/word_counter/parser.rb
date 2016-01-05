@@ -7,7 +7,7 @@ module WordCounter
 			#string.each_line do |line|
 			count += string.scan(/[[:punct:]]/).count
 			#string = string.tr('[0-9]_', '')
-			string = string.tr('[0-9]', '')
+			#string = string.tr('[0-9]', '')
 			words = string.downcase.scan(/\w+/)
 
 			words.each do |word|

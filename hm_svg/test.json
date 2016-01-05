@@ -1,0 +1,16 @@
+{
+  "node_name" : "TUES",
+  "children" : [
+    { "node_name": "11a",
+      "children" : [
+                        {"node_name": "Kiril"},
+                        {"node_name": "Mitov"}	
+      ]},
+    { "node_name": "11b",
+      "children" : [
+                        {"node_name": "Nenko"},
+                        {"node_name": "Tabakov"},
+                        {"node_name": "Bojidar"}
+      ]}
+  ]
+}

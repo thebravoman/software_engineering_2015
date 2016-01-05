@@ -1,0 +1,18 @@
+<svg xmlns = "http://www.w3.org/2000/svg" width="10000" height="10000">
+<circle cx = "60" cy = "60" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "45" y = "65" fill = "black">TUES</text> 
+<circle cx = "60" cy = "160" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "45" y = "165" fill = "black">11a</text> 
+<circle cx = "60" cy = "260" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "45" y = "265" fill = "black">Kiril</text> 
+{"node_name"=>"Kiril"}<circle cx = "760" cy = "260" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "745" y = "265" fill = "black">Mitov</text> 
+{"node_name"=>"Mitov"}{"node_name"=>"11a", "children"=>[{"node_name"=>"Kiril"}, {"node_name"=>"Mitov"}]}<circle cx = "760" cy = "160" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "745" y = "165" fill = "black">11b</text> 
+<circle cx = "760" cy = "260" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "745" y = "265" fill = "black">Nenko</text> 
+{"node_name"=>"Nenko"}<circle cx = "1460" cy = "260" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "1445" y = "265" fill = "black">Tabakov</text> 
+{"node_name"=>"Tabakov"}<circle cx = "2160" cy = "260" r = "40" stroke = "black" stroke-width = "2" fill = "none"/>
+<text x = "2145" y = "265" fill = "black">Bojidar</text> 
+{"node_name"=>"Bojidar"}{"node_name"=>"11b", "children"=>[{"node_name"=>"Nenko"}, {"node_name"=>"Tabakov"}, {"node_name"=>"Bojidar"}]}</svg>

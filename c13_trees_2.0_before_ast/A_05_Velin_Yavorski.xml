@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<School name="TUES">
+		<Class name="11A">
+			<Student>Teodor</Student>
+			
+			<Student>Kalin</Student>
+			
+			<Student>Svetlin</Student>
+		</Class>
+		
+		<Class name="11B">
+			<Student>Vasko</Student>
+			
+			<Student>Nikolay</Student>
+			
+			<Student>Maya</Student>
+		</Class>
+	</School>

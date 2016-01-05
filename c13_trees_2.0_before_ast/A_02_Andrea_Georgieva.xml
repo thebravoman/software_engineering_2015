@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schools>
+	<school1 name = "TUES">
+		<Class1 name = "11A">
+			<student1 name = "Victoria Admasu"></student1>
+			<student2 name = "Ivan-Asen Ovedenski"></student2>
+			<student3 name = "Petar Petrov"></student3>
+		</Class1>
+		
+		<Class2 name = "11B">
+			<student1 name = "Asen Popov"></student1>
+			<student2 name = "Boriana Sasova"></student2>
+			<student3 name = "Vanessa Stoinova"></student3>
+		</Class2>
+	</school1>
+</schools>

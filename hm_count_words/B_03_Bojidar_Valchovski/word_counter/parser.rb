@@ -1,4 +1,4 @@
-require 'word_counter/result'
+require_relative 'result.rb'
 
 module WordCounter
   class Parser
@@ -8,7 +8,7 @@ module WordCounter
 	  marks = 0
 
 	  string.scan(/[\p{P}\p{S}]/).each { marks += 1 }
-	  string = string.gsub(/[^A-Za-z]/, ' ')
+	  string = string.gsub(/[^A-Za-z0-9]/, ' ').downcase
 	  string = string.gsub("-", ' ')
 	  string = string.split(" ")
 
