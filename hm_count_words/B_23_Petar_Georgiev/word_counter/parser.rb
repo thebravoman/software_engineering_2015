@@ -1,30 +1,23 @@
-module word_Count
- class Parser
-  def parse(text)
-    words_check = /\b[A-Za-z0-9-]+\b/i
-    marks_check = /[\p{P}_]/
-
-    words = {}
-    marks = 0
-
-    text.each_line do |line|
-      file_words = line.downcase.scan(words_check)
-      file_words.each do |word|
-        if words.key?(word)
-          words[word] += 1
-        else
-          words[word] = 1
-        end
-      end
-    end
-    text.each_line do |line|
-      file_marks = line.downcase.scan(marks_check)
-      file_marks.each { marks += 1 }
-    end
-
-    words = words.sort_by { |a, b| [-b, a] }
-
-    Result.new(words, marks)
-  end
- end
+module WordCounter
+	class Parser
+		def parse(string)
+			result = Result.new
+			result.marks_count = string.scan(/[[:punct:]+_=#><@'$%"&*]/).count
+		 	result.marks_count += string.scan("[/\]").count
+			string = string.gsub("_", ' ')
+			string = string.downcase.scan(/[\w]+/)
+			
+			string.each do |word|
+				if result.word_counts.key?(word)
+					result.word_counts[word] += 1 
+				else
+					result.word_counts[word] = 1
+				end
+			end
+			
+			result.word_counts = result.word_counts.sort_by {|word, num| [-num, word] }
+			result.word_counts = result.word_counts.to_h
+			result
+		end
+	end
 end

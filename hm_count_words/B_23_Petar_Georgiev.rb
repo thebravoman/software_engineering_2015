@@ -1,18 +1,27 @@
-require 'word_counter'
+require './B_23_Petar_Georgiev/word_counter'
+require 'uri'
 
-file_path = ARGV[0]
-type = ARGV[1]
+@input = ARGV[0]
+@format = ARGV[1]
+dir = false
 
-if (file_path.match('^https?:\/\/.+') || file_path.match('^http?:\/\/.+'))
-  result = word_Count::web_parse(file_path)
-else
-  result = word_Count::file_parse(file_path)
-end
+if File.file? @input
+	result = WordCounter::file_parse(@input)
+elsif @input =~ /\A#{URI::regexp}\z/
+		result = WordCounter::web_parse(@input)
+	elsif @input == '-d' and File.directory? @format
+		result = WordCounter::dir_parse(@format)
+		dir = true
+	end
 
-if type == 'xml'
-  puts result.to_xml
-elsif type == 'json'
-  puts result.to_json
-else
-  puts result.to_csv
+unless dir
+	case @format
+	when 'json'
+		result.to_json
+	when 'xml'
+		result.to_xml
+	else
+		result.to_csv
+	end
+	result.svg
 end

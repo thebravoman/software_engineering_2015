@@ -1,7 +1,14 @@
 require_relative 'B_14_Ivo_Gerginov/word_counter'
 
-f_path = ARGV[0]
-op = ARGV[1]
+
+if ARGV[0] == '-d'
+  fPath = ARGV[1]
+  op = ARGV[2]
+  result = WordCounter::parseFolder(fPath)
+else
+  fPath = ARGV[0]
+  op = ARGV[1]
+end
 
 if f_path.start_with?("http://", "https://") == true
   res = WordCounter::parseURL f_path

@@ -4,14 +4,20 @@ require 'csv'
 
 module WordCounter
 	class Result
-		def initialize(answer, counter)
-			@answer = answer
-			@counter = counter
+		def initialize
+			@counter = 0
+			@answer = {}
+		end
+
+		def SetWordsMarks words, marks
+			@answer = words
+			@counter = marks
 		end
 
 		def marks_count
 			@counter
 		end
+
 
 		def word_counts
 			@answer
@@ -19,52 +25,62 @@ module WordCounter
 
 		def to_csv
 			res = ""
-			@answer.each do |word, i|
-				res = res + "#{word},#{i.to_s}\n"		
+			@answer.each do |key, value| 
+				puts "#{key},#{value}"	
 			end
-			res
+			if(@counter != 0)
+				print "\"marks\",#{marks_count}"
+			end
 		end
 
 		def to_json
-			json_result = { :marks => "#{@counter}".to_i, :words => @answer, }
-	  		JSON.pretty_generate(json_result)
-	  		json_result
+			n_hash = {}
+			n_hash[:marks] = @counter
+			n_hash[:words] = @answer
+			JSON.pretty_generate(n_hash)
 		end
 
+
 		def to_xml
-			product = ""
-			final_xml = REXML::Document.new("")
-	  		words_xml = final_xml.add_element("word-counts")
-	  		marks_xml = words_xml.add_element("marks")
-	  		marks_xml.add_text "#{@counter}"
-	  		words_final = words_xml.add_element("words")
-	  
-	  		@answer.each do |index, key|
-	    			word = words_final.add_element('word')
-	    			word.add_attribute( 'count', key)
-	   			word.add_text "#{index}"
-	   		end
-	  		final_xml.write(product, 1)
-	  		product	
+			product = REXML::Document.new
+			words_count = product.add_element("word-counts")
+			marks = words_count .add_element("marks")
+			marks.add_text "#{@counter}"
+			words = words_count.add_element("words")
+			@answer.each do |key, value|
+			word = words.add_element("word")
+			word.add_attribute("count", value)
+			word.add_text "#{key}"
+			end
+			formatter = REXML::Formatters::Pretty.new(4)
+			formatter.compact = true 				
+			formatter.write(product, $stdout)
+			""		
 		end
 		
-		def to_svg
-			y=0
-			w=0
-			h=@answer.length * 20
-			key, value=@answer.first
-			puts'<figure>'
-			puts'<svg version="1.1 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart" w="600" h="'+h.to_s+'" aria-labelledby="title" role="img">'
-			@answer.each do |word, j|
-				w = (500*j.to_i)/value.to_i
-				puts '<g class="bar">'
-					puts'<rect w="'+w.to_s+'" h="19" y="'+y.to_s+'"></rect>'
-				puts '<text x="'+(w+5).to_s+'" y="'+(y+8).to_s+'" dy=".35em">'+i.to_s+' '+word+'</text>'
-				puts '</g>'
-				y = y + 20
+		def rect x, y, w, h
+		'<rect x="' + x.to_s + '" y = "' + y.to_s + '" width="' + w.to_s + '" height="' + h.to_s + '" style="fill:rgb(255,50,50)" />'
+		end		
+		
+		def make_svg
+			File.open("A_15_Kalin_Karev.svg","w") do |f|
+				f.write('<svg xmlns="http://www.w3.org/2000/svg">')
+				d = 20
+				size = 15
+				t = @answer[0]
+				t = t.to_s
+				t = t.delete('^0-9').to_i
+				
+				@answer.each do |key, value|
+					f.write(rect d, 800 - ((500*value)/t), 50, ((500*value)/t) )
+					size = 10 if(key.to_s.length > 7)
+					f.write('<text x="'+d.to_s+'" y="'+((800 - ((501*value)/t)).to_s)+'" fill="red" font-size="'+size.to_s+'">'+key.to_s+' </text>')
+				f.write('<text x="'+((d + 20).to_s)+'" y="820" fill="black" font-size="15">'+value.to_s+' </text>')
+				d += 70
+				size = 15
+				end
+				f.write('</svg>')
 			end
-			puts '</svg>'
-			puts '</figure>'
 		end
 
 	end

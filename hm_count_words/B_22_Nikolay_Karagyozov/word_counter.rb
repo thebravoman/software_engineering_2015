@@ -2,6 +2,7 @@ require_relative './word_counter/result'
 require_relative './word_counter/parser'
 require_relative './word_counter/file_parser'
 require_relative './word_counter/webpage_parser'
+require_relative './word_counter/folder_parser'
 
 module WordCounter
   def self.parse(text)
@@ -14,5 +15,8 @@ module WordCounter
 
   def self.parse_webpage(url)
     WebpageParser.new.parse(url)
+  end
+  def self.parse_folder(folder)
+    FolderParser.new.parse(folder)
   end
 end

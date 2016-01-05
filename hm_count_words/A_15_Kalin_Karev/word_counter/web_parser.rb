@@ -5,18 +5,16 @@ require 'openssl'
 
 module WordCounter
 	class WebpageParser < Parser
-		def self.parse(url)
-			url = URI.parse(url)
-			http = Net::HTTP.new(url.host, url.port)
-			if url.scheme == 'https'
+		def parse(uri)
+			uri = URI.parse(ARGV.first)
+			http = Net::HTTP.new(uri.host, uri.port)
+			if uri.scheme == 'https'
 				http.use_ssl = true
 				http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			end
-			contents = http.get(url.request_uri)
-			
-			work_with = Sanitize.clean(contents.body, remove_contents: %w(script, style))
-			answer=Parser.parse(work_with)
-			return answer
+			c = http.get(uri.request_uri)
+			c = Sanitize.fragment(c.body)
+			super c
 		end
 	end
 end

@@ -1,0 +1,25 @@
+date,account,category,amount,currency,description
+01/12/2014,PersonalCash,K,-40,BGN,bough new chair
+21/03/2007,PersonalCash,K,2000,BGN,salary
+21/03/2007,SchoolCash,K,-1,BGN,bought bread
+12/06/2011,ParentsCash,K,20,BGN,money from parents
+21/03/2007,PersonalCash,K,-120,BGN,bought new sofa
+17/06/2009,SchoolCash,K,50,BGN,money from scholarship
+11/01/2012,PersonalCash,K,2100,BGN,salary
+11/01/2012,SchoolCash,K,50,BGN,money from scholarship
+09/09/2003,ParentsCash,K,5,BGN,money from parents
+21/03/2007,SchoolCash,K,-2,BGN,bought Cola
+17/06/2009,SchoolCash,K,-3,BGN,bought ice cream
+09/09/2003,PersonalCash,K,21,BGN,found money
+16/09/2003,SchoolCash,K,-2,BGN,bought sandwhich
+24/11/2016,PersonalCash,K,-850,BGN,bought a new PC
+17/09/2003,SchoolCash,K,-3,BGN,bought socks
+16/09/2003,SchoolCash,K,-20,BGN,bought a card for public transport
+21/03/2001,SchoolCash,K,-1,BGN,bought a ticket for public transport
+27/03/2001,SchoolCash,K,-2,BGN,bought banica
+03/04/2001,PersonalCash,K,1,BGN,found some money
+23/04/2001,PersonalCash,K,5000,BGN,made a big company deal
+11/05/2001,PersonalCash,K,4000,BGN,made a big company deal
+21/05/2001,PersonalCash,K,2000,BGN,made a small company deal
+10/06/2001,PersonalCash,K,8000,BGN,made a big company deal
+15/06/2001,SchoolCash,K,-2,BGN,bought boza

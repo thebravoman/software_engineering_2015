@@ -18,6 +18,36 @@ def result(filename,command)
     result = Parser.parse filename
   end
 end
+def folder(adress)
+  files = Dir.glob("#{adress}/**/*").select { |f| File.file? f }
+  result = Result.new
+
+  files.each do |file|
+    temp = WordCounter.parse_file file
+    result.word_counts.merge!(temp.word_counts.to_h) { |_, oldval, newval| newval + oldval }
+    result.marks_count += temp.marks_count
+  end
+
+  result.word_counts = result.word_counts.sort_by { |word, count| [-count, word] }.to_h
+  result
+end
+if ARGV[0] == '-d'
+  filename = ARGV[1]
+  command = ARGV[2]
+  final = folder filename
+  if command == "json"
+ puts final.to_json
+ final.to_svg
+elsif command == "xml"
+ puts final.to_xml
+ finalto_svg
+elsif command =="svg"
+ final.to_svg
+else
+  final.to_csv
+ final.to_svg
+end
+else
 if command == "json"
  puts result(filename,command).to_json
  result(filename,command).to_svg
@@ -30,4 +60,4 @@ else
   result(filename,command).to_csv
  result(filename,command).to_svg
 end
-
+end

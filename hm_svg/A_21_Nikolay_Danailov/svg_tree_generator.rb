@@ -1,64 +1,62 @@
 require_relative 'tree/tree.rb'
+require_relative 'svg_drawer.rb'
 
+# Generator an SVG graphic tree
 class SVGTreeGenerator
   private
 
-  @SCREEN_WIDTH
-  @STARTING_Y
-  @CIRCLE_RADIUS
-  @RECT_WIDTH
-  @RECT_HEIGHT
-  @Y_BETWEEN_ELEMENTS
+  SCREEN_WIDTH = 1000
+  STARTING_Y = 75
+  RECT_WIDTH = 100
+  RECT_HEIGHT = 50
+  CIRCLE_RADIUS = 50
+  Y_BETWEEN_ELEMENTS = 125
 
-  @result
-
-  def rect(x, y, w, h)
-    '<rect x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" width="' + w.to_s + \
-      '" height="' + h.to_s + \
-      '" fill="red"/>'
+  def get_siblings_size(node)
+    siblings_size = 1
+    siblings_size = node.ancestor.descendants.size unless node == @tree.root
+    siblings_size
   end
 
-  def text(x, y, str)
-    '<text text-anchor="middle" x="' + x.to_s + \
-      '" y="' + y.to_s + \
-      '" fill="black">' + str.to_s + '</text>'
+  def get_alotted_space(node)
+    ancestor_level_elements = tree.get_elements { |n| n.depth == node.depth - 1 }.size
+    alotted_space = SCREEN_WIDTH
+    alotted_space /= ancestor_level_elements unless ancestor_level_elements == 0
+    alotted_space
   end
 
-  def line(x1, y1, x2, y2)
-    '<line x1="' + x1.to_s + '" y1="' + y1.to_s + '" x2="' + x2.to_s + '" y2="' + y2.to_s + '" style="stroke:rgb(255,0,0);stroke-width:2" />'
-  end
-
-  def circle x, y, r
-    '<circle cx="' + x.to_s + '" cy="' + y.to_s + '" r="' + r.to_s + '" stroke="black" fill="red" />'
+  def get_ancestor_index(node)
+    ancestor_index = 0
+    ancestor_index = node.ancestor.index unless node.ancestor.nil?
+    ancestor_index
   end
 
   def draw(ancestor_x = nil, ancestor_y = nil, node = @tree.root)
-    same_depth_elements = tree.get_elements_with_depth node.depth
-    node_index = 0
+    drawer = SVGDrawer.new
+    siblings_size = get_siblings_size node
+    alotted_space = get_alotted_space node
+    ancestor_index = get_ancestor_index node
 
-    if node != @tree.root
-      node_index = Hash[same_depth_elements.map.with_index.to_a][node]
-    end
+    x_per_element = alotted_space / (siblings_size + 1)
+    element_x = ancestor_index * alotted_space + x_per_element * (node.index + 1)
+    element_y = STARTING_Y + Y_BETWEEN_ELEMENTS * node.depth
+    same_depth_elements = tree.get_elements { |n| n.depth == node.depth }
+    size_coeficient = 1 # not implemented yet
 
-    alotted_space = @SCREEN_WIDTH / (same_depth_elements.size + 1)
-    element_x = alotted_space * (node_index + 1)
-    element_y = @STARTING_Y + @Y_BETWEEN_ELEMENTS * node.depth
-
-    if(node.leaf?)
-      if(!ancestor_x.nil? && !ancestor_y.nil?)
-        @result += line element_x + @RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
+    if node.leaf?
+      if !ancestor_x.nil? && !ancestor_y.nil?
+        @result += drawer.line element_x + RECT_WIDTH / 2, element_y, ancestor_x, ancestor_y
       end
 
-      @result += rect element_x, element_y, @RECT_WIDTH, @RECT_HEIGHT
-      @result += text element_x + @RECT_WIDTH / 2, element_y + @RECT_HEIGHT / 2, node.value
+      @result += drawer.rect element_x, element_y, RECT_WIDTH * size_coeficient, RECT_HEIGHT * size_coeficient
+      @result += drawer.text element_x + RECT_WIDTH / 2, element_y + RECT_HEIGHT / 2, node.value
     else
-      if(!ancestor_x.nil? && !ancestor_y.nil?)
-        @result += line element_x, element_y, ancestor_x, ancestor_y
+      if !ancestor_x.nil? && !ancestor_y.nil?
+        @result += drawer.line element_x, element_y, ancestor_x, ancestor_y
       end
-      @result += circle element_x, element_y, @CIRCLE_RADIUS
-      @result += text element_x, element_y, node.value
+
+      @result += drawer.circle element_x, element_y, CIRCLE_RADIUS * size_coeficient
+      @result += drawer.text element_x, element_y, node.value
     end
 
     node.descendants.each do |desc|
@@ -73,18 +71,13 @@ class SVGTreeGenerator
   def initialize
     @tree = Tree.new
     @result = ''
-
-    @SCREEN_WIDTH = 1000
-    @STARTING_Y = 75
-    @RECT_WIDTH = 100
-    @RECT_HEIGHT = 50
-    @CIRCLE_RADIUS = 50
-    @Y_BETWEEN_ELEMENTS = 125
   end
 
   def generate_from_json(json)
     @tree.generate_from_json(json)
+    @result += '<svg xmlns="http://www.w3.org/2000/svg">'
     draw
+    @result += '</svg>'
     @result
   end
 end

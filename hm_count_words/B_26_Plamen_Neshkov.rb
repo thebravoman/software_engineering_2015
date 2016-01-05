@@ -1,12 +1,21 @@
 require 'word_counter'
 
-path = ARGV[0]
-format = ARGV[1]
+result = ''
 
-if (path.match('^https?:\/\/.+'))
-  result = WordCounter::parse_webpage(path)
+if ARGV[0] == '-d'
+  path = ARGV[1]
+  format = ARGV[2]
+
+  result = WordCounter::parse_folder(path)
 else
-  result = WordCounter::parse_file(path)
+  path = ARGV[0]
+  format = ARGV[1]
+
+  if path.match('^https?:\/\/.+')
+    result = WordCounter::parse_webpage(path)
+  else
+    result = WordCounter::parse_file(path)
+  end
 end
 
 WordCounter::GraphGenerator::bar_graph(result.word_counts,

@@ -15,7 +15,8 @@ module WordCounter
       end
 
       contents = http.get(page.request_uri)
-      text = Sanitize.clean(contents.body, remove_contents: %w(script))
+      text = ""
+      Sanitize.clean(contents.body, remove_contents: %w(script))
       super text
     end
   end
