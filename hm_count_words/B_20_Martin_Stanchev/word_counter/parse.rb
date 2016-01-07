@@ -3,6 +3,7 @@ module WordCounter
     def parse (content)
       str_res = Result.new
 
+      #puts content.scan("\n").count
       str_res.marks = content.scan(/[\p{S}\p{P}]/u).count
       content = content.gsub(/[\W+ ._\s]/, ' ').downcase
       list = content.split(' ')
