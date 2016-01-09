@@ -24,9 +24,12 @@ Add an option to V6 to pass a folder as an argument.
 
 Arguments:
 	-d - if there is this option the argument is a folder and should be traversed recursively to find all the files in this folder and count the words in this file.
-	
+
 Example:
 	ruby program.rb -d the_folder_to_traverse_recursively
+
+# Version 8 - V8
+Use a database to store the gathered information.
 
 # Project for at least 3M lines of code
 
