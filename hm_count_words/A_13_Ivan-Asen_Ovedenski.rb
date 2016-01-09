@@ -15,20 +15,25 @@ end
 			result.to_json 
 		elsif format == 'xml' 
 			result.to_xml 
-		elsif format == 'svg'
-			result.to_svg
 		else 
 			result.to_csv 
 		end 
+		result.to_svg
 	end 
-parsed_input = ARGV[0]
-format = ARGV[1] 
-result = get_result parsed_input 
-#print_result result, format
+if(ARGV[0] == '-d')
+	path = ARGV[1]
+	format = ARGV[2]
+	temp = ""
 
-if format == 'xml' || format == 'json' || format == 'csv'
+	Dir.glob(folder + "/**/*").each do |file|
+		temp += File.read(file)
+	end
+
+	print_result(WordCounter.parse(temp), format)
+else
+	parsed_input = ARGV[0]
+	format = ARGV[1] 
+	result = get_result parsed_input 
+
 	print_result result, format
-else 
-	format = 'csv'
-	print_result result , format
 end

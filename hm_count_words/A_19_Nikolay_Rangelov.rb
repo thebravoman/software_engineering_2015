@@ -1,5 +1,16 @@
 require_relative './A_19_Nikolay_Rangelov/word_counter'
 
+def dir file_name
+	s_parse = ""
+	Dir["#{file_name}/**/*.*"].each do |word|
+		if !(word.include? "~")
+			File.readlines(word).each do |l|
+				s_parse << l.to_s
+			end
+		end
+	end
+	s_parse
+end
 
 def ifSite(filename)
 	first = filename.split('/').first
@@ -18,6 +29,11 @@ if ifSite file_name
 	format= "url"
 end 
 
+if file_name == "-d"
+	format = "none"
+	string_to_input = dir(out_format)
+	result = WordCounter.parse string_to_input
+end
 
 if format == "file"
 	result = WordCounter.parse_file file_name
@@ -31,9 +47,9 @@ if format == "string"
 	result = WordCounter.parse file_name
 end
 
-if out_format=="csv" or out_format == ""
-	puts result.to_csv
-end
+#if out_format=="csv" or out_format == ""
+	#puts result.to_csv
+#end
 
 if out_format=="json"
 	puts result.to_json
@@ -45,4 +61,6 @@ end
 
 if out_format=="svg" 
 	puts result.to_svg
+else
+	puts result.to_csv
 end

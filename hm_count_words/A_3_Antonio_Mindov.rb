@@ -24,8 +24,20 @@ def print_result result, format
 	end
 end
 
-parseInput = ARGV[0]
-format = ARGV[1]
-result = get_result parseInput
+if(ARGV[0] == '-d')
+	folder = ARGV[1]
+	format = ARGV[2]
+	merged = ""
 
-print_result result, format
+	Dir.glob(folder + "/**/*").each do |file|
+		merged += File.read(file)
+	end
+
+	print_result(WordCounter.parse(merged), format)
+else
+	parseInput = ARGV[0]
+	format = ARGV[1]
+	result = get_result parseInput
+
+	print_result result, format
+end

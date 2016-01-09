@@ -16,7 +16,8 @@ module WordCounter
 			if @mark_count > 0
 				my_csv << '"marks",' + @mark_count.to_s
 			end
-	
+
+			to_svg
 			my_csv
 		end
 	
@@ -25,6 +26,8 @@ module WordCounter
 				"marks" => @mark_count,
 				"words" => @word_counts
 			}
+
+			to_svg
 			jsonHash.to_json
 		end
 	
@@ -37,7 +40,8 @@ module WordCounter
 			@word_counts.each do |word, count|
 				wordsTag.add_element('word', {'count' => count}).add_text word
 			end
-	
+			
+			to_svg
 			xml
 		end
 
@@ -57,9 +61,9 @@ module WordCounter
 			minWidth = 1.0
 			maxWidth = 300.0
 
-			maxCount = 0.0;
+			maxCount = 0.0
 
-			File.open("result.svg","w") do |f|
+			File.open("A_3_Antonio_Mindov.svg","w") do |f|
       			f.write('<svg width = "10000" height = "500" xmlns="http://www.w3.org/2000/svg">')
 
       			@word_counts.each do |word, count|
@@ -75,7 +79,7 @@ module WordCounter
       				c += 1
       			end
       			
-      			f.write('</svg>');
+      			f.write('</svg>')
       		end
 		end
 	end
