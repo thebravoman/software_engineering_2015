@@ -4,10 +4,10 @@ require 'openssl'
 
 module WordCounter
 	class WebParser 
-		def parse_web (url)
-			uri = URI.parse(url)
+		def parse_web url
+			uri = URI.parse url
 			source = Net::HTTP.new(uri.host, uri.port)
-			if(uri.scheme == 'https')
+			if uri.scheme == 'https'
 				source.use_ssl = true
 				source.verify_mode = OpenSSL::SSL::VERIFY_NONE
 			end
