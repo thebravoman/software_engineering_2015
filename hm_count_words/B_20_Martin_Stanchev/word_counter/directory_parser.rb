@@ -14,9 +14,8 @@ module WordCounter
           parse(path)
 
         else
-          if path.split(".").last == "cc"
-            @content << File.open(path, "r").read
-            puts path
+          @content << File.open(path).read
+            #puts path
           end
         end
 
