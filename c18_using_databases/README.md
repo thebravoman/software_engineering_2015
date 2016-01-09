@@ -27,3 +27,7 @@ word_counts
 * Make sure that your scripts create the database and the needed tables if they don't exist
 * Save the count of the marks as a word -> `$marks$`
 * Get the information about the word counts from the database if it's already present there.
+
+## Deadline
+
+13 Jan 2016 22:00
