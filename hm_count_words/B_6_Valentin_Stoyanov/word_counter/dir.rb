@@ -4,7 +4,7 @@ module WordCounter
 			main = {}
 			sum = 0
 			res = Result.new
-			Dir.glob(path + '*') do |f|
+			Dir.glob(path + '**/*') do |f|
 				if File.file? f
 					res = file_parse(f)
 					main.merge!(res.word_counts) {|key, oldval, newval| newval + oldval}
