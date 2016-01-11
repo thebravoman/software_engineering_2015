@@ -14,6 +14,6 @@ def handle_repo_parsing(folder, file_extension, json_res_file, svg_res_file)
 end
 
 folder = ARGV[0]
-handle_repo_parsing folder, :rb, "ruby.json", "ruby.svg"
-handle_repo_parsing folder, :cpp, "cpp.json", "cpp.svg"
-handle_repo_parsing folder, :java, "java.json", "java.svg"
+handle_repo_parsing folder, :rb, "results/ruby.json", "results/ruby.svg"
+handle_repo_parsing folder, :cpp, "results/cpp.json", "results/cpp.svg"
+handle_repo_parsing folder, :java, "results/java.json", "results/java.svg"
