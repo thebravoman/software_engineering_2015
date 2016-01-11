@@ -28,7 +28,7 @@ module WordCounter
     def split_words(string)
       # the regex on the next line removes commented text, strings, regex
       # and any other symbol that isn't a word
-      if(@extension == :cpp || @extension == :cc || @extension == :java)
+      if @extension == :cpp || @extension == :cc || @extension == :java
         removal_regex = /(\/\*([^*]|[\r\n]|(\*+([^*\/]|[\r\n])))*\*+\/)|(\/\/.*)|[^\w_0-9]/
       else
         removal_regex = /(=begin([^n]|.)*?=end)|(#(?![^"]*"$).*$)|[^[[:word:]]0-9_\s]/
