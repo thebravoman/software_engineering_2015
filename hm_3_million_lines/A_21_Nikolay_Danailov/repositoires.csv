@@ -14,7 +14,6 @@ https://github.com/lintool/twitter-tools,11539,Java
 https://github.com/draios/sysdig,9454,Java
 https://github.com/google/or-tools,7343,Java
 https://github.com/minetest/minetest,607,Java
-
 https://github.com/draios/sysdig,795824,C++ 
 https://github.com/google/protobuf,188020,C++
 https://github.com/google/or-tools,142876,C++
@@ -23,7 +22,6 @@ https://github.com/google/googletest,51472,C++
 https://github.com/googlei18n/libphonenumber,45477,C++
 https://github.com/google/leveldb,20175,C++
 https://github.com/voldemort/voldemort,3551,C++
-
 https://github.com/ruby/ruby,786319,Ruby
 https://github.com/rails/rails,285272,Ruby
 https://github.com/Homebrew/linuxbrew,175934,Ruby
