@@ -2,7 +2,7 @@ require 'rexml/document'
 require 'csv'
 require 'rubygems'
 require 'json'
-require './word_counter' 
+require './B_21_Martin_Galabov/word_counter' 
 
 file_path = ARGV[0]
 command = ARGV[1]
