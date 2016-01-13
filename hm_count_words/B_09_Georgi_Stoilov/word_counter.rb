@@ -2,6 +2,7 @@ require_relative 'word_counter/parser'
 require_relative 'word_counter/file_parser'
 require_relative 'word_counter/web_parser'
 require_relative 'word_counter/folder_parse'
+require_relative 'word_counter/make_db'
 
 module WordCounter
 
@@ -19,6 +20,14 @@ module WordCounter
 
   def self.parse_folder(folder, format)
     FolderParse.new.parsing_folder(folder, format)
+  end
+
+  def self.make_database(file, format, filename)
+    MakeDataBase.new.make_db(file, format, filename)
+  end
+
+  def self.delete_file file_name
+    `rm #{file_name}`
   end
 
 end
