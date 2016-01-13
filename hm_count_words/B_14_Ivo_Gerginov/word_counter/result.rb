@@ -17,16 +17,16 @@ class Result
     else
       db = SQLite3::Database.open("B_21_Martin_Galabov.db")
     end
-    db.execute('create table if not exists statistics(ID INTEGER PRIMARY KEY AUTOINCREMENT, source_name, hash)')
-    db.execute('create table if not exists word_counts(static_id, word,occurences)')
+    db.execute('create table if not exists statistics(ID INTEGER PRIMARY KEY AUTOINCREMENT, source, hash)')
+    db.execute('create table if not exists word_counts(static_id, word, count)')
     xdg = Digest::SHA256.file ARGV.first
     xdg.hexdigest
-    db.execute('insert into statistics(source_name, hash) values (?, ?)', @name, @words)
+    db.execute('insert into statistics(source, hash) values (?, ?)', @name, @words)
     id = db.execute("select last_insert_rowid();")
     word_counter.each do |key, value|
-      db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)', id, key, value)
+      db.execute('insert into word_counts (static_id, word, count) values (?, ?, ?)', id, key, value)
     end
-        db.execute('insert into word_counts (static_id, word, occurences) values (?, $marks$, ?)', id, marks_counter)
+        db.execute('insert into word_counts (static_id, word, count) values (?, $marks$, ?)', id, marks_counter)
         db.close
   end
 
