@@ -1,4 +1,5 @@
 require 'json'
+require 'sqlite3'
 require 'rexml/document'
 module WordCounter
 	class Result
@@ -18,6 +19,7 @@ module WordCounter
 			end
 
 			to_svg
+			generate_database
 			my_csv
 		end
 	
@@ -28,6 +30,7 @@ module WordCounter
 			}
 
 			to_svg
+			generate_database
 			jsonHash.to_json
 		end
 	
@@ -42,6 +45,7 @@ module WordCounter
 			end
 			
 			to_svg
+			generate_database
 			xml
 		end
 
@@ -81,6 +85,29 @@ module WordCounter
       			
       			f.write('</svg>')
       		end
+		end
+
+		def generate_database
+			begin
+				db = SQLite3::Database.open "A_3_Antonio_Mindov.db"
+
+				db.execute "CREATE TABLE IF NOT EXIST statistics(id INTEGER PRIMARY KEY, source_name TEXT, hash TEXT)"
+				db.execute "CREATE TABLE IF NOT EXIST word_counts(statistic_id INTEGER, word TEXT, count INTEGER)"
+
+				word_counts.each do |word,count|
+					db.execute "INSERT INTO word_count(word) VALUES (#{word})"
+					db.execute "INSERT INTO word_count(count) VALUES (#{count})"
+				end
+
+				db.execute "INSERT INTO word_count(word) VALUES ('$marks$')"
+				db.execute "INSERT INTO word_count(count) VALUES (#{mark_count})"
+
+			rescue SQLite3::Exception =>
+				puts "DatabaseException:"
+				puts e
+			ensure
+				db.clos if db
+			end
 		end
 	end
 end
