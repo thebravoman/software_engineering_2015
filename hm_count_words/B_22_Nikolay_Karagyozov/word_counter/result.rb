@@ -1,14 +1,14 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
+require 'sqlite3'
 
 module WordCounter
   class Result
-    attr_accessor :marks_count, :word_counts
-
-    def initialize(word_list, marks_count)
+    def initialize(word_list, marks_count, digest)
       @word_counts = word_list
       @marks_count = marks_count
+      @digest = digest
     end
 
     def to_csv
@@ -35,6 +35,60 @@ module WordCounter
 
         json
       end
+    end
+
+    def to_db(uri)
+      db = SQLite3::Database.new("B_22_Nikolay_Karagyozov.db")
+
+      db.execute(
+      "CREATE TABLE IF NOT EXISTS statistics (
+        id INTEGER PRIMARY KEY,
+        source_name TEXT,
+        hash TEXT
+      );")
+
+      db.execute(
+      "CREATE TABLE IF NOT EXISTS word_counts (
+        statistics_id INTEGER,
+        word TEXT,
+        count INTEGER
+      );")
+
+      cached_id = []
+      begin
+        cached_id = db.execute(
+        "SELECT id FROM statistics
+         WHERE hash=?", @digest)
+      rescue
+      end
+
+      if (cached_id.length > 0)
+        result = db.execute("SELECT * FROM word_counts
+                             WHERE statistics_id=?",cached_id)
+        return
+      end
+
+      begin
+        db.execute(
+        "SELECT id FROM statistics
+         WHERE source_name=?", uri)
+      rescue
+        db.execute(
+        "INSERT INTO statistics (source_name, hash)
+         VALUES (?, ?)", [uri, content_hash])
+      end
+
+      id = db.execute(
+      "SELECT id FROM statistics
+       WHERE source_name=?", uri)
+
+      @word_counts.each do |key, value|
+        db.execute("INSERT INTO word_counts (statistics_id, word, count)
+                    VALUES (?, ?, ?)", [id, key, value])
+      end
+
+      db.execute("INSERT INTO word_counts (statistics_id, word, count)
+                  VALUES (?, ?, ?)", [id, "$marks$", @marks_count])
     end
 
     def to_xml
@@ -72,9 +126,11 @@ module WordCounter
     end
 
     private
+
     def get_rekt(width, height, x_pos) #lol
       '<rect x="' + x_pos.to_s + '" y="200" width="' + width.to_s + '" height="' + height.to_s + '" stroke="red" fill="black" />' + "\n"
     end
+
     def get_text(x, y, text)
       x += 3
       '<text fill="green" x="' + x.to_s + '" y="' + y.to_s + '" font-family="Verdana" font-size="10"
