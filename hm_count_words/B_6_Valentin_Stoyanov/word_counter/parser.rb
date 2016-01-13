@@ -1,7 +1,10 @@
+require 'digest'
+
 module WordCounter
 	class Parser
 		def parse(string)
-			result = Result.new
+			#@digest = Digest::SHA256.digest string
+			result = Result.new 
 			result.marks_count = string.scrub.scan(/[[:punct:]+_=#><@'$%"&*]/).count
 		 	result.marks_count += string.scrub.scan("[/\]").count
 			string = string.gsub("_", ' ')
