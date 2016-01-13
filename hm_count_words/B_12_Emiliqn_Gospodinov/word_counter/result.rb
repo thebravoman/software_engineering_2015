@@ -19,9 +19,6 @@ class Result
 		if marks_counter!=0
 			puts '"marks",'+"#{@marks_counter}"
 		end
-		CSV.open("result.csv", "w") do |csv|
-			@word_counter.each {|element| csv << element}
-		end
 	end
 
 	def to_json
