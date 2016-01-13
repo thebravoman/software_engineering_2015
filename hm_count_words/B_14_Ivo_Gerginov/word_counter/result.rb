@@ -12,18 +12,25 @@ class Result
   end
 
   def toDB
-    db = SQLite3::Database.new "result.db"
-    db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,source_name TEXT, hash TEXT);"
-    db.execute "CREATE TABLE IF NOT EXISTS wordCounts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,word TEXT, count INT);"
-    db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [@name, @words]
-    @words.each{ |value, key|
-     db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [value,key]
-    }
-    db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@marks]
+    if(File.exist?("./B_14_Ivo_Gerginov.db") == false)
+      db  = SQLite3::Database.new("B_21_Martin_Galabov.db")
+    else
+      db = SQLite3::Database.open("B_21_Martin_Galabov.db")
+    end
+    db.execute('create table if not exists statistics(ID INTEGER PRIMARY KEY AUTOINCREMENT, source_name, hash)')
+    db.execute('create table if not exists word_counts(static_id, word,occurences)')
+    xdg = Digest::SHA256.file ARGV.first
+    xdg.hexdigest
+    db.execute('insert into statistics(source_name, hash) values (?, ?)', @name, @words)
+    id = db.execute("select last_insert_rowid();")
+    word_counter.each do |key, value|
+      db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)', id, key, value)
+    end
+        db.execute('insert into word_counts (static_id, word, occurences) values (?, $marks$, ?)', id, marks_counter)
+        db.close
   end
 
   def toCSV
-    toDB
     CSV.open('result.csv', 'w', {quote_char: " "}) do |csv|
   	  @words.sort_by{|key, value|[-value, key]}.each{ |e|
   		  csv << [e[0],e[1]]
@@ -33,7 +40,6 @@ class Result
   end
 
   def toJSON
-    toDB
     hash = {
       "marks" => @marks.to_s,
       "words" => Hash[@words.sort_by{|key, value|[-value, key]}],
@@ -44,7 +50,6 @@ class Result
   end
 
   def toXML
-    toDB
   	xhash = Hash.new()
     xhash = Hash[@words.sort_by{|key, value|[-value, key]}]
     xfile = REXML::Document.new()
