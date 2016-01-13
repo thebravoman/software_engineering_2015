@@ -18,9 +18,9 @@ class Result
 	end
 	def to_db
 		if(File.exist?("./B_21_Martin_Galabov.db") == false)
-		db  = SQLite3::Database.new("B_21_Martin_Galabov.db")
+			db  = SQLite3::Database.new("B_21_Martin_Galabov.db")
 		else
-		db = SQLite3::Database.open("B_21_Martin_Galabov.db")
+			db = SQLite3::Database.open("B_21_Martin_Galabov.db")
 		end
 		db.execute('create table if not exists statistics(ID INTEGER PRIMARY KEY AUTOINCREMENT,
 		source_name, hash)')
@@ -31,13 +31,12 @@ class Result
 		db.execute('insert into statistics(source_name, hash) values (?, ?)',ARGV.first, xdg.to_s)
 		stid = db.execute("select last_insert_rowid();")
 		word_counter.each do |key, value|
-		db.execute(
-    'insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
-    stid,key, value)
-    end
-    db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
-    stid, "\"marks\"", marks_counter)
-    db.close
+			db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
+    			stid,key, value)
+		end
+    		db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
+    		stid, "\"marks\"", marks_counter)
+    		db.close
 	end
 	def to_csv
 		word_counter.each do |key,value| 
