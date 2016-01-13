@@ -17,6 +17,7 @@ module WordCounter
 			res.marks_count = sum
 			res.to_csv
 			res.svg
+			res.save_in_database path
 		end
 	end
 end

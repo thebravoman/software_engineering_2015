@@ -20,6 +20,8 @@ if command == 'json'
 result.to_json
 elsif command == 'xml' 
 result.to_xml
-elsif
+elsif command == 'csv'
 result.to_csv
+elsif
+result.to_db
 end
