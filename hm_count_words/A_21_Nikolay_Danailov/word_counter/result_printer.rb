@@ -39,7 +39,7 @@ def get_result_from_db(db)
     end
   end
 
-  # return nil if there table is empty
+  # return nil if the table is empty
   if tmp.word_counts.size > 0 && tmp.marks_count != 0
     tmp
   else
