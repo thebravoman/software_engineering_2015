@@ -30,4 +30,4 @@ else
   output = result.to_csv
 end
 
-result.to_db(uri, "asdf")
+result.to_db(uri)

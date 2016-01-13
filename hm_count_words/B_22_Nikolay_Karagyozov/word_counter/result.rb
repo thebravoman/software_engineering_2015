@@ -5,9 +5,10 @@ require 'sqlite3'
 
 module WordCounter
   class Result
-    def initialize(word_list, marks_count)
+    def initialize(word_list, marks_count, digest)
       @word_counts = word_list
       @marks_count = marks_count
+      @digest = digest
     end
 
     def to_csv
@@ -36,7 +37,7 @@ module WordCounter
       end
     end
 
-    def to_db(uri, content_hash)
+    def to_db(uri)
       db = SQLite3::Database.new("B_22_Nikolay_Karagyozov.db")
 
       db.execute(
@@ -57,7 +58,7 @@ module WordCounter
       begin
         cached_id = db.execute(
         "SELECT id FROM statistics
-         WHERE hash=?", content_hash)
+         WHERE hash=?", @digest)
       rescue
       end
 
