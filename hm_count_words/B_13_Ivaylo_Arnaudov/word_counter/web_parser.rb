@@ -33,7 +33,7 @@ module WordCounter
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
       contents_hash = Digest::SHA256.hexdigest(sanitized_content)
       result = Result.new(sorted_words, total_marks_count)
-      Data.save(url, contents_hash, result)
+      Data.save(url.to_s, contents_hash, result)
       return result
     end
   end
