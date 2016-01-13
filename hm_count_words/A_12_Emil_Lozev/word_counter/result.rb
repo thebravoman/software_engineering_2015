@@ -1,13 +1,15 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
+require 'sqlite3'
 
 class Result
 	attr_accessor :marks_count, :word_counts
 	
-	def initialize
+	def initialize 
 		@marks_count = 0
 		@word_counts = Hash.new
+		#@filename = filename
 	end
 	
 	def to_csv
@@ -18,6 +20,7 @@ class Result
 		if marks_count != 0	
 			puts "\"marks\",#{@marks_count}"
 		end	
+		to_db
 	end
 	
 	def to_json
@@ -26,10 +29,26 @@ class Result
 		"words" => @word_counts,
 	}
 		puts JSON.pretty_generate(hash)
+		to_db
 	end
 	
+	 def to_db
+     
+      db = SQLite3::Database.new "A_12_Emil_Lozev.db"
+      db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_name TEXT, hash TEXT);"
+      db.execute "CREATE TABLE IF NOT EXISTS word_counts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      word TEXT, count INT);"
+      db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [$filename]
+      @word_counts.each do |word, i|
+       db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [word,i]
+      end
+      db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@marks_count]
+    
+    end
+
 	def to_xml
-	
+		to_db
 		xml = Builder::XmlMarkup.new(:indent => 2)
 		xml.tag!("word-counts"){
 	  	xml.marks @marks_count.to_s
@@ -41,6 +60,7 @@ class Result
 		}
 		
 	end
+
 
 	def graph(size,x,y)
 		'<rect width="40" height="' + (size * 10).to_s + '" x="' + x.to_s + '" y="' + (y - (size * 10)).to_s+ '" style="fill:rgb(0,255,128);stroke-width:3;stroke:rgb(0,0,0)"/>'
