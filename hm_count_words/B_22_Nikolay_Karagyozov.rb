@@ -29,3 +29,5 @@ when 'svg'
 else
   output = result.to_csv
 end
+
+result.to_db(uri)

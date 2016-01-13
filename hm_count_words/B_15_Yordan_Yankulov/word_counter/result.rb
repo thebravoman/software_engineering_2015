@@ -1,13 +1,27 @@
 require 'json'
 require 'rexml/document'
 require 'csv'
+require 'sqlite3'
+require_relative 'file_parser'
 module WordCounter
-  class Result
+  class Result < FileParser
 
     def initialize punct, helpe, a
       @punctuation = punct
       @help = helpe
       @a = a
+    end
+    def to_db
+      db = SQLite3::Database.new "B_15_Yordan_Yankulov.db"
+      db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_name TEXT, hash TEXT);"
+      db.execute "CREATE TABLE IF NOT EXISTS word_counts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      word TEXT, count INT);"
+      db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [$a]
+      @help.each{ |element|
+       db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [element[0],element[1]]
+    	}
+      db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@punctuation]
     end
     def rectange element, foo, foo1
       '<rect x="150" y="'+(foo-15).to_s+'" width="'+foo1.to_s+'" height="'+20.to_s+'" style="fill:blue;stroke:darkblue;stroke-width:1;stroke-opacity:0.9" />'
@@ -16,6 +30,7 @@ module WordCounter
       '<text x="1" y="'+foo.to_s+'" fill="black">'+element.to_s+'</text>'
     end
   	def to_csv
+      to_db
       @help.each{ |element|
     	   puts "#{element[0]},#{element[1]}"
     	}
@@ -25,6 +40,7 @@ module WordCounter
   	end
 
   	def to_json
+      to_db
     	if @punctuation != 0
     		puts JSON.pretty_generate("marks" => @punctuation,"words" => @help)
     	else
@@ -33,6 +49,7 @@ module WordCounter
   	end
 
   	def to_xml
+      to_db
   		my_xml = REXML::Document.new('')
   		word_counts = my_xml.add_element('word-counts')
   		if @punctuation != 0
@@ -49,6 +66,7 @@ module WordCounter
   	end
 
     def to_svg
+      to_db
       File.open("B_15_Yordan_Yankulov.svg","w") do |f|
         f.write('<svg xmlns="http://www.w3.org/2000/svg">')
         foo = 30
@@ -68,7 +86,7 @@ module WordCounter
           element_remember = element[1]
         }
         f.write('</svg>')
+      end
     end
-  end
   end
 end

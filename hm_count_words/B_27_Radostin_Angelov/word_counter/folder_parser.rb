@@ -3,12 +3,12 @@ module WordCounter
 		def initialize
 			@content = ""
 		end
-		
+
 		def parse(path)
 			read_all_files(path)
-			super(@content)
+			super(@content, path)
 		end
-		
+
 		def read_all_files path
 			Dir.foreach(path) do |item|
 				current_item = path + '/' + item

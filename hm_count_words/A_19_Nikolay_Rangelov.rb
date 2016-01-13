@@ -1,4 +1,5 @@
-require_relative './A_19_Nikolay_Rangelov/word_counter'
+require 'A_19_Nikolay_Rangelov/word_counter.rb'
+require 'A_19_Nikolay_Rangelov/db_connector.rb'
 
 def dir file_name
 	s_parse = ""
@@ -64,3 +65,5 @@ if out_format=="svg"
 else
 	puts result.to_csv
 end
+
+DB.db_connector(ARGV[0].to_s, result)

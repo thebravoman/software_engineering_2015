@@ -1,4 +1,6 @@
 module WordCounter
+  require 'digest'
+
   class Parser
     def parse(string)
       word_list = Hash.new(0)
@@ -12,7 +14,8 @@ module WordCounter
 
       marks_count = marks.inject(:+)
 
-      Result.new(sorted_list, marks_count)
+      digest = Digest::SHA256.digest(string)
+      Result.new(sorted_list, marks_count, digest)
     end
   end
 end
