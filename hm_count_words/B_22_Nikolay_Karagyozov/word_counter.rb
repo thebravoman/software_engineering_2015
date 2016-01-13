@@ -3,6 +3,8 @@ require_relative './word_counter/parser'
 require_relative './word_counter/file_parser'
 require_relative './word_counter/webpage_parser'
 require_relative './word_counter/folder_parser'
+require_relative './word_counter/database'
+require_relative './word_counter/queries'
 
 module WordCounter
   def self.parse(text)

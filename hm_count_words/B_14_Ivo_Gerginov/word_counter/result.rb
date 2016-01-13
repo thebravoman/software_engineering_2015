@@ -1,15 +1,29 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
+require 'sqlite3'
 
 class Result
 
-  def initialize(marks, hash)
+  def initialize(marks, hash, fPath)
   	@marks = marks
   	@words = hash
+    @name = fPath
+  end
+
+  def toDB
+    db = SQLite3::Database.new "result.db"
+    db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,source_name TEXT, hash TEXT);"
+    db.execute "CREATE TABLE IF NOT EXISTS wordCounts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,word TEXT, count INT);"
+    db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [@name, @words]
+    @words.each{ |value, key|
+     db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [value,key]
+    }
+    db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@marks]
   end
 
   def toCSV
+    toDB
     CSV.open('result.csv', 'w', {quote_char: " "}) do |csv|
   	  @words.sort_by{|key, value|[-value, key]}.each{ |e|
   		  csv << [e[0],e[1]]
@@ -19,6 +33,7 @@ class Result
   end
 
   def toJSON
+    toDB
     hash = {
       "marks" => @marks.to_s,
       "words" => Hash[@words.sort_by{|key, value|[-value, key]}],
@@ -29,6 +44,7 @@ class Result
   end
 
   def toXML
+    toDB
   	xhash = Hash.new()
     xhash = Hash[@words.sort_by{|key, value|[-value, key]}]
     xfile = REXML::Document.new()

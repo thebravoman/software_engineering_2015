@@ -1,10 +1,13 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
+require 'sqlite3'
 
 module WordCounter
+
   class Result
-    attr_accessor :marks_count, :word_counts
+
+    attr_accessor :word_counts, :marks_count
 
     def initialize(word_list, marks_count)
       @word_counts = word_list
@@ -72,9 +75,11 @@ module WordCounter
     end
 
     private
+
     def get_rekt(width, height, x_pos) #lol
       '<rect x="' + x_pos.to_s + '" y="200" width="' + width.to_s + '" height="' + height.to_s + '" stroke="red" fill="black" />' + "\n"
     end
+
     def get_text(x, y, text)
       x += 3
       '<text fill="green" x="' + x.to_s + '" y="' + y.to_s + '" font-family="Verdana" font-size="10"
