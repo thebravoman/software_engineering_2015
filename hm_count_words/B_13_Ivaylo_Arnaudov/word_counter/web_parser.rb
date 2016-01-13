@@ -1,8 +1,10 @@
 require_relative 'parser'
+require_relative 'data'
 
 require 'net/http'
 require 'sanitize'
 require 'openssl'
+require 'digest'
 
 module WordCounter
   class WebpageParser < Parser
@@ -29,7 +31,10 @@ module WordCounter
       end
 
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
-      Result.new(sorted_words, total_marks_count)
+      contents_hash = Digest::SHA256.hexdigest(sanitized_content)
+      result = Result.new(sorted_words, total_marks_count)
+      Data.save(url.to_s, contents_hash, result)
+      return result
     end
   end
 end

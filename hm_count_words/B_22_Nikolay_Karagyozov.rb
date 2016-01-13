@@ -6,6 +6,8 @@ ARGV.each { |arg| is_folder = true if arg == "-d" }
 uri = ARGV[is_folder ? 1 : 0]
 format = ARGV[is_folder ? 2 : 1]
 
+WordCounter::LocalData.setup_database("B_22_Nikolay_Karagyozov.db")
+
 result = ''
 if (is_folder)
   folder = ARGV[1]
@@ -29,5 +31,3 @@ when 'svg'
 else
   output = result.to_csv
 end
-
-result.to_db(uri)
