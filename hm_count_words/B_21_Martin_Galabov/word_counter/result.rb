@@ -1,6 +1,8 @@
 require 'json'
 require 'csv'
 require 'rexml/document'
+require 'sqlite3'
+require 'digest'
 module WordCounter
 class Result
 	attr_reader :word_counter, :marks_counter
@@ -12,7 +14,30 @@ class Result
 		puts marks_counter
 	end
 	def word_counts
-		word_counts = word_counter
+		puts word_counter
+	end
+	def to_db
+		if(File.exist?("./B_21_Martin_Galabov.db") == false)
+		db  = SQLite3::Database.new("B_21_Martin_Galabov.db")
+		else
+		db = SQLite3::Database.open("B_21_Martin_Galabov.db")
+		end
+		db.execute('create table if not exists statistics(ID INTEGER PRIMARY KEY AUTOINCREMENT,
+		source_name, hash)')
+		db.execute('create table if not exists word_counts(static_id,
+		word,occurences)')
+		xdg = Digest::SHA256.file ARGV.first
+		xdg.hexdigest
+		db.execute('insert into statistics(source_name, hash) values (?, ?)',ARGV.first, xdg.to_s)
+		stid = db.execute("select last_insert_rowid();")
+		word_counter.each do |key, value|
+		db.execute(
+    'insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
+    stid,key, value)
+    end
+    db.execute('insert into word_counts (static_id, word, occurences) values (?, ?, ?)',
+    stid, "\"marks\"", marks_counter)
+    db.close
 	end
 	def to_csv
 		word_counter.each do |key,value| 
