@@ -1,9 +1,10 @@
 module WordCounter
 	
-	require 'sqlite3'
 	require 'json'
-  	require 'rexml/document'
+	require 'digest'
+	require 'sqlite3'
   	require 'stringio'
+  	require 'rexml/document'
 
   	class Result
 
@@ -22,13 +23,14 @@ module WordCounter
   		#	marks_count += res2.marks_count
 		#end
 
-		def save_to_database
+		def save_to_database(filename)
 			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
 			db.results_as_hash = true
+			
 			 
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS statistics (
-					id int,
+					id int primary key autoincrement,
 					source_name string,
 					hash string
 				);
@@ -41,15 +43,17 @@ module WordCounter
 				);
 			SQL
 			
+			hash = Digest::SHA256.file(filename).hexdigest
+			db.execute "INSERT INTO statistics (source_name, hash) VALUES(?, ?)", source_name, hash 
 			tempt = WordCounter::Result.new({},0)
-			db.execute "SELECT word, count FROM word_counts" do |row|
-				db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
-				if row["word"] == '$marks$'
+			#db.execute "SELECT word, count FROM word_counts" do |row|
+			#	db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
+			#	if row["word"] == '$marks$'
 					#tempt.marks_count = row["count"]
-				else
-					tempt.word_counts[row["word"].to_s] = row["count"]
-				end
-			end
+			#	else
+			#		tempt.word_counts[row["word"].to_s] = row["count"]
+			#	end
+			#end
 			#merge_results(tempt) if tempt.word_counts.size > 0
 				
 			word_counts.each do |word, count|
@@ -57,7 +61,7 @@ module WordCounter
 			end		
 			
 			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, 'marks', marks_count
-		end				
+ 			end				
 
 		def add_text x, y, word
 			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="black">'+word.to_s+'</text>'
