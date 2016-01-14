@@ -1,6 +1,4 @@
-require 'json'
-require 'csv'
-require 'rexml/document'
+
 require './A_22_Pavel_Kostadinov/word_counter.rb'
 require_relative './A_22_Pavel_Kostadinov/word_counter/result'
 filename = ARGV[0]

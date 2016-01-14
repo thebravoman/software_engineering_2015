@@ -1,32 +1,77 @@
-require 'csv'
-require 'json'
-require 'rexml/document'
+require 'word_counter'
+require 'sqlite3'
 
-file_path = ARGV[0] || "text.txt"
-WORDS_COUNT = {}
-file = File.open(file_path, "r")
+input = ARGV[0]
+input2 = ARGV[1]
+input3 = ARGV[2]
 
-marks = 0
-
-file.each_line do |line|
-  words = line.downcase.split(" ")
-  words.each do |word|
-	marks = marks + word.scan(/[  (){}.,|\1234567890="'*&^%$#@!?;:  ]/).count
-    word = word.gsub(/[  (){}.,|\1234567890="'+-_*&^%$#@!?;:  ]/,'')
-    if (word != "")
-		if WORDS_COUNT[word]
-		  WORDS_COUNT[word] += 1
-		else
-		  WORDS_COUNT[word] = 1
-		end
+def make_database result
+	db = SQLite3::Database.new 'A_26_Teodor_Dobrev.db'
+	
+	db.execute <<-SQL
+	  CREATE TABLE IF NOT EXISTS statistics (
+	  	id integer primary key autoincrement, 
+	  	source_name string, 
+	  	hash string
+	  );
+	SQL
+	
+	db.execute <<-SQL
+	  CREATE TABLE IF NOT EXISTS word_counts (
+	  	statistic_id int,
+	  	word string,
+	  	count int
+	  );
+	SQL
+	
+	result.word_counts.each do |key, value|
+	  db.execute "INSERT INTO word_counts VALUES ('#{nil}','#{key}','#{value}');"
 	end
+	
+	db.execute "INSERT INTO word_counts VALUES ('#{nil}',$marks$,'#{result.marks_count}');"
+end
+
+def dir_process input
+  str_parse = ""
+  Dir["#{input}/**/*.*"].each do |f|
+    if !(f.include? "~")
+      file_contents = File.read("#{f}", col_sep: "$", encoding: "ISO8859-1:utf-8")		
+      file_contents.each_line.each do |line|
+        str_parse << line.to_s
+      end
+    end
+  end
+  str_parse
+end
+
+if(input.start_with?('http://') || input.start_with?('https://'))
+  result = WordCounter.parse_webpage(input)
+elsif File.file? input
+  result = WordCounter.parse_file(input)
+elsif input == "-d"
+  result = WordCounter.parse (dir_process input2)
+else
+  result = WordCounter.parse input
+end
+
+if(input != "-d")
+  if(input2 == "json")
+	puts result.to_json
+  elsif(input2 == "xml")
+    puts result.to_xml
+  else
+    result.to_csv
+  end
+else
+  if(input3 == "json")
+   puts result.to_json
+  elsif(input3 == "xml")
+    puts result.to_xml
+  else
+    result.to_csv
   end
 end
 
-WORDS_COUNT = WORDS_COUNT.sort_by {|key, value| [-value, key]}
+make_database result
 
-WORDS_COUNT.each do |key,value|
-  puts "#{key} => #{value}"
-end
-
-puts "\"marks\",#{marks}" if (marks != 0)
+result.make_svg
