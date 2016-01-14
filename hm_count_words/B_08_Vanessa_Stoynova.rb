@@ -6,7 +6,6 @@ if filename.start_with?("https://") || filename.start_with?("http://")
 	result = WordCounter.parse_webpage(filename)
 	file_format = ARGV[1]
 elsif ARGV[0] == "-d"
-
 	folder = ARGV[1]
 	file_format = ARGV[2]
 	result = WordCounter.parse_folder(folder)

@@ -4,7 +4,8 @@ module WordCounter
 	class FileParser < Parser
 		def parse(file)
 			nikito = WordCounter::Result.get_result_IF_parsed(file)
-			if nikito.word_counts.size == 0 && nikito.marks_count == 0
+			
+			if nikito.nil?
 				words = Hash.new(0)
 				max_marks = 0
 			
@@ -22,7 +23,7 @@ module WordCounter
 				temp.save_to_database(file)
 				
 				temp
-			else 
+			else
 				nikito
 			end
 		end
