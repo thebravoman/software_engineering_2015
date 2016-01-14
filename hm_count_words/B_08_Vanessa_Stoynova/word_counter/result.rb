@@ -30,21 +30,21 @@ module WordCounter
 			 
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS statistics (
-					id int primary key autoincrement,
+					id integer primary key autoincrement,
 					source_name string,
 					hash string
 				);
 			SQL
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS word_counts (
-					statistics_id int,
+					statistics_id integer,
 					word string,
-					count int
+					count integer
 				);
 			SQL
 			
 			hash = Digest::SHA256.file(filename).hexdigest
-			db.execute "INSERT INTO statistics (source_name, hash) VALUES(?, ?)", source_name, hash 
+			db.execute "INSERT INTO statistics (source_name, hash) VALUES(?, ?)", filename, hash 
 			tempt = WordCounter::Result.new({},0)
 			#db.execute "SELECT word, count FROM word_counts" do |row|
 			#	db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
@@ -55,12 +55,12 @@ module WordCounter
 			#	end
 			#end
 			#merge_results(tempt) if tempt.word_counts.size > 0
-				
+			id = db.execute "SELECT id FROM statistics WHERE hash =?", hash
 			word_counts.each do |word, count|
-				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, word, count
+				db.execute "INSERT INTO 'word_counts' VALUES('?', '?', '?');", id, word, count
 			end		
 			
-			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, 'marks', marks_count
+			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", id, '$marks$', marks_count
  			end				
 
 		def add_text x, y, word

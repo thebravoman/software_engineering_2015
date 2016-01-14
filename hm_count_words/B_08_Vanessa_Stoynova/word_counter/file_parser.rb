@@ -16,7 +16,9 @@ module WordCounter
 			end
 			
 			sorted_words = words.sort_by { |word, occurence| [-occurence, word]}
-			Result.new(sorted_words, max_marks)
+			temp = Result.new(sorted_words, max_marks)
+			temp.save_to_database(file)
+			temp
 		end
 	end
 end 
