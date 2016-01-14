@@ -21,4 +21,3 @@ else
   result.to_csv
 end
 result.to_svg
-result.to_db
