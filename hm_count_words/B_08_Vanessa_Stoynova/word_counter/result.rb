@@ -25,9 +25,6 @@ module WordCounter
 
 		def save_to_database(filename)
 			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
-			db.results_as_hash = true
-			
-			 
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS statistics (
 					id integer primary key autoincrement,
@@ -45,7 +42,8 @@ module WordCounter
 			
 			hash = Digest::SHA256.file(filename).hexdigest
 			db.execute "INSERT INTO statistics (source_name, hash) VALUES(?, ?)", filename, hash 
-			tempt = WordCounter::Result.new({},0)
+			tempt = WordCounter::Result.new({}, 0)
+			
 			#db.execute "SELECT word, count FROM word_counts" do |row|
 			#	db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
 			#	if row["word"] == '$marks$'
@@ -57,7 +55,7 @@ module WordCounter
 			#merge_results(tempt) if tempt.word_counts.size > 0
 			id = db.execute "SELECT id FROM statistics WHERE hash =?", hash
 			word_counts.each do |word, count|
-				db.execute "INSERT INTO 'word_counts' VALUES('?', '?', '?');", id, word, count
+				db.execute "INSERT INTO 'word_counts' VALUES(?, ?, ?);", id, word, count
 			end		
 			
 			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", id, '$marks$', marks_count
