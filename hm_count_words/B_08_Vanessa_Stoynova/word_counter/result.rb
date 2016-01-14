@@ -25,6 +25,7 @@ module WordCounter
 
 		def save_to_database(filename)
 			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
+			
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS statistics (
 					id integer primary key autoincrement,
@@ -53,9 +54,12 @@ module WordCounter
 			#	end
 			#end
 			#merge_results(tempt) if tempt.word_counts.size > 0
-			id = db.execute "SELECT id FROM statistics WHERE hash =?", hash
+			
+      			# I get the 0-th element because the it returns an array with all matches
+      			id = db.execute("SELECT id FROM statistics WHERE hash=?", hash)[0]
+
 			word_counts.each do |word, count|
-				db.execute "INSERT INTO 'word_counts' VALUES(?, ?, ?);", id, word, count
+				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", id, word, count
 			end		
 			
 			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", id, '$marks$', marks_count
