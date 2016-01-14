@@ -3,6 +3,9 @@ module WordCounter
 
   class Parser
     def parse(string)
+      result = LocalData::get_cached_data(string)
+      return result if !result.nil?
+
       word_list = Hash.new(0)
       marks = []
 
@@ -14,8 +17,10 @@ module WordCounter
 
       marks_count = marks.inject(:+)
 
-      digest = Digest::SHA256.digest(string)
-      Result.new(sorted_list, marks_count, digest)
+      end_result = Result.new(sorted_list, marks_count)
+      LocalData::save(end_result)
+
+      return end_result
     end
   end
 end

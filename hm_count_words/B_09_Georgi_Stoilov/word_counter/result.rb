@@ -9,21 +9,23 @@ class Result
   def initialize(marks, words)
     @marks = marks
     @word_counter = words
-    #to_csv
   end
 
   def to_csv
-    @word_counter.each do |key, value|
-      puts "#{key},#{value}"
+    CSV.open('result_Georgi_Stoilov.csv', 'a+', {quote_char: " "}) do |csv|
+  	  @word_counter.sort_by{|key, value|[-value, key]}.each{ |element|
+  		  csv << [element[0],element[1]]
+  	  }
+  	  csv << ['"$marks$"', @marks]
     end
-	  if @marks != 0
-			puts "\"marks\",#{@marks}"
-		end
 	end
 
   def to_json
     json = { 'marks' => @marks, 'words' => @word_counter }
-    puts JSON.pretty_generate(json)
+    File.open('result_Georgi_Stoilov.json', 'a+') do |file|
+      file << JSON.pretty_generate(json)
+    end
+    #puts JSON.pretty_generate(json)
   end
 
   def to_xml
@@ -36,7 +38,8 @@ class Result
       words.add_element('word','count' => value).add_text "#{key}"
     end
     formatter.compact = true
-    formatter.write(my_xml, $stdout)
-    puts
+    File.open('result_Georgi_Stoilov.xml', 'a+') do |f|
+      formatter.write(my_xml, f)
+    end
   end
 end

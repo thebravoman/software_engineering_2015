@@ -2,6 +2,7 @@ require 'json'
 require 'rexml/document'
 require 'csv'
 require 'sqlite3'
+require 'digest'
 require_relative 'file_parser'
 module WordCounter
   class Result < FileParser
@@ -12,16 +13,26 @@ module WordCounter
       @a = a
     end
     def to_db
-      db = SQLite3::Database.new "B_15_Yordan_Yankulov.db"
-      db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
-      source_name TEXT, hash TEXT);"
-      db.execute "CREATE TABLE IF NOT EXISTS word_counts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,
-      word TEXT, count INT);"
-      db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [$a]
+      if(File.exist?("./B_15_Yordan_Yankulov.db") !=  true)
+  			db  = SQLite3::Database.new("B_15_Yordan_Yankulov.db")
+  		else
+  			db = SQLite3::Database.open("B_15_Yordan_Yankulov.db")
+  		end
+      db.execute "create table if not exists statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_name  string, hash string);"
+      db.execute "create table if not exists word_counts(statistic_id int, word string, count string);"
+      xdg = Digest::SHA256.file $a
+      xdg.hexdigest
+      db.execute "insert into statistics(source_name, hash) values(?,?);", [$a,xdg.to_s]
+      stat_id = db.last_insert_row_id 
       @help.each{ |element|
-       db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [element[0],element[1]]
+        db.execute "insert into word_counts(statistic_id, word, count) values(?,?,?);", [stat_id,element[0],element[1]]
     	}
-      db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@punctuation]
+      db.execute "insert into word_counts(statistic_id, word, count) values(?,'$marks$',?);", [stat_id,@punctuation]
+    rescue SQLite3::Exception => e
+
+      puts "Exception occurred"
+      puts e
     end
     def rectange element, foo, foo1
       '<rect x="150" y="'+(foo-15).to_s+'" width="'+foo1.to_s+'" height="'+20.to_s+'" style="fill:blue;stroke:darkblue;stroke-width:1;stroke-opacity:0.9" />'

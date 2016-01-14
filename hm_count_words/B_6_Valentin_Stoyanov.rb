@@ -24,5 +24,8 @@ unless dir
 		result.to_csv
 	end
 	result.svg
+	result.save_in_database @input
 end
+
+
 

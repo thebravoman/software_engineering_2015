@@ -1,4 +1,5 @@
 module WordCounter
+  require './B_25_Petyo_Cvetkov/count_words/make_db'
   class Result
 
     attr_accessor :marks_count
@@ -6,6 +7,7 @@ module WordCounter
     def initialize
       @marks_count = 0
       @word_counts = Hash.new 0
+      @indentifier = ARGV[0]
     end
     def to_csv
       word_counts.each do |word,i|
@@ -35,4 +37,9 @@ module WordCounter
       return out
     end
   end
+  def save_db
+    db = Make_db.new
+    db.save(@indentifier,@word_counts,@marks_count)
+  end
+
 end
