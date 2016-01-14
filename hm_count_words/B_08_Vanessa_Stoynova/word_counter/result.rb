@@ -16,11 +16,11 @@ module WordCounter
       			@marks_count = marks_count
     		end
 
-		def merge_results(res2)
-  			word_counts.merge!(res2.word_counts.to_h) { |_, oldval, newval| newval + oldval }
-  			word_counts = word_counts.sort_by { |word, count| [-count, word] }.to_h
-  			marks_count += res2.marks_count
-		end
+		#def merge_results(res2)
+  		#	word_counts.merge!(res2.word_counts.to_h) { |_, oldval, newval| newval + oldval }
+  		#	word_counts = word_counts.sort_by { |word, count| [-count, word] }.to_h
+  		#	marks_count += res2.marks_count
+		#end
 
 		def save_to_database
 			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
@@ -43,14 +43,14 @@ module WordCounter
 			
 			tempt = WordCounter::Result.new({},0)
 			db.execute "SELECT word, count FROM word_counts" do |row|
-				db.execute "DELETE FROM word_counts WHERE word=?", row["word"]
+				db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
 				if row["word"] == '$marks$'
-					tempt.marks_count = row["count"]
+					#tempt.marks_count = row["count"]
 				else
 					tempt.word_counts[row["word"].to_s] = row["count"]
 				end
 			end
-			merge_results(tempt) if tempt.word_counts.size > 0
+			#merge_results(tempt) if tempt.word_counts.size > 0
 				
 			word_counts.each do |word, count|
 				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, word, count
