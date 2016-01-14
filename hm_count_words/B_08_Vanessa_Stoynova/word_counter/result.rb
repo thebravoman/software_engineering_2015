@@ -10,13 +10,37 @@ module WordCounter
 
   		BAR_WIDTH = 20
 		
-    		attr_reader :word_counts, :marks_count
+    		attr_accessor :word_counts, :marks_count
 
     		def initialize(word_counts, marks_count)
       			@word_counts = word_counts
       			@marks_count = marks_count
     		end
+		
+		def self.get_result_IF_parsed(filename)
+		
+			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
+			db.results_as_hash = true
+			db_exists = db.execute "SELECT sql FROM sqlite_master WHERE type='table' AND name='statistics'"
+  			return nil if db_exists.size == 0 # stop if table doesn't exist
 
+			hash = Digest::SHA256.file(filename).hexdigest
+			id = db.execute "SELECT id FROM statistics WHERE hash=?", hash
+			if id.size == 0
+				return
+			else
+				id = id[0]["id"]
+			end
+			tempt = WordCounter::Result.new({}, 0)
+			db.execute("SELECT word, count FROM word_counts WHERE statistics_id =?", id) do |row|
+				if row["word"] == '$marks$'
+					tempt.marks_count = row["count"]
+				else
+					tempt.word_counts[row["word"].to_s] = row["count"]
+				end
+			end
+			tempt
+		end
 		#def merge_results(res2)
   		#	word_counts.merge!(res2.word_counts.to_h) { |_, oldval, newval| newval + oldval }
   		#	word_counts = word_counts.sort_by { |word, count| [-count, word] }.to_h
@@ -44,19 +68,11 @@ module WordCounter
 			hash = Digest::SHA256.file(filename).hexdigest
 			db.execute "INSERT INTO statistics (source_name, hash) VALUES(?, ?)", filename, hash 
 			tempt = WordCounter::Result.new({}, 0)
-			
-			#db.execute "SELECT word, count FROM word_counts" do |row|
-			#	db.execute "DELETE FROM word_counts WHERE word = ?", row["word"]
-			#	if row["word"] == '$marks$'
-					#tempt.marks_count = row["count"]
-			#	else
-			#		tempt.word_counts[row["word"].to_s] = row["count"]
-			#	end
-			#end
 			#merge_results(tempt) if tempt.word_counts.size > 0
 			
       			# I get the 0-th element because the it returns an array with all matches
       			id = db.execute("SELECT id FROM statistics WHERE hash=?", hash)[0]
+			
 
 			word_counts.each do |word, count|
 				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", id, word, count
@@ -120,7 +136,7 @@ module WordCounter
 
     		def to_svg
     		
-      			max_occur = word_counts[0][1]
+      			max_occur = word_counts.first.last
       			
       			current_x = 10
       			current_y = 100
