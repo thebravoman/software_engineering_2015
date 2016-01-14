@@ -1,5 +1,7 @@
-require 'A_19_Nikolay_Rangelov/word_counter.rb'
-require 'A_19_Nikolay_Rangelov/db_connector.rb'
+#require 'A_19_Nikolay_Rangelov/word_counter.rb'
+#require 'A_19_Nikolay_Rangelov/db_connector.rb'
+require_relative "A_19_Nikolay_Rangelov/word_counter.rb" 
+require_relative "A_19_Nikolay_Rangelov/db_connector.rb" 
 
 def dir file_name
 	s_parse = ""
