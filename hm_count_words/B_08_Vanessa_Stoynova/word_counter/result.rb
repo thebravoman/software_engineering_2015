@@ -45,9 +45,9 @@ module WordCounter
 			db.execute "SELECT word, count FROM word_counts" do |row|
 				db.execute "DELETE FROM word_counts WHERE word=?", row["word"]
 				if row["word"] == '$marks$'
-					rempt.marks_count = row["count"]
+					tempt.marks_count = row["count"]
 				else
-					tmpt.word_counts[row["word"].to_s] = row["count"]
+					tempt.word_counts[row["word"].to_s] = row["count"]
 				end
 			end
 			merge_results(tempt) if tempt.word_counts.size > 0
