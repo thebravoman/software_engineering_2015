@@ -56,7 +56,7 @@ module WordCounter
 				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, word, count
 			end		
 			
-			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, '$marks$', marks_count
+			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, 'marks', marks_count
 		end				
 
 		def add_text x, y, word
