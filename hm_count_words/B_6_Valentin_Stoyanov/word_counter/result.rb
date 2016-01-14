@@ -1,26 +1,33 @@
 require 'json'
 require 'rexml/document'
 require 'csv'
+require 'sqlite3'
+require 'digest'
 
 module WordCounter
 	class Result
 		attr_accessor :marks_count
 		attr_accessor :word_counts
+		attr_accessor :digest
 	
 		def initialize
 			@marks_count = 0
-			@word_counts = {}	
+			@word_counts = {}
+			#@digest = ""
 		end
 		
+		private
 		def text(x,y,contents,color)
 			'<text x="'+x.to_s+'" y="'+y.to_s+'" style="writing-mode: tb;" fill="'+color.to_s+'" font-size="20" transform="rotate('+x.to_s+','+y.to_s+')">'+contents+'
        </text>'
 		end
-			
+		
+		private	
 		def rect(x, y, w, h)
 			'<rect x="'+x.to_s+'" y="'+y.to_s+'" width="'+w.to_s+'" height="'+h.to_s+'" style="fill:blue;stroke:black;opacity:0.6;strokewidth:1;"/>'
 		end
-
+		
+		public
 		def svg
 			File.open('B_6_Valentin_Stoyanov.svg', 'w') do |f|
 				ratio = 200.0 / @word_counts.values[0]
@@ -46,6 +53,34 @@ module WordCounter
       end
 		end
 	
+		def save_in_database filename
+			db_file = "B_7_Valentin_Stoyanov.db"
+			unless File.exist? db_file
+				SQLite3::Database.new db_file
+			end
+			
+			my_db = SQLite3::Database.open db_file
+			my_db.execute <<-SQL
+				CREATE TABLE IF NOT EXISTS statistics (
+					id INTEGER PRIMARY KEY,
+					source_name STRING,
+					hash STRING
+				);
+			SQL
+			my_db.execute <<-SQL
+				CREATE TABLE IF NOT EXISTS word_counts (
+					statistic_id INT,
+					word STRING,
+					count INT
+				);
+			SQL
+			digest = Digest::SHA256.digest filename
+			my_db.execute "INSERT INTO statistics VALUES (?, ?, ?)", nil, filename, digest
+			@word_counts.each do |key, val|
+				my_db.execute "INSERT INTO word_counts(statistic_id, word, count) VALUES( ?, ?, ? )", nil, key, val
+			end	
+		end
+
 		def to_json
 			hash = {"marks" => @marks_count, "words" => @word_counts}
 			File.open('result.json', 'w') {|json| json << JSON.pretty_generate(hash)}

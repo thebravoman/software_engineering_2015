@@ -16,6 +16,7 @@ else
 end
 
 result.to_svg
+result.save_to_database
 
 case file_format
 	when 'json'

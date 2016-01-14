@@ -1,5 +1,5 @@
 module WordCounter
-  class SVGGenerator    
+  class SVGGenerator
     private
       def self.rectangle x,y,w,h
         '<rect x="'+x.to_s+'" y="'+y.to_s+'"
@@ -10,28 +10,29 @@ module WordCounter
         '<text x="'+x.to_s+'" y="'+y.to_s+'" fill="black" font-size="10">
         '+text+'
         </text>'
-      end    
-      
+      end
+
     public
       def self.create_graph(words)
         File.open('B_20_Martin_Stanchev.svg', 'w') do |content|
-          content.write('<svg xmlns="http://www.w3.org/2000/svg">')
-          
+          content.write('<svg xmlns="http://www.w3.org/2000/svg" height = "1000" width = "50000">')
+
           width = 50
-          height = 200
-          
+          height = 500
+
           ratio = height / words[0][1].to_f
-          
+
           height += 30
           balance = width
-          
+
           words.each do |index, key|
             key *= ratio
+            
             content.write(rectangle(balance, height - key, width, key))
             content.write(text(balance + 2, height - (key-10), index))
             balance += width
           end
-        
+
         content.write('</svg>')
         end
       end

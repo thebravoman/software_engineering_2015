@@ -1,4 +1,6 @@
-require_relative 'parser.rb'
+require_relative 'parser'
+require_relative 'data'
+require 'digest'
 
 module WordCounter
   class FileParser < Parser
@@ -12,9 +14,11 @@ module WordCounter
           total_marks_count += res.marks_count
         end
       end
-
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
-      Result.new(sorted_words, total_marks_count)
+      file_hash = Digest::SHA256.file(file_path).hexdigest
+      result = Result.new(sorted_words, total_marks_count)
+      Data.save(file_path, file_hash, result)
+      return result
     end
   end
 end

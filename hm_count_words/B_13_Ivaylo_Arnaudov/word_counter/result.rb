@@ -123,4 +123,5 @@ module WordCounter
       "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}'" +
       " x='#{x.to_s}' y='#{y.to_s}' fill='##{color}'/>"
     end
-  end end
+  end
+end

@@ -17,7 +17,7 @@ module WordCounter
   def self.parse_webpage(url)
     WebpageParser.new.parse(url)
   end
-
+  
   def self.parse_directory(path)
     DirectoryParser.new.parse(path)
   end

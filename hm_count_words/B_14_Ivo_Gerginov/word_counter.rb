@@ -3,8 +3,8 @@ require_relative 'word_counter/fileParser'
 require_relative 'word_counter/webParser'
 
 module WordCounter
-  def self.parseStr f_str 
-	Parser.new.parseStr(f_str)
+  def self.parseStr(f_str, fPath) 
+	Parser.new.parseStr(f_str, fPath)
   end
 
   def self.parseFile f_path
