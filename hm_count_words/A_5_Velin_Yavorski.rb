@@ -6,8 +6,10 @@ input = ARGV[0]
 input2 = ARGV[1]
 input3 = ARGV[2]
 
-def make_database (result, input, sha)
+def make_database (result, input)
 	db = SQLite3::Database.new 'A_05_Velin_Yavorski.db'
+	
+	sha256 = Digest::SHA256.new.hexdigest input
 	
 	db.execute <<-SQL
 	  CREATE TABLE IF NOT EXISTS statistics (
@@ -25,13 +27,14 @@ def make_database (result, input, sha)
 	  );
 	SQL
 	
-	db.execute "INSERT INTO statistics(source_name, hash) VALUES ('#{input}','#{sha}');"
-	get_id = db.execute('select id from Statistics where hash=?',sha)
+	db.execute "INSERT INTO statistics(source_name, hash) VALUES ('#{input}','#{sha256}');"
+	get_id = db.execute('select id from Statistics where hash=?',sha256).to_s
+	id = get_id.gsub(/[^\d]/, '').to_i
 	
 	result.word_counts.each do |key, value|
-	  db.execute "INSERT INTO word_counts VALUES ('#{get_id}','#{key}','#{value}');"
+	  db.execute "INSERT INTO word_counts VALUES ('#{id}','#{key}','#{value}');"
 	end
-	db.execute "INSERT INTO word_counts VALUES ('#{get_id}',$marks$,'#{result.marks_count}');"
+	db.execute "INSERT INTO word_counts VALUES ('#{id}', '$marks$','#{result.marks_count}');"
 end
 
 def dir_process input
@@ -50,8 +53,6 @@ end
 if(input.start_with?('http://') || input.start_with?('https://'))
   result = WordCounter.parse_webpage(input)
 elsif File.file? input
-  sha256 = Digest::SHA256.file input
-  sha = sha256.hexdigest
   result = WordCounter.parse_file(input)
 elsif input == "-d"
   result = WordCounter.parse (dir_process input2)
@@ -77,6 +78,6 @@ else
   end
 end
 
-make_database(result, input, sha)
+make_database(result, input)
 
 result.make_svg
