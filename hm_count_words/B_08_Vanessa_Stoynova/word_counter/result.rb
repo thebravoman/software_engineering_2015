@@ -25,7 +25,7 @@ module WordCounter
 		def save_to_database
 			db = SQLite3::Database.new 'B_08_Vanessa_Stoynova.db'
 			db.results_as_hash = true
-			
+			 
 			db.execute <<-SQL
 				CREATE TABLE IF NOT EXISTS statistics (
 					id int,
@@ -53,11 +53,11 @@ module WordCounter
 			merge_results(tempt) if tempt.word_counts.size > 0
 				
 			word_counts.each do |word, count|
-				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);",  nil, word, count
+				db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, word, count
 			end		
-				
+			
+			db.execute "INSERT INTO word_counts VALUES(?, ?, ?);", nil, '$marks$', marks_count
 		end				
-
 
 		def add_text x, y, word
 			'<text x="'+x.to_s+'" y="'+y.to_s+'" fill="black">'+word.to_s+'</text>'
