@@ -9,9 +9,7 @@ module WordCounter
       result = WordCounter::Result.new
 
       files.each do |file|
-        get_res_from_for_file file
         temp = super file
-        save_res_to_db temp, file
         result.word_counts.merge!(temp.word_counts.to_h) { |_, oldval, newval| newval + oldval }
         result.marks_count += temp.marks_count
       end

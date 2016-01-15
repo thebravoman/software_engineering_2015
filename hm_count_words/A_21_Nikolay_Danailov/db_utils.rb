@@ -22,27 +22,33 @@ end
 
 def get_res_from_for_file(file)
   db = SQLite3::Database.new DATABASE_URL
+  db.results_as_hash = true
 
   db_exists = db.execute "SELECT sql FROM sqlite_master WHERE type='table' AND name='statistics'"
-  return nil if db_exists.size == 0 # stop if table doesn't exist
-
-  tmp = WordCounter::Result.new
+  return if db_exists.size == 0 # stop if table doesn't exist
 
   wanted_hash = Digest::SHA256.file(file).hexdigest
   wanted_id = db.execute "SELECT id FROM statistics WHERE hash=?", wanted_hash
+
+  if wanted_id.size > 0
+    wanted_id = wanted_id[0]["id"]
+  else
+    return
+  end
+
   query = db.execute "SELECT word, count FROM word_counts WHERE statistic_id=?", wanted_id
+  tmp = WordCounter::Result.new
 
   if query.size > 0
     query.each do |row|
-      # maybe I should update rows and not delete them, but... oh well...
-      db.execute "DELETE FROM word_counts WHERE word=?", row["word"]
-
       if row["word"] != '$marks$'
         tmp.word_counts[row["word"].to_s] = row["count"]
       else
         tmp.marks_count = row["count"]
       end
     end
+  else
+    return
   end
 
   # return nil if the table is empty
@@ -59,7 +65,7 @@ def save_res_to_db(result, parsed_file)
 
   hash = Digest::SHA256.file(parsed_file).hexdigest
   db.execute "INSERT INTO statistics(source_name, hash) VALUES (?,?)", parsed_file, hash
-  file_id = db.execute "SELECT id FROM statistics WHERE hash=?", hash
+  file_id = db.execute("SELECT id FROM statistics WHERE hash=?", hash)[0]
 
   result.word_counts.each_with_index do |(word, count), index|
     db.execute "INSERT INTO word_counts VALUES (?,?,?);", file_id, word, count
