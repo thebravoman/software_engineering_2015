@@ -1,4 +1,4 @@
-require './B_6_Valentin_Stoyanov/word_counter/database'
+require './B_7_Valentin_Stoyanov/word_counter/database'
 module WordCounter
 	class FileParser < Parser
 		def file_parse filename
