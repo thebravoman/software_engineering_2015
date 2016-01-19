@@ -50,7 +50,7 @@ class WordCounter
 			if File.file?(obj)
 				@data << File.read(obj)
 			elsif File.directory?(obj)
-				@data = parse_folder(obj)
+				@data = parse_folder_data(obj)
 			end							
 		end
 	end
