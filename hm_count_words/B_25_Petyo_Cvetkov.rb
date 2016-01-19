@@ -1,8 +1,13 @@
 require './B_25_Petyo_Cvetkov/CountWords.rb'
 
-path = ARGV[0]
-format = ARGV[1]
-result = WordCounter::cached
+if ARGV[0] == "-d"
+  path = ARGV[1]
+  format = ARGV[2]
+else
+  path  = ARGV[0]
+  format = ARGV[1]
+end
+result = WordCounter::get_cached path
 if result.nil?
   if path == "-d"
     result = WordCounter::parse_dir format

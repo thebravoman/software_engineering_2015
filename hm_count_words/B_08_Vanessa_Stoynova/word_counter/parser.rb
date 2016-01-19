@@ -9,7 +9,7 @@ module WordCounter
 			current_words.each do |word|
 				words[word] += 1
 			end
-			
+
 			max_marks = string.scan(/[[:punct:]=`~$^+|<>]/).count
 			sorted_words = words.sort_by { |word, occurence| [-occurence, word] }
 			

@@ -4,7 +4,7 @@ module WordCounter
       @text = " "
     end
     def parse(string)
-      result = Result.new
+      result = Result.new(Hash.new(0),0)
       result.marks_count = string.scan(/[,?!@#$%^&*'""'()=+-]/).count
       words = string.downcase.gsub(/[^a-z0-9\s-]/, ' ').split(' ')
 
@@ -13,7 +13,8 @@ module WordCounter
       end
 
       result.word_counts = result.word_counts.sort_by { |word, occur| [-occur, word] }
-      result
+      result.save_db
+      return result
     end
 
 

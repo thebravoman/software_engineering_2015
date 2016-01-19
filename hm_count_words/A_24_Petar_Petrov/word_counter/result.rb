@@ -44,9 +44,9 @@ module WordCounter
       puts "\"marks\",#{@marks_count}" if @marks_count > 0
     end
     
-    def to_db
+    def to_db(filename)
 			db = DatabaseParser.create_db
-			DatabaseParser.update_db(@word_counts,db)
+			DatabaseParser.update_db(@word_counts,db,filename)
     end
   end
 end
