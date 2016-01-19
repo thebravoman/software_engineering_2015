@@ -1,5 +1,6 @@
 require 'json'
 require 'rexml/document'
+require "sqlite3"
 
 class Result
 	
@@ -20,6 +21,17 @@ class Result
 		words_hash.each do |key, value|
 			puts "#{key},#{value}"
 		end
+	end
+
+	def to_data_base
+		db = SQLite3::Database.new "B_29_Julian_Stoev.db"
+		db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT, hash TEXT);"
+		db.execute "CREATE TABLE IF NOT EXISTS wordCounts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,word TEXT, count INT);"
+		##db.execute "INSERT INTO statistics(hash) VALUES(?);", [words_hash]
+		words_hash.each{ |value, key|
+		db.execute "INSERT INTO wordCounts(word, count) VALUES(?,?);", [value,key]
+		}
+		db.execute "INSERT INTO wordCounts(word, count) VALUES('$marks$',?);", [sumofmarks]
 	end
 
 	def to_csv

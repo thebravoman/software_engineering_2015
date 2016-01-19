@@ -39,4 +39,33 @@ class WordCounter
 
 		parse txt 
 	end
+
+	def process_files file
+		txtfile = File.open(file, "r")
+		txt = IO.read(txtfile)
+		
+		words_hash = Hash.new(0)
+
+		sumofmarks = txt.scan(/[[:punct:]=`~$^+|<>]/u).length
+
+		content = txt.downcase.tr('^A-Z ^0-9 ^a-z', ' ').split(' ')
+		content.each do |word|
+			words_hash[word] = words_hash[word]+1 
+		end
+
+		words_hash = words_hash.sort_by {|key, value| [-value, key]}	
+		
+		return Result.new(words_hash, sumofmarks)
+	end
+	
+	def parse_folder folder
+		Dir.glob(folder + '*') do |obj|
+					
+			if File.file? obj
+				data = parse_file(obj)
+			else
+				parse_folder(obj)
+			end							
+		end
+	end
 end

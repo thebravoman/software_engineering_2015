@@ -14,12 +14,15 @@ result = webb(beginning, filepath)
 
 if ARGV[1] == 'json'
     puts result.to_json
-
+	result.to_svg
 elsif ARGV[1] == 'xml'
     puts result.to_xml
+	result.to_svg
 elsif ARGV[1] == "svg"
 	result.to_svg
 else
     puts result.to_csv
+	result.to_svg
 end
 
+DB.db_connector(ARGV[0].to_s, result)  #new

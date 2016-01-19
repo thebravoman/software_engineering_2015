@@ -10,8 +10,9 @@ if File.file? @input
 elsif @input =~ /\A#{URI::regexp}\z/
 		result = WordCounter::web_parse(@input)
 	elsif @input == '-d' and File.directory? @format
-		result = WordCounter::dir_parse(@format)
 		dir = true
+		result = WordCounter::dir_parse(@format)
+		result.to_csv
 	end
 
 unless dir
@@ -23,6 +24,9 @@ unless dir
 	else
 		result.to_csv
 	end
-	result.svg
 end
+
+WordCounter::SVGenerator.draw result.word_counts, result.marks_count
+
+
 

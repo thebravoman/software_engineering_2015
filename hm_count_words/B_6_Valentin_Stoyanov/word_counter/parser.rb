@@ -1,23 +1,24 @@
 module WordCounter
-	class Parser
-		def parse(string)
-			result = Result.new
-			result.marks_count = string.scrub.scan(/[[:punct:]+_=#><@'$%"&*]/).count
-		 	result.marks_count += string.scrub.scan("[/\]").count
+	class Parser < DataBase
+		def parse string
+			words = {}
+			marks = 0
+			
+			marks = string.scrub.scan(/[[:punct:]+_=#><@'$%"&*]/).count
+		 	marks += string.scrub.scan("[/\]").count
 			string = string.gsub("_", ' ')
 			string = string.scrub.downcase.scan(/[\w]+/)
 			
 			string.each do |word|
-				if result.word_counts.key?(word)
-					result.word_counts[word] += 1 
+				if words.key?(word)
+					words[word] += 1 
 				else
-					result.word_counts[word] = 1
+					words[word] = 1
 				end
 			end
 			
-			result.word_counts = result.word_counts.sort_by {|word, num| [-num, word] }
-			result.word_counts = result.word_counts.to_h
-			result
+			words = words.sort_by {|word, num| [-num, word] }.to_h
+			Result.new words, marks
 		end
 	end
 end

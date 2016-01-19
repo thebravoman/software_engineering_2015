@@ -1,15 +1,22 @@
 require './B_25_Petyo_Cvetkov/CountWords.rb'
 
-path = ARGV[0]
-format = ARGV[1]
-
-if path == "-d"
-  result = WordCounter::parse_dir format
+if ARGV[0] == "-d"
+  path = ARGV[1]
+  format = ARGV[2]
 else
-  if (path.match('^https?:\/\/.+'))
-    result = WordCounter::parse_webpage(path)
+  path  = ARGV[0]
+  format = ARGV[1]
+end
+result = WordCounter::get_cached path
+if result.nil?
+  if path == "-d"
+    result = WordCounter::parse_dir format
   else
-    result = WordCounter::parse_file(path)
+    if (path.match('^https?:\/\/.+'))
+      result = WordCounter::parse_webpage(path)
+    else
+      result = WordCounter::parse_file(path)
+    end
   end
 end
 

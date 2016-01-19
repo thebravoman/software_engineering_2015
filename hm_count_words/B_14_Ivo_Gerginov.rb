@@ -17,21 +17,16 @@ end
 
 if op == 'json'
   res.toJSON
-  File.open('result.json', 'r').each_line do |line|
-  	puts line
-  end
-  
+  res.toDB
+  File.delete('result.json')
 elsif op == 'xml'
   res.toXML
-  File.open('result.xml', 'r').each_line do |line|
-  	puts line
-  end
-
-else res.toCSV
-  File.open('result.csv', 'r').each_line do |line|
-  	puts line
-  end
-
+  res.toDB
+  File.delete('result.xml')
+else 
+  res.toCSV
+  res.toDB
+  File.delete('result.csv')
 end
 
 res.toSVG

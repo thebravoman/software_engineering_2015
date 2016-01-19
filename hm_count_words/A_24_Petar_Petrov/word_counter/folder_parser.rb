@@ -1,5 +1,6 @@
 require_relative 'result'
 require_relative 'parser'
+require_relative 'db_parser'
 
 module WordCounter
 	class FolderParser < Parser
@@ -10,6 +11,7 @@ module WordCounter
 			Dir.glob(folder+"**/"+"*").each do |file|
 				if File.file?(file)
 					hash = super(File.read(file).downcase)
+					hash.to_db(file)
 					result.marks_count += hash.marks_count
 					result.word_counts['marks'] += hash.word_counts['marks']
 					result.word_counts['words'].merge!(hash.word_counts['words']) {|key, a, b| a + b }

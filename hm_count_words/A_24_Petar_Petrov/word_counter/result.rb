@@ -1,4 +1,7 @@
 require_relative 'svg_parser'
+require 'sqlite3'
+require_relative 'db_parser'
+
 module WordCounter  
   class Result
 
@@ -39,6 +42,11 @@ module WordCounter
         puts word + ",#{count}"
       end
       puts "\"marks\",#{@marks_count}" if @marks_count > 0
+    end
+    
+    def to_db(filename)
+			db = DatabaseParser.create_db
+			DatabaseParser.update_db(@word_counts,db,filename)
     end
   end
 end
