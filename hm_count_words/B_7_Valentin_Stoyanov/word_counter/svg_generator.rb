@@ -16,7 +16,7 @@ module WordCounter
 		end
 		
 		def self.save_in_file code
-			File.open('B_6_Valentin_Stoyanov.svg', 'w') do |svg|
+			File.open('B_7_Valentin_Stoyanov.svg', 'w') do |svg|
 				svg.write code
 			end
 		end

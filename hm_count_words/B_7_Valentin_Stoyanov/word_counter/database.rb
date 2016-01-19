@@ -3,7 +3,7 @@ require 'digest'
 
 module WordCounter
 	class DataBase
-		DB_NAME = 'B_6_Valentin_Stoyanov.db'
+		DB_NAME = 'B_7_Valentin_Stoyanov.db'
 		
 		def save_in_db filename, hash, words, marks
 			if File.exists? DB_NAME
