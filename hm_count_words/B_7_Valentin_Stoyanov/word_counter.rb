@@ -1,10 +1,10 @@
-require './B_6_Valentin_Stoyanov/word_counter/database'
-require './B_6_Valentin_Stoyanov/word_counter/parser'
-require './B_6_Valentin_Stoyanov/word_counter/file_parser'
-require './B_6_Valentin_Stoyanov/word_counter/web_parser'
-require './B_6_Valentin_Stoyanov/word_counter/dir'
-require './B_6_Valentin_Stoyanov/word_counter/result'
-require './B_6_Valentin_Stoyanov/word_counter/svg_generator'
+require './B_7_Valentin_Stoyanov/word_counter/database'
+require './B_7_Valentin_Stoyanov/word_counter/parser'
+require './B_7_Valentin_Stoyanov/word_counter/file_parser'
+require './B_7_Valentin_Stoyanov/word_counter/web_parser'
+require './B_7_Valentin_Stoyanov/word_counter/dir'
+require './B_7_Valentin_Stoyanov/word_counter/result'
+require './B_7_Valentin_Stoyanov/word_counter/svg_generator'
 
 module WordCounter
   def self.parse string
