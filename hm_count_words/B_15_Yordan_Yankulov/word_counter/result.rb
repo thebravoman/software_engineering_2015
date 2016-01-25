@@ -2,6 +2,7 @@ require 'json'
 require 'rexml/document'
 require 'csv'
 require 'sqlite3'
+require 'digest'
 require_relative 'file_parser'
 module WordCounter
   class Result < FileParser
@@ -12,16 +13,24 @@ module WordCounter
       @a = a
     end
     def to_db
-      db = SQLite3::Database.new "B_15_Yordan_Yankulov.db"
-      db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
-      source_name TEXT, hash TEXT);"
-      db.execute "CREATE TABLE IF NOT EXISTS word_counts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,
-      word TEXT, count INT);"
-      db.execute "INSERT INTO statistics(source_name, hash) VALUES(?,?);", [$a]
+      if(File.exist?("./B_15_Yordan_Yankulov.db") !=  true)
+  			db  = SQLite3::Database.new("B_15_Yordan_Yankulov.db")
+  		else
+  			db = SQLite3::Database.open("B_15_Yordan_Yankulov.db")
+  		end
+      db.execute "create table if not exists statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_name  string, hash string);"
+      db.execute "create table if not exists word_counts(statistic_id int, word string, count string);"
+      db.execute "insert into statistics(source_name, hash) values(?,null);", [$a]
+      stat_id = db.last_insert_row_id
       @help.each{ |element|
-       db.execute "INSERT INTO word_counts(word, count) VALUES(?,?);", [element[0],element[1]]
+        db.execute "insert into word_counts(statistic_id, word, count) values(?,?,?);", [stat_id,element[0],element[1]]
     	}
-      db.execute "INSERT INTO word_counts(word, count) VALUES('$marks$',?);", [@punctuation]
+      db.execute "insert into word_counts(statistic_id, word, count) values(?,'$marks$',?);", [stat_id,@punctuation]
+    rescue SQLite3::Exception => e
+
+      puts "Exception occurred"
+      puts e
     end
     def rectange element, foo, foo1
       '<rect x="150" y="'+(foo-15).to_s+'" width="'+foo1.to_s+'" height="'+20.to_s+'" style="fill:blue;stroke:darkblue;stroke-width:1;stroke-opacity:0.9" />'
@@ -31,6 +40,7 @@ module WordCounter
     end
   	def to_csv
       to_db
+      to_svg
       @help.each{ |element|
     	   puts "#{element[0]},#{element[1]}"
     	}
@@ -41,6 +51,7 @@ module WordCounter
 
   	def to_json
       to_db
+      to_svg
     	if @punctuation != 0
     		puts JSON.pretty_generate("marks" => @punctuation,"words" => @help)
     	else
@@ -50,6 +61,7 @@ module WordCounter
 
   	def to_xml
       to_db
+      to_svg
   		my_xml = REXML::Document.new('')
   		word_counts = my_xml.add_element('word-counts')
   		if @punctuation != 0
@@ -66,7 +78,6 @@ module WordCounter
   	end
 
     def to_svg
-      to_db
       File.open("B_15_Yordan_Yankulov.svg","w") do |f|
         f.write('<svg xmlns="http://www.w3.org/2000/svg">')
         foo = 30
@@ -75,7 +86,6 @@ module WordCounter
         counter = 0
         element_remember = 0
         @help.each{ |element|
-          puts foo1
           if element_remember != element[1]
             foo1 -= d
           end

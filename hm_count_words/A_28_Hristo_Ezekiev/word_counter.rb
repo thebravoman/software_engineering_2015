@@ -1,6 +1,7 @@
 require 'word_counter/file_parser'
 require 'word_counter/web_parser'
 require 'word_counter/parser'
+require 'word_counter/base_maker'
 
 module WordCounter
 	def self.parse(contents)

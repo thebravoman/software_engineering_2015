@@ -4,7 +4,7 @@ module WordCounter
 
   class Parser
   
-  	def parseStr(f_str)
+  	def parseStr(f_str, fPath)
   	  w_count = Hash.new(0)
       marks = f_str.scan(/[\p{P}\p{S}]/u).count
 	  f_str.each_line do |line|
@@ -19,7 +19,7 @@ module WordCounter
         } 
       end
       
-      return Result.new(marks, w_count)
+      return Result.new(marks, w_count, fPath)
   	end
   end
 end

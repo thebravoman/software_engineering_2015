@@ -4,6 +4,11 @@ require 'sanitize'
 require 'openssl'
 
 class WordCounter
+	
+	def initialize
+		@data = ""
+	end
+	
 	def parse txt
 		words_hash = Hash.new(0)
 
@@ -39,4 +44,21 @@ class WordCounter
 
 		parse txt 
 	end
+	
+	def parse_folder_data folder
+		Dir.glob("#{folder}/*").each_with_object({}) do |obj, h|	
+			if File.file?(obj)
+				@data << File.read(obj)
+			elsif File.directory?(obj)
+				@data = parse_folder_data(obj)
+			end							
+		end
+	end
+	
+	def parse_folder folder
+		parse_folder_data(folder)
+		parse(@data)
+	end	
 end
+
+
