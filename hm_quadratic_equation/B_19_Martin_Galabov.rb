@@ -9,9 +9,6 @@
 	elsif discr > 0
 	x1 = (-b + Math.sqrt(discr))/2 * a
 	x2 = (-b - Math.sqrt(discr))/2 * a
-	if x1 > x2
-	puts "#{x2},#{x1}"
-	else
 	puts "#{x1},#{x2}"
 	end
 

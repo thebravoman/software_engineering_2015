@@ -1,14 +1,20 @@
-file = File.open(ARGV[0], "r")
+#the_file='/home/bobi/Desktop/file.txt'
 h = Hash.new
+f = File.open(ARGV[0], 'r')
+f.each_line { |line| #read each line in the file
+  
+	words = line.split
+	words.each { |w|
 	
-	marks = IO.read(file).scan(/[[:punct:]]/).length
-
-	text = IO.read(file).downcase.tr('^A-Z ^0-9 ^a-z', '').split(' ')
-
-h.sort{|a,b| a[1]<=>b[1]}.each { |elem|  
-	puts "#{elem[0]},#{elem[1]}"
+	if h.has_key?(w)
+     		
+		h[w] = h[w] + 1
+    	else
+		h[w] = 1
+	end
+	}
 }
 
-if (marks!=0)
-	puts "\"marks\",#{marks}"
-end
+h.sort{|a,b| a[1]<=>b[1]}.each { |elem|
+  puts "'#{elem[0]}' : #{elem[1]}"
+}

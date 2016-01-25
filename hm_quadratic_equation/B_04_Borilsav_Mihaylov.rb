@@ -18,8 +18,4 @@ else d > 0
 	x2 = (-b + Math.sqrt((b ** 2) - (4 * a * c)) ) / (2 * a)
 end 	
 
- if x2 > x1 
- 	puts "#{x1},#{x2}" 
- else 
- 	puts "#{x2},#{x1}" 
- end
+printf("%.2f,%.2f\n", x1, x2)

@@ -9,7 +9,7 @@ CSV.open("result.csv", "w") do |csv_array|
 		result= `ruby #{filename} "txt.txt"`
 		
 		solved = 0
-		if result.gsub("\n", '')=="Baba => 2Qga => 2v = 2gorata => 1v => 1vidqh"
+		if result.gsub("\n", '')=="Baba,2Qga,2v,1gorata,1v,1vidqh"
 			solved = 1
 		end
 		csv_array << [name[0],name[1],name[2],name[3].split(".").first,solved]
