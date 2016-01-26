@@ -1,0 +1,23 @@
+Only one main requirement:
+Homeworks should be commited in github repos.
+
+Basic requirements:
+1. Selecting the github repo as url
+2. Loading repo dirs
+3. Showing them to the UI
+4. Selecting whick dir should be checked
+4.1 Selecting only 1 file if neccesery
+5. Entering deadline
+6. Checkouting dir to the deadline
+7. Entering input data
+8. Running the scripts with the input data
+9. Comparing input and output data
+10. Writing the results as .csv
+
+Other requiremenrs:
+1. Teacher profile
+2. As teacher when running: adding the results.csv in official google docs :D
+3. Student profile
+4. When student is running: showing temporary resulths
+
+and many more but no time to think more :(
