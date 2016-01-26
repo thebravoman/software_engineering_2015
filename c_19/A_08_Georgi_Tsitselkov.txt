@@ -8,3 +8,4 @@ Requirements:
 -Connection with social media
 -Statistics
 -Forum
+-Feedback
