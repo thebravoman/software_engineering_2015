@@ -1,0 +1,12 @@
+1.Login platform
+2. Clone repo
+3.Deadline
+4.Git pull
+5.Open  directory with homework
+6.Get script(code)
+7.Run script(code)
+8.Take result
+9.Compare to example result
+10.Compare the results for similarities
+11.Grade  (2/6)
+12.Write grade into a file(csv, spreadsheet) 
