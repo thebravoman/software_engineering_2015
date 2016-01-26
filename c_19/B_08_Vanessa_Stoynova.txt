@@ -1,12 +1,14 @@
 Изисквания за система за проверка на домашните :
-	1. Да те подсеща, че има домашни за проверка :д
+	1. Reminder
 	2. Input string or files
-	3. За какви файлове да търси програмата и да ги сравни с някакъв input или file
-	4. Да може да свали директорията от github
-	5. Checkout за определен час
+	3. Set output files to look for and compare with the given
+	4. Download dir ftom github
+	5. Checkout for hour
 	6. Execute with different command
-	7. Резултатите да се запишат в таблица
+	7. Keep the results in table
 	8. UI
-	9. Да изтрие директорията 
+	9. Delete the dir 
 	10. Support Web
 	11. Upload to google drive
+	12. Show results for the user in the application
+	13. Sort results
