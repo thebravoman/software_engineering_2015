@@ -1,0 +1,28 @@
+# General
+
+A web application for checking students' homework.
+
+## Requirements
+
+- One type of role: administrator
+    - Should be able to login and logout
+    - Should be able to reach a page which can check the homeworks
+- Check homeworks page
+    - Should be able to add a repository URL in a simple input box
+    - Dropdown list containing the available classes
+    - Should have a checkbox whether the comparison should be strict
+    - A large button "CHECK"
+- Homework check process
+    - Should be able to parse a certain repository URL
+        - Could eventually support different VCSs, i.e Git/SVN/TFS
+    - The repository has a predefined structure which the parser should follow
+        - Folder for each task with two subfolders:
+            - expected - contains i.e test001.in.txt and test001.out.txt
+            - solutions - contains the students source code i.e
+                B_13_Ivaylo_Arnaudov.rb
+    - Iterates over all solutions, executes the file and compares the user
+        output of the programs to the test output.
+    - Extracts the results to a simple table.
+- Security
+    - The execution should be sandboxed, i.e students should not execute system calls
+        on the server.
