@@ -1,0 +1,11 @@
+1. Can work with Github
+2. Must have automatic feedback
+3. Good performance ( <=2sec response )
+4. Must be compatible with Google Docs
+5. Android app
+6. Desktop app
+7. Mobile friendly website
+8. Can check your program before you commit
+9. Achievements, levels, etc.
+10. Can remind you (e-mail, facebook, send a creepy person to knock on your window...) if the deadline is near
+11. Must be user friendly
