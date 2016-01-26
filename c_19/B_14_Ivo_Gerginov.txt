@@ -1,0 +1,17 @@
+1. Clone/pull repo
+2. Select directory with homework
+3. Traverse directory
+4. Get scripts/code
+5. Give example input
+6. Run scripts/code
+7. Take result
+8. Compare to example result
+9. Grade  (0/1)
+10. Write grade into a file(csv, spreadsheet, GoogleDocs)
+11. Web app
+12. GUI
+  - Enter Link/file/directory(koeto implementiram)
+  - Click Check button
+  - Returns CSV/spreadsheet/GoogleDocs link
+13. ???
+14. IMAM 6!!!!!!!!!
