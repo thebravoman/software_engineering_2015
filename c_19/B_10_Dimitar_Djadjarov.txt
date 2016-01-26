@@ -4,7 +4,7 @@ Homework Checking System Requirements:
 3. Class
 4. File is rb
 5. File has correct name
-6. Its important to compilate
+6. Its important to compilate !!!!
 7. Enter expected result
 8. Check if the result from the program is correct
 9. Output result in csv
