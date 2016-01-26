@@ -10,3 +10,4 @@
 10.Reminder
 11.Github commiting
 12.Achievements
+13.Registration
