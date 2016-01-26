@@ -2,4 +2,5 @@
 2. Clone ONLY the exact person's folder from the repository with sparse checkout
 3. Run the program
   3.1. Compare results with expected results
-  3.2. Append the result(0 or 1, works or does not work) to a csv file
+  3.2. Append the result(1 or 0, works or does not work) to a csv file
+4. 
