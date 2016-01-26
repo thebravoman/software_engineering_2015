@@ -9,3 +9,4 @@ Requirements:
 -Achievements
 -Forum
 -Feedback
+-Donating will give the chance for bonus points(tasks)
