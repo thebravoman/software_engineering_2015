@@ -1,0 +1,14 @@
+Изисквания за система за проверка на домашните :
+	1. Reminder
+	2. Input string or files
+	3. Set output files to look for and compare with the given
+	4. Download dir ftom github
+	5. Checkout for hour
+	6. Execute with different command
+	7. Keep the results in table
+	8. UI
+	9. Delete the dir 
+	10. Support Web
+	11. Upload to google drive
+	12. Show results for the user in the application
+	13. Sort results

@@ -1,0 +1,12 @@
+1. Choose where to take the homework files from
+2. Expected output for different inputs(set by teacher)
+3. Students can check if their homework output is correct.
+4. Multi point grading system via student output and expected output similarity detection
+5. Deadline for current homework(set by teacher)
+6. Cheat detection - if there is a puts "expected output" in the code give 0 points
+7. Automatic checking and grading after deadline.
+8. Save and merge results in database.
+9. Complaints system if a student found an error in the code.
+10. Students can see their current points.
+11. Translate points into grades.
+12. Bribing system(optional)

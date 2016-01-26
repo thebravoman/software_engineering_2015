@@ -1,0 +1,19 @@
+Homework checking program
+
+1. User-friendly interface
+2. Need to get url ( browsing GitHub)
+3. Loading time < 2s
+4. Compatible with mobile devices
+5. Error parsing
+6. Entering the results
+7. Name splitting
+8. Log in(determining whether its student/teacher/programmer )
+9. E-mail sending when the grade was acquired
+10. Ads
+11. File creating with the results ( if noted so )
+12. Need to secure the code(injection-free)
+13. Anti-cheating ( more than 80% similarity)
+14. Available download for Linux
+15. DB history
+16. Sending an e-mail if homework was given by the teacher
+17. Chat room for instant messages
