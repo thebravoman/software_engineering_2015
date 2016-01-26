@@ -1,6 +1,0 @@
-Da ima razdelenie na klasovete
-Da ima ranking sistema, bazirashta se na koi ima nai-mnogo verni zadachi(1)
-Da ima nakazatelna sistema, koqto da sankcionira suotvetniq uchenik, ako zadachata mu e ednakva s nechiq druga poveche puti ot opredelenata norma
-Da suzdava result.csv s 0 i 1 i da go podgotvi faila za svalqne na suotvetniq kompiutur
-Da ima sekciq za forum, v koito uchenicite shte spodelqt svoite resheniq i opit, a ako nqkoi ima zatrudneniq, tova shte e perfektnoto mqsto da pitat
- 
