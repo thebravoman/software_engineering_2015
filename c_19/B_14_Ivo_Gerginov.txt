@@ -8,3 +8,5 @@
 8. Compare to example result
 9. Grade  (0/1)
 10. Write grade into a file(csv, spreadsheet)
+11. ???
+12. IMAM 6!!!!!!!!!
