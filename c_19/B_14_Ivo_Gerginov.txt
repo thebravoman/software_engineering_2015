@@ -7,6 +7,11 @@
 7. Take result
 8. Compare to example result
 9. Grade  (0/1)
-10. Write grade into a file(csv, spreadsheet)
-11. ???
-12. IMAM 6!!!!!!!!!
+10. Write grade into a file(csv, spreadsheet, GoogleDocs)
+11. Web app
+12. GUI
+  - Enter Link/file/directory(koeto implementiram)
+  - Click Check button
+  - Returns CSV/spreadsheet/GoogleDocs link
+13. ???
+14. IMAM 6!!!!!!!!!
