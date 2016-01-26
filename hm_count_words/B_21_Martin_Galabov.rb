@@ -22,6 +22,8 @@ elsif command == 'xml'
 result.to_xml
 elsif command == 'csv'
 result.to_csv
-elsif
+elsif command == 'db'
 result.to_db
+else
+result.to_csv
 end

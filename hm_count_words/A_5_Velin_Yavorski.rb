@@ -1,12 +1,15 @@
 require 'word_counter'
 require 'sqlite3'
+require 'digest'
 
 input = ARGV[0]
 input2 = ARGV[1]
 input3 = ARGV[2]
 
-def make_database result
+def make_database (result, input)
 	db = SQLite3::Database.new 'A_05_Velin_Yavorski.db'
+	
+	sha256 = Digest::SHA256.new.hexdigest input
 	
 	db.execute <<-SQL
 	  CREATE TABLE IF NOT EXISTS statistics (
@@ -24,11 +27,14 @@ def make_database result
 	  );
 	SQL
 	
-	result.word_counts.each do |key, value|
-	  db.execute "INSERT INTO word_counts VALUES ('#{nil}','#{key}','#{value}');"
-	end
+	db.execute "INSERT INTO statistics(source_name, hash) VALUES ('#{input}','#{sha256}');"
+	get_id = db.execute('select id from Statistics where hash=?',sha256).to_s
+	id = get_id.gsub(/[^\d]/, '').to_i
 	
-	db.execute "INSERT INTO word_counts VALUES ('#{nil}',$marks$,'#{result.marks_count}');"
+	result.word_counts.each do |key, value|
+	  db.execute "INSERT INTO word_counts VALUES ('#{id}','#{key}','#{value}');"
+	end
+	db.execute "INSERT INTO word_counts VALUES ('#{id}', '$marks$','#{result.marks_count}');"
 end
 
 def dir_process input
@@ -72,6 +78,6 @@ else
   end
 end
 
-make_database result
+make_database(result, input)
 
 result.make_svg
