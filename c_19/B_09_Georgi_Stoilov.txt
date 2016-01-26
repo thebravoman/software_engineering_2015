@@ -1,0 +1,9 @@
+0.Maybe some user interface or web app.
+1.Clone repository
+2.Give which homework to check(folder with homeworks)
+3.Give input to script
+4.Give expected output to script
+5.Compare output from homework and expected output
+6.If they are different then show where is the difference(print the two outputs and add some strange symbol from where the difference begins).
+8.The script make csv with 0/1 for each person.
+9.Maybe make script write in Google Docs.  :(:(:(:(:(
