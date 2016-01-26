@@ -10,7 +10,7 @@
 10. Write grade into a file(csv, spreadsheet, GoogleDocs)
 11. Web app
 12. GUI
-  - Enter Link/file/directory(koeto implementiram)
+  - Enter Link
   - Click Check button
   - Returns CSV/spreadsheet/GoogleDocs link
 13. ???
