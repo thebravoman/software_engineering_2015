@@ -1,0 +1,27 @@
+Homework Checking System Requirements:
+1. Name
+2. Number
+3. Class
+4. File is rb
+5. File has correct name
+6. Can compilate
+7. Enter expected result
+8. Check if the result from the program is correct
+9. Output result in csv
+10. Sort by name
+11. Out put 0 if not working and 1 if it is working(out the expected result)
+12. User interface
+13. Creating seperate csv with result for every homework for each uploader(archive)
+14. Limit of entries 58 at once
+15. If neccessary manual input from browser
+16. User friendly
+17. Compatibility
+18. Shows in different colour changes
+19. Thanks for using our program. :) footer/picture <Produced by : Konstantin Todorov and Dimitar Djadjarov>
+20. Desktop/Taskbar/StartMenu Shortcut icon (EPIC/ULTRA/FASHION/MEME/COOL/NAIZZZ/ULTRASUSPICIOUS)
+21. 7 day trial
+22. Facebook/Twitter/Snapchat/ets Social Networks Shareable content
+23. Share result to social media account
+24. 1 Admin account (teacher) 
+25. Hint/Helper
+26. Official forum(neccessary log with fb/other social network[including person id])
