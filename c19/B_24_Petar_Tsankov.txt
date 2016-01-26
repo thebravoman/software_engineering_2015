@@ -1,0 +1,10 @@
+I. main functionality
+	1. can change input/output place
+	2. can say how to run the program
+	3. can say where the files should be and how they should be named
+	4. can say in what format the output of the homework check program should be
+II. additional functionality
+	1. can check from a downloaded folder or from the internet (aka github of others)
+	2. basic online functionality copying the downloadable program
+	3. versions for ubuntu and windows
+	4. can add aditional inputs and outputs
