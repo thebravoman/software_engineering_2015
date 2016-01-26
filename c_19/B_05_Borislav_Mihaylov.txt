@@ -1,0 +1,9 @@
+1.Clone pull repo
+2Login platform
+3.Deadline
+4.Paste scripts,codes in homework directory
+5.Run scripts,codes
+6.Check your own script (compare output with example code)
+7.Take results and sends them to the point system
+8.Compare the results for similarities
+9.Write marks in point system (csv)
