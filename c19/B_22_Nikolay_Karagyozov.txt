@@ -1,0 +1,28 @@
+Flow (students):
+
+- Every user has a link to his GitHub profile.
+- There is a page that provides a list of given homeworks.
+- User clicks a homework they would like checked.
+- The result is then displayed to the user.
+
+Flow (teachers):
+- Have an additional tab
+- Write input in textbox.
+- Write output in textbox.
+- Select homework.
+- Submit to add the test.
+
+Requirements:
+
+1. Authentication system
+	- Students and Teachers
+
+Teachers:
+	- Can add input tests for a homework.
+	- Can add output tests for a homework.
+
+Students:
+ 	- Can check their current homework.
+	- Have a record of previous results for each homework.
+	- Total points.
+	- Ranking in leaderboard.
