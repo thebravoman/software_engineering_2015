@@ -2,8 +2,9 @@
 2. Select directory with homework
 3. Traverse directory
 4. Get scripts/code
-5. Run scripts/code
-6. Take result
-7. Compare to example result
-8. Grade  (0/1)
-9. Write grade into a file(csv, spreadsheet)
+5. Give example input
+6. Run scripts/code
+7. Take result
+8. Compare to example result
+9. Grade  (0/1)
+10. Write grade into a file(csv, spreadsheet)
