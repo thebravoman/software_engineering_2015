@@ -6,6 +6,6 @@ Requirements:
 -Results should be 0 or 1
 -Sorting by name and class
 -Connection with social media
--Statistics
+-Achievements
 -Forum
 -Feedback
