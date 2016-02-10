@@ -4,6 +4,8 @@ B,7,Valentin,Stoyanov,Mobile Revenue,An app that you can use to manage your fina
 B,17,Luchezar,Ivanov,Mobile Revenue,An app that you can use to manage your finances in a business. For exmple you input quantity, price of stocks and taxes you paid such as VAT and customs or passive for advertisement, also the actives like sales and it gives you an overview of how you do, can sort expences in categories and show statistics. 
 =======
 
+B,03,Bojidar,Valchovski,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.
+B,20,Martin,Stanchev,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.
 B,22,Petar,Tsankov,3D,Survival Game,a 3D survival game that is both voxel and you can add custom 3D objects in your world
 B,27,Radostin,Angelov,Worldbotics,Worldbotics will be a mobile strategy single/multyplayer game in which the player will control an army or better yet a country of robots which he will manage. He will make alliances with other players and will strive to dominate the world.
 B,22,Nikolay,Karagyozov,2D Sandbox Game, A 2D game game where the player spawns in a world and gathers resources in order to survive.
@@ -12,4 +14,8 @@ B,22,Nikolay,Karagyozov,2D Sandbox Game, A 2D game game where the player spawns 
 =======
 Б,10,Димитър,Джаджаров,Мобилна сервизна книжка
 Б,11,Емил,Карбанов,Мобилна сервизна книжка
+<<<<<<< HEAD
 >>>>>>> 5abd0188e21318017dab15534481f28a00546730
+=======
+B,28,Toma,Marinov,Mobile game,Every player has an in-game robot which will be developed over time
+>>>>>>> 36012c6e5875bdc197a71ab2a4bcaf6aaed28dd9
