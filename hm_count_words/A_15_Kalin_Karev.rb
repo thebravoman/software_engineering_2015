@@ -24,10 +24,10 @@ def database answer
 		SQL
 		
 		answer.word_counts.each do |k, v|
-			db.execute "INSERT INTO word_counts VALUE ('#{nil}','#{k}','#{v}');"
+			db.execute "INSERT INTO word_counts VALUES ('#{nil}','#{k}','#{v}');"
 		end
 		
-		db.execute "INSERT INTO word_counts VALUE ('#{nil}',$marks$,'#{answer.marks_count}');"
+		db.execute "INSERT INTO word_counts VALUES ('#{nil}',$marks$,'#{answer.marks_count}');"
 end
 
 def dir file_name
@@ -60,9 +60,8 @@ end
 
 if format_print == "json"
 	puts answer.to_json
-end
 
-if format_print == "xml"
+elsif format_print == "xml"
 	puts answer.to_xml
 else 
 	puts answer.to_csv

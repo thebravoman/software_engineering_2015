@@ -1,0 +1,23 @@
+Requirements for homework checker:
+1. Ability to work with GitHub
+2. Can be used two ways:
+  -checks an already given output (able to calculate functions as output)
+  -checks the output of a given template program
+3. Ability to browse through a GitHub repo
+4. Compatibility with Google Docs
+5. Homework check history and the ability to delete statistics
+6. Analytics tools for creating charts based on student success for the current year
+7. Account login for students to check results and to check compiler errors
+8. Give points even if the output is not 100% exact but is similar
+9. Mobile friendly app or at least mobile friendly web site
+10. Measurement of student success in percents
+11. Ability to implement a custom grading system
+12. Ability to run tests:
+  -Closed answer tests (grade is measured in percents)
+  -Code programming tests (programs are tested the same way a homework would)
+13. Ability to easily write questions for closed answer tests
+14. Manual Override
+15. Subtract points if the homework is sent but after the deadline
+16. Hub for lectures
+17. Ability for a student to check his program before he commits it(the teacher gives the templare script or the output when he gives the problem)
+18. Easy to use and cluster free user interface

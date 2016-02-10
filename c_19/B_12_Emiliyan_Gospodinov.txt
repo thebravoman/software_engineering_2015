@@ -1,0 +1,12 @@
+1. Auto-pull repo ( re-pull 1 minute after the deadline everyday)
+2. Check the homework
+3. Save the result in csv ( + returned errors )
+4. Choose what to check
+5. Check file format
+6. Check file extention
+7. Accounts ( Admin / Student )
+8. Add/Change input and output
+9. Ads
+10. Forum
+11. Message between users
+12. Statistic

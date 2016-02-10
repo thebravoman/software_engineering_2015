@@ -34,7 +34,7 @@ module WordCounter
      def self.text x,y,word,rot
              '<text x="'+x.to_s+'" y="'+y.to_s+'" fill="red" font-size="9"
              transform="rotate('+rot.to_s+' '+x.to_s+','+y.to_s+')">
-             '+word+'
+             '+word.to_s+'
              </text>'
            end
        end

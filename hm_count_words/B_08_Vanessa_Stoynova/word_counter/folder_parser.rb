@@ -1,15 +1,16 @@
 require 'word_counter/file_parser'
 
 module WordCounter
-	class FolderParser < Parser
+	class FolderParser < FileParser
 		def parse(folder)
 		
 			words = Hash.new(0)
 			max_marks = 0
 			
-  			Dir.glob(folder + "**/" + "*").each do |file|
+			files = Dir.glob("#{folder}/**/*").select { |file| File.file? file }
+  			files.each do |file|
 				if File.file?(file)
-					result = super(File.read(file).downcase)
+					result = super(file)
 					words = words.merge(result.word_counts.to_h) { |key, old, new| old + new }
 					max_marks += result.marks_count
 				end

@@ -32,7 +32,6 @@ module WordCounter
         rows = db.execute("SELECT * FROM statistics WHERE source_name = ?",
                           source_name);
 
-        puts "#{rows}"
         # If such stats exists
         if rows.length > 0
           stats_id = rows[0]

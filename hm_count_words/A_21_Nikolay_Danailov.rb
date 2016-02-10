@@ -1,5 +1,5 @@
 require 'word_counter'
-require_relative './A_21_Nikolay_Danailov/word_counter/result_printer.rb'
+require_relative './A_21_Nikolay_Danailov/result_printer.rb'
 
 def uri?(string)
   start = string.split('/').first

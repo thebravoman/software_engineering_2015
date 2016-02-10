@@ -1,5 +1,7 @@
 require 'json'
 require 'rexml/document'
+require 'sqlite3'
+require 'digest'
 require_relative '../svg_parser.rb'
 
 module WordCounter
@@ -8,7 +10,32 @@ module WordCounter
 			@result = result
 			@marks_count = marks_count
 		end
-	
+
+		def to_db
+      	if(File.exist?("./A_29_Yassen_Alexiev.db") !=  true)
+  				db  = SQLite3::Database.new("A_29_Yassen_Alexiev.db")
+  			else
+  				db = SQLite3::Database.open("A_29_Yassen_Alexiev.db")
+  			end
+    	  	db.execute "create table if not exists statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
+    	  	source_name  string, hash string);"
+    	  	db.execute "create table if not exists word_counts(statistic_id int, word string, count string);"
+    	  	xdg = Digest::SHA256.file $a
+    	  	xdg.hexdigest
+    	  	db.execute "insert into statistics(source_name, hash) values(?,?);", [$a,xdg.to_s]
+    	  	stat_id = db.last_insert_row_id 
+    	  	
+    	  	@help.each{ |element|
+    	  	  db.execute "insert into word_counts(statistic_id, word, count) values(?,?,?);", [stat_id,element[0],element[1]]
+    		}
+
+      		db.execute "insert into word_counts(statistic_id, word, count) values(?,'$marks$',?);", [stat_id,@punctuation]
+    		rescue SQLite3::Exception => e
+
+      		puts "Exception occurred"
+      		puts e
+    	end
+
 		def marks_count
 			@marks_count
 		end

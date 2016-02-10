@@ -1,4 +1,5 @@
 require 'word_counter/file_parser'
+require_relative '../db_utils.rb'
 
 module WordCounter
   # Parses files

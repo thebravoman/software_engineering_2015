@@ -4,10 +4,10 @@ module WordCounter
 
     attr_accessor :marks_count
     attr_accessor :word_counts
-    def initialize
-      @marks_count = 0
-      @word_counts = Hash.new 0
-      @indentifier = ARGV[0]
+    def initialize(words, marks, identifier=ARGV[0])
+      @marks_count = marks
+      @word_counts = words
+      @indentifier = identifier
     end
     def to_csv
       word_counts.each do |word,i|
@@ -36,10 +36,10 @@ module WordCounter
       xml_counts.write(out, 1)
       return out
     end
-  end
   def save_db
-    db = Make_db.new
+    db = Database.new "B_25_Petyo_Cvetkov.db"
     db.save(@indentifier,@word_counts,@marks_count)
   end
+end
 
 end

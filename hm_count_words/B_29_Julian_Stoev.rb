@@ -12,10 +12,10 @@ end
 url_pattern = /https?:\/\/.+/
 
 word_counter = WordCounter.new
-if data_source.match(url_pattern) == nil
+if data_source.match(url_pattern) == nil and data_source.to_s != '-d'
 	result = word_counter.parse_file(data_source)  ## .to_s ???
-elsif	folder != nil #prob broken
-	result = word.counter.parse_folder(data_source)
+elsif	folder != nil 
+	result = word_counter.parse_folder(folder)
 else
 	result = word_counter.parse_url(data_source)
 end
@@ -32,4 +32,4 @@ elsif (format=='csv' || format.nil?)
 	result.to_csv
 end
 result.generate_svg
-result.to_data_base
+result.generate_database
