@@ -24,7 +24,7 @@ else
   else
     puts result.to_csv
   end
-
+  result.to_db
   result.to_svg
 
 end

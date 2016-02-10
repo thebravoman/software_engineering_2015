@@ -1,6 +1,7 @@
 require 'json'
 require 'rexml/document'
 require 'csv'
+require 'sqlite3'
 
 module WordCounter
   class Result
@@ -90,6 +91,31 @@ module WordCounter
         f.write('</svg>')
       end
     end
+
+	def to_db
+      db = SQLite3::Database.new 'B_03_Bojidar_Valchovski.db'
+	  db.execute <<-SQL
+        CREATE TABLE IF NOT EXISTS statistics (
+          id int,
+          source_name string,
+          hash string
+    	  );
+  	  SQL
+
+ 	  db.execute <<-SQL
+        CREATE TABLE IF NOT EXISTS word_counts (
+	      statistic_id int,
+	      word string,
+	      count int
+		);
+	  SQL
+
+      @words.each do |word, occur|
+	    db.execute "INSERT INTO word_counts VALUES (?,?,?);", nil, word, occur
+	  end
+
+	  db.execute "INSERT INTO word_counts VALUES (?,?,?);", nil, "marks", @marks
+	end
 
     def marks_count
       @marks
