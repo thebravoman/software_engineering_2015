@@ -1,35 +1,37 @@
-Class,Number,Firstname,Lastname,Topic,Description
-B,12,Emiliyan,Gospodinov,Mobile game,Every player has an in-game robot which will be developed over time
-B,13,Ivaylo,Arnaudov,"Hackathon management web application","A website that lets you efficiently manage hackathon events - register participants, create teams, communicate, submit code and more."
-B,22,Petar,Tsankov,3D Survival Game,a 3D survival game that is both voxel and you can add custom 3D objects in your world
-B,26,Plamen,Neshkov,"Hackathon management web application","A website that lets you efficiently manage hackathon events - register participants, create teams, communicate, submit code and more."
+Class,Number,Firstname,Lastname,Topic,Description,,,
+B,12,Emiliyan,Gospodinov,Mobile game,Every player has an in-game robot which will be developed over time,,,
+B,13,Ivaylo,Arnaudov,Hackathon management web application,"A website that lets you efficiently manage hackathon events - register participants, create teams, communicate, submit code and more.",,,
+B,22,Petar,Tsankov,3D Survival Game,a 3D survival game that is both voxel and you can add custom 3D objects in your world,,,
+B,26,Plamen,Neshkov,Hackathon management web application,"A website that lets you efficiently manage hackathon events - register participants, create teams, communicate, submit code and more.",,,
 B,7,Valentin,Stoyanov,Mobile Revenue,An app that you can use to manage your finances in a business. For exmple you input quantity, price of stocks and taxes you paid such as VAT and customs or passive for advertisement, also the actives like sales and it gives you an overview of how you do, can sort expences in categories and show statistics. 
 B,17,Luchezar,Ivanov,Mobile Revenue,An app that you can use to manage your finances in a business. For exmple you input quantity, price of stocks and taxes you paid such as VAT and customs or passive for advertisement, also the actives like sales and it gives you an overview of how you do, can sort expences in categories and show statistics.
-B,03,Bojidar,Valchovski,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.
-B,20,Martin,Stanchev,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.
-B,22,Petar,Tsankov,3D,Survival Game,a 3D survival game that is both voxel and you can add custom 3D objects in your world
-B,27,Radostin,Angelov,2D Sandbox Game, A 2D game game where the player spawns in a world and gathers resources in order to survive.
-B,22,Nikolay,Karagyozov,2D Sandbox Game, A 2D game game where the player spawns in a world and gathers resources in order to survive.
-Б,10,Димитър,Джаджаров,Мобилна сервизна книжка
-Б,11,Емил,Карбанов,Мобилна сервизна книжка
-B,28,Toma,Marinov,Mobile game,Every player has an in-game robot which will be developed over time
-B,29,Julian,Stoev,Belot WiFi Game, Belot mobile app which can support multiplayer.
-B,25,Petyo,Tsvetkov,Belot WiFi Game, Belot mobile app which can support multiplayer.
-B,09,Georgi,Stoilov,Darts web score board and tournament scheme, The app tracks Darts in-game score, tournaments and overtime player statistics and generates a leaderboard. 
-B,14,Ivo,Gerginov,Darts web score board and tournament scheme, The app tracks Darts in-game score, tournaments and overtime player statistics and generates a leaderboard.
-A,15,Kalin,Karev,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.
-A,19,Nikolay,Rangelov,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.
-A,21,Nikolay,Danailov,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.
-A,27,Hristiyan,Zahariev,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.
-A,3,Antonio,Mindov,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.
-A,28,Hristo,Ezekiev,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.
-A,29,Yassen,Alexiev,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.
-A,10,Daniel,Kirov,Android app,app for the traffic in Sofia.
-A,12,Emil,Lozev,Android app,app for the traffic in Sofia.
-A,24,Petar,Petrov,2d/3d desktop basketball game,Multiplayer(1v1) -> 2d initially -> in the process of development - 3d with additional extras.
-A,13,Ivan-Asen,Ovedenski,2d/3d desktop basketball game,Multiplayer(1v1) -> 2d initially -> in the process of development - 3d with additional extras.
-A,2,Andrea,Georgieva,Format conversion service
-A,6,Victoria,Admasu,Format conversion service
-A,16,Kristiana,Ivanova,Format conversion service
-A,22,Pavel,Kostadinov,Subtitles generation by voice recognition – provide a link to an audio or video file and return a transcript in raw and in srt format
-A,14,Ignat,Georgiev,Subtitles generation by voice recognition – provide a link to an audio or video file and return a transcript in raw and in srt format
+B,3,Bojidar,Valchovski,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.,,
+B,20,Martin,Stanchev,YouTube Audio Player, Streams the audio from a video by a given link, rmeoving the video so there is no lag caused by it.,,
+B,22,Petar,Tsankov,3D,Survival Game,a 3D survival game that is both voxel and you can add custom 3D objects in your world,,
+B,27,Radostin,Angelov,2D Sandbox Game, A 2D game game where the player spawns in a world and gathers resources in order to survive.,,,
+B,22,Nikolay,Karagyozov,2D Sandbox Game, A 2D game game where the player spawns in a world and gathers resources in order to survive.,,,
+Б,10,Димитър,Джаджаров,Мобилна сервизна книжка,,,,
+Б,11,Емил,Карбанов,Мобилна сервизна книжка,,,,
+B,28,Toma,Marinov,Mobile game,Every player has an in-game robot which will be developed over time,,,
+B,29,Julian,Stoev,Belot WiFi Game, Belot mobile app which can support multiplayer.,,,
+B,25,Petyo,Tsvetkov,Belot WiFi Game, Belot mobile app which can support multiplayer.,,,
+B,9,Georgi,Stoilov,Darts web score board and tournament scheme, The app tracks Darts in-game score, tournaments and overtime player statistics and generates a leaderboard. ,,
+B,14,Ivo,Gerginov,Darts web score board and tournament scheme, The app tracks Darts in-game score, tournaments and overtime player statistics and generates a leaderboard.,,
+A,15,Kalin,Karev,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.,,,
+A,19,Nikolay,Rangelov,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.,,,
+A,21,Nikolay,Danailov,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.,,
+A,27,Hristiyan,Zahariev,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.,,
+A,3,Antonio,Mindov,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.,,,
+A,28,Hristo,Ezekiev,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.,,,
+A,29,Yassen,Alexiev,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.,,,
+A,10,Daniel,Kirov,Android app,app for the traffic in Sofia.,,,
+A,12,Emil,Lozev,Android app,app for the traffic in Sofia.,,,
+A,24,Petar,Petrov,2d/3d desktop basketball game,Multiplayer(1v1) -> 2d initially -> in the process of development - 3d with additional extras.,,,
+A,13,Ivan-Asen,Ovedenski,2d/3d desktop basketball game,Multiplayer(1v1) -> 2d initially -> in the process of development - 3d with additional extras.,,,
+A,2,Andrea,Georgieva,Format conversion service,,,,
+A,6,Victoria,Admasu,Format conversion service,,,,
+A,16,Kristiana,Ivanova,Format conversion service,,,,
+A,22,Pavel,Kostadinov,Subtitles generation by voice recognition – provide a link to an audio or video file and return a transcript in raw and in srt format,,,,
+A,14,Ignat,Georgiev,Subtitles generation by voice recognition – provide a link to an audio or video file and return a transcript in raw and in srt format,,,,
+А,5,Velin,Yavorski,Subtitles editing and synchronization – Desktop.,"Move subtitles forward/backward, show subtitles over the video, enter subtitles and synchronize them with the sound",,,
+A,26,Teodor,Dobrev,Subtitles editing and synchronization – Desktop.,"Move subtitles forward/backward, show subtitles over the video, enter subtitles and synchronize them with the sound",,,
