@@ -1,9 +1,16 @@
-var arr = [1, 2, 3, 4, 5, 6, 7];
-
 var printArray = function (array) {
-    for (var i = 0; i < 16; i++) {
-        rect(i * 30, 30, 20, 20);
+    var y = 30;
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array[i].length; j++) {
+            rect(j * 30, y, 20, 20);
+        }
+        y += 30;
     }
 };
+
+var arr = [
+        [1, 2, 3],
+        [1, 2, 3]
+];
 
 printArray(arr);
