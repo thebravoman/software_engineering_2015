@@ -1,4 +1,6 @@
 Class,Number,Firstname,Lastname,Topic,Description,,,
+B,01,Asen,Popov,app managing social network posts
+B,06,Boriana,Savova,app managing social network posts
 B,04,Bojidar,Zahov,Video Player,,,,
 B,12,Emiliyan,Gospodinov,Mobile game,Every player has an in-game robot which will be developed over time,,,
 B,13,Ivaylo,Arnaudov,Hackathon management web application,"A website that lets you efficiently manage hackathon events - register participants, create teams, communicate, submit code and more.",,,
