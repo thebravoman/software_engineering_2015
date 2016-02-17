@@ -1,0 +1,8 @@
+Project: 
+Description: A 2D sandbox survival game.
+Priorities:
+Game World:
+1. Generate game world
+2. Spawn resources
+3. Spawn mobs
+4. Spawn entities - trees, etc.
