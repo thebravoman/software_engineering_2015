@@ -1,3 +1,5 @@
-rect(10, 10, 100, 100);
-fill(222, 33, 33);
-text("Hello, world", 20, 50);
+var n = 10;
+
+for (var i = 0; i < n; i++) {
+    rect(i*10,0,10,10);
+}
