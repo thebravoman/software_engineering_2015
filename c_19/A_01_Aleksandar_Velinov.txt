@@ -1,0 +1,16 @@
+Homeworks - commited in Github
+Automatic feedback
+Fast performance: 2 to 4 seconds for response
+Users
+Should be able to check files
+Checking history available
+Should run music
+Calendar
+Installer (desktop and mobile app)
+Levels, achievments, points
+Comparison between tasks (to see if there are identical ones)
+Deadline
+Deadline notificanion (2 days due, 1 day due, 12 hours, 4 hours) via e-mail
+Link to social media
+User friendly interface (always recommended, but still in the list)
+

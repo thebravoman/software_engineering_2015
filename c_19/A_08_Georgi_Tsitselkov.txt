@@ -6,5 +6,7 @@ Requirements:
 -Results should be 0 or 1
 -Sorting by name and class
 -Connection with social media
--Statistics
+-Achievements
 -Forum
+-Feedback
+-Donating will give the chance for bonus points(tasks)

@@ -1,0 +1,2077 @@
+{
+"id": "56c46e6ff175948917d77943",
+"name": "HackTUES Web Application",
+"desc": "",
+"descData": null,
+"closed": false,
+"idOrganization": null,
+"invited": false,
+"pinned": false,
+"starred": false,
+"url": "https://trello.com/b/DMIu0AdX/hacktues-web-application",
+"prefs": {
+"permissionLevel": "public",
+"voting": "disabled",
+"comments": "members",
+"invitations": "members",
+"selfJoin": false,
+"cardCovers": true,
+"cardAging": "regular",
+"calendarFeedEnabled": false,
+"background": "blue",
+"backgroundImage": null,
+"backgroundImageScaled": null,
+"backgroundTile": false,
+"backgroundBrightness": "dark",
+"backgroundColor": "#0079BF",
+"canBePublic": true,
+"canBeOrg": true,
+"canBePrivate": true,
+"canInvite": true
+},
+"invitations": [],
+"memberships": [
+{
+"id": "56c46e6ff175948917d77944",
+"idMember": "569ed68d2fb8d088923a363a",
+"memberType": "admin",
+"unconfirmed": false,
+"deactivated": false
+},
+{
+"id": "56c46ea7e6c19a50f84f8df4",
+"idMember": "54df075969f2c4d9fd3993ae",
+"memberType": "normal",
+"unconfirmed": false,
+"deactivated": false
+}
+],
+"shortLink": "DMIu0AdX",
+"subscribed": false,
+"labelNames": {
+"green": "",
+"yellow": "",
+"orange": "",
+"red": "",
+"purple": "",
+"blue": "",
+"sky": "",
+"lime": "",
+"pink": "",
+"black": ""
+},
+"powerUps": [
+"cardAging"
+],
+"dateLastActivity": "2016-02-17T13:42:33.309Z",
+"dateLastView": "2016-02-17T13:43:01.520Z",
+"shortUrl": "https://trello.com/b/DMIu0AdX",
+"idTags": [],
+"checklists": [],
+"cards": [
+{
+"id": "56c47184159e4af7275b88dd",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:42:33.309Z",
+"desc": "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n- User authentication\n- Profile page\n- Profile editing",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 1,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Participant registration",
+"pos": 65535,
+"shortLink": "pyWtPHB9",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c47184159e4af7275b88dd+b874ddbb327bd8d43f1de661ad5d1ff36edb648c@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/pyWtPHB9",
+"subscribed": false,
+"url": "https://trello.com/c/pyWtPHB9/1-participant-registration",
+"attachments": []
+},
+{
+"id": "56c4724a2531e6f5ee6539c2",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:15:18.474Z",
+"desc": "As a participant, I should receive email confirmation upon registration, so that spam can be prevented.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 3,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Email confirmation",
+"pos": 131071,
+"shortLink": "KVBDzL9E",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4724a2531e6f5ee6539c2+93e5a7de55fb57f0a5fa4ca84bf55b371231f7b4@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/KVBDzL9E",
+"subscribed": false,
+"url": "https://trello.com/c/KVBDzL9E/3-email-confirmation",
+"attachments": []
+},
+{
+"id": "56c47299773c350a65917eaf",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:36:24.810Z",
+"desc": "As a guest, I should be able to see a list of all teams and their members, because I might be interested in observing the event.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 5,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Guest access",
+"pos": 163839,
+"shortLink": "QiDDMM4R",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c47299773c350a65917eaf+bffb1de730aea04b1374f05df169cc6664542039@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/QiDDMM4R",
+"subscribed": false,
+"url": "https://trello.com/c/QiDDMM4R/5-guest-access",
+"attachments": []
+},
+{
+"id": "56c4728ff5b92e8a9cdf3b99",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:28:26.908Z",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 4,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Team management",
+"pos": 196607,
+"shortLink": "1I91r1Aw",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4728ff5b92e8a9cdf3b99+b77cb1a54305ee642d19fbcb5710c91c28251ace@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/1I91r1Aw",
+"subscribed": false,
+"url": "https://trello.com/c/1I91r1Aw/4-team-management",
+"attachments": []
+},
+{
+"id": "56c4735d0b97a5a5338254ae",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:19:45.179Z",
+"desc": "As an admin, I should have basic CMS tools, so that I can manage various static pages.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 6,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Simple CMS",
+"pos": 262143,
+"shortLink": "ou43p9cR",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4735d0b97a5a5338254ae+ef946a0e4b0960290b7cbb9da7dd1ec715828832@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/ou43p9cR",
+"subscribed": false,
+"url": "https://trello.com/c/ou43p9cR/6-simple-cms",
+"attachments": []
+},
+{
+"id": "56c474357e7d65149ae45dc6",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:24:15.271Z",
+"desc": "As an admin, I should be able to overview and manage sponsorships and expenses for the event, so that I can plan ahead better and be accountable.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 7,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Money management",
+"pos": 327679,
+"shortLink": "ZcuB3Oga",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c474357e7d65149ae45dc6+d849256e249b1b58fff487de53022d16c851ca5c@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/ZcuB3Oga",
+"subscribed": false,
+"url": "https://trello.com/c/ZcuB3Oga/7-money-management",
+"attachments": []
+},
+{
+"id": "56c4748cc45135cdb71dbde5",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:25:15.423Z",
+"desc": "As an admin, I should be able to view statistics about the event, so that I can measure how the organisation is performing.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 8,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Statistics",
+"pos": 393215,
+"shortLink": "6xva5I8N",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4748cc45135cdb71dbde5+51369e9a68f16c8d163b3c8ee747397a416dfac4@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/6xva5I8N",
+"subscribed": false,
+"url": "https://trello.com/c/6xva5I8N/8-statistics",
+"attachments": []
+},
+{
+"id": "56c4758deafb5b4ccb510709",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:29:10.155Z",
+"desc": "All traffic going through the application should be encrypted and a Let's Encrypt certificate should be used.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 9,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "TLS",
+"pos": 458751,
+"shortLink": "CM2vRYWL",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4758deafb5b4ccb510709+93ad315240fbe9d2e54b4676a2b9838fba1d9bdf@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/CM2vRYWL",
+"subscribed": false,
+"url": "https://trello.com/c/CM2vRYWL/9-tls",
+"attachments": []
+},
+{
+"id": "56c475b8ab60df35566d9352",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:30:03.098Z",
+"desc": "Passwords should be stored in a secure manner, so that no privacy breaching is possible.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 10,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Password hashing",
+"pos": 524287,
+"shortLink": "OobWM49J",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c475b8ab60df35566d9352+60f33b5a06c86cc9c62cacb5a17a5ba6e58b0ac2@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/OobWM49J",
+"subscribed": false,
+"url": "https://trello.com/c/OobWM49J/10-password-hashing",
+"attachments": []
+},
+{
+"id": "56c4763ca96881aa35485ba9",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:32:31.500Z",
+"desc": "As an admin, I should be able to check participants in each day, so that I can gather attendance statistics.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 11,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Attendance checking",
+"pos": 589823,
+"shortLink": "kHToItjw",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c4763ca96881aa35485ba9+7cc8b18d4c4db590acd79d965554a7ec78960487@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/kHToItjw",
+"subscribed": false,
+"url": "https://trello.com/c/kHToItjw/11-attendance-checking",
+"attachments": []
+},
+{
+"id": "56c476932f52c5c5934ca3f5",
+"checkItemStates": [],
+"closed": false,
+"dateLastActivity": "2016-02-17T13:33:43.098Z",
+"desc": "As an admin, I should be able to tag participants as having received a freebie (food, sponsor prizes, etc.), so that they are fairly distributed.",
+"descData": {
+"emoji": {}
+},
+"idBoard": "56c46e6ff175948917d77943",
+"idList": "56c46ee18661e05ee5250b12",
+"idMembersVoted": [],
+"idShort": 12,
+"idAttachmentCover": null,
+"manualCoverAttachment": false,
+"idLabels": [],
+"name": "Freebies tagging",
+"pos": 655359,
+"shortLink": "qpX4zrKm",
+"badges": {
+"votes": 0,
+"viewingMemberVoted": false,
+"subscribed": false,
+"fogbugz": "",
+"checkItems": 0,
+"checkItemsChecked": 0,
+"comments": 0,
+"attachments": 0,
+"description": true,
+"due": null
+},
+"due": null,
+"email": "plamenneshkov1+569ed68d2fb8d088923a363a+56c476932f52c5c5934ca3f5+71ab3d6e81df866a7551175ce559bc7b51503d36@boards.trello.com",
+"idChecklists": [],
+"idMembers": [],
+"labels": [],
+"shortUrl": "https://trello.com/c/qpX4zrKm",
+"subscribed": false,
+"url": "https://trello.com/c/qpX4zrKm/12-freebies-tagging",
+"attachments": []
+}
+],
+"labels": [
+{
+"id": "56c46e6f152c3f92fd0f6426",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "green",
+"uses": 0
+},
+{
+"id": "56c46e6f152c3f92fd0f6427",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "yellow",
+"uses": 0
+},
+{
+"id": "56c46e6f152c3f92fd0f6428",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "orange",
+"uses": 0
+},
+{
+"id": "56c46e6f152c3f92fd0f6429",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "red",
+"uses": 0
+},
+{
+"id": "56c46e6f152c3f92fd0f642a",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "purple",
+"uses": 0
+},
+{
+"id": "56c46e6f152c3f92fd0f642b",
+"idBoard": "56c46e6ff175948917d77943",
+"name": "",
+"color": "blue",
+"uses": 0
+}
+],
+"members": [
+{
+"id": "54df075969f2c4d9fd3993ae",
+"avatarHash": "fe0a919e68462cd2070100d85e6e37e0",
+"bio": "",
+"bioData": null,
+"confirmed": true,
+"fullName": "Ivaylo Arnaudov",
+"idPremOrgsAdmin": [],
+"initials": "IA",
+"memberType": "normal",
+"products": [],
+"status": "disconnected",
+"url": "https://trello.com/ivayloarnaudov",
+"username": "ivayloarnaudov"
+},
+{
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"bio": "",
+"bioData": null,
+"confirmed": true,
+"fullName": "Plamen Neshkov",
+"idPremOrgsAdmin": [],
+"initials": "PN",
+"memberType": "normal",
+"products": [],
+"status": "disconnected",
+"url": "https://trello.com/plamenneshkov1",
+"username": "plamenneshkov1"
+}
+],
+"lists": [
+{
+"id": "56c46ee18661e05ee5250b12",
+"name": "Product Backlog",
+"closed": false,
+"idBoard": "56c46e6ff175948917d77943",
+"pos": 65535,
+"subscribed": false
+},
+{
+"id": "56c46f18a849e62765eff541",
+"name": "Sprint Planning",
+"closed": false,
+"idBoard": "56c46e6ff175948917d77943",
+"pos": 131071,
+"subscribed": false
+},
+{
+"id": "56c46f1acd4a9c9a479ca16a",
+"name": "Current Sprint",
+"closed": false,
+"idBoard": "56c46e6ff175948917d77943",
+"pos": 196607,
+"subscribed": false
+},
+{
+"id": "56c46f2666d7a52d9435caab",
+"name": "In Progress",
+"closed": false,
+"idBoard": "56c46e6ff175948917d77943",
+"pos": 262143,
+"subscribed": false
+},
+{
+"id": "56c46f3d03b08c7d65cb0b6a",
+"name": "Done",
+"closed": false,
+"idBoard": "56c46e6ff175948917d77943",
+"pos": 327679,
+"subscribed": false
+}
+],
+"actions": [
+{
+"id": "56c478c952d1bd07d2d8d79c",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "pyWtPHB9",
+"idShort": 1,
+"name": "Participant registration",
+"id": "56c47184159e4af7275b88dd",
+"desc": "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n- User authentication\n- Profile page\n- Profile editing"
+},
+"old": {
+"desc": "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n-Test\n-Lol"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:42:33.316Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c478aed54ab6400ba3a39a",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "pyWtPHB9",
+"idShort": 1,
+"name": "Participant registration",
+"id": "56c47184159e4af7275b88dd",
+"desc": "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n-Test\n-Lol"
+},
+"old": {
+"desc": "As a participant, I should be able to register for an event, so that I can access member features."
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:42:06.576Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c477587668ffe3276a7672",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"name": "Guest access",
+"id": "56c47299773c350a65917eaf",
+"desc": "As a guest, I should be able to see a list of all teams and their members, because I might be interested in observing the event."
+},
+"old": {
+"desc": "As a guest, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:36:24.817Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c476b743ecface33901038",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "qpX4zrKm",
+"idShort": 12,
+"name": "Freebies tagging",
+"id": "56c476932f52c5c5934ca3f5",
+"desc": "As an admin, I should be able to tag participants as having received a freebie (food, sponsor prizes, etc.), so that they are fairly distributed."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:33:43.101Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c476932f52c5c5934ca3f6",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "qpX4zrKm",
+"idShort": 12,
+"name": "Freebies tagging",
+"id": "56c476932f52c5c5934ca3f5"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:33:07.958Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4766f649891cfee681396",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "kHToItjw",
+"idShort": 11,
+"name": "Attendance checking",
+"id": "56c4763ca96881aa35485ba9",
+"desc": "As an admin, I should be able to check participants in each day, so that I can gather attendance statistics."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:32:31.504Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4763ca96881aa35485baa",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "kHToItjw",
+"idShort": 11,
+"name": "Attendance checking",
+"id": "56c4763ca96881aa35485ba9"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:31:40.203Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c475db11653dd49925f56f",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "OobWM49J",
+"idShort": 10,
+"name": "Password hashing",
+"id": "56c475b8ab60df35566d9352",
+"desc": "Passwords should be stored in a secure manner, so that no privacy breaching is possible."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:30:03.102Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c475b8ab60df35566d9353",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "OobWM49J",
+"idShort": 10,
+"name": "Password hashing",
+"id": "56c475b8ab60df35566d9352"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:29:28.699Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c475a63b292b07f0d875a5",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "CM2vRYWL",
+"idShort": 9,
+"name": "TLS",
+"id": "56c4758deafb5b4ccb510709",
+"desc": "All traffic going through the application should be encrypted and a Let's Encrypt certificate should be used."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:29:10.159Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4758deafb5b4ccb51070a",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "CM2vRYWL",
+"idShort": 9,
+"name": "TLS",
+"id": "56c4758deafb5b4ccb510709"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:28:45.742Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4757a18e75c3391563b42",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n"
+},
+"old": {
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\nAcceptance criteria:\n- Invite system\n- Team attributes\n"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:28:26.911Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47572e325a9389cd6619d",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\nAcceptance criteria:\n- Invite system\n- Team attributes\n"
+},
+"old": {
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:28:18.124Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47561e1acd6ee566a5219",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n"
+},
+"old": {
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n*Acceptance criteria:*\n- Invite system\n- Team attributes\n"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:28:01.025Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c475546fd6cda05638ed86",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n*Acceptance criteria:*\n- Invite system\n- Team attributes\n"
+},
+"old": {
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates."
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:27:48.217Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c474bbd2479fb59ceafd64",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "6xva5I8N",
+"idShort": 8,
+"name": "Statistics",
+"id": "56c4748cc45135cdb71dbde5",
+"desc": "As an admin, I should be able to view statistics about the event, so that I can measure how the organisation is performing."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:25:15.427Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4748cc45135cdb71dbde6",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "6xva5I8N",
+"idShort": 8,
+"name": "Statistics",
+"id": "56c4748cc45135cdb71dbde5"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:24:28.562Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4747f1031d73286f5747a",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "ZcuB3Oga",
+"idShort": 7,
+"id": "56c474357e7d65149ae45dc6",
+"name": "Money management"
+},
+"old": {
+"name": "Fund management"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:24:15.275Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4747ab4136b59bb3c66c8",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "ZcuB3Oga",
+"idShort": 7,
+"name": "Fund management",
+"id": "56c474357e7d65149ae45dc6",
+"desc": "As an admin, I should be able to overview and manage sponsorships and expenses for the event, so that I can plan ahead better and be accountable."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:24:10.711Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c474357e7d65149ae45dc7",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "ZcuB3Oga",
+"idShort": 7,
+"name": "Fund management",
+"id": "56c474357e7d65149ae45dc6"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:23:01.581Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47371a886412c56e2b4a7",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "ou43p9cR",
+"idShort": 6,
+"name": "Simple CMS",
+"id": "56c4735d0b97a5a5338254ae",
+"desc": "As an admin, I should have basic CMS tools, so that I can manage various static pages."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:19:45.186Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4735d0b97a5a5338254af",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "ou43p9cR",
+"idShort": 6,
+"name": "Simple CMS",
+"id": "56c4735d0b97a5a5338254ae"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:19:25.322Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4731cecc7a8a0a631d04c",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"name": "Guest access",
+"id": "56c47299773c350a65917eaf",
+"desc": "As a guest, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+},
+"old": {
+"desc": "As a gues, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:18:20.591Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47317485d1c07e5dee898",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"name": "Guest access",
+"id": "56c47299773c350a65917eaf",
+"desc": "As a gues, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+},
+"old": {
+"desc": "As a visitor, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:18:15.965Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4730fc35bc3be27ea8ad1",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"id": "56c47299773c350a65917eaf",
+"name": "Guest access"
+},
+"old": {
+"name": "Viewing other event participants"
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:18:07.349Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c472c390983a654fcf5427",
+"idMemberCreator": "54df075969f2c4d9fd3993ae",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"name": "Viewing other event participants",
+"id": "56c47299773c350a65917eaf",
+"desc": "As a visitor, I should be able to see a list of all teams and their members, because I might be interested in joining them."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:16:51.616Z",
+"memberCreator": {
+"id": "54df075969f2c4d9fd3993ae",
+"avatarHash": "fe0a919e68462cd2070100d85e6e37e0",
+"fullName": "Ivaylo Arnaudov",
+"initials": "IA",
+"username": "ivayloarnaudov"
+}
+},
+{
+"id": "56c472bda425a9e1eff7d21b",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99",
+"desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:16:45.463Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47299773c350a65917eb0",
+"idMemberCreator": "54df075969f2c4d9fd3993ae",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "QiDDMM4R",
+"idShort": 5,
+"name": "Viewing other event participants",
+"id": "56c47299773c350a65917eaf"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:16:09.499Z",
+"memberCreator": {
+"id": "54df075969f2c4d9fd3993ae",
+"avatarHash": "fe0a919e68462cd2070100d85e6e37e0",
+"fullName": "Ivaylo Arnaudov",
+"initials": "IA",
+"username": "ivayloarnaudov"
+}
+},
+{
+"id": "56c4728ff5b92e8a9cdf3b9a",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "1I91r1Aw",
+"idShort": 4,
+"name": "Team management",
+"id": "56c4728ff5b92e8a9cdf3b99"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:15:59.191Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4726694c9e3e1690ec62d",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "KVBDzL9E",
+"idShort": 3,
+"name": "Email confirmation",
+"id": "56c4724a2531e6f5ee6539c2",
+"desc": "As a participant, I should receive email confirmation upon registration, so that spam can be prevented."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:15:18.478Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4724a2531e6f5ee6539c3",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "KVBDzL9E",
+"idShort": 3,
+"name": "Email confirmation",
+"id": "56c4724a2531e6f5ee6539c2"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:14:50.664Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4720bc1cbc5e6e4823b7c",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"card": {
+"shortLink": "pyWtPHB9",
+"idShort": 1,
+"name": "Participant registration",
+"id": "56c47184159e4af7275b88dd",
+"desc": "As a participant, I should be able to register for an event, so that I can access member features."
+},
+"old": {
+"desc": ""
+}
+},
+"type": "updateCard",
+"date": "2016-02-17T13:13:47.500Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47207e8fd6701e516d2a6",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "pHQClNlj",
+"idShort": 2,
+"id": "56c471f65e6d60c1e24573d9"
+}
+},
+"type": "deleteCard",
+"date": "2016-02-17T13:13:43.381Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c47184159e4af7275b88de",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Product Backlog",
+"id": "56c46ee18661e05ee5250b12"
+},
+"card": {
+"shortLink": "pyWtPHB9",
+"idShort": 1,
+"name": "Participant registration",
+"id": "56c47184159e4af7275b88dd"
+}
+},
+"type": "createCard",
+"date": "2016-02-17T13:11:32.471Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c4702832fe0937f8c3e9e7",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"value": "cardAging"
+},
+"type": "enablePowerUp",
+"date": "2016-02-17T13:05:44.202Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f3d03b08c7d65cb0b6b",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Done",
+"id": "56c46f3d03b08c7d65cb0b6a"
+}
+},
+"type": "createList",
+"date": "2016-02-17T13:01:49.730Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f338e7ad33dcb760e9f",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "In Progress",
+"id": "56c46f2666d7a52d9435caab",
+"pos": 262143
+},
+"old": {
+"pos": 32767.5
+}
+},
+"type": "updateList",
+"date": "2016-02-17T13:01:39.385Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f2c34f5cf0fe55d99d0",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "In Progress",
+"id": "56c46f2666d7a52d9435caab",
+"pos": 32767.5
+},
+"old": {
+"pos": 262143
+}
+},
+"type": "updateList",
+"date": "2016-02-17T13:01:32.673Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f2666d7a52d9435caac",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "In Progress",
+"id": "56c46f2666d7a52d9435caab"
+}
+},
+"type": "createList",
+"date": "2016-02-17T13:01:26.929Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f1ee155abb327105e55",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"id": "56c46f1acd4a9c9a479ca16a",
+"name": "Current Sprint"
+},
+"old": {
+"name": "Current Spring"
+}
+},
+"type": "updateList",
+"date": "2016-02-17T13:01:18.598Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f1acd4a9c9a479ca16b",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Current Spring",
+"id": "56c46f1acd4a9c9a479ca16a"
+}
+},
+"type": "createList",
+"date": "2016-02-17T13:01:14.590Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f18a849e62765eff542",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Sprint Planning",
+"id": "56c46f18a849e62765eff541"
+}
+},
+"type": "createList",
+"date": "2016-02-17T13:01:12.342Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46f0418f252ddf7dc987c",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"id": "56c46ee18661e05ee5250b12",
+"name": "Product Backlog"
+},
+"old": {
+"name": "Backlog"
+}
+},
+"type": "updateList",
+"date": "2016-02-17T13:00:52.416Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46ee18661e05ee5250b13",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"list": {
+"name": "Backlog",
+"id": "56c46ee18661e05ee5250b12"
+}
+},
+"type": "createList",
+"date": "2016-02-17T13:00:17.049Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46eb00379754c3dbcdd94",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943",
+"prefs": {
+"permissionLevel": "public"
+}
+},
+"old": {
+"prefs": {
+"permissionLevel": "private"
+}
+}
+},
+"type": "updateBoard",
+"date": "2016-02-17T12:59:28.073Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46ea7e6c19a50f84f8df5",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+},
+"idMemberAdded": "54df075969f2c4d9fd3993ae",
+"memberType": "normal"
+},
+"type": "addMemberToBoard",
+"date": "2016-02-17T12:59:19.121Z",
+"member": {
+"id": "54df075969f2c4d9fd3993ae",
+"avatarHash": "fe0a919e68462cd2070100d85e6e37e0",
+"fullName": "Ivaylo Arnaudov",
+"initials": "IA",
+"username": "ivayloarnaudov"
+},
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+},
+{
+"id": "56c46e6ff175948917d77945",
+"idMemberCreator": "569ed68d2fb8d088923a363a",
+"data": {
+"board": {
+"shortLink": "DMIu0AdX",
+"name": "HackTUES Web Application",
+"id": "56c46e6ff175948917d77943"
+}
+},
+"type": "createBoard",
+"date": "2016-02-17T12:58:23.354Z",
+"memberCreator": {
+"id": "569ed68d2fb8d088923a363a",
+"avatarHash": null,
+"fullName": "Plamen Neshkov",
+"initials": "PN",
+"username": "plamenneshkov1"
+}
+}
+]
+}
