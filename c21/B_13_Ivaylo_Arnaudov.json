@@ -1,0 +1,110 @@
+[
+   {
+      "name" : "Guest access",
+      "desc" : "As a guest, I should be able to see a list of all teams and their members, because I might be interested in observing the event."
+   },
+   {
+      "name" : "Team management",
+      "desc" : "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n"
+   },
+   {
+      "name" : "Simple CMS",
+      "desc" : "As an admin, I should have basic CMS tools, so that I can manage various static pages."
+   },
+   {
+      "name" : "Money management",
+      "desc" : "As an admin, I should be able to overview and manage sponsorships and expenses for the event, so that I can plan ahead better and be accountable."
+   },
+   {
+      "name" : "Statistics",
+      "desc" : "As an admin, I should be able to view statistics about the event, so that I can measure how the organisation is performing."
+   },
+   {
+      "name" : "Attendance checking",
+      "desc" : "As an admin, I should be able to check participants in each day, so that I can gather attendance statistics."
+   },
+   {
+      "name" : "Freebies tagging",
+      "desc" : "As an admin, I should be able to tag participants as having received a freebie (food, sponsor prizes, etc.), so that they are fairly distributed."
+   },
+   {
+      "name" : "Continuous integration",
+      "desc" : "CI should be added to the repository."
+   },
+   {
+      "name" : "i18n",
+      "desc" : ""
+   },
+   {
+      "name" : "Mentor registration",
+      "desc" : "As a guest, I should be able to register as a mentor, because I might be interested in helping."
+   },
+   {
+      "name" : "Mentor acceptance",
+      "desc" : "As an admin, I should be able to review mentor requests and accept them, because there should be official mentors.\n\n- The other administrators should be notified of the acceptance."
+   },
+   {
+      "name" : "Export statistics to Excel/CSV",
+      "desc" : "As an admin, I should be able to export the finance statistics, the participants and their teams to an Excel or CSV document, because further editing or calculations might be required."
+   },
+   {
+      "name" : "Decent look and feel",
+      "desc" : "As a guest, I should be able to enjoy the site both on mobile and the web, because we live in 21st century.\n\n- Perhaps buy a cheap boostrap theme and use it"
+   },
+   {
+      "name" : "Integrate the mail into the admin panel",
+      "desc" : "As an admin, I should be able to see all mails sent to team@hacktues.com and eventually reply to them, because it'll be easier and it'll be shared with the other administrators."
+   },
+   {
+      "name" : "Event problems administration",
+      "desc" : "As an admin, I should be able to see all enties submitted to the event problems page, because I might want to troubleshoot them.\n\n- All other administrators should be notified."
+   },
+   {
+      "name" : "Event problems page",
+      "desc" : "As a participant, I should be able to report a problem I'm experiencing, so that admins can resolve it."
+   },
+   {
+      "name" : "Repository/archive submission",
+      "desc" : "As a participant, I should be able to submit my work, because I have finished it before the desired deadline."
+   },
+   {
+      "name" : "Submission review",
+      "desc" : "As an admin, I should be able to see the repository/archive submissions and accept or decline them, because some of them might be after the deadline or stolen.\n\n- Perhaps run through a plagiarism tool of any sort. (Automated?)"
+   },
+   {
+      "name" : "Mentor selection",
+      "desc" : "As a participant and leader of the team, I should be able to choose a mentor for it from the page with the mentors, because the mentor I decide to choose might be good at the technology I'm using.\n\n- The mentor should receive a notification, should be asked to accept the invitation and the team mentor should be set to him if the invitation is accepted\n- All administrators should receive a notification once a mentor is selected for a team."
+   },
+   {
+      "name" : "Admin notifications",
+      "desc" : "As an admin, I should be able to see a notification for EVERY possible action, including, but not limited to: sponsorship mails, finance management, participant deletions, participants check etc., because I should be aware of everything."
+   },
+   {
+      "name" : "Technology addition",
+      "desc" : "As an admin, I should be able to add a certain technology, because there should be a predefined set of technologies."
+   },
+   {
+      "name" : "API",
+      "desc" : "As I guest, I should be able to consume a set of predefined API endpoints, because I might be interested in retrieving data about the event in my application."
+   },
+   {
+      "name" : "Deployment procedure",
+      "desc" : "A deployment procedure should be specified, so that new updates can be efforlessly pushed into production."
+   },
+   {
+      "name" : "Participant registration",
+      "desc" : "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n- User authentication\n- Profile page\n- Profile editing"
+   },
+   {
+      "name" : "Password hashing",
+      "desc" : "Passwords should be stored in a secure manner, so that no privacy breaching is possible."
+   },
+   {
+      "name" : "TLS",
+      "desc" : "All traffic going through the application should be encrypted and a Let's Encrypt certificate should be used."
+   },
+   {
+      "name" : "Email confirmation",
+      "desc" : "As a participant, I should receive email confirmation upon registration, so that spam can be prevented."
+   }
+]
