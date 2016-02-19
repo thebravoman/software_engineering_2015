@@ -27,8 +27,8 @@ B,14,Ivo,Gerginov,Darts web score board and tournament scheme, The app tracks Da
 B,8,Vanessa,Stoynova,Sudoku for mobile
 B,15,Yordan,Yankulov,3D mobile game,3D mobile game made using Unreal 4 Game Engine.,,,
 B,21,Martin,Galabov,3D mobile game,3D mobile game made using Unreal 4 Game Engine.,,,
-A,15,Kalin,Karev,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.,,,
-A,19,Nikolay,Rangelov,CCTV camera software,An online system that streams video from a security camera and you can also control the camera in order to view the area in all directions.,,,
+A,15,Kalin,Karev,A model car with arduino, controlled by using android apllication(gyro sensor and buttons)
+A,19,Nikolay,Rangelov,A model car with arduino, controlled by using android apllication(gyro sensor and buttons)
 A,21,Nikolay,Danailov,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.,,
 A,27,Hristiyan,Zahariev,Attendance Checker,An app that helps you check the attendance of your workers and makes statistics based on the gathered information by using a mobile app. It works as follows: The android app rings an alarm and shows a button after an interval of time has passed(which repeats). The worker should press the button. If he does not, the worker is recorded as not attending.,,
 A,3,Antonio,Mindov,2d Game,1v1 Deatmatch/Flag Capture hybrid. Fast Paced. Online/Lan/SidebySide multiplayer.,,,
