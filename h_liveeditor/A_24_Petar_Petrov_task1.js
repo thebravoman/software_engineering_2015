@@ -33,47 +33,53 @@ for(var c=1; c<=6; c++) {
 //Equation
 var a = 5;
 var b = 2;
+var c = -3;
 var y1;
 var x1;
 var y2;
 var x2;
-var findX = function(a,b,y) {
-    return ((y-b)/a);
+var findPeakX = function(a,b) {
+    return (-b/(2*a));
 };
-var findY = function(a,b,x) {
-    return ((a*x)+b);
+
+var findY = function(a,b,c,x) {
+    return (a*x*x+b*x+c);  
 };
+
 var drawLine = function(x1,y1,x2,y2) {
     line(30*x1+center_x,center_y-30*y1,30*x2+center_x,center_y-30*y2);
 };
 
-//For values of x
-x1 = 0;
-y1 = findY(a,b,x1);
+var peakX = findPeakX(a,b);
 
-//For values of y
-y2 = 0;
-x2 = findX(a,b,y2);
-//Draws line
+//Right side of the peak
+x1 = peakX;
+y1 = findY(a,b,c,x1);
+x2 = x1 + 1;
+y2 = findY(a,b,c,x2);
 drawLine(x1,y1,x2,y2);
-//Continues drawing
-if(y1 > y2) {
-    y1 = y2;
-    x1 = x2;
-    y2 = -1;
-    x2 = findX(a,b,y2);
-    drawLine(x1,y1,x2,y2);
-    
-    y1 = y2;
-    x1 = x2;
-    y2 = -2;
-    x2 = findX(a,b,y2);
-    drawLine(x1,y1,x2,y2);
-}
-else if(y1 < y2) {
-    y1 = y2;
-    x1 = x2;
-    y2 = 1;
-    x2 = findX(a,b,y2);
-    drawLine(x1,y1,x2,y2);
-}
+
+x1 = x2;
+y1 = y2;
+x2 = x1 + 1;
+y2 = findY(a,b,c,x2);
+drawLine(x1,y1,x2,y2);
+
+x1 = x2;
+y1 = y2;
+x2 = x1 + 1;
+y2 = findY(a,b,c,x2);
+drawLine(x1,y1,x2,y2);
+
+//Left side of the peak
+x1 = peakX;
+y1 = findY(a,b,c,x1);
+x2 = x1 - 1;
+y2 = findY(a,b,c,x2);
+drawLine(x1,y1,x2,y2);
+
+x1 = x2;
+y1 = findY(a,b,c,x1);
+x2 = x1 - 1;
+y2 = findY(a,b,c,x2);
+drawLine(x1,y1,x2,y2);
