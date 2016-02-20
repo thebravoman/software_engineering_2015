@@ -1,7 +1,9 @@
 var equation = function(a, b){
     var x = -b/a;
     fill(0, 0, 0);
-    line(200-(-x*25), 200 , 200, 200-(b*25));
+    if (a != 0 && b != 0) {
+        line(200-(-x*25), 200 , 200, 200-(b*25));
+    }
 };
 
 var a = 3, b = 2;
