@@ -1,22 +1,26 @@
-﻿M1
+M1
 
 Android call handling – In this task we want to make every logged in phone to  ring at a certain time set from the administrator. Priority 1
 
-Android intent sending to keep the connection open – In this task we will use the GCM service.(nz kvo da napisha :D) Priority 1
+Android intent sending to keep the connection open – Send an intent to keep the connection with the GCM service open. Priority 1
 
 Android register device at app launch – When you start the app and when you log in as administrator you can register devices that will be called and checked. Priority 1
 
 Server call handling – Here we want to see when the android call is over which user responded to the call (checked) and which didn't. Priority 1
 
-Server is calling only logged in users – In this task we want to make calls only to the people that are in the actually shift not every registered phone. Priority 1
-
 Server check if user is in shift – If the user is in the shift he/she is going to get calls. If the user is logged in but his/hers shift hasn't started he would not get any calls. Priority 1
 
 Server send email at end of shift – When the shift is over the server will sent an email to the administrator with the log of the calls made to his/hers users (workers). Priority 1
 
+Server work with database properly - The server should be able to work with the database properly and handle its information. Priority 1
+
+Research databases - We should research and learn how to make tables in databases be related and use this efficiently. Priority 1
+
+DB tables should be linked - The tables in the databases should have relations between them. Priority 1
+
 M2
 
-Android administrator log in – When you log in as an administrator you will be able to add/remove users (worker's profile). Also you will be able to point out which users (workers) will be in the upcoming shift. Priority 2
+Android administrator log in – When you log in as an administrator you will be able to add/remove users (worker's profile). Priority 2
 
 Android user log in – When you log in as an user you will be able to see when your shift starts and you would be able to answer the calls made from the server. Priority 2
 
@@ -28,6 +32,8 @@ Site settings – as in app. Priority 2
 
 Server store logged in users – When the user is marked as working (his/hers shift has started) the server will be sending calls till the end of the shift. Priority 2
 
+Server is calling only logged in users – In this task we want to make calls only to the people that are in the actually shift not every registered phone. Priority 2
+
 Server log out all users at end of shift – The server will log out (kick) all users that were in the shift and will not be calling. Priority 2
 
 Server work with settings – The server should be able to adapt to the settings made from the administrator. One sample setting will be : “Change the duration of the call”. Priority 2
@@ -36,18 +42,22 @@ M3
 
 Android user log coloring and sorting – the email sent to the administrator (at the end of the shift)  will contain log file with the users that were in the shift. If a user is checked it will be colored in green, if the user isn't it will be red. Priority 3
 
-Android user statistics - have some statistics based on what the users has done
+Android user statistics - have some statistics based on what the users has done. Priority 3
 
 Android GPS set up – as an administrator you would be able to use GPS to track your workers. Priority 3
 
-Android route reminder - the worker is reminded several minutes before he has to go on his route
+Android create GPS route - Be able to create GPS routes from the android app. The route is created by putting the first checkpoint. Priority 3
+
+Android route reminder - the worker is reminded several minutes before he has to go on his route. Priority 3
 
 Android GPS checkpoint handling – As an administrator you will be able to set routes for your workers and you also can put checkpoints on it
 
-Android GPS position tracking - the android app tracks where the user is when the app calls
+Android GPS position tracking - the android app tracks where the user is when the app calls. Priority 3
 
-Implement buying through Paypal – You will be able to register yourself as an  administrator when you pay certain amount
+Android press button on checkpoint - When the worker goes to the checkpoint, he pressed the button to show that the checkpoint is checked. Priority 3
 
-Make buyable modules – To use more workers you will have to pay extra
+Implement buying through Paypal – You will be able to register yourself as an  administrator when you pay certain amount. Priority 3
 
-Make GPS stuff a buyable module – Yeah.
+Make buyable modules – To use more workers you will have to pay extra. Priority 3
+
+Make GPS stuff a buyable module – Yeah. Priority 3
