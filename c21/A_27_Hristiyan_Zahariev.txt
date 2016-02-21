@@ -2,7 +2,7 @@
 
 Android call handling – In this task we want to make every logged in phone to  ring at a certain time set from the administrator. Priority 1
 
-Android intent sending to keep the connection open – In this task we will use the GCM service.(nz kvo da napisha :D) Priority 1
+Android intent sending to keep the connection open – In this task we will use the GCM service. Priority 1
 
 Android register device at app launch – When you start the app and when you log in as administrator you can register devices that will be called and checked. Priority 1
 
