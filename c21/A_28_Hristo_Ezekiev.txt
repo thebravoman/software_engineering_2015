@@ -1,0 +1,45 @@
+M1
+Entity Movement, Make it possible that entities can move,1
+Implement gravity, Apply to all entities,1
+Entity Jumping, Make it possible that entities can jump,1
+Double jumping, Make it possible that entities can doube jump,2
+Player running, Make player running,2
+Make static platforms, Walkable static platforms,1
+Make passable platforms, Passable platforms from below,2
+Make some base floor, Umm..., 3
+Add config file functionality, Using some format of choosing(INI,JSON,XML,Custom), 1
+Make some kind of users, They must be placed in a database(but that's for later), 2
+Make users have some experience and levels, THey will gain exp through winning games, 2
+Make some kind of exp boosters, 3
+Make particle system, Easy making of custom effects , 3
+Make fire particle effect,3
+
+M2
+Make dynamic spell system, A system so that you can easily make new spells,1
+Make abstact spells, Default spells like projectile spells; area spells,1
+Make cooldowns, Make easy to add cooldowns, 1
+Unlock spells through fighting npc-s, Fight enemies to unlock spells, 2
+Implement casting spells, Players can cast spells,1
+Basic spells, Some basic attacks, 1
+Mobility spells, Movement spells, 2
+Special spells, Ultimate spells, 2
+CC spells, Crowd controlling spells, 2
+Make energy bar for running, 3
+Make moving platforms, This will be hard, 2
+Make goal mechanics, Some kind winning state, 2
+Make opening door mechanics, For different sections of the match, 2
+Make destroy particle effect,3
+Make sparks particle effect,3
+Make match system, Winner/losser, 2
+Make some form of currency, Gain more from winning matches and unlock stuff,3
+Make match history, 3
+Make animation state system, 1
+
+M3
+Make in game purchases, For monetization, 1,
+Make side-by-side multiplayer, possibly..... online..., 1
+Make buff/debuff system, For entities, 2
+Make player level up system, 2
+Make a minimap, 3,
+Make health pickups, 3
+Make many diffrent playable charaters, 1
