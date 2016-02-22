@@ -1,0 +1,43 @@
+M1
+0.Make the character Troy's basic appearance.
+1.Make the character Troy's phrases.
+2.Make the character Sean The Referee's appearance.
+3.Make the basic move - Normal stance for the character.
+4.Make the basic move - Running for the character.
+5.Make the basic move - Defence stance for the character.
+6.Make the basic move - Run and dribble for the character.
+7.Make the advance move - Block for the character.
+8.Make the advance move - Jump Shot for the character.
+9.Referee movement - Run .
+10.Referee movement - Foul Gestures .
+11.Referee movement - Whislte .
+12.Sync the charactes with the code , using SDL.
+13.Make the Tutorial game mode.
+ 
+M2
+
+14.Make the basketball pole .
+15.Make the basketball rim .
+16.Make the basketball net .
+17.Make the basketball board.
+18.Make the basketball field.
+19.Make the audience for the matches.
+20.Make an old shcool theme gym court.
+21.Make an outdoor street theme court.
+
+M3
+
+22.Make SinglePlayer gamemode . 
+23.Make Multiplayer gamemode.
+24.Make Free shots gamemode.
+25.Make Dunks competition gamemode .
+26.Make special move - Fade away shot .
+27.Make special move - Dunk.
+28.Make special move - Dribble tricks.
+29.Make basic move - Dribble in normal stance.
+30.Make advanced move - Rebound stance.
+31.Make advanced move - Stealling.
+32.Make the character Shaniqua's basic appearance.
+33.Make the character Shaniqua's phrases.
+34.Make the character Zac's basic appearance.
+35.Make the character Zac's phrases.
