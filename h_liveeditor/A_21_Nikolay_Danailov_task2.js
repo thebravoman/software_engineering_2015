@@ -1,7 +1,7 @@
 var draw_f = function(a, b, c){
     var ITERATIONS = 10000;
-    var X_OFFSET = 100;
-    var Y_OFFSET = 100;
+    var X_OFFSET = 200;
+    var Y_OFFSET = 350;
     var points = [];
     var x = -500;
     
@@ -14,7 +14,7 @@ var draw_f = function(a, b, c){
     }
     
     for(var i = 0; i < ITERATIONS - 1; i++){
-        line(points[i][0] + X_OFFSET, points[i][1] + Y_OFFSET, points[i + 1][0] + X_OFFSET, points[i + 1][1] + Y_OFFSET);
+        line(points[i][0] + X_OFFSET, -points[i][1] + Y_OFFSET, points[i + 1][0] + X_OFFSET, -points[i + 1][1] + Y_OFFSET);
     }
 };
 
