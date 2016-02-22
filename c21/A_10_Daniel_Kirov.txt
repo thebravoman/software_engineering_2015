@@ -31,4 +31,7 @@ M3
 25.Creators - Make a new tab about us(the creators) and information about the app -3
 26.Traffic list - Make a new tab with all the information of jammed streets and boulevards with the time needed to pass through them -2
 27? Police cameras - ?? Import some information about the police cameras and notification if you are close to one -3
-28.
+28.Feedback - Send e-mail to us - 2
+29.Bugs and reports - Send us information for bugs - 2
+30.Design - Some kind of overall design - 1
+31.Code Refactoring - making the code simpler and easier to be read and removing unneeded things - 2
