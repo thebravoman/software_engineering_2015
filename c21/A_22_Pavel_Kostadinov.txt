@@ -1,0 +1,32 @@
+Milestone 1:
+1.Choose a project
+2.Choose a suitable programming language 
+3.Choose an environment
+4.Setup the chosen environment
+5.Choose the appropriate API for speech recognition
+6.Search for libraries for that API for the used language
+7.Setup the library 
+8.Make it work
+9.Test with some videos
+10.Debuging
+11.Check if it returns the correct letters
+
+Milestone 2:
+1.Search how to split the video in frames
+2.Use it in the code
+3.Debuging
+4.Test it 
+5.Separate the audio and the video on the video file
+6.Split an audio file in smaller chunks
+
+Milestone 3:
+1.Make the returned words in .srt fromat file
+2.Check if the splitted chunks are small enough
+3.Check the timestamps of the .srt file
+4.Synchronize the subtitles with the video
+5.If everything is okay, add new languages
+6.Make it Desktop app.
+7.Make user friendly interface
+8.If there is enought time, make it cross platform
+9.Find a way to moneytize it
+10.Customizable interface
