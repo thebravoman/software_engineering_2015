@@ -1,0 +1,42 @@
+Task Number. TaskName - TaskDescription - Priority
+
+M1
+1. Icon - make an icon for the application - 1
+2. Main screen - the first thing the user sees when they open the application - 1
+3. Player - a button which redirects the user to the player's items - 1
+4. Stats - user's player statistics - 2
+5. List of possible actions - basic list of thing to do - 1
+6. Map - make a background map with functional things on it - 1
+7. Missions - cost time and energy, give money and xp - 1
+8. Items - things you can earn from completed missions - 1
+9. Money system - win money from completing mission - 1
+10. Shop - for buying/exchanging items - 1
+11. Health - health points which you could possibly lose from missions - 1
+12. XP - experience points gained from missions - 1
+13. Level - increased by gaining xp - 1
+14. Hospital - regain health for money - 2
+15. Skills - player's power, speed, intelligence, endurance - 2
+16. Skills/Items desciption - what you receive from the item/skill - 3
+17. Mission difficulty - recommended stats for the missions - 3
+
+M2
+1. Achievments - get from fixed number of completed tasks - 1
+2. Player's energy - bar which goes down with the completion of missions and regained every day or with sleep - 1
+3. Gym - a place to train your character's skills - 1
+4. Jobs - cost time and energy and win money - 1
+5. Difference in missions - more than one type of missions available - 2
+5. Home - where you can regain energy for money - 2
+6. Tips - when doing something it gives players tips - 3
+7. Music - background music playing when the application is opened - 3
+8. Guide - contains information about everything you can do and how to do it - 3
+
+M3
+1. Online - registration and login system, 1
+2. Fights - ability to go against other players, 2
+3. Ranking system - sort player's by level and xp or by fights won - 2
+4. Teams - every team has a base, possibility to group with other players and fight against other teams - 2
+5. Team Ranking - sort by team's fight won - 3
+6. Team bonuses - upgrade's player's skills depending on team's place in ranking - 3
+7. Tournaments - go against other players in a competition format - 3
+8. New Stats - from fights and teams - 3
+9. Monetization - in-game money which can be bought with real life money - 3
