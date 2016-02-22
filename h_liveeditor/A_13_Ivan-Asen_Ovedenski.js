@@ -1,5 +1,5 @@
-var a = 5;
-var b = 6;
+var a = 6;
+var b = 7;
 
 var graph = function(a,b) {
     var x1 = 4;
