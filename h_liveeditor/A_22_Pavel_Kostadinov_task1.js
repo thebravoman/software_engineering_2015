@@ -1,13 +1,20 @@
-var equation = function(a,b,c)
+line(50,200,350,200);
+line(200,50,200,350);
+
+var equation = function(a,b,y)
 {
 
-    var x = c - b/a;
+    var x = (y - b) /a;
     return x;
 };
-var a = 5;
-var b = 8;
-var y = 10;
+var a = 1;
+var b = 10;
+var y = 16;
+
+var y2 = 130;
 
 var x = equation(a,b,y);
-fill(255, 0, 0);
-line(x,y,100,100);
+var x2 = equation(a,b,y2);
+line(x,y,x2,y2);
+
+
