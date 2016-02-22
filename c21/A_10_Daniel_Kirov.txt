@@ -1,0 +1,34 @@
+M1
+0.Java - Learning Java syntaxis -1
+1.Setting up - Set up the enviroment. Download, installing and setting up Android Studio -1
+2.Entering screen - Shows up for 2-3 seconds. Splash screen. -2
+3.Google Map - Integration of Google Map. Get Google API. -1
+4.Get location services. Show your location on the map. -1
+5.Location - Ask for location permissions from the user. Handle different possibilities -1
+6.Information - Ask Tix.bg for the information needed. -2
+7? Scraping - If they refuse to give us information we will try to "scrape" it. -1
+8.Importing - Learn how to import the information in our app - 1
+9.Sidetab - Add a screen or a sidetab with list of the traffic areas -2
+10.Diff Colours - Color the traffic areas with different colors - Red, Orange, Yellow and Green -1
+
+M2
+11.Notification - If you come closer to a jammed area you get a notification -2
+12.Search - You will be able to search for a place you want to go to -1
+13.Go to - Get locations for the place you want to go to from the place you are now -1
+14.Relocating - You the calculated path if jammed a new one is calculated -1
+15.Save - You will be able to save your paths -1
+16.Notification 2- If you set are coming from work and you set your home path you will get a notification if its very jammed -2
+17.Way Choice - You can chose what kind of path do you want(The shortest, the longest, the least jammed) -2
+18.Speedometer- You will have a speedometer on the screen(if wanted) -3
+19.Dangers - We will search if we can find a web site where all roadworks and car crashes are shown and ask for permission to use it -2
+20.Integration - Integrating the information for car crashes and roadworks and showing them on the map?? -2
+
+M3
+21.Statistics - Average time to work, home etc. -2
+22.Logo and Title - Make a nice logo -2
+23.Settings- Make a settings menu(speedometer, Change kilometers to miles and etc.) -2
+24.Signs - Make a sign for roadworks and car crashes and import them in the map -2
+25.Creators - Make a new tab about us(the creators) and information about the app -3
+26.Traffic list - Make a new tab with all the information of jammed streets and boulevards with the time needed to pass through them -2
+27? Police cameras - ?? Import some information about the police cameras and notification if you are close to one -3
+28.
