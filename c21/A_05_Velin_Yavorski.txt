@@ -1,0 +1,23 @@
+Milestone 1
+Program's main Window - Make the program's Window and it's properties and make a template of all buttons, textfields and the textarea, 1
+File Input - Implement a function to open a file, read all the subtitles from it and show them in the subtitles area, 1
+File Output - Implement a function to save and close a file with a given encoding, 1
+Subtitle moving - Implement a function which is going to move the subtitles forward/backward from a certain time by N seconds, 1
+Subtitle start,end,duration - Create the start,end and the duration textfields from which will be taken information when the user enters a subtitle, 1
+Subtitle showing - Implement a function that shows all subtitles loaded from a subtitles file and created afterwards in the textarea, 1
+Subtitle input - Implement a function that takes all information from the textfield which contains the subtitle written by the user and from the start,end,duration textfields and writes it in the textarea, 1
+Menu - Make the menubar and it's submenus which will contain options such as subtitles file opening and saving, video file opening, font tools, search and replace functions, 2
+
+Milestone 2
+Video support - Implement a function to open and play a video file in the application, 2
+Subtitle synchronization - Implement a function that synchronizes the "start" subtitle textfield with the current video's time, 2
+Font Tools - Implement functions which will change the subtitles font, size, style, color, 3
+Spell Check - Use some kind of spell checker to check the subtitles syntax, 3
+Translation - Use google translate to translate subtitles from one language to another, 3	
+Find Function - Implement a function that searches for a certain word in the subtitles, 3
+Replace Function - Implement a function that replaces a ceratin word with another in the subtitles, 3	
+
+Milestone 3
+//Still thinking
+
+
