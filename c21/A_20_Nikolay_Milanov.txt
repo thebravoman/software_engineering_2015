@@ -1,0 +1,67 @@
+M1:
+Create a character script
+	Make a function for moving
+	Make a jump function
+	Make a duck function
+	Make a function for switching weapons
+	
+Create a prefab for the character
+	Add mesh renderer 
+	Add collision
+ 	Add the character script
+	Add first person camera
+	Add weapons
+
+Create a bullet script
+	Add the bullet parameters
+	Create a vector for the movement
+	Deal dmg on collision 
+
+Create bullet prefabs
+	Add the script for the bullet and adjust the parameters
+
+Create a weapon script
+	Make it shoot bullet objects
+	Make scope function
+	Make silencer 		
+
+Create weapon prefabs
+	Add mesh renderer
+	Add the weapons models
+	Add animations
+	Add the weapon script
+
+M2:
+Make an enemy script
+	Add the same functionality as the character you are playing ... inherit it
+	Make a basic A.I. for the enemies
+		When you get close, it attacks you
+		Make it move 
+		Make it kill you
+		Make it shoot you
+	Make it harder
+
+Make enemy prefab
+	Add script and A.I.
+	Add models
+	Add mesh renderer and collision
+	Add attacks
+	
+Make a terain
+	Find some good models for buildings
+	Add collision to the buildings
+	Add traps 
+
+M3:
+Make the maps and levels.
+
+Design the levels with mountains and put some building to look fancy
+Put spawn points for the player and mobs
+
+Make a script for the spawn points
+	It creates a game object you already have at given coordinates
+	Sets it parameters
+
+Make menu and UI 
+
+Finish up the project and do some debugging 

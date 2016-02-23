@@ -1,0 +1,44 @@
+M1:
+
+1. Creating the repo; Place where we should store the code for the project; 1
+2. Installing AndroidStudio; Using this to write the android app; 1
+3. Learn to use Java; Android apps use Java runtime platform; 1
+4. Installing JDK & JRE; These are used for compiling Java code; 1
+5. Login form; Form for player authentecation; 1
+6. WIFI connection; The app should make contact with the connected wifi router; 1
+7. "Play" Button; Button which connect the player to the current Wifi table if existing; 1
+8. Table initialization; when connected the player should see a table;
+9. Cards init; the should see some cards; 1;
+10. Log out button; players should be leaving the room and redirected to the login form; 3
+
+----------------
+
+M2:
+
+11. Main menu; the login should be remade into menu; 1
+12. Login button; button for the login form; 1
+13. Log out button; pretty self explainetory; 1
+14. Leave button; again something stupid; 1;
+15. Cool graphics for the table; adding various and cool textures for the playing cards; 2
+16. Table graphics; various table graphics; 2
+17. Setting button; choosing the graphics and additional options, 2
+18. Server connection; Local hosting for the main rules and algorithms of the game; 1
+19. Smart local host; Choosing for local host the player with the best connection with the router; 1
+20. Even more smart local host; Using some service to find the device with best performance to be the local host;
+21. Main rules; Running the belot rules(algorithms) on the local host; 1
+
+----------------
+
+M3:
+
+22. Touch screen; Interactive movement of the cards; 1
+23. Point rules; The point structure of the belot game; 1;
+24. Point graphics statistics; After every game, give an interactive graphics of the game; 2;
+25. Player statistics; After every game the player stats are changed; 2
+26. Custom options; Interactive settings, whicj allows some of the rules of the Belot game to be altered
+27. Player profiles; In-game profile sharing of the player stats; 3;
+28. Bots; If a player goes missing a bot takes his place; 3;
+29. Host migration; if the local host disconnects another should be chooesn; 3;
+30. Friend system; Add other players as friend by sharing the local profile; 3
+
+-----------------
