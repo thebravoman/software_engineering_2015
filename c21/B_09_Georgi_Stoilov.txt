@@ -1,0 +1,28 @@
+This is out project shedule for the 3 Milestones:
+
+By MI:
+	- Finish the 2-Player Scoreboard
+	- Finish the tournament schemes
+	- Begin 3 and 4-Player Scoreboard
+	- Begin Local Leaderboard Database
+		- Create New Player and write into database
+			- Track Player Stats after each Darts match
+				- Number of wins
+				- Number of tournament wins
+				- 3 Dart average
+				- Checkout percentage
+				- Number of throws above 100/140/up to 180
+	- Begin Web Port
+By MII:
+	- Complete local Database
+		- Dislpay leaderboard in a window
+		- Sort player depending on selected stat
+	- Finish Web port
+	- Globalise Leaderboard
+		- Central database
+		- Sync app database with central
+	- (possibly) begin mobile port
+
+By MIII:
+	- (possibly) complete  mobile port
+	- Finishing work
