@@ -1,4 +1,4 @@
-Class,Number,Firstname,Lastname,Topic,Description,,,
+﻿Class,Number,Firstname,Lastname,Topic,Description,,,
 B,01,Asen,Popov,app managing social network posts
 B,06,Boriana,Savova,app managing social network posts
 B,04,Bojidar,Zahov,Video Player,,,,
@@ -52,5 +52,5 @@ A,25,Svetlin,Yordanov,2D Strategy Desktop game (Multi and Single player),,,,
 A,09,Georgi,Danchev,Tzar-like action strategy game.,,,
 A,08,Georgi,Tsitselkov,Tzar-like action strategy game.,,,
 A,11,Dimitar,Katzarov,Tzar-like action strategy game.,,,
-A,20,Nikolay,Milanov,Online sixty-six (santase).,,,
-A,07,Georgi,Nedkov,Online sixty-six (santase).,,,
+A,20,Nikolay,Milanov,First Person Shooter(Serious Sam like).,,,
+A,07,Georgi,Nedkov,First Person Shooter(Serious Sam like).,,,
