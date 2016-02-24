@@ -1,0 +1,131 @@
+{
+    "question": {
+        "content": "[1]. What is the correct way to output \"Hello World!\" in C?\n[[☃ radio 1]]\n======================================\n[2]. What is the correct way to declare and initialize a string array in C#?\n[[☃ radio 2]]\n======================================\n[3]. Split this string in an array of strings, then by whatever method you can sort it using any programming language and pick the correct order:\n\n\"This is a test containing some words\"\n\n[[☃ sorter 1]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "Console.WriteLine(\"Hello World!\");",
+                            "clue": "This is how to do it in C#!"
+                        },
+                        {
+                            "correct": true,
+                            "content": "printf(\"Hello World!\");",
+                            "clue": "Using the standard output function in C, this is how to print on the console."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "println(\"Hello World!\");",
+                            "correct": false,
+                            "clue": "This is how to do it on the serial monitor in the Arduino IDE!"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "puts(\"Hello World!\");",
+                            "correct": false,
+                            "clue": "This is how to do it in Ruby!"
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "clue": "printf(\"Hello World!\"); Is the correct answer."
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "String array = new Array[];",
+                            "correct": false,
+                            "clue": "There is no such syntax."
+                        },
+                        {
+                            "content": "Array<String> = new Array<String>();",
+                            "correct": false,
+                            "clue": "There is no such syntax."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "array = new String Array[];",
+                            "correct": false,
+                            "clue": "There is no such syntax."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "String[] array = new String[];",
+                            "clue": "http://www.dotnetperls.com/array"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "type": "sorter",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": [
+                        "$a$",
+                        "$containing$",
+                        "$is$",
+                        "$some$",
+                        "$test$",
+                        "$this$",
+                        "$words$"
+                    ],
+                    "layout": "horizontal",
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
