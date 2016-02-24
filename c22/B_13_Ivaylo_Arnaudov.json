@@ -1,0 +1,376 @@
+{
+    "question": {
+        "content": "What is the preferred way to install ruby gems?\n\n[[☃ dropdown 1]]\n\nWhich of the following is a framework for web application development?\n\n[[☃ radio 1]]\n\n[[☃ explanation 1]]\n\nWhat is the type of the design pattern represented on the picture?\n[[☃ image 1]]\n\n[[☃ dropdown 2]]\n\n[[☃ video 1]]\n\nMatch the terms with their definitions\n\n[[☃ matcher 1]]\n\nSort the data formats by lowest network latency generated\n\n[[☃ sorter 1]]\n\n[[☃ passage-ref 1]]\n\nGraph the function whose value represents your desired mark in the course?\n\n[[☃ interactive-graph 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "gem install",
+                            "correct": false
+                        },
+                        {
+                            "content": "rvm",
+                            "correct": true
+                        },
+                        {
+                            "content": "sudo rm -rf /",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Rails",
+                            "correct": true
+                        },
+                        {
+                            "content": "Python",
+                            "correct": false,
+                            "clue": "Python is a language, not a framework."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "XML",
+                            "clue": "XML is a way to represent data, not a framework of any kind",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ASP.NET",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Need help?",
+                    "hidePrompt": "Hide",
+                    "explanation": "A framework is an abstraction."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        327,
+                        314
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.w3schools.com/aspnet/27.jpg",
+                        "width": 327,
+                        "height": 314
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "dropdown 2": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "MVC",
+                            "correct": false
+                        },
+                        {
+                            "content": "Behavioural",
+                            "correct": false
+                        },
+                        {
+                            "content": "Architectural",
+                            "correct": true
+                        },
+                        {
+                            "content": "Structural",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "video 1": {
+                "type": "video",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "location": "http://www.youtube.com/watch?v=fCn8zs912OE"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matcher 1": {
+                "type": "matcher",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "left": [
+                        "$Ruby$",
+                        "$Bash$",
+                        "$CSV$",
+                        "$HTTP$",
+                        "$GitHub$"
+                    ],
+                    "right": [
+                        "$Language$",
+                        "$Shell$",
+                        "$Data format$",
+                        "Stateless protocol",
+                        "Source control system"
+                    ],
+                    "labels": [
+                        "Term",
+                        "Definition"
+                    ],
+                    "orderMatters": false,
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "type": "sorter",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": [
+                        "$XML$",
+                        "$JSON$",
+                        "$CSV$"
+                    ],
+                    "layout": "horizontal",
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage-ref 1": {
+                "type": "passage-ref",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageNumber": 1,
+                    "referenceNumber": 1,
+                    "summaryText": "what the hell is passage ref used for"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 1
+                }
+            },
+            "interactive-graph 1": {
+                "type": "interactive-graph",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "step": [
+                        0.5,
+                        1
+                    ],
+                    "backgroundImage": {
+                        "url": null
+                    },
+                    "markings": "graph",
+                    "labels": [
+                        "x",
+                        "y"
+                    ],
+                    "showProtractor": false,
+                    "showRuler": false,
+                    "rulerLabel": "",
+                    "rulerTicks": 10,
+                    "range": [
+                        [
+                            -1,
+                            2
+                        ],
+                        [
+                            -10,
+                            10
+                        ]
+                    ],
+                    "gridStep": [
+                        0.1,
+                        1
+                    ],
+                    "snapStep": [
+                        0.05,
+                        0.5
+                    ],
+                    "graph": {
+                        "type": "linear"
+                    },
+                    "correct": {
+                        "type": "linear",
+                        "coords": [
+                            [
+                                -9,
+                                5
+                            ],
+                            [
+                                9,
+                                5
+                            ]
+                        ]
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "grapher 1": {
+                "options": {},
+                "type": "grapher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {
+                    "content": "[[☃ number-line 1]]\n",
+                    "images": {},
+                    "widgets": {
+                        "number-line 1": {
+                            "type": "number-line",
+                            "alignment": "default",
+                            "graded": true,
+                            "options": {
+                                "range": [
+                                    0,
+                                    10
+                                ],
+                                "labelRange": [
+                                    null,
+                                    null
+                                ],
+                                "divisionRange": [
+                                    1,
+                                    12
+                                ],
+                                "labelStyle": "decimal",
+                                "labelTicks": true,
+                                "numDivisions": 5,
+                                "tickStep": null,
+                                "snapDivisions": 2,
+                                "correctRel": "eq",
+                                "correctX": null,
+                                "initialX": null
+                            },
+                            "version": {
+                                "major": 0,
+                                "minor": 0
+                            }
+                        }
+                    },
+                    "metadata": [
+                        "Optional"
+                    ]
+                },
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "group 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "categorizer 1": {
+                "options": {},
+                "type": "categorizer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
