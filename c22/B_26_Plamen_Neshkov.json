@@ -1,0 +1,222 @@
+{
+    "question": {
+        "content": "What command should you never execute in a UNIX environment?\n[[☃ radio 1]]\n\nWhat is a class?\n[[☃ explanation 1]]\n\nWhat is an object?\n[[☃ explanation 2]]\n\nWhat is a module?\n[[☃ explanation 3]]\n\nWhat is the difference between a class and a module?\n[[☃ explanation 4]]\n\nWhich are valid ways to call a method in Ruby?\n[[☃ radio 2]]\n\nWhat does \"a ||= b\" mean in Ruby?\n[[☃ explanation 5]]\n\nWhat does \"self\" mean in Ruby?\n[[☃ explanation 6]]\n\nWhat is unit testing and why is it useful?\n[[☃ explanation 7]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "man man"
+                        },
+                        {
+                            "correct": false,
+                            "content": "cd -"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "rm -rf /"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "sudo !!"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "A text-book answer: classes are a blue-print for constructing computer models for real or virtual objects... boring.\n\nIn reality: classes hold data, have methods that interact with that data, and are used to instantiate objects."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 2": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "An instance of a class.\n\nClasses themselves descend from the Object root class."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 3": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Modules serve as a mechanism for namespaces."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 4": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Modules provide as a mechanism for multiple inheritance via mix-ins and cannot be instantiated like classes can."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "someObject.someMethod",
+                            "correct": true
+                        },
+                        {
+                            "content": "someObject.send(:someMethod)",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "someObject.method(:someMethod).call"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "someObject.call(:someMethod)"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "someObject(:someMethod)"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 5": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "a = b when a == false\notherwise a remains unchanged\n"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 6": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "\"self\" always refers to the current object. But this question is more difficult than it seems because Classes are also objects in ruby."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 7": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Unit testing, simply put, is testing methods -- the smallest unit in object-oriented programming."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {},
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
