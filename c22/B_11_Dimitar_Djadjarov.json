@@ -1,0 +1,344 @@
+{
+    "question": {
+        "content": "Пътния банкет е част от: \n[[☃ radio 1]]\nКой от пътните знаци предупреждава за стеснение на платното за движение?\n[[☃ image 1]]\n\n[[☃ image 2]]\n\n[[☃ image 3]]\n\n[[☃ image 4]]\n\n[[☃ radio 2]]\nТози пътен знак:\n\n[[☃ image 5]]\n\n[[☃ radio 3]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "пътното платно"
+                        },
+                        {
+                            "correct": false,
+                            "content": "платното за движение"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "най-дясната пътна лента"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "разделната ивица"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            15,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        160,
+                        139
+                    ],
+                    "backgroundImage": {
+                        "url": "https://avtoizpit.com/GetPicture?pictureOId=269866896&width=160&height=170&format=png",
+                        "width": 160,
+                        "height": 139
+                    },
+                    "labels": [
+                        {
+                            "content": "a)",
+                            "coordinates": [
+                                0,
+                                -1
+                            ],
+                            "alignment": "center"
+                        }
+                    ],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 2": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            15,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        160,
+                        139
+                    ],
+                    "backgroundImage": {
+                        "url": "https://avtoizpit.com/GetPicture?pictureOId=269866897&width=160&height=170&format=png",
+                        "width": 160,
+                        "height": 139
+                    },
+                    "labels": [
+                        {
+                            "content": "b)",
+                            "coordinates": [
+                                0,
+                                -1
+                            ],
+                            "alignment": "center"
+                        }
+                    ],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 3": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            15,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        157,
+                        157
+                    ],
+                    "backgroundImage": {
+                        "url": "https://avtoizpit.com/GetPicture?pictureOId=269866899&width=160&height=170&format=png",
+                        "width": 157,
+                        "height": 157
+                    },
+                    "labels": [
+                        {
+                            "content": "c)",
+                            "coordinates": [
+                                0,
+                                -1
+                            ],
+                            "alignment": "center"
+                        }
+                    ],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 4": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            15,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        160,
+                        144
+                    ],
+                    "backgroundImage": {
+                        "url": "https://avtoizpit.com/GetPicture?pictureOId=269866898&width=160&height=170&format=png",
+                        "width": 160,
+                        "height": 144
+                    },
+                    "labels": [
+                        {
+                            "content": "d)",
+                            "coordinates": [
+                                0,
+                                -1
+                            ],
+                            "alignment": "center"
+                        }
+                    ],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "a)",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "b)"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "c)"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "d)"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 5": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        169,
+                        147
+                    ],
+                    "backgroundImage": {
+                        "url": "https://avtoizpit.com/GetPicture?pictureOId=23174&width=176&height=149&format=jpeg",
+                        "width": 169,
+                        "height": 147
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "указва начало на велосипедна алея",
+                            "correct": false
+                        },
+                        {
+                            "content": "указва начало на път само за велосипедисти",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "сигнализира участък от пътя, по който е забранено движението на велосипедисти",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "предупреждава за място, където на пътя излизат велосипедисти ",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
