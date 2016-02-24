@@ -1,6 +1,6 @@
 {
     "question": {
-        "content": "[1].What is the order of commands to correctly push a newly created file in a git repo ?\n\n1.git add 2.git pull 3.git clone\n4.git push 5.git push -f 6.git commit\n\n\n[[☃ dropdown 1]]\n\n[2].How to print \"Hello World!\" in Ruby?\n\n[[☃ radio 1]]\n\n[3].Who is our teacher?\n\n[[☃ radio 2]]\n\n[4.]What language did we learn\n\n[[☃ radio 3]]\n\n[5].\n\n",
+        "content": "[1].What is the order of commands to correctly push a newly created file in a git repo ?\n\n1.git add 2.git pull 3.git clone\n4.git push 5.git push -f 6.git commit\n\n\n[[☃ dropdown 1]]\n\n[2].How to print \"Hello World!\" in Ruby?\n\n[[☃ radio 1]]\n\n[3].Who is our teacher?\n\n[[☃ radio 2]]\n\n[4.]What language did we learn\n\n[[☃ radio 3]]\n\n[5].Where do we upload our homeworks ?\n\n[[☃ radio 4]]\n\n[6].What are gems in Ruby\n\n[[☃ radio 5]]\n\n",
         "images": {},
         "widgets": {
             "dropdown 1": {
@@ -176,57 +176,76 @@
                     "minor": 0
                 }
             },
-            "number-line 1": {
-                "options": {},
-                "type": "number-line",
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "facebook",
+                            "correct": false
+                        },
+                        {
+                            "content": "zamunda.net",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "efbet.com",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "github.com",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "githb.com"
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
                 "version": {
-                    "major": 0,
+                    "major": 1,
                     "minor": 0
                 }
             },
-            "matrix 1": {
-                "options": {},
-                "type": "matrix",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "passage 1": {
-                "options": {},
-                "type": "passage",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "orderer 1": {
-                "options": {},
-                "type": "orderer",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "group 1": {
-                "options": {},
-                "type": "group",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "interaction 1": {
-                "options": {},
-                "type": "interaction",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "measurer 1": {
-                "options": {},
-                "type": "measurer",
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Gems are packaged bits of Ruby code that you can install to extend or add functionality to your app.",
+                            "correct": true
+                        },
+                        {
+                            "content": "Gems are function/methods which help you to easily compile are run your program.",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Gems are type of variables."
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
                 "version": {
                     "major": 1,
                     "minor": 0
