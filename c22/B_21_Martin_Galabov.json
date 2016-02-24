@@ -1,0 +1,544 @@
+{
+    "question": {
+        "content": "[[☃ passage 1]]\n\n1. Your neighbour is concealing a stash of flying carpets, some of which he is allowing to fly loose around his back garden.\n[[☃ image 1]]\n[[☃ radio 1]]\n2. Your friend C possesses a Muggle Penny Farthing (old bicycle) that has been enchanted to skim an inch above the ground, achieving speeds of over 100mph. C did not personally enchant the Penny Farthing, never rides it and merely wishes to keep it \"for sentimental reasons\" as it was her grandmother's.\n[[☃ image 2]]\n[[☃ radio 2]]\n3. Your sixteen year old nephew, D, has hexed his seventeen-year-old sister, E. E has retaliated with a Stunning Spell that missed D and hit a Muggle motorist, who smashed into a lamppost.\n[[☃ radio 3]]\n4. Your Friends wizard A and wizard B are in dispute over which of them owns a field in which Mooncalfs dance periodically. A accuses B of using nightly a Summoning Charm to collect the precious Mooncalf dung which is rightfully A's.\n[[☃ radio 4]]\n5. Witch F fed love potion to a Muggle man, who has married her. When you went around with a wedding gift you discovered that she is using him as an occasional table.\n[[☃ radio 5]]\n6. Which of the following should be most SEVERELY punished by the Wizengamot?\n[[☃ radio 6]]\n7. Which of the following should receive the LIGHTEST punishment from the Wizengamot?\n[[☃ radio 7]]\n8. Which of the following does NOT require a Ministry of Magic license?\n[[☃ radio 8]]\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "passage 1": {
+                "type": "passage",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageTitle": "The Official W.O.M.B.A.T. (Wizards' Ordinary Magic and Basic Aptitude Test)",
+                    "passageText": "",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        500,
+                        417
+                    ],
+                    "backgroundImage": {
+                        "url": "https://c1.staticflickr.com/3/2202/2403144779_f2d162f166.jpg",
+                        "width": 500,
+                        "height": 417
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "Wizengamot"
+                        },
+                        {
+                            "correct": false,
+                            "content": "Department of International Magical Cooperation"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Misuse of Muggle Artifacts Office",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Obliviators"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 2": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        413,
+                        413
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.pennyfarthingsbicycles.sdcausa.com/images/penny_farthing.jpg",
+                        "width": 413,
+                        "height": 413
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "Department of Magical Transport"
+                        },
+                        {
+                            "correct": false,
+                            "content": "Improper Use of Magic Office"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Misuse of Muggle Artifacts Office",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Committee on Experimental Charms",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Department of Magical Accidents & Catastrophes",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": "Department of Magical Accidents & Catastrophes and Obliviator Squad"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "Department of Magical Accidents & Catastrophes, Obliviators, Improper Use of Magic Office"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Department of Magical Accidents & Catastrophes, Obliviator Squad, Wizengamot",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Improper use of Magic Office",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": " Pest Advisory Board"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Improper Use of Magic Office and Wizengamot",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "Wizengamot and Pest Advisory Board"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Auror Office",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": "Misuse of Magic Office"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Obliviators & Wizengamot"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "All of the above"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "The injury of three Muggles due to a poorly performed Forgetfulness Charm"
+                        },
+                        {
+                            "correct": false,
+                            "content": "The death of a chicken due to a poorly aimed Bat-Bogey Hex"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "The use of the Cruciatus curse on a shark about to attack a Muggle",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "The use of the Imperious curse on a Muggle mugger"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 7": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Horns created accidentally on a culprits mother, caused by broken wand",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": "Jellylegs Jinx performed on threatening Muggle"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Breeding fanged Puffskeins",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Underage witch performs Cleaning Charms in privacy of own home",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 8": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Crup ownership",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": " Sale of magical artefacts"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "House-elf ownership",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Apparition"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interactive-graph 1": {
+                "options": {
+                    "step": [
+                        1,
+                        1
+                    ],
+                    "backgroundImage": {
+                        "url": null
+                    },
+                    "markings": "graph",
+                    "labels": [
+                        "x",
+                        "y"
+                    ],
+                    "showProtractor": false,
+                    "showRuler": false,
+                    "rulerLabel": "",
+                    "rulerTicks": 10,
+                    "range": [
+                        [
+                            -10,
+                            10
+                        ],
+                        [
+                            -10,
+                            10
+                        ]
+                    ],
+                    "graph": {
+                        "type": "quadratic"
+                    },
+                    "correct": {
+                        "type": "sinusoid"
+                    }
+                },
+                "type": "interactive-graph",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "interactive-graph 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "dropdown 1": {
+                "options": {},
+                "type": "dropdown",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {
+                    "matrixBoardSize": [
+                        3,
+                        3
+                    ],
+                    "answers": [
+                        [
+                            5,
+                            6,
+                            14
+                        ],
+                        [
+                            8,
+                            13,
+                            10
+                        ],
+                        [
+                            15,
+                            9,
+                            14
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "matrix 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 3": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 3",
+                "graded": true,
+                "alignment": "block"
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

@@ -1,0 +1,83 @@
+{
+    "question": {
+        "content": "$\\begin{align} 1+1 &= ? \\end{align}$\n[[☃ radio 1]]\n\nWhich line is wrong?\n[[☃ radio 2]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "2",
+                            "correct": false
+                        },
+                        {
+                            "content": "10",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "puts Hello World",
+                            "correct": true
+                        },
+                        {
+                            "content": "puts \"Hello World\"",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

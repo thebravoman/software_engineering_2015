@@ -1,0 +1,407 @@
+{
+    "question": {
+        "content": "Какъв е този триъгълник?\n\n[[☃ radio 1]]\n\n\n\n[[☃ transformer 1]]\n[[☃ explanation 2]]\n\nКакво е 'Marshaling' ?\n\n[[☃ radio 2]]\n\nКакво е сериализация ?\n\n\n\nПодредете по големина типовете [[☃ explanation 1]]\n\n[[☃ sorter 1]]\n\n\nКаква е разликата между List и  Array ?\n\n[[☃ radio 3]]\n\n\n\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Правоъгълен",
+                            "correct": false
+                        },
+                        {
+                            "content": "Равнобедрен",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Незнам",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": false,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "type": "transformer",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "starting": {
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -6.5,
+                                    -3.5
+                                ],
+                                [
+                                    -1.5,
+                                    2.5
+                                ],
+                                [
+                                    7,
+                                    1
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        },
+                        "transformations": []
+                    },
+                    "graphMode": "interactive",
+                    "listMode": "dynamic",
+                    "tools": {
+                        "translation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {}
+                        },
+                        "rotation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                1,
+                                6
+                            ]
+                        },
+                        "reflection": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coords": [
+                                [
+                                    2,
+                                    -4
+                                ],
+                                [
+                                    2,
+                                    2
+                                ]
+                            ]
+                        },
+                        "dilation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                6,
+                                6
+                            ]
+                        }
+                    },
+                    "drawSolutionShape": true,
+                    "gradeEmpty": false,
+                    "graph": {
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "markings": "grid",
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            0.5,
+                            0.5
+                        ]
+                    },
+                    "version": 1.2,
+                    "correct": {
+                        "transformations": [],
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -6.5,
+                                    -3.5
+                                ],
+                                [
+                                    -1.5,
+                                    2.5
+                                ],
+                                [
+                                    7,
+                                    1
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        }
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 2": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Юлка It's time to PARTY"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Връзка между не контролирана  и контролирана памет(CLR)",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "Вид хеширане"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Нещо друго"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Подредете ги в ред - целочислени,символни, с плаваща запетая"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "type": "sorter",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": [
+                        "$Byte$",
+                        "$Short$",
+                        "$Int$",
+                        "$Ulong$",
+                        "$Char$",
+                        "$String$",
+                        "$Double$",
+                        "$Decimal$"
+                    ],
+                    "layout": "horizontal",
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Array няма дължина , List - има",
+                            "correct": true
+                        },
+                        {
+                            "content": "Array имаметод 'Sort', List - няма",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "categorizer 1": {
+                "options": {},
+                "type": "categorizer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {
+                    "passageTitle": "",
+                    "passageText": "",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "passage 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "table 1": {
+                "options": {
+                    "headers": [
+                        ""
+                    ],
+                    "rows": 4,
+                    "columns": 1,
+                    "answers": [
+                        [
+                            ""
+                        ],
+                        [
+                            ""
+                        ],
+                        [
+                            ""
+                        ],
+                        [
+                            ""
+                        ]
+                    ]
+                },
+                "type": "table",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "table 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interactive-graph 1": {
+                "options": {},
+                "type": "interactive-graph",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
