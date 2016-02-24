@@ -1,0 +1,302 @@
+{
+    "question": {
+        "content": "1.What is Ruby\n\n[[☃ radio 1]]\n\n2.Why is Ruby good\n\n[[☃ radio 2]]\n\n3.Why is C# better than Java\n\n[[☃ radio 3]]\n\n4.What is OOP\n\n[[☃ radio 4]]\n\n5.What are WET and DRY\n\n[[☃ radio 5]]\n\n6.What is SOLID\n\n[[☃ radio 6]]\n\n7.What are async functions\n\n[[☃ radio 7]]\n\n8.Which of those are design patterns\n\n[[☃ radio 8]]\n\n9.Why are hybrid apps good\n\n[[☃ radio 9]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "A song by Kaiser Chiefs",
+                            "correct": true,
+                            "clue": "Ruby, Ruby, Ruby, Ruby\nDo you, do you, do you, do you\nKnow what you're doing, doing, to me\nRuby, Ruby, Ruby, Ruby"
+                        },
+                        {
+                            "content": "A gem",
+                            "correct": true,
+                            "clue": "Gems :3"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "A programming language",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Wtf?????",
+                            "clue": "Your answer gives me cancer"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "It is not",
+                            "clue": "Go kill yourself"
+                        },
+                        {
+                            "content": "Because it is pretty",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Because it is fast",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "It is not",
+                            "clue": "Go kill yourself"
+                        },
+                        {
+                            "content": "You can write mobile, web, desktop and console apps",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "It has more swag",
+                            "correct": true,
+                            "clue": "YOLO"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Object-Oriented Programming",
+                            "correct": true
+                        },
+                        {
+                            "content": "Op Op Programming",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Write Everithing Twice and Don't Repeat Yourself",
+                            "correct": true
+                        },
+                        {
+                            "content": "States of my girlfriend",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "States of my cup"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "A OOP design pattern",
+                            "correct": true
+                        },
+                        {
+                            "content": "A state of the materials",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 7": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "Something that executes while something other executes"
+                        },
+                        {
+                            "correct": false,
+                            "content": "Dunno"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Some strange function name"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 8": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Factory",
+                            "correct": true
+                        },
+                        {
+                            "content": "Singleton",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Multiple"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 9": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "You write one code file and you run it on all platforms",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "Because you can't kill them"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
