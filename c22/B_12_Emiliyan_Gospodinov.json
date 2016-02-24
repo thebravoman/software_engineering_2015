@@ -1,0 +1,212 @@
+{
+    "question": {
+        "content": "1. What is the format of the code in the shown below image?[[☃ dropdown 1]][[☃ explanation 1]]\n\n[[☃ image 1]]\n\n2. How to make \"for\" loop in Ruby?[[☃ explanation 2]]\n\n[[☃ radio 1]]\n\n3. Where can you get help for ruby?\n\n[[☃ radio 2]]\n\n\n\n\n\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "Choose one type",
+                    "choices": [
+                        {
+                            "content": "JSON",
+                            "correct": false
+                        },
+                        {
+                            "content": "XML",
+                            "correct": true
+                        },
+                        {
+                            "content": "CSV",
+                            "correct": false
+                        },
+                        {
+                            "content": "Ruby",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Choose only one answer"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        600,
+                        282
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.evagoras.com/wp-content/uploads/2011/02/menuitems.gif",
+                        "width": 600,
+                        "height": 282
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 2": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Explain",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Choose two answers."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "for(int i = 0; i < 5; i++){...}",
+                            "clue": "This is in C++."
+                        },
+                        {
+                            "correct": false,
+                            "content": "for(int i = 0; i < 5; i++){...}",
+                            "clue": "This in in C."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "for i in 0..5\n...\nend",
+                            "clue": "This is in Ruby."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "for i in 1..5\n...\nend",
+                            "clue": "This will be completed only 4 times."
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "http://www.tutorialspoint.com/ruby/"
+                        },
+                        {
+                            "correct": false,
+                            "content": "http://www.facebook.com/"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "http://www.9gag.com/"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "matcher 1": {
+                "options": {},
+                "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
