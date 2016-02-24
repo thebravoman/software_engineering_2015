@@ -1,45 +1,306 @@
 {
     "question": {
-        "content": "koi e nai-dobroq ezik za programirane poznat na choveka\n\n\n\n?[[☃ dropdown 1]]",
+        "content": "How much is 3+3?\n\n[[☃ radio 1]]\n\nWhat is Ruby\n[[☃ radio 2]]\n\nWhere are the dankest memes in the universe located\n[[☃ radio 3]]\n\nWho teaches ruby in elsys\n[[☃ radio 4]]\n\nMultiply those matrixes\n\n[[☃ matrix 1]]\n[[☃ matrix 2]]\n\nPost answer here:\n[[☃ matrix 3]]\n\n\n",
         "images": {},
         "widgets": {
-            "dropdown 1": {
-                "type": "dropdown",
+            "radio 1": {
+                "type": "radio",
                 "alignment": "default",
                 "graded": true,
                 "options": {
-                    "placeholder": "otgovorche",
                     "choices": [
                         {
-                            "content": "java",
+                            "content": "5",
+                            "clue": "because 3+3 isnt 5 ",
                             "correct": false
                         },
                         {
-                            "content": "pascal",
+                            "content": "42",
+                            "clue": "because 3+3 isnt the meaning of life",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "6",
+                            "correct": true,
+                            "clue": "basic math fam"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "A gem",
                             "correct": true
                         },
                         {
-                            "content": "ruby",
+                            "content": "An animal",
                             "correct": false
                         },
                         {
-                            "content": "c",
+                            "isNoneOfTheAbove": false,
+                            "content": "Programming language",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "4chan",
                             "correct": false
                         },
                         {
-                            "content": "c#",
+                            "content": "9gag",
                             "correct": false
                         },
                         {
-                            "content": "c  ",
-                            "correct": false
+                            "isNoneOfTheAbove": false,
+                            "content": "HIDDENLOL",
+                            "correct": true
                         },
                         {
-                            "content": "python",
+                            "isNoneOfTheAbove": false,
+                            "content": "Facebook",
                             "correct": false
                         }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "K.Mitov",
+                            "correct": true
+                        },
+                        {
+                            "content": "Pesho Georgiev",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Stela",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        2,
+                        6
+                    ],
+                    "answers": [
+                        [
+                            16,
+                            52,
+                            32,
+                            1,
+                            777,
+                            24
+                        ],
+                        [
+                            50,
+                            5,
+                            6,
+                            42,
+                            12,
+                            69
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
                     ]
                 },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 2": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        3,
+                        2
+                    ],
+                    "answers": [
+                        [
+                            null
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 3": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        2,
+                        6
+                    ],
+                    "answers": [
+                        [
+                            null
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "interaction 1": {
+                "options": {
+                    "graph": {
+                        "editableSettings": [
+                            "canvas",
+                            "graph"
+                        ],
+                        "box": [
+                            400,
+                            400
+                        ],
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "markings": "graph",
+                        "snapStep": [
+                            1,
+                            1
+                        ],
+                        "valid": true,
+                        "backgroundImage": {
+                            "url": null,
+                            "width": 0,
+                            "height": 0
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "tickStep": [
+                            1,
+                            1
+                        ]
+                    },
+                    "elements": []
+                },
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "interaction 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
                 "version": {
                     "major": 0,
                     "minor": 0
@@ -61,46 +322,5 @@
         "major": 0,
         "minor": 1
     },
-    "hints": [
-        {
-            "content": "[[☃ image 1]]\n\n",
-            "images": {},
-            "widgets": {
-                "image 1": {
-                    "type": "image",
-                    "alignment": "block",
-                    "graded": true,
-                    "options": {
-                        "title": "",
-                        "range": [
-                            [
-                                0,
-                                10
-                            ],
-                            [
-                                0,
-                                10
-                            ]
-                        ],
-                        "box": [
-                            0,
-                            0
-                        ],
-                        "backgroundImage": {
-                            "url": null,
-                            "width": 0,
-                            "height": 0
-                        },
-                        "labels": [],
-                        "alt": "",
-                        "caption": ""
-                    },
-                    "version": {
-                        "major": 0,
-                        "minor": 0
-                    }
-                }
-            }
-        }
-    ]
+    "hints": []
 }

@@ -1,0 +1,87 @@
+{
+    "question": {
+        "content": "How to add question on perseus?\n\n[[☃ radio 1]]\n\nHow is the most correct syntax of an Hello World application in Ruby?\n[[☃ dropdown 1]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "With \"radio\"",
+                            "correct": false
+                        },
+                        {
+                            "content": "With \"multiple choice\"",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "With template",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "I don't know",
+                            "correct": false,
+                            "clue": "WOW ;)"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "dropdown 1":{
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "Select from here!",
+                    "choices": [
+                        {
+                            "content": " puts \"Hello World\"",
+                            "correct": true
+                        },
+                        {
+                            "content": "cout<< \"Hello World\"<<endlp;",
+                            "correct": false
+                        },
+                        {
+                            "content": "puts \"Hello World\";",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": true,
+        "periodicTable": true
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
