@@ -1,0 +1,391 @@
+{
+    "question": {
+        "content": "What is Ruby?\n\n[[☃ radio 1]]\n\nWhat is JSON?\n\n[[☃ radio 2]]\n\nWhat is AJAX?\n\n[[☃ radio 3]]\n\nWhat is XML?\n\n[[☃ radio 4]]\n\nWhat is an object?\n\n[[☃ radio 5]]\n\nWhich of the following have no OOP?\n\n[[☃ radio 6]]\n\nWhat does ML stands for in HTML?\n\n[[☃ radio 7]]\n\nHow many times will this code pass through element P(1,2)\n\n[[☃ passage 1]]\n\n[[☃ matrix 1]]\n\n[[☃ radio 8]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "A secret nuclear weapon, hidden under Vitosha Mountain",
+                            "clue": "Mhm.",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": "A precious gem"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Programming Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Script Language",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "An ancient Greek demigod",
+                            "correct": false
+                        },
+                        {
+                            "content": "JavaScript Object Notation",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "JavaScript Object Nation",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Cleaning detergent",
+                            "correct": false
+                        },
+                        {
+                            "content": "Asynchronous JavaScript and XML",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Alternative JavaScript and XAML"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "eXtensible Markup Language",
+                            "correct": true
+                        },
+                        {
+                            "content": "eXtra MakeUp lesson",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "eXpensive modern lamp"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "An instanceof a class.",
+                            "correct": true
+                        },
+                        {
+                            "content": "A pen",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Something, you can touch"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "C"
+                        },
+                        {
+                            "correct": false,
+                            "content": "C++"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "C#"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Java"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Pascal"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Ruby"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "JavaScript"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "PHP"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 7": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Hyper Text Markup Language "
+                        },
+                        {
+                            "content": "Martkup Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "MarkUp Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Multi Linguinar"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Mobile Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Hyper Text Mobile Language"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "type": "passage",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageTitle": "Code",
+                    "passageText": "Some code in here",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        5,
+                        4
+                    ],
+                    "answers": [
+                        [
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        [
+                            5,
+                            6,
+                            7,
+                            8
+                        ],
+                        [
+                            9,
+                            10,
+                            11,
+                            12
+                        ],
+                        [
+                            13,
+                            14,
+                            15,
+                            16
+                        ],
+                        [
+                            17,
+                            18,
+                            19,
+                            20
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 8": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "1",
+                            "correct": false
+                        },
+                        {
+                            "content": "2",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "3",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "4",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
