@@ -1,6 +1,6 @@
 {
     "question": {
-        "content": "Which is the capital of Bulgaria? \n\n[[☃ radio 1]]\n\n[[☃ categorizer 1]]\n\n\n\n\n\n",
+        "content": "Which is the capital of Bulgaria? \n\n[[☃ radio 1]]\nPut the brand in its category:\n[[☃ explanation 1]]\n[[☃ categorizer 1]]\n\n\n\n\n\n",
         "images": {},
         "widgets": {
             "radio 1": {
@@ -37,6 +37,20 @@
                 },
                 "version": {
                     "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "type": "explanation",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "showPrompt": "Protip",
+                    "hidePrompt": "Hide explanation",
+                    "explanation": "Yacht isnt a brand."
+                },
+                "version": {
+                    "major": 0,
                     "minor": 0
                 }
             },
@@ -227,6 +241,14 @@
             "matcher 1": {
                 "options": {},
                 "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
                 "version": {
                     "major": 0,
                     "minor": 0
