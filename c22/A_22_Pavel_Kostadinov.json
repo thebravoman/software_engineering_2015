@@ -1,0 +1,257 @@
+{
+    "question": {
+        "content": "Which are the correct ways to call/define a method in ruby?\n\n\n\n\n\n[[☃ radio 1]]\n\nWill Dinamo Kiev beat Manchester City tonight?\n\n[[☃ radio 2]]\n\nWhich of the following are legal betting sites?\n\n[[☃ dropdown 1]]\n\n[[☃ radio 3]]\n\nWhat is this language?\nx = \"hello world\"\np = x.count\nputs p\n\n[[☃ radio 4]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "def method(parameters here) .......... end",
+                            "correct": true
+                        },
+                        {
+                            "content": "void Method(parameters)\n{\nreturn 0;\n}\n",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "int main()\n{\n\n}",
+                            "clue": "Method meth;\nreturn 0;",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "print \"Method\"",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yes",
+                            "correct": false
+                        },
+                        {
+                            "content": "No",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Both teams to score a goal",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "H/F: 1/2",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "Click here",
+                    "choices": [
+                        {
+                            "content": "Efbet",
+                            "correct": true
+                        },
+                        {
+                            "content": "Bet365",
+                            "correct": false
+                        },
+                        {
+                            "content": "ZalagiTuk.com",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Efbet",
+                            "correct": true
+                        },
+                        {
+                            "content": "Bet365",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ZalagaiTuk.com",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "lua",
+                            "correct": false
+                        },
+                        {
+                            "content": "c++",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "pascal\n",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ruby",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "options": {},
+                "type": "explanation",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matcher 1": {
+                "options": {},
+                "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
