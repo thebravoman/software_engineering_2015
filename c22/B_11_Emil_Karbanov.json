@@ -1,0 +1,252 @@
+{
+    "question": {
+        "content": "Which is the capital of Bulgaria? \n\n[[☃ radio 1]]\n\n[[☃ categorizer 1]]\n\n\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Burgas",
+                            "correct": false
+                        },
+                        {
+                            "content": "Varna",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Plovdiv",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Sofia",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "categorizer 1": {
+                "type": "categorizer",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "items": [
+                        "Yamaha",
+                        "Suzuki",
+                        "BMW",
+                        "BDZH",
+                        "YACHT",
+                        "Volkswagen"
+                    ],
+                    "categories": [
+                        "Car",
+                        "Plane",
+                        "Boat",
+                        "Train",
+                        "Bike"
+                    ],
+                    "values": [
+                        4,
+                        4,
+                        0,
+                        3,
+                        2,
+                        0
+                    ],
+                    "randomizeItems": false
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "options": {
+                    "starting": {
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -5,
+                                    -2.5
+                                ],
+                                [
+                                    2,
+                                    6
+                                ],
+                                [
+                                    7,
+                                    2
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        },
+                        "transformations": []
+                    },
+                    "graphMode": "interactive",
+                    "listMode": "dynamic",
+                    "tools": {
+                        "translation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {}
+                        },
+                        "rotation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                1,
+                                6
+                            ]
+                        },
+                        "reflection": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coords": [
+                                [
+                                    3.5,
+                                    -2.5000000000000124
+                                ],
+                                [
+                                    0.5000000000000124,
+                                    0.5000000000000011
+                                ]
+                            ]
+                        },
+                        "dilation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                6,
+                                6
+                            ]
+                        }
+                    },
+                    "drawSolutionShape": true,
+                    "gradeEmpty": false,
+                    "graph": {
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "markings": "grid",
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            0.5,
+                            0.5
+                        ]
+                    },
+                    "version": 1.2,
+                    "correct": {
+                        "transformations": [],
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -5,
+                                    -2.5
+                                ],
+                                [
+                                    2,
+                                    6
+                                ],
+                                [
+                                    7,
+                                    2
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        }
+                    }
+                },
+                "type": "transformer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "transformer 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "matcher 1": {
+                "options": {},
+                "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
