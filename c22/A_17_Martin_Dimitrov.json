@@ -1,6 +1,6 @@
 {
     "question": {
-        "content": "1. How do you commit in git with a comment?\n[[☃ radio 1]]\n2. What do you do before pushing in a git repository?\n[[☃ radio 2]]\n3. What is the URL to for the TP repository?\n[[☃ radio 3]]\n4. What of the following is a ruby framework?\n[[☃ radio 4]]\n\n",
+        "content": "What is Ruby?\n\n[[☃ radio 1]]\n\nWhat is JSON?\n\n[[☃ radio 2]]\n\nWhat is AJAX?\n\n[[☃ radio 3]]\n\nWhat is XML?\n\n[[☃ radio 4]]\n\nWhat is an object?\n\n[[☃ radio 5]]\n\nWhich of the following have no OOP?\n\n[[☃ radio 6]]\n\nWhat does ML stands for in HTML?\n\n[[☃ radio 7]]\n\nHow many times will this code pass through element P(1,2)\n\n[[☃ passage 1]]\n\n[[☃ matrix 1]]\n\n[[☃ radio 8]]",
         "images": {},
         "widgets": {
             "radio 1": {
@@ -10,17 +10,23 @@
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "git commit Message"
+                            "content": "A secret nuclear weapon, hidden under Vitosha Mountain",
+                            "clue": "Mhm.",
+                            "correct": false
                         },
                         {
                             "correct": false,
-                            "content": "git commit -m Message"
+                            "content": "A precious gem"
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": true,
-                            "content": "git commit -m \"Message\""
+                            "correct": false,
+                            "content": "Programming Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Script Language",
+                            "correct": true
                         }
                     ],
                     "randomize": false,
@@ -42,17 +48,17 @@
                 "options": {
                     "choices": [
                         {
-                            "correct": true,
-                            "content": "git pull"
+                            "content": "An ancient Greek demigod",
+                            "correct": false
                         },
                         {
-                            "correct": false,
-                            "content": "git update"
+                            "content": "JavaScript Object Notation",
+                            "correct": true
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "alt + f4 (ragequit)"
+                            "content": "JavaScript Object Nation",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -74,18 +80,16 @@
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "https://github.com/egotsev/elsys"
+                            "content": "Cleaning detergent",
+                            "correct": false
+                        },
+                        {
+                            "content": "Asynchronous JavaScript and XML",
+                            "correct": true
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": true,
-                            "content": "https://github.com/thebravoman/software_engineering_2015"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "http://dankkush.com/smokeweedeveryday420"
+                            "content": "Alternative JavaScript and XAML"
                         }
                     ],
                     "randomize": false,
@@ -107,17 +111,16 @@
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "Ruby on Crack"
+                            "content": "eXtensible Markup Language",
+                            "correct": true
                         },
                         {
-                            "correct": true,
-                            "content": "Ruby on Wheels"
+                            "content": "eXtra MakeUp lesson",
+                            "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "Ruby on Rails"
+                            "content": "eXpensive modern lamp"
                         }
                     ],
                     "randomize": false,
@@ -132,110 +135,23 @@
                     "minor": 0
                 }
             },
-            "table 1": {
-                "options": {},
-                "type": "table",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "categorizer 1": {
-                "options": {},
-                "type": "categorizer",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "dropdown 1": {
-                "options": {},
-                "type": "dropdown",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "interaction 1": {
-                "options": {},
-                "type": "interaction",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "number-line 1": {
-                "options": {},
-                "type": "number-line",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "group 1": {
-                "options": {},
-                "type": "group",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "explanation 1": {
-                "options": {},
-                "type": "explanation",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "orderer 1": {
-                "options": {},
-                "type": "orderer",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            }
-        }
-    },
-    "answerArea": {
-        "type": "multiple",
-        "options": {
-            "content": "",
-            "images": {},
-            "widgets": {}
-        },
-        "calculator": false,
-        "periodicTable": false
-    },
-    "itemDataVersion": {
-        "major": 0,
-        "minor": 1
-    },
-    "hints": []
-}
-    "question": {
-        "content": "1. How do you commit in git with a comment?\n[[☃ radio 1]]\n2. What do you do before pushing in a git repository?\n[[☃ radio 2]]\n3. What is the URL to for the TP repository?\n[[☃ radio 3]]\n4. What of the following is a ruby framework?\n[[☃ radio 4]]\n\n",
-        "images": {},
-        "widgets": {
-            "radio 1": {
+            "radio 5": {
                 "type": "radio",
                 "alignment": "default",
                 "graded": true,
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "git commit Message"
+                            "content": "An instanceof a class.",
+                            "correct": true
                         },
                         {
-                            "correct": false,
-                            "content": "git commit -m Message"
+                            "content": "A pen",
+                            "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": true,
-                            "content": "git commit -m \"Message\""
+                            "content": "Something, you can touch"
                         }
                     ],
                     "randomize": false,
@@ -250,7 +166,7 @@
                     "minor": 0
                 }
             },
-            "radio 2": {
+            "radio 6": {
                 "type": "radio",
                 "alignment": "default",
                 "graded": true,
@@ -258,16 +174,35 @@
                     "choices": [
                         {
                             "correct": true,
-                            "content": "git pull"
+                            "content": "C"
                         },
                         {
                             "correct": false,
-                            "content": "git update"
+                            "content": "C++"
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "alt + f4 (ragequit)"
+                            "content": "C#"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Java"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Pascal"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Ruby"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "JavaScript"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "PHP"
                         }
                     ],
                     "randomize": false,
@@ -282,25 +217,33 @@
                     "minor": 0
                 }
             },
-            "radio 3": {
+            "radio 7": {
                 "type": "radio",
                 "alignment": "default",
                 "graded": true,
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "https://github.com/egotsev/elsys"
+                            "content": "Hyper Text Markup Language "
+                        },
+                        {
+                            "content": "Martkup Language"
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": true,
-                            "content": "https://github.com/thebravoman/software_engineering_2015"
+                            "content": "MarkUp Language"
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "http://dankkush.com/smokeweedeveryday420"
+                            "content": "Multi Linguinar"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Mobile Language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Hyper Text Mobile Language"
                         }
                     ],
                     "randomize": false,
@@ -315,24 +258,97 @@
                     "minor": 0
                 }
             },
-            "radio 4": {
+            "passage 1": {
+                "type": "passage",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageTitle": "Code",
+                    "passageText": "Some code in here",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        5,
+                        4
+                    ],
+                    "answers": [
+                        [
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        [
+                            5,
+                            6,
+                            7,
+                            8
+                        ],
+                        [
+                            9,
+                            10,
+                            11,
+                            12
+                        ],
+                        [
+                            13,
+                            14,
+                            15,
+                            16
+                        ],
+                        [
+                            17,
+                            18,
+                            19,
+                            20
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 8": {
                 "type": "radio",
                 "alignment": "default",
                 "graded": true,
                 "options": {
                     "choices": [
                         {
-                            "correct": false,
-                            "content": "Ruby on Crack"
+                            "content": "1",
+                            "correct": false
                         },
                         {
-                            "correct": true,
-                            "content": "Ruby on Wheels"
+                            "content": "2",
+                            "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "correct": false,
-                            "content": "Ruby on Rails"
+                            "content": "3",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "4",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -347,70 +363,6 @@
                     "minor": 0
                 }
             },
-            "table 1": {
-                "options": {},
-                "type": "table",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "categorizer 1": {
-                "options": {},
-                "type": "categorizer",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "dropdown 1": {
-                "options": {},
-                "type": "dropdown",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "interaction 1": {
-                "options": {},
-                "type": "interaction",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "number-line 1": {
-                "options": {},
-                "type": "number-line",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "group 1": {
-                "options": {},
-                "type": "group",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "explanation 1": {
-                "options": {},
-                "type": "explanation",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
-            "orderer 1": {
-                "options": {},
-                "type": "orderer",
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            }
         }
     },
     "answerArea": {
