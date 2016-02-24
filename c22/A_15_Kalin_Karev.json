@@ -1,46 +1,8 @@
 {
     "question": {
-        "content": "[1].What is the order of commands to correctly push a newly created file in a git repo ?\n\n1.git add 2.git pull 3.git clone\n4.git push 5.git push -f 6.git commit\n\n\n[[☃ dropdown 1]]\n\n[2].How to print \"Hello World!\" in Ruby?\n\n[[☃ radio 1]]\n\n[3].Who is our teacher?\n\n[[☃ radio 2]]\n\n[4.]What language did we learn\n\n[[☃ radio 3]]\n\n[5].Where do we upload our homeworks ?\n\n[[☃ radio 4]]\n\n[6].What are gems in Ruby\n\n[[☃ radio 5]]\n\n",
+        "content": "1. What is the correct command to add something to Github?\n\n[[☃ radio 1]]\n\n2. How can we made a string all letters downcase? \n\n[[☃ radio 2]]\n\n3. How to make a new empty array in Ruby?\n\n[[☃ radio 3]]\n\n4. How to make an array in Ruby that to have three numbers in it?\n\n[[☃ radio 4]]\n\n5. Which are possible loops in Ruby?\n\n[[☃ radio 5]]\n\n6. When is Ruby made?\n\n[[☃ radio 6]]\n\n",
         "images": {},
         "widgets": {
-            "dropdown 1": {
-                "type": "dropdown",
-                "alignment": "default",
-                "graded": true,
-                "options": {
-                    "placeholder": "Chose the correct answer from the dropdown",
-                    "choices": [
-                        {
-                            "content": "1,2,3,4,6",
-                            "correct": false
-                        },
-                        {
-                            "content": "1,3,5,6",
-                            "correct": false
-                        },
-                        {
-                            "content": "3,4,1,6",
-                            "correct": false
-                        },
-                        {
-                            "content": "3,4,1,6,5",
-                            "correct": false
-                        },
-                        {
-                            "content": "3,1,4,2",
-                            "correct": false
-                        },
-                        {
-                            "content": "3,2,1,6,4",
-                            "correct": true
-                        }
-                    ]
-                },
-                "version": {
-                    "major": 0,
-                    "minor": 0
-                }
-            },
             "radio 1": {
                 "type": "radio",
                 "alignment": "default",
@@ -48,31 +10,17 @@
                 "options": {
                     "choices": [
                         {
-                            "content": "printf(\"Hello World!\")",
-                            "correct": false,
-                            "clue": "No semicolon"
-                        },
-                        {
-                            "content": "printf(\"Hello World!\");",
-                            "correct": false,
-                            "clue": "This is C"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "writeln('Hello World!');",
-                            "correct": false,
-                            "clue": "This is Pascal"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "System.out.println(\"Hello World!\");",
-                            "correct": false,
-                            "clue": "This is Java"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "p \"Hello world\"",
+                            "content": "git -A",
                             "correct": true
+                        },
+                        {
+                            "content": "git .",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -94,32 +42,17 @@
                 "options": {
                     "choices": [
                         {
-                            "content": "Nina Mitova",
-                            "correct": false,
-                            "clue": "she is our Bulgarian language teacher"
+                            "content": "string.downcase",
+                            "correct": true
                         },
                         {
-                            "content": "Mosko Aladjem",
-                            "correct": false,
-                            "clue": "he is the SUBD teacher"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "Kiril Mitov",
-                            "correct": true,
-                            "clue": "YEA"
+                            "content": "string.upercase",
+                            "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "content": "Antonio Mindov",
-                            "correct": false,
-                            "clue": "he is a student in 11A"
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "Toni Storaro",
-                            "correct": false,
-                            "clue": "he is a singer"
+                            "content": "string.",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -141,27 +74,17 @@
                 "options": {
                     "choices": [
                         {
-                            "content": "Java",
-                            "correct": false
-                        },
-                        {
-                            "content": "C",
-                            "correct": false
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "C#",
-                            "correct": false
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "lua",
-                            "correct": false
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "Ruby",
+                            "content": "arr = Array.new",
                             "correct": true
+                        },
+                        {
+                            "content": "arr = [1, \"two\", 3.0]",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "array",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -183,35 +106,23 @@
                 "options": {
                     "choices": [
                         {
-                            "content": "facebook",
+                            "content": "Array.new(3)",
                             "correct": false
                         },
                         {
-                            "content": "zamunda.net",
-                            "correct": false
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "efbet.com",
+                            "content": "Array.new(3, true)",
                             "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "content": "github.com",
+                            "content": "arr = [1, 2, 3]",
                             "correct": true
-                        },
-                        {
-                            "isNoneOfTheAbove": false,
-                            "content": "githb.com"
-                        },
-                        {
-                            "isNoneOfTheAbove": true
                         }
                     ],
                     "randomize": false,
                     "multipleSelect": false,
                     "displayCount": null,
-                    "hasNoneOfTheAbove": true,
+                    "hasNoneOfTheAbove": false,
                     "onePerLine": true,
                     "deselectEnabled": false
                 },
@@ -227,16 +138,17 @@
                 "options": {
                     "choices": [
                         {
-                            "content": "Gems are packaged bits of Ruby code that you can install to extend or add functionality to your app.",
+                            "content": "for",
                             "correct": true
                         },
                         {
-                            "content": "Gems are function/methods which help you to easily compile are run your program.",
+                            "content": "start",
                             "correct": false
                         },
                         {
                             "isNoneOfTheAbove": false,
-                            "content": "Gems are type of variables."
+                            "content": "finish",
+                            "correct": false
                         }
                     ],
                     "randomize": false,
@@ -248,6 +160,46 @@
                 },
                 "version": {
                     "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "1995",
+                            "correct": true
+                        },
+                        {
+                            "content": "1800",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "1975",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
                     "minor": 0
                 }
             }
