@@ -1,0 +1,151 @@
+{
+    "question": {
+        "content": "1. Which line is Ruby code?\n[[? radio 1]]\n \n2. How many times Write function is called?\n\nvoid Write(string str)\n\n     std::cout << str << std::endl;\n\nint main()\n{\n\n     for(int i = 0; i <= 10; i += 2)\n           Write((string)i);\n\n} \n\nAnswer: \n[[? numeric-input 1]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "puts \"Some text\";",
+                            "correct": true,
+                            "clue": "It is Ruby code"
+                        },
+                        {
+                            "content": "std::cout << \"Some text\" << std::endl;",
+                            "clue": "It is C++ code",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Console.WriteLine(\"Some text\");",
+                            "clue": "It is C# code",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "clue": "puts \"Some text\"; is Ruby code"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "type": "numeric-input",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "answers": [
+                        {
+                            "value": 6,
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [
+                                "integer"
+                            ],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": false,
+                    "labelText": "Answer"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {
+                    "programID": "",
+                    "settings": [
+                        {
+                            "name": "",
+                            "value": ""
+                        }
+                    ],
+                    "showEditor": true,
+                    "showButtons": true,
+                    "width": 400,
+                    "height": 400
+                },
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "cs-program 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "radio 2": {
+                "id": "radio 2",
+                "type": "radio",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                },
+                "graded": true,
+                "alignment": "default",
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "5"
+                        },
+                        {
+                            "correct": true,
+                            "content": "6"
+                        },
+                        {
+                            "isNoneOfTheAbove": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
