@@ -1,4 +1,4 @@
-{{
+{
     "question": {
         "content": "1. How do you commit in git with a comment?\n[[☃ radio 1]]\n2. What do you do before pushing in a git repository?\n[[☃ radio 2]]\n3. What is the URL to for the TP repository?\n[[☃ radio 3]]\n4. What of the following is a ruby framework?\n[[☃ radio 4]]\n\n",
         "images": {},
