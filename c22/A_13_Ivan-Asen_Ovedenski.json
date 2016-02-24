@@ -1,0 +1,542 @@
+{
+    "question": {
+        "content": "1.What is 3 * 3 + 3 * 3 + 3 * 0 ?\n\n[[☃ radio 1]]\n\n2. What does  \" != \" mean ?\n\n[[☃ radio 2]]\n\n3.Fill the table for AND ?\n\n[[☃ table 1]]\n\n4. Rotate the triangle in 90 degree ... (Rotate from the point[2;2])\n\n[[☃ transformer 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "18",
+                            "correct": true
+                        },
+                        {
+                            "content": "0",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "36"
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": true
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "equality",
+                            "correct": false,
+                            "clue": "it is the oposite"
+                        },
+                        {
+                            "content": "inequality",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "caution",
+                            "clue": "what",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "New mark for c++ v.14",
+                            "clue": "There is no v.14",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": true
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "table 1": {
+                "type": "table",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "headers": [
+                        "X",
+                        "Y",
+                        "AND"
+                    ],
+                    "rows": 4,
+                    "columns": 3,
+                    "answers": [
+                        [
+                            "0",
+                            "0",
+                            "0"
+                        ],
+                        [
+                            "1",
+                            "0",
+                            "0"
+                        ],
+                        [
+                            "0",
+                            "1",
+                            "0"
+                        ],
+                        [
+                            "1",
+                            "1",
+                            "1"
+                        ]
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "type": "transformer",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "starting": {
+                        "shape": {
+                            "type": "polygon-3",
+                            "coords": [
+                                [
+                                    2,
+                                    2
+                                ],
+                                [
+                                    2,
+                                    6
+                                ],
+                                [
+                                    7,
+                                    2
+                                ]
+                            ]
+                        },
+                        "transformations": []
+                    },
+                    "graphMode": "interactive",
+                    "listMode": "dynamic",
+                    "tools": {
+                        "translation": {
+                            "enabled": true,
+                            "required": true,
+                            "constraints": {}
+                        },
+                        "rotation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                2,
+                                2
+                            ]
+                        },
+                        "reflection": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coords": [
+                                [
+                                    2,
+                                    -4
+                                ],
+                                [
+                                    2,
+                                    2
+                                ]
+                            ]
+                        },
+                        "dilation": {
+                            "enabled": false,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                6,
+                                6
+                            ]
+                        }
+                    },
+                    "drawSolutionShape": false,
+                    "gradeEmpty": true,
+                    "graph": {
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "markings": "graph",
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "showProtractor": true,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            0.5,
+                            0.5
+                        ]
+                    },
+                    "version": 1.2,
+                    "correct": {
+                        "transformations": [
+                            {
+                                "center": [
+                                    2,
+                                    2
+                                ],
+                                "angleDeg": 90,
+                                "type": "rotation"
+                            }
+                        ],
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    2,
+                                    2
+                                ],
+                                [
+                                    -2,
+                                    2.0000000000000004
+                                ],
+                                [
+                                    2.0000000000000004,
+                                    7
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        }
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "interaction 1": {
+                "options": {
+                    "graph": {
+                        "editableSettings": [
+                            "canvas",
+                            "graph"
+                        ],
+                        "box": [
+                            400,
+                            400
+                        ],
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "markings": "graph",
+                        "snapStep": [
+                            1,
+                            1
+                        ],
+                        "valid": true,
+                        "backgroundImage": {
+                            "url": null,
+                            "width": 0,
+                            "height": 0
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "tickStep": [
+                            1,
+                            1
+                        ]
+                    },
+                    "elements": [
+                        {
+                            "type": "function",
+                            "key": "function-842834",
+                            "options": {
+                                "value": "x",
+                                "rangeMin": "-10",
+                                "rangeMax": "10",
+                                "color": "#6495ED",
+                                "strokeDasharray": "",
+                                "strokeWidth": 2,
+                                "funcName": "f"
+                            }
+                        },
+                        {
+                            "type": "point",
+                            "key": "point-c8f425",
+                            "options": {
+                                "coordX": "0",
+                                "coordY": "0",
+                                "color": "black"
+                            }
+                        },
+                        {
+                            "type": "movable-point",
+                            "key": "movable-point-9aca83",
+                            "options": {
+                                "startX": "0",
+                                "startY": "0",
+                                "constraint": "none",
+                                "snap": 0.5,
+                                "constraintFn": "0",
+                                "constraintXMin": "-10",
+                                "constraintXMax": "10",
+                                "constraintYMin": "-10",
+                                "constraintYMax": "10",
+                                "varSubscript": 0
+                            }
+                        }
+                    ]
+                },
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "interaction 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "interactive-graph 1": {
+                "options": {},
+                "type": "interactive-graph",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "measurer 1": {
+                "options": {
+                    "box": [
+                        480,
+                        480
+                    ],
+                    "image": {},
+                    "showProtractor": false,
+                    "showRuler": true,
+                    "rulerLabel": "",
+                    "rulerTicks": 10,
+                    "rulerPixels": 40,
+                    "rulerLength": 10
+                },
+                "type": "measurer",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                },
+                "id": "measurer 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {
+                    "passageTitle": "",
+                    "passageText": "",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "passage 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matcher 1": {
+                "options": {},
+                "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "video 1": {
+                "options": {},
+                "type": "video",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

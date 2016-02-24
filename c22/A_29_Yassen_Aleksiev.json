@@ -1,0 +1,95 @@
+{
+    "question": {
+        "content": "Дадена е част от декларацията на класа X. Класът X има само една член-променлива int* pi_. Необходимо ли е за този клас да се дефинира копиращ конструктор? \n\nclass X {\n\n     int *pi_;\n\npublic:\n\n     X(void) : pi_(new int) {}\n\n     ~X(void){delete pi_;}\n    //....\n[[☃ radio 1]]\n\n};",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "a. не --- защото се заделя памет само за едно цяло число ",
+                            "correct": false
+                        },
+                        {
+                            "content": "b. да --- автоматично генерираният копиращ конструктор не е коректен",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "c. да --- иначе при копиране на обекти от типа X компилаторът ще даде съобщение за грешка ",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "d. не --- автоматично генериращият копиращ конструктор е коректен",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 1",
+                "graded": true,
+                "alignment": "block"
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

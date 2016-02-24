@@ -1,0 +1,70 @@
+{
+    "question": {
+        "content": "Q1.What is thefollowing code?\n\n[[☃ passage 1]]\n\n[[☃ radio 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "passage 1": {
+                "type": "passage",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageTitle": "",
+                    "passageText": "<note><to>Tove</to><from>Jani</from>     <heading>Reminder</heading><body>Don't forget me  this weekend!</body></note>",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "JSON"
+                        },
+                        {
+                            "correct": false,
+                            "content": "CSV"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "XML"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

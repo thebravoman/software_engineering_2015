@@ -1,0 +1,405 @@
+{
+    "question": {
+        "content": "How to define an array in JSON\n\n[[☃ radio 1]]\n\na controller in RoR\n\n[[☃ radio 2]]\n\nWhat language is this?\n\n[[☃ image 1]]\n[[☃ radio 3]]\n\nIs there inheritance in C++?\n\n[[☃ radio 4]]\n\nVERY HARD QUESTION !!! What language is this?\n\n[[☃ image 2]]\n\n[[☃ radio 5]]\n\nHow old is the language C?\n\n[[☃ radio 6]]\n\nHow old is the language Ruby?\n\n[[☃ radio 7]]\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "var array = [];",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "int array = [10];"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "array = []"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yes",
+                            "correct": true
+                        },
+                        {
+                            "content": "No",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "If I say so",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        777,
+                        552
+                    ],
+                    "backgroundImage": {
+                        "url": "http://1.bp.blogspot.com/-SV69oGuD_ns/Uf64nynoggI/AAAAAAAAAoo/Emv3UI0rT_U/s1600/swap-funtion-cpp-example.PNG",
+                        "width": 777,
+                        "height": 552
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Bulgarian",
+                            "correct": false
+                        },
+                        {
+                            "content": "C++",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Ruby",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Python",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "HTML",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "I dont think so",
+                            "correct": false
+                        },
+                        {
+                            "content": "Yes",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "No",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "If I say so",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 2": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        628,
+                        722
+                    ],
+                    "backgroundImage": {
+                        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Html-source-code.png",
+                        "width": 628,
+                        "height": 722
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "HTML",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "C#"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "JAVA"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Lua"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Yeah"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "na bibliq",
+                            "correct": false
+                        },
+                        {
+                            "content": "1337",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "187",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "1972"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 7": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Brand new",
+                            "correct": false
+                        },
+                        {
+                            "content": "Yesterday",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "1995",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "1990",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {
+                    "answers": [
+                        {
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "value": null,
+                            "status": "wrong",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": false,
+                    "labelText": ""
+                },
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "numeric-input 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {},
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}
