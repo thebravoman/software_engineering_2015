@@ -41,7 +41,7 @@
                     "minor": 0
                 }
             },
-            "dropdown 1": {
+            "dropdown 1":{
                 "type": "dropdown",
                 "alignment": "default",
                 "graded": true,
@@ -53,7 +53,7 @@
                             "correct": true
                         },
                         {
-                            "content": "cout<< \"Hello World\"<<endln;",
+                            "content": "cout<< \"Hello World\"<<endlp;",
                             "correct": false
                         },
                         {
