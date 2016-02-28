@@ -1,21 +1,21 @@
 Milestone 1
-Program's main Window - Make the program's Window and it's properties and make a template of all buttons, textfields and the textarea, 1
-File Input - Implement a function to open a file, read all the subtitles from it and show them in the subtitles area, 1
+Program's main Window - Make the program's Window and it's properties and make a template of all buttons, textfields, textarea and subtitle table, 1
+File Input - Implement a function to open a file, read all the subtitles from it and show them in the subtitles table, 1
 File Output - Implement a function to save and close a subtitles file , 1
 Subtitle moving - Implement a function which is going to move the subtitles forward/backward from a certain time by N seconds, 1
 Subtitle start,end,duration - Create the start,end and the duration textfields from which will be taken information when the user enters a subtitle, 1
-Subtitle showing - Implement a function that shows all subtitles loaded from a subtitles file and created afterwards in the textarea, 1
-Subtitle input - Implement a function that takes all information from the textfield which contains the subtitle written by the user and from the start,end,duration textfields and writes it in the textarea, 1
+Subtitle showing - Implement a function that shows all subtitles loaded from a subtitles file and created afterwards in the subtitle table, 1
+Subtitle input - Implement a function that takes all information from the textarea which contains the subtitle written by the user and from the start,end,duration textfields and writes it in the subtitle table, 1
 Menu - Make the menubar and it's submenus which will contain options such as subtitles file opening and saving, video file opening, font tools, search and replace functions, 2
 
 Milestone 2
-New subtitles - Implement a function which will clear the textarea and the start, end and duration textfields, 2
+New subtitles - Implement a function which will clear the subtitle table and the start, end and duration textfields, 2
 Video support - Implement a function to open and play a video file in the application, 2
 Subtitle synchronization - Implement a function that synchronizes the "start" subtitle textfield with the current video's time, 2
 Subtitles over video - Implement a fucntion that will show the subtitles over the loaded video, 2
 Insert subtitles - Implement a function which will insert a new subtitle in the chosen place by the user, 2	
 Subtitles delete - Implement a function which will delete line or lines of subtitles, 2
-Right click menu - Implement menus which will show on the right click of the user on the textarea or the input textfield, 2
+Right click menu - Implement menus which will show on the right click of the user on the subtitle table or the textarea, 2
 
 Milestone 3
 Program options - Make some kind of options for the program which the user can change like default text size, color style etc.
