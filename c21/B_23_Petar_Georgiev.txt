@@ -9,14 +9,17 @@ M1
   inventory setup
   basic story
   items and usage
+  save/load
 M2
   finished campaign
   title screen
   options menu
 M3(bonus)
   advanced AI
+  random world gen
   balanced gameplay
   arcade mode
   multiplayer
   more content
-  
+  crafting
+  clean collisions
