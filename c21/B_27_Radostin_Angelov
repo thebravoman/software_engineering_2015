@@ -1,8 +1,28 @@
-Project: 
-Description: A 2D sandbox survival game.
-Priorities:
-Game World:
-1. Generate game world
-2. Spawn resources
-3. Spawn mobs
-4. Spawn entities - trees, etc.
+We will be developing a 2d sandbox game in which the player can freely choose what to do.
+The player will be spawned in a procedurally generated world and will be able to dig and fight.
+By digging the player gathers resources.
+With those resources he can build new items and become more powerful.
+
+M1
+
+- Pick technology.
+- Research procedural generation.
+- Basic player models.
+- Movement.
+- Basic world (procedural if possible).
+- Digging.
+
+M2
+
+- Items
+- Digging yields items.
+- Crafting.
+- Enemies.
+
+M3
+
+- Enemy AI.
+- Improved procedural generation.
+- Harder survival.
+- Player stats.
+- Special places.
