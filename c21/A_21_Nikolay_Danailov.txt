@@ -4,13 +4,9 @@ Android call handling – In this task we want to make every logged in phone to 
 
 Android intent sending to keep the connection open – Send an intent to keep the connection with the GCM service open. Priority 1
 
-Android register device at app launch – When you start the app and when you log in as administrator you can register devices that will be called and checked. Priority 1
+Android register device – When you start the app and when you log in as administrator you can register devices that will be called and checked. Priority 1
 
 Server call handling – Here we want to see when the android call is over which user responded to the call (checked) and which didn't. Priority 1
-
-Server check if user is in shift – If the user is in the shift he/she is going to get calls. If the user is logged in but his/hers shift hasn't started he would not get any calls. Priority 1
-
-Server send email at end of shift – When the shift is over the server will sent an email to the administrator with the log of the calls made to his/hers users (workers). Priority 1
 
 Server work with database properly - The server should be able to work with the database properly and handle its information. Priority 1
 
@@ -19,6 +15,10 @@ Research databases - We should research and learn how to make tables in database
 DB tables should be linked - The tables in the databases should have relations between them. Priority 1
 
 M2
+
+Server check if user is in shift – If the user is in the shift he/she is going to get calls. If the user is logged in but his/hers shift hasn't started he would not get any calls. Priority 2
+
+Server send email at end of shift – When the shift is over the server will sent an email to the administrator with the log of the calls made to his/hers users (workers). Priority 2
 
 Android administrator log in – When you log in as an administrator you will be able to add/remove users (worker's profile). Priority 2
 
