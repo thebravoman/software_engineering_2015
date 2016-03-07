@@ -1,0 +1,91 @@
+{
+    "question": {
+        "content": "Нека v е обект  от типа std::vector<int>. Кой метод трябва да се използва, за да се вмъкне нов елемент със стойност 10, като последен елемент на v?\n\n[[☃ radio 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "a. v.back(10)"
+                        },
+                        {
+                            "content": "b. v.push(10)"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "c. v.push_back(10)"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "d. v. insert(10)"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 1",
+                "graded": true,
+                "alignment": "block"
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

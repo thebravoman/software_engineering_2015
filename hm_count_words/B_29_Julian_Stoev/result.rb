@@ -23,7 +23,7 @@ class Result
 		end
 	end
 
-	def to_data_base
+	def generate_database
 		db = SQLite3::Database.new "B_29_Julian_Stoev.db"
 		db.execute "CREATE TABLE IF NOT EXISTS statistics(id INTEGER PRIMARY KEY AUTOINCREMENT, hash TEXT);"
 		db.execute "CREATE TABLE IF NOT EXISTS wordCounts(statistic_id INTEGER PRIMARY KEY AUTOINCREMENT,word TEXT, count INT);"

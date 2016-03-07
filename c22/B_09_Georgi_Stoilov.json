@@ -1,0 +1,412 @@
+{
+    "question": {
+        "content": "How you can print some text on the screen with ruby?\n\n[[☃ radio 1]]\n\nCan you draw SVG with Ruby?\n\n[[☃ radio 2]]\n\nКакво е това и по кой предмет се изучава ?\n[[☃ grapher 1]]\n\n[[☃ radio 3]]\n\nНамери лицето на триъгълника изобразен по долу.\n[[☃ transformer 1]]\n[[☃ numeric-input 1]]\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "puts \"Add something to screen\"",
+                            "correct": true,
+                            "clue": "YEY"
+                        },
+                        {
+                            "content": "printf(\"Add something to screen\\n\");",
+                            "correct": false,
+                            "clue": "Nope this is c/c++"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "System.out.println(\"Add something to screen\");",
+                            "clue": "Nope this is Java"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yes",
+                            "correct": true
+                        },
+                        {
+                            "content": "No",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "grapher 1": {
+                "type": "grapher",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": {
+                        "type": "sinusoid",
+                        "coords": null,
+                        "asymptote": null
+                    },
+                    "availableTypes": [
+                        "sinusoid"
+                    ],
+                    "graph": {
+                        "editableSettings": [
+                            "graph",
+                            "snap",
+                            "image"
+                        ],
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            1,
+                            1
+                        ],
+                        "valid": true,
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "markings": "graph",
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "showProtractor": false,
+                        "showRuler": false
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Електронни елементи и това е любимата ни синусоида.",
+                            "correct": true
+                        },
+                        {
+                            "correct": true,
+                            "content": "Математика, синусоида"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ОС"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Не знам кво е това."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Синусоида ма не знам къде съм го учил."
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "type": "transformer",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "starting": {
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -0.5,
+                                    -1
+                                ],
+                                [
+                                    -5,
+                                    6.5
+                                ],
+                                [
+                                    7,
+                                    2
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        },
+                        "transformations": []
+                    },
+                    "graphMode": "interactive",
+                    "listMode": "dynamic",
+                    "tools": {
+                        "translation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {}
+                        },
+                        "rotation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                1,
+                                6
+                            ]
+                        },
+                        "reflection": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coords": [
+                                [
+                                    2,
+                                    -4
+                                ],
+                                [
+                                    2,
+                                    2
+                                ]
+                            ]
+                        },
+                        "dilation": {
+                            "enabled": true,
+                            "required": false,
+                            "constraints": {
+                                "fixed": false
+                            },
+                            "coord": [
+                                6,
+                                6
+                            ]
+                        }
+                    },
+                    "drawSolutionShape": true,
+                    "gradeEmpty": false,
+                    "graph": {
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "markings": "grid",
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            0.5,
+                            0.5
+                        ]
+                    },
+                    "version": 1.2,
+                    "correct": {
+                        "transformations": [],
+                        "shape": {
+                            "type": [
+                                "polygon-3"
+                            ],
+                            "coords": [
+                                [
+                                    -0.5,
+                                    -1
+                                ],
+                                [
+                                    -5,
+                                    6.5
+                                ],
+                                [
+                                    7,
+                                    2
+                                ]
+                            ],
+                            "options": [
+                                {}
+                            ]
+                        }
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "type": "numeric-input",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "answers": [
+                        {
+                            "value": null,
+                            "status": "correct",
+                            "message": "42",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": false,
+                    "labelText": "Напиши тук твоя отговор."
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {
+                    "matrixBoardSize": [
+                        2,
+                        2
+                    ],
+                    "answers": [
+                        [
+                            5,
+                            5
+                        ],
+                        [
+                            4,
+                            6
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "matrix 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "matrix 2": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": true,
+        "periodicTable": true
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        }
+    ]
+}

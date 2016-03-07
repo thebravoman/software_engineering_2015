@@ -1,0 +1,18 @@
+tri vida potrebitelq lognati s Git account,FB
+I  teacher
+II student
+--
+module za razlichni domashni
+Cheater system
+input from GIT repository (zadadeno ot uchitelq)
+proverqva dali output-a na domashnoto suvpada s obrazetsa 
+output v csv file
+Desktop prilojenie -> pole za input pri lognat student ili input za ochackvan resultat 
+ako imate 1 da push-va avtomaticno
+pri 0 da izberesh da push-a ili ne
+raboti s GIT repository
+uchitelq zadava deadline
+auto proverka kogato doide krainiq srok
+email s requltatite
+svalq jelaniq file ot GIT repo
+statistica

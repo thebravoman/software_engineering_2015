@@ -21,10 +21,8 @@ module WordCounter
       db.execute "create table if not exists statistics(id INTEGER PRIMARY KEY AUTOINCREMENT,
       source_name  string, hash string);"
       db.execute "create table if not exists word_counts(statistic_id int, word string, count string);"
-      xdg = Digest::SHA256.file $a
-      xdg.hexdigest
-      db.execute "insert into statistics(source_name, hash) values(?,?);", [$a,xdg.to_s]
-      stat_id = db.last_insert_row_id 
+      db.execute "insert into statistics(source_name, hash) values(?,null);", [$a]
+      stat_id = db.last_insert_row_id
       @help.each{ |element|
         db.execute "insert into word_counts(statistic_id, word, count) values(?,?,?);", [stat_id,element[0],element[1]]
     	}
@@ -42,6 +40,7 @@ module WordCounter
     end
   	def to_csv
       to_db
+      to_svg
       @help.each{ |element|
     	   puts "#{element[0]},#{element[1]}"
     	}
@@ -52,6 +51,7 @@ module WordCounter
 
   	def to_json
       to_db
+      to_svg
     	if @punctuation != 0
     		puts JSON.pretty_generate("marks" => @punctuation,"words" => @help)
     	else
@@ -61,6 +61,7 @@ module WordCounter
 
   	def to_xml
       to_db
+      to_svg
   		my_xml = REXML::Document.new('')
   		word_counts = my_xml.add_element('word-counts')
   		if @punctuation != 0
@@ -77,7 +78,6 @@ module WordCounter
   	end
 
     def to_svg
-      to_db
       File.open("B_15_Yordan_Yankulov.svg","w") do |f|
         f.write('<svg xmlns="http://www.w3.org/2000/svg">')
         foo = 30
@@ -86,7 +86,6 @@ module WordCounter
         counter = 0
         element_remember = 0
         @help.each{ |element|
-          puts foo1
           if element_remember != element[1]
             foo1 -= d
           end

@@ -1,0 +1,243 @@
+{
+    "question": {
+        "content": "\n\nWhat is ruby?\n[[☃ radio 1]]\n\nWhich of the following isn't a markup language?\n[[☃ radio 2]]\n\nWhat does XML stand for?\n[[☃ radio 3]]\n\nWhich of the following are programming languages?\n[[☃ radio 4]]\n\nWhich of these are valid loops in C++?\n[[☃ radio 5]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Gemstone",
+                            "correct": false
+                        },
+                        {
+                            "content": "Programming language",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Both",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "XML",
+                            "correct": false
+                        },
+                        {
+                            "content": "HTML",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "CSS",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "GML",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Extensible Markup language",
+                            "correct": true
+                        },
+                        {
+                            "content": "Explosive Meatloaf Lunch",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Expanding Measuring Line",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Xtreme Markup Language"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "C",
+                            "correct": true
+                        },
+                        {
+                            "content": "C++",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Pascal",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Newton"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Einstein"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "COBOL",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Ruby",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Diamond"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Java",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "for(;;){}",
+                            "correct": true
+                        },
+                        {
+                            "content": "while(){}",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "do{} while()",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "do each"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "loop{} to()"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "options": {},
+                "type": "explanation",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

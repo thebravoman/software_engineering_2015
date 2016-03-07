@@ -1,0 +1,293 @@
+{
+    "question": {
+        "content": "\n1.Which command you need to work with CSV files?\n[[☃ radio 1]]\n2.How an array is defined in Ruby(use arr as name of the array):\n[[☃ radio 2]]\n3.Is the declaration of class \"Banana\" legit?\n\n[[☃ image 1]]\n[[☃ radio 3]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "require \"csv\"",
+                            "correct": true
+                        },
+                        {
+                            "content": "require \"sanitaze\"",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "require \"builder\"",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "require \"json\""
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "arr(10)",
+                            "correct": false
+                        },
+                        {
+                            "content": "int arr[10] = new int(10);",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "arr[]",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        306,
+                        296
+                    ],
+                    "backgroundImage": {
+                        "url": "https://rubyhacking.files.wordpress.com/2012/09/example_code.png",
+                        "width": 306,
+                        "height": 296
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yes",
+                            "correct": true
+                        },
+                        {
+                            "content": "No",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": true
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "categorizer 1": {
+                "options": {},
+                "type": "categorizer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {
+                    "programID": "",
+                    "settings": [
+                        {
+                            "name": "",
+                            "value": ""
+                        }
+                    ],
+                    "showEditor": true,
+                    "showButtons": true,
+                    "width": 400,
+                    "height": 400
+                },
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "cs-program 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {
+                    "answerForms": [],
+                    "buttonSets": [
+                        "basic"
+                    ],
+                    "functions": [
+                        "f",
+                        "g",
+                        "h"
+                    ],
+                    "times": false
+                },
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                },
+                "id": "expression 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "passage 1": {
+                "options": {},
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage-ref 1": {
+                "options": {
+                    "passageNumber": 12,
+                    "referenceNumber": 12,
+                    "summaryText": ""
+                },
+                "type": "passage-ref",
+                "version": {
+                    "major": 0,
+                    "minor": 1
+                },
+                "id": "passage-ref 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "options": {},
+                "type": "transformer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "options": {},
+                "type": "radio",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

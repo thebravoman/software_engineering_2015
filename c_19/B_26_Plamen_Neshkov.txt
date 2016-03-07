@@ -1,0 +1,16 @@
+MVP:
+* As a student, I should know how the repo is structured, so that I can submit correctly.
+
+* As a teacher, I should be able to specify a new task and its correct input and output, so that I can assess a student's progress.
+
+* As a teacher, I should be able to check against multiple inputs and outputs, so that I can assure the submission is complete.
+
+* The application should regularly pull from the repo and check new solutions, so that students can keep up to date.
+
+* As a teacher, I should be able to specify a deadline for a task, so that I can discard late solutions.
+
+Product backlog:
+
+* As a student, I should be notified when my homework is checked, so that I can correct any mistakes in time.
+
+* As a teacher, I should have access to detailed statistics, so that I can have a complete picture of my class' level.

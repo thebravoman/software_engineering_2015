@@ -1,0 +1,25 @@
+M1
+  learn java
+  find sprites // opengameart or hand drawn
+  world gen
+  player class
+  light engine
+  world objects
+  basic AI
+  inventory setup
+  basic story
+  items and usage
+  save/load
+M2
+  finished campaign
+  title screen
+  options menu
+M3(bonus)
+  advanced AI
+  random world gen
+  balanced gameplay
+  arcade mode
+  multiplayer
+  more content
+  crafting
+  clean collisions
