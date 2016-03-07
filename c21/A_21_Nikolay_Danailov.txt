@@ -1,5 +1,7 @@
 M1
 
+Learn Ruby on Rails - Read the book [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+
 Android call handling – In this task we want to make every logged in phone to  ring at a certain time set from the administrator. Priority 1
 
 Android intent sending to keep the connection open – Send an intent to keep the connection with the GCM service open. Priority 1
