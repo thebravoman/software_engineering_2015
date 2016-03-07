@@ -17,8 +17,11 @@ ActiveRecord::Schema.define(version: 20160307150201) do
     t.integer  "task_id"
     t.text     "code"
     t.text     "author"
+    t.integer  "automatic_score"
+  	t.integer  "manual_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "tests_output"
   end
 
   create_table "tasks", force: :cascade do |t|
