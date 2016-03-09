@@ -1,14 +1,12 @@
 M1
 
-Learn Ruby on Rails - Read the book [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+Learn Ruby on Rails - Read the book [Ruby on Rails Tutorial](https://www.railstutorial.org/). Priority 1
 
-Android call handling – In this task we want to make every logged in phone to  ring at a certain time set from the administrator. Priority 1
+Android call handling – In this task we want to make the server send calls to all registered devices. Priority 1
 
 Android intent sending to keep the connection open – Send an intent to keep the connection with the GCM service open. Priority 1
 
-Android register device – When you start the app and when you log in as administrator you can register devices that will be called and checked. Priority 1
-
-Server call handling – Here we want to see when the android call is over which user responded to the call (checked) and which didn't. Priority 1
+Android register device – When you start the app, it should register the device with the server. Priority 1
 
 Server work with database properly - The server should be able to work with the database properly and handle its information. Priority 1
 
@@ -17,6 +15,8 @@ Research databases - We should research and learn how to make tables in database
 DB tables should be linked - The tables in the databases should have relations between them. Priority 1
 
 M2
+
+Server call handling – Here we want to see when the android call is over which user responded to the call (checked) and which didn't. Priority 2
 
 Server check if user is in shift – If the user is in the shift he/she is going to get calls. If the user is logged in but his/hers shift hasn't started he would not get any calls. Priority 2
 
