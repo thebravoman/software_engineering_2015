@@ -1,0 +1,28 @@
+<style>label { display: block; }</style>
+
+<%= form_for @task do |f| %>
+  <% if @task.errors.present? %>
+    <ul>
+      <% @task.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :tests %>
+    <%= f.text_area :tests %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
