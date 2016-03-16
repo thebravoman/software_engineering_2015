@@ -1,5 +1,5 @@
 M1
-  learn java
+  learn java x
   find sprites // opengameart or hand drawn
   world gen
   player class
