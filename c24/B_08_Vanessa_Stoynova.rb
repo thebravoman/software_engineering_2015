@@ -1,7 +1,6 @@
 # 1. p = 17, q = 23
 # 2. n = 391
 # 3. phi(n) = 352
-# 4.
 
 def get_divisors(number)
 	result = []
@@ -16,22 +15,21 @@ end
 
 def get_gcd(first, second)
 
-  	first_divisors = get_divisors(first)
- 	second_divisors = get_divisors(second)
+	first_divisors = get_divisors(first)
+	second_divisors = get_divisors(second)
 
   	gcd = first_divisors.first
 
   	first_divisors.each do |first_div|
   		
-    	second_divisors.each do |second_div|
-      		if first_div == second_div
-        		gcd = first_div if first_div > gcd
-      	end
-    end
-  end
+    		second_divisors.each do |second_div|
+      			if first_div == second_div
+        			gcd = first_div if first_div > gcd
+      			end
+    		end
+  	end
 
-  gcd
-
+  	gcd
 end
 
 number1 = ARGV[0].to_i
