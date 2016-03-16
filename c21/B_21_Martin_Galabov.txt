@@ -1,0 +1,64 @@
+M1
+1.Take photographs
+Take many photographs to use for the photogrammetry process for creation 3d models for the game
+2.Research and create diffuse albedo masks
+The 3D models created by the photogrammetry are lighted. We need to de-light them.
+3.Create collision masks
+The 3D objects need a collision mask so that the player doesn't just walk through them.
+4.Create LODs
+Create different levels of detail for the objects so that the game is optimised
+5.Create UVs
+Create UV masks for the objects for realistic lighting
+6.Create materials
+Import the created materials into untreal and build them
+7.Create an early sketch of the first level
+Draw a sketch for the first level so that we can plan the objects needed and start building the terrain
+8.Start building a plan for the puzzles and the materials and objects needed for their creation
+9.Start building the level
+10.Position the fog effects
+11.Position the lighting effects
+12.Position the reflection samplers
+13.Position the basic elements of the level
+14.Build collision blueprints and events where needed
+15.Position secondary elements such as grass, particle streams and puddles
+M2
+1.Main character
+Start discussing the main character and think of how he should look and behave
+2.Draw the main character
+3.Rig the main character
+Develop basic rigging for the character to be used for animation later
+4.Apply materials
+5.Discuss clothing and styles
+6.Create clothing and animate it correctly
+7.Import the character into Unreal
+8.Test for blue hells
+9.Story
+The game needs a story so at this poinr we should probably start writing some lines for the character
+10.Start animating the character and begin creatin at lest some of the story-driven animations
+11.Begin creating the gameplay elements
+12.Voice acting
+13.Use audio software to make the recordings game-suitable
+14.Research surround sound systems built into Unreal
+15.Implement the recordings and listen for audio quality
+M3
+1.Begin recording the dialogue
+2.Record sound effects
+3.Record ambient effects
+4.Implement the above
+5.Create collectables for the game
+6.Position the collectables in hard to dsicover places
+7.App Store vs. Google Play (The war that never ends!!!)
+8.Create a save game system
+9.Choose chackpoints for auto-save feature
+10.Begin testing the game on some devices to see if there are in-game bugs or the game isn't performing to design
+This will require us to install OS X on a machine, export the Unreal projects to .apk files and then import them to Xcode
+11.Create a Logo 
+12.Create a main menu 
+13.Create loading screens 
+14.Create options menu
+15.Price
+Research the prices that are best for the client and for us
+16.Finishing touches
+17.A great battle between us and the App Store/ Google Play
+18.Publish
+19.Monetize

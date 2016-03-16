@@ -1,0 +1,36 @@
+PROJECT THEME - VIDEO PLAYER ON C#
+Creators: Bojidar Zahov, Lubomir Kiprov
+M1
+
+  1. Video Streaming - Research libraries about Video Streaming - 3
+  2. Tutorials of simples video players - Watching some tutorials - 1
+  3. First button - Trying to start video - 2
+  4. Second button - Trying to forward scroll button - 1
+  5. OpenFileDialog - How to do it and read how to use it - 1
+  6. Sub button - Open subtitles - 1
+  7. Interface - Make simple user interface - 2
+  8. Subs - Open subs and instil them in the player - 3
+  9. Synchronization 1 - synchronize subs with the video - 3
+  10. Synchronization 1.1 - synchronize subs when forward or backward button is pressed - 3
+
+M2
+
+  11. Events - Read about events in C# - 2
+  12. Interface - Make user friendly interface - 3
+  13. Files - Work with many files formats - 1
+  14. Playlist - Possibility to create playlists - 1
+  15. Theme - Possibility to change your theme - 1
+  16. Mouse - Research how to open possibilities when right button on mouse has pressed - 2
+  17. Keys - Rewrite buttons functionality in keys - 3
+  18. Data - When you have watched/listened any (for example video), the path of the current video uploads data - 3
+  19. Uploads Path- When you open the app again ,your videos,wich you has watched before will be on your home page - 3
+  20. Homepage Videos - It allows you to watching the videos again without to search video path again - 3
+
+M3
+
+  21. Begining of video - Video starts from there, where you closed it last time - 3
+  22. Voice recognition - Create subs by voice recognition - 1
+  23. EncSubs - Encoding of subs - 3
+  24. Marathon - if you download a serial you can make a marathon of series - 3
+  25. AutoSubs - Automatic download of subs if they exist(choise of language/turn on/turn off) - 1
+

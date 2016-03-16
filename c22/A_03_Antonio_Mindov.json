@@ -1,0 +1,94 @@
+{
+    "question": {
+        "content": "How to compile a ruby program?\n\n[[☃ radio 1]]\n\n\nWhat will be the values in `array` after this code :\n\n`array = [[3,4,5],[1,2,3],[2,4,5]] `\n\n[[☃ matrix 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "compile program_name",
+                            "clue": "STUPID BOY",
+                            "correct": false
+                        },
+                        {
+                            "content": "ruby program_name.rb",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "program_name.rb compile ruby",
+                            "clue": "lololo"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        3,
+                        3
+                    ],
+                    "answers": [
+                        [
+                            3,
+                            4,
+                            5
+                        ],
+                        [
+                            1,
+                            2,
+                            3
+                        ],
+                        [
+                            2,
+                            4,
+                            5
+                        ]
+                    ],
+                    "prefix": "",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": true,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

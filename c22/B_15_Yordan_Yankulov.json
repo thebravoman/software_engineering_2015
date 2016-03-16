@@ -1,0 +1,399 @@
+{
+    "question": {
+        "content": "1.  Is ruby a script language?\n\n[[☃ radio 1]]\n\n2. How do you run ruby in Terminal?\n\n[[☃ radio 2]]\n\n3. Run the program named \"hello.rb\" that contains \"puts \"Hello world!\"\"\n\n[[☃ sorter 1]]\n\n4. What is that creature \"irb\"?\n\n[[☃ radio 3]]\n\n5. What is the meaning of CSV?\n\nco[[☃ dropdown 1]] [[☃ dropdown 2]][[☃ dropdown 3]]\n\n6.If you have the following:\n\n$\\begin{align} numbers = [2,1,89,10] \\\\\nnumbers.sort \\end{align}$\n, the result for numbers will be :\n\n[[☃ radio 4]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yeah, of course it is!",
+                            "correct": true,
+                            "clue": "Because there are included functions!"
+                        },
+                        {
+                            "content": "Nope",
+                            "clue": "There are included functions! It is script language",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": false,
+                            "content": "Partly it is - depends on the point of view",
+                            "clue": "Well, sorry to disappoint you, but it is!"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "ruby name_of_file",
+                            "clue": "Correct! Name_of_file.rb!"
+                        },
+                        {
+                            "content": "r name_of_file",
+                            "clue": "Nope, sorry. Its ruby name_of_file!Sad! Next time - more!"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "name_of_file",
+                            "clue": "Nope, sorry. Its ruby name_of_file!Sad! Next time - more!"
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "clue": "Nope, sorry. Its ruby name_of_file!Sad! Next time - more!"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "type": "sorter",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": [
+                        "$ruby$",
+                        "$hello$",
+                        "$.$",
+                        "$rb$"
+                    ],
+                    "layout": "horizontal",
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Ordinary, non-magical creature, which tortures students",
+                            "correct": false,
+                            "clue": "Nope, not this time dear sir!"
+                        },
+                        {
+                            "content": "It is an interactive console,where you can type code without text editor",
+                            "clue": "Correct! You rock!",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "It is an interactive console,where you can type code",
+                            "correct": true,
+                            "clue": "Good! You are my hero"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "It is an interactive console,where you can type code with text editor",
+                            "clue": "Nope, you use it without text editor, because u call it in the terminal!"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "mma-",
+                            "correct": true
+                        },
+                        {
+                            "content": "mmon-",
+                            "correct": false
+                        },
+                        {
+                            "content": "mmotion-",
+                            "correct": false
+                        },
+                        {
+                            "content": "mplicated-",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "dropdown 2": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "separated",
+                            "correct": true
+                        },
+                        {
+                            "content": "service",
+                            "correct": false
+                        },
+                        {
+                            "content": "setting",
+                            "correct": false
+                        },
+                        {
+                            "content": "source",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "dropdown 3": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "voice",
+                            "correct": false
+                        },
+                        {
+                            "content": "vmware",
+                            "correct": false
+                        },
+                        {
+                            "content": "values",
+                            "correct": true
+                        },
+                        {
+                            "content": "code",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "numbers = [2,1,89,10]",
+                            "correct": true,
+                            "clue": "Yeah, because it doesn't change it's value  - it returns new array."
+                        },
+                        {
+                            "content": "numbers = [1,2,10,89]",
+                            "correct": false,
+                            "clue": "It doesn't change it's value  - it returns new array."
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "numbers = [89,10,2,1]",
+                            "correct": false,
+                            "clue": "It doesn't change it's value  - it returns new array."
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {
+                    "programID": "",
+                    "settings": [
+                        {
+                            "name": "",
+                            "value": ""
+                        }
+                    ],
+                    "showEditor": false,
+                    "showButtons": false,
+                    "width": 400,
+                    "height": 400
+                },
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "cs-program 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {
+                    "answers": [
+                        {
+                            "status": "correct",
+                            "message": "Hello world!",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "value": null,
+                            "status": "wrong",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": false,
+                    "labelText": ""
+                },
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "numeric-input 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage-ref 1": {
+                "options": {},
+                "type": "passage-ref",
+                "version": {
+                    "major": 0,
+                    "minor": 1
+                }
+            },
+            "matcher 1": {
+                "options": {},
+                "type": "matcher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "options": {},
+                "type": "explanation",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

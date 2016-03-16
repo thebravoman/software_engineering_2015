@@ -1,0 +1,227 @@
+{
+    "question": {
+        "content": "How to create class?\n[[☃ radio 1]]\n\nWhich are correct forms of loop in Ruby?\n[[☃ radio 2]]\n\nHello world in ruby?\n[[☃ radio 3]]\n\narray in ruby?\n[[☃ radio 4]]\n\nWhat is Ruby!?!\n\n[[☃ image 1]]\n\n\n[[☃ radio 5]]",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "class name\n{};",
+                            "correct": true
+                        },
+                        {
+                            "content": "class name (){}",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "class name\n{}"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "fruits.each do |fruit|",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "fruits do |fruit|"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "fruits.each do |apple|"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "Console.WriteLine(\"Hello, world!\");",
+                            "clue": "C#"
+                        },
+                        {
+                            "content": "puts 'Hello, world!'",
+                            "correct": true,
+                            "clue": "ruby"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "cout << \"Hello, world\" << endl;",
+                            "clue": "c++"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "int foo [5] = { 16, 2, 77, 40, 12071 }; ",
+                            "clue": "c++",
+                            "correct": false
+                        },
+                        {
+                            "correct": false,
+                            "content": "int[] myIntArray = {1,2,3};",
+                            "clue": "java"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "arr = [1, 2, 3, 4, 5, 6]",
+                            "clue": "ruby"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        640,
+                        402
+                    ],
+                    "backgroundImage": {
+                        "url": "http://vignette3.wikia.nocookie.net/p__/images/8/8c/Ruby_Jewel.png/revision/latest?cb=20140603161923&path-prefix=protagonist",
+                        "width": 640,
+                        "height": 402
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "food"
+                        },
+                        {
+                            "correct": true,
+                            "content": "programming language"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "flower"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

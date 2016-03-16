@@ -1,0 +1,138 @@
+{
+    "question": {
+        "content": "By what are the columns separated in CSV files\n\n[[☃ radio 1]]\n\nWhich of the following are scripting languages?\n\n[[☃ radio 2]]\n\nHow do you declare a Hash in ruby?\n\n[[☃ radio 3]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "colons",
+                            "correct": true
+                        },
+                        {
+                            "content": "semicolons",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ampersands",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Ruby",
+                            "correct": true
+                        },
+                        {
+                            "content": "C++"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Java"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Javascript",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "Python"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "ARNOLD C"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "h = Hash.new",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "h = new Hash()"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "create_hash(&h)"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {},
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

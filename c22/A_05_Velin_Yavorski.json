@@ -1,0 +1,302 @@
+{
+    "question": {
+        "content": "1. How to make a string lowercase ?\n[[☃ radio 1]]\n\n2. How many times this code is going to print \"hello\" ?\n\ndef print_hello\n\nputs \"hello\"\n\nend\na = 5\n\na++\n\na-=2\n\na.times {print_hello}\n\n[[☃ radio 2]]\n3. How to add a file through git\n\n[[☃ radio 3]]\n4.\nIs this wrong ?\n\ndef function arg1, arg2\n\nputs \"hi\"\n\nend\n\n[[☃ radio 4]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "string.downletter",
+                            "correct": false
+                        },
+                        {
+                            "content": "string.downcase",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "string.lowercase",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "string.casedown",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "3",
+                            "correct": false
+                        },
+                        {
+                            "content": "4",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "6",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "8",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "git \"filename\" add",
+                            "correct": false
+                        },
+                        {
+                            "content": "git \"filename\" -a",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git add \"filename\"",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git -a \"filename\"",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "yes",
+                            "correct": false
+                        },
+                        {
+                            "content": "no",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {
+                    "content": "",
+                    "images": {},
+                    "widgets": {},
+                    "metadata": []
+                },
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "group 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": "",
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "video 1": {
+                "options": {},
+                "type": "video",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "options": {
+                    "correct": [
+                        "$x$",
+                        "$y$",
+                        "$z$"
+                    ],
+                    "layout": "horizontal",
+                    "padding": true
+                },
+                "type": "sorter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "sorter 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "dropdown 1": {
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "0",
+                            "correct": false
+                        },
+                        {
+                            "content": "4",
+                            "correct": true
+                        },
+                        {
+                            "content": "6",
+                            "correct": false
+                        },
+                        {
+                            "content": "5",
+                            "correct": false
+                        }
+                    ]
+                },
+                "type": "dropdown",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "dropdown 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "numeric-input 1": {
+                "options": {},
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

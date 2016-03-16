@@ -1,0 +1,18 @@
+WARNING! OVERSIMPLISTIC DESIGN INCOMING! THIS WILL BE UPDATED WHEN A PROBLEM WAS ENCOUNTERED.
+
+M1 - Core Mechanics
+Mouse aiming
+Movement
+Weapons
+Basic AI
+
+
+M2 - Polished game, working multiplayer
+Improved netcode
+More gamemodes ?
+Improved design
+
+
+M3 - Browser port
+Multiplayer inside browser
+Game inside browser

@@ -1,0 +1,226 @@
+{
+    "question": {
+        "content": "Which of those is a correct line from C++?\n[[☃ radio 1]\n\n[[☃ radio 1]]\n\n\nWhich of those is a prefix?\n\n[[☃ radio 2]]\n\nWhich of those is a pure object oriented language?\n\n[[☃ radio 3]]\n\nWhich of these libraries do you need in order to use \"cout\"  and \"cin\"\n\n[[☃ radio 4]]\n\nCan a destructor take arguments?\n\n[[☃ radio 5]]\n\nHow much is 8*9*2?\n\n[[☃ table 1]]\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "Cout << \"Hello\";"
+                        },
+                        {
+                            "correct": false,
+                            "content": "puts \"Hi\""
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "correct": false,
+                            "content": ""
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "++i"
+                        },
+                        {
+                            "correct": false,
+                            "content": "i++"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "C"
+                        },
+                        {
+                            "correct": false,
+                            "content": "C++"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "C#"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "stdio.h"
+                        },
+                        {
+                            "correct": false,
+                            "content": "stdlib.h"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "correct": true,
+                            "content": "iostream.h"
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "correct": false,
+                            "content": ""
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": false,
+                            "content": "Yes"
+                        },
+                        {
+                            "correct": true,
+                            "content": "no..."
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "table 1": {
+                "type": "table",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "headers": [
+                        ""
+                    ],
+                    "rows": 1,
+                    "columns": 1,
+                    "answers": [
+                        [
+                            "144"
+                        ]
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "grapher 1": {
+                "options": {},
+                "type": "grapher",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

@@ -1,0 +1,64 @@
+{
+    "question": {
+        "content": "Do you like unicorns?\n\n[[? radio 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Yes",
+                            "correct": true,
+                            "clue": "Because unicorns are awesome!!!"
+                        },
+                        {
+                            "correct": false,
+                            "content": "No",
+                            "clue": "Because unicorns are awesome!!!"
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "correct": true,
+                            "content": "",
+                            "clue": "Well its okay to not have an opinion."
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "content": "Unicorns are the best !",
+            "images": {},
+            "widgets": {}
+        }
+    ]
+}

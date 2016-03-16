@@ -1,0 +1,316 @@
+{
+    "question": {
+        "content": "How can you create an array in Ruby?\n[[☃ radio 1]]\n\nHow can you make the array in the variable \"arr\" sorted in Ruby?\n[[☃ radio 2]]\n\nWhich is this Ruby framework?\n[[☃ image 1]]\n[[☃ radio 3]]\n\n[[☃ interactive-graph 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "arr = []",
+                            "correct": true
+                        },
+                        {
+                            "content": "arr = {}",
+                            "correct": false,
+                            "clue": "This creates a list"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "arr = ()",
+                            "correct": false,
+                            "clue": "This does nothing"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "arr.sort",
+                            "correct": false,
+                            "clue": "If you don't have a ! at the end of the function, it returns the sorted array and doesn't touch the \"arr\" object"
+                        },
+                        {
+                            "content": "arr.sort!",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "sort -> arr",
+                            "correct": false,
+                            "clue": "It doesn't work like that at all"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        230,
+                        244
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.railscarma.com/wp-content/uploads/2013/01/ruby_on_rails.png",
+                        "width": 230,
+                        "height": 244
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Ruby in Rails",
+                            "clue": "Ruby on* rails",
+                            "correct": false
+                        },
+                        {
+                            "content": "Ruby on Rails",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Strange red leaning tree(possibly in Piza)",
+                            "clue": "No",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": true,
+                            "correct": false,
+                            "content": ""
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "interactive-graph 1": {
+                "type": "interactive-graph",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "step": [
+                        1,
+                        1
+                    ],
+                    "backgroundImage": {
+                        "url": null
+                    },
+                    "markings": "graph",
+                    "labels": [
+                        "x",
+                        "y"
+                    ],
+                    "showProtractor": false,
+                    "showRuler": false,
+                    "rulerLabel": "",
+                    "rulerTicks": 10,
+                    "range": [
+                        [
+                            -10,
+                            10
+                        ],
+                        [
+                            -10,
+                            10
+                        ]
+                    ],
+                    "graph": {
+                        "type": "linear"
+                    },
+                    "correct": {
+                        "type": "linear",
+                        "coords": null
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "options": {},
+                "type": "orderer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "categorizer 1": {
+                "options": {},
+                "type": "categorizer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {
+                    "programID": "345",
+                    "settings": [
+                        {
+                            "name": "hey",
+                            "value": "worl"
+                        },
+                        {
+                            "name": "",
+                            "value": ""
+                        }
+                    ],
+                    "showEditor": true,
+                    "showButtons": false,
+                    "width": 400,
+                    "height": 400
+                },
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "cs-program 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "numeric-input 1": {
+                "options": {
+                    "answers": [
+                        {
+                            "status": "correct",
+                            "message": "da",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "status": "wrong",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "status": "wrong",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": true,
+                    "labelText": "da"
+                },
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "numeric-input 1",
+                "graded": true,
+                "alignment": "default"
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

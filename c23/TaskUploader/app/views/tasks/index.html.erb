@@ -1,0 +1,12 @@
+<h1><%= t('.all_tasks') %></h1>
+
+<% @tasks.each_with_index do |task, i| %>
+  <h2>
+  <%= link_to t('.title',
+                index: i+1,
+                title: task.title
+               ),
+                task_path(task)
+              %>
+  </h2>
+<% end %>
