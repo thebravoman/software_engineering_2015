@@ -18,7 +18,7 @@ for k,v in pairs(deli) do
   print(v)
 end
 for i=2,tont-1 do
-for k,v in pairs(deli) do
-
-end
+  for k,v in pairs(deli) do
+    
+  end
 end
