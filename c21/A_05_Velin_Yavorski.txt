@@ -12,6 +12,7 @@ Milestone 2
 New subtitles - Implement a function which will clear the subtitle table and the start, end and duration textfields, 2
 Video support - Implement a function to open and play a video file in the application, 2
 Subtitle synchronization - Implement a function that synchronizes the "start" subtitle textfield with the current video's time, 2
+Linking between video and subtitle table - When the user selects a subtitle from the subtitle table when a video is opened, the video will move to the time pointed by the subtitle's start time, 2
 Subtitles over video - Implement a fucntion that will show the subtitles over the loaded video, 2
 Insert subtitles - Implement a function which will insert a new subtitle in the chosen place by the user, 2	
 Subtitles delete - Implement a function which will delete line or lines of subtitles, 2
