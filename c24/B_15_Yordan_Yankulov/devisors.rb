@@ -1,8 +1,4 @@
-
-number = ARGV[0].to_i
-
-for i in 1..Math.sqrt(number)
-  if(number % i == 0)
-    puts i
-  end
+class Integer
+  def factors() (1..self).select { |n| (self % n).zero? } end
 end
+p ARGV[0].to_i.factors
