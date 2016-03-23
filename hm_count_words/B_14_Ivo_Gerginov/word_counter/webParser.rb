@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'net/http'
 require 'sanitize'
 require 'openssl'
@@ -7,7 +8,7 @@ module WordCounter
   	def parseURL url
 	  uri  = URI.parse(url)
 	  http = Net::HTTP.new(uri.host, uri.port)
-	  if uri.scheme == 'https'
+	  if uri.scheme = 'https'
 		http.use_ssl = true
 		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 	  end
