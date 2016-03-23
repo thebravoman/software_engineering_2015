@@ -23,7 +23,7 @@ class Result
     	if marks_sum != 0
  		puts "\"marks\",#{@marks_sum}"
      	end
-  
+  	end
   	def to_xml
 	    	xml_ = REXML::Document.new('')
 	    	word_c_t = xml_.add_element('word-counts')
