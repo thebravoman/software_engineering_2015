@@ -1,7 +1,6 @@
 require_relative 'B_12_Emiliqn_Gospodinov/word_counter.rb'
 
-words = ARGV[0]
-a = 1
+word = ARGV[0]
 
 if words == '-d'
 	a = a + 1
@@ -15,15 +14,14 @@ if words != '-d'
 		result = WordCounter.parse words
 	else
 		result = WordCounter.parsing_the_file words
-	end
 end
 
 if a == 1
-	if ARGV[a] == 'csv' or ARGV[a] == nil
+	if ARGV[] == 'csv' or ARGV[a] == nil
 		result.to_csv
 	elsif ARGV[a] == 'json'
 		result.to_json
 	elsif ARGV[a] == 'xml'
-		result.to_xml
+		result.t_xml
 	end
 end
