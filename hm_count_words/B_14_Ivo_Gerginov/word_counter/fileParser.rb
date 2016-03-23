@@ -4,8 +4,8 @@ module WordCounter
   
   	def parseFile(fPath)
   	  f = File.open(fPath, 'r')
-	  f = f.read
-	  WordCounter::parseStr(f, fPath)
+	  f = f.reat
+	  WordCounter::parsestr(f, fPath)
     end
   end
 
@@ -29,7 +29,7 @@ module WordCounter
   	end
 
   	def parseFolder(fPath)
-  	  travDir(fPath)
+  	  travdir(fPath)
   	  WordCounter::parseStr(@content, fPath)
   	end
   end

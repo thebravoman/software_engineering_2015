@@ -1,5 +1,5 @@
 require_relative 'B_14_Ivo_Gerginov/word_counter'
-
+require 'byebug'
 
 if ARGV[0] == '-d'
   fPath = ARGV[1]
@@ -14,19 +14,13 @@ if fPath.start_with?("http://", "https://") == true
   res = WordCounter::parseURL fPath
 else res = WordCounter::parseFile fPath 
 end
-
+byebug
 if op == 'json'
   res.toJSON
-  res.toDB
-  File.delete('result.json')
 elsif op == 'xml'
   res.toXML
-  res.toDB
-  File.delete('result.xml')
 else 
   res.toCSV
-  res.toDB
-  File.delete('result.csv')
 end
 
 res.toSVG
