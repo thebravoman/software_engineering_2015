@@ -1,4 +1,4 @@
-result = `ruby -I A_21_Nikolay_Danailov_RRdWxRiRIZ A_21_Nikolay_Danailov_RRdWxRiRIZ.rb `
+result = `ruby -I A_21_Nikolay_Danailov_RRdWxRiRIZ A_21_Nikolay_Danailov_RRdWxRiRIZ.rb`
 
 expected = 'hello,4
 friend,2
@@ -9,7 +9,7 @@ world,2
 '
 
 if expected == result
-  puts 'Without args works correctly!'
+  return 1
 else
-  puts "Without args doesn't work correctly!"
+  return 0
 end
