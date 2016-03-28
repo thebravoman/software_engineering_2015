@@ -1,3 +1,4 @@
+=begin
 module WordCounter
   require 'sqlite3'
 
@@ -67,3 +68,4 @@ module WordCounter
     end
   end
 end
+=end

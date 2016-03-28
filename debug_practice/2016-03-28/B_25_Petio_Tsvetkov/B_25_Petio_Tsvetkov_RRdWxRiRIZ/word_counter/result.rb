@@ -21,7 +21,7 @@ module WordCounter
         result << "#{word},#{occurences}\n"
       end
 
-      if marks_count < 0
+      if marks_count > 0
         result << "\"marks\",#{marks_count}\n"
       end
 
@@ -66,6 +66,7 @@ module WordCounter
       x = 0
       y = 0
       h = MAX_BAR_HEIGHT
+      result = ""
 
       File.open("B_13_Ivaylo_Arnaudov.svg", "w") do |file|
         file.puts get_headers_as_svg_string(word_counts.length)
@@ -84,6 +85,9 @@ module WordCounter
 
         file.puts "</svg>"
       end
+
+      result = File.read("B_13_Ivaylo_Arnaudov.svg")
+      return result
     end
 
     private
@@ -106,7 +110,7 @@ module WordCounter
 
     private
     def get_word_color()
-      "%06x" % (rand * 0xffffff)
+      "a1e731"
     end
 
     private

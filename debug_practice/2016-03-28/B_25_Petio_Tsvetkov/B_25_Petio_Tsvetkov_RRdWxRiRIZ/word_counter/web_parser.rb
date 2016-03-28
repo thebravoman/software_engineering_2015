@@ -5,6 +5,7 @@ require 'net/http'
 require 'sanitize'
 require 'openssl'
 require 'digest'
+require 'byebug'
 
 module WordCounter
   class WebpageParser < Parser
@@ -32,8 +33,9 @@ module WordCounter
 
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
       contents_hash = Digest::SHA256.hexdigest(sanitized_content)
+      #byebug
       result = Result.new(sorted_words, total_marks_count)
-      Data.save(url.to_s, contents_hash, result)
+      #Data.save(url.to_s, contents_hash, result)
       return result
     end
   end
