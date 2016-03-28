@@ -7,10 +7,10 @@ module WordCounter
     def parse(file_path)
       words = Hash.new(0)
       total_marks_count = 0
-      File.open(file_path, "r") do |f|
+      File.open(file_path, "rb") do |f|
         f.each_line do |line|
           res = super(line)
-          words = words.merge(res.word_counts.to_h) { |k, ov, nv| ov + nv }
+          words = words.merge(res.word_counts.to_h)
           total_marks_count += res.marks_count
         end
       end

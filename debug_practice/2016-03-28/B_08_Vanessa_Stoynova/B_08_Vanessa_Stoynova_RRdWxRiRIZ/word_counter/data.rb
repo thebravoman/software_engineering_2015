@@ -40,14 +40,14 @@ module WordCounter
           # Check if the source has changed since the last update of the stats
           if stats_hash != source_hash
             # Delete all rows from the word_counts for the current statistics
-            db.execute("DELETE FROM word_counts WHERE statistics_id = ?;", stats_id);
+            db.execute("DELETE FROM word_counts WHERE statistics_id = ?;", stats_id[0]);
 
             word_counts.each do |key, value|
               db.execute("INSERT INTO word_counts (statistics_id, word, count)
-                          VALUES (?, ?, ?)", [stats_id, key, value])
+                          VALUES (?, ?, ?)", stats_id[0], key, value)
             end
             db.execute("INSERT INTO word_counts (statistics_id, word, count)
-                       VALUES (?, ?, ?)", [stats_id, "$marks$", marks_count]);
+                       VALUES (?, ?, ?)", [stats_id[0], "$marks$", marks_count]);
           end
         else
           # If the stats doesn't exists, create a stats record
