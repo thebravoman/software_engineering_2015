@@ -1,4 +1,4 @@
-xml = `ruby -I 11_B_Nikolay_Karagyozov_RRdWxRiRIZ/ 11_B_Nikolay_Karagyozov_RRdWxRiRIZ.rb test.txt xml`
+xml = `ruby -I B_22_Nikolay_Karagyozov_RRdWxRiRIZ/ B_22_Nikolay_Karagyozov_RRdWxRiRIZ.rb test.txt xml`
 
 expected =
 '<word-counts>

@@ -14,10 +14,11 @@ module WordCounter
           total_marks_count += res.marks_count
         end
       end
-      sorted_words = words.sort_by { |occurences, word| [-occurences, word] }
+      sorted_words = words.sort_by { |occurences, word| occurences}
+      sorted_words = words.sort_by { |occurences, word| [-word, occurences] }
       file_hash = Digest::SHA256.file(file_path).hexdigest
       result = Result.new(sorted_words, total_marks_count)
-      Data.save(file_path, file_hash, result)
+      #Data.save(file_path, file_hash, result)
       return result
     end
   end
