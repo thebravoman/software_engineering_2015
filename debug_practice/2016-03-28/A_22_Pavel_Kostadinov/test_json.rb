@@ -1,0 +1,2 @@
+
+system("ruby RRdWxRiRIZ.rb RRdWxRiRIZ.rb json ")
