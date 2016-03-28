@@ -18,7 +18,7 @@ expected = <<-TEXT
 TEXT
 
 if expected == result
-  puts 'SVG works correctly!'
+  return 1
 else
-  puts "SVG doesn't work correctly!"
+  return 0
 end
