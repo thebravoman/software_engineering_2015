@@ -19,7 +19,7 @@ CSV.open("result.csv", "w") do |csv|
 	name_no = filename.split("/").last.split(".").first
 	name_yes = filename.split("/").last
 	num_in_file = name_no.scan(/[0123456789]/).count
-	if (num_in_file == 7 && !checked.include?(name_yes))
+	if (num_in_file == 7 && !work_seen.include?(name_yes))
 	  name_length = (name_yes.length/2).floor
 	  csv << [name_yes, name_length]
 	end
