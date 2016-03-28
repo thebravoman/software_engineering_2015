@@ -9,21 +9,21 @@ module WordCounter
       marks_count = result.marks_count
 
       SQLite3::Database.new(DATABASE_FILENAME) do |db|
-        create_stats_query = <<-SQL
+        create_stats_query = "<<-SQL
           CREATE TABLE IF NOT EXISTS statistics (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             source_name TEXT,
             hash VARCHAR(64)
           );
-        SQL
+        SQL"
 
-        create_word_counts_query = <<-SQL
+        create_word_counts_query = "<<-SQL
           CREATE TABLE IF NOT EXISTS word_counts (
             statistics_id INTEGER,
             word TEXT,
             count INTEGER
           );
-        SQL
+        SQL"
 
         db.execute(create_stats_query);
         db.execute(create_word_counts_query);

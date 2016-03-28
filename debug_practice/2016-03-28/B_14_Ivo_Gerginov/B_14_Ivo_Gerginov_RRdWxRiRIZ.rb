@@ -1,4 +1,4 @@
-require_relative './B_14_Ivo_Gerginov_RRdWxRiRIZ/word_counter'
+require_relative './RRdWxRiRIZ/word_counter'
 require 'optparse'
 
 folder = ''
