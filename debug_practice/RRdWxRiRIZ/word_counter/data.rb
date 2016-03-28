@@ -1,5 +1,5 @@
 module WordCounter
- # require 'sqlite3'
+  require 'sqlite3'
 
   DATABASE_FILENAME = "B_13_Ivaylo_Arnaudov.db"
 

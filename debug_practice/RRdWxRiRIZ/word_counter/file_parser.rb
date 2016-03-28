@@ -4,7 +4,7 @@ require 'digest'
 
 module WordCounter
   class FileParser < Parser
-    def parse_file(file_path)
+    def parse(file_path)
       words = Hash.new(0)
       total_marks_count = 0
       File.open(file_path, "rb") do |f|

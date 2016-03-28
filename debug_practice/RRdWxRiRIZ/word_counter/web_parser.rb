@@ -2,9 +2,9 @@ require_relative 'parser'
 require_relative 'data'
 
 require 'net/http'
-#require 'sanitize'
+require 'sanitize'
 require 'openssl'
-#require 'digest'
+require 'digest'
 
 module WordCounter
   class WebpageParser < Parser
