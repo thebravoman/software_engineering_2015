@@ -1,4 +1,4 @@
-require 'word_counter'
+require_relative './B_14_Ivo_Gerginov_RRdWxRiRIZ/word_counter'
 require 'optparse'
 
 folder = ''
@@ -11,7 +11,7 @@ format = ARGV[1] == nil ? 'csv' : ARGV[1].downcase
 if folder == ''
   file_path = ARGV[0]
 
-  if file_path.start_with?("http://", "https://")
+  if file_path.to_s.start_with?("http://", "https://")
     result = WordCounter.parse_webpage(file_path)
   else
     result = WordCounter.parse_file(file_path)

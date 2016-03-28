@@ -1,4 +1,4 @@
-`ruby -I 11_B_Nikolay_Karagyozov_RRdWxRiRIZ/ 11_B_Nikolay_Karagyozov_RRdWxRiRIZ.rb test.txt svg`
+`ruby -I B_22_Nikolay_Karagyozov_RRdWxRiRIZ/ B_22_Nikolay_Karagyozov_RRdWxRiRIZ.rb test.txt svg`
 result = File.read 'B_13_Ivaylo_Arnaudov.svg'
 
 puts result
