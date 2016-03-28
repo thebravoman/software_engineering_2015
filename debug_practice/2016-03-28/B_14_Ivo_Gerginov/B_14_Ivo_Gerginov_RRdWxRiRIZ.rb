@@ -1,6 +1,5 @@
-require_relative 'B_20_Martin_Stanchev_RRdWxRiRIZ/word_counter.rb'
+require_relative './RRdWxRiRIZ/word_counter'
 require 'optparse'
-require 'byebug'
 
 folder = ''
 OptionParser.new do |opt|
@@ -12,7 +11,7 @@ format = ARGV[1] == nil ? 'csv' : ARGV[1].downcase
 if folder == ''
   file_path = ARGV[0]
 
-  if file_path.start_with?("http://", "https://")
+  if file_path.to_s.start_with?("http://", "https://")
     result = WordCounter.parse_webpage(file_path)
   else
     result = WordCounter.parse_file(file_path)

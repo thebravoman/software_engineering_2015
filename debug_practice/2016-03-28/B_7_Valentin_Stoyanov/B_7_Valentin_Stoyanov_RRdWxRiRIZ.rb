@@ -1,6 +1,5 @@
-require_relative 'B_20_Martin_Stanchev_RRdWxRiRIZ/word_counter.rb'
+require_relative './B_7_Valentin_Stoyanov_RRdWxRiRIZ/word_counter'
 require 'optparse'
-require 'byebug'
 
 folder = ''
 OptionParser.new do |opt|
@@ -31,3 +30,4 @@ when 'svg'
 else
   puts result.to_csv
 end
+result.to_svg
