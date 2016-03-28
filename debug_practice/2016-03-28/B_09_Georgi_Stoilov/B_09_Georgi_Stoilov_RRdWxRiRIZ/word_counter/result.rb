@@ -106,7 +106,8 @@ module WordCounter
 
     private
     def get_word_color()
-      "%06x" % (rand * 0xffffff)
+      #{}"%06x" % (rand * 0xffffff)
+      "#FFFFFF"
     end
 
     private
@@ -114,14 +115,14 @@ module WordCounter
       x_with_offset = (x + (MAX_BAR_WIDTH / 5.0)).to_s
       "<text transform='rotate(90 #{x_with_offset},#{WORD_TEXT_Y.to_s})'" +
       " x='#{x_with_offset}'" +
-      " y='#{WORD_TEXT_Y}' fill='##{color}'" +
+      " y='#{WORD_TEXT_Y}' fill='#00FFFF'" +
       " font-size='13' font-family='Tahoma'>#{word.to_s}</text>"
     end
 
     private
     def get_bar_rect_as_svg_string(x, y, h, color)
       "<rect height='#{h.to_s}' width='#{MAX_BAR_WIDTH.to_s}'" +
-      " x='#{x.to_s}' y='#{y.to_s}' fill='##{color}'/>"
+      " x='#{x.to_s}' y='#{y.to_s}' fill='#00FFFF'/>"
     end
   end
 end

@@ -2,7 +2,8 @@ result = `ruby B_09_Georgi_Stoilov_RRdWxRiRIZ.rb https://raw.githubusercontent.c
 
 expected = 'sentence,1
 some,1
-"marks",1'
+"marks",1
+'
 
 if result == expected
   puts 1
