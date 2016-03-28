@@ -26,7 +26,7 @@ when 'json'
 when 'xml'
   puts result.to_xml
 when 'svg'
-  result.to_svg
+  puts result.to_svg
 else
   puts result.to_csv
 end
