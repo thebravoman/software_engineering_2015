@@ -1,6 +1,5 @@
-require_relative 'B_20_Martin_Stanchev_RRdWxRiRIZ/word_counter.rb'
+require_relative 'B_09_Georgi_Stoilov_RRdWxRiRIZ/word_counter.rb'
 require 'optparse'
-require 'byebug'
 
 folder = ''
 OptionParser.new do |opt|

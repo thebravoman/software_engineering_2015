@@ -1,6 +1,5 @@
-require_relative 'B_20_Martin_Stanchev_RRdWxRiRIZ/word_counter.rb'
+require 'word_counter'
 require 'optparse'
-require 'byebug'
 
 folder = ''
 OptionParser.new do |opt|
@@ -27,7 +26,7 @@ when 'json'
 when 'xml'
   puts result.to_xml
 when 'svg'
-  result.to_svg
+  puts result.to_svg
 else
   puts result.to_csv
 end
