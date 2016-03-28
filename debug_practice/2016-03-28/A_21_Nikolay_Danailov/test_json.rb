@@ -27,7 +27,7 @@ expected = '{
 }'
 
 if expected == result
-  puts 'JSON works correctly!'
+  return 1
 else
-  puts "JSON doesn't work correctly!" 
+  return 0
 end

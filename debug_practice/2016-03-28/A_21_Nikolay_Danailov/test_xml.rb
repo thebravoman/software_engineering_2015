@@ -13,7 +13,7 @@ expected = '<word-counts>
 '
 
 if expected == result
-  puts 'XML works correctly!'
+  return 1
 else
-  puts "XML doesn't work correctly!"
+  return 0
 end
