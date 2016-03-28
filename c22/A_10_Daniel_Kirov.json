@@ -1,0 +1,271 @@
+{
+    "question": {
+        "content": "[1].What is the order of commands to correctly push a newly created file in a git repo ?\n\n1.git add 2.git pull 3.git clone\n4.git push 5.git push -f 6.git commit\n\n\n[[☃ dropdown 1]]\n\n[2].How to print \"Hello World!\" in Ruby?\n\n[[☃ radio 1]]\n\n[3].Who is our teacher?\n\n[[☃ radio 2]]\n\n[4.]What language did we learn\n\n[[☃ radio 3]]\n\n[5].Where do we upload our homeworks ?\n\n[[☃ radio 4]]\n\n[6].What are gems in Ruby\n\n[[☃ radio 5]]\n\n",
+        "images": {},
+        "widgets": {
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "Chose the correct answer from the dropdown",
+                    "choices": [
+                        {
+                            "content": "1,2,3,4,6",
+                            "correct": false
+                        },
+                        {
+                            "content": "1,3,5,6",
+                            "correct": false
+                        },
+                        {
+                            "content": "3,4,1,6",
+                            "correct": false
+                        },
+                        {
+                            "content": "3,4,1,6,5",
+                            "correct": false
+                        },
+                        {
+                            "content": "3,1,4,2",
+                            "correct": false
+                        },
+                        {
+                            "content": "3,2,1,6,4",
+                            "correct": true
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "printf(\"Hello World!\")",
+                            "correct": false,
+                            "clue": "No semicolon"
+                        },
+                        {
+                            "content": "printf(\"Hello World!\");",
+                            "correct": false,
+                            "clue": "This is C"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "writeln('Hello World!');",
+                            "correct": false,
+                            "clue": "This is Pascal"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "System.out.println(\"Hello World!\");",
+                            "correct": false,
+                            "clue": "This is Java"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "p \"Hello world\"",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Nina Mitova",
+                            "correct": false,
+                            "clue": "she is our Bulgarian language teacher"
+                        },
+                        {
+                            "content": "Mosko Aladjem",
+                            "correct": false,
+                            "clue": "he is the SUBD teacher"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Kiril Mitov",
+                            "correct": true,
+                            "clue": "YEA"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Antonio Mindov",
+                            "correct": false,
+                            "clue": "he is a student in 11A"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Toni Storaro",
+                            "correct": false,
+                            "clue": "he is a singer"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Java",
+                            "correct": false
+                        },
+                        {
+                            "content": "C",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "C#",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "lua",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Ruby",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "facebook",
+                            "correct": false
+                        },
+                        {
+                            "content": "zamunda.net",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "efbet.com",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "github.com",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "githb.com"
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Gems are packaged bits of Ruby code that you can install to extend or add functionality to your app.",
+                            "correct": true
+                        },
+                        {
+                            "content": "Gems are function/methods which help you to easily compile are run your program.",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Gems are type of variables."
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

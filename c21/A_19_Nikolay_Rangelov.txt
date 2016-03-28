@@ -1,0 +1,207 @@
+Model car project
+
+Parts of the project:
+
+#Car:
+01.Movement mechanism:
+-Developing the car chassis;
+-Mounting the motors to the chassis;
+-Finding a motor driver IC;
+-Drawing a custom electronic circuit and mounting the necessary parts on it.(Motor driver)
+-Developing the basic software for movement.
+-Adding the speed control to the basic software.
+-Packing the software as a library for Arduino.
+
+02.Wireless Comunication:
+-Chosing wireless module - WiFi or Bluetooth.
+-Implementing basic software for communication.
+
+03.Board computer:
+-Connecting the Arduino Uno to the other parts of the project and loading the software on it.
+
+04.Lights
+-Headlights - 2 .
+-Winking lights - 4.
+-Stops - 2.
+-Lights for back.
+-Decorative lights.
+-Developing a basic software for the lights.
+-Packing the software as a library for Arduino.
+
+05.Horn
+-Mounting a simple speaker.
+-Developing a basic software for it.
+-Packing the software as a library for Arduino.
+
+06.Sensors:
+-Sensors for distance.
+-Sensor for movement - anti-thief.
+-Developing a basic software for the sensors.
+-Packing the software as a library for Arduino.
+
+07.Battery power supply:
+-Arduino battery supply.
+-Motors battery supply.
+-Packing the batteries and developing a charging system. 
+
+#Android application:
+
+01.Basic Android Application:
+-Developing a basic user interface for the application.
+-Setting the communication between the applcation and the arduino.
+-Pragramming the gyro sensor and using it to control the car.
+-Developing more options for controlling the light sensors, setting alarms, etc.
+-Developing a signalising system.
+-Developing smart options.
+-Keeping data in a database if needed.
+
+#Glove:
+-Setting the wireless communication between the glove and the car.
+-Mounting the sensors to the glove.
+-Developing the software for the sensors.
+-Packing the software as a library for Arduino.
+
+
+#Presentation:
+-Developing presentation for Milestone 1
+-Developing presentation for Milestone 2
+-Developing presentation for Milestone 3
+
+#Documentation:
+-Writing documentation for the project
+
+#Advanced:
+-Synchronizing the Android application with the glove.
+
+
+#Milestones:
+
+01.M1
+#Car:
+01.Movement mechanism:
+-Developing the car chassis;
+-Mounting the motors to the chassis;
+-Finding a motor driver IC;
+-Developing the basic software for movement.
+
+
+02.Wireless Comunication:
+-Chosing wireless module - WiFi or Bluetooth.
+-Implementing basic software for communication.
+
+03.Board computer:
+-Connecting the Arduino Uno to the other parts of the project and loading the software on it.
+
+04.Lights
+-Headlights - 2 .
+
+
+
+07.Battery power supply:
+-Arduino battery supply.
+-Motors battery supply.
+
+#Android application:
+
+01.Basic Android Application:
+-Developing a basic user interface for the application.
+-Setting the communication between the applcation and the arduino.
+
+
+
+#Presentation:
+-Developing presentation for Milestone 1
+
+
+02.M2
+
+#Car:
+01.Movement mechanism:
+-Drawing a custom electronic circuit and mounting the necessary parts on it.(Motor driver)
+-Adding the speed control to the basic software.
+-Packing the software as a library for Arduino.
+
+02.Wireless Comunication:
+-Make the communication software better.
+
+03.Board computer:
+-Connect the new components to the arduino.
+
+04.Lights
+-Winking lights - 4.
+-Stops - 2.
+-Developing a basic software for the lights.
+-Packing the software as a library for Arduino.
+
+05.Horn
+-Mounting a simple speaker.
+-Developing a basic software for it.
+-Packing the software as a library for Arduino.
+
+
+07.Battery power supply:
+-Packing the batteries and developing a charging system.
+
+#Android application:
+
+01.Basic Android Application:
+-Pragramming the gyro sensor and using it to control the car.
+
+#Glove:
+-Setting the wireless communication between the glove and the car.
+-Mounting the sensors to the glove.
+-Developing the software for the sensors.
+
+#Presentation:
+-Developing presentation for Milestone 2
+#Documentation:
+-Writing documentation for the project
+
+
+03.M3
+#Car:
+01.Movement mechanism:
+-better the sotware if needed.
+
+02.Wireless Comunication:
+-better the software if needed.
+
+03.Board computer:
+-connect the added components.
+
+04.Lights
+-Lights for back.
+-Decorative lights
+
+05.Horn
+
+06.Sensors:
+-Sensors for distance.
+-Sensor for movement - anti-thief.
+-Developing a basic software for the sensors.
+-Packing the software as a library for Arduino.
+
+07.Battery power supply:
+
+#Android application:
+
+01.Basic Android Application:
+-Developing more options for controlling the light sensors, setting alarms, etc.
+-Developing a signalising system.
+-Developing smart options.
+-Keeping data in a database if needed.
+
+
+#Glove:
+-better the software if needed
+-Packing the software as a library for Arduino.
+
+
+#Presentation:
+-Developing presentation for Milestone 3
+
+#Documentation:
+-Writing documentation for the project
+
+#Advanced:
+-Synchronizing the Android application with the glove.

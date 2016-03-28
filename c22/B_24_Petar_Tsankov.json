@@ -1,0 +1,140 @@
+{
+    "question": {
+        "content": "[[☃ matrix 1]]\n\n.\n\n(2)in what order do you need to use the commands to push a file in git\n[[☃ orderer 1]]\n\n[[☃ table 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "matrix 1": {
+                "type": "matrix",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "matrixBoardSize": [
+                        2,
+                        3
+                    ],
+                    "answers": [
+                        [
+                            null,
+                            0,
+                            null
+                        ],
+                        [
+                            null,
+                            21,
+                            null
+                        ]
+                    ],
+                    "prefix": "(1)what is saved in the C array arr:\n\n(use \"-\" if the cell is undefined)\n\nint arr[3][2];\n\nfor(int i=0;i<2;i++){\narr[1][i]=i*21;\n}",
+                    "suffix": "",
+                    "cursorPosition": [
+                        0,
+                        0
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "orderer 1": {
+                "type": "orderer",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "options": [
+                        {
+                            "content": "git add"
+                        },
+                        {
+                            "content": "git checkout"
+                        },
+                        {
+                            "content": "git clone"
+                        },
+                        {
+                            "content": "git commit"
+                        },
+                        {
+                            "content": "git pull"
+                        },
+                        {
+                            "content": "git push"
+                        }
+                    ],
+                    "correctOptions": [
+                        {
+                            "content": "git pull"
+                        },
+                        {
+                            "content": "git add"
+                        },
+                        {
+                            "content": "git commit"
+                        },
+                        {
+                            "content": "git push"
+                        }
+                    ],
+                    "otherOptions": [
+                        {
+                            "content": "git checkout"
+                        },
+                        {
+                            "content": "git clone"
+                        }
+                    ],
+                    "height": "auto",
+                    "layout": "vertical"
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "table 1": {
+                "type": "table",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "headers": [
+                        "what is the meaning of life?"
+                    ],
+                    "rows": 1,
+                    "columns": 1,
+                    "answers": [
+                        [
+                            "42"
+                        ]
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

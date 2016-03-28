@@ -1,0 +1,390 @@
+{
+    "question": {
+        "content": "1.What is your name? \n\n[[☃ radio 1]] \n\n2.Do you like flowers?\n\n[[☃ radio 2]]\n\n3. Разбираш ли български?\n\n[[☃ radio 3]]\n\n4.Schprechen sie Deutch?\n\n[[☃ radio 4]]\n\n5.За дадената схема, изразете втори закон на Кирхоф:\n\n[[☃ image 1]]\n\n[[☃ radio 5]]\n\n6.Хайде сега по-сериозно, каква е грешката в този РУБИ!!!! код?:\n\n#include<stdio.h>\nusing System.Windows.Controls\n\npublic static void main()\n{\n    puts \"Hello World\";\n};\n\n[[☃ radio 6]]\n\nНачертайте графика на функцията, която описва вероятността да използвате езика РУБИ!!!!!!:\n\n[[☃ interactive-graph 1]]\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Batman",
+                            "correct": true
+                        },
+                        {
+                            "correct": false,
+                            "content": "Someone else"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Tuma"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Microphone",
+                            "correct": true
+                        },
+                        {
+                            "content": "Мента",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Естетствено, да не съм тъп?",
+                            "correct": true
+                        },
+                        {
+                            "content": "За какво ми говориш бе брат?",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Ja",
+                            "correct": true
+                        },
+                        {
+                            "content": "Nein",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        2724,
+                        1999
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.4004.com/assets/4004-masks-showing-fets-j3-.jpg",
+                        "width": 2724,
+                        "height": 1999
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Да дадем схемата на късо и да видим какво ще стане",
+                            "correct": true,
+                            "clue": "Беше забавно, нали?"
+                        },
+                        {
+                            "content": "Не знам какво е закон на Кирхоф",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Отговорът ми е на листа",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 6": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "Няма грешка в дадения код",
+                            "correct": false
+                        },
+                        {
+                            "content": "В цялата тази шльокавица има само 1 ред руби",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Не може да се инициализира обект от типа main без да се include-ne класа ruby-main",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "за да може РУБИ!!!!!! да използва функционалността на езика С, трябва да да се добави Gem за функционалност на С с \nrequire 'с'"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "Къв е тоя код бе брат???????"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "interactive-graph 1": {
+                "type": "interactive-graph",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "step": [
+                        1,
+                        1
+                    ],
+                    "backgroundImage": {
+                        "url": null
+                    },
+                    "markings": "graph",
+                    "labels": [
+                        "x",
+                        "y"
+                    ],
+                    "showProtractor": false,
+                    "showRuler": false,
+                    "rulerLabel": "",
+                    "rulerTicks": 10,
+                    "range": [
+                        [
+                            -10,
+                            10
+                        ],
+                        [
+                            -10,
+                            10
+                        ]
+                    ],
+                    "graph": {
+                        "type": "quadratic"
+                    },
+                    "correct": {
+                        "type": "quadratic",
+                        "coords": [
+                            [
+                                2,
+                                6
+                            ],
+                            [
+                                3.5,
+                                3
+                            ],
+                            [
+                                5,
+                                5
+                            ]
+                        ]
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "matrix 1": {
+                "options": {},
+                "type": "matrix",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "image 2": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 2",
+                "graded": true,
+                "alignment": "block"
+            },
+            "passage 1": {
+                "options": {
+                    "passageTitle": "",
+                    "passageText": "",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "passage 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "passage-ref 1": {
+                "options": {},
+                "type": "passage-ref",
+                "version": {
+                    "major": 0,
+                    "minor": 1
+                }
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

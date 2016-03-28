@@ -1,0 +1,22 @@
+var a = 1;
+var b = 2;
+var c = 3;
+var y1;
+var y2;
+var y3;
+var y4;
+var x1 = -26;
+var x2 = -9;
+var x3 = 14;
+var x4 = 43;
+ y1 = a*x1*x1+b*x1+c;
+ y2 = a*x2*x2+b*x2+c;
+ y3 = a*x3*x3+b*x3+c;
+ y4 = a*x4*x4+b*x4+c;
+
+beginShape();
+    curveVertex(0,y1);
+    curveVertex(1,y2);
+    curveVertex(125,y3);
+    curveVertex(133,y4);
+endShape();

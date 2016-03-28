@@ -24,27 +24,27 @@ def get_res_from_for_file(file)
   db = SQLite3::Database.new DATABASE_URL
   db.results_as_hash = true
 
-  db_exists = db.execute "SELECT sql FROM sqlite_master WHERE type='table' AND name='statistics'"
+  db_exists = db.execute 'SELECT sql FROM sqlite_master WHERE type="table" AND name="statistics"'
   return if db_exists.size == 0 # stop if table doesn't exist
 
   wanted_hash = Digest::SHA256.file(file).hexdigest
-  wanted_id = db.execute "SELECT id FROM statistics WHERE hash=?", wanted_hash
+  wanted_id = db.execute 'SELECT id FROM statistics WHERE hash=?', wanted_hash
 
   if wanted_id.size > 0
-    wanted_id = wanted_id[0]["id"]
+    wanted_id = wanted_id[0]['id']
   else
     return
   end
 
-  query = db.execute "SELECT word, count FROM word_counts WHERE statistic_id=?", wanted_id
+  query = db.execute 'SELECT word, count FROM word_counts WHERE statistic_id=?', wanted_id
   tmp = WordCounter::Result.new
 
   if query.size > 0
     query.each do |row|
-      if row["word"] != '$marks$'
-        tmp.word_counts[row["word"].to_s] = row["count"]
+      if row['word'] != '$marks$'
+        tmp.word_counts[row['word'].to_s] = row['count']
       else
-        tmp.marks_count = row["count"]
+        tmp.marks_count = row['count']
       end
     end
   else

@@ -1,0 +1,363 @@
+{
+    "question": {
+        "content": "\n\n\n\n\n\n\n\n[[☃ interaction 1]]\n\nx | y | a=y\\x\n- | - | -\n2 | 9 | ?\n 3| 5 | ?\n5 | 2 | ? ",
+        "images": {},
+        "widgets": {
+            "interaction 1": {
+                "type": "interaction",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "graph": {
+                        "editableSettings": [
+                            "canvas",
+                            "graph"
+                        ],
+                        "box": [
+                            400,
+                            400
+                        ],
+                        "labels": [
+                            "x",
+                            "y"
+                        ],
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "markings": "graph",
+                        "snapStep": [
+                            1,
+                            1
+                        ],
+                        "valid": true,
+                        "backgroundImage": {
+                            "url": null,
+                            "width": 0,
+                            "height": 0
+                        },
+                        "showProtractor": false,
+                        "showRuler": false,
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "tickStep": [
+                            1,
+                            1
+                        ]
+                    },
+                    "elements": [
+                        {
+                            "type": "point",
+                            "key": "point-88c480",
+                            "options": {
+                                "coordX": "2",
+                                "coordY": "9",
+                                "color": "#FF00AF"
+                            }
+                        },
+                        {
+                            "type": "point",
+                            "key": "point-908583",
+                            "options": {
+                                "coordX": "3",
+                                "coordY": "5",
+                                "color": "#DF0030"
+                            }
+                        },
+                        {
+                            "type": "line",
+                            "key": "line-717678",
+                            "options": {
+                                "startX": "2",
+                                "startY": "0",
+                                "endX": "2",
+                                "endY": "9",
+                                "color": "#FF00AF",
+                                "strokeDasharray": "",
+                                "arrows": "",
+                                "strokeWidth": 2
+                            }
+                        },
+                        {
+                            "type": "line",
+                            "key": "line-c963f0",
+                            "options": {
+                                "startX": "2",
+                                "startY": "9",
+                                "endX": "0",
+                                "endY": "9",
+                                "color": "#FF00AF",
+                                "strokeDasharray": "",
+                                "arrows": "",
+                                "strokeWidth": 2
+                            }
+                        },
+                        {
+                            "type": "point",
+                            "key": "point-cd759a",
+                            "options": {
+                                "coordX": "5",
+                                "coordY": "2",
+                                "color": "#28AE7B"
+                            }
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {
+                    "answerForms": [
+                        {
+                            "considered": "correct",
+                            "form": true,
+                            "key": 0,
+                            "simplify": false,
+                            "value": "48",
+                            "draggable": true,
+                            "expressionProps": {
+                                "times": false,
+                                "functions": [
+                                    "f",
+                                    "g",
+                                    "h"
+                                ],
+                                "buttonSets": [
+                                    "basic+div",
+                                    "trig",
+                                    "prealgebra",
+                                    "logarithms",
+                                    "basic relations",
+                                    "advanced relations"
+                                ],
+                                "buttonsVisible": "focused",
+                                "form": false,
+                                "simplify": false,
+                                "value": ""
+                            },
+                            "times": false,
+                            "functions": [
+                                "f",
+                                "g",
+                                "h"
+                            ],
+                            "buttonSets": [
+                                "basic+div",
+                                "trig",
+                                "prealgebra",
+                                "logarithms",
+                                "basic relations",
+                                "advanced relations"
+                            ],
+                            "buttonsVisible": "focused"
+                        },
+                        {
+                            "considered": "wrong",
+                            "form": false,
+                            "key": 1,
+                            "simplify": false,
+                            "value": "",
+                            "draggable": true,
+                            "expressionProps": {
+                                "times": false,
+                                "functions": [
+                                    "f",
+                                    "g",
+                                    "h"
+                                ],
+                                "buttonSets": [
+                                    "basic+div",
+                                    "trig",
+                                    "prealgebra",
+                                    "logarithms",
+                                    "basic relations",
+                                    "advanced relations"
+                                ],
+                                "buttonsVisible": "focused",
+                                "form": false,
+                                "simplify": false,
+                                "value": ""
+                            }
+                        },
+                        {
+                            "considered": "wrong",
+                            "form": false,
+                            "key": 2,
+                            "simplify": false,
+                            "value": "",
+                            "draggable": true,
+                            "expressionProps": {
+                                "times": false,
+                                "functions": [
+                                    "f",
+                                    "g",
+                                    "h"
+                                ],
+                                "buttonSets": [
+                                    "basic+div",
+                                    "trig",
+                                    "prealgebra",
+                                    "logarithms",
+                                    "basic relations",
+                                    "advanced relations"
+                                ],
+                                "buttonsVisible": "focused",
+                                "form": false,
+                                "simplify": false,
+                                "value": ""
+                            }
+                        }
+                    ],
+                    "buttonSets": [
+                        "basic+div",
+                        "trig",
+                        "prealgebra",
+                        "logarithms",
+                        "basic relations",
+                        "advanced relations"
+                    ],
+                    "functions": [
+                        "f",
+                        "g",
+                        "h"
+                    ],
+                    "times": false
+                },
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                },
+                "id": "expression 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "expression 2": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "expression 3": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "measurer 1": {
+                "options": {},
+                "type": "measurer",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "image 1": {
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        0,
+                        0
+                    ],
+                    "backgroundImage": {
+                        "url": null,
+                        "width": 0,
+                        "height": 0
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "type": "image",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "image 1",
+                "graded": true,
+                "alignment": "block"
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "content": "[[☃ dropdown 1]][[☃ explanation 1]]",
+            "images": {},
+            "widgets": {
+                "dropdown 1": {
+                    "type": "dropdown",
+                    "alignment": "default",
+                    "graded": true,
+                    "options": {
+                        "placeholder": "Hints",
+                        "choices": [
+                            {
+                                "content": "Express x or y with the other one!",
+                                "correct": true
+                            }
+                        ]
+                    },
+                    "version": {
+                        "major": 0,
+                        "minor": 0
+                    }
+                },
+                "explanation 1": {
+                    "type": "explanation",
+                    "alignment": "default",
+                    "graded": true,
+                    "options": {
+                        "showPrompt": "Click for additional info on the hints",
+                        "hidePrompt": "Hide",
+                        "explanation": "This dropdown menu is about small hints on the questions.\n\nYou are required to possess at least a basic level of knowledge about programming languages and interfaces"
+                    },
+                    "version": {
+                        "major": 0,
+                        "minor": 0
+                    }
+                }
+            }
+        }
+    ]
+}

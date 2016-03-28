@@ -1,0 +1,61 @@
+Kagan:
+   Realtime strategy multiplayer online battle arena with building components (like Tzar's battles).
+
+M1:
+   1. Write the server
+	1.1 Write the server side with C++ and SDL_Net (from scratch), that receives data from the users. The game logic 		will be at the server and it will synchronize all clients.
+	
+	1.2 Write our own data files for storing username, password and user stats. 
+
+	1.3 Function for receiving username and password and registering the new user in the data files 
+
+	1.4 Function for receiving username and password from the client and connecting them to their files
+	
+	
+   2. Write the client
+	
+	1.1 The client will send query to the server for the different functions of the game and the server will return the
+	changed data.
+
+	1.2 Using SDL_ttf write a screen with a username and a password textbox for the client to log in and register
+
+	1.3 Create a game class with basic functions like:
+		Run game 
+		Render textures 
+		Load content
+		FPS control
+
+	1.5 Create a basic isometric map creator with tilesets  
+
+  
+M2:
+
+   1. Create Entity class 
+	1.1 Loads the stats from the data files that we created
+	1.2 Create isometric movement with option for faster running and stamina 
+	1.3 Create jump function
+	1.4 Create health bar and stamina bar 
+ 	1.5 Create basic melee combat
+	1.6 Create a function for making spells and create some basic for our own
+	1.7 Create an experience component for leveling up
+	1.8 Create an xp bar
+
+   2. Create Enemy Class ... which probably will inherit the entity class
+	1.1 Create some mobs for the map
+	1.2 Create a really basic and stupid AI for the mobs
+	1.3 Make some of the mobs smarter with better AI
+
+M3:
+   
+   1. Create a menu for the game which displays your character, his stats, and abilities (building blueprints, spells)
+with a PLAY button to match you with another online user
+
+   2. Add building function to the Entity class
+
+   3. Make the Clients and Server communicate with each other to sync everything 
+
+   4. Make cheats ... just because we can
+
+   5. Finish up the game logic and fix the tons of bugs we have
+
+   6. Think of cool ways to mask our bugs as features  

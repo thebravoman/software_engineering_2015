@@ -1,0 +1,204 @@
+{
+    "question": {
+        "content": "What is Ruby?\n\n\n\n[[☃ radio 1]]\nWhat is an object in ruby \n\n\n[[☃ radio 2]]\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "A Dog",
+                            "correct": false
+                        },
+                        {
+                            "content": "A Program language",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "A Rock",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "A Sea"
+                        },
+                        {
+                            "isNoneOfTheAbove": true
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": true,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "An instance of a class.",
+                            "correct": true
+                        },
+                        {
+                            "content": "A class\n",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "type": "passage",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "passageTitle": "",
+                    "passageText": "",
+                    "footnotes": "",
+                    "showLineNumbers": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "numeric-input 1": {
+                "options": {
+                    "answers": [
+                        {
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [
+                                "pi"
+                            ],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [
+                                "pi"
+                            ],
+                            "strict": false,
+                            "maxError": null
+                        },
+                        {
+                            "status": "correct",
+                            "message": "",
+                            "simplify": "required",
+                            "answerForms": [
+                                "pi"
+                            ],
+                            "strict": false,
+                            "maxError": null
+                        }
+                    ],
+                    "size": "normal",
+                    "coefficient": false,
+                    "labelText": ""
+                },
+                "type": "numeric-input",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "numeric-input 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "categorizer 1": {
+                "options": {},
+                "type": "categorizer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "simulator 1": {
+                "options": {},
+                "type": "simulator",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "interaction 1": {
+                "options": {},
+                "type": "interaction",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "content": "There is only one answer",
+            "images": {},
+            "widgets": {
+                "cs-program 1": {
+                    "type": "cs-program",
+                    "alignment": "block",
+                    "graded": true,
+                    "options": {
+                        "programID": "",
+                        "settings": [
+                            {
+                                "name": "",
+                                "value": ""
+                            }
+                        ],
+                        "showEditor": false,
+                        "showButtons": false,
+                        "width": 400,
+                        "height": 400
+                    },
+                    "version": {
+                        "major": 0,
+                        "minor": 0
+                    }
+                }
+            }
+        }
+    ]
+}

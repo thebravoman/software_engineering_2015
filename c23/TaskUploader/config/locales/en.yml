@@ -1,0 +1,6 @@
+en:
+  hello: "Hello world"
+  tasks:
+    index:
+      all_tasks: 'All Tasks'
+      title: '#%{index} %{title}'

@@ -1,0 +1,106 @@
+{
+    "question": {
+        "content": "koi e nai-dobroq ezik za programirane poznat na choveka\n\n\n\n?[[☃ dropdown 1]]",
+        "images": {},
+        "widgets": {
+            "dropdown 1": {
+                "type": "dropdown",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "placeholder": "otgovorche",
+                    "choices": [
+                        {
+                            "content": "java",
+                            "correct": false
+                        },
+                        {
+                            "content": "pascal",
+                            "correct": true
+                        },
+                        {
+                            "content": "ruby",
+                            "correct": false
+                        },
+                        {
+                            "content": "c",
+                            "correct": false
+                        },
+                        {
+                            "content": "c#",
+                            "correct": false
+                        },
+                        {
+                            "content": "c  ",
+                            "correct": false
+                        },
+                        {
+                            "content": "python",
+                            "correct": false
+                        }
+                    ]
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": [
+        {
+            "content": "[[☃ image 1]]\n\n",
+            "images": {},
+            "widgets": {
+                "image 1": {
+                    "type": "image",
+                    "alignment": "block",
+                    "graded": true,
+                    "options": {
+                        "title": "",
+                        "range": [
+                            [
+                                0,
+                                10
+                            ],
+                            [
+                                0,
+                                10
+                            ]
+                        ],
+                        "box": [
+                            0,
+                            0
+                        ],
+                        "backgroundImage": {
+                            "url": null,
+                            "width": 0,
+                            "height": 0
+                        },
+                        "labels": [],
+                        "alt": "",
+                        "caption": ""
+                    },
+                    "version": {
+                        "major": 0,
+                        "minor": 0
+                    }
+                }
+            }
+        }
+    ]
+}

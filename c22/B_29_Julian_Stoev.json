@@ -1,0 +1,205 @@
+{
+    "question": {
+        "content": "What is the language of the given sample code:\n\n\n[[☃ image 1]]\n\n\n\n[[☃ radio 1]]\n\nWhat command do you use for pushing new docs into GitHub repo? \n\n[[☃ radio 2]]\n\nCalculate the max functional values in the interval [-2, 3]\n for the funtion :\n\n[[☃ grapher 1]]\n\n",
+        "images": {},
+        "widgets": {
+            "image 1": {
+                "type": "image",
+                "alignment": "block",
+                "graded": true,
+                "options": {
+                    "title": "",
+                    "range": [
+                        [
+                            0,
+                            10
+                        ],
+                        [
+                            0,
+                            10
+                        ]
+                    ],
+                    "box": [
+                        734,
+                        450
+                    ],
+                    "backgroundImage": {
+                        "url": "http://www.sequelpro.com/assets/images/json_output.jpg",
+                        "width": 734,
+                        "height": 450
+                    },
+                    "labels": [],
+                    "alt": "",
+                    "caption": ""
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "XML",
+                            "correct": false,
+                            "clue": "Because you didn't study or/and you're stupid"
+                        },
+                        {
+                            "content": "JSON",
+                            "correct": true,
+                            "clue": "Great skillz"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "CSV",
+                            "correct": false,
+                            "clue": "Because you didn't study or/and you're stupid"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": true
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "git push ",
+                            "correct": true
+                        },
+                        {
+                            "content": "git add",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git commit ",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git rm "
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git checkout"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git reset"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "rm -rf "
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "git clone"
+                        }
+                    ],
+                    "randomize": true,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": true
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "grapher 1": {
+                "type": "grapher",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": {
+                        "type": "quadratic",
+                        "coords": null,
+                        "asymptote": null
+                    },
+                    "availableTypes": [
+                        "quadratic"
+                    ],
+                    "graph": {
+                        "editableSettings": [
+                            "graph",
+                            "snap",
+                            "image"
+                        ],
+                        "range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "labels": [
+                            "",
+                            "y"
+                        ],
+                        "step": [
+                            1,
+                            1
+                        ],
+                        "gridStep": [
+                            1,
+                            1
+                        ],
+                        "snapStep": [
+                            1,
+                            1
+                        ],
+                        "valid": true,
+                        "backgroundImage": {
+                            "url": null
+                        },
+                        "markings": "graph",
+                        "rulerLabel": "",
+                        "rulerTicks": 10,
+                        "showProtractor": false,
+                        "showRuler": false
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": false,
+        "periodicTable": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

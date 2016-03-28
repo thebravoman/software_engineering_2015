@@ -1,0 +1,26 @@
+2D strategy game
+
+Month 1
+1) Graphics User Interface
+	1) Implement basic widget class
+	2) Add windows, buttons, textboxes, checkboxes, radiobuttons
+	3) Implement interface layout definition (via an external *.layout file)
+	4) Implement widget default settings (defined in external *.def files)
+	5) Implement a class that serves as a main interface
+	6) Implement different themes for the widgets' draw methods
+	7) Implement a theme manager
+	8) Add callbacks and events for the widgets
+2) Game Graphics
+	1) Draw basic sketches for the buildings
+	2) Draw basic sketches for the basic units
+3) Game Engine
+	1) Create game configure file and loading functions
+	2) Create game main menu
+	3) Create game options menu
+	4) Create "Start Game" window
+	5) Create "Custom Battle" window
+	6) Create Battle interface
+	7) Create base character races, types, strengths, weaknesses, etc.
+	8) Create main battle mechanics
+	9) Create game resource loading/generating
+	10) Create basic control system

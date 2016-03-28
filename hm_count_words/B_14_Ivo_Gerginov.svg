@@ -1,0 +1,19 @@
+<svg xmlns = "http://www.w3.org/2000/svg" width ="100000" height = "1000000">
+<rect x="4" y = "4" width="40" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="19" fill="dark-blue" font-size="20">do, 2</text>
+<rect x="4" y = "26" width="40" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="41" fill="dark-blue" font-size="20">shoes, 2</text>
+<rect x="4" y = "48" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="63" fill="dark-blue" font-size="20">app, 1</text>
+<rect x="4" y = "70" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="85" fill="dark-blue" font-size="20">end, 1</text>
+<rect x="4" y = "92" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="107" fill="dark-blue" font-size="20">first, 1</text>
+<rect x="4" y = "114" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="129" fill="dark-blue" font-size="20">para, 1</text>
+<rect x="4" y = "136" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="151" fill="dark-blue" font-size="20">requre, 1</text>
+<rect x="4" y = "158" width="20" height="18" style="fill:rgb(100,200,100)" />
+<text x="4" y="173" fill="dark-blue" font-size="20">stack, 1</text>
+<text x="4" y="195" fill="dark-blue" font-size="20">"marks", 6</text>
+</svg>

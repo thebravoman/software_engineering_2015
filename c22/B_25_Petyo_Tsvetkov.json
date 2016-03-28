@@ -1,0 +1,346 @@
+{
+    "question": {
+        "content": "1.What is ruby? \n\n[[☃ radio 1]]\n\n2.How to implement class in ruby ?\n\n[[☃ radio 2]]\n\n\n3. How to implement array a with element 2,3,4 ?\n\n[[☃ radio 3]]\n\n4. What of this is correct ?\n\n[[☃ radio 4]]\n\n5. How to print in console with language Ruby\n\n[[☃ radio 5]]\n\n6.  Sort current git options?\n\n\n\n[[☃ sorter 1]]\n\n\n\n\n\n\n\n\n\n\n\n",
+        "images": {},
+        "widgets": {
+            "radio 1": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "cat",
+                            "correct": false
+                        },
+                        {
+                            "content": "dog",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "mountain",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "programming language",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 2": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "def",
+                            "correct": false
+                        },
+                        {
+                            "content": "module",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "while",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "class",
+                            "correct": true
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 3": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "a = 2,3,4",
+                            "correct": false
+                        },
+                        {
+                            "content": "2,3,4 = a",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "a = []1,2,3",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "a = [1,2,3]",
+                            "correct": true
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "other",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 4": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "content": "class A < B",
+                            "correct": true
+                        },
+                        {
+                            "content": "def A <B",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "while A < B",
+                            "correct": false
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "class A>B",
+                            "correct": false
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": false,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "radio 5": {
+                "type": "radio",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "choices": [
+                        {
+                            "correct": true,
+                            "content": "put"
+                        },
+                        {
+                            "correct": true,
+                            "content": "puts"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "printf"
+                        },
+                        {
+                            "isNoneOfTheAbove": false,
+                            "content": "System.out.println();"
+                        }
+                    ],
+                    "randomize": false,
+                    "multipleSelect": true,
+                    "displayCount": null,
+                    "hasNoneOfTheAbove": false,
+                    "onePerLine": true,
+                    "deselectEnabled": false
+                },
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "sorter 1": {
+                "type": "sorter",
+                "alignment": "default",
+                "graded": true,
+                "options": {
+                    "correct": [
+                        "$git add$",
+                        "$git commit$",
+                        "$git pull$",
+                        "$git push$"
+                    ],
+                    "layout": "vertical",
+                    "padding": true
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "dropdown 1": {
+                "options": {
+                    "placeholder": "",
+                    "choices": [
+                        {
+                            "content": "dog",
+                            "correct": true
+                        },
+                        {
+                            "content": "",
+                            "correct": false
+                        }
+                    ]
+                },
+                "type": "dropdown",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "dropdown 1",
+                "graded": true,
+                "alignment": "default"
+            },
+            "dropdown 2": {
+                "options": {},
+                "type": "dropdown",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "explanation 1": {
+                "options": {},
+                "type": "explanation",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "number-line 1": {
+                "options": {},
+                "type": "number-line",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "cs-program 1": {
+                "options": {},
+                "type": "cs-program",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "plotter 1": {
+                "options": {},
+                "type": "plotter",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "transformer 1": {
+                "options": {},
+                "type": "transformer",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "measurer 1": {
+                "options": {},
+                "type": "measurer",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "expression 1": {
+                "options": {},
+                "type": "expression",
+                "version": {
+                    "major": 1,
+                    "minor": 0
+                }
+            },
+            "passage 1": {
+                "options": {},
+                "type": "passage",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            },
+            "video 1": {
+                "options": {
+                    "location": ""
+                },
+                "type": "video",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                },
+                "id": "video 1",
+                "graded": true,
+                "alignment": "block"
+            },
+            "group 1": {
+                "options": {},
+                "type": "group",
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {
+            "content": "",
+            "images": {},
+            "widgets": {}
+        },
+        "calculator": true,
+        "periodicTable": true
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

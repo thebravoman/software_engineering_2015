@@ -1,0 +1,268 @@
+[
+    {
+        "name": "Guest access",
+        "desc": "As a guest, I should be able to see a list of all teams and their members, because I might be interested in observing the event.",
+        "labels": [
+            "High priority",
+            "Enhancement"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Email confirmation",
+        "desc": "As a participant, I should receive email confirmation upon registration, so that spam can be prevented.",
+        "labels": [
+            "Enhancement",
+            "High priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Repository/archive submission",
+        "desc": "As a participant, I should be able to submit my work, because I have finished it before the desired deadline.",
+        "labels": [
+            "New feature",
+            "High priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Submission review",
+        "desc": "As an admin, I should be able to see the repository/archive submissions and accept or decline them, because some of them might be after the deadline or stolen.\n\n- Perhaps run through a plagiarism tool of any sort. (Automated?)",
+        "labels": [
+            "High priority",
+            "New feature"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Predefined technologies set",
+        "desc": "As an admin, I should be able to predefine a set of technologies, so that spam can be prevented.",
+        "labels": [
+            "New feature",
+            "High priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "TLS",
+        "desc": "All traffic going through the application should be encrypted and a Let's Encrypt certificate should be used.",
+        "labels": [
+            "Critical priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Password hashing",
+        "desc": "Passwords should be stored in a secure manner, so that no privacy breaching is possible.",
+        "labels": [
+            "Critical priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Participant registration",
+        "desc": "As a participant, I should be able to register for an event, so that I can access member features.\n\n**Acceptance criteria:**\n- User authentication\n- Profile page\n- Profile editing",
+        "labels": [
+            "High priority",
+            "New feature"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Deployment procedure",
+        "desc": "A deployment procedure should be specified, so that new updates can be efforlessly pushed into production.",
+        "labels": [
+            "High priority"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Mentor registration",
+        "desc": "As a guest, I should be able to register as a mentor, because I might be interested in helping.",
+        "labels": [
+            "High priority",
+            "New feature"
+        ],
+        "milestone": 1
+    },
+    {
+        "name": "Automatic schedule generation",
+        "desc": "As an admin, I should be able to generate the schedule for the closing presentations and breaks, because it would require a lot less effort and time.\n\n- Once generated, the schedule should be publicly available",
+        "labels": [
+            "Medium priority",
+            "New feature"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Results page",
+        "desc": "As an admin, once the jury decides on the winners, I should be able to easily arrange the winning teams along with the prizes they've won, because we might need it for further reference.",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Event problems page",
+        "desc": "As a participant, I should be able to report a problem I'm experiencing, so that admins can resolve it.",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Event problems administration",
+        "desc": "As an admin, I should be able to see all enties submitted to the event problems page, because I might want to troubleshoot them.\n\n- All other administrators should be notified.",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Admin mentor acceptance",
+        "desc": "As an admin, I should be able to review mentor requests and accept them, because they should be curated.\n\n- The other administrators should be notified of the acceptance.",
+        "labels": [
+            "Medium priority",
+            "New feature"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Efficient team merging",
+        "desc": "As an admin, I should be able to split the participants with no teams in a fair manner, because I would want the best performing configuration.\n\n- A good place to integrate supervised multiclass machine learning algorithm\n- As features (input): participant's class, set of favoured technologies etc.",
+        "labels": [
+            "Medium priority",
+            "New feature"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Participant mentor selection",
+        "desc": "As a participant and leader of the team, I should be able to choose a mentor for it from the page with the mentors, because the mentor I decide to choose might be good at the technology I'm using.\n\n- The mentor should receive a notification, should be asked to accept the invitation and the team mentor should be set to him if the invitation is accepted\n- All administrators should receive a notification once a mentor is selected for a team.",
+        "labels": [
+            "Medium priority",
+            "New feature"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Team management",
+        "desc": "As a participant, I should be able to manage a team, so that I can be with my preferred team mates.\n\n**Acceptance criteria:**\n- Invite system\n- Team attributes\n",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Admin notifications",
+        "desc": "As an admin, I should be able to see a notification for EVERY possible action, including, but not limited to: sponsorship mails, finance management, participant deletions, participants check etc., because I should be aware of everything.",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Attendance checking",
+        "desc": "As an admin, I should be able to check participants in each day, so that I can gather attendance statistics.",
+        "labels": [
+            "New feature",
+            "Medium priority"
+        ],
+        "milestone": 2
+    },
+    {
+        "name": "Simple CMS",
+        "desc": "As an admin, I should have basic CMS tools, so that I can manage various static pages.",
+        "labels": [
+            "New feature",
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "API",
+        "desc": "As I guest, I should be able to consume a set of predefined API endpoints, because I might be interested in retrieving data about the event in my application.",
+        "labels": [
+            "Low priority",
+            "New feature"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Continuous integration",
+        "desc": "CI should be added to the repository.",
+        "labels": [
+            "Low priority",
+            "Enhancement"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Responsive and pleasant UX",
+        "desc": "As a guest, I should be able to enjoy the site both on mobile and the web, because we live in the 21st century.\n\n- Perhaps buy a cheap boostrap theme and use it",
+        "labels": [
+            "Enhancement",
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "i18n",
+        "desc": "",
+        "labels": [
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Money management",
+        "desc": "As an admin, I should be able to overview and manage sponsorships and expenses for the event, so that I can plan ahead better and be accountable.",
+        "labels": [
+            "New feature",
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Statistics",
+        "desc": "As an admin, I should be able to view statistics about the event, so that I can measure how the organisation is performing.",
+        "labels": [
+            "New feature",
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Freebies tagging",
+        "desc": "As an admin, I should be able to tag participants as having received a freebie (food, sponsor prizes, etc.), so that they are fairly distributed.",
+        "labels": [
+            "New feature",
+            "Low priority"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Export statistics to Excel/CSV",
+        "desc": "As an admin, I should be able to export the finance statistics, the participants and their teams to an Excel or CSV document, because further editing or calculations might be required.",
+        "labels": [
+            "Low priority",
+            "New feature"
+        ],
+        "milestone": 3
+    },
+    {
+        "name": "Admin panel mail integration",
+        "desc": "As an admin, I should be able to manage hackathon-related mail through the panel, because it'll be easier and it'll be shared with the other administrators.",
+        "labels": [
+            "New feature",
+            "Low priority"
+        ],
+        "milestone": 3
+    }
+]
