@@ -6,7 +6,7 @@ OptionParser.new do |opt|
   opt.on('-d', '-d directory_name', 'The name of the directory') { |o| folder = o}
 end.parse!
 
-format = ARGV[1] == nil ? 'csv' : ARGV[0].downcase
+format = ARGV[1] == nil ? 'csv' : ARGV[1].downcase
 
 if folder == ''
   file_path = ARGV[0]
