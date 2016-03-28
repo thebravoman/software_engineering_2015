@@ -5,29 +5,30 @@ expected = '{
   "words": [
     [
       "hello",
-      4
+      2
     ],
     [
       "friend",
-      2
+      1
     ],
     [
       "my",
-      2
+      1
     ],
     [
       "there",
-      2
+      1
     ],
     [
       "world",
-      2
+      1
     ]
   ]
-}'
+}
+'
 
 if expected == result
-  return 1
+  1
 else
-  return 0
+  0
 end
