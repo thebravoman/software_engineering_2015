@@ -1,15 +1,15 @@
 result = `ruby -I A_21_Nikolay_Danailov_RRdWxRiRIZ A_21_Nikolay_Danailov_RRdWxRiRIZ.rb`
 
-expected = 'hello,4
-friend,2
-my,2
-there,2
-world,2
+expected = 'hello,2
+friend,1
+my,1
+there,1
+world,1
 "marks",3
 '
 
 if expected == result
-  return 1
+  1
 else
-  return 0
+  0
 end

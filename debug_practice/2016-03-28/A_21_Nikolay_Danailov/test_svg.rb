@@ -18,7 +18,7 @@ expected = <<-TEXT
 TEXT
 
 if expected == result
-  return 1
+  1
 else
-  return 0
+  0
 end

@@ -3,17 +3,17 @@ result = `ruby -I A_21_Nikolay_Danailov_RRdWxRiRIZ A_21_Nikolay_Danailov_RRdWxRi
 expected = '<word-counts>
     <marks>3</marks>
     <words>
-        <word count="4">hello</word>
-        <word count="2">friend</word>
-        <word count="2">my</word>
-        <word count="2">there</word>
-        <word count="2">world</word>
+        <word count="2">hello</word>
+        <word count="1">friend</word>
+        <word count="1">my</word>
+        <word count="1">there</word>
+        <word count="1">world</word>
     </words>
 </word-counts>
 '
 
 if expected == result
-  return 1
+  1
 else
-  return 0
+  0
 end
