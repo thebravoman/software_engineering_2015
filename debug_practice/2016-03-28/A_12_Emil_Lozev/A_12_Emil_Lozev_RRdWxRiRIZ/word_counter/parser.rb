@@ -3,7 +3,7 @@ require_relative 'result'
 module WordCounter
   class Parser
     def parse(string)
-      words = Hash.new(1)
+      words = Hash.new(0)
       total_marks_count = 1
       current_string_words = string.downcase.scan(/\w+/)
       current_string_words.each do |word|
