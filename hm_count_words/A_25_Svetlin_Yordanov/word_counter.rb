@@ -32,6 +32,7 @@ class WordCounter
     f.each_line do |line|
       string+=line
     end
+    
    parse string
   end
 end

@@ -1,6 +1,8 @@
 require 'csv'
 require 'json'
 require 'rexml/document'
+require_relative 'result.rb'
+require_relative 'word_counter.rb'
 
 filepath = ARGV[0]
 format = ARGV[1]
