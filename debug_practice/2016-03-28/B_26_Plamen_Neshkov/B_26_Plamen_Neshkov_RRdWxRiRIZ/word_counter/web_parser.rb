@@ -26,14 +26,14 @@ module WordCounter
 
       sanitized_content.each_line do |line|
         res = super(line)
-        words = words.merge(res.word_counts.to_h)
+        words = words.merge(res.word_counts.to_h) { |k, ov, nv| ov + nv }
         total_marks_count += res.marks_count
       end
 
       sorted_words = words.sort_by { |word, occurences| [-occurences, word] }
       contents_hash = Digest::SHA256.hexdigest(sanitized_content)
       result = Result.new(sorted_words, total_marks_count)
-      Data.save(url.to_s, contents_hash, result)
+      # Data.save(url.to_s, contents_hash, result)
       return result
     end
   end
