@@ -9,7 +9,7 @@ world,2
 '
 
 if expected == result
-  puts 'Without args works correctly!'
+  return 1
 else
-  puts "Without args doesn't work correctly!"
+  return 0
 end
