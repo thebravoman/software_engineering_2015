@@ -30,4 +30,3 @@ when 'svg'
 else
   puts result.to_csv
 end
-result.to_svg
