@@ -106,7 +106,7 @@ module WordCounter
 
     private
     def get_word_color()
-      "%06x" % (rand * 0xffffff)
+      "0066ff"
     end
 
     private
