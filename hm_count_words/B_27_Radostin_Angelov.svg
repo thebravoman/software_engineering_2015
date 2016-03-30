@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="300"><rect x="20" y="205" height="200.0" width="10" stroke="blue" fill="red"
+		transform="rotate(180, 20, 205)"/>
+<text x="13" y="208" font-family="Verdana" font-size="10"
+				transform="rotate(90, 13, 208)">sentence</text>
+<rect x="30" y="205" height="200.0" width="10" stroke="blue" fill="red"
+		transform="rotate(180, 30, 205)"/>
+<text x="23" y="208" font-family="Verdana" font-size="10"
+				transform="rotate(90, 23, 208)">some</text>
+</svg>
