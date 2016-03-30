@@ -15,7 +15,6 @@ if folder == ''
   if file_path.start_with?("http://", "https://")
     result = WordCounter.parse_webpage(file_path)
   else
-    byebug
     result = WordCounter.parse_file(file_path)
   end
 else

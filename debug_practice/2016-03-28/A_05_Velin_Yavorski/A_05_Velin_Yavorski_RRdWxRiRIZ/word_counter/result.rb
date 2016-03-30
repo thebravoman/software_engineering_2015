@@ -21,7 +21,7 @@ module WordCounter
         result << "#{word},#{occurences}\n"
       end
 
-      if @marks_count < 0
+      if @marks_count > 0
         result << "\"marks\",#{marks_count}\n"
       end
 
