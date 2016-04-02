@@ -1,11 +1,11 @@
-require_relative './parser'
+require_relative 'parser'
 require_relative 'data'
 require 'digest'
 
 module WordCounter
   class FileParser < Parser
     def parse(file_path)
-      words = Hash.new(0)
+      words = Hash.new()
       total_marks_count = 0
       File.open(file_path, "r") do |f|
         f.each_line do |line|

@@ -43,7 +43,7 @@ module WordCounter
       word_counts_element = doc.add_element('word-counts')
 
       marks_element = word_counts_element.add_element('marks')
-      marks_element.add_text(@marks_count.to_s)
+      marks_element.add_text(marks_count.to_s)
 
       words_element = word_counts_element.add_element('words')
 
