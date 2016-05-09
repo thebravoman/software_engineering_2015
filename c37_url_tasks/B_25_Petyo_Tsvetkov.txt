@@ -1,0 +1,3 @@
+https://hook.io/petiocvetkov/quadratic-test
+https://hook.io/petiocvetkov/quadratic-test-json
+https://hook.io/petiocvetkov/countwords-test
