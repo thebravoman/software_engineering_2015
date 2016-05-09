@@ -1,0 +1,3 @@
+https://hook.io/newmast/quadratic
+https://hook.io/newmast/quadratic-json
+https://hook.io/newmast/count-words
