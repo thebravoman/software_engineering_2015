@@ -1,1 +1,2 @@
 https://hook.io/valchovski/quadratic-equation
+https://hook.io/valchovski/quadratic-equation-json
