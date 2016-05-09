@@ -1,0 +1,3 @@
+https://hook.io/frostblooded/quadratic_equation
+https://hook.io/frostblooded/quadratic_equation_json
+https://hook.io/frostblooded/count_words

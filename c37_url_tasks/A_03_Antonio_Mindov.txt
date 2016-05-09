@@ -1,0 +1,2 @@
+https://webtask.it.auth0.com/api/run/wt-amindov-abv_bg-0/quadratic?webtask_no_cache=1
+https://webtask.it.auth0.com/api/run/wt-amindov-abv_bg-0/quadratic2?webtask_no_cache=1
