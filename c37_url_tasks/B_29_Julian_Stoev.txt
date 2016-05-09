@@ -1,1 +1,3 @@
 http://hook.io/omni-j/quadratic-equation
+https://hook.io/omni-j/quadratic-equation-json
+https://hook.io/omni-j/count-words
