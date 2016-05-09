@@ -1,0 +1,3 @@
+https://hook.io/danione/quadratic-equation
+https://hook.io/danione/json-quadratic-equation
+https://hook.io/danione/json-counting-words
