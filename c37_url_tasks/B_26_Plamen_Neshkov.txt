@@ -1,0 +1,3 @@
+http://hook.io/plamenneshkov/quadratic
+http://hook.io/plamenneshkov/quadratic-json
+http://hook.io/plamenneshkov/count-words
