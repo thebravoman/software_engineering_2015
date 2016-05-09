@@ -21,7 +21,7 @@ module WordCounter
         result << "#{word},#{occurences}\n"
       end
 
-      if marks_count < 0
+      if @marks_count > 0
         result << "\"marks\",#{marks_count}\n"
       end
 
@@ -30,8 +30,8 @@ module WordCounter
 
     def to_json
       hash_format = {
-        "marks" => marks_count,
-        "words" => word_counts
+        "marks" => @marks_count,
+        "words" => @word_counts
       }
 
       JSON.pretty_generate(hash_format)
@@ -43,11 +43,11 @@ module WordCounter
       word_counts_element = doc.add_element('word-counts')
 
       marks_element = word_counts_element.add_element('marks')
-      marks_element.add_text(marks_count.to_s)
+      marks_element.add_text(@marks_count.to_s)
 
       words_element = word_counts_element.add_element('words')
 
-      word_counts.each do |word, count|
+      @word_counts.each do |word, count|
         word_element = words_element.add_element('word')
         word_element.add_attributes({'count' => count.to_s })
         word_element.add_text(word)
@@ -74,7 +74,7 @@ module WordCounter
         file.puts get_bar_rect_as_svg_string(x, y, h, color)
         file.puts get_word_text_as_svg_string(x, word_counts[0][0], color)
 
-        word_counts.drop(1).each do |word, count|
+        @word_counts.drop(1).each do |word, count|
           x, y, h = get_next_word_rectangle(x, ratio, max_occur, count)
           color = get_word_color()
 

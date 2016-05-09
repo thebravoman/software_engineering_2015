@@ -35,3 +35,4 @@ module WordCounter
     end
   end
 end
+
