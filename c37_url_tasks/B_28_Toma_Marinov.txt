@@ -1,1 +1,2 @@
 https://hook.io/randomuser/task1
+http://hook.io/randomuser/task2
