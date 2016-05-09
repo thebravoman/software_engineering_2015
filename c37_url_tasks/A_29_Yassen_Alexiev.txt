@@ -1,1 +1,2 @@
 https://hook.io/streetfighter4/quadratic_equation
+https://hook.io/streetfighter4/quadratic-equation-with-json
