@@ -7,7 +7,7 @@ This is the submission file
 2. Make it available over an url
 3. The url should be able to accept params as "?a=...&b=...&c=..."
 4. Submit this url as the first line in the submission file
-5. Return the answers x1 and x2 in ASC order
+5. Return the solutions x1 and x2 in ASC order. If there is not solution then return "No solution"
 
 # Task 2, Quadratic Json
 
