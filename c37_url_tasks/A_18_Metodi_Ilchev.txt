@@ -1,1 +1,2 @@
-https://www.webscript.io/script/mehtehtrollface/quadratic
+mehtehtrollface.webscript.io/quadratic
+mehtehtrollface.webscript.io/quadraticjson
