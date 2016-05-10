@@ -1,2 +1,3 @@
 mehtehtrollface.webscript.io/quadratic
 mehtehtrollface.webscript.io/quadraticjson
+mehtehtrollface.webscript.io/countwords
