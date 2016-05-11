@@ -1,0 +1,28 @@
+module['exports'] = function echoHttp (hook) {
+  var obj = hook.params.json;
+	
+  obj = JSON.parse(obj);
+  
+var a = obj.a;
+var b = obj.b;
+var c = obj.c;
+var x1 = obj.x1;
+var x2 = obj.x2;
+var url = obj.url;
+
+};
+
+var dyrjach = function(responce) {
+	console.log(responce);
+};
+  
+function httpGetAsync(url, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", url, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
