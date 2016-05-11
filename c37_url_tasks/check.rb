@@ -24,6 +24,7 @@ def write_file results
 	end
 end
 # url quadratic - 0 "a=1&b=1&c=-4"
-# url quadratic json - 1 %7B%22a%22%3A1%2C%22b%22%3A1%2C%22c%22%3A-4%7D
+# url quadratic json - 1 "json=%7B%22a%22%3A1%2C%22b%22%3A1%2C%22c%22%3A-4%7D"
+# url count words - 2
 results = send_request ARGV[0].to_i, ARGV[1]
 write_file results
