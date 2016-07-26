@@ -1,4 +1,0 @@
-http://github.com/v8/v8
-https://github.com/eclipse/eclipse.jdt.core
-https://github.com/jruby/jruby
-https://github.com/ruby/ruby
